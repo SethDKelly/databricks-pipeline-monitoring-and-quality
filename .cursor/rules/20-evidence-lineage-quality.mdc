@@ -1,0 +1,27 @@
+---
+description: Evidence, temporal reasoning, lineage, health, freshness, and data-quality invariants.
+globs:
+alwaysApply: true
+---
+
+# Evidence and reasoning invariants
+
+Preserve these distinctions in all documentation:
+
+- logical pipeline ≠ repository ≠ Databricks job;
+- run success ≠ freshness ≠ data quality;
+- expectation ≠ observation ≠ assessment;
+- anomaly/degradation ≠ defect;
+- correlation ≠ attribution ≠ confirmed cause;
+- data lineage ≠ operational dependency ≠ deployment lineage;
+- current topology ≠ historical topology.
+
+Rules:
+
+- Time/history is first-class; avoid current-state-only designs.
+- Material conclusions must be traceable to evidence and provenance.
+- Unknown, conflicting, stale, unavailable, unauthorized, and insufficient-evidence states are valid outcomes.
+- Never invent a root cause to make a report complete.
+- Root-cause reasoning should consider upstream origin and downstream impact.
+- A successful Databricks run may still produce stale, incomplete, anomalous, or degraded data.
+- Business-facing explanations and engineering detail must derive from the same evidence.

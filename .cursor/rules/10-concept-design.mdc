@@ -1,0 +1,29 @@
+---
+description: Mandatory Daniel Jackson Concept Design rules for all product and domain design work.
+globs:
+alwaysApply: true
+---
+
+# Concept Design
+
+Read `docs/foundation/004_concept_design_method.md`, `docs/concepts/concept_template.md`, and `docs/concepts/phase_002/README.md` before proposing or changing concepts.
+
+- Start with an actor need and one primary purpose.
+- A concept is an independent unit of functionality, not automatically a class, service, table, endpoint, UI page, repository, Databricks job, or vendor feature.
+- Every accepted concept must define: name, purpose, operational principle, state, actions, invariants, ambiguity behavior, and synchronizations.
+- Prefer one concept ↔ one primary purpose as a design heuristic.
+- If a candidate has unrelated purposes, split/rethink it.
+- Compose concepts using explicit synchronizations instead of merging state and responsibilities.
+- Keep domain entities separate from concepts when appropriate; a Data Asset can participate in many concepts without becoming one giant concept.
+- Do not make vendor-shaped concepts (`DQXConcept`, `CollibraConcept`, `ImmutaConcept`, `UnityCatalogConcept`). Define product functionality first, then evaluate the tool as a realization/provider.
+- Do not map concept boundaries to technical architecture during product discovery.
+- Test concepts against happy, degraded, missing-evidence, conflicting-evidence, and unauthorized-evidence scenarios.
+- Use the Table A + Table B → Table C degradation scenario as a recurring concept test.
+
+## Phase 002 review discipline
+
+- Review concepts in the strategic group order defined in `docs/concepts/phase_002/README.md`.
+- Treat every seeded specification as Candidate until explicitly reviewed/accepted.
+- Later-group drafts may be refined for consistency, but do not silently promote them while an earlier group is still active.
+- Boundary refinement is expected: split, merge, rename, or reject candidates when one-purpose-per-concept analysis warrants it.
+- Record meaningful boundary decisions in `docs/decisions/README.md` and update the catalog/glossary together.
