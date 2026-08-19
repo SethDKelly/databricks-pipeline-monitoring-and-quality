@@ -4,9 +4,11 @@ The `docs/` tree is the system of record for product and design decisions in thi
 
 ## Current state
 
-**Phase 003 — Concept Synchronizations and Ecosystem Scenarios is active.** Phase 002 is complete with all 20 retained concepts accepted.
+**Phase 003 — Concept Synchronizations and Ecosystem Scenarios is active.** Phase 002 is complete with its original five groups plus one accepted post-exit addendum.
 
-**Phase 003 Groups 01–02 are accepted. Group 03 — Runtime Evidence, Health & Realized Change is next.**
+The current catalog contains **21 accepted concepts**, including **Propagation Safeguard**.
+
+**Phase 003 Groups 01–03 are accepted. Group 04 — Lineage, Investigation & Causal Reasoning is next.**
 
 ## Reading order
 
@@ -21,13 +23,15 @@ The `docs/` tree is the system of record for product and design decisions in thi
 9. [`foundation/008_mvp_boundary.md`](foundation/008_mvp_boundary.md) — MVP proof boundary.
 10. [`foundation/009_initial_roadmap.md`](foundation/009_initial_roadmap.md) — phased path and active Phase 003 position.
 11. [`foundation/010_open_questions.md`](foundation/010_open_questions.md) — unresolved decisions that must not be silently chosen.
-12. [`concepts/README.md`](concepts/README.md) — accepted 20-concept catalog and Phase 003 pointer.
+12. [`concepts/README.md`](concepts/README.md) — accepted 21-concept catalog and Phase 003 pointer.
 13. [`concepts/concept_template.md`](concepts/concept_template.md) — concept specification shape.
-14. [`concepts/phase_002/README.md`](concepts/phase_002/README.md) — completed Phase 002 review/exit gate.
-15. [`concepts/phase_003/README.md`](concepts/phase_003/README.md) — active synchronization groups, method, scenarios, and exit gate.
-16. [`concepts/phase_003/synchronization_template.md`](concepts/phase_003/synchronization_template.md) — synchronization specification checklist.
-17. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
-18. [`decisions/README.md`](decisions/README.md) — durable decision history.
+14. [`concepts/phase_002/README.md`](concepts/phase_002/README.md) — original Phase 002 review/exit plus later addendum rationale.
+15. [`concepts/phase_002/addenda/`](concepts/phase_002/addenda/) — post-exit concept-boundary addenda.
+16. [`concepts/phase_003/README.md`](concepts/phase_003/README.md) — active synchronization groups, method, scenarios, and exit gate.
+17. [`concepts/phase_003/synchronization_template.md`](concepts/phase_003/synchronization_template.md) — synchronization specification checklist.
+18. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
+19. [`decisions/README.md`](decisions/README.md) — D-001–D-039 durable decision history.
+20. [`decisions/phase_003_group_03_runtime_health_and_safeguard.md`](decisions/phase_003_group_03_runtime_health_and_safeguard.md) — D-040–D-046 additions.
 
 ## Document statuses
 
@@ -54,15 +58,18 @@ Earlier thematic discovery notes. Accepted foundation/concept/synchronization/de
 Canonical shared vocabulary/reference material.
 
 ### `decisions/`
-Explicit decisions, reversals, and unresolved choices. Major design choices must not exist only in chat history.
+Explicit decisions, reversals, addenda, and unresolved choices. Major design choices must not exist only in chat history.
 
 ## Documentation discipline
 
 - Prefer one canonical definition over subtly different duplicates.
-- Preserve historical decision rationale; supersede/correct rather than silently rewrite meaning.
+- Preserve historical decision rationale; supersede/correct/add rather than silently rewrite meaning.
 - Synchronization specifications must state trigger, participating concept actions, partial ordering, failure/ambiguity propagation, time/provenance, security, invariants, scenarios, and non-goals.
 - Never turn synchronization ordering into source authority or causation.
 - Planned-reference preparation must remain distinct from evidence-backed realized reference transition.
+- Prospective Impact must remain distinct from actual exposure/effect/consequence.
+- Successful execution must remain distinct from timely execution, freshness, and data quality.
+- Propagation Safeguard must remain distinct from health Assessment and causal truth.
 - Label implementation ideas as candidates until technical architecture approves them.
 - Keep examples synthetic; no real PII, PHI, credentials, secrets, or production values.
 - Preserve uncertainty and authorization limitations explicitly.

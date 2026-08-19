@@ -1,10 +1,12 @@
 # Phase 002 — Concept Specifications
 
-**Status:** **Complete — Groups 01–05 accepted. Phase 003 is next and has not yet started.**
+**Status:** **Complete — Groups 01–05 accepted; post-exit Propagation Safeguard addendum accepted during Phase 003.**
 
 ## Purpose
 
 Phase 002 turned the Phase 001 discovery catalog into explicit, implementation-neutral Concept Design specifications. The resulting concepts define product behavior and truth boundaries without mapping them to services, schemas, APIs, Databricks objects, graph databases, ledger/event-store technologies, language/framework choices, or vendor products.
+
+The original Phase 002 review completed with 20 concepts. Phase 003 Group 03 later exposed one missing independently motivated behavior—protective hold/quarantine/release of data propagation. Phase 002 was therefore narrowly reopened through the accepted [`Propagation Safeguard`](addenda/propagation_safeguard.md) post-exit addendum. The original exit remains historically true for the requirements known at that time.
 
 ## Accepted concept groups
 
@@ -16,7 +18,11 @@ Phase 002 turned the Phase 001 discovery catalog into explicit, implementation-n
 | 04 | History, Lineage & Change | Change Intent, Execution History, Deployment, Lineage, Change | **Accepted** |
 | 05 | Investigation, Impact & Explanation | Investigation, Causal Claim, Impact, Annotation, Explanation | **Accepted** |
 
-**20 retained concepts** are accepted.
+## Accepted post-exit addendum
+
+- **Propagation Safeguard** — protective proposed/active/released hold or quarantine state for a defined data output, execution context, propagation boundary, environment/cohort, or consumer set. It does not own health Assessment, Investigation, causal truth, authorization, or implementation enforcement mechanics.
+
+**21 concepts are currently accepted.**
 
 Review order was a design dependency, not an implementation dependency. Concepts remain independently motivated and compose through synchronizations.
 
@@ -63,7 +69,16 @@ Review order was a design dependency, not an implementation dependency. Concepts
 - `Report / Explanation` → **Explanation**: presentation artifact is secondary; the product purpose is authorized, evidence-grounded communication.
 - Explanation preserves the distinction between **what was known then** and **what we know now**.
 
-## Cross-cutting distinctions accepted by Phase 002
+### Post-exit addendum
+
+- **Propagation Safeguard** is separate from Assessment, Investigation, Impact, and Policy Context because those concepts explicitly do not own remediation/protective-control state.
+- A violated Expectation or Baseline atypicality can motivate safeguard review but does not automatically activate quarantine.
+- `proposed` is distinct from `active`; activation requires explicit authority/enforcement evidence under applicable semantics.
+- Quarantine may be precautionary and does not prove defect; release does not prove health.
+- If no output exists, downstream advancement/current-cycle publication may be held rather than inventing a quarantined data object.
+- Safeguard placement is context-specific and may itself create observable delivery delay.
+
+## Cross-cutting distinctions accepted by Phase 002/current addendum model
 
 - Monitoring Scope ≠ ecosystem existence ≠ authorization;
 - Entity Identity ≠ name ≠ replacement/succession;
@@ -81,7 +96,7 @@ Review order was a design dependency, not an implementation dependency. Concepts
 - Change Intent ≠ Deployment ≠ realized Change;
 - Deployment attempt ≠ activation;
 - activation ≠ intended effect realized;
-- successful execution ≠ freshness ≠ data quality;
+- successful execution ≠ timely execution ≠ freshness ≠ data quality;
 - planned topology ≠ active Lineage;
 - Lineage reachability ≠ cause ≠ confirmed Impact;
 - Change ≠ degradation ≠ cause;
@@ -89,6 +104,10 @@ Review order was a design dependency, not an implementation dependency. Concepts
 - Investigation ≠ evidence/causal truth;
 - Causal Claim ≠ confirmed cause;
 - Impact candidate ≠ exposure ≠ downstream effect ≠ business consequence;
+- Propagation Safeguard ≠ health or causal truth;
+- safeguard proposal ≠ active safeguard;
+- quarantine ≠ proof of defect;
+- release ≠ proof of health;
 - Annotation ≠ Observation/Change Intent/Expectation/causal confirmation;
 - Explanation ≠ independent truth source.
 
@@ -126,39 +145,22 @@ Review order was a design dependency, not an implementation dependency. Concepts
 
 **Pass.** A planned filter can prospectively revise an Expectation and register a Baseline comparability break without manufacturing empirical history. Valid intended volume change can coexist with an unintended quality violation and competing causal explanations.
 
-## Phase 002 exit review
+### Addendum scenario — Protective hold/quarantine
 
-The Phase 002 exit gate is **satisfied**:
+**Pass after addendum.** A suspect or missing output can be protected at an explicit propagation boundary without rewriting the underlying Observation/Assessment or claiming defect/cause. The protected interval, authority, enforcement evidence, release, and any safeguard-induced delay remain historical facts.
 
-- every retained concept has a reviewed specification with a singular purpose;
-- renamed, split, and introduced concepts have rationale recorded;
-- state/actions are expressed independently of implementation architecture;
-- missing, conflicting, stale/non-comparable, unauthorized, unavailable, and insufficient evidence behavior is explicit where applicable;
-- security, provenance, effective/event time, and knowledge-time implications are explicit;
-- the concept catalog and glossary are aligned with reviewed specifications;
-- required Phase 003 synchronization chains are identifiable;
-- no accepted concept depends semantically on DQX, Metric Views, Collibra, Immuta, GitHub Actions, a graph database, ledger/event store, or another selected technical architecture;
-- all canonical/adversarial scenarios can be described without hidden functionality or causal overclaim.
+## Phase 002 exit review and later boundary correction
 
-## Key synchronization chains for Phase 003
+D-030 records that the original Phase 002 exit gate was satisfied with 20 concepts. That decision remains historically correct. Phase 003 later uncovered a new requirement that could not be expressed without overloading an accepted concept, so the catalog was explicitly extended rather than silently modifying ownership boundaries.
 
-Phase 003 should now define synchronization behavior in detail, including at least:
+The current model still satisfies the original exit principles:
 
-1. Entity Identity + Monitoring Scope → eligible monitored subjects without authorization conflation.
-2. Classification + Policy Context + authorization view → safe policy-sensitive reasoning.
-3. Change Intent → prospective Expectation review and/or prospective Baseline comparability break.
-4. Change Intent → Deployment activation → Execution History → Observation/realized Change.
-5. Observation + Expectation/Baseline → basis-explicit Assessment.
-6. Assessment/Change/question → Investigation.
-7. Investigation + Lineage/Execution/Deployment/Change Intent/Change/Observation/Assessment → evidence discovery.
-8. Investigation + evidence → Causal Claim support/contradiction/status evolution.
-9. Lineage → Impact candidates; execution/consumption/evidence → exposure/effect/consequence refinement.
-10. Annotation + structured concepts → human context without truth mutation.
-11. all authorized concept state → time-aware Explanation with statement-to-basis traceability.
-12. ledger-like history across the synchronization chain → contemporaneous versus retrospective reconstruction.
+- every retained concept has a singular purpose and reviewed specification;
+- boundary changes/addenda have rationale recorded;
+- state/actions remain implementation-independent;
+- ambiguity, evidence, security, and temporal behavior remain explicit;
+- no concept depends semantically on DQX, Metric Views, Collibra, Immuta, GitHub Actions, graph database, event store, quarantine mechanism, or selected architecture.
 
-## Next phase
+## Current synchronization direction
 
-The next planned phase is **Phase 003 — Concept Synchronizations and Ecosystem Scenarios**.
-
-Phase 003 is **not started by this document**. It should begin only when explicitly requested, using the accepted Phase 002 concept specifications as its functional source of truth.
+Phase 003 composes all 21 concepts. Groups 01–03 are accepted, including prospective blast-radius review, execution-duration/dependency health, analyst Investigation handoff, and Propagation Safeguard. See [`../phase_003/README.md`](../phase_003/README.md).

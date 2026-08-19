@@ -1,87 +1,85 @@
 # Phase 003 — Concept Synchronizations and Ecosystem Scenarios
 
-**Status:** Active — Groups 01–02 accepted; Group 03 next
+**Status:** Active — Groups 01–03 accepted; Group 04 next
 
 ## Purpose
 
-Phase 003 defines how the 20 accepted Phase 002 concepts coordinate to satisfy end-to-end ecosystem behavior without collapsing their independent truth boundaries or mapping synchronization chains to implementation architecture.
+Phase 003 defines how the **21 accepted concepts** coordinate to satisfy end-to-end ecosystem behavior without collapsing independent truth boundaries or mapping synchronization chains to implementation architecture.
 
-A synchronization describes **when concept actions/results coordinate**, what information passes between them, which ordering constraints are semantically necessary, and how ambiguity/failure/provenance/time/security behavior propagates. A synchronization is not automatically a workflow engine, service, transaction, event bus, database relationship, API call, or orchestration technology.
+The original Phase 002 exit had 20 concepts. Phase 003 Group 03 exposed one missing independent behavior—protective hold/quarantine/release—and Phase 002 was narrowly reopened through the accepted Propagation Safeguard addendum.
+
+A synchronization describes when concept actions/results coordinate, what information passes between them, necessary semantic ordering, and how ambiguity/failure/provenance/time/security behavior propagates. It is not automatically a workflow engine, service, transaction, event bus, database relationship, API call, or orchestration technology.
 
 ## Phase method
 
-Every synchronization specification must identify:
-
-1. user/ecosystem outcome;
-2. participating accepted concepts/actions;
-3. trigger or initiating condition without implying causation;
-4. semantic preconditions;
-5. coordination sequence or partial ordering where order matters;
-6. state/evidence effects owned by each participating concept;
-7. ambiguity, conflict, unavailable, unauthorized, stale/non-comparable, and insufficient-evidence behavior where relevant;
-8. effective/event-time and recorded/knowledge-time behavior where material;
-9. provenance and evidence traceability;
-10. security/authorization constraints;
-11. invariants preventing one concept from stealing another concept's purpose;
-12. scenario tests and non-goals.
-
-Use [`synchronization_template.md`](synchronization_template.md).
+Every synchronization specification identifies outcome, participating concepts/actions, initiating condition, semantic preconditions, coordination/partial ordering, state/evidence ownership, ambiguity propagation, time semantics, provenance, authorization, invariants, scenarios, non-goals, and deferred questions. Use [`synchronization_template.md`](synchronization_template.md).
 
 ## Strategic groups
 
 | Group | Theme | Primary synchronization focus | Status |
 |---|---|---|---|
-| 01 | Subject, Scope & Governance Context | Entity Identity → Monitoring Scope and independently resolved semantic/responsibility/classification/policy context | **Accepted** |
-| 02 | Planned Change & Reference Transition | Change Intent → prospective Expectation/Baseline preparation → Deployment realization association → evidence-backed reference transition → empirical post-change Baseline | **Accepted** |
-| 03 | Runtime Evidence, Health & Realized Change | Deployment activation → Execution History → Observation → Assessment / realized Change using the correct time-valid reference context | **Next** |
-| 04 | Lineage, Investigation & Causal Reasoning | Assessment/Change/question → Investigation; historical Lineage/evidence → competing Causal Claims | Planned |
-| 05 | Downstream Impact, Annotation & Explanation | Lineage → Impact candidate/exposure/effect/consequence; Annotation/context → authorization-aware Explanation | Planned |
-| 06 | Historical Replay & Phase 003 Consolidation | Whole-ecosystem scenario composition; contemporaneous vs retrospective reconstruction; exit review | Planned |
+| 01 | Subject, Scope & Governance Context | Entity Identity → Monitoring Scope and independent governance-context resolution | **Accepted** |
+| 02 | Planned Change & Reference Transition | Change Intent → prospective references / prospective Impact → Deployment realization → reference transition → empirical Baseline | **Accepted** |
+| 03 | Runtime Evidence, Health & Realized Change | Deployment/Execution → timing/dependency Observations → time-valid Assessment / Change → analyst handoff / Propagation Safeguard | **Accepted** |
+| 04 | Lineage, Investigation & Causal Reasoning | Investigation scope → historical Lineage/evidence discovery → competing Causal Claims | **Next** |
+| 05 | Downstream Impact, Annotation & Explanation | Impact reachability/exposure/effect/consequence; Annotation/context → authorized Explanation | Planned |
+| 06 | Historical Replay & Phase 003 Consolidation | Whole-system composition; contemporaneous vs retrospective reconstruction; exit review | Planned |
 
-The order is a **reasoning dependency**, not an implementation dependency.
+The order is a reasoning dependency, not an implementation dependency.
 
-## Accepted Group 02 synchronization results
+## Accepted Group 02 results
 
-- **SYN-004:** Change Intent can independently prompt explicit prospective Expectation establishment/revision and/or register a prospective Baseline comparability break. Anticipated effects become neither normative criteria nor empirical values automatically.
-- **SYN-005:** Change Intent ↔ Deployment association requires provenance-bearing linkage evidence and remains distinct from Deployment attempt, activation, intended-effect realization, health, and causation.
-- **SYN-006:** reference applicability transitions only when sufficient evidence establishes the changed operating context for the relevant target/dimension/context. Workflow success or planned time alone is insufficient. Baseline non-comparability is interval/context scoped; rollback requires fresh comparability/applicability resolution rather than blind restoration.
-- **SYN-007:** a new Baseline is derived from sufficient comparable post-transition Observations. An explicit Expectation may support immediate normative evaluation while the new Baseline remains unavailable.
+- **SYN-004:** Change Intent can independently prepare explicit prospective Expectation review and/or Baseline comparability break.
+- **SYN-005:** intent ↔ Deployment association requires provenance-bearing linkage and is not realization/health/cause.
+- **SYN-006:** reference context transitions only from sufficient evidence for the relevant operating context.
+- **SYN-007:** post-transition Baselines are empirical; Expectation can support immediate validation first.
+- **SYN-008:** Change Intent + Lineage can produce a **Prospective Impact Profile** of downstream candidates/risk context without claiming actual exposure/effect/consequence or quantified probability.
+
+## Accepted Group 03 results
+
+- **SYN-009:** executions associate with the active Deployment only where time/target evidence supports the mapping.
+- **SYN-010:** start/completion/duration/queue and other operational timing become Observations before health interpretation.
+- **SYN-011:** operational dependency timing can be assessed for readiness/latency while remaining separate from freshness, consumed-version proof, and cause.
+- **SYN-012:** runtime Observations resolve against the correct time-valid Expectation/Baseline context; ordinary variation is not automatically anomalous or actionable.
+- **SYN-013:** meaningful runtime/data differences may become realized Change; every numeric difference does not.
+- **SYN-014:** analysts may open Investigation from material or uncertain Assessments; automatic initiation requires explicit later-accepted response criteria.
+- **SYN-015:** Propagation Safeguard can protect downstream consumption proactively/reactively under explicit authority while remaining separate from Assessment/Investigation truth.
 
 ## Cross-cutting synchronization rules
 
-- Accepted Phase 002 concepts remain the owners of their own state and truth semantics.
-- Synchronization does not manufacture a new umbrella concept or canonical state unless a genuine concept-boundary flaw is explicitly reopened.
-- Synchronization order is never source authority.
-- A trigger means coordination should be considered; it does not imply causation.
-- One concept's `unknown`, `conflicting`, `unauthorized`, `unavailable`, `insufficient evidence`, or `non-comparable` result must not be converted into a guessed value merely so a chain can continue.
-- Partial progress is valid: independently resolvable facts should remain usable when another synchronization branch is unavailable.
-- Scope does not grant authorization; authorization does not imply Monitoring Scope.
-- Graph traversal does not create Causal Claim or confirmed Impact.
-- Change Intent does not create Observation, realized Change, Expectation, or Baseline values.
-- Planned reference preparation does not equal realized reference transition.
+- Concepts own their own state/truth; synchronization does not manufacture umbrella state.
+- Synchronization order is never authority; trigger is never causation.
+- Unknown/conflicting/unauthorized/unavailable/insufficient/non-comparable results remain first-class.
+- Partial progress is valid; one unresolved branch does not erase another.
+- Change Intent does not create Observation, realized Change, Expectation, Baseline, or actual Impact.
+- Prospective Impact ≠ actual exposure/effect/consequence.
+- Planned reference preparation ≠ realized transition.
 - Deployment attempt/association/activation/intended-effect realization remain separate.
-- Reference transitions resolve per subject/target/dimension/context; development/canary/partial rollout does not globally switch unrelated references.
-- Old Baselines are not deleted by structural transition; their comparability becomes context/time specific.
-- Rollback does not automatically resurrect prior Baseline/Expectation applicability.
-- Ledger-like history applies across synchronization results: material corrections/supersessions preserve prior knowledge.
-- Where material, effective/event time and recorded/knowledge time remain distinct through the chain.
-- No synchronization requires DQX, Metric Views, Collibra, Immuta, GitHub Actions, a graph database, event store, message bus, workflow engine, LLM, or selected technical architecture.
+- Execution success ≠ timely execution ≠ freshness ≠ data quality.
+- Run duration and dependency latency are first-class operational health dimensions.
+- Missing telemetry ≠ missing run/output; absence requires sufficient coverage.
+- Raw difference ≠ material Change; atypicality ≠ normative violation; violation ≠ cause.
+- Baseline atypicality alone does not mandate Investigation or quarantine.
+- Analyst research through Investigation remains first-class when evidence is insufficient or significance warrants review.
+- Propagation Safeguard proposal ≠ active safeguard; active quarantine ≠ proof of defect; release ≠ proof of health.
+- Safeguard placement is subject/output/boundary/context specific and can itself create measurable delivery delay.
+- Graph traversal does not create cause or confirmed Impact.
+- Ledger-like correction/supersession semantics and event-time vs knowledge-time distinctions persist through every chain.
+- No synchronization requires DQX, Metric Views, Collibra, Immuta, GitHub Actions, graph database, event store, message bus, workflow engine, LLM, quarantine implementation, or selected technical architecture.
 
 ## Required ecosystem scenarios
 
-Every group should test relevant portions of these scenarios; Group 06 must compose them end to end.
-
 ### E-01 — A+B→C unplanned degradation
-C drops materially. A, B, join behavior, multiple contributors, or unresolved causes remain possible.
+C drops materially; A/B/join/multiple contributors/unresolved remain possible.
 
 ### E-02 — Planned structural change with valid outcome
-A registered filter intentionally changes C's population; prospective Expectation/Baseline handling prevents false degradation while empirical history remains honest.
+Planned filter changes C population with correct prospective reference handling.
 
 ### E-03 — Planned change with unintended violation
-The intended volume shift occurs, while another independent quality dimension fails.
+Intended volume shift occurs while another quality dimension fails.
 
 ### E-04 — Unregistered change
-A source/configuration/topology change occurs without Change Intent; monitoring remains useful and explicitly lacks planned context.
+Change occurs without Change Intent; monitoring lacks planned context but remains useful.
 
 ### E-05 — Stale upstream with successful downstream execution
 Execution success and freshness/quality truth remain independent.
@@ -90,30 +88,36 @@ Execution success and freshness/quality truth remain independent.
 Activation timing supports inquiry but never silently becomes cause.
 
 ### E-07 — Cross-repository dependency
-Identity, Lineage, evidence, and responsibility cross repository boundaries while provenance remains visible.
+Identity, Lineage, evidence, responsibility cross repositories with provenance.
 
 ### E-08 — Conflicting governance / expectation context
-Conflicting assertions remain conflict until explicit authority semantics resolve them.
+Conflicts remain until explicit authority semantics resolve them.
 
 ### E-09 — Restricted upstream/downstream context
-Opaque/redacted context permits useful reasoning without broadening authorization.
+Opaque/redacted context permits useful reasoning without wider authorization.
 
 ### E-10 — Historical correction
-Late evidence changes a retrospective conclusion while preserving what was known and explained at the incident time.
+Late evidence changes retrospective conclusion while preserving contemporaneous knowledge.
+
+### E-11 — Long-running upstream threatens delivery
+Execution succeeds but duration/completion timing violates operational expectations and threatens downstream readiness.
+
+### E-12 — Missing output and protective hold
+Sufficient absence evidence establishes no qualifying output; downstream advancement may be safeguarded without inventing a quarantined object.
+
+### E-13 — Ordinary variation needs no intervention
+Small changes remain within Baseline/reference behavior and do not automatically produce Change/Investigation noise.
+
+### E-14 — Material atypicality with analyst research
+A client-critical result is materially atypical without a normative volume criterion; an analyst can investigate without mislabeling the comparative result as failure.
+
+### E-15 — Safeguard creates delivery delay
+Protective quarantine is correct while separately causing measurable downstream latency/non-delivery risk.
 
 ## Phase 003 exit gate
 
-Phase 003 is complete when:
-
-- all retained synchronization chains have explicit contracts;
-- group scenarios compose without hidden state ownership or architecture assumptions;
-- ambiguity/failure propagation is defined rather than replaced with default certainty;
-- planned change, health, causality, impact, and explanation remain semantically distinct through end-to-end flows;
-- historical replay can distinguish event/effective time from knowledge time across the composed chain;
-- authorization-sensitive paths remain useful without leaking restricted data/metadata;
-- required Phase 004 evidence/time/causality refinements are identifiable;
-- and the canonical ecosystem scenarios can be walked from initiating condition to explanation using only accepted concepts and accepted synchronizations.
+Phase 003 is complete when all retained synchronization chains have explicit contracts; group scenarios compose without hidden state/architecture; planned change, runtime timing, health, safeguard, causality, Impact, and Explanation remain distinct; ambiguity and authorization are explicit; historical replay works across event/knowledge time; and the ecosystem scenarios can be walked end-to-end using accepted concepts/synchronizations.
 
 ## Current review state
 
-**Groups 01–02 are accepted. Group 03 — Runtime Evidence, Health & Realized Change is next.**
+**Groups 01–03 are accepted. Group 04 — Lineage, Investigation & Causal Reasoning is next.**

@@ -1,5 +1,5 @@
 ---
-description: Evidence, temporal reasoning, planned change, lineage, health, causality, impact, and explanation invariants.
+description: Evidence, timing, planned change, lineage, health, safeguards, causality, impact, and explanation invariants.
 globs:
 alwaysApply: true
 ---
@@ -9,53 +9,49 @@ alwaysApply: true
 Preserve:
 
 - Change Intent ≠ Deployment ≠ realized Change;
+- prospective Impact ≠ actual Impact;
+- planned topology ≠ active Lineage;
 - anticipated effect ≠ normative Expectation;
-- Deployment attempt ≠ intent association ≠ activation ≠ intended effect realized;
-- Expectation ≠ Baseline;
 - planned value ≠ empirical Baseline;
-- prospective reference preparation ≠ realized reference transition;
+- prospective reference preparation ≠ realized transition;
+- Deployment attempt ≠ intent association ≠ activation ≠ intended effect realized;
+- successful execution ≠ timely execution ≠ freshness ≠ data quality;
+- execution-duration Observation ≠ duration violation;
 - Observation ≠ Assessment;
 - missing evidence ≠ observed absence;
+- raw difference ≠ material Change;
 - typical ≠ healthy;
-- atypical ≠ degraded/defective;
-- successful execution ≠ freshness ≠ data quality;
-- planned topology ≠ active Lineage;
-- Lineage reachability ≠ cause ≠ confirmed Impact;
-- Change ≠ degradation ≠ cause;
+- atypical ≠ degraded/defective ≠ mandatory intervention;
 - Investigation ≠ source evidence/causal truth;
 - Causal Claim ≠ confirmed cause;
 - Impact candidate ≠ exposure ≠ downstream effect ≠ business consequence;
-- Annotation ≠ Observation/Change Intent/Expectation/causal confirmation;
-- Explanation ≠ independent truth source;
+- safeguard proposal ≠ active safeguard;
+- quarantine ≠ proof of defect;
+- release ≠ proof of health;
 - effective/event time ≠ recorded/knowledge time;
 - correlation ≠ attribution ≠ confirmed cause.
 
 Rules:
 
-- Time/history is first-class and uses ledger-like append/supersede/correction semantics for material state.
+- Time/history is first-class with ledger-like append/supersede/correction semantics.
 - Material conclusions remain traceable to provenance-bearing evidence.
-- Change Intent may independently trigger prospective Expectation review and a prospective Baseline comparability break.
-- Planned anticipated behavior becomes normative only through explicit Expectation establishment/revision.
-- Intended values never become Baseline evidence.
-- Intent-to-Deployment association requires provenance-bearing linkage evidence; temporal proximity alone is insufficient.
-- Workflow success/planned time cannot by themselves activate reference transition.
+- Change Intent may prepare prospective references and prospective blast-radius context without manufacturing norms, Baselines, actual Impact, or cause.
+- Intent-to-Deployment association requires evidence; temporal proximity is insufficient.
 - Reference transition requires sufficient realization evidence for the relevant subject/dimension/context.
-- Baseline non-comparability is context/time scoped; structural transitions do not delete historical Baselines.
-- Rollback/restoration requires comparability/applicability re-resolution and cannot blindly revive earlier references.
-- Partial/canary/environment transitions stay scoped to the affected context.
 - Post-transition Baseline requires sufficient comparable post-transition Observations.
-- An applicable Expectation can support immediate post-change Assessment before the new Baseline exists.
-- Missing telemetry never becomes zero/no-event.
-- Assessments retain exact Observation and Expectation/Baseline versions/basis.
-- Health dimensions stay separate unless an explicit aggregation rule exists.
-- Lineage is typed, temporal, historical, authorization-aware, and graph-compatible.
-- Investigation may organize evidence but cannot promote a causal claim merely to close the inquiry.
-- Preserve supporting and contradicting evidence on every material Causal Claim.
-- Never infer cause from Deployment timing, Lineage, realized Change, intent consistency, or absence of competing evidence alone.
-- Multiple contributing causes and unresolved outcomes are valid.
-- `confirmed` requires an explicit accepted evidence/authority standard.
-- Downstream traversal yields Impact candidates only; independently evaluate exposure, downstream state/effect, and business consequence.
-- Human Annotation remains human-authored context; structured truths belong to their owning concepts.
-- Explanation is an authorized, time-aware projection over concept state with material statement-to-basis traceability.
-- Distinguish contemporaneous knowledge from retrospective knowledge when later evidence changes intent/activation/reference interpretation.
-- Do not select graph database, event store, blockchain, persistence architecture, LLM, or causal algorithm merely because the semantics are graph/ledger/explanation-friendly.
+- Treat execution start/completion/duration/queue/dependency-latency facts as Observations before Assessment.
+- Missing timestamps/telemetry never become zero duration or missing run/output.
+- Assess runtime/data evidence against the correct time-valid Expectation/Baseline.
+- Ordinary variation within a Baseline must not become alert noise simply because values differ.
+- Baseline atypicality is descriptive; normative violation requires Expectation.
+- Analysts may investigate uncertain/material results; automatic Investigation requires explicit accepted response criteria.
+- Propagation Safeguard is separate from health and cause; `propose` is not `active`.
+- Activation requires explicit authority/enforcement evidence; quarantine can be precautionary.
+- If no output exists, hold downstream advancement rather than inventing a quarantined object.
+- Safeguard-induced delay remains valid operational evidence.
+- Lineage remains typed, temporal, historical, authorization-aware, graph-compatible.
+- Never infer cause from Deployment timing, Lineage, realized Change, safeguard state, or intent consistency alone.
+- Multiple contributors/unresolved outcomes are valid; confirmed cause requires explicit accepted standard.
+- Downstream traversal yields candidates; actual exposure/effect/consequence require separate evidence.
+- Distinguish contemporaneous from retrospective knowledge when later evidence changes interpretation.
+- Do not select graph database, event store, quarantine store, persistence architecture, LLM, or causal algorithm from these semantics alone.

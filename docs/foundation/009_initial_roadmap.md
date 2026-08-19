@@ -10,28 +10,30 @@ Established product purpose, actors, terminology, Concept Design method, archite
 
 ## Phase 002 — Concept Specifications
 
-**Status:** **Complete.**
+**Status:** **Complete with one accepted post-exit addendum.**
 
-All five groups and 20 retained concepts are accepted. Key outcomes include ledger-like historical semantics, graph-compatible typed temporal Lineage, planned-change/Baseline boundaries, explicit Causal Claim semantics, Impact layering, and authorization/time-aware Explanation.
+The original five groups accepted 20 concepts. Phase 003 Group 03 later exposed a missing protective-control boundary, so **Propagation Safeguard** was accepted as a narrow post-exit addendum. The current catalog contains 21 concepts.
+
+Key outcomes include ledger-like historical semantics, graph-compatible typed temporal Lineage, planned-change/Baseline boundaries, explicit Causal Claim semantics, Impact layering, authorization/time-aware Explanation, and now separate propagation-protection state.
 
 See `../concepts/phase_002/README.md`.
 
 ## Phase 003 — Concept Synchronizations and Ecosystem Scenarios
 
-**Status:** **Active — Groups 01–02 accepted; Group 03 next.**
+**Status:** **Active — Groups 01–03 accepted; Group 04 next.**
 
 **Goal:** define how independent accepted concepts synchronize to satisfy end-to-end behavior while preserving each concept's truth boundary.
 
 Formal review groups:
 
 1. **Subject, Scope & Governance Context** — **Accepted**. Entity Identity → Monitoring Scope and independent semantic/responsibility/classification/policy resolution; Classification may support explicit Policy Context applicability without manufacturing policy.
-2. **Planned Change & Reference Transition** — **Accepted**. Change Intent → independent prospective Expectation/Baseline preparation; evidence-backed association to Deployment realization; target/context-specific reference transition; empirical post-transition Baseline derivation. Planned time/workflow success never substitutes for realization evidence, and rollback requires reference re-resolution.
-3. **Runtime Evidence, Health & Realized Change** — **Next**. Deployment activation → Execution History → Observation → Assessment and realized Change, resolving the correct time-valid Expectation/Baseline context from Group 02.
-4. **Lineage, Investigation & Causal Reasoning** — Planned. Assessment/Change/question → Investigation; historical Lineage/evidence → competing Causal Claims.
+2. **Planned Change & Reference Transition** — **Accepted**. Change Intent → independent prospective Expectation/Baseline preparation; evidence-backed Deployment association/transition; empirical post-transition Baseline; prospective downstream blast-radius profile without actual Impact claims.
+3. **Runtime Evidence, Health & Realized Change** — **Accepted**. Active Deployment ↔ Execution History; execution-duration/dependency timing Observations; time-valid Assessment; meaningful realized Change; analyst Investigation handoff; Propagation Safeguard coordination.
+4. **Lineage, Investigation & Causal Reasoning** — **Next**. Bounded Investigation → historical Lineage/evidence discovery → competing Causal Claims, including timing/safeguard evidence and analyst-added context.
 5. **Downstream Impact, Annotation & Explanation** — Planned. Lineage → Impact candidates/exposure/effect/consequence; Annotation/context → authorized Explanation.
 6. **Historical Replay & Phase 003 Consolidation** — Planned. Full ecosystem scenario composition, contemporaneous/retrospective reconstruction, and exit review.
 
-Priority scenarios include stale upstream with successful downstream execution; A+B→C degradation; planned structural change with valid outcome; planned change with unintended violation; unregistered change; Deployment-correlated shifts; cross-repository dependencies; conflicting governance/Expectation metadata; restricted context; downstream reachability versus actual exposure/consequence; and late historical correction.
+Priority scenarios include stale upstream with successful downstream execution; A+B→C degradation; planned structural change with valid outcome; planned change with unintended violation; prospective blast radius; unregistered change; deployment-correlated shifts; cross-repository dependencies; conflicting governance/Expectation metadata; restricted context; long-running upstream delay; missing output with protective hold; ordinary Baseline variation without intervention; client-critical atypicality with analyst research; safeguard-induced delivery delay; downstream reachability versus actual exposure/consequence; and late historical correction.
 
 See `../concepts/phase_003/README.md`.
 
@@ -43,17 +45,17 @@ Refine evidence sufficiency/completeness; event/effective versus knowledge-time 
 
 ## Phase 005 — Governance, Authority, Semantics, and Policy Refinement
 
-**Goal:** refine source authority, conflict resolution, stewardship, criticality, Classification, Policy Context, PII/PHI/HIPAA-related transparency, expectation authority, and policy-sensitive disclosure.
+**Goal:** refine source authority, conflict resolution, stewardship, criticality, Classification, Policy Context, PII/PHI/HIPAA-related transparency, expectation authority, policy-sensitive disclosure, safeguard authority, and whether repeated response/urgency behavior warrants its own normative concept.
 
 Evaluate what must be native versus sourced from Collibra/Immuta/Unity Catalog or other authorities.
 
 ## Phase 006 — Health, Freshness, and Quality Refinement
 
-**Goal:** refine expectation dimensions, Baseline classes/comparability, Assessment vocabularies, observed-absence coverage semantics, quality checks, and how Databricks Metric Views/DQX could realize accepted concepts.
+**Goal:** refine expectation dimensions, Baseline classes/comparability, Assessment vocabularies, observed-absence coverage semantics, execution-duration/latency dimensions, statistical uncertainty/significance, quality checks, and how Databricks Metric Views/DQX could realize accepted concepts.
 
-## Phase 007 — Lineage, Change, Investigation, and Impact Refinement
+## Phase 007 — Lineage, Change, Investigation, Impact, and Safeguard Refinement
 
-**Goal:** refine Lineage type taxonomy, historical topology evidence, Change Intent realization, execution reconstruction, Causal Claim discovery/review, multiple contributors, and downstream exposure/consequence evidence.
+**Goal:** refine Lineage type taxonomy, historical topology evidence, Change Intent realization, execution reconstruction, prospective/actual Impact, Causal Claim discovery/review, multiple contributors, downstream exposure/consequence evidence, and safeguard placement/authority/effect evidence.
 
 ## Phase 008 — Business Questioning and Explanation
 
@@ -61,13 +63,13 @@ Evaluate what must be native versus sourced from Collibra/Immuta/Unity Catalog o
 
 ## Phase 009 — Integration Contracts and Source Authority
 
-**Goal:** determine required facts and source authority for Databricks, Git repositories, GitHub Actions, DQX, Metric Views, Collibra, Immuta, downstream analytical metadata, and planned-change sources.
+**Goal:** determine required facts and source authority for Databricks, Git repositories, GitHub Actions, DQX, Metric Views, Collibra, Immuta, downstream analytical metadata, planned-change sources, and safeguard enforcement evidence.
 
 ## Phase 010 — Technical Architecture
 
 **Goal:** only now select implementation architecture based on validated product concepts/constraints.
 
-Evaluate historical/evidence storage; graph-compatible Lineage realization; ledger/temporal history realization; ingestion/synchronization patterns; service/API boundaries; identity/authorization architecture; Databricks deployment model; Explanation/question interface; batch/event-driven behavior; tenancy/environment strategy; and testing/observability.
+Evaluate historical/evidence storage; graph-compatible Lineage realization; ledger/temporal history realization; ingestion/synchronization patterns; service/API boundaries; identity/authorization architecture; Databricks deployment model; safeguard/quarantine realization; Explanation/question interface; batch/event-driven behavior; tenancy/environment strategy; and testing/observability.
 
 ## Phase 011 — MVP Implementation Planning
 

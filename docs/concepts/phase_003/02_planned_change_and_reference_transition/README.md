@@ -1,10 +1,10 @@
 # Group 02 — Planned Change & Reference Transition
 
-**Status:** Review complete — synchronizations accepted
+**Status:** Review complete — synchronizations accepted; prospective Impact addendum accepted during Group 03 review
 
 ## Goal
 
-Define how registered Change Intent prepares future Expectation/Baseline context, how intent is associated with Deployment realization evidence, how an actual operating-context transition changes reference applicability, and how post-transition evidence eventually establishes a new empirical Baseline — without allowing the plan to manufacture facts, norms, history, or health conclusions.
+Define how registered Change Intent prepares future Expectation/Baseline context, how intent is associated with Deployment realization evidence, how an actual operating-context transition changes reference applicability, how post-transition evidence eventually establishes a new empirical Baseline, and how planned change can be reviewed prospectively for downstream blast radius — without allowing the plan to manufacture facts, norms, history, actual Impact, or health conclusions.
 
 ## Accepted synchronizations
 
@@ -12,6 +12,7 @@ Define how registered Change Intent prepares future Expectation/Baseline context
 - [`SYN-005 — Change Intent ↔ Deployment Realization Association`](005_intent_deployment_realization_association.md)
 - [`SYN-006 — Realization Evidence → Reference Transition`](006_realization_reference_transition.md)
 - [`SYN-007 — Post-Transition Observation → Baseline Establishment`](007_post_transition_baseline_establishment.md)
+- [`SYN-008 — Change Intent + Lineage → Prospective Impact Profile`](008_change_intent_prospective_impact_profile.md)
 
 ## Boundary decisions
 
@@ -69,6 +70,12 @@ Development activation, canary rollout, regional deployment, partial population 
 
 A Change Intent or activation association recorded after the event can enrich retrospective reasoning while preserving its later recorded/knowledge time. Historical contemporaneous reconstruction must still show that the monitoring ecosystem did not know that planned/activation context earlier.
 
+### 11. Prospective blast radius is not actual Impact
+
+A Change Intent may be combined with current Lineage and planned-only topology context to identify plausible downstream candidates before activation. Authorized criticality, Semantic Definition, Responsibility Assignment, Classification, Policy Context, and path-completeness context may enrich that profile.
+
+The result remains **prospective**: it does not establish that a candidate will actually consume the changed state, that a downstream condition will change, that a business consequence will occur, or that the change will cause harm. No quantitative probability/severity score is invented without a later accepted model.
+
 ## Scenario review
 
 ### E-02 — Planned structural change with valid outcome
@@ -91,6 +98,10 @@ Pass. Intent association and activation establish chronology/reference context w
 
 Pass. Late activation evidence can retrospectively establish that a reference boundary occurred earlier and can produce later reassessment/reference interpretation while preserving the Baseline/Expectation context the product actually used at incident knowledge time.
 
+### Prospective blast-radius review
+
+Pass. A planned change to A traverses current downstream Lineage to C and client-facing consumers. A proposed new A→D relationship remains planned-only rather than active Lineage. Restricted or incomplete downstream paths remain explicit. The profile can inform review/testing/safeguard consideration without being labeled actual Impact.
+
 ## Additional adversarial scenarios
 
 ### Intent withdrawn before activation
@@ -111,6 +122,9 @@ The changed-context interval ends. Prior Baseline/Expectation versions may becom
 ### Late intent registration
 A team registers after the incident that the change had been planned. Retrospective reasoning can use the intent with its true registration time; contemporaneous explanation still reports that planned context was not known then.
 
+### Incomplete downstream topology
+The prospective profile returns a known candidate set plus an explicit completeness limitation. Missing Lineage never becomes `no blast radius`.
+
 ## Deferred questions
 
 - minimum authority/evidence required for an intent to register a prospective Baseline break;
@@ -118,10 +132,11 @@ A team registers after the incident that the change had been planned. Retrospect
 - exact evidence threshold for declaring a structural operating-context transition by change type;
 - representation of partial/cohort/percentage rollout contexts;
 - when prior Baselines may be reused after rollback versus requiring refreshed derivation;
-- whether intent-to-realization conformance later needs explicit product semantics beyond Investigation/Assessment context.
+- whether intent-to-realization conformance later needs explicit product semantics beyond Investigation/Assessment context;
+- whether qualitative risk tiers, quantitative risk scoring, mandatory test plans, or mandatory pre-deployment review deserve later product semantics.
 
 ## Group exit gate
 
-**Satisfied.** Planned context can prepare future normative/descriptive references; Deployment/Change evidence can establish a target-specific transition without causal overclaim; failed/withdrawn/unregistered/rollback/late-evidence paths remain honest; and empirical post-change history is never manufactured from intent.
+**Satisfied.** Planned context can prepare future normative/descriptive references and prospective downstream review; Deployment/Change evidence can establish a target-specific transition without causal overclaim; failed/withdrawn/unregistered/rollback/late-evidence paths remain honest; actual downstream Impact remains separate; and empirical post-change history is never manufactured from intent.
 
-The next group is **Group 03 — Runtime Evidence, Health & Realized Change**.
+Group 03 — Runtime Evidence, Health & Realized Change is now accepted; Group 04 is next.

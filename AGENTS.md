@@ -2,28 +2,27 @@
 
 ## Project status
 
-**Phase 002 — Concept Specifications is complete.** All five groups and 20 retained concepts are accepted.
+**Phase 002 concept specification is complete with a post-exit addendum.** The original five groups accepted 20 concepts; Phase 003 Group 03 accepted **Propagation Safeguard** as the 21st concept through a narrow documented boundary reopen.
 
-**Phase 003 — Concept Synchronizations and Ecosystem Scenarios is active.** Groups 01–02 are accepted; Group 03 — Runtime Evidence, Health & Realized Change is next.
+**Phase 003 — Concept Synchronizations and Ecosystem Scenarios is active. Groups 01–03 are accepted; Group 04 — Lineage, Investigation & Causal Reasoning is next.**
 
-Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, services, deployment workflows, prototypes, or implementation scaffolding unless the user explicitly advances the project into technical/implementation design.
+Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, services, deployment workflows, quarantine implementations, prototypes, or implementation scaffolding unless the user explicitly advances the project into technical/implementation design.
 
 Treat this repository as a standalone data-pipeline monitoring/quality product. `docs/` is the design system of record.
 
 ## Read before changes
 
-Read `README.md`, `docs/README.md`, relevant foundation docs, `docs/reference/glossary.md`, `docs/decisions/README.md`, accepted Phase 002 concept specifications, `docs/concepts/phase_003/README.md`, the synchronization template, and the active Phase 003 group.
+Read `README.md`, `docs/README.md`, relevant foundation docs, `docs/reference/glossary.md`, decision records, accepted Phase 002 concepts/addenda, `docs/concepts/phase_003/README.md`, the synchronization template, and the active Phase 003 group.
 
 ## Concept Design and synchronization discipline
 
 - Start from actor/ecosystem outcome, not vendor/tool/storage shape.
 - Preserve accepted concept ownership/state boundaries.
-- A synchronization coordinates accepted concept actions/results; it is not automatically a service call, workflow, transaction, message/event, database relationship, or API.
-- Prefer partial ordering/independent branches where semantics allow it; do not manufacture total ordering.
-- Synchronization order is never source authority.
-- A trigger means coordination should be considered; it does not imply causation.
-- Do not create umbrella state merely to make synchronization convenient.
-- Preserve the accepted 20-concept catalog unless later evidence justifies an explicit reopen/revision.
+- A synchronization is not automatically a service call, workflow, transaction, event, database relation, or API.
+- Prefer partial ordering/independent branches where semantics allow it.
+- Synchronization order is never authority; a trigger is never causation.
+- Do not create umbrella state for convenience.
+- The current catalog has 21 accepted concepts. Reopen earlier boundaries only explicitly with rationale, as done for Propagation Safeguard.
 
 ## Product invariants
 
@@ -33,73 +32,73 @@ Preserve:
 - logical pipeline ≠ Databricks job;
 - Entity Identity ≠ source name/reference;
 - Monitoring Scope ≠ ecosystem existence ≠ authorization;
-- Semantic Definition ≠ Responsibility Assignment;
 - Classification ≠ Policy Context ≠ authorization ≠ compliance;
-- synchronization order ≠ authority;
 - Change Intent ≠ Deployment ≠ realized Change;
+- prospective Impact ≠ actual Impact;
+- planned topology ≠ active Lineage;
 - anticipated effect ≠ normative Expectation;
 - planned value ≠ empirical Baseline;
+- prospective reference preparation ≠ realized transition;
 - Deployment attempt ≠ intent association ≠ activation ≠ intended effect realized;
-- successful run ≠ freshness ≠ data quality;
-- Expectation ≠ Baseline;
+- successful run ≠ timely run ≠ freshness ≠ data quality;
+- execution-duration Observation ≠ duration violation;
 - Observation ≠ Assessment;
-- missing evidence ≠ observed absence;
+- missing telemetry ≠ observed absence/missing run/output;
+- raw difference ≠ material Change;
 - typical ≠ healthy;
-- atypical ≠ degraded/defective;
-- planned topology ≠ active Lineage;
-- Lineage reachability ≠ cause ≠ confirmed Impact;
-- Change ≠ degradation ≠ cause;
+- atypical ≠ degraded/defective ≠ mandatory intervention;
 - Investigation ≠ evidence/causal truth;
 - Causal Claim ≠ confirmed cause;
 - Impact candidate ≠ exposure ≠ downstream effect ≠ business consequence;
-- Annotation ≠ Observation/Change Intent/Expectation/causal confirmation;
+- safeguard proposal ≠ active safeguard;
+- quarantine ≠ proof of defect;
+- safeguard release ≠ proof of health;
+- Annotation ≠ structured operational truth;
 - Explanation ≠ independent truth source;
 - effective/event time ≠ recorded/knowledge time.
 
-## Phase 003 rules
+## Runtime health rules
 
-- Use `docs/concepts/phase_003/synchronization_template.md` for substantive synchronization contracts.
-- Pass Entity Identity rather than raw names between subject-specific concept chains.
-- Resolve Monitoring Scope independently; scope never grants authorization or evidence availability.
-- Resolve semantic/responsibility/classification/policy branches independently and preserve category-local conflicts/gaps.
-- Classification may support Policy Context applicability only where an explicit policy assertion/condition exists; never manufacture policy from classification alone.
-- One failed/unknown branch must not erase independently valid branches.
-- Preserve ledger-like append/supersede/correction semantics for material synchronization history.
-- Distinguish effective/event time from recorded/knowledge time where material.
+- Treat run duration, start/completion timing, queue/wait behavior, dependency latency, and delivery readiness as first-class operational evidence/health dimensions.
+- Execution success never masks a timing, freshness, or data-quality issue.
+- Derive timing Observations only from sufficient compatible execution evidence; missing timestamps do not become zero duration.
+- Dependency readiness uses historical Lineage plus actual timing evidence; downstream success does not prove current upstream state was consumed.
+- Use the correct time-valid Expectation/Baseline after Group 02 reference transitions.
+- Ordinary Baseline variation must not become alert noise; raw differences need not become durable Change.
 
-## Planned change / reference-transition rules
+## Analyst intervention rules
 
-- Change Intent may independently trigger prospective Expectation review and a prospective Baseline comparability break.
-- Never convert anticipated effects into Expectations or intended values into Baselines.
-- Change Intent ↔ Deployment association requires evidence; timing/name similarity alone is insufficient.
-- Deployment attempt, association, activation, intended-effect realization, health, and causation remain separate.
-- A prospective reference boundary becomes effective only from sufficient realization evidence for the relevant subject/dimension/context.
-- Workflow success or planned effective time alone cannot transition reference context.
-- A structural transition makes the old Baseline non-comparable for the changed context/interval; it is not deleted globally.
-- Rollback/restoration requires comparability/applicability re-resolution; never blindly restore a prior Baseline/Expectation.
-- Partial/canary/environment-specific rollout changes only the affected reference context.
-- New Baselines require sufficient comparable post-transition Observations.
-- Explicit Expectations can provide immediate post-change normative evaluation while Baseline remains insufficient.
-- Late intent/activation/correction evidence may refine retrospective interpretation but must preserve what was known and used contemporaneously.
-- Planned change can be valid while another health dimension fails; never suppress unexpected violations merely because intent exists.
+- Analysts may manually open Investigation from material, atypical, violated, unresolved, or suspicious Assessments where authorized.
+- Baseline atypicality alone does not mandate Investigation.
+- Automatic Investigation initiation requires explicit accepted response criteria; never invent severity/urgency policy.
+- Insufficient evidence may warrant human review in high-risk contexts without becoming a fabricated failure.
+
+## Propagation Safeguard rules
+
+- Propagation Safeguard is protective control state, not health/cause truth.
+- Assessment/Impact/Change Intent may motivate `propose`; they do not automatically establish `active`.
+- Activation requires explicit authority and enforcement evidence under applicable semantics.
+- Use Lineage/Impact to inform the least disruptive effective placement; do not assume source-level quarantine is always correct.
+- If no output exists, hold downstream advancement/current-cycle publication rather than inventing a quarantined object.
+- Safeguard-induced delay/non-delivery remains observable/assessable.
+- Release is explicit and does not itself prove health.
 
 ## Investigation / causality / impact rules
 
-- Investigation organizes a bounded inquiry; it does not confirm causes or own source evidence.
-- Never infer cause from temporal proximity, Lineage, Deployment, realized Change, or intent consistency alone.
-- Preserve supporting and contradicting evidence on Causal Claims; multiple contributors/unresolved outcomes are valid.
-- `confirmed` requires an explicit evidence/authority standard; do not invent one.
-- Treat downstream Lineage as candidate discovery only. Preserve reachability, exposure, downstream effect, and business consequence separately.
-- Human Annotation is attributed context. Structured plan, norm, responsibility, classification/policy assertion, or causal confirmation belongs to its owning concept.
+- Investigation organizes bounded inquiry; it does not confirm cause.
+- Never infer cause from temporal proximity, Lineage, Deployment, realized Change, safeguard state, or intent consistency alone.
+- Preserve supporting and contradicting evidence; multiple contributors/unresolved outcomes are valid.
+- `confirmed` requires explicit evidence/authority standards.
+- Treat downstream Lineage as candidate discovery; preserve reachability/exposure/effect/consequence separately.
+- Prospective blast-radius profile cannot be represented as actual downstream Impact.
 
 ## Historical/graph/security rules
 
-- Treat Entity Identity + typed temporal Lineage as graph-compatible semantics without selecting graph technology.
-- Do not select blockchain, event sourcing, graph database, graph query language, persistence architecture, workflow engine, event bus, or service decomposition before technical design.
-- Business and engineering explanations derive from the same authorized evidence/history and may differ only in allowed detail/abstraction.
+- Preserve ledger-like append/supersede/correction semantics.
+- Treat Entity Identity + typed temporal Lineage as graph-compatible without selecting graph technology.
 - Restricted evidence must not be retrieved merely to leak it through summaries.
-- Unknown/conflicting/non-comparable/unavailable/unauthorized/insufficient evidence are valid outcomes.
-- Monitoring must not broaden raw-data access; metadata, intent, topology, causal claims, impact, and annotations may themselves be sensitive.
+- Monitoring visibility does not grant raw-data access or production-control authority.
+- Do not select graph database, event store, quarantine store, workflow engine, event bus, service decomposition, LLM, or causal algorithm before technical design.
 
 ## Tooling stance
 
@@ -107,4 +106,4 @@ Databricks Metric Views/DQX are favored later evaluations, not settled architect
 
 ## Canonical scenario
 
-Use A+B→C to test concept and synchronization boundaries: distinguish planned structural change from unplanned realized Change; prepared reference context from realized reference transition; Baseline atypicality from normative violation; valid intended change from unintended side effects; Deployment correlation from Causal Claim; multiple contributing causes from forced single-root answers; downstream reachability from exposure/effect/consequence; and contemporaneous from retrospective knowledge. Preserve responsibility, authorization, evidence, provenance, and uncertainty across the whole chain.
+Use A+B→C to test planned blast radius, time-valid references, run duration/dependency latency, ordinary versus material variation, independent quality dimensions, analyst Investigation, protective quarantine, multiple causes, downstream exposure, and contemporaneous versus retrospective knowledge—without collapsing any of those truths.
