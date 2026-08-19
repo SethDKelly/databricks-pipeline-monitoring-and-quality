@@ -1,6 +1,6 @@
 # Phase 002 — Concept Specifications
 
-**Status:** Active
+**Status:** Active — Group 01 accepted; Group 02 next
 
 ## Purpose
 
@@ -10,13 +10,13 @@ The phase is intentionally divided into five concept groups so that related conc
 
 ## Strategic review order
 
-| Group | Theme | Concepts under review | Why this group comes here |
-|---|---|---|---|
-| 01 | Scope & Identity | Monitored Scope, Asset Identity | Every later concept needs stable referents and an explicit answer to what is in monitoring scope. |
-| 02 | Semantics, Governance & Policy | Semantic Definition, Ownership, Classification, Policy Context | Once an entity can be identified, the system needs meaning, responsibility, sensitivity, and policy context without conflating them. |
-| 03 | Health Evaluation | Expectation, Baseline, Observation, Assessment | Monitoring requires a disciplined separation between what should happen, what usually happens, what was observed, and how the evidence is evaluated. |
-| 04 | History, Lineage & Change | Execution History, Deployment, Lineage, Change | Root-cause reasoning requires temporal history, topology, provenance, and change descriptions that remain distinct from causal conclusions. |
-| 05 | Investigation, Impact & Explanation | Investigation, Causal Claim, Impact, Annotation, Explanation | Only after the evidence concepts are coherent should the product organize RCA, downstream impact, human context, and audience-facing explanations. |
+| Group | Theme | Concepts under review | Status | Why this group comes here |
+|---|---|---|---|---|
+| 01 | Scope & Identity | Monitoring Scope, Entity Identity | **Accepted** | Every later concept needs stable referents and an explicit answer to what is in monitoring responsibility. |
+| 02 | Semantics, Governance & Policy | Semantic Definition, Ownership, Classification, Policy Context | **Next** | Once an entity can be identified, the system needs meaning, responsibility, sensitivity, and policy context without conflating them. |
+| 03 | Health Evaluation | Expectation, Baseline, Observation, Assessment | Candidate | Monitoring requires a disciplined separation between what should happen, what usually happens, what was observed, and how the evidence is evaluated. |
+| 04 | History, Lineage & Change | Execution History, Deployment, Lineage, Change | Candidate | Root-cause reasoning requires temporal history, topology, provenance, and change descriptions that remain distinct from causal conclusions. |
+| 05 | Investigation, Impact & Explanation | Investigation, Causal Claim, Impact, Annotation, Explanation | Candidate | Only after the evidence concepts are coherent should the product organize RCA, downstream impact, human context, and audience-facing explanations. |
 
 This order is a **review dependency**, not an implementation dependency. Concepts remain independently motivated and should synchronize rather than collapse into a monolith.
 
@@ -24,7 +24,12 @@ This order is a **review dependency**, not an implementation dependency. Concept
 
 Phase 002 is allowed to revise the Phase 001 discovery names when one-purpose-per-concept analysis exposes a better boundary.
 
-Current refinements to test:
+### Accepted Group 01 refinements
+
+- `Monitored Scope` → **Monitoring Scope**: the concept declares whether the product is responsible for monitoring an identified entity at a relevant time. Known lineage relationships can cross that boundary without changing scope.
+- `Asset Identity` → **Entity Identity**: identity behavior is required across the ecosystem, not only for data assets. Split, merge, replacement, and succession relate distinct identities rather than defining sameness.
+
+### Candidate refinements for later groups
 
 - `Description / Semantics` becomes **Semantic Definition**: one concept whose purpose is to make the meaning and interpretation of an identified entity explicit.
 - **Policy Context** is introduced separately from `Classification`: sensitivity labels and applicable handling/policy context are related but not the same purpose.
@@ -33,8 +38,6 @@ Current refinements to test:
 - **Causal Claim** is introduced so hypotheses, attributions, contradictions, and confirmations have an explicit epistemic home rather than being hidden inside Investigation.
 - `Annotation / Confirmation` is split: **Annotation** adds human context; confirmation/rejection acts on a Causal Claim or other reviewable claim without rewriting source observations.
 - `Report / Explanation` becomes **Explanation**: a report is a possible presentation artifact; the foundational purpose is to communicate evidence-grounded meaning to an audience.
-
-These are **Candidate** refinements until their group is reviewed and accepted.
 
 ## Phase-wide rules
 
@@ -53,8 +56,8 @@ Every concept specification must:
 
 ## Cross-cutting distinctions that must survive every group
 
-- monitored scope ≠ authorization;
-- identity ≠ name;
+- monitoring scope ≠ ecosystem existence ≠ authorization;
+- identity ≠ name ≠ replacement/succession;
 - semantic definition ≠ ownership;
 - classification ≠ policy ≠ authorization ≠ compliance;
 - expectation ≠ baseline;

@@ -2,41 +2,41 @@
 
 ## Status
 
-**Phase 002 active working catalog.** Every concept remains **Candidate** until its group is reviewed and explicitly accepted.
+**Phase 002 active working catalog.** Group 01 is accepted. Later groups remain **Candidate** until reviewed and explicitly accepted.
 
 The project uses Concept Design to discover independently understandable units of functionality. A concept is retained only when it has a clear primary purpose, operational principle, state, actions, invariants, ambiguity behavior, security/provenance considerations, and explicit synchronizations.
 
 Use [`concept_template.md`](concept_template.md) as the specification checklist. The strategic Phase 002 review plan is in [`phase_002/README.md`](phase_002/README.md).
 
-## Current grouped candidates
+## Current grouped concepts
 
-### Group 01 — Scope & Identity
+### Group 01 — Scope & Identity — Accepted
 
-- [`Monitored Scope`](phase_002/01_scope_and_identity/monitored_scope.md) — what is intended to participate in monitoring.
-- [`Asset Identity`](phase_002/01_scope_and_identity/asset_identity.md) — how logical entities are recognized across sources and time.
+- [`Monitoring Scope`](phase_002/01_scope_and_identity/monitoring_scope.md) — which identified entities the product is responsible for monitoring at a relevant time.
+- [`Entity Identity`](phase_002/01_scope_and_identity/entity_identity.md) — how logical entities are recognized across source-specific references and time while preserving ambiguity and correction.
 
-### Group 02 — Semantics, Governance & Policy
+### Group 02 — Semantics, Governance & Policy — Candidate
 
 - [`Semantic Definition`](phase_002/02_semantics_governance_policy/semantic_definition.md) — what an identified entity means and how it should be interpreted.
 - [`Ownership`](phase_002/02_semantics_governance_policy/ownership.md) — who is responsible/accountable for a defined responsibility.
 - [`Classification`](phase_002/02_semantics_governance_policy/classification.md) — sensitivity/governance categories without access or compliance implications.
 - [`Policy Context`](phase_002/02_semantics_governance_policy/policy_context.md) — relevant declared handling/policy context without claiming enforcement/compliance.
 
-### Group 03 — Health Evaluation
+### Group 03 — Health Evaluation — Candidate
 
 - [`Expectation`](phase_002/03_health_evaluation/expectation.md) — what should be true/acceptable.
 - [`Baseline`](phase_002/03_health_evaluation/baseline.md) — what reference behavior has been observed/derived historically.
 - [`Observation`](phase_002/03_health_evaluation/observation.md) — provenance-bearing measured/retrieved facts.
 - [`Assessment`](phase_002/03_health_evaluation/assessment.md) — interpretation of observations against expectations/baselines.
 
-### Group 04 — History, Lineage & Change
+### Group 04 — History, Lineage & Change — Candidate
 
 - [`Execution History`](phase_002/04_history_lineage_change/execution_history.md) — what ran, when, and with what operational outcome.
 - [`Deployment`](phase_002/04_history_lineage_change/deployment.md) — which source/configuration deployment was active at a relevant time.
 - [`Lineage`](phase_002/04_history_lineage_change/lineage.md) — typed upstream/downstream relationships, including historical topology.
 - [`Change`](phase_002/04_history_lineage_change/change.md) — meaningful differences across time without asserting health or cause.
 
-### Group 05 — Investigation, Impact & Explanation
+### Group 05 — Investigation, Impact & Explanation — Candidate
 
 - [`Investigation`](phase_002/05_investigation_impact_explanation/investigation.md) — a bounded inquiry that organizes evidence.
 - [`Causal Claim`](phase_002/05_investigation_impact_explanation/causal_claim.md) — an explanation under evaluation with explicit epistemic status.
@@ -46,8 +46,10 @@ Use [`concept_template.md`](concept_template.md) as the specification checklist.
 
 ## Boundary changes from Phase 001 discovery
 
-The Phase 001 seed intentionally used broad names. Phase 002 currently tests these refinements:
+The Phase 001 seed intentionally used broad names. Phase 002 has so far established these refinements:
 
+- `Monitored Scope` → **Monitoring Scope**: monitoring responsibility applies to identified entities; known relationships may cross a scope boundary.
+- `Asset Identity` → **Entity Identity**: identity behavior applies beyond data assets to the broader ecosystem.
 - `Description / Semantics` → **Semantic Definition**.
 - introduce **Policy Context** separately from Classification.
 - introduce **Baseline** separately from Expectation.
@@ -56,7 +58,7 @@ The Phase 001 seed intentionally used broad names. Phase 002 currently tests the
 - `Annotation / Confirmation` → **Annotation** plus confirmation/rejection actions on reviewable causal claims.
 - `Report / Explanation` → **Explanation**; reports are treated as possible presentation artifacts rather than the foundational concept.
 
-These changes are not final until reviewed.
+Only Group 01 refinements are accepted at this point; later-group refinements remain candidates until reviewed.
 
 ## Domain entities that are not automatically concepts
 

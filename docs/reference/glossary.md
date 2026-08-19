@@ -4,7 +4,7 @@ This glossary is the canonical vocabulary reference. Terms may evolve during con
 
 ## Data ecosystem
 
-The connected set of repositories, deployments, Databricks jobs/tasks/runs, data assets, dependencies, lineage relationships, governance metadata, quality evidence, and downstream consumers within monitoring scope.
+The connected set of repositories, deployments, Databricks jobs/tasks/runs, data assets, dependencies, lineage relationships, governance metadata, quality evidence, and downstream consumers relevant to the monitoring product. An entity may be known to the ecosystem while outside Monitoring Scope.
 
 ## Logical pipeline
 
@@ -36,7 +36,7 @@ An event that makes a code/configuration revision available in a target Databric
 
 ## Data asset / dataset
 
-A monitored data object such as a table, view, Metric View, external dataset, intermediate dataset, or other durable/meaningful data structure.
+A data object such as a table, view, Metric View, external dataset, intermediate dataset, or other durable/meaningful data structure. A known data asset is not necessarily in Monitoring Scope.
 
 ## Consumer-facing data asset
 
@@ -166,35 +166,33 @@ Metadata indicating that HIPAA-related obligations, controls, or handling expect
 
 Information describing where a fact/definition/classification/observation came from, who or what asserted it, and the relevant time/version context.
 
-## Phase 002 candidate concept terms
+## Phase 002 concept terms
 
-The following names are current **Candidate** concept vocabulary and may change during review.
+### Monitoring Scope — Accepted
 
-### Monitored Scope
+The time-aware declaration of whether the monitoring product is responsible for monitoring an identified entity. Scope can resolve as included, excluded, unknown, conflicting, unauthorized, or unavailable. Scope is not authorization and does not implicitly propagate through lineage.
 
-The declared monitoring participation state of an identified entity or relationship. Scope is not authorization.
+### Entity Identity — Accepted
 
-### Asset Identity
+The functionality for determining when source-specific references denote the same logical entity across systems and time, while preserving ambiguity, separation, validity history, and correction provenance.
 
-The functionality for recognizing a logical entity across source-specific references and time while preserving ambiguity and correction history.
-
-### Semantic Definition
+### Semantic Definition — Candidate
 
 A provenance-bearing statement of what an identified entity means and how it should be interpreted.
 
-### Policy Context
+### Policy Context — Candidate
 
 Declared policy, handling, or governance context relevant to a subject/context. It is distinct from classification, authorization, and compliance determination.
 
-### Causal Claim
+### Causal Claim — Candidate
 
 A proposed or reviewed causal explanation with explicit epistemic status and linked supporting/contradicting evidence.
 
-### Annotation
+### Annotation — Candidate
 
 Human-authored context attached to evidence, an investigation, or a claim without mutating the underlying source facts.
 
-### Explanation
+### Explanation — Candidate
 
 An evidence-grounded, authorization-aware account of what happened, what is affected, what is known/uncertain, and where the supporting evidence comes from.
 
