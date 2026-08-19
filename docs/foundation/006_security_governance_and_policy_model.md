@@ -8,7 +8,7 @@ Define trust boundaries and non-negotiable security/privacy/governance principle
 
 The monitoring system should increase operational and data transparency **without increasing unauthorized data exposure**.
 
-The product has unusual risk because it aggregates metadata from many systems. Even if it avoids raw row-level data, the combined metadata may reveal sensitive facts about schemas, table names, classifications, incidents, business processes, or downstream usage.
+The product has unusual risk because it aggregates metadata from many systems. Even if it avoids raw row-level data, the combined metadata may reveal sensitive facts about schemas, table names, classifications, semantics, responsibilities, incidents, business processes, policies, or downstream usage.
 
 ## Trust boundaries
 
@@ -23,7 +23,7 @@ The initial ecosystem contains distinct trust/authority boundaries:
 7. the monitoring/quality framework itself;
 8. human users and consuming systems.
 
-The monitoring framework must not assume that access in one boundary implies access in another.
+The monitoring framework must not assume that access or authority in one boundary implies access or authority in another.
 
 ## Security principles
 
@@ -37,7 +37,7 @@ A user who can see that a restricted table is stale should not automatically be 
 
 ### SP-03 — Metadata can be sensitive
 
-Descriptions, column names, lineage paths, classification labels, ownership, incident notes, and quality metrics may themselves reveal sensitive information and need access control.
+Descriptions, business definitions, column names, lineage paths, classification labels, responsibility assignments, policy context, incident notes, and quality metrics may themselves reveal sensitive information and need access control.
 
 ### SP-04 — Minimize copied sensitive data
 
@@ -51,11 +51,11 @@ The exact authorization mechanism is deferred, but the product semantics are not
 
 ### SP-06 — Provenance is security-relevant
 
-Users should be able to distinguish a classification asserted by Immuta, a definition sourced from Collibra, an observation measured in Databricks, and a human annotation made in the monitoring system.
+Users should be able to distinguish a classification asserted by a policy/governance source, a definition sourced from a catalog, an observation measured in Databricks, and a human annotation made in the monitoring system.
 
 ### SP-07 — Audit material changes
 
-Changes to expectations, classification/ownership overrides, incident conclusions, suppression/waiver decisions, and system-of-record mappings should be attributable and historically visible.
+Changes to expectations, semantic definitions, responsibility assignments, classification/policy overrides, incident conclusions, suppression/waiver decisions, and system-of-record mappings should be attributable and historically visible.
 
 ### SP-08 — No secrets in source control
 
@@ -73,45 +73,37 @@ A natural-language interface can create data-leakage risk by composing facts fro
 
 The project distinguishes several governance facts rather than treating "governance" as one field.
 
-### Description
+### Semantic definition
 
-What the technical/data asset is and how it is intended to be understood.
+What an identified entity means and how it should be interpreted in a relevant business or technical context. Business definition, technical description, grain, units, population/calculation meaning, and similar facets may coexist with independent provenance and effective time.
 
-### Business definition / semantics
+### Responsibility assignment
 
-What business meaning, calculation, population, grain, or interpretation applies.
-
-### Ownership
-
-Who is technically responsible and who is accountable for business fitness.
-
-### Stewardship
-
-Who maintains or validates governance metadata and expectations.
+Who bears a named responsibility for an identified subject, such as technical ownership, business accountability, semantic stewardship, or privacy/security responsibility. A responsibility assignment does not grant access and does not make the assignee authoritative for every governance category.
 
 ### Criticality
 
-How important the asset is to downstream business or operational processes.
+How important the entity is to downstream business or operational processes. During Group 02 this remains a governance facet/question; whether criticality is represented as a Classification scheme or deserves a separate concept is deferred until Impact is reviewed.
 
 ### Classification
 
-Sensitivity or policy-relevant categories such as PII/PHI or organizational classifications.
+Category membership under a named governance or sensitivity vocabulary, such as PII, PHI, confidentiality tier, or another organizational classification. Classification is descriptive categorical metadata; it does not itself encode policy obligations, grant access, or establish compliance.
 
-### Policy expectation
+### Policy context
 
-A declared handling/retention/access/monitoring requirement that may apply to the asset.
+A declared assertion that a policy, handling expectation, restriction, or governance obligation applies to an identified subject in a relevant context/time. Policy Context may reference Classification as applicability evidence, but classification and policy applicability remain distinct.
 
 ### Control/evidence state
 
-Evidence that a policy-related control or check operated, where available. This is still not equivalent to a legal compliance conclusion.
+Evidence that a policy-related control or check operated, where available. This is separate from Policy Context and is still not equivalent to a legal compliance conclusion.
 
 ## PII, PHI, and HIPAA-related transparency
 
-The product should make policy context visible in a careful vocabulary:
+The product should make policy context visible in careful vocabulary:
 
-- `classified as PII` means a source or authorized actor has assigned a PII classification;
+- `classified as PII` means a source or authorized actor has assigned a PII classification under a relevant vocabulary;
 - `classified as PHI` means a source or authorized actor has assigned a PHI classification;
-- `HIPAA-related policy context applies` means organizational/legal handling expectations may be relevant;
+- `HIPAA-related policy context applies` means an authoritative policy-context assertion says HIPAA-related obligations/handling expectations are relevant in that subject/context/time;
 - `control evidence present` means a particular control/check produced evidence;
 - none of the above, by itself, means `HIPAA compliant`.
 
@@ -119,18 +111,30 @@ The product should avoid broad legal conclusions unless an authorized compliance
 
 ## Authority and conflict
 
-Different systems may disagree about description, ownership, or classification.
+Different systems may disagree about semantic definitions, responsibility assignments, classifications, or policy context.
 
-The product must therefore eventually support:
+The product must preserve:
 
 - source provenance;
-- authority ranking or selection by metadata category;
+- metadata category/facet and context;
 - conflict visibility;
-- last-observed/last-asserted time;
-- explicit overrides with ownership and audit history;
-- an `unknown` or `conflicting` state rather than silent last-write-wins semantics.
+- assertion/observation time and relevant effective time;
+- explicit overrides/corrections with attributable history;
+- `unknown`, `conflicting`, `stale`, `unauthorized`, or `unavailable` states where appropriate.
 
-The authority rules themselves are a later design decision.
+**Synchronization order is never an authority rule.** Until an accepted source-precedence/authority rule exists for a metadata category, conflicting applicable assertions remain conflicting rather than silently collapsing to the most recently synchronized value.
+
+Authority may later be modeled as an independent concept if its purpose/state/actions warrant that boundary, or through explicit integration/metadata-category contracts. Group 02 does not decide that implementation/concept boundary prematurely.
+
+## Unknown is not a safe default
+
+Governance gaps must not be converted into reassuring assumptions:
+
+- missing semantics does not authorize inferred business meaning;
+- missing responsibility does not prove a subject is intentionally unassigned;
+- missing classification does not mean non-sensitive;
+- missing policy context does not mean unrestricted;
+- stale policy/classification metadata must not be presented as current certainty.
 
 ## Threat themes to carry forward
 
@@ -140,11 +144,11 @@ Combining harmless metadata may reveal a restricted fact.
 
 ### Metadata poisoning
 
-Incorrect ownership, classification, expected cadence, or lineage can cause incorrect operational decisions.
+Incorrect responsibility, classification, expected cadence, semantics, or lineage can cause incorrect operational decisions.
 
 ### Evidence tampering
 
-If historical metrics or incident evidence can be silently rewritten, root-cause reports become untrustworthy.
+If historical metrics or governance/incident evidence can be silently rewritten, root-cause reports become untrustworthy.
 
 ### Over-broad integration credentials
 
@@ -152,7 +156,11 @@ A monitoring connector with unnecessary privileges creates an attractive escalat
 
 ### Stale policy metadata
 
-A classification copied once and never refreshed can provide false confidence.
+A classification or policy-context assertion copied once and never refreshed can provide false confidence.
+
+### Authority confusion
+
+Treating source synchronization order, repository ownership, platform administration, or technical ownership as universal governance authority can silently select incorrect definitions, classifications, or policy context.
 
 ### Root-cause overstatement
 
@@ -160,7 +168,7 @@ An automated explanation that presents a correlation as a confirmed cause can le
 
 ### Cross-domain leakage through reporting
 
-Business reports or conversational answers can reveal restricted asset names, column meanings, or incident details even when raw data is hidden.
+Business reports or conversational answers can reveal restricted asset names, semantic definitions, classification labels, policy context, or incident details even when raw data is hidden.
 
 ## Security design questions deferred to technical design
 

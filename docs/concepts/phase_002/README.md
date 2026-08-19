@@ -1,6 +1,6 @@
 # Phase 002 — Concept Specifications
 
-**Status:** Active — Group 01 accepted; Group 02 next
+**Status:** Active — Groups 01–02 accepted; Group 03 next
 
 ## Purpose
 
@@ -13,8 +13,8 @@ The phase is intentionally divided into five concept groups so that related conc
 | Group | Theme | Concepts under review | Status | Why this group comes here |
 |---|---|---|---|---|
 | 01 | Scope & Identity | Monitoring Scope, Entity Identity | **Accepted** | Every later concept needs stable referents and an explicit answer to what is in monitoring responsibility. |
-| 02 | Semantics, Governance & Policy | Semantic Definition, Ownership, Classification, Policy Context | **Next** | Once an entity can be identified, the system needs meaning, responsibility, sensitivity, and policy context without conflating them. |
-| 03 | Health Evaluation | Expectation, Baseline, Observation, Assessment | Candidate | Monitoring requires a disciplined separation between what should happen, what usually happens, what was observed, and how the evidence is evaluated. |
+| 02 | Semantics, Governance & Policy | Semantic Definition, Responsibility Assignment, Classification, Policy Context | **Accepted** | Identified entities need meaning, named responsibility, categorical governance metadata, and policy applicability without conflating those concerns. |
+| 03 | Health Evaluation | Expectation, Baseline, Observation, Assessment | **Next** | Monitoring requires a disciplined separation between what should happen, what usually happens, what was observed, and how the evidence is evaluated. |
 | 04 | History, Lineage & Change | Execution History, Deployment, Lineage, Change | Candidate | Root-cause reasoning requires temporal history, topology, provenance, and change descriptions that remain distinct from causal conclusions. |
 | 05 | Investigation, Impact & Explanation | Investigation, Causal Claim, Impact, Annotation, Explanation | Candidate | Only after the evidence concepts are coherent should the product organize RCA, downstream impact, human context, and audience-facing explanations. |
 
@@ -26,18 +26,24 @@ Phase 002 is allowed to revise the Phase 001 discovery names when one-purpose-pe
 
 ### Accepted Group 01 refinements
 
-- `Monitored Scope` → **Monitoring Scope**: the concept declares whether the product is responsible for monitoring an identified entity at a relevant time. Known lineage relationships can cross that boundary without changing scope.
-- `Asset Identity` → **Entity Identity**: identity behavior is required across the ecosystem, not only for data assets. Split, merge, replacement, and succession relate distinct identities rather than defining sameness.
+- `Monitored Scope` → **Monitoring Scope**: the product's time-aware monitoring responsibility for identified entities; known relationships can cross the boundary.
+- `Asset Identity` → **Entity Identity**: ecosystem-wide sameness/separation across source references and time; replacement/succession remain relationships among distinct identities.
+
+### Accepted Group 02 refinements
+
+- `Description / Semantics` → **Semantic Definition**: semantic meaning is facet/context aware and provenance bearing; no single canonical string is assumed.
+- `Ownership` → **Responsibility Assignment**: ownership/accountability/stewardship are named responsibility types, not universal authority.
+- **Classification** is categorical metadata in a named scheme; it is not policy, authorization, or compliance.
+- **Policy Context** is distinct from Classification and represents declared policy applicability/handling context without claiming enforcement, legal interpretation, or compliance.
+- Group 02 concepts preserve competing assertions and provenance; synchronization order never acts as an implicit authority rule.
 
 ### Candidate refinements for later groups
 
-- `Description / Semantics` becomes **Semantic Definition**: one concept whose purpose is to make the meaning and interpretation of an identified entity explicit.
-- **Policy Context** is introduced separately from `Classification`: sensitivity labels and applicable handling/policy context are related but not the same purpose.
 - **Baseline** is introduced separately from `Expectation`: historical/empirical reference behavior does not itself assert what ought to be acceptable.
-- `Deployment Record` becomes **Deployment**: the behavior is preserving and resolving deployment state/history, not merely storing a record.
+- `Deployment Record` becomes **Deployment**.
 - **Causal Claim** is introduced so hypotheses, attributions, contradictions, and confirmations have an explicit epistemic home rather than being hidden inside Investigation.
 - `Annotation / Confirmation` is split: **Annotation** adds human context; confirmation/rejection acts on a Causal Claim or other reviewable claim without rewriting source observations.
-- `Report / Explanation` becomes **Explanation**: a report is a possible presentation artifact; the foundational purpose is to communicate evidence-grounded meaning to an audience.
+- `Report / Explanation` becomes **Explanation**.
 
 ## Phase-wide rules
 
@@ -58,8 +64,10 @@ Every concept specification must:
 
 - monitoring scope ≠ ecosystem existence ≠ authorization;
 - identity ≠ name ≠ replacement/succession;
-- semantic definition ≠ ownership;
-- classification ≠ policy ≠ authorization ≠ compliance;
+- semantic definition ≠ responsibility assignment;
+- responsibility assignment ≠ universal authority ≠ authorization;
+- classification ≠ policy context ≠ authorization ≠ compliance;
+- missing governance metadata ≠ safe/default state;
 - expectation ≠ baseline;
 - observation ≠ assessment;
 - assessment ≠ causal explanation;
@@ -110,7 +118,7 @@ A pipeline in one Git repository depends on output maintained/deployed from anot
 
 ### S-05 — Conflicting governance metadata
 
-Two sources disagree on ownership, definition, or classification. The system must preserve provenance/conflict rather than silently flattening the disagreement.
+Two sources disagree on responsibility, definition, classification, or policy context. The system must preserve provenance/conflict rather than silently flattening the disagreement.
 
 ### S-06 — Policy-sensitive explanation
 
@@ -118,7 +126,7 @@ A business analyst is authorized to know that a sensitive asset is affected but 
 
 ### S-07 — Historical replay
 
-An investigation asks what was known, expected, deployed, and connected at an earlier incident time. Current metadata must not overwrite the historical view.
+An investigation asks what was known, expected, deployed, governed, and connected at an earlier incident time. Current metadata must not overwrite the historical view.
 
 ## Phase 002 exit gate
 

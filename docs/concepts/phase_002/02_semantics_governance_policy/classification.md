@@ -1,91 +1,113 @@
 # Concept: Classification
 
-**Status:** Candidate
+**Status:** Accepted — Phase 002 Group 02
 
 ## Purpose
 
-Let the ecosystem state that an identified subject belongs to one or more sensitivity, governance, or handling categories without treating those categories as access grants or compliance conclusions.
+Let the ecosystem state that an identified subject belongs to one or more categories in a named governance or sensitivity vocabulary without turning category membership into policy, authorization, or compliance conclusions.
 
 ## Operational principle
 
-A table involved in an investigation is classified as containing PHI and PII by an authoritative source. A business-facing explanation may disclose the classification and risk context while withholding restricted values. If another source disagrees, the conflict is visible rather than silently resolved by whichever source synchronized last.
+A table involved in an investigation is classified as PHI and PII by an authoritative governance source. Another system supplies a separate internal confidentiality tier. The product preserves each classification in its original vocabulary and provenance. Those categories can inform Policy Context, but the classification itself does not decide who may access the table or whether any legal/control requirement has been satisfied.
 
 ## Actors
 
-- Governance / Data Steward
-- Privacy / Security stakeholder
+- Data Steward / Governance Steward
+- Security / Privacy / Compliance Stakeholder
+- Data Engineer / Pipeline Maintainer
+- Business Analyst / Data Consumer
 - Monitoring framework
-- Business Analyst
-- Data Engineer
 
 ## State
 
-- classification assertions;
-- subject identity and optionally classified facet/scope;
-- category/label and source meaning;
-- effective time;
-- provenance/authority context;
-- conflict/status information.
+- identified subject and optional classified facet/context;
+- classification scheme/vocabulary;
+- category/label as asserted by the source;
+- source meaning or scheme reference when available;
+- effective interval;
+- assertion provenance, actor/source, and authority context;
+- optional normalization/crosswalk evidence without replacing the source label;
+- supersession/correction history;
+- unresolved or conflicting classification assertions.
 
 ## Actions
 
 ### `classify`
-Records or synchronizes a classification assertion.
+- **Intent:** record or synchronize a classification assertion under a named scheme.
+- **State effect:** preserves the source category, scheme, provenance, and relevant effective time.
 
 ### `reclassify`
-Supersedes or changes an assertion prospectively while preserving history.
+- **Intent:** prospectively supersede a classification assertion while preserving history.
 
-### `resolve`
-Returns applicable classification assertions and conflicts for a subject/time.
+### `resolveAt`
+- **Intent:** return classifications applicable to a subject/facet, scheme/context, and time.
+- **Observable result:** applicable classification assertion(s), unknown, explicitly unclassified under a scheme when such an assertion exists, conflicting, unauthorized, or unavailable.
+- **Conflict behavior:** synchronization order does not choose a winner when assertions conflict.
 
 ## Invariants / behavioral expectations
 
-- Classification is not authorization.
-- Classification is not policy itself.
-- PII/PHI/HIPAA-related labels are not proof of legal compliance.
-- Source terminology should not be silently normalized in a way that loses meaning/provenance.
-- Historical classification remains distinguishable from current classification.
+- Classification is categorical metadata; it is not authorization.
+- Classification is not Policy Context and does not itself encode handling requirements.
+- PII, PHI, confidentiality, criticality, or other labels are assertions within a defined vocabulary; their meaning must not be assumed universal across organizations/sources.
+- A source label is retained even when a normalization/crosswalk is also available.
+- Multiple classifications from independent schemes can simultaneously apply without conflict.
+- Missing classification evidence is `unknown`, not `non-sensitive` or `unclassified`.
+- `Unclassified` is meaningful only when explicitly asserted within a relevant scheme.
+- Current classification does not overwrite historical classification.
+- Classification does not prove legal compliance or the operation of any control.
 
 ## Ambiguity and missing evidence
 
-Missing classification is `unknown/unclassified`, not automatically `non-sensitive`. Conflicts are explicit.
+If classification is absent, the product does not infer safety from names, schemas, or lack of labels. Conflicts within a relevant scheme/context remain visible until an accepted authority rule resolves them. Restricted classification details may be withheld while still allowing a safe indication that special handling or restricted context exists.
 
 ## Synchronizations
 
-- Asset Identity identifies the classified subject.
-- Policy Context may use classification as one input to applicable handling context.
-- Explanation uses classification only within the viewer's authorized disclosure boundary.
+- **Entity Identity** supplies the classified subject.
+- **Responsibility Assignment** may identify stewardship or privacy/security responsibility without making that assignment itself a classification.
+- **Policy Context** may use classification assertions as evidence or applicability inputs, but policy applicability is independently asserted/resolved.
+- **Explanation** may use authorized classification context to communicate sensitivity without exposing restricted values.
+- **Change** can represent classification changes across time without treating the change as a data-quality event.
 
 ## Security / privacy / governance considerations
 
-Classification metadata can itself disclose the presence of sensitive information and may require restricted visibility.
+Classification metadata can reveal the presence of sensitive information and may itself require restricted visibility. The concept must support safe disclosure at an allowed abstraction level.
 
 ## Evidence / provenance considerations
 
-Classification assertions retain the original category vocabulary, source, effective time, and any normalization mapping used for cross-system interpretation. An effective classification must remain traceable to its assertions.
+Classification assertions retain the original scheme, category, source/actor, assertion time, effective time, and any crosswalk/normalization evidence. Any later effective-selection rule must remain explainable from the assertions and authority policy.
 
 ## Representative scenarios
 
 ### Happy path
-A table is consistently classified as PHI/PII by the applicable authority.
+A table is consistently classified as PHI/PII by the applicable governance authority and retains those labels with provenance.
 
-### Degraded path
-An important asset lacks classification; the result is unknown rather than non-sensitive.
+### Multiple vocabularies
+The same asset is `PHI` in one scheme and `Restricted` in an internal confidentiality scheme. Both apply and are not treated as contradictory merely because the labels differ.
 
-### Conflicting evidence
-One source marks an asset confidential while another marks it unrestricted; the conflict remains explicit.
+### Missing classification
+An important asset has no known classification assertion. The result is `unknown`, not `non-sensitive`.
+
+### Conflicting classification
+Two sources using the same applicable classification scheme assign incompatible sensitivity categories. The conflict remains explicit.
+
+### Historical replay
+A table is reclassified after a business-use change. Earlier incident analysis resolves the classification that applied at that earlier time.
 
 ### Unauthorized evidence
-A user may be told that special handling applies without being shown the sensitive classification details that would reveal restricted information.
+A user may be told that restricted handling context exists without being shown a classification label that would reveal sensitive subject matter.
 
 ## Non-goals
 
 - enforcing access;
-- deciding regulatory compliance;
-- defining business meaning;
-- defining policy rules.
+- defining or applying policy requirements;
+- legal interpretation or compliance determination;
+- defining business semantics;
+- deciding which source is authoritative by synchronization order;
+- treating absence of classification as evidence of non-sensitivity.
 
-## Open questions
+## Deferred questions
 
-- Which classification vocabularies must be preserved verbatim versus normalized?
-- Are classifications attached only to assets, or also columns/metrics/pipelines?
+- Which classification schemes/categories are required for MVP?
+- Which entity/facet kinds need classification in MVP, including columns or metrics if they receive Entity Identity?
+- Which source vocabularies should be crosswalked for comparison while preserving original labels?
+- What source-precedence rules apply within each scheme/context?

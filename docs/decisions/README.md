@@ -77,3 +77,31 @@ Rename continuity requires evidence. Name equality alone is insufficient. Enviro
 **Status:** Accepted — Phase 002 Group 01
 
 Identity-reference validity, identity corrections, and scope assertions retain provenance and relevant effective-time context. Historical incident reasoning must be able to reconstruct what entity references and monitoring responsibility applied at the incident time rather than projecting only current state backward.
+
+### D-012 — Semantic definitions are facet-, context-, and time-aware
+
+**Status:** Accepted — Phase 002 Group 02
+
+Semantic Definition is not one canonical description string. Technical description, business definition, grain, units, population/calculation meaning, and other semantic facets may coexist with provenance and effective-time context. Multiple context-specific assertions can be valid; incompatible assertions in the same relevant context remain conflicts until authority is established.
+
+### D-013 — Responsibility Assignment replaces the overloaded Ownership concept
+
+**Status:** Accepted — Phase 002 Group 02
+
+`Ownership` is refined to **Responsibility Assignment**. Technical ownership, business accountability, stewardship, policy/security responsibility, and similar roles are named responsibility types attached to a subject and time.
+
+Responsibility does not grant access and does not make the responsible party universally authoritative for semantics, classification, policy, expectations, or other metadata categories.
+
+### D-014 — Classification and Policy Context are separate concepts
+
+**Status:** Accepted — Phase 002 Group 02
+
+Classification records category membership under a named governance/sensitivity vocabulary. Policy Context records declared policy applicability/handling expectations for a subject/context/time. Classification may be evidence for policy applicability, but it is not the policy itself and does not grant access or prove compliance.
+
+### D-015 — Governance conflicts remain conflicts until authority is explicitly defined
+
+**Status:** Accepted — Phase 002 Group 02
+
+Semantic Definition, Responsibility Assignment, Classification, and Policy Context preserve source assertions, provenance, effective time, and conflict. Synchronization order is never treated as an authority rule. Missing governance metadata is also not converted into a safe default: missing semantics are not inferred meaning, missing responsibility is not explicit unassignment, missing classification is not non-sensitive, and missing policy context is not unrestricted.
+
+Whether repeated source-precedence behavior becomes an independent authority concept or an integration/metadata-category contract remains deferred.

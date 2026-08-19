@@ -112,7 +112,7 @@ A meaningful worsening in operational, freshness, or data-quality behavior, pote
 
 ## Change event
 
-An observed change in data, code, deployment, configuration, metadata, schema, policy, ownership, or topology that may be relevant to analysis.
+An observed change in data, code, deployment, configuration, metadata, schema, policy, responsibility, or topology that may be relevant to analysis.
 
 ## Evidence
 
@@ -136,19 +136,23 @@ The known or potential downstream effect of a pipeline/data condition on assets,
 
 ## Technical owner
 
-The team or individual responsible for implementation and operational maintenance.
+A party assigned responsibility for technical implementation and operational maintenance. Technical ownership does not imply authority over business semantics, classification, policy, or data access.
 
-## Business owner
+## Business owner / accountable party
 
-The accountable business stakeholder for meaning, authorized use, or fitness of a data asset.
+A party assigned accountability for business meaning, fitness, or authorized organizational use according to the relevant responsibility definition.
 
 ## Data steward
 
-A role responsible for stewardship activities such as definitions, quality expectations, metadata, classifications, or governance according to organizational practice.
+A party assigned stewardship responsibilities such as maintaining definitions, quality semantics, classifications, or governance metadata according to organizational practice.
+
+## Responsibility type
+
+A named kind of responsibility, such as technical ownership, business accountability, semantic stewardship, or privacy/security responsibility. Responsibility types are not interchangeable.
 
 ## Classification
 
-Metadata describing sensitivity, policy category, criticality, or another governance category.
+A provenance-bearing assertion that an identified subject or facet belongs to a category in a named governance or sensitivity vocabulary. Classification is not authorization or policy applicability.
 
 ## PII
 
@@ -158,13 +162,21 @@ Personally identifiable information according to applicable organizational/legal
 
 Protected health information according to applicable legal and organizational context.
 
+## Policy context
+
+A provenance-bearing assertion that a declared policy, handling expectation, restriction, or governance obligation applies to an identified subject in a relevant context and time. Policy Context is not access enforcement, legal interpretation, or compliance determination.
+
 ## HIPAA-related policy context
 
-Metadata indicating that HIPAA-related obligations, controls, or handling expectations may apply. This label alone does not establish compliance.
+Policy context indicating that HIPAA-related obligations, controls, or handling expectations may apply. This context alone does not establish HIPAA compliance.
 
 ## Provenance
 
-Information describing where a fact/definition/classification/observation came from, who or what asserted it, and the relevant time/version context.
+Information describing where a fact, definition, classification, responsibility assignment, policy-context assertion, or observation came from, who/what asserted it, and the relevant time/version context.
+
+## Authority / source precedence
+
+Rules or assertions determining which source or actor may be treated as authoritative for a particular metadata category, subject, context, and time. Phase 002 Group 02 deliberately does not define a universal authority rule; unresolved conflicts remain conflicts until such semantics are accepted.
 
 ## Phase 002 concept terms
 
@@ -176,13 +188,21 @@ The time-aware declaration of whether the monitoring product is responsible for 
 
 The functionality for determining when source-specific references denote the same logical entity across systems and time, while preserving ambiguity, separation, validity history, and correction provenance.
 
-### Semantic Definition — Candidate
+### Semantic Definition — Accepted
 
-A provenance-bearing statement of what an identified entity means and how it should be interpreted.
+The functionality for recording and resolving provenance-bearing semantic assertions that describe what an identified entity means in a relevant business or technical context and time. Semantic facets may coexist; the concept does not assume one canonical definition string.
 
-### Policy Context — Candidate
+### Responsibility Assignment — Accepted
 
-Declared policy, handling, or governance context relevant to a subject/context. It is distinct from classification, authorization, and compliance determination.
+The functionality for recording and resolving who bears a named responsibility for an identified subject at a relevant time. Responsibility does not imply universal authority or authorization.
+
+### Classification — Accepted
+
+The functionality for recording and resolving category membership under named governance/sensitivity vocabularies while preserving source meaning, provenance, time, and conflict.
+
+### Policy Context — Accepted
+
+The functionality for recording and resolving declared policy applicability/handling context for a subject/context/time without claiming enforcement, legal interpretation, or compliance.
 
 ### Causal Claim — Candidate
 
