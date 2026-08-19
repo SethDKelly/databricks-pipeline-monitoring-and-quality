@@ -2,250 +2,161 @@
 
 This glossary is the canonical vocabulary reference. Terms may evolve during concept discovery, but changes must be reflected consistently across foundation and concept documents.
 
-## Data ecosystem
+## Core ecosystem
 
-The connected set of repositories, deployments, Databricks jobs/tasks/runs, data assets, dependencies, lineage relationships, governance metadata, health/quality evidence, and downstream consumers relevant to the monitoring product. An entity may be known to the ecosystem while outside Monitoring Scope.
+### Data ecosystem
+The connected set of repositories, Change Intents, deployments, executions, data assets, dependencies, Lineage relationships, governance metadata, health/quality evidence, and downstream consumers relevant to monitoring. An entity may be known while outside Monitoring Scope.
 
-## Logical pipeline
+### Logical pipeline
+A logical data-processing responsibility that transforms or moves data. It may span one or more jobs/tasks and does not automatically equal a repository.
 
-A logical data-processing responsibility that transforms or moves data. A logical pipeline may span one or more Databricks jobs/tasks and must not automatically be equated with a repository.
+### Repository
+A source-control boundary and provenance context, not the product reasoning boundary.
 
-## Repository
+### Job / Task / Run
+A Job is a Databricks orchestration definition; Task is a unit inside it; Run/execution instance is time-bounded actual work established by execution evidence.
 
-A source-control boundary. It may contain one or more logical pipelines and is not the product reasoning boundary.
+### Code revision
+A source-controlled version of code/configuration relevant to Deployment provenance.
 
-## Job
+## Group 04 — history, lineage, and change
 
-A Databricks execution/orchestration definition. Its exact relationship to a logical pipeline is discovered rather than assumed.
+### Change Intent — Accepted
+The functionality for registering an intended modification and anticipated effects before realization. It preserves target, planned/effective context, anticipated effects, monitoring implications, provenance, and revision/withdrawal history.
 
-## Task
+Anticipated effects are not automatically Expectations, Observations, Changes, or causes.
 
-A unit of execution within a Databricks job.
+### Execution History — Accepted
+The functionality for reconstructing actual execution instances/lifecycle states and their provenance over time. Missing telemetry does not create a fictional missing execution.
 
-## Run
+### Deployment — Accepted
+The functionality for recording deployment attempts and resolving which source/configuration state was actually active for a target/time. Attempt, workflow success, and activation remain distinct; activation does not prove data effect or health.
 
-A time-bounded execution instance of a job, task, or logical pipeline.
+### Lineage — Accepted
+The functionality for maintaining/traversing typed, directed, temporal, provenance-bearing relationships among Entity Identities. Current topology does not overwrite historical topology; planned topology is not active until evidence establishes it.
 
-## Code revision
+Lineage requires **graph-compatible semantics**, but Phase 002 selects no graph database, graph query language, or graph service.
 
-A specific version of source-controlled code/configuration relevant to deployment lineage.
+### Change — Accepted
+The functionality for identifying/describing a realized difference or state transition established by evidence, preserving before/after or source-event basis, time, magnitude, provenance, comparability, and uncertainty.
 
-## Deployment
+Change does not by itself mean intended, unintended, healthy, degraded, valid, invalid, or causal.
 
-An event that makes a code/configuration revision available in a target Databricks environment. GitHub Actions is a known deployment mechanism in the current ecosystem.
+### Evidence-ledger semantics
+A cross-cutting requirement that material historical facts/assertions remain provenance-bearing, reconstructable, and corrected through append/supersede relationships rather than invisible mutation.
 
-## Data asset / dataset
+This is **not** a blockchain/event-sourcing/storage selection.
 
-A data object such as a table, view, Metric View, external dataset, intermediate dataset, or other durable/meaningful data structure. A known data asset is not necessarily in Monitoring Scope.
+### Effective/event time
+When a condition was true or event occurred.
 
-## Consumer-facing data asset
+### Recorded/knowledge time
+When the monitoring ecosystem learned or recorded it. Historical replay may need both.
 
-A data asset intended for consumption beyond the producing pipeline's internal processing boundary.
-
-## Dataset state
-
-The observable condition of a data asset at a time or interval, including relevant freshness, volume, schema, distribution, and quality Observations.
-
-## Upstream
-
-An asset, pipeline, source, deployment, or process whose state may influence another asset or pipeline.
-
-## Downstream
-
-An asset, pipeline, metric, report, application, export, or business process that depends on another asset or pipeline.
-
-## Dependency
-
-A relationship in which correct or timely operation/use of one component depends on another. Operational dependency and data lineage may overlap but are not necessarily identical.
-
-## Lineage
-
-A typed relationship supporting derivation, dependency, or influence tracing. The project distinguishes data, operational, deployment, and consumption/impact relationships where useful.
-
-## Data lineage
-
-How data assets derive from or flow into other data assets.
-
-## Operational dependency lineage
-
-How pipelines/jobs depend on other execution or availability conditions.
-
-## Deployment lineage
-
-How repository/code revisions, GitHub Actions deployments, Databricks definitions, and runs relate over time.
-
-## Freshness
-
-The observed currency/timeliness of an asset relative to a meaningful event or material-update time. Whether that freshness is acceptable is an Assessment against an applicable Expectation; historical behavior alone is not a normative freshness requirement.
-
-## Staleness
-
-A normative Assessment that observed freshness fails an applicable freshness Expectation. When no normative criterion exists, the product may describe freshness as atypical relative to a Baseline but should not silently label it stale.
-
-## Expectation
-
-An accepted Phase 002 concept: a provenance-bearing normative assertion describing what should be true or acceptable for an identified subject, dimension, context, and time.
-
-An Expectation is not a Baseline, Observation, or Assessment.
-
-## Quality expectation
-
-An Expectation specifically describing acceptable data-quality behavior, such as completeness, validity, uniqueness, consistency, volume, schema, referential behavior, or a domain-specific criterion.
-
-## Baseline
-
-An accepted Phase 002 concept: descriptive reference behavior derived from a defined population of comparable evidence. A Baseline preserves its evidence window, comparison context, derivation meaning, version, and limitations.
-
-A Baseline is not normative. `Typical` does not mean `healthy`; `atypical` does not mean `degraded`.
-
-## Observation
-
-An accepted Phase 002 concept: a provenance-bearing measured or retrieved fact about an identified subject and relevant time/context. An Observation preserves measurement meaning and evidence provenance without declaring health, anomaly, staleness, or cause.
-
-Missing evidence is not an Observation of zero/no-event. Observed absence requires sufficient evidence coverage to establish non-occurrence over a defined interval.
-
-## Quality observation
-
-An Observation used as data-quality evidence, such as row count, null rate, uniqueness result, schema fingerprint/change fact, distribution measure, reconciliation result, or domain-rule measurement.
-
-## Assessment
-
-An accepted Phase 002 concept: a dimension-scoped interpretation of authorized Observation evidence against an explicit normative Expectation and/or comparable descriptive Baseline.
-
-Assessment preserves its basis, supporting Observation references, Expectation/Baseline versions, evaluation context, limitations, and reassessment history. Baseline-only typicality/atypicality is not silently converted into normative health/failure.
-
-## Degradation
-
-A meaningful worsening supported by explicit directional/normative interpretation. A Baseline deviation alone is not sufficient to establish degradation: atypical behavior can be neutral, beneficial, or harmful depending on semantics and Expectations.
-
-## Change event
-
-An observed change in data, code, deployment, configuration, metadata, schema, policy, responsibility, expectation, topology, or another relevant condition that may be relevant to later analysis. Change does not by itself imply degradation or cause.
-
-## Evidence
-
-A provenance-bearing fact used to support an Assessment, Investigation, or Explanation. Observation is the primary accepted concept for measured/retrieved evidence; later concepts may preserve additional evidence relationships without redefining source facts.
-
-## Root-cause hypothesis
-
-A plausible explanation supported to some degree by evidence but not yet confirmed.
-
-## Attribution
-
-A reasoned statement assigning some portion of an observed change to one or more contributing conditions. Attribution may be partial and uncertain.
-
-## Confirmed cause
-
-A cause supported according to an agreed operational standard or explicit authorized human confirmation. That standard is not yet defined.
-
-## Impact / business impact
-
-The known or potential downstream effect of a pipeline/data condition on assets, metrics, reports, applications, decisions, or processes.
-
-## Technical owner
-
-A party assigned responsibility for technical implementation and operational maintenance. Technical ownership does not imply authority over business semantics, classification, policy, Expectations, or data access.
-
-## Business owner / accountable party
-
-A party assigned accountability for business meaning, fitness, or authorized organizational use according to the relevant Responsibility Assignment definition.
-
-## Data steward
-
-A party assigned stewardship responsibilities such as maintaining definitions, quality semantics, classifications, Expectations, or governance metadata according to organizational practice.
-
-## Responsibility type
-
-A named kind of responsibility, such as technical ownership, business accountability, semantic stewardship, quality-expectation stewardship, or privacy/security responsibility. Responsibility types are not interchangeable.
-
-## Classification
-
-A provenance-bearing assertion that an identified subject or facet belongs to a category in a named governance or sensitivity vocabulary. Classification is not authorization or policy applicability.
-
-## PII
-
-Personally identifiable information according to applicable organizational/legal definitions and policies.
-
-## PHI
-
-Protected health information according to applicable legal and organizational context.
-
-## Policy context
-
-A provenance-bearing assertion that a declared policy, handling expectation, restriction, or governance obligation applies to an identified subject in a relevant context and time. Policy Context is not access enforcement, legal interpretation, or compliance determination.
-
-## HIPAA-related policy context
-
-Policy context indicating that HIPAA-related obligations, controls, or handling expectations may apply. This context alone does not establish HIPAA compliance.
-
-## Provenance
-
-Information describing where a fact, definition, classification, responsibility assignment, policy-context assertion, Expectation, Baseline, Observation, or Assessment came from, who/what asserted or derived it, and the relevant time/version context.
-
-## Authority / source precedence
-
-Rules or assertions determining which source or actor may be treated as authoritative for a particular metadata or normative category, subject, context, and time. Phase 002 has deliberately not defined a universal authority rule; unresolved conflicts remain conflicts until such semantics are accepted.
-
-## Phase 002 concept terms
+## Scope and identity
 
 ### Monitoring Scope — Accepted
-
-The time-aware declaration of whether the monitoring product is responsible for monitoring an identified entity. Scope can resolve as included, excluded, unknown, conflicting, unauthorized, or unavailable. Scope is not authorization and does not implicitly propagate through lineage.
+The time-aware declaration of whether the product is responsible for monitoring an Entity Identity. Scope is not authorization and does not implicitly propagate through Lineage.
 
 ### Entity Identity — Accepted
+Functionality for deciding when source-specific references denote the same logical entity across systems/time while preserving ambiguity, separation, validity, and correction provenance.
 
-The functionality for determining when source-specific references denote the same logical entity across systems and time, while preserving ambiguity, separation, validity history, and correction provenance.
+## Semantics, responsibility, governance, policy
 
 ### Semantic Definition — Accepted
-
-The functionality for recording and resolving provenance-bearing semantic assertions that describe what an identified entity means in a relevant business or technical context and time. Semantic facets may coexist; the concept does not assume one canonical definition string.
+Provenance-bearing semantic assertions describing what an entity means in a relevant business/technical context/time.
 
 ### Responsibility Assignment — Accepted
-
-The functionality for recording and resolving who bears a named responsibility for an identified subject at a relevant time. Responsibility does not imply universal authority or authorization.
+Who bears a named responsibility for an identified subject/time. Responsibility does not imply universal authority or authorization.
 
 ### Classification — Accepted
-
-The functionality for recording and resolving category membership under named governance/sensitivity vocabularies while preserving source meaning, provenance, time, and conflict.
+Category membership under named governance/sensitivity vocabularies, preserving source meaning/provenance/time/conflict.
 
 ### Policy Context — Accepted
+Declared policy applicability/handling context for subject/context/time without claiming enforcement, legal interpretation, or compliance.
 
-The functionality for recording and resolving declared policy applicability/handling context for a subject/context/time without claiming enforcement, legal interpretation, or compliance.
+### PII / PHI / HIPAA-related policy context
+Sensitive-data/legal-organizational categories/context according to applicable definitions. Presence of such metadata does not itself establish compliance.
+
+## Health evaluation
 
 ### Expectation — Accepted
+A provenance-bearing normative assertion describing what should be true/acceptable for subject/dimension/context/time.
 
-The functionality for recording and resolving normative criteria describing what should be true or acceptable for an identified subject/dimension/context/time.
+A Change Intent may prompt explicit establishment/revision of a post-change Expectation, but anticipated effects do not become normative automatically.
+
+### Quality expectation
+An Expectation specifically describing acceptable data-quality behavior.
 
 ### Baseline — Accepted
+Descriptive reference behavior derived from comparable Observation evidence. It preserves evidence population/window, comparison context, derivation meaning, version, and limitations.
 
-The functionality for deriving and resolving descriptive reference behavior from comparable evidence while preserving evidence population, context, version, provenance, and comparability limitations.
+A Change Intent can register a prospective comparability break; realization evidence is required before the break becomes effective. A new Baseline must be derived from post-change observations rather than intended values.
 
 ### Observation — Accepted
-
-The functionality for recording provenance-bearing measured/retrieved facts without interpreting health or cause, including explicit evidence-coverage semantics for legitimate observed absence.
+A provenance-bearing measured/retrieved fact. Observation preserves measurement meaning/time/provenance without declaring health, anomaly, staleness, intent conformance, or cause. Missing evidence is not observed absence.
 
 ### Assessment — Accepted
+A dimension-scoped interpretation of authorized Observation evidence against explicit Expectation and/or comparable Baseline context, preserving its basis/history.
 
-The functionality for interpreting Observation evidence against explicit Expectation and/or Baseline context with a basis-appropriate, dimension-scoped result and reproducible historical provenance.
+### Freshness / Staleness
+Freshness is observed currency/timeliness. Staleness is a normative Assessment that observed freshness violates an applicable freshness Expectation.
+
+### Degradation
+A meaningful worsening supported by explicit directional/normative interpretation. Baseline deviation or realized Change alone is insufficient.
+
+## Lineage families
+
+### Data lineage
+How data assets derive from or flow into other data assets.
+
+### Operational dependency lineage
+How pipelines/jobs/executions depend on other availability/execution conditions.
+
+### Deployment provenance
+How repositories/revisions/configuration/deployments/active targets/executions relate over time. It remains distinct from data derivation Lineage.
+
+## Reasoning terms
+
+### Evidence
+A provenance-bearing fact used to support Assessment, Investigation, Causal Claim, or Explanation.
+
+### Root-cause hypothesis
+A plausible explanation supported to some degree by evidence but not confirmed.
+
+### Attribution
+A reasoned statement assigning contribution to one or more conditions with uncertainty.
+
+### Confirmed cause
+A cause supported under an agreed evidence/authority standard or explicit authorized human confirmation.
+
+### Impact / business impact
+Known or potential downstream effect. Lineage reachability creates candidates, not confirmed impact.
 
 ### Causal Claim — Candidate
-
-A proposed or reviewed causal explanation with explicit epistemic status and linked supporting/contradicting evidence.
+A proposed/reviewed causal explanation with explicit epistemic status and linked supporting/contradicting evidence.
 
 ### Annotation — Candidate
-
-Human-authored context attached to evidence, an investigation, or a claim without mutating the underlying source facts.
+Human-authored context attached without mutating underlying source facts.
 
 ### Explanation — Candidate
+Evidence-grounded, authorization-aware account of what happened, what is affected, what is known/uncertain, and where evidence comes from.
 
-An evidence-grounded, authorization-aware account of what happened, what is affected, what is known/uncertain, and where the supporting evidence comes from.
+## Governance roles/metadata
 
-## Concept
+### Technical owner / Business accountable party / Data steward
+Distinct Responsibility Assignment types.
 
-An independently understandable unit of functionality with a clear purpose, operational principle, state, and actions, composed with other concepts through synchronizations.
+### Provenance
+Information describing where a fact/assertion/definition/classification/intent/deployment/relationship/Expectation/Baseline/Observation/Assessment/Change came from, who/what asserted or derived it, and relevant temporal/version context.
 
-A concept is not automatically an implementation component or domain entity.
+### Authority / source precedence
+Rules determining which source/actor is authoritative for a category/subject/context/time. The project has no universal authority rule; unresolved conflicts remain conflicts.
 
-## Synchronization
+## Concept Design
 
-A defined coordination between otherwise independent concepts that composes their behaviors without collapsing their purposes/state into one concept.
+### Concept
+An independently understandable unit of functionality with a clear purpose, operational principle, state, and actions, composed via synchronizations.
+
+### Synchronization
+Defined coordination between independent concepts without collapsing their purposes/state into one concept.

@@ -137,3 +137,41 @@ Assessment interprets Observation evidence against explicit Expectation and/or c
 Execution, freshness, completeness, validity, volume, schema, distribution, and other dimensions are assessed independently by default. Success in one dimension does not mask failure or uncertainty in another.
 
 Any composite/overall health result must identify component Assessments and an explicit aggregation rule. Late/corrected evidence produces a new linked Assessment rather than silently rewriting the conclusion previously reached from earlier evidence.
+
+### D-020 — Planned modification requires Change Intent separate from realized Change
+
+**Status:** Accepted — Phase 002 Group 04
+
+A pipeline/data modification can be registered before activation through **Change Intent**, including anticipated effects and monitoring implications. Intent is planned context, not an Observation, Deployment, realized Change, Expectation, or causal conclusion.
+
+A registered change may activate and behave as intended, activate with unintended side effects, differ materially from anticipated magnitude, never activate, or be absent even when a deployment/change occurs.
+
+### D-021 — Planned structural change may create a prospective Baseline boundary but cannot set the Baseline
+
+**Status:** Accepted — Phase 002 Group 04 refinement of Group 03 synchronization
+
+Change Intent may register that an existing Baseline is expected to become non-comparable if a structural modification becomes active. Intent alone does not end current Baseline applicability. Deployment/realized Change evidence establishes the transition.
+
+A new post-change Baseline must be empirically derived from sufficient comparable post-change Observations. Planned values are never inserted as Baseline values. Immediate post-change normative validation should use an explicitly established/revised Expectation when appropriate.
+
+### D-022 — Deployment, execution, Lineage, and Change preserve distinct historical truth
+
+**Status:** Accepted — Phase 002 Group 04
+
+Deployment distinguishes attempt from activation and cannot prove intended data effect. Execution History reconstructs actual runs and cannot fabricate missing runs from missing telemetry. Lineage records typed temporal relationships and cannot convert planned topology into active topology without evidence. Change records realized differences/transitions and does not judge health, intent conformance, or cause.
+
+### D-023 — Adopt ledger-like historical semantics without selecting ledger technology
+
+**Status:** Accepted — cross-cutting product principle
+
+Material historical state should be provenance-bearing and reconstructable. Corrections/supersessions append or link new state rather than invisibly rewriting prior knowledge. Where material, effective/event time and recorded/knowledge time remain distinct.
+
+This decision does **not** select blockchain, event sourcing, append-only database, temporal-table technology, or any persistence architecture. Technical realization belongs to later architecture design.
+
+### D-024 — Require graph-compatible relationship semantics without selecting a graph database
+
+**Status:** Accepted — cross-cutting product principle
+
+Entity Identity plus typed, directed, temporal, provenance-bearing Lineage forms a naturally graph-shaped reasoning model. Product semantics must support upstream/downstream traversal, historical subgraphs, uncertainty, scope boundaries, and authorized opaque/redacted nodes.
+
+This does **not** select Neo4j, RDF, property graphs, GraphFrames, a graph query language, or any other technical graph architecture. Those are later evaluation candidates.

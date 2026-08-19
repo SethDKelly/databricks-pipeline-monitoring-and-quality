@@ -1,6 +1,6 @@
 # Concept: Expectation
 
-**Status:** Accepted — Phase 002 Group 03
+**Status:** Accepted — Phase 002 Group 03; synchronization refined by Group 04
 
 ## Purpose
 
@@ -8,7 +8,7 @@ Let an authorized actor or source state what behavior or condition should be con
 
 ## Operational principle
 
-A consumer-facing table is expected to be materially refreshed by 7:00 AM on business days and a key identifier is expected to remain below an agreed null-rate threshold. Those are normative criteria, not descriptions of historical behavior. When the freshness requirement changes next quarter, the new version applies prospectively; an incident replay for the prior quarter still resolves the expectation that was effective then.
+A pipeline maintainer registers a Change Intent to add a filter that will intentionally reduce Table C's population. If the business requirement is that post-change C should contain 13–15 million rows, an authorized actor explicitly establishes/revises the volume Expectation effective from the realized activation boundary. The Change Intent can prompt this review, but its anticipated effect does not become a normative criterion automatically.
 
 ## Actors
 
@@ -24,7 +24,7 @@ A consumer-facing table is expected to be materially refreshed by 7:00 AM on bus
 - identified subject;
 - expectation dimension/property;
 - normative criterion or acceptable condition;
-- applicability context, such as environment, consumer/use, business calendar, operating window, or other relevant scope;
+- applicability context;
 - effective interval and lifecycle state;
 - assertion provenance, actor/source, and authority context;
 - bounded exception/suspension context when explicitly adopted;
@@ -34,96 +34,83 @@ A consumer-facing table is expected to be materially refreshed by 7:00 AM on bus
 ## Actions
 
 ### `establish`
-- **Intent:** assert or synchronize a normative criterion for a subject/context.
-- **State effect:** records the expectation, provenance, and effective-time context.
-- **Failure / unknown behavior:** unresolved subject identity or insufficient assertion authority does not create a guessed expectation.
+Records a provenance-bearing normative criterion for a subject/context.
 
 ### `revise`
-- **Intent:** change future normative behavior while retaining the earlier version for historical interpretation.
-- **State effect:** supersedes prospectively rather than rewriting prior expectation history.
+Changes future normative behavior while retaining earlier versions for historical interpretation.
 
 ### `exceptFor`
-- **Intent:** record a bounded context/time in which the expectation is suspended or excepted.
-- **State effect:** changes applicability for the bounded exception without deleting the underlying expectation or altering observations.
-- **Important:** an exception does not mean the observed condition was healthy; it only changes the normative applicability used by later assessment.
+Records a bounded context/time in which the expectation is suspended/non-applicable without mutating evidence.
 
 ### `retire`
-- **Intent:** end future applicability of an expectation while preserving its historical state.
+Ends future applicability while preserving historical state.
 
 ### `resolveApplicable`
-- **Intent:** determine the expectation assertion(s) applicable to a subject, dimension, context, and time.
-- **Observable result:** applicable expectation(s), none known, conflicting, unauthorized, or unavailable with provenance where disclosure is allowed.
+Returns applicable expectation assertion(s), none known, conflicting, unauthorized, or unavailable.
 
 ## Invariants / behavioral expectations
 
 - Expectation is normative: it describes what **should** be true or acceptable.
-- Historical or common behavior does not become an Expectation merely because it is frequent.
-- A Baseline may inform a human decision to establish an Expectation, but the product must not silently promote a Baseline into a normative rule.
-- Expectation does not measure data, execution, or system state.
-- Expectation does not decide whether its criterion was met; that belongs to Assessment using Observation evidence.
-- Multiple expectations can simultaneously apply when they address different dimensions or contexts.
-- Incompatible expectations for the same relevant dimension/context remain conflicting until explicit authority/precedence semantics resolve them.
-- A missing applicable expectation does not mean the subject is healthy or acceptable; it means the product lacks a normative criterion for that dimension/context.
-- Current expectations do not rewrite historical assessments or the expectation version effective at an earlier incident time.
-- Exceptions/suspensions are explicit and time/context bounded; they do not mutate underlying evidence.
-- Expectation is implementation-neutral and is not defined by DQX, SQL, scheduler, or metric syntax.
+- Historical/common behavior does not become an Expectation merely because it is frequent.
+- A Change Intent's anticipated effect is descriptive planned context unless an authorized actor/source explicitly establishes it as an Expectation.
+- An intended structural change may require a prospective Expectation revision, but that revision remains an explicit normative action with its own authority/provenance.
+- The effective post-change Expectation should align to evidence that the change became active rather than silently applying from plan-registration time unless organizational semantics explicitly say otherwise.
+- Expectation does not measure actual state or decide whether its criterion was met; Assessment does.
+- Multiple Expectations can apply across different dimensions/contexts.
+- Conflicting Expectations remain conflicts until authority/precedence semantics resolve them.
+- Missing applicable Expectation does not mean healthy/acceptable.
+- Current Expectations do not rewrite historical Assessments.
+- Expectation remains implementation-neutral and is not defined by DQX, SQL, scheduler, ticket, or CI/CD syntax.
 
 ## Ambiguity and missing evidence
 
-If no applicable expectation can be resolved, later assessment must not fabricate a normative result. Conflicting expectations remain visible. If an expectation exists but its details are restricted, a viewer may receive an authorized abstract result such as "an applicable requirement exists" without receiving the sensitive threshold or business rule.
+A planned change may identify a need to revise an Expectation before exact post-change acceptable values are known. That state remains unresolved rather than converting the Change Intent into a threshold. If activation timing is uncertain, post-change applicability remains tied to evidence/accepted effective semantics rather than guessed deployment time.
 
 ## Synchronizations
 
 - **Entity Identity** supplies the subject.
-- **Responsibility Assignment** may identify parties responsible for maintaining or approving an expectation without making those parties universally authoritative.
-- **Semantic Definition** can provide interpretation needed to understand the criterion, such as metric grain or business calendar semantics.
-- **Observation** provides evidence relevant to the criterion but does not own it.
-- **Assessment** compares authorized Observation evidence with the applicable Expectation.
-- **Baseline** may provide descriptive context but cannot silently replace or become an Expectation.
-- **Change** can later represent expectation changes across time without treating them as data-health changes.
+- **Responsibility Assignment** may identify parties responsible for maintaining/approving Expectations without granting universal authority.
+- **Semantic Definition** provides interpretation such as grain/business-calendar semantics.
+- **Observation** provides evidence relevant to the criterion.
+- **Assessment** compares authorized Observations with the applicable Expectation.
+- **Baseline** remains descriptive and cannot silently become an Expectation.
+- **Change Intent** can trigger explicit review/establishment/revision of a prospective post-change Expectation.
+- **Deployment/Change** can establish the realized activation/change boundary relevant to effective applicability.
 
 ## Security / privacy / governance considerations
 
-Expectations can reveal sensitive thresholds, operating schedules, business rules, or control intentions. Establishment/revision authority and viewer disclosure are separate concerns and both require later authorization semantics.
-
-An actor authorized to maintain a technical expectation is not automatically authorized to establish business, privacy, or compliance-related expectations.
+Expectations and Change Intents can reveal sensitive thresholds, business rules, schedules, filters, or operating assumptions. Maintenance authority and viewer disclosure remain separate.
 
 ## Evidence / provenance considerations
 
-Every expectation assertion should retain source/actor, assertion time, effective interval, relevant context, and revision/exception history. Historical assessment must be able to identify exactly which normative criterion was effective and used.
+Every Expectation retains source/actor, assertion time, effective interval, context, and revision/exception history. If a revision is related to Change Intent, that relationship should be traceable without making intent itself the normative source unless explicitly authorized.
 
 ## Representative scenarios
 
-### Freshness requirement
-A production table must be materially refreshed by 7:00 AM on business days. An observation of last material update at 6:42 AM can later be assessed against that criterion.
+### Planned filter with prospective criterion
+A filter is planned and expected to lower C. An authorized business/data authority explicitly revises C's acceptable post-change range effective from activation. The first post-change Observation can be assessed immediately even before a new Baseline exists.
 
-### Successful run, failed expectation
-A Databricks job succeeds, but the published table is not refreshed by its applicable deadline. Execution success does not satisfy the freshness expectation.
+### Planned effect without approved criterion
+A Change Intent predicts lower volume but no authorized party sets an acceptable range. The first post-change result may be compared with historical/planned context but cannot receive a normative volume pass/fail solely from the intent.
 
-### Baseline without expectation
-Table C usually contains about 20 million rows, but no approved row-count requirement exists. The Baseline cannot be treated as an Expectation merely because it is stable.
-
-### Conflicting expectations
-Two relevant sources assert different freshness deadlines for the same subject/context. The conflict remains unresolved rather than selecting the latest synchronization.
+### Successful run, failed post-change expectation
+The filter deploys and lowers volume as intended, but completeness violates a separate Expectation. Planned change does not suppress the violation.
 
 ### Historical revision
-A threshold changes on April 1. A March incident must continue to resolve the March criterion even when viewed later.
-
-### Unauthorized expectation detail
-A business analyst may learn that a quality criterion was violated while the exact sensitive threshold remains hidden.
+A threshold changes at a realized deployment boundary. Incidents before that boundary continue to resolve the old criterion.
 
 ## Non-goals
 
-- measuring or recording actual conditions;
-- deriving historical Baselines;
+- measuring actual conditions;
+- deriving Baselines;
+- treating planned effects as automatic normative requirements;
 - producing health status;
 - defining root cause;
-- encoding vendor-specific quality-rule syntax;
-- establishing universal source-precedence rules.
+- encoding vendor-specific quality-rule syntax.
 
 ## Deferred questions
 
-- Which expectation dimensions and lifecycle states are required for the first MVP?
-- Which bounded exception semantics are needed beyond simple suspension/non-applicability?
-- How should explicit authority/source precedence for expectation categories be modeled?
-- Should consequence/severity policy remain outside Expectation and be introduced only when alerting/impact behavior is designed?
+- first-MVP Expectation dimensions/lifecycle states;
+- authority/source precedence for change-driven Expectation revisions;
+- semantics when a planned effective time and actual activation time differ;
+- consequence/severity policy.

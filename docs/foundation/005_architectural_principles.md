@@ -2,120 +2,77 @@
 
 ## Scope
 
-These are **constraints on future architecture**, not an architecture selection. They describe qualities that technical designs must preserve once implementation design begins.
+These are constraints on future architecture, not an architecture selection.
 
 ## AP-01 — Conceptual architecture precedes technical architecture
-
-Technical modules must emerge from accepted product concepts and synchronizations rather than the reverse.
-
-No current document should infer that one concept becomes one microservice, one table, one class, or one API.
+Technical modules emerge from accepted concepts/synchronizations, not vice versa.
 
 ## AP-02 — The ecosystem is the reasoning boundary
-
-The system must reason across repository, job, workspace, pipeline, and domain boundaries while preserving those boundaries for provenance and responsibility.
-
-A cross-repository dependency is not an edge case; it is a core use case.
+Reason across repository/job/workspace/pipeline/domain boundaries while preserving them for provenance/responsibility.
 
 ## AP-03 — Time and history are first-class
+Future architecture must support point-in-time questions about intent, active Deployment, executions, Lineage/topology, Expectations, Baselines, Observations, Assessments, realized Changes, and later investigations.
 
-The system must eventually support point-in-time questions such as:
-
-- What did this asset look like before the degradation?
-- What lineage/topology existed when the affected run occurred?
-- What deployment was active then?
-- Which Expectations and Baselines applied then?
-- When did the first abnormal Observation/Assessment appear?
-- Has the issue happened before?
-
-Current-state-only architecture would violate the product thesis.
-
-## AP-04 — Evidence is preserved separately from interpretation
-
-Normative Expectations, descriptive Baselines, observed facts, derived Assessments, hypotheses, attributions, and confirmed causes must remain distinguishable.
-
-A business-friendly summary may compress evidence, but it must not erase the evidence chain or silently turn descriptive comparison into normative judgment.
+## AP-04 — Evidence is preserved separately from interpretation and intent
+Change Intent, Deployment evidence, execution facts, Observations, Baselines, Expectations, Assessments, realized Changes, hypotheses/attributions, and confirmed causes remain distinguishable.
 
 ## AP-05 — Provenance is part of every material fact
-
-Responsibility Assignments, classifications, semantic definitions, policy context, lineage relationships, Expectations, quality Observations, Baselines, deployments, and Assessments should retain source and temporal provenance appropriate to their use.
-
-Synchronized metadata must not silently become authoritative merely because it is convenient to query.
+Responsibility Assignments, semantic definitions, classifications, Policy Context, Change Intents, Deployments, executions, Lineage, Expectations, Observations, Baselines, Assessments, and Changes retain source/temporal provenance appropriate to use.
 
 ## AP-06 — Lineage is typed
-
-The design must distinguish at least:
-
-- data derivation lineage;
-- pipeline/operational dependency;
-- deployment/code lineage;
-- downstream consumption/impact relationships.
-
-These relationships may intersect but should not be collapsed into an ambiguous generic edge.
+Distinguish data derivation, operational dependency, production/consumption, and deployment provenance rather than one ambiguous edge.
 
 ## AP-07 — Monitoring models degradation, not only failure
-
-A successful job can yield data that violates freshness or quality Expectations. Architecture must therefore support Observations and dimension-specific Assessments independent of execution success/failure.
-
-Baseline deviation alone must not be treated as normative degradation.
+Successful execution can coexist with freshness/quality violations; Baseline deviation alone is not normative degradation.
 
 ## AP-08 — Expectations, Baselines, Observations, and Assessments are separate
-
-What should happen, what comparable reference behavior looks like, what was observed, and what the evidence means are separate states with separate provenance.
-
-This enables Expectations and Baselines to change while historical Observations and Assessments remain reproducible. Typicality must not silently become health, and missing telemetry must not become observed absence.
+What should happen, reference behavior, observed fact, and interpretation remain distinct. Planned values do not become Baselines; planned effects do not become Expectations automatically.
 
 ## AP-09 — Historical comparisons and assessments must be reproducible
-
-Where practical, a historical Assessment should be explainable from the exact Observation evidence, Expectation/Baseline versions, evaluation context, and definitions that applied at the time.
-
-Late or corrected evidence should create traceable reassessment rather than rewriting the earlier conclusion invisibly.
+Historical Assessment should resolve the evidence/reference versions available/used at the time. Late/corrected evidence creates traceable reassessment.
 
 ## AP-10 — Security boundaries follow data authority, not monitoring convenience
-
-The framework should not gain or redistribute raw-data access merely because it monitors an asset.
-
-Metadata, aggregates, samples, Baselines, Assessments, and derived explanations must each be treated according to their sensitivity and source authorization.
+Monitoring does not broaden raw-data access; metadata/derived states may also be sensitive.
 
 ## AP-11 — Data minimization is a design requirement
-
-Prefer metadata, aggregate metrics, checks, fingerprints, and other minimally necessary evidence over copying row-level sensitive data into the monitoring system.
-
-If later functionality genuinely requires sample values, that must be an explicit security/design decision rather than a default ingestion behavior.
+Prefer metadata/aggregates/checks/fingerprints over copied row-level sensitive data.
 
 ## AP-12 — Governance metadata participates in reasoning
-
-Business semantics, Responsibility Assignments, criticality, Classification, and Policy Context should not be decorative catalog links. They should affect impact analysis, explanations, escalation, and presentation where appropriate without taking ownership of health evidence.
+Semantics, Responsibility Assignment, criticality, Classification, and Policy Context affect explanations/impact/escalation without owning health evidence.
 
 ## AP-13 — Policy transparency is not compliance certification
-
-The architecture may present Classifications, Policy Context, applicable Expectations, access evidence, or control status. It must not mechanically transform these into a legal compliance claim.
+Policy/classification/control evidence never mechanically becomes legal compliance conclusion.
 
 ## AP-14 — Tool integration is replaceable at the concept boundary
-
-Databricks, GitHub/GitHub Actions, Collibra, Immuta, DQX, and Metric Views should be evaluated as providers or realizations of product concepts.
-
-An optional integration must not become an implicit required dependency unless that decision is deliberate and documented.
+Databricks, GitHub/GitHub Actions, Collibra, Immuta, DQX, Metric Views, and future tools are providers/realizations, not concept definitions.
 
 ## AP-15 — Databricks-native capabilities are favored, not worshipped
-
-When Databricks-native capabilities meet the accepted product concept cleanly, prefer them over unnecessary duplication. When they do not, preserve the concept and add only the missing functionality.
+Prefer native capabilities where they satisfy accepted concepts cleanly; add only missing functionality.
 
 ## AP-16 — Question answering is a view over evidence
-
-The conversational/question-answering experience must not become an independent knowledge source. Answers should be grounded in authorized evidence, semantics, historical context, and explicit Assessment basis.
+Conversational/reporting experiences derive from authorized evidence/context and never become independent truth sources.
 
 ## AP-17 — Unknown is a valid result
+Incomplete, insufficient, non-comparable, conflicting, unavailable, unauthorized, or unknown context is valid.
 
-The architecture must support incomplete, insufficient, non-comparable, conflicting, unavailable, or unauthorized evidence/reference context without inventing certainty.
+## AP-18 — Human/planned intervention has explicit semantics
+Expectation revision, Change Intent registration, Baseline comparability decisions, causal confirmation, or annotation remain distinct from machine-derived Observations.
 
-## AP-18 — Human intervention has explicit semantics
-
-If a person establishes/revises an Expectation, records a bounded exception, marks a Baseline non-comparable, confirms a later causal claim, or annotates an incident, that action must remain distinguishable from machine-derived Observations.
-
-## AP-19 — Business and engineering views share the same underlying state
-
-Do not create separate truth stores for executive/business reporting and engineering analysis. Different projections may expose different authorized detail, but they must derive from the same evidence and Assessment basis.
+## AP-19 — Business and engineering views share underlying state
+Different projections may expose different authorized detail but derive from the same evidence/history.
 
 ## AP-20 — The product remains useful with optional systems absent
+Collibra/Immuta absence should degrade enrichment, not invalidate core operation.
 
-The core product should be able to function without Collibra or Immuta. Their presence may enrich authoritative semantics/policy information, but absence should degrade enrichment rather than invalidate the whole system.
+## AP-21 — Planned intent, active deployment, realized change, and health are distinct
+Architecture must preserve the chain **Change Intent → Deployment activation → Execution → Observation/realized Change → Assessment** without collapsing any link. A planned change can be valid yet produce an unintended violation; a violation can occur without a change; a deployment can occur without material data change.
+
+## AP-22 — Historical state has ledger-like semantics
+Material facts/assertions are append/supersede/correct rather than silently overwritten. Where material, distinguish effective/event time from recorded/knowledge time.
+
+This is a semantic constraint, not a selection of blockchain, event sourcing, temporal database, or append-only storage technology.
+
+## AP-23 — Relationship semantics are graph-compatible
+Entity Identity plus typed temporal Lineage must support upstream/downstream traversal, historical subgraphs, incomplete/uncertain paths, and authorization-aware opaque nodes.
+
+This is a semantic constraint, not a selection of graph database, graph query language, or graph-processing framework.

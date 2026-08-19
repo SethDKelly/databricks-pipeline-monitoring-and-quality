@@ -1,96 +1,126 @@
 # Concept: Lineage
 
-**Status:** Candidate
+**Status:** Accepted — Phase 002 Group 04
 
 ## Purpose
 
-Let users trace typed upstream/downstream relationships among identified ecosystem entities, including the historical topology applicable to a relevant time.
+Let users trace typed, directed relationships among identified ecosystem entities for the topology that was applicable at a relevant time, with provenance and uncertainty explicit.
 
 ## Operational principle
 
-Table C is derived by joining A and B and feeds a Metric View and report. Lineage can traverse upstream to A/B and downstream to consumers using typed relationships and incident-time validity, while keeping data derivation distinct from execution dependency and deployment provenance.
+Table C is derived by joining A and B, is produced by Pipeline P, and feeds a Metric View/report. Lineage traverses upstream/downstream using typed relationships and historical validity. If a planned change says a new source D will be added, that proposed topology remains in Change Intent until runtime/catalog evidence establishes the actual relationship. An incident replay before activation continues to show the old topology.
 
 ## Actors
 
-- Data Engineer
+- Data Engineer / Pipeline Maintainer
 - Data Platform Administrator
 - Monitoring framework
-- Business Analyst / Data Steward
+- Business Analyst / Data Consumer
+- Data Steward / Governance Steward
+- Integration/metadata sources
 
 ## State
 
-- source/target identities;
-- relationship type and direction;
-- validity/effective time;
-- provenance/source and evidence quality;
-- confidence/ambiguity if inferred rather than directly asserted;
-- supersession/correction history.
+- identified source and target entity identities;
+- directed relationship type;
+- relationship meaning/context;
+- effective/valid interval when known;
+- provenance/source and assertion/observation time;
+- knowledge/record time where material;
+- evidence quality/confidence for asserted, observed, or inferred relationships;
+- supersession/correction history;
+- conflict/ambiguity/completeness context.
 
 ## Actions
 
 ### `assertRelationship`
-Records an authoritative or explicit relationship.
+- **Intent:** record a source/authorized assertion that a typed relationship applies.
 
 ### `observeRelationship`
-Records a relationship inferred/observed from runtime or metadata evidence with provenance/quality.
+- **Intent:** record a relationship established/inferred from runtime, catalog, code, query, or other evidence with provenance/confidence.
 
 ### `supersedeRelationship`
-Ends/revises validity without erasing historical topology.
+- **Intent:** end/revise relationship validity without erasing historical topology.
+
+### `correctRelationship`
+- **Intent:** preserve a correction to earlier relationship evidence while retaining knowledge history.
 
 ### `traverseAt`
-Returns typed upstream/downstream relationships applicable at a time, subject to scope/authorization.
+- **Intent:** traverse typed upstream/downstream relationships applicable at a relevant time.
+- **Observable result:** path/subgraph plus relationship type, provenance, completeness/ambiguity, and authorized redaction context.
 
 ## Invariants / behavioral expectations
 
-- Relationship type is explicit; untyped edges are insufficient for serious RCA.
-- Data lineage, execution dependency, consumption relationship, and deployment provenance are not silently conflated.
+- Every relationship used for serious reasoning has an explicit type/meaning; generic untyped edges are insufficient.
+- Data derivation, operational/execution dependency, production/consumption, and deployment provenance are not silently conflated.
 - Current topology does not overwrite historical topology.
-- Lineage indicates relationship, not causal blame.
-- Missing lineage is not evidence of no relationship.
+- Planned/proposed topology is not active Lineage until realization evidence establishes the relationship.
+- Lineage represents relationship/dependency, not causal blame.
+- Reachability does not prove actual downstream impact or upstream cause.
+- Missing Lineage is not proof that no relationship exists.
+- Inferred relationships retain confidence/evidence basis and are distinguishable from authoritative assertions.
+- Entity identities remain distinct even when connected by replacement/migration/derivation relationships.
+- Event/effective time and knowledge/record time remain distinguishable where correction/late discovery matters.
+
+## Graph compatibility
+
+Lineage is inherently graph-shaped: identified entities participate as nodes/referents and typed directed relationships form traversable edges over time. The accepted functional model therefore requires graph-compatible traversal semantics, including historical/authorized/incomplete subgraphs.
+
+This does **not** select a graph database, RDF/property-graph standard, graph query language, or service architecture. A later technical design may realize the accepted semantics with graph-native storage, relational structures, lakehouse tables, indexes, or a hybrid approach.
 
 ## Ambiguity and missing evidence
 
-Conflicting relationships, partial topology, inferred edges, stale metadata, and unauthorized nodes are explicit conditions. Traversal may return incomplete-with-reason rather than a falsely complete graph.
+Partial topology, stale metadata, conflicting edges, ambiguous identity, inferred relationships, and unauthorized nodes/edges remain explicit. Traversal may return `incomplete` with reason rather than presenting a falsely complete dependency model.
 
 ## Synchronizations
 
-- Asset Identity supplies relationship endpoints.
-- Monitored Scope determines participation without erasing known out-of-scope relationships.
-- Investigation uses upstream lineage to discover evidence candidates.
-- Impact uses downstream lineage to discover affected candidates.
-- Change can describe topology changes.
+- **Entity Identity** supplies relationship endpoints.
+- **Monitoring Scope** controls monitoring responsibility without erasing known relationships that cross scope boundaries.
+- **Change Intent** can describe anticipated topology changes, but planned relationships do not become active Lineage automatically.
+- **Deployment/Execution History** can provide evidence/context for relationships without being merged into Lineage state.
+- **Change** can describe realized topology transitions using historical Lineage versions.
+- **Observation/Assessment** attach health evidence to entities/runs without becoming edges.
+- **Investigation** later traverses upstream Lineage to discover evidence candidates.
+- **Impact** later traverses downstream Lineage to identify exposure candidates without treating reachability as confirmed impact.
 
 ## Security / privacy / governance considerations
 
-Lineage can disclose sensitive architecture and asset existence even when values are hidden.
+Lineage can reveal sensitive asset names, architecture, business processes, restricted systems, and indirect relationships. Authorized traversal may return opaque/redacted nodes or indicate that a path/subgraph is incomplete without disclosing restricted details.
 
 ## Evidence / provenance considerations
 
-Relationship assertions retain source, type, direction, effective time, and whether they were asserted, observed, or inferred. Traversal completeness must be explainable rather than implied.
+Every material relationship retains its type, source, effective interval, assertion/observation basis, confidence where inferred, and correction/supersession history. Traversal completeness should be explainable from source coverage and authorization rather than implied.
 
 ## Representative scenarios
 
-### Happy path
-C resolves upstream derivation to A/B and downstream consumption to a Metric View/report.
+### A + B → C
+C has typed derivation edges from A and B plus production/consumption relationships to its pipeline/consumers. An upstream RCA traversal can inspect A/B without conflating those data edges with deployment provenance.
 
-### Degraded path
-One cross-repository upstream relationship is missing; traversal reports incomplete topology.
+### Planned new source
+A Change Intent says D will become an additional source. Before activation, D is planned context only. After deployment/execution/catalog evidence establishes D→C, the Lineage relationship becomes effective from the supported time.
 
-### Conflicting evidence
-Two sources disagree on whether a relationship was active at incident time.
+### Historical topology
+C used B1 in January and B2 after a migration in February. January incident replay traverses B1; current topology does not replace the historical path.
 
-### Unauthorized evidence
-A restricted upstream node may be represented as redacted/opaque while preserving that the path is incomplete.
+### Cross-repository dependency
+Pipeline P in repository X consumes an asset produced by pipeline Q in repository Y. The relationship remains first-class across repository boundaries.
+
+### Incomplete restricted path
+A business user sees that C depends on a restricted upstream entity represented opaquely and that upstream analysis is incomplete, without receiving the restricted identity.
 
 ## Non-goals
 
 - root-cause determination;
-- ownership;
-- execution history;
-- deployment history;
-- selecting a graph storage architecture.
+- confirmed impact determination;
+- execution lifecycle history;
+- deployment activation history;
+- planned-change registration;
+- selecting graph storage/query architecture.
 
-## Open questions
+## Deferred questions
 
-- What minimal relationship type taxonomy is required for MVP?
-- Which sources are sufficiently trustworthy for historical lineage?
+- minimum MVP relationship taxonomy;
+- evidence hierarchy for code/catalog/runtime-derived Lineage;
+- column-level Lineage scope for MVP;
+- historical topology retention granularity;
+- graph architecture evaluation criteria for later technical design.

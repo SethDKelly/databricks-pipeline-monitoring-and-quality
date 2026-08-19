@@ -1,38 +1,41 @@
 ---
-description: Evidence, temporal reasoning, lineage, health, freshness, and data-quality invariants.
+description: Evidence, temporal reasoning, planned change, lineage, health, freshness, and data-quality invariants.
 globs:
 alwaysApply: true
 ---
 
 # Evidence and reasoning invariants
 
-Preserve these distinctions in all documentation:
+Preserve:
 
-- logical pipeline ≠ repository ≠ Databricks job;
-- run success ≠ freshness ≠ data quality;
+- Change Intent ≠ Deployment ≠ realized Change;
+- anticipated effect ≠ normative Expectation;
+- Deployment attempt ≠ activation;
+- activation ≠ intended effect realized;
 - expectation ≠ baseline;
-- normative requirement ≠ historical regularity;
+- planned value ≠ empirical baseline;
 - observation ≠ assessment;
 - missing evidence ≠ observed absence;
 - typical ≠ healthy;
 - atypical ≠ degraded/defective;
-- assessment ≠ causal explanation;
-- correlation ≠ attribution ≠ confirmed cause;
-- data lineage ≠ operational dependency ≠ deployment lineage;
-- current topology ≠ historical topology.
+- successful execution ≠ freshness ≠ data quality;
+- planned topology ≠ active Lineage;
+- Lineage/reachability ≠ cause/confirmed impact;
+- Change ≠ degradation ≠ cause;
+- effective/event time ≠ recorded/knowledge time;
+- correlation ≠ attribution ≠ confirmed cause.
 
 Rules:
 
-- Time/history is first-class; avoid current-state-only designs.
-- Material conclusions must be traceable to evidence and provenance.
-- Expectations are normative; Baselines are descriptive and may not be silently promoted into requirements.
-- A Baseline-only deviation may be atypical but must not be labeled unhealthy/degraded without normative or explicit directional semantics.
-- Missing telemetry must not be converted into zero/no-event; observed absence requires sufficient evidence coverage.
-- Assessments must identify the Observation evidence and Expectation/Baseline versions forming their basis.
-- Health dimensions remain separate by default; any overall roll-up needs explicit component Assessments and aggregation rules.
-- Reassessment after late/corrected evidence preserves prior conclusions and provenance.
-- Unknown, conflicting, non-comparable, unavailable, unauthorized, and insufficient-evidence states are valid outcomes.
-- Never invent a root cause to make a report complete.
-- Root-cause reasoning should consider upstream origin and downstream impact.
-- A successful Databricks run may still produce stale, incomplete, anomalous, or normatively degraded data.
-- Business-facing explanations and engineering detail must derive from the same evidence.
+- Time/history is first-class and must support ledger-like append/supersede/correction semantics.
+- Material conclusions remain traceable to provenance-bearing evidence.
+- A Change Intent may register a prospective Baseline comparability break but cannot set post-change Baseline values.
+- Post-change Baseline requires sufficient comparable post-change Observations.
+- Planned anticipated behavior becomes normative only through explicit Expectation establishment/revision.
+- Missing telemetry never becomes zero/no-event.
+- Assessments retain exact Observation and Expectation/Baseline versions/basis.
+- Health dimensions stay separate unless an explicit aggregation rule exists.
+- Lineage is typed, temporal, historical, authorization-aware, and graph-compatible.
+- Do not select graph database, event store, blockchain, or persistence architecture during Phase 002.
+- Never infer cause from Deployment timing, Lineage, realized Change, or intent consistency alone.
+- Business-facing explanations and engineering detail derive from the same authorized history/evidence.

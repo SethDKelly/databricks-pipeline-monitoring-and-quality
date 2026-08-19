@@ -2,151 +2,77 @@
 
 ## MVP objective
 
-Prove that the framework can turn a fragmented Databricks pipeline ecosystem into an **evidence-grounded, historically aware, lineage-aware explanation of pipeline/data health** for both engineering and business users.
-
-The MVP should optimize for one coherent end-to-end reasoning experience rather than maximal integration breadth.
+Prove that the framework can turn a fragmented Databricks pipeline ecosystem into an evidence-grounded, historically aware, lineage-aware explanation of pipeline/data health for engineering and business users.
 
 ## Required MVP capabilities
 
 ### 1. Ecosystem inventory
+Represent logical pipelines, repositories, Databricks jobs/tasks/runs, data assets, cross-pipeline dependencies, and representative consumers.
 
-Represent a useful monitored scope spanning:
+### 2. Planned-change registration and realization context
+For representative pipelines, register a **Change Intent** with target, anticipated effects, planned timing/context, provenance, and monitoring implications. Associate intent to realizing Deployment evidence when possible without requiring a specific ticket/PR system.
 
-- logical pipelines;
-- Git repositories;
-- Databricks jobs/tasks;
-- runs;
-- produced/consumed data assets;
-- cross-pipeline dependencies;
-- basic downstream consumers where known.
+The MVP should demonstrate at least one structural planned change that can trigger prospective Expectation review and Baseline comparability handling.
 
-### 2. Deployment/run association
+### 3. Deployment/run association
+Connect repository/revision/configuration → deployment attempt/activation → execution → produced data asset for representative pipelines. Exact technical realization is deferred.
 
-For representative pipelines, connect:
+### 4. Freshness/staleness
+Answer when relevant data last updated, what normative behavior is expected, whether it violates that Expectation, and how it compares descriptively with history.
 
-**repository → code revision → GitHub Actions deployment → Databricks definition/run → produced data asset**
+### 5. Core data-quality Observations
+Track a small high-value set: row quantity, completeness/null measures, uniqueness where relevant, schema, selected domain checks, and join/match behavior for the canonical scenario.
 
-The exact technical method is deferred.
+### 6. Historical comparison and realized Change
+Show how evidence changes over time; distinguish planned intent from realized Change and distinguish Baseline atypicality from normative violation.
 
-### 3. Freshness/staleness
+### 7. Typed temporal Lineage
+Support upstream/downstream historical traversal across enough ecosystem topology to answer A+B→C and cross-repository scenarios. Product semantics must be graph-compatible; graph technology is deferred.
 
-Answer for monitored assets:
+### 8. Evidence-grounded investigation
+For degradation/atypicality, present Observations, Assessments, upstream evidence, Change Intent, recent Deployment/config/schema/Lineage/Change context, downstream candidates, known unknowns, and provenance.
 
-- when the relevant pipeline/data last updated;
-- what update behavior is expected;
-- whether the asset is currently stale or late;
-- how that state compares with recent history.
+### 9. Governance/semantic context
+Expose representative semantic meaning, Responsibility Assignments, criticality/classification/Policy Context, and provenance.
 
-### 4. Core data-quality observations
+### 10. Business-facing explanation/question interaction
+Support questions such as: Is it healthy/stale? What changed? Was a relevant change planned? What became active? Did realized behavior match the expected operating context? Where are likely origin candidates? What downstream assets may be affected? Who is responsible? What evidence supports this?
 
-Track a deliberately small but high-value set of quality signals such as:
+### 11. Ledger-like historical reconstruction
+MVP history must preserve enough version/supersession/correction information to reconstruct what was intended, active, executed, connected, observed, expected, baselined, assessed, and changed at a representative incident time.
 
-- row/record quantity;
-- null/completeness measures for selected critical fields;
-- uniqueness where relevant;
-- schema change;
-- selected domain checks;
-- join/match behavior for at least the canonical join scenario.
-
-DQX is strongly favored for evaluation where it maps cleanly to these needs.
-
-### 5. Historical trend and change detection
-
-Show how health/quality measures change over time and identify when a significant degradation begins.
-
-The first version does not need advanced machine learning if explicit expectations, baselines, and comparisons are sufficient.
-
-### 6. Typed lineage and dependency paths
-
-Support upstream/downstream reasoning across enough of the ecosystem to answer the canonical Table A + Table B → Table C scenario.
-
-### 7. Evidence-grounded investigation
-
-For a degraded output, present:
-
-- relevant observations;
-- upstream comparisons;
-- recent deployment/config/schema changes where available;
-- candidate explanations;
-- downstream impact;
-- known unknowns;
-- evidence references/provenance.
-
-### 8. Governance and semantic context
-
-For representative monitored assets, expose:
-
-- description/business meaning;
-- technical owner;
-- business owner/steward where available;
-- criticality if available;
-- PII/PHI or other classification context when available;
-- provenance of those facts.
-
-Collibra/Immuta integration is optional for MVP unless discovery establishes them as the only practical authoritative source for a required fact.
-
-### 9. Business-facing explanation
-
-Produce a concise explanation suitable for a business analyst while retaining a path to deeper technical evidence.
-
-### 10. Question-oriented interaction
-
-The MVP must support the product's question model, even if the first implementation uses a constrained interface rather than a fully open-ended conversational system.
-
-The product should be able to answer at least:
-
-- Is this pipeline/data asset healthy?
-- Is it stale?
-- What changed?
-- When did it change?
-- Where is the likely degradation source?
-- What downstream assets may be affected?
-- Who owns it?
-- What evidence supports that explanation?
+This is a behavioral requirement; no specific ledger/event-store architecture is required.
 
 ## MVP proof scenarios
 
 ### Scenario A — Stale upstream
-
-A downstream asset is late because an upstream pipeline did not refresh on time.
+Downstream execution succeeds but upstream input violates freshness Expectation.
 
 ### Scenario B — Join-volume degradation
-
-Table C falls materially because A, B, join match behavior, or some combination changes.
+C falls because A, B, join behavior, or some combination changes.
 
 ### Scenario C — Successful run, poor quality
-
-A Databricks job succeeds but a key completeness/domain-quality measure degrades.
+Execution succeeds while a quality Expectation fails.
 
 ### Scenario D — Deployment-correlated change
+Data changes after activation; product describes chronology/evidence without overclaiming cause.
 
-A data change begins after a deployment, with the system clearly describing correlation and evidence without asserting causality beyond support.
+### Scenario E — Planned structural change with valid outcome
+A filter Change Intent predicts lower C volume, post-change Expectation is explicitly revised, old Baseline transitions after realization, and new Baseline derives later from post-change evidence.
 
-### Scenario E — Business impact
+### Scenario F — Planned change with unintended violation
+Expected volume shift occurs but another quality dimension violates its Expectation. Planned context does not suppress the failure.
 
-A degraded table feeds a Metric View/report, and the business-facing explanation identifies potential downstream impact and owner.
+### Scenario G — Unregistered change
+A source/data/topology Change occurs with no registered intent; monitoring remains effective and labels planned context unavailable.
 
-### Scenario F — Policy-aware visibility
+### Scenario H — Business/policy-aware downstream impact
+A degraded table feeds business consumers; explanation respects governance/policy visibility and identifies responsible parties.
 
-An affected asset has PII/PHI classification context, and the monitoring surface communicates the classification without exposing restricted values.
+## Explicitly outside initial MVP
 
-## Explicitly outside the initial MVP
-
-- autonomous remediation or rollback;
-- automated code fixes;
-- universal support for every Spark/Databricks pipeline pattern;
-- every possible data-quality dimension;
-- every enterprise governance tool;
-- replacing Collibra, Immuta, Databricks, or GitHub;
-- legal/compliance certification;
-- broad raw-data exploration;
-- unrestricted row-level samples in the monitoring store;
-- enterprise-grade multi-platform abstraction beyond what is needed to preserve concept boundaries;
-- sophisticated predictive ML if transparent rules/baselines can prove the product first;
-- fully automatic causal inference;
-- perfect column-level lineage for all workloads if source evidence cannot reliably provide it;
-- write-back/remediation workflows into production systems until safety/authority semantics are designed.
+Autonomous remediation/rollback; automated code fixes; universal platform/pattern support; every DQ dimension/governance tool; replacing source systems; legal compliance certification; broad raw-data exploration; unrestricted row samples; fully automatic causal inference; perfect column lineage; write-back/remediation workflows; mandatory graph database; mandatory event-sourcing/blockchain/ledger implementation.
 
 ## MVP exit test
 
-The MVP is successful when a representative business analyst and data engineer can look at the same degradation and receive different levels of detail but the **same evidence-grounded explanation**, including upstream origin candidates, downstream impact, time of onset, ownership, and uncertainty.
+A representative business analyst and data engineer can inspect the same incident/planned-change outcome and receive appropriately detailed but evidence-consistent explanations, including intent, active deployment, execution, historical topology, Observations/Assessments, realized changes, upstream origin candidates, downstream impact, responsibility, and uncertainty.

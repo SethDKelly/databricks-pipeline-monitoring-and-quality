@@ -2,107 +2,71 @@
 
 ## Project status
 
-This repository is in **Phase 002 — Concept Specifications**.
+This repository is in **Phase 002 — Concept Specifications**. Groups 01–04 are accepted; Group 05 is next.
 
-**Documentation-only rule:** do not add application code, infrastructure code, notebooks, package manifests, schemas, APIs, services, deployment workflows, prototypes, or framework scaffolding unless the user explicitly advances the project into a technical/implementation phase.
+**Documentation-only rule:** do not add application code, infrastructure, notebooks, schemas, APIs, services, deployment workflows, prototypes, or framework scaffolding unless the user explicitly advances the project into technical/implementation design.
 
-Treat this repository as a standalone data-pipeline monitoring and quality product. Do not import terminology, lifecycles, actors, or domain assumptions from unrelated projects.
+Treat this repository as a standalone data-pipeline monitoring/quality product. `docs/` is the design system of record.
 
-Markdown documentation and agent/rule files are in scope.
+## Read before changes
 
-## Read before changing anything
+Read `README.md`, `docs/README.md`, relevant foundation docs, Concept Design method/template, glossary, relevant concept group, and decision records.
 
-1. `README.md`
-2. `docs/README.md`
-3. relevant files in `docs/foundation/`
-4. `docs/foundation/004_concept_design_method.md`
-5. `docs/reference/glossary.md`
-6. relevant concept files in `docs/concepts/`
-7. `docs/concepts/phase_002/README.md` and the active concept group
-8. `docs/decisions/README.md`
+## Concept Design
 
-Treat `docs/` as the design system of record.
-
-## Concept Design is mandatory
-
-Use Daniel Jackson's Concept Design method for functional design.
-
-- Start from actor need/purpose, not vendor/tool/API shape.
-- A concept is an independent unit of functionality, not automatically a service, class, table, endpoint, screen, repository, Databricks job, or vendor feature.
-- Each accepted concept needs: name, one primary purpose, operational principle, state, actions, invariants, ambiguity behavior, and synchronizations.
-- Prefer synchronization between concepts over merging unrelated purposes.
-- Do not map concepts to implementation modules during product discovery.
-- Do not invent concepts named after tools such as DQX, Collibra, Immuta, Unity Catalog, or GitHub Actions; model the product purpose first, then evaluate tools as realizations/providers.
+- Start from actor need/purpose, not vendor/tool/storage shape.
+- Concepts are independent functionality, not automatically services/tables/classes/screens/jobs/vendor features.
+- Prefer synchronization over merged responsibilities.
+- No vendor-shaped concepts.
+- Do not map concept boundaries to technical architecture during Phase 002.
 
 ## Product invariants
 
-Preserve these distinctions:
+Preserve:
 
 - ecosystem ≠ repository;
 - logical pipeline ≠ Databricks job;
-- successful run ≠ healthy data;
-- freshness ≠ execution success;
-- expectation ≠ baseline;
-- normative requirement ≠ historical regularity;
-- observation ≠ assessment;
+- Change Intent ≠ Deployment ≠ realized Change;
+- anticipated effect ≠ normative Expectation;
+- Deployment attempt ≠ activation;
+- activation ≠ intended effect realized;
+- successful run ≠ freshness ≠ data quality;
+- Expectation ≠ Baseline;
+- planned value ≠ empirical Baseline;
+- Observation ≠ Assessment;
 - missing evidence ≠ observed absence;
 - typical ≠ healthy;
 - atypical ≠ degraded/defective;
-- assessment ≠ root cause;
-- anomaly ≠ defect;
-- correlation ≠ cause;
+- planned topology ≠ active Lineage;
+- Lineage/reachability ≠ cause/confirmed impact;
+- Change ≠ degradation ≠ cause;
+- event/effective time ≠ recorded/knowledge time;
 - hypothesis ≠ confirmed cause;
-- data lineage ≠ deployment lineage;
-- classification ≠ authorization;
-- policy metadata ≠ compliance;
-- current topology ≠ historical topology.
+- Classification ≠ Policy Context ≠ authorization ≠ compliance.
 
-## Evidence and uncertainty
+## Planned change / Baseline rules
 
-- Separate normative Expectations, descriptive Baselines, observed facts, derived Assessments, hypotheses, attributions, human confirmations, and confirmed causes.
-- Preserve provenance and time context for material facts and evaluation references.
-- `Unknown`, `conflicting`, `non-comparable`, `unavailable`, `unauthorized`, and `insufficient evidence` are valid outcomes.
-- Never infer zero/no-event from missing telemetry.
-- Baseline deviation alone never establishes normative failure or root cause.
-- Assess health dimensions independently unless an explicit composite aggregation rule is defined.
-- Reassessment after corrected/late evidence must preserve prior assessment history.
-- Never force a root cause when evidence is incomplete.
-- Business summaries must remain traceable to the same evidence used for engineering detail.
+- Register planned pipeline modifications through Change Intent when the product is expected to know them.
+- Change Intent may flag a prospective Baseline comparability break but must never directly set post-change Baseline values.
+- New Baselines require post-change Observation evidence.
+- If immediate post-change normative validation is needed, use an explicit prospective Expectation with appropriate authority/effective semantics.
+- Planned change can be valid while another health dimension fails; do not suppress unexpected violations.
 
-## Governance and security
+## Historical/graph rules
 
-- Monitoring must not broaden access to raw data.
-- Treat metadata as potentially sensitive.
-- Prefer aggregate/metadata evidence over raw or row-level values.
-- Never place real PII, PHI, secrets, tokens, credentials, or production data in this repository.
-- Use synthetic examples.
-- Never describe a system or asset as HIPAA compliant merely because PHI/HIPAA-related metadata or checks exist.
-- Preserve source authority/provenance for responsibility assignments, semantics, classifications, policy context, expectations, lineage, and observations.
-- Collibra and Immuta are optional until explicitly made authoritative for a metadata category.
+- Preserve ledger-like append/supersede/correction semantics for material historical state.
+- Distinguish effective/event time from recorded/knowledge time where material.
+- Treat Entity Identity + typed temporal Lineage as graph-compatible semantics.
+- Do **not** select blockchain, event sourcing, graph database, graph query language, or persistence architecture during Phase 002.
+
+## Evidence/security
+
+Unknown/conflicting/non-comparable/unavailable/unauthorized/insufficient evidence are valid. Never infer absence from missing telemetry or invent causation. Monitoring must not broaden raw-data access; metadata/intent/topology can themselves be sensitive.
 
 ## Tooling stance
 
-- Databricks Metric Views and DQX are strongly favored for later evaluation.
-- Do not treat favored tooling as a settled implementation choice.
-- Integrate before duplicating when an existing authoritative capability satisfies a product concept.
-- Do not introduce a technical architecture during Phase 002.
+Databricks Metric Views/DQX are favored later evaluations, not settled architecture. Integrate before duplicate; optional systems remain optional until explicitly authoritative.
 
-## Documentation discipline
+## Canonical scenario
 
-- Refine existing canonical definitions instead of creating competing definitions.
-- Link to the canonical document when possible.
-- Label unresolved items as `Open`, implementation possibilities as `Candidate` or `Deferred`, and accepted product principles as `Foundation`/`Accepted`.
-- Record meaningful decisions in `docs/decisions/`.
-- When changing terminology, update the glossary and affected concept/foundation docs together.
-- Avoid implementation-level pseudocode unless the user explicitly requests it; prefer scenarios and operational principles.
-
-## Current canonical scenario
-
-Use the Table A + Table B → Table C join-volume degradation example as a recurring stress test:
-
-- C decreases materially;
-- distinguish whether the change is merely atypical versus normatively unacceptable;
-- determine whether A, B, both, or join behavior changed;
-- consider freshness, schema, quality, run history, deployment changes, and historical lineage;
-- identify downstream impact and responsible parties;
-- preserve evidence and uncertainty.
+Use A+B→C: distinguish planned structural change from unplanned realized Change; Baseline atypicality from normative violation; Deployment correlation from cause; and expected volume shift from unintended side effects. Preserve upstream/downstream history, responsibility, evidence, and uncertainty.

@@ -1,6 +1,6 @@
 # Concept: Baseline
 
-**Status:** Accepted — Phase 002 Group 03
+**Status:** Accepted — Phase 002 Group 03; synchronization refined by Group 04
 
 ## Purpose
 
@@ -8,7 +8,7 @@ Let the ecosystem represent descriptive reference behavior derived from evidence
 
 ## Operational principle
 
-Table C has produced 19–21 million rows on comparable business days over a sufficiently representative historical window. A new 14-million-row Observation is materially outside that reference behavior even though no approved row-count Expectation exists. The product can therefore say that the result is atypical relative to the Baseline, but it cannot call the value unacceptable or unhealthy solely from that comparison. After a structural business change, the old Baseline can become non-comparable and a new version can be derived without rewriting prior assessments.
+Table C has produced 19–21 million rows on comparable business days over a sufficiently representative historical window. A planned filter Change Intent indicates that, if activated, C's population should structurally decrease and the existing volume Baseline will likely cease to be comparable. The intent can register that prospective comparability break, but the old Baseline remains applicable until realization evidence establishes the new operating context. After activation, sufficient post-change Observations are used to derive a new Baseline; the intended value itself never becomes a Baseline.
 
 ## Actors
 
@@ -28,6 +28,7 @@ Table C has produced 19–21 million rows on comparable business days over a suf
 - evidence coverage and sufficiency limitations;
 - creation/derivation time and version;
 - comparability/applicability limitations or retirement state;
+- prospective comparability-break context linked to registered Change Intent when known;
 - provenance and supporting Observation references;
 - ambiguity when multiple plausible Baselines exist.
 
@@ -43,8 +44,13 @@ Table C has produced 19–21 million rows on comparable business days over a suf
 - **State effect:** preserves the earlier Baseline and the assessments that referenced it.
 - **Important:** refresh does not silently absorb anomalous recent behavior into an existing Baseline.
 
+### `registerProspectiveBreak`
+- **Intent:** record that an accepted Change Intent is expected to make the Baseline non-comparable if/when the structural change is realized.
+- **State effect:** records a pending comparability boundary linked to the intent; it does not end current applicability by itself.
+- **Important:** intended post-change values are not inserted into the Baseline.
+
 ### `markNonComparable`
-- **Intent:** record that a Baseline should no longer be treated as comparable for a defined context because of a structural break, scope change, or other justified limitation.
+- **Intent:** record that a Baseline should no longer be treated as comparable for a defined context because a structural break, realized change, scope change, or other justified limitation has been established.
 - **State effect:** preserves the Baseline as historical evidence while constraining future use.
 
 ### `resolveComparable`
@@ -57,17 +63,19 @@ Table C has produced 19–21 million rows on comparable business days over a suf
 - Typical behavior is not automatically healthy, acceptable, or correct.
 - Atypical behavior is not automatically degraded, defective, or unacceptable.
 - A Baseline is derived from evidence and retains the population/window/context that produced it.
+- A Change Intent may identify a prospective structural break, but intent alone does not rewrite or terminate the active Baseline.
+- A post-change Baseline is derived from post-change evidence; it is never manufactured from anticipated effects.
 - Historical abnormality does not become an approved criterion merely because it is repeated.
 - Insufficient history, sparse coverage, or poor comparability must not produce false precision.
 - Baseline derivation does not own or mutate the supporting Observations.
 - A refreshed Baseline creates a new reference version; it does not rewrite the reference used by an earlier Assessment.
-- Structural breaks, seasonality, business-calendar effects, or population changes can make a Baseline non-comparable even when historical data is plentiful.
+- Structural breaks, seasonality, business-calendar effects, population changes, or realized pipeline changes can make a Baseline non-comparable even when historical data is plentiful.
 - Baseline comparison must preserve direction/meaning: being numerically different does not by itself establish whether the difference is better or worse.
 - Baseline is implementation-neutral and does not prescribe statistical or machine-learning algorithms.
 
 ## Ambiguity and missing evidence
 
-More than one Baseline may be plausible for a context, for example weekday versus month-end behavior. When the product cannot determine comparability, it returns ambiguous/non-comparable rather than selecting the most convenient window. Missing history is `insufficient evidence`, not a zero-width or default Baseline.
+More than one Baseline may be plausible for a context. A registered Change Intent may also predict a break that never activates. In that case the existing Baseline remains applicable unless other evidence changes comparability. Missing history is `insufficient evidence`, not a default Baseline.
 
 ## Synchronizations
 
@@ -75,51 +83,51 @@ More than one Baseline may be plausible for a context, for example weekday versu
 - **Semantic Definition** can provide comparison meaning, grain, units, or business-calendar context.
 - **Observation** supplies the evidence population used to derive a Baseline.
 - **Assessment** may compare a current Observation with a comparable Baseline while preserving that the result is descriptive rather than normative.
-- **Expectation** remains independent; a human/authority may establish an Expectation informed by a Baseline, but the product does not promote it automatically.
-- **Change** can later identify structural shifts relevant to Baseline comparability.
+- **Expectation** remains independent; an authority may establish a post-change Expectation informed by planned business behavior, but the product does not promote a Baseline automatically.
+- **Change Intent** can register a prospective comparability break but cannot set post-change Baseline values.
+- **Deployment/Change** provide realization evidence that can make the prospective break effective.
 - **Annotation** may later add known business context without altering the underlying Baseline evidence.
 
 ## Security / privacy / governance considerations
 
-Baselines can reveal sensitive volumes, business cycles, seasonality, operational cadence, and organizational behavior. A viewer may be authorized to receive an abstract comparative result while being denied the underlying reference values or historical distribution.
-
-Supporting observations must not be broadened beyond their authorized use merely to derive or display a Baseline.
+Baselines can reveal sensitive volumes, business cycles, seasonality, operational cadence, and organizational behavior. Change Intent can also reveal future business behavior. A viewer may receive an abstract comparative result while being denied reference values or planned details.
 
 ## Evidence / provenance considerations
 
-A Baseline must retain its evidence window/population, comparison context, derivation meaning, sufficiency limitations, supporting Observation provenance, version, and any non-comparability decision. Historical replay must be able to identify the Baseline that was available and used at the time of an Assessment.
+A Baseline retains its evidence window/population, comparison context, derivation meaning, sufficiency limitations, supporting Observation provenance, version, and any prospective/effective non-comparability decision. Historical replay must identify both the Baseline used and whether a planned/realized structural break was known at that time.
 
 ## Representative scenarios
 
 ### Stable volume reference
-Table C produces approximately 19–21 million rows on comparable business days. A 14-million-row Observation is outside the Baseline but is not automatically a quality failure without a normative criterion.
+Table C produces approximately 19–21 million rows. A 14-million-row Observation is outside Baseline but is not automatically a quality failure.
+
+### Planned filter transition
+A Change Intent predicts a structural volume reduction. The old Baseline gets a prospective break linked to activation. After Deployment/Change evidence establishes realization, the old Baseline becomes non-comparable for the new context and a new one is derived from post-change Observations.
+
+### Intent never activates
+The planned filter is cancelled or never becomes active. The prospective break never takes effect; the old Baseline remains comparable.
+
+### Immediate post-change validation
+Before enough new history exists, a separately established post-change Expectation validates the first runs. Baseline remains insufficient until evidence supports derivation.
 
 ### Seasonal comparison
-Month-end volume is much larger than ordinary weekdays. A weekday Baseline is not used for month-end merely because it is the most recent reference.
+Month-end volume is much larger than ordinary weekdays. A weekday Baseline is not used for month-end merely because it is most recent.
 
-### Structural break
-A legitimate business migration permanently changes volume. The old Baseline is preserved for history but marked non-comparable for the new operating context.
-
-### Sparse history
-A newly onboarded asset has too little representative history. The Baseline resolves as insufficient rather than manufacturing a threshold.
-
-### Multiple plausible references
-Two comparison cohorts are both plausible and produce materially different references. The ambiguity is exposed until context can resolve it.
-
-### Unauthorized reference values
-A business user may see `atypical versus comparable history` while detailed sensitive volume ranges remain restricted.
+### Structural break without registered intent
+An upstream source legitimately changes population without a Change Intent. Realized Change can still mark the old Baseline non-comparable.
 
 ## Non-goals
 
 - defining approved/required behavior;
 - declaring normative health;
-- selecting a specific anomaly-detection algorithm;
+- selecting anomaly-detection algorithms;
 - causal inference;
-- silently adapting itself to recent behavior;
-- replacing semantic/business-calendar context.
+- silently adapting to recent behavior;
+- accepting planned values as empirical Baseline evidence.
 
 ## Deferred questions
 
-- Which Baseline classes are necessary for the first MVP: ranges, distributions, cadence/duration profiles, seasonal cohorts, or others?
-- What evidence is sufficient to mark a structural break/non-comparability automatically versus requiring human context?
-- How should Baseline version stability be balanced against changing business behavior in later implementation design?
+- first-MVP Baseline classes;
+- evidence required to activate a prospective comparability break;
+- automatic versus human structural-break decisions;
+- stability/adaptation policy in later implementation design.
