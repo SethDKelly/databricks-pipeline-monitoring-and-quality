@@ -70,23 +70,35 @@ When monitoring learned/recorded it.
 ### Investigation
 A bounded inquiry that links evidence, claims, Impact analysis, and human context without owning those truths. Analyst-driven research is first-class, including cases where automated evidence is insufficient to determine cause or where significance warrants prompt review despite no normative criterion.
 
+### Evidence candidate
+An entity/path/context discovered as structurally relevant to an Investigation, commonly through historical Lineage. Candidate status means **where evidence should be inspected**, not causal support.
+
+### First-observed localization
+The earliest monitored point on a relevant historical path where a related deviation is evidenced. It localizes the problem within observed coverage but is **not root cause**, especially when upstream monitoring is incomplete, restricted, unavailable, or out of scope.
+
 ### Causal Claim
-An explicit proposition that one or more conditions caused/contributed to an outcome, carrying epistemic status plus supporting/contradicting evidence.
+An explicit proposition that one or more conditions caused/contributed/enabled/prevented an outcome, carrying epistemic status plus supporting/contradicting evidence.
+
+### Causal support / contradiction
+Relevant evidence dimensions include temporal ordering, relationship applicability, actual encounter/consumption where required, realized state/change, mechanism compatibility, contrast/intervention evidence, alternatives, and evidence coverage. Support and contradiction remain separately traceable.
 
 ### Root-cause hypothesis
 A Causal Claim that is proposed/supported but not confirmed.
 
 ### Confirmed cause
-A Causal Claim satisfying an explicit evidence/authority standard. The exact standard remains open.
+A Causal Claim satisfying an explicit evidence/authority standard. The exact standard remains open for Phase 004; automated ranking, human title, Lineage reachability, and lack of known alternatives do not create confirmation authority.
 
 ### Attribution
 A contribution statement represented through Causal Claim semantics when justified; quantitative allocation is not assumed.
+
+### Analyst research
+Human investigation results route to the concept owning their meaning: reproducible facts → Observation; realized difference → Change; causal proposition → Causal Claim; contextual commentary → Annotation; structured plan/norm/governance assertion → its respective concept.
 
 ### Impact
 Downstream consequence reasoning that distinguishes candidate/reachability, actual exposure, observed downstream effect, and evidenced business consequence.
 
 ### Propagation Safeguard
-A protective proposed/active/released state that holds or quarantines a defined output/consumption boundary to reduce downstream exposure. It is not a quality Assessment, Causal Claim, access-control grant, or proof that the data is defective or safe.
+A protective proposed/active/released state that holds or quarantines a defined output/consumption boundary to reduce downstream exposure. It is not a quality Assessment, Causal Claim, access-control grant, or proof that the data is defective or safe. Safeguard state can itself become a proposed causal condition for operational delay when enforcement/timing evidence supports that separate claim.
 
 ### Annotation
 Attributed human context that cannot silently become Observation, Change Intent, Expectation, Responsibility Assignment, or causal confirmation.
@@ -119,7 +131,7 @@ Where a fact/assertion/definition/intent/relationship/evaluation/claim/safeguard
 - ecosystem existence ≠ Monitoring Scope ≠ authorization;
 - pipeline ≠ repository ≠ Databricks job;
 - Change Intent ≠ Deployment ≠ realized Change;
-- prospective Impact ≠ actual Impact;
+- prospective Impact ≠ actual Impact ≠ retrospective cause;
 - anticipated effect ≠ normative Expectation;
 - planned value ≠ empirical Baseline;
 - Deployment attempt ≠ activation;
@@ -133,9 +145,11 @@ Where a fact/assertion/definition/intent/relationship/evaluation/claim/safeguard
 - typical ≠ healthy;
 - atypical ≠ degraded/defective ≠ mandatory intervention;
 - planned topology ≠ active Lineage;
-- Lineage reachability ≠ cause ≠ confirmed Impact;
-- Change ≠ degradation ≠ cause;
-- Investigation ≠ causal truth;
+- Lineage reachability/evidence candidate ≠ cause;
+- first-observed localization ≠ root cause;
+- temporal proximity ≠ causal proof;
+- absence of contradiction ≠ confirmation;
+- Investigation closure ≠ Causal Claim confirmation;
 - Causal Claim ≠ confirmed cause;
 - Impact candidate ≠ exposure ≠ downstream effect ≠ business consequence;
 - safeguard proposal ≠ active safeguard;

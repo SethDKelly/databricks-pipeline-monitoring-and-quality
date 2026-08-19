@@ -8,7 +8,7 @@ The `docs/` tree is the system of record for product and design decisions in thi
 
 The current catalog contains **21 accepted concepts**, including **Propagation Safeguard**.
 
-**Phase 003 Groups 01–03 are accepted. Group 04 — Lineage, Investigation & Causal Reasoning is next.**
+**Phase 003 Groups 01–04 are accepted. Group 05 — Downstream Impact, Annotation & Explanation is next.**
 
 ## Reading order
 
@@ -32,6 +32,7 @@ The current catalog contains **21 accepted concepts**, including **Propagation S
 18. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
 19. [`decisions/README.md`](decisions/README.md) — D-001–D-039 durable decision history.
 20. [`decisions/phase_003_group_03_runtime_health_and_safeguard.md`](decisions/phase_003_group_03_runtime_health_and_safeguard.md) — D-040–D-046 additions.
+21. [`decisions/phase_003_group_04_lineage_investigation_causality.md`](decisions/phase_003_group_04_lineage_investigation_causality.md) — D-047–D-055 additions.
 
 ## Document statuses
 
@@ -65,11 +66,16 @@ Explicit decisions, reversals, addenda, and unresolved choices. Major design cho
 - Prefer one canonical definition over subtly different duplicates.
 - Preserve historical decision rationale; supersede/correct/add rather than silently rewrite meaning.
 - Synchronization specifications must state trigger, participating concept actions, partial ordering, failure/ambiguity propagation, time/provenance, security, invariants, scenarios, and non-goals.
-- Never turn synchronization ordering into source authority or causation.
-- Planned-reference preparation must remain distinct from evidence-backed realized reference transition.
-- Prospective Impact must remain distinct from actual exposure/effect/consequence.
-- Successful execution must remain distinct from timely execution, freshness, and data quality.
-- Propagation Safeguard must remain distinct from health Assessment and causal truth.
+- Never turn synchronization ordering, historical Lineage reachability, first-observed localization, Deployment timing, prospective blast radius, or safeguard state into causal proof.
+- Historical Lineage produces evidence candidates; first-observed localization is not root cause.
+- Supporting and contradicting causal evidence both remain visible; negative/exclusion evidence requires adequate coverage.
+- `confirmed` Causal Claim requires an explicit accepted evidence/authority standard.
+- Investigation closure never promotes claim status.
+- Human research routes to the concept owning its meaning rather than accumulating as unstructured Annotation.
+- Planned-reference preparation remains distinct from evidence-backed realized reference transition.
+- Prospective Impact remains distinct from actual exposure/effect/consequence.
+- Successful execution remains distinct from timely execution, freshness, and data quality.
+- Propagation Safeguard remains distinct from health Assessment and causal truth.
 - Label implementation ideas as candidates until technical architecture approves them.
 - Keep examples synthetic; no real PII, PHI, credentials, secrets, or production values.
 - Preserve uncertainty and authorization limitations explicitly.

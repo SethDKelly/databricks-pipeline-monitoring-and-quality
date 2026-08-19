@@ -7,9 +7,9 @@ alwaysApply: true
 # Project foundation
 
 - Phase 002 is complete with the original five groups plus one accepted post-exit addendum: **Propagation Safeguard**. Current accepted concept count: **21**.
-- **Phase 003 is active. Groups 01–03 are accepted; Group 04 — Lineage, Investigation & Causal Reasoning is next.**
+- **Phase 003 is active. Groups 01–04 are accepted; Group 05 — Downstream Impact, Annotation & Explanation is next.**
 - Work remains documentation/design-first unless the user explicitly advances into technical/implementation design.
-- Do not create application code, notebooks, infrastructure, schemas, APIs, deployment workflows, quarantine implementations, or prototypes prematurely.
+- Do not create application code, notebooks, infrastructure, schemas, APIs, deployment workflows, quarantine implementations, graph/causal engines, or prototypes prematurely.
 - Treat `docs/` as the product/design system of record.
 - Before Phase 003 changes, read the phase index, synchronization template, active group, accepted participating concept specs/addenda, glossary, foundation, and decisions.
 - Preserve concept ownership boundaries; synchronization coordinates concepts rather than merging them.
@@ -17,9 +17,14 @@ alwaysApply: true
 - Synchronization order is never authority; a trigger is never causation.
 - One unresolved branch must not erase independently valid results.
 - Treat execution timing/dependency latency as first-class health evidence distinct from DQ.
-- Prospective Impact is not actual Impact.
-- Analyst Investigation remains first-class; automatic escalation requires explicit accepted criteria.
+- Prospective Impact is not actual Impact or retrospective cause.
+- Investigation starts from an outcome/question; historical Lineage produces evidence candidates, not causes.
+- First-observed localization is not root cause.
+- Supporting and contradicting causal evidence both remain traceable; negative/exclusion evidence requires coverage.
+- Multiple contributors/unresolved outcomes are valid; Investigation closure never promotes claim status.
+- `confirmed` cause requires an explicit accepted evidence/authority standard.
+- Analyst research routes to the concept owning its meaning; Annotation is not a shadow truth store.
 - Propagation Safeguard proposal/activation/release remain separate from Assessment and causality.
 - Refine canonical docs rather than creating duplicates.
-- Never silently choose graph/event/ledger/quarantine/workflow/service architecture.
+- Never silently choose graph/event/ledger/quarantine/workflow/service/LLM/causal architecture.
 - Treat the multi-repository Databricks environment as one reasoning ecosystem while preserving provenance boundaries.

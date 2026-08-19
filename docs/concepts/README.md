@@ -63,7 +63,18 @@ Use [`concept_template.md`](concept_template.md) as the specification checklist.
 
 The reasoning chain can distinguish:
 
-**identified subject → monitoring/governance context → planned intent / prospective downstream profile → active Deployment → execution/timing/dependency evidence → Observation → time-valid Assessment → realized Change → Investigation → Causal Claim → actual downstream Impact → Propagation Safeguard where authorized → Annotation → Explanation**
+**identified subject → monitoring/governance context → planned intent / prospective downstream profile → active Deployment → execution/timing/dependency evidence → Observation → time-valid Assessment → realized Change → bounded Investigation → historical Lineage evidence candidates / first-observed localization → explicit Causal Claims with supporting/contradicting evidence → actual downstream Impact → Propagation Safeguard where authorized → Annotation → Explanation**
+
+Key accepted reasoning distinctions now include:
+
+- Lineage evidence candidate ≠ cause;
+- first-observed localization ≠ root cause;
+- supporting evidence ≠ absence of contradiction ≠ confirmation;
+- Investigation closure ≠ Causal Claim confirmation;
+- multiple contributing claims and unresolved outcomes are valid;
+- reproducible analyst findings use Observation/Change rather than Annotation by default;
+- Prospective Impact Profile ≠ actual Impact or retrospective causal evidence;
+- safeguard state may explain operational delay without proving protected-data defect.
 
 This is a reasoning/synchronization model, not a service topology or persistence schema.
 
@@ -73,4 +84,4 @@ Logical pipelines, jobs, tasks, runs, tables, views, Metric Views, repositories,
 
 ## Phase 003 synchronization work
 
-Groups 01–03 are accepted. Current synchronization work is documented in [`phase_003/README.md`](phase_003/README.md); **Group 04 — Lineage, Investigation & Causal Reasoning is next**.
+**Groups 01–04 are accepted. Group 05 — Downstream Impact, Annotation & Explanation is next.** Current synchronization work is documented in [`phase_003/README.md`](phase_003/README.md).

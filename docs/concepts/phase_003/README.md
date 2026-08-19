@@ -1,6 +1,6 @@
 # Phase 003 — Concept Synchronizations and Ecosystem Scenarios
 
-**Status:** Active — Groups 01–03 accepted; Group 04 next
+**Status:** Active — Groups 01–04 accepted; Group 05 next
 
 ## Purpose
 
@@ -21,8 +21,8 @@ Every synchronization specification identifies outcome, participating concepts/a
 | 01 | Subject, Scope & Governance Context | Entity Identity → Monitoring Scope and independent governance-context resolution | **Accepted** |
 | 02 | Planned Change & Reference Transition | Change Intent → prospective references / prospective Impact → Deployment realization → reference transition → empirical Baseline | **Accepted** |
 | 03 | Runtime Evidence, Health & Realized Change | Deployment/Execution → timing/dependency Observations → time-valid Assessment / Change → analyst handoff / Propagation Safeguard | **Accepted** |
-| 04 | Lineage, Investigation & Causal Reasoning | Investigation scope → historical Lineage/evidence discovery → competing Causal Claims | **Next** |
-| 05 | Downstream Impact, Annotation & Explanation | Impact reachability/exposure/effect/consequence; Annotation/context → authorized Explanation | Planned |
+| 04 | Lineage, Investigation & Causal Reasoning | Bounded Investigation → historical Lineage candidate discovery → evidence assembly → competing Causal Claims / analyst research | **Accepted** |
+| 05 | Downstream Impact, Annotation & Explanation | Impact reachability/exposure/effect/consequence; Annotation/context → authorized Explanation | **Next** |
 | 06 | Historical Replay & Phase 003 Consolidation | Whole-system composition; contemporaneous vs retrospective reconstruction; exit review | Planned |
 
 The order is a reasoning dependency, not an implementation dependency.
@@ -45,25 +45,40 @@ The order is a reasoning dependency, not an implementation dependency.
 - **SYN-014:** analysts may open Investigation from material or uncertain Assessments; automatic initiation requires explicit later-accepted response criteria.
 - **SYN-015:** Propagation Safeguard can protect downstream consumption proactively/reactively under explicit authority while remaining separate from Assessment/Investigation truth.
 
+## Accepted Group 04 results
+
+- **SYN-016:** Investigation opens around a defined question/outcome and bounded historical context rather than a presumed cause.
+- **SYN-017:** historical typed Lineage yields evidence candidates; reachability and first-observed localization are not causal conclusions.
+- **SYN-018:** candidate history assembles execution/timing/Observation/Assessment/Change/Deployment/intent/reference/safeguard evidence including contradiction and explicit gaps.
+- **SYN-019:** causal propositions become explicit Causal Claims rather than remaining implicit in topology, timing, or narrative.
+- **SYN-020:** claims are evaluated using temporal ordering, relationship applicability, encounter/consumption, realized state/change, mechanism compatibility, contrasts/alternatives, and evidence coverage; support and contradiction remain separate.
+- **SYN-021:** multiple contributing/competing claims and unresolved outcomes remain valid; Investigation closure never promotes claim status. `confirmed` remains gated on a later accepted evidence/authority standard.
+- **SYN-022:** analyst research joins the same structured evidence model—reproducible facts become Observation/Change, causal propositions become Causal Claim, and contextual commentary remains Annotation.
+
 ## Cross-cutting synchronization rules
 
 - Concepts own their own state/truth; synchronization does not manufacture umbrella state.
 - Synchronization order is never authority; trigger is never causation.
 - Unknown/conflicting/unauthorized/unavailable/insufficient/non-comparable results remain first-class.
 - Partial progress is valid; one unresolved branch does not erase another.
-- Change Intent does not create Observation, realized Change, Expectation, Baseline, or actual Impact.
-- Prospective Impact ≠ actual exposure/effect/consequence.
+- Change Intent does not create Observation, realized Change, Expectation, Baseline, actual Impact, or cause.
+- Prospective Impact ≠ actual exposure/effect/consequence and ≠ retrospective causal evidence by itself.
 - Planned reference preparation ≠ realized transition.
 - Deployment attempt/association/activation/intended-effect realization remain separate.
 - Execution success ≠ timely execution ≠ freshness ≠ data quality.
 - Run duration and dependency latency are first-class operational health dimensions.
 - Missing telemetry ≠ missing run/output; absence requires sufficient coverage.
 - Raw difference ≠ material Change; atypicality ≠ normative violation; violation ≠ cause.
+- Investigation starts from an outcome/question; Lineage produces evidence candidates, not causes.
+- First-observed deviation/localization ≠ root cause.
+- Causal support and contradiction both remain provenance-bearing; absence/exclusion evidence requires adequate coverage.
+- Multiple contributing causes and unresolved outcomes are valid.
+- Automated reasoning may propose/support/weaken claims but cannot call a cause `confirmed` without an accepted confirmation standard.
+- Human research routes to the concept owning the statement's meaning; Annotation is not a shadow evidence store.
 - Baseline atypicality alone does not mandate Investigation or quarantine.
-- Analyst research through Investigation remains first-class when evidence is insufficient or significance warrants review.
 - Propagation Safeguard proposal ≠ active safeguard; active quarantine ≠ proof of defect; release ≠ proof of health.
 - Safeguard placement is subject/output/boundary/context specific and can itself create measurable delivery delay.
-- Graph traversal does not create cause or confirmed Impact.
+- Downstream graph traversal does not create confirmed Impact or causal proof.
 - Ledger-like correction/supersession semantics and event-time vs knowledge-time distinctions persist through every chain.
 - No synchronization requires DQX, Metric Views, Collibra, Immuta, GitHub Actions, graph database, event store, message bus, workflow engine, LLM, quarantine implementation, or selected technical architecture.
 
@@ -120,4 +135,4 @@ Phase 003 is complete when all retained synchronization chains have explicit con
 
 ## Current review state
 
-**Groups 01–03 are accepted. Group 04 — Lineage, Investigation & Causal Reasoning is next.**
+**Groups 01–04 are accepted. Group 05 — Downstream Impact, Annotation & Explanation is next.**

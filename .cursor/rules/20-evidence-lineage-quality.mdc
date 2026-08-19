@@ -1,5 +1,5 @@
 ---
-description: Evidence, timing, planned change, lineage, health, safeguards, causality, impact, and explanation invariants.
+description: Evidence, timing, planned change, lineage, investigation, health, safeguards, causality, impact, and explanation invariants.
 globs:
 alwaysApply: true
 ---
@@ -9,7 +9,7 @@ alwaysApply: true
 Preserve:
 
 - Change Intent ≠ Deployment ≠ realized Change;
-- prospective Impact ≠ actual Impact;
+- prospective Impact ≠ actual Impact ≠ retrospective cause;
 - planned topology ≠ active Lineage;
 - anticipated effect ≠ normative Expectation;
 - planned value ≠ empirical Baseline;
@@ -23,7 +23,11 @@ Preserve:
 - typical ≠ healthy;
 - atypical ≠ degraded/defective ≠ mandatory intervention;
 - Investigation ≠ source evidence/causal truth;
+- Lineage reachability/evidence candidate ≠ cause;
+- first-observed localization ≠ root cause;
 - Causal Claim ≠ confirmed cause;
+- absence of contradiction ≠ confirmation;
+- Investigation closure ≠ confirmation;
 - Impact candidate ≠ exposure ≠ downstream effect ≠ business consequence;
 - safeguard proposal ≠ active safeguard;
 - quarantine ≠ proof of defect;
@@ -35,23 +39,27 @@ Rules:
 
 - Time/history is first-class with ledger-like append/supersede/correction semantics.
 - Material conclusions remain traceable to provenance-bearing evidence.
-- Change Intent may prepare prospective references and prospective blast-radius context without manufacturing norms, Baselines, actual Impact, or cause.
-- Intent-to-Deployment association requires evidence; temporal proximity is insufficient.
+- Change Intent may prepare prospective references/blast-radius context without manufacturing norms, Baselines, actual Impact, or cause.
 - Reference transition requires sufficient realization evidence for the relevant subject/dimension/context.
-- Post-transition Baseline requires sufficient comparable post-transition Observations.
 - Treat execution start/completion/duration/queue/dependency-latency facts as Observations before Assessment.
 - Missing timestamps/telemetry never become zero duration or missing run/output.
 - Assess runtime/data evidence against the correct time-valid Expectation/Baseline.
 - Ordinary variation within a Baseline must not become alert noise simply because values differ.
-- Baseline atypicality is descriptive; normative violation requires Expectation.
 - Analysts may investigate uncertain/material results; automatic Investigation requires explicit accepted response criteria.
-- Propagation Safeguard is separate from health and cause; `propose` is not `active`.
-- Activation requires explicit authority/enforcement evidence; quarantine can be precautionary.
-- If no output exists, hold downstream advancement rather than inventing a quarantined object.
-- Safeguard-induced delay remains valid operational evidence.
-- Lineage remains typed, temporal, historical, authorization-aware, graph-compatible.
-- Never infer cause from Deployment timing, Lineage, realized Change, safeguard state, or intent consistency alone.
-- Multiple contributors/unresolved outcomes are valid; confirmed cause requires explicit accepted standard.
-- Downstream traversal yields candidates; actual exposure/effect/consequence require separate evidence.
+- Investigation begins with a question/outcome and historical window, not a presumed cause.
+- Historical typed Lineage discovers evidence candidates only; preserve relationship type, provenance, completeness, and authorization boundaries.
+- First-observed deviation is localization within monitoring coverage, not causal origin.
+- Investigation assembles both supporting and contradicting evidence; never filter evidence merely to preserve the leading theory.
+- Make causal propositions explicit Causal Claims; do not hide causality in Lineage, timing, Deployment, Prospective Impact, safeguard state, or narrative.
+- Evaluate claims across temporal precedence, relationship applicability, encounter/consumption where required, realized state/change, mechanism compatibility, contrast/intervention evidence, alternatives, and coverage.
+- Reliable effect-before-cause ordering materially contradicts a claim.
+- `unchanged`, `not consumed`, and other exclusion evidence require sufficient coverage; missing monitoring cannot exclude a candidate.
+- Multiple contributing claims and unresolved Investigations are valid.
+- `confirmed` requires an accepted evidence/authority standard; automated ranking/support cannot manufacture it.
+- Closing an Investigation never upgrades Causal Claim status.
+- Human reproducible findings use Observation/Change; causal interpretations use Causal Claim; contextual notes use Annotation.
+- Prospective blast radius may guide where to inspect but does not become retrospective causal evidence.
+- Propagation Safeguard is separate from health and cause; active safeguard may itself contribute to delivery delay when enforcement/timing evidence supports that separate claim.
+- Downstream traversal yields Impact candidates; actual exposure/effect/consequence require separate evidence.
 - Distinguish contemporaneous from retrospective knowledge when later evidence changes interpretation.
-- Do not select graph database, event store, quarantine store, persistence architecture, LLM, or causal algorithm from these semantics alone.
+- Do not select graph database, event store, quarantine store, persistence architecture, LLM, causal algorithm, or technical architecture from these semantics alone.

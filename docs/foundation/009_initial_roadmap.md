@@ -14,26 +14,26 @@ Established product purpose, actors, terminology, Concept Design method, archite
 
 The original five groups accepted 20 concepts. Phase 003 Group 03 later exposed a missing protective-control boundary, so **Propagation Safeguard** was accepted as a narrow post-exit addendum. The current catalog contains 21 concepts.
 
-Key outcomes include ledger-like historical semantics, graph-compatible typed temporal Lineage, planned-change/Baseline boundaries, explicit Causal Claim semantics, Impact layering, authorization/time-aware Explanation, and now separate propagation-protection state.
+Key outcomes include ledger-like historical semantics, graph-compatible typed temporal Lineage, planned-change/Baseline boundaries, explicit Causal Claim semantics, Impact layering, authorization/time-aware Explanation, and separate propagation-protection state.
 
 See `../concepts/phase_002/README.md`.
 
 ## Phase 003 — Concept Synchronizations and Ecosystem Scenarios
 
-**Status:** **Active — Groups 01–03 accepted; Group 04 next.**
+**Status:** **Active — Groups 01–04 accepted; Group 05 next.**
 
 **Goal:** define how independent accepted concepts synchronize to satisfy end-to-end behavior while preserving each concept's truth boundary.
 
 Formal review groups:
 
-1. **Subject, Scope & Governance Context** — **Accepted**. Entity Identity → Monitoring Scope and independent semantic/responsibility/classification/policy resolution; Classification may support explicit Policy Context applicability without manufacturing policy.
-2. **Planned Change & Reference Transition** — **Accepted**. Change Intent → independent prospective Expectation/Baseline preparation; evidence-backed Deployment association/transition; empirical post-transition Baseline; prospective downstream blast-radius profile without actual Impact claims.
+1. **Subject, Scope & Governance Context** — **Accepted**. Entity Identity → Monitoring Scope and independent semantic/responsibility/classification/policy resolution.
+2. **Planned Change & Reference Transition** — **Accepted**. Change Intent → prospective Expectation/Baseline preparation; evidence-backed Deployment association/transition; empirical post-transition Baseline; prospective downstream blast-radius profile without actual Impact claims.
 3. **Runtime Evidence, Health & Realized Change** — **Accepted**. Active Deployment ↔ Execution History; execution-duration/dependency timing Observations; time-valid Assessment; meaningful realized Change; analyst Investigation handoff; Propagation Safeguard coordination.
-4. **Lineage, Investigation & Causal Reasoning** — **Next**. Bounded Investigation → historical Lineage/evidence discovery → competing Causal Claims, including timing/safeguard evidence and analyst-added context.
-5. **Downstream Impact, Annotation & Explanation** — Planned. Lineage → Impact candidates/exposure/effect/consequence; Annotation/context → authorized Explanation.
+4. **Lineage, Investigation & Causal Reasoning** — **Accepted**. Bounded Investigation → historical typed Lineage candidate discovery → historical evidence assembly → explicit Causal Claim proposal/evaluation → multiple contributors/unresolved outcome → structured analyst research.
+5. **Downstream Impact, Annotation & Explanation** — **Next**. Lineage → Impact candidates/exposure/effect/consequence; originating-condition/downstream-effect causal propositions stay in Causal Claim; Annotation/context → authorized Explanation preserving claim status.
 6. **Historical Replay & Phase 003 Consolidation** — Planned. Full ecosystem scenario composition, contemporaneous/retrospective reconstruction, and exit review.
 
-Priority scenarios include stale upstream with successful downstream execution; A+B→C degradation; planned structural change with valid outcome; planned change with unintended violation; prospective blast radius; unregistered change; deployment-correlated shifts; cross-repository dependencies; conflicting governance/Expectation metadata; restricted context; long-running upstream delay; missing output with protective hold; ordinary Baseline variation without intervention; client-critical atypicality with analyst research; safeguard-induced delivery delay; downstream reachability versus actual exposure/consequence; and late historical correction.
+Priority scenarios include stale upstream with successful downstream execution; A+B→C degradation; planned structural change with valid outcome; prospective blast radius; unregistered change; Deployment-correlated shifts; cross-repository dependencies; restricted context; long-running upstream delay; missing output with protective hold; ordinary Baseline variation without intervention; client-critical atypicality with analyst research; first-observed localization versus root cause; multiple contributing explanations; safeguard-induced delivery delay; downstream reachability versus actual exposure/consequence; and late historical correction.
 
 See `../concepts/phase_003/README.md`.
 
@@ -41,7 +41,7 @@ See `../concepts/phase_003/README.md`.
 
 **Goal:** deepen the accepted evidence/temporal/causal model before technical storage architecture.
 
-Refine evidence sufficiency/completeness; event/effective versus knowledge-time query semantics; correction/supersession behavior; Causal Claim status transitions; confirmed-cause evidence/authority standards; attribution/confidence semantics; and historical Investigation/Explanation reconstruction.
+Refine evidence sufficiency/completeness; event/effective versus knowledge-time query semantics; correction/supersession behavior; negative/exclusion evidence standards; Causal Claim status transitions; **confirmed-cause evidence/authority standards**; attribution/confidence semantics; controlled-contrast evidence; causal-chain representation if needed; and historical Investigation/Explanation reconstruction.
 
 ## Phase 005 — Governance, Authority, Semantics, and Policy Refinement
 
@@ -55,11 +55,11 @@ Evaluate what must be native versus sourced from Collibra/Immuta/Unity Catalog o
 
 ## Phase 007 — Lineage, Change, Investigation, Impact, and Safeguard Refinement
 
-**Goal:** refine Lineage type taxonomy, historical topology evidence, Change Intent realization, execution reconstruction, prospective/actual Impact, Causal Claim discovery/review, multiple contributors, downstream exposure/consequence evidence, and safeguard placement/authority/effect evidence.
+**Goal:** refine Lineage type taxonomy, historical topology evidence, Change Intent realization, execution reconstruction, causal candidate discovery/review, first-observed localization, multiple contributors, prospective/actual Impact, downstream exposure/consequence evidence, and safeguard placement/authority/effect evidence.
 
 ## Phase 008 — Business Questioning and Explanation
 
-**Goal:** define question types, audience-specific Explanation structures, visible evidence citation rules, contemporaneous/retrospective views, uncertainty communication, retained-snapshot policy, and deterministic versus generative behavior.
+**Goal:** define question types, audience-specific Explanation structures, visible evidence citation rules, contemporaneous/retrospective views, uncertainty/causal-status communication, retained-snapshot policy, and deterministic versus generative behavior.
 
 ## Phase 009 — Integration Contracts and Source Authority
 

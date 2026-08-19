@@ -112,6 +112,12 @@ Functionality for identifying/describing a realized difference or state transiti
 
 Change does not by itself mean intended, unintended, healthy, degraded, valid, invalid, or causal. Raw numerical difference need not become a durable Change record unless later significance semantics justify it.
 
+### Evidence candidate
+An entity, relationship/path, execution, state, or context identified as structurally relevant to an Investigation and therefore worth evidence inspection. Historical Lineage is a primary candidate-discovery mechanism. Candidate status is not causal support.
+
+### First-observed localization
+The earliest monitored point on a relevant historical path where a related deviation is established. It localizes the problem within observed coverage but does not prove origin/root cause. Upstream monitoring boundaries, restricted nodes, or missing evidence may mean the actual origin lies beyond the first observed point.
+
 ### Evidence-ledger semantics
 A cross-cutting requirement that material historical facts/assertions remain provenance-bearing, reconstructable, and corrected through append/supersede relationships rather than invisible mutation.
 
@@ -128,12 +134,17 @@ When the monitoring ecosystem learned or recorded it. Historical replay may need
 ### Investigation — Accepted
 Functionality for organizing a bounded inquiry into a question, symptom, unexpected outcome, or uncertainty by linking evidence, Causal Claims, Impact analysis, and Annotations without becoming the source of those facts/conclusions.
 
-An Investigation can close unresolved or multi-causal. Analysts may open Investigation manually when evidence is material, suspicious, atypical, violated, or unresolved; automatic initiation requires explicit accepted response criteria rather than hidden severity rules.
+An Investigation can close unresolved or multi-causal. Analysts may open Investigation manually when evidence is material, suspicious, atypical, violated, or unresolved; automatic initiation requires explicit accepted response criteria rather than hidden severity rules. Investigation scope starts from the outcome/question rather than a presumed cause and may be refined as evidence arrives.
 
 ### Causal Claim — Accepted
-A provenance-bearing proposition that one or more conditions caused, contributed to, enabled, or materially influenced a defined outcome, with explicit epistemic status plus supporting/contradicting evidence and revision history.
+A provenance-bearing proposition that one or more conditions caused, contributed to, enabled, prevented, or materially influenced a defined outcome, with explicit epistemic status plus supporting/contradicting evidence and revision history.
 
-Correlation, Lineage, Deployment timing, realized Change, safeguard state, and intent consistency are not confirmed causation by themselves.
+Correlation, Lineage, Deployment timing, realized Change, safeguard state, prospective blast radius, and intent consistency are not confirmed causation by themselves.
+
+### Causal support / contradiction
+Causal evaluation preserves separate evidence dimensions including temporal ordering, relationship applicability, actual encounter/consumption where required, realized state/change, semantic/mechanism compatibility, comparable contrast/intervention evidence, alternative explanations, and evidence coverage.
+
+Supporting and contradicting evidence remain separately traceable rather than collapsing into an unexplained score. Reliable evidence that the effect predates the proposed cause materially contradicts the claim. Negative/unchanged evidence is meaningful only when evidence coverage is sufficient.
 
 ### Root-cause hypothesis
 A Causal Claim in a proposed/supported but not confirmed epistemic state.
@@ -142,7 +153,10 @@ A Causal Claim in a proposed/supported but not confirmed epistemic state.
 A causal contribution statement represented through Causal Claim role/status where the available evidence supports it. Quantitative percentage allocation is not assumed.
 
 ### Confirmed cause
-A Causal Claim that satisfies an explicit accepted evidence/authority standard. The exact standard remains deferred; human title alone is not universal confirmation authority.
+A Causal Claim that satisfies an explicit accepted evidence/authority standard. The exact standard remains deferred to Phase 004; human title, automated ranking, historical Lineage, temporal proximity, and lack of known alternatives are insufficient by themselves.
+
+### Analyst research
+Human research during Investigation uses the concept owning the result: reproducible measurement/fact → Observation; evidence-established realized difference → Change; causal proposition → Causal Claim; contextual commentary → Annotation; structured plan/norm/responsibility/governance assertion → its owning concept. Analyst participation therefore strengthens the same provenance-bearing model instead of creating a parallel note store.
 
 ### Impact — Accepted
 Functionality for reasoning about downstream consequences while keeping separate:
@@ -152,18 +166,18 @@ Functionality for reasoning about downstream consequences while keeping separate
 - observed downstream effect/condition evidence;
 - evidenced technical, analytical, or business consequence.
 
-Reachability is not exposure; exposure is not automatically degradation; business consequence is not assumed from criticality or report existence. A Prospective Impact Profile uses only candidate/risk context before realization and must not be presented as actual Impact.
+Reachability is not exposure; exposure is not automatically degradation; business consequence is not assumed from criticality or report existence. A Prospective Impact Profile uses only candidate/risk context before realization and must not be presented as actual Impact or retrospective causal evidence.
 
 ### Propagation Safeguard — Accepted post-exit addendum
 Functionality for representing a protective proposed/active/released hold or quarantine at a defined output/consumption boundary. A safeguard may be precautionary; active quarantine does not prove the data is defective. `proposed` is distinct from `active`, activation requires accepted authority/enforcement evidence, and release does not prove health.
 
-If no qualifying output exists, a safeguard can hold downstream advancement/current-cycle publication rather than fabricating a quarantined data object. Safeguard state may itself cause operational delay/non-delivery that remains observable and assessable.
+If no qualifying output exists, a safeguard can hold downstream advancement/current-cycle publication rather than fabricating a quarantined data object. Safeguard state may itself cause operational delay/non-delivery that remains observable and assessable. If asserting that the safeguard caused/contributed to a delivery delay, that proposition belongs in Causal Claim with enforcement/timing evidence.
 
 ### Analyst intervention
 Human research through Investigation or an authorized safeguard decision. It is not a separate accepted concept at this stage.
 
 ### Annotation — Accepted
-Attributed human-authored context attached to ecosystem state without mutating source evidence or silently substituting for structured Change Intent, Expectation, Responsibility Assignment, Classification, Policy Context, or Causal Claim confirmation.
+Attributed human-authored context attached to ecosystem state without mutating source evidence or silently substituting for structured Change Intent, Expectation, Responsibility Assignment, Classification, Policy Context, Causal Claim, or confirmation.
 
 ### Explanation — Accepted
 Authorization- and time-aware communication composed from concept state/evidence. Explanation preserves material statement epistemic labels, source traceability, redaction/omission context, and the distinction between what was known at an earlier knowledge time and what a later retrospective view knows now.
@@ -177,6 +191,9 @@ A provenance-bearing fact or assertion used to support Assessment, Investigation
 
 ### Observed absence
 A negative fact supported by sufficient source/query coverage. Missing telemetry is not observed absence and cannot establish a missing run/output.
+
+### Negative / exclusion evidence
+A statement such as `A did not change`, `C did not consume B2`, or `no relevant upstream failure occurred` can weaken/exclude a Causal Claim only when the evidence source/topology coverage is sufficient for the relevant condition. Missing monitoring cannot be converted into exclusion evidence.
 
 ### Provenance
 Information describing where a fact/assertion/definition/classification/intent/deployment/relationship/Expectation/Baseline/Observation/Assessment/Change/claim/annotation/impact/safeguard state came from, who/what asserted or derived it, and relevant temporal/version context.
@@ -195,11 +212,17 @@ Distinct Responsibility Assignment types.
 - execution-duration Observation ≠ duration violation;
 - raw difference ≠ material Change;
 - atypicality ≠ normative violation ≠ mandatory intervention;
-- prospective Impact ≠ actual exposure/effect/consequence;
+- prospective Impact ≠ actual Impact ≠ retrospective cause;
+- Lineage reachability/evidence candidate ≠ cause;
+- first-observed localization ≠ root cause;
+- temporal proximity ≠ causal proof;
+- absence of contradiction ≠ confirmation;
+- Investigation closure ≠ Causal Claim confirmation;
+- multiple contributors ≠ one forced root cause;
 - safeguard proposal ≠ active safeguard;
 - quarantine ≠ defect proof;
 - release ≠ health proof;
-- missing telemetry ≠ missing run/output;
+- missing telemetry ≠ observed absence/missing output;
 - reachability ≠ exposure ≠ downstream effect ≠ business consequence;
 - correlation ≠ confirmed cause.
 
@@ -209,4 +232,4 @@ Distinct Responsibility Assignment types.
 An independently understandable unit of functionality with a clear purpose, operational principle, state, and actions, composed via synchronizations.
 
 ### Synchronization
-Defined coordination between independent concepts without collapsing their purposes/state into one concept or selecting technical architecture.
+Defined coordination between independent concepts without collapsing their purposes/state into one concept.
