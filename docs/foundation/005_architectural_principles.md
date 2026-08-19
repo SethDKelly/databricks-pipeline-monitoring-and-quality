@@ -12,7 +12,7 @@ No current document should infer that one concept becomes one microservice, one 
 
 ## AP-02 — The ecosystem is the reasoning boundary
 
-The system must reason across repository, job, workspace, pipeline, and domain boundaries while preserving those boundaries for provenance and ownership.
+The system must reason across repository, job, workspace, pipeline, and domain boundaries while preserving those boundaries for provenance and responsibility.
 
 A cross-repository dependency is not an edge case; it is a core use case.
 
@@ -23,20 +23,21 @@ The system must eventually support point-in-time questions such as:
 - What did this asset look like before the degradation?
 - What lineage/topology existed when the affected run occurred?
 - What deployment was active then?
-- When did the first abnormal observation appear?
+- Which Expectations and Baselines applied then?
+- When did the first abnormal Observation/Assessment appear?
 - Has the issue happened before?
 
 Current-state-only architecture would violate the product thesis.
 
 ## AP-04 — Evidence is preserved separately from interpretation
 
-Observed facts, derived assessments, hypotheses, attributions, and confirmed causes must remain distinguishable.
+Normative Expectations, descriptive Baselines, observed facts, derived Assessments, hypotheses, attributions, and confirmed causes must remain distinguishable.
 
-A business-friendly summary may compress evidence, but it must not erase the evidence chain.
+A business-friendly summary may compress evidence, but it must not erase the evidence chain or silently turn descriptive comparison into normative judgment.
 
 ## AP-05 — Provenance is part of every material fact
 
-Ownership, classifications, descriptions, lineage relationships, quality observations, baselines, deployments, and assessments should retain source and temporal provenance appropriate to their use.
+Responsibility Assignments, classifications, semantic definitions, policy context, lineage relationships, Expectations, quality Observations, Baselines, deployments, and Assessments should retain source and temporal provenance appropriate to their use.
 
 Synchronized metadata must not silently become authoritative merely because it is convenient to query.
 
@@ -53,23 +54,27 @@ These relationships may intersect but should not be collapsed into an ambiguous 
 
 ## AP-07 — Monitoring models degradation, not only failure
 
-A successful job can yield degraded data. Architecture must therefore support measurements and assessments independent of execution success/failure.
+A successful job can yield data that violates freshness or quality Expectations. Architecture must therefore support Observations and dimension-specific Assessments independent of execution success/failure.
 
-## AP-08 — Expectations and observations are separate
+Baseline deviation alone must not be treated as normative degradation.
 
-What should happen and what did happen are separate facts with separate provenance and ownership.
+## AP-08 — Expectations, Baselines, Observations, and Assessments are separate
 
-This enables changes in expectations to be audited and historical observations to be reinterpreted without rewriting history.
+What should happen, what comparable reference behavior looks like, what was observed, and what the evidence means are separate states with separate provenance.
 
-## AP-09 — Historical comparisons must be reproducible
+This enables Expectations and Baselines to change while historical Observations and Assessments remain reproducible. Typicality must not silently become health, and missing telemetry must not become observed absence.
 
-Where practical, a historical assessment should be explainable from the evidence and definitions that applied at the time, including known changes to expectations and topology.
+## AP-09 — Historical comparisons and assessments must be reproducible
+
+Where practical, a historical Assessment should be explainable from the exact Observation evidence, Expectation/Baseline versions, evaluation context, and definitions that applied at the time.
+
+Late or corrected evidence should create traceable reassessment rather than rewriting the earlier conclusion invisibly.
 
 ## AP-10 — Security boundaries follow data authority, not monitoring convenience
 
 The framework should not gain or redistribute raw-data access merely because it monitors an asset.
 
-Metadata, aggregates, samples, and derived explanations must each be treated according to their sensitivity and source authorization.
+Metadata, aggregates, samples, Baselines, Assessments, and derived explanations must each be treated according to their sensitivity and source authorization.
 
 ## AP-11 — Data minimization is a design requirement
 
@@ -79,11 +84,11 @@ If later functionality genuinely requires sample values, that must be an explici
 
 ## AP-12 — Governance metadata participates in reasoning
 
-Business semantics, ownership, stewardship, criticality, and policy classifications should not be decorative catalog links. They should affect impact analysis, explanations, escalation, and presentation where appropriate.
+Business semantics, Responsibility Assignments, criticality, Classification, and Policy Context should not be decorative catalog links. They should affect impact analysis, explanations, escalation, and presentation where appropriate without taking ownership of health evidence.
 
 ## AP-13 — Policy transparency is not compliance certification
 
-The architecture may present policy classifications, applicable expectations, access evidence, or control status. It must not mechanically transform these into a legal compliance claim.
+The architecture may present Classifications, Policy Context, applicable Expectations, access evidence, or control status. It must not mechanically transform these into a legal compliance claim.
 
 ## AP-14 — Tool integration is replaceable at the concept boundary
 
@@ -97,19 +102,19 @@ When Databricks-native capabilities meet the accepted product concept cleanly, p
 
 ## AP-16 — Question answering is a view over evidence
 
-The conversational/question-answering experience must not become an independent knowledge source. Answers should be grounded in authorized evidence, semantics, and historical context.
+The conversational/question-answering experience must not become an independent knowledge source. Answers should be grounded in authorized evidence, semantics, historical context, and explicit Assessment basis.
 
 ## AP-17 — Unknown is a valid result
 
-The architecture must support incomplete, stale, conflicting, unavailable, or unauthorized evidence without inventing certainty.
+The architecture must support incomplete, insufficient, non-comparable, conflicting, unavailable, or unauthorized evidence/reference context without inventing certainty.
 
-## AP-18 — Human confirmation has explicit semantics
+## AP-18 — Human intervention has explicit semantics
 
-If a person confirms a cause, waives an anomaly, changes an expectation, or annotates an incident, that action must remain distinguishable from machine-derived observations.
+If a person establishes/revises an Expectation, records a bounded exception, marks a Baseline non-comparable, confirms a later causal claim, or annotates an incident, that action must remain distinguishable from machine-derived Observations.
 
 ## AP-19 — Business and engineering views share the same underlying state
 
-Do not create separate truth stores for executive/business reporting and engineering analysis. Different projections may expose different authorized detail, but they must derive from the same evidence model.
+Do not create separate truth stores for executive/business reporting and engineering analysis. Different projections may expose different authorized detail, but they must derive from the same evidence and Assessment basis.
 
 ## AP-20 — The product remains useful with optional systems absent
 

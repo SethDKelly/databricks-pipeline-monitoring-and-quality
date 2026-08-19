@@ -2,7 +2,7 @@
 
 ## Status
 
-**Phase 002 active working catalog.** Groups 01 and 02 are accepted. Groups 03–05 remain **Candidate** until reviewed and explicitly accepted.
+**Phase 002 active working catalog.** Groups 01–03 are accepted. Groups 04–05 remain **Candidate** until reviewed and explicitly accepted.
 
 The project uses Concept Design to discover independently understandable units of functionality. A concept is retained only when it has a clear primary purpose, operational principle, state, actions, invariants, ambiguity behavior, security/provenance considerations, and explicit synchronizations.
 
@@ -22,12 +22,12 @@ Use [`concept_template.md`](concept_template.md) as the specification checklist.
 - [`Classification`](phase_002/02_semantics_governance_policy/classification.md) — category membership in a named governance/sensitivity vocabulary without policy, access, or compliance implications.
 - [`Policy Context`](phase_002/02_semantics_governance_policy/policy_context.md) — which declared policies/handling expectations are asserted to apply in a relevant subject/context/time without claiming enforcement or compliance.
 
-### Group 03 — Health Evaluation — Candidate
+### Group 03 — Health Evaluation — Accepted
 
-- [`Expectation`](phase_002/03_health_evaluation/expectation.md) — what should be true/acceptable.
-- [`Baseline`](phase_002/03_health_evaluation/baseline.md) — what reference behavior has been observed/derived historically.
-- [`Observation`](phase_002/03_health_evaluation/observation.md) — provenance-bearing measured/retrieved facts.
-- [`Assessment`](phase_002/03_health_evaluation/assessment.md) — interpretation of observations against expectations/baselines.
+- [`Expectation`](phase_002/03_health_evaluation/expectation.md) — normative criteria describing what should be true/acceptable for a subject/context/time.
+- [`Baseline`](phase_002/03_health_evaluation/baseline.md) — descriptive reference behavior derived from comparable evidence without asserting normative correctness.
+- [`Observation`](phase_002/03_health_evaluation/observation.md) — provenance-bearing measured/retrieved facts that do not interpret health or cause.
+- [`Assessment`](phase_002/03_health_evaluation/assessment.md) — dimension-scoped interpretation of Observation evidence against explicit Expectation and/or Baseline context.
 
 ### Group 04 — History, Lineage & Change — Candidate
 
@@ -52,10 +52,12 @@ Use [`concept_template.md`](concept_template.md) as the specification checklist.
 - `Ownership` → **Responsibility Assignment**: technical ownership, business accountability, stewardship, and other named responsibilities are distinct assignment types and do not confer universal authority.
 - **Classification** is retained but narrowed to category membership; classification is not policy or access.
 - **Policy Context** is accepted separately from Classification: declared policy applicability/handling context is distinct from category membership, authorization, enforcement, and compliance.
+- **Baseline** is accepted separately from Expectation because descriptive reference behavior is not a normative requirement.
+- **Observation** and **Assessment** remain separate so measured facts are not mutated by interpretation.
+- **Assessment** carries explicit normative/comparative basis; typicality and health are not synonyms.
 
 ## Candidate boundary changes for later groups
 
-- introduce **Baseline** separately from Expectation.
 - `Deployment Record` → **Deployment**.
 - introduce **Causal Claim** rather than hiding hypotheses/confirmation inside Investigation.
 - `Annotation / Confirmation` → **Annotation** plus confirmation/rejection actions on reviewable causal claims.
@@ -85,8 +87,8 @@ Phase 002 identifies likely synchronizations only to protect concept boundaries.
 
 Examples to test later include:
 
-1. Observation + Expectation/Baseline → Assessment.
-2. degraded Assessment → Investigation.
+1. Observation + Expectation/Baseline → basis-explicit Assessment.
+2. violated/atypical/unresolved Assessment → Investigation without asserting cause.
 3. Investigation + Lineage/Change/Execution History/Deployment → evidence discovery.
 4. Investigation + Causal Claim → explicit causal reasoning.
 5. Lineage + Impact → downstream exposure candidates.

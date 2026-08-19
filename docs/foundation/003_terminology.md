@@ -6,7 +6,7 @@ This document establishes distinctions that must remain stable during discovery.
 
 ### Data ecosystem
 
-The connected set of repositories, deployments, Databricks jobs/tasks/runs, data assets, dependencies, lineage relationships, governance metadata, quality expectations/observations, and downstream consumers within monitoring scope.
+The connected set of repositories, deployments, Databricks jobs/tasks/runs, data assets, dependencies, lineage relationships, governance metadata, health/quality evidence, and downstream consumers relevant to the monitoring product. Known entities may exist outside Monitoring Scope.
 
 ### Logical pipeline
 
@@ -50,7 +50,7 @@ The relationship among repository, code revision, GitHub Actions workflow/run, d
 
 ### Data asset
 
-A monitored data object such as a table, view, metric view, external dataset, intermediate dataset, or other durable/meaningful data product.
+A data object such as a table, view, Metric View, external dataset, intermediate dataset, or other durable/meaningful data product. A known data asset is not necessarily inside Monitoring Scope.
 
 ### Consumer-facing data asset
 
@@ -58,7 +58,7 @@ A data asset intended for consumption outside the producing pipeline's internal 
 
 ### Dataset state
 
-The observable condition of a data asset at a point or interval in time, including relevant freshness, volume, schema, distribution, and quality observations.
+The observable condition of a data asset at a point or interval in time, including relevant freshness, volume, schema, distribution, and quality Observations.
 
 ### Upstream
 
@@ -72,51 +72,57 @@ An asset, metric, report, application, export, business process, or pipeline tha
 
 ### Expectation
 
-A statement of what should be true or acceptable about execution, freshness, data behavior, quality, semantics, or policy-relevant state.
+A provenance-bearing normative assertion of what should be true or acceptable for an identified subject, dimension, context, and time.
 
-An expectation is not an observation.
-
-### Observation
-
-A measured or retrieved fact associated with an asset, run, deployment, or time period. Examples include run completion, record count, null rate, schema fingerprint, DQ result, or last update time.
-
-### Assessment
-
-An interpretation produced by comparing evidence against an expectation or baseline. Examples: healthy, stale, degraded, anomalous, or unresolved.
+An Expectation is not a Baseline, Observation, or Assessment.
 
 ### Baseline
 
-A historical or declared reference used for comparison. A baseline is not necessarily an expectation and must retain its derivation.
+Descriptive reference behavior derived from comparable evidence. A Baseline retains its evidence window/population, comparison context, derivation meaning, version, and limitations.
+
+A Baseline is not normative. Typical behavior is not automatically healthy; atypical behavior is not automatically degraded.
+
+### Observation
+
+A provenance-bearing measured or retrieved fact associated with an identified subject and relevant time/context. Examples include run completion, record count, null rate, schema fingerprint, last material-update time, or a complete query establishing zero qualifying events in an interval.
+
+Observation does not declare health, staleness, anomaly, degradation, or cause. Missing evidence is not an Observation of absence.
+
+### Assessment
+
+A dimension-scoped interpretation of Observation evidence against an explicit normative Expectation and/or comparable descriptive Baseline. The Assessment preserves its reference basis, evidence, versions, time context, limitations, and reassessment history.
+
+Baseline-only typicality/atypicality is not silently converted into normative health/failure.
 
 ### Freshness
 
-How current an asset is relative to its expected update behavior and consumer need.
+The observed currency/timeliness of an asset relative to a meaningful update/event time. Whether freshness is acceptable is determined by Assessment against an applicable freshness Expectation.
 
 ### Staleness
 
-A state in which freshness no longer meets an applicable expectation.
+A normative Assessment that observed freshness violates an applicable freshness Expectation. Without a normative criterion, the product may describe unusual age relative to Baseline but should not silently declare staleness.
 
 ### Data quality
 
-The degree to which data satisfies explicit expectations relevant to its intended use. Quality may include completeness, validity, uniqueness, consistency, timeliness/freshness, referential behavior, volume, distribution, and domain-specific dimensions.
+The degree to which data satisfies explicit Expectations relevant to its intended use. Quality may include completeness, validity, uniqueness, consistency, timeliness/freshness, referential behavior, volume, distribution, schema, and domain-specific dimensions.
 
 ### Degradation
 
-A meaningful worsening in operational, freshness, or data-quality behavior. Degradation may occur without a hard job failure.
+A meaningful worsening supported by explicit directional/normative interpretation. A Baseline deviation alone does not establish degradation.
 
 ### Quality rule / check
 
-A repeatable evaluation that produces one or more quality observations. Tool-specific implementations such as DQX may realize this later, but the product concept should not be reduced to a vendor implementation.
+A repeatable mechanism that produces one or more quality Observations and/or evaluates them against an Expectation. Tool-specific implementations such as DQX may realize this later, but the product concept should not be reduced to vendor syntax.
 
 ## Reasoning terms
 
 ### Evidence
 
-An observable fact with provenance used to support an assessment or explanation.
+A provenance-bearing fact used to support an Assessment or later Explanation/Investigation. Observation is the primary concept for measured/retrieved evidence.
 
 ### Change event
 
-An observed change in data, code, deployment, configuration, schema, topology, semantics, ownership, policy, or another relevant condition.
+An observed change in data, code, deployment, configuration, schema, topology, semantics, responsibility, policy, Expectation, or another relevant condition. Change does not by itself imply degradation or cause.
 
 ### Lineage
 
@@ -152,21 +158,31 @@ A known or plausible downstream effect on data assets, metrics, reports, applica
 
 ## Governance and policy terms
 
+### Responsibility Assignment
+
+A provenance-bearing assertion that a person, team, organizational role, or other party bears a named responsibility for an identified subject in a relevant time/context.
+
+Responsibility is not universal authority or authorization.
+
 ### Technical owner
 
-The person or team responsible for technical implementation and operational maintenance.
+A party assigned technical implementation/operational responsibility.
 
-### Business owner
+### Business owner / accountable party
 
-The stakeholder accountable for business meaning, fitness, or authorized use of an asset.
+A party assigned business accountability for meaning, fitness, or organizational use under a defined responsibility type.
 
 ### Data steward
 
-A role responsible for stewardship of definitions, quality expectations, classifications, or related governance responsibilities according to organizational practice.
+A party assigned stewardship responsibilities for semantics, quality expectations, classifications, or related governance metadata according to organizational practice.
 
 ### Classification
 
-Metadata describing sensitivity, type, handling category, criticality, or another governance category.
+A provenance-bearing assertion that an identified subject or facet belongs to a category in a named governance/sensitivity vocabulary. Classification is not Policy Context or authorization.
+
+### Policy Context
+
+A provenance-bearing assertion that a declared policy, handling expectation, restriction, or governance obligation applies to an identified subject/context/time. Policy Context is not access enforcement, legal interpretation, or compliance determination.
 
 ### PII
 
@@ -178,25 +194,32 @@ Protected health information according to the applicable legal and organizationa
 
 ### HIPAA-related policy context
 
-Metadata indicating that HIPAA-related obligations, controls, or handling expectations may apply. The label is not itself proof of HIPAA compliance.
+Policy Context indicating that HIPAA-related obligations, controls, or handling expectations may apply. The context is not itself proof of HIPAA compliance.
 
 ### Provenance
 
-Evidence of where a fact, definition, classification, ownership assignment, metric, or assessment came from and when it was observed or asserted.
+Evidence of where a fact, definition, classification, Responsibility Assignment, Policy Context assertion, Expectation, Baseline, Observation, or Assessment came from and when it was observed, asserted, or derived.
 
 ## Terms to avoid conflating
 
-- pipeline ≠ repository;
-- pipeline ≠ Databricks job;
-- run success ≠ data quality;
-- freshness ≠ job completion;
-- quality observation ≠ quality assessment;
+- ecosystem existence ≠ Monitoring Scope ≠ authorization;
+- pipeline ≠ repository ≠ Databricks job;
+- run success ≠ freshness ≠ data quality;
+- Expectation ≠ Baseline;
+- normative requirement ≠ historical regularity;
+- Observation ≠ Assessment;
+- missing evidence ≠ observed absence;
+- typical ≠ healthy;
+- atypical ≠ degraded/defective;
+- quality Observation ≠ quality Assessment;
+- Assessment ≠ cause;
 - anomaly ≠ defect;
 - correlation ≠ cause;
 - root-cause hypothesis ≠ confirmed cause;
-- classification ≠ authorization;
-- policy metadata ≠ compliance;
+- Semantic Definition ≠ Responsibility Assignment;
+- Responsibility Assignment ≠ universal authority;
+- Classification ≠ Policy Context ≠ authorization ≠ compliance;
 - data lineage ≠ deployment lineage;
 - current topology ≠ historical topology;
 - business meaning ≠ physical schema;
-- business owner ≠ technical owner.
+- business accountability ≠ technical ownership.

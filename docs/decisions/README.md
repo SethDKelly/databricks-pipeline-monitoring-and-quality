@@ -105,3 +105,35 @@ Classification records category membership under a named governance/sensitivity 
 Semantic Definition, Responsibility Assignment, Classification, and Policy Context preserve source assertions, provenance, effective time, and conflict. Synchronization order is never treated as an authority rule. Missing governance metadata is also not converted into a safe default: missing semantics are not inferred meaning, missing responsibility is not explicit unassignment, missing classification is not non-sensitive, and missing policy context is not unrestricted.
 
 Whether repeated source-precedence behavior becomes an independent authority concept or an integration/metadata-category contract remains deferred.
+
+### D-016 — Expectation is normative and Baseline is descriptive
+
+**Status:** Accepted — Phase 002 Group 03
+
+Expectation states what should be true or acceptable for a subject/context/time. Baseline describes reference behavior derived from comparable evidence. Historical regularity is not silently promoted into a requirement, and repeated abnormal behavior does not become acceptable merely because it is common.
+
+A Baseline-only comparison may establish typicality/atypicality but does not by itself establish normative health, degradation, defect, or acceptability.
+
+### D-017 — Observation is evidence and missing evidence is not observed absence
+
+**Status:** Accepted — Phase 002 Group 03
+
+Observation records a provenance-bearing measured/retrieved fact without interpreting health or cause. Missing telemetry must never be represented as zero, false, empty, or no event.
+
+A negative/absence Observation is valid only when the evidence collection/query has sufficient coverage to positively establish absence over a defined interval. This prevents monitoring outages from being mislabeled as pipeline failures.
+
+### D-018 — Assessment must preserve its normative/comparative basis
+
+**Status:** Accepted — Phase 002 Group 03
+
+Assessment interprets Observation evidence against explicit Expectation and/or comparable Baseline context. Every Assessment retains which reference basis and versions were used.
+
+`Within Baseline` does not imply `healthy`, and `outside Baseline` does not imply `degraded`. A normative health/requirement result needs a normative basis. Conflicting or insufficient evidence/reference context remains unresolved rather than being forced into green/red status.
+
+### D-019 — Health evaluation is dimension-scoped and reassessment is historical
+
+**Status:** Accepted — Phase 002 Group 03
+
+Execution, freshness, completeness, validity, volume, schema, distribution, and other dimensions are assessed independently by default. Success in one dimension does not mask failure or uncertainty in another.
+
+Any composite/overall health result must identify component Assessments and an explicit aggregation rule. Late/corrected evidence produces a new linked Assessment rather than silently rewriting the conclusion previously reached from earlier evidence.

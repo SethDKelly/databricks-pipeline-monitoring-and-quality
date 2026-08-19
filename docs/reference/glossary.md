@@ -4,7 +4,7 @@ This glossary is the canonical vocabulary reference. Terms may evolve during con
 
 ## Data ecosystem
 
-The connected set of repositories, deployments, Databricks jobs/tasks/runs, data assets, dependencies, lineage relationships, governance metadata, quality evidence, and downstream consumers relevant to the monitoring product. An entity may be known to the ecosystem while outside Monitoring Scope.
+The connected set of repositories, deployments, Databricks jobs/tasks/runs, data assets, dependencies, lineage relationships, governance metadata, health/quality evidence, and downstream consumers relevant to the monitoring product. An entity may be known to the ecosystem while outside Monitoring Scope.
 
 ## Logical pipeline
 
@@ -44,7 +44,7 @@ A data asset intended for consumption beyond the producing pipeline's internal p
 
 ## Dataset state
 
-The observable condition of a data asset at a time or interval, including relevant freshness, volume, schema, distribution, and quality observations.
+The observable condition of a data asset at a time or interval, including relevant freshness, volume, schema, distribution, and quality Observations.
 
 ## Upstream
 
@@ -76,47 +76,55 @@ How repository/code revisions, GitHub Actions deployments, Databricks definition
 
 ## Freshness
 
-How recently an asset was materially updated relative to expected behavior and consumer need.
+The observed currency/timeliness of an asset relative to a meaningful event or material-update time. Whether that freshness is acceptable is an Assessment against an applicable Expectation; historical behavior alone is not a normative freshness requirement.
 
 ## Staleness
 
-A state in which freshness no longer meets an applicable expectation.
+A normative Assessment that observed freshness fails an applicable freshness Expectation. When no normative criterion exists, the product may describe freshness as atypical relative to a Baseline but should not silently label it stale.
 
 ## Expectation
 
-A statement of what should be true or acceptable about execution, freshness, data behavior, quality, semantics, or policy-relevant state.
+An accepted Phase 002 concept: a provenance-bearing normative assertion describing what should be true or acceptable for an identified subject, dimension, context, and time.
+
+An Expectation is not a Baseline, Observation, or Assessment.
 
 ## Quality expectation
 
-An expectation specifically describing acceptable data quality or behavior.
-
-## Observation
-
-A measured/retrieved fact about an asset, run, deployment, or time period, retained with provenance.
-
-## Quality observation
-
-An observation used to evaluate data quality, such as a null rate, row count, uniqueness result, distribution measure, schema change, or domain-rule result.
-
-## Assessment
-
-An interpretation of evidence relative to an expectation or baseline, such as healthy, stale, degraded, anomalous, or unresolved.
+An Expectation specifically describing acceptable data-quality behavior, such as completeness, validity, uniqueness, consistency, volume, schema, referential behavior, or a domain-specific criterion.
 
 ## Baseline
 
-A historical or declared reference used for comparison. A baseline is not necessarily an expectation and should retain its derivation.
+An accepted Phase 002 concept: descriptive reference behavior derived from a defined population of comparable evidence. A Baseline preserves its evidence window, comparison context, derivation meaning, version, and limitations.
+
+A Baseline is not normative. `Typical` does not mean `healthy`; `atypical` does not mean `degraded`.
+
+## Observation
+
+An accepted Phase 002 concept: a provenance-bearing measured or retrieved fact about an identified subject and relevant time/context. An Observation preserves measurement meaning and evidence provenance without declaring health, anomaly, staleness, or cause.
+
+Missing evidence is not an Observation of zero/no-event. Observed absence requires sufficient evidence coverage to establish non-occurrence over a defined interval.
+
+## Quality observation
+
+An Observation used as data-quality evidence, such as row count, null rate, uniqueness result, schema fingerprint/change fact, distribution measure, reconciliation result, or domain-rule measurement.
+
+## Assessment
+
+An accepted Phase 002 concept: a dimension-scoped interpretation of authorized Observation evidence against an explicit normative Expectation and/or comparable descriptive Baseline.
+
+Assessment preserves its basis, supporting Observation references, Expectation/Baseline versions, evaluation context, limitations, and reassessment history. Baseline-only typicality/atypicality is not silently converted into normative health/failure.
 
 ## Degradation
 
-A meaningful worsening in operational, freshness, or data-quality behavior, potentially before a hard failure occurs.
+A meaningful worsening supported by explicit directional/normative interpretation. A Baseline deviation alone is not sufficient to establish degradation: atypical behavior can be neutral, beneficial, or harmful depending on semantics and Expectations.
 
 ## Change event
 
-An observed change in data, code, deployment, configuration, metadata, schema, policy, responsibility, or topology that may be relevant to analysis.
+An observed change in data, code, deployment, configuration, metadata, schema, policy, responsibility, expectation, topology, or another relevant condition that may be relevant to later analysis. Change does not by itself imply degradation or cause.
 
 ## Evidence
 
-An observable fact with provenance used to support an assessment or explanation.
+A provenance-bearing fact used to support an Assessment, Investigation, or Explanation. Observation is the primary accepted concept for measured/retrieved evidence; later concepts may preserve additional evidence relationships without redefining source facts.
 
 ## Root-cause hypothesis
 
@@ -136,19 +144,19 @@ The known or potential downstream effect of a pipeline/data condition on assets,
 
 ## Technical owner
 
-A party assigned responsibility for technical implementation and operational maintenance. Technical ownership does not imply authority over business semantics, classification, policy, or data access.
+A party assigned responsibility for technical implementation and operational maintenance. Technical ownership does not imply authority over business semantics, classification, policy, Expectations, or data access.
 
 ## Business owner / accountable party
 
-A party assigned accountability for business meaning, fitness, or authorized organizational use according to the relevant responsibility definition.
+A party assigned accountability for business meaning, fitness, or authorized organizational use according to the relevant Responsibility Assignment definition.
 
 ## Data steward
 
-A party assigned stewardship responsibilities such as maintaining definitions, quality semantics, classifications, or governance metadata according to organizational practice.
+A party assigned stewardship responsibilities such as maintaining definitions, quality semantics, classifications, Expectations, or governance metadata according to organizational practice.
 
 ## Responsibility type
 
-A named kind of responsibility, such as technical ownership, business accountability, semantic stewardship, or privacy/security responsibility. Responsibility types are not interchangeable.
+A named kind of responsibility, such as technical ownership, business accountability, semantic stewardship, quality-expectation stewardship, or privacy/security responsibility. Responsibility types are not interchangeable.
 
 ## Classification
 
@@ -172,11 +180,11 @@ Policy context indicating that HIPAA-related obligations, controls, or handling 
 
 ## Provenance
 
-Information describing where a fact, definition, classification, responsibility assignment, policy-context assertion, or observation came from, who/what asserted it, and the relevant time/version context.
+Information describing where a fact, definition, classification, responsibility assignment, policy-context assertion, Expectation, Baseline, Observation, or Assessment came from, who/what asserted or derived it, and the relevant time/version context.
 
 ## Authority / source precedence
 
-Rules or assertions determining which source or actor may be treated as authoritative for a particular metadata category, subject, context, and time. Phase 002 Group 02 deliberately does not define a universal authority rule; unresolved conflicts remain conflicts until such semantics are accepted.
+Rules or assertions determining which source or actor may be treated as authoritative for a particular metadata or normative category, subject, context, and time. Phase 002 has deliberately not defined a universal authority rule; unresolved conflicts remain conflicts until such semantics are accepted.
 
 ## Phase 002 concept terms
 
@@ -203,6 +211,22 @@ The functionality for recording and resolving category membership under named go
 ### Policy Context — Accepted
 
 The functionality for recording and resolving declared policy applicability/handling context for a subject/context/time without claiming enforcement, legal interpretation, or compliance.
+
+### Expectation — Accepted
+
+The functionality for recording and resolving normative criteria describing what should be true or acceptable for an identified subject/dimension/context/time.
+
+### Baseline — Accepted
+
+The functionality for deriving and resolving descriptive reference behavior from comparable evidence while preserving evidence population, context, version, provenance, and comparability limitations.
+
+### Observation — Accepted
+
+The functionality for recording provenance-bearing measured/retrieved facts without interpreting health or cause, including explicit evidence-coverage semantics for legitimate observed absence.
+
+### Assessment — Accepted
+
+The functionality for interpreting Observation evidence against explicit Expectation and/or Baseline context with a basis-appropriate, dimension-scoped result and reproducible historical provenance.
 
 ### Causal Claim — Candidate
 

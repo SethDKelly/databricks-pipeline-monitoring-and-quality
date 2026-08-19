@@ -10,8 +10,13 @@ Preserve these distinctions in all documentation:
 
 - logical pipeline ≠ repository ≠ Databricks job;
 - run success ≠ freshness ≠ data quality;
-- expectation ≠ observation ≠ assessment;
-- anomaly/degradation ≠ defect;
+- expectation ≠ baseline;
+- normative requirement ≠ historical regularity;
+- observation ≠ assessment;
+- missing evidence ≠ observed absence;
+- typical ≠ healthy;
+- atypical ≠ degraded/defective;
+- assessment ≠ causal explanation;
 - correlation ≠ attribution ≠ confirmed cause;
 - data lineage ≠ operational dependency ≠ deployment lineage;
 - current topology ≠ historical topology.
@@ -20,8 +25,14 @@ Rules:
 
 - Time/history is first-class; avoid current-state-only designs.
 - Material conclusions must be traceable to evidence and provenance.
-- Unknown, conflicting, stale, unavailable, unauthorized, and insufficient-evidence states are valid outcomes.
+- Expectations are normative; Baselines are descriptive and may not be silently promoted into requirements.
+- A Baseline-only deviation may be atypical but must not be labeled unhealthy/degraded without normative or explicit directional semantics.
+- Missing telemetry must not be converted into zero/no-event; observed absence requires sufficient evidence coverage.
+- Assessments must identify the Observation evidence and Expectation/Baseline versions forming their basis.
+- Health dimensions remain separate by default; any overall roll-up needs explicit component Assessments and aggregation rules.
+- Reassessment after late/corrected evidence preserves prior conclusions and provenance.
+- Unknown, conflicting, non-comparable, unavailable, unauthorized, and insufficient-evidence states are valid outcomes.
 - Never invent a root cause to make a report complete.
 - Root-cause reasoning should consider upstream origin and downstream impact.
-- A successful Databricks run may still produce stale, incomplete, anomalous, or degraded data.
+- A successful Databricks run may still produce stale, incomplete, anomalous, or normatively degraded data.
 - Business-facing explanations and engineering detail must derive from the same evidence.

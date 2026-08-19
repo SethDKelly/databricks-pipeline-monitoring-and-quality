@@ -42,8 +42,13 @@ Preserve these distinctions:
 - logical pipeline ≠ Databricks job;
 - successful run ≠ healthy data;
 - freshness ≠ execution success;
-- expectation ≠ observation;
+- expectation ≠ baseline;
+- normative requirement ≠ historical regularity;
 - observation ≠ assessment;
+- missing evidence ≠ observed absence;
+- typical ≠ healthy;
+- atypical ≠ degraded/defective;
+- assessment ≠ root cause;
 - anomaly ≠ defect;
 - correlation ≠ cause;
 - hypothesis ≠ confirmed cause;
@@ -54,9 +59,13 @@ Preserve these distinctions:
 
 ## Evidence and uncertainty
 
-- Separate observed facts, derived assessments, hypotheses, attributions, human confirmations, and confirmed causes.
-- Preserve provenance and time context for material facts.
-- `Unknown`, `conflicting`, `stale`, and `insufficient evidence` are valid states.
+- Separate normative Expectations, descriptive Baselines, observed facts, derived Assessments, hypotheses, attributions, human confirmations, and confirmed causes.
+- Preserve provenance and time context for material facts and evaluation references.
+- `Unknown`, `conflicting`, `non-comparable`, `unavailable`, `unauthorized`, and `insufficient evidence` are valid outcomes.
+- Never infer zero/no-event from missing telemetry.
+- Baseline deviation alone never establishes normative failure or root cause.
+- Assess health dimensions independently unless an explicit composite aggregation rule is defined.
+- Reassessment after corrected/late evidence must preserve prior assessment history.
 - Never force a root cause when evidence is incomplete.
 - Business summaries must remain traceable to the same evidence used for engineering detail.
 
@@ -68,7 +77,7 @@ Preserve these distinctions:
 - Never place real PII, PHI, secrets, tokens, credentials, or production data in this repository.
 - Use synthetic examples.
 - Never describe a system or asset as HIPAA compliant merely because PHI/HIPAA-related metadata or checks exist.
-- Preserve source authority/provenance for ownership, semantics, classifications, policy context, lineage, and observations.
+- Preserve source authority/provenance for responsibility assignments, semantics, classifications, policy context, expectations, lineage, and observations.
 - Collibra and Immuta are optional until explicitly made authoritative for a metadata category.
 
 ## Tooling stance
@@ -92,7 +101,8 @@ Preserve these distinctions:
 Use the Table A + Table B → Table C join-volume degradation example as a recurring stress test:
 
 - C decreases materially;
+- distinguish whether the change is merely atypical versus normatively unacceptable;
 - determine whether A, B, both, or join behavior changed;
 - consider freshness, schema, quality, run history, deployment changes, and historical lineage;
-- identify downstream impact and owners;
+- identify downstream impact and responsible parties;
 - preserve evidence and uncertainty.
