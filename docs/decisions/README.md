@@ -225,3 +225,33 @@ An unresolved branch must not erase independently valid branches. Scope does not
 **Status:** Accepted — Phase 003 Group 01
 
 Where an explicit Policy Context assertion depends on a Classification predicate, the Classification result may provide supporting/contradicting/uncertain applicability evidence. Classification alone never creates Policy Context, grants authorization, proves enforcement, or establishes compliance. Missing Classification also cannot be converted into policy non-applicability.
+
+### D-035 — Planned change prepares Expectation and Baseline references through independent branches
+
+**Status:** Accepted — Phase 003 Group 02
+
+A registered Change Intent may independently prompt explicit prospective Expectation establishment/revision and register a prospective Baseline comparability break. Anticipated effects do not become normative criteria, intended values do not become empirical Baseline values, and one unresolved branch does not erase a valid result in the other.
+
+### D-036 — Intent-to-Deployment association and activation do not prove intended effect
+
+**Status:** Accepted — Phase 003 Group 02
+
+Change Intent ↔ Deployment association requires provenance-bearing target/revision/configuration/change linkage evidence rather than timing/name similarity. Deployment attempt, intent association, activation, intended-effect realization, health, and causation remain separate. Associations may be many-to-many and target/context specific.
+
+### D-037 — Reference transition follows sufficient realization evidence, not workflow success or planned time
+
+**Status:** Accepted — Phase 003 Group 02
+
+A prospective reference boundary becomes effective only when evidence sufficiently establishes that the changed operating context became active for the relevant subject/dimension/context. Trustworthy Deployment activation may establish the structural/configuration boundary; realized Change evidence may do so where Deployment evidence is absent/insufficient. Workflow success and planned activation time alone are not enough.
+
+### D-038 — Baseline non-comparability is contextual and rollback requires re-resolution
+
+**Status:** Accepted — Phase 003 Group 02
+
+A structural transition makes an old Baseline non-comparable for the changed context/interval without deleting it. Rollback/restoration creates another context boundary; prior Baseline or Expectation versions may become candidates again only when their own comparability/applicability semantics justify it. Rollback never blindly restores historical references.
+
+### D-039 — Post-transition Baselines are empirical and late knowledge preserves contemporaneous history
+
+**Status:** Accepted — Phase 003 Group 02
+
+New Baselines require sufficient comparable post-transition Observations; an explicit Expectation can support immediate normative evaluation before that history exists. Late intent, activation, or correction evidence may improve retrospective reference interpretation without rewriting what the monitoring ecosystem knew or which references it actually used earlier.

@@ -10,10 +10,10 @@ Preserve:
 
 - Change Intent ≠ Deployment ≠ realized Change;
 - anticipated effect ≠ normative Expectation;
-- Deployment attempt ≠ activation;
-- activation ≠ intended effect realized;
+- Deployment attempt ≠ intent association ≠ activation ≠ intended effect realized;
 - Expectation ≠ Baseline;
 - planned value ≠ empirical Baseline;
+- prospective reference preparation ≠ realized reference transition;
 - Observation ≠ Assessment;
 - missing evidence ≠ observed absence;
 - typical ≠ healthy;
@@ -34,9 +34,17 @@ Rules:
 
 - Time/history is first-class and uses ledger-like append/supersede/correction semantics for material state.
 - Material conclusions remain traceable to provenance-bearing evidence.
-- Change Intent may register a prospective Baseline comparability break but cannot set post-change Baseline values.
-- Post-change Baseline requires sufficient comparable post-change Observations.
+- Change Intent may independently trigger prospective Expectation review and a prospective Baseline comparability break.
 - Planned anticipated behavior becomes normative only through explicit Expectation establishment/revision.
+- Intended values never become Baseline evidence.
+- Intent-to-Deployment association requires provenance-bearing linkage evidence; temporal proximity alone is insufficient.
+- Workflow success/planned time cannot by themselves activate reference transition.
+- Reference transition requires sufficient realization evidence for the relevant subject/dimension/context.
+- Baseline non-comparability is context/time scoped; structural transitions do not delete historical Baselines.
+- Rollback/restoration requires comparability/applicability re-resolution and cannot blindly revive earlier references.
+- Partial/canary/environment transitions stay scoped to the affected context.
+- Post-transition Baseline requires sufficient comparable post-transition Observations.
+- An applicable Expectation can support immediate post-change Assessment before the new Baseline exists.
 - Missing telemetry never becomes zero/no-event.
 - Assessments retain exact Observation and Expectation/Baseline versions/basis.
 - Health dimensions stay separate unless an explicit aggregation rule exists.
@@ -49,5 +57,5 @@ Rules:
 - Downstream traversal yields Impact candidates only; independently evaluate exposure, downstream state/effect, and business consequence.
 - Human Annotation remains human-authored context; structured truths belong to their owning concepts.
 - Explanation is an authorized, time-aware projection over concept state with material statement-to-basis traceability.
-- Distinguish contemporaneous knowledge from retrospective knowledge when later evidence changes the picture.
+- Distinguish contemporaneous knowledge from retrospective knowledge when later evidence changes intent/activation/reference interpretation.
 - Do not select graph database, event store, blockchain, persistence architecture, LLM, or causal algorithm merely because the semantics are graph/ledger/explanation-friendly.

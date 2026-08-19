@@ -8,9 +8,11 @@ The central product idea is an **evidence-grounded reasoning layer over the data
 
 **Phase 003 — Concept Synchronizations and Ecosystem Scenarios: ACTIVE**
 
-Phase 002 is complete with all 20 retained concepts accepted. Phase 003 now defines how those independent concepts coordinate end to end without collapsing their truth boundaries or selecting implementation architecture.
+Phase 002 is complete with all 20 retained concepts accepted. Phase 003 defines how those independent concepts coordinate end to end without collapsing their truth boundaries or selecting implementation architecture.
 
-**Group 01 — Subject, Scope & Governance Context is accepted. Group 02 — Planned Change & Reference Transition is next.**
+**Groups 01–02 are accepted. Group 03 — Runtime Evidence, Health & Realized Change is next.**
+
+Group 02 formalized how Change Intent prepares prospective reference context, how intent associates with Deployment realization evidence, how reference applicability changes only at an evidence-backed operating-context transition, and how a new Baseline is learned later from post-transition Observations.
 
 See [`docs/concepts/phase_003/README.md`](docs/concepts/phase_003/README.md) for the active Phase 003 group plan and [`docs/concepts/phase_002/README.md`](docs/concepts/phase_002/README.md) for the completed concept specifications.
 
@@ -26,8 +28,10 @@ The system should ultimately make questions like these straightforward to answer
 - Is the output fresh and normatively acceptable?
 - Is current behavior merely atypical versus history or actually violating an Expectation?
 - Was a relevant change planned?
-- Which Change Intent was realized, which Deployment became active, and what actually changed afterward?
-- Did a planned change behave as intended while causing or coinciding with another quality violation?
+- Which Change Intent was associated with which Deployment, and what state actually became active?
+- Did a planned change require a new Expectation or make an old Baseline non-comparable?
+- Is a post-change run being evaluated against the correct time-valid reference context?
+- Did a planned change behave as intended while another quality dimension failed?
 - Where in upstream Lineage did a relevant condition first become observable?
 - Which causal explanations are proposed, supported, weakened, rejected, confirmed, or unresolved?
 - Which downstream entities are only reachable, which actually consumed affected state, and which show observed/business consequences?
@@ -66,19 +70,20 @@ See [`docs/foundation/004_concept_design_method.md`](docs/foundation/004_concept
 4. **Evidence over narrative completion.** Missing evidence may leave an answer unresolved.
 5. **Intent, fact, assessment, and causality are distinct.** Change Intent ≠ Deployment ≠ realized Change ≠ Assessment ≠ Causal Claim.
 6. **Expectation is normative; Baseline is descriptive.** Planned values do not become empirical Baselines.
-7. **Observation is not Assessment.** Missing telemetry is not observed absence.
-8. **Lineage is typed, temporal, and graph-compatible.** Reachability is not cause or confirmed Impact.
-9. **Historical state has ledger-like semantics.** Corrections/supersessions preserve prior knowledge rather than silently rewriting history.
-10. **Degradation is not execution failure.** Successful execution can coexist with stale or poor-quality data.
-11. **Causal claims remain epistemically explicit.** Correlation, deployment timing, and intent consistency do not confirm cause.
-12. **Impact has layers.** Reachability, exposure, downstream effect, and business consequence are different strengths of statement.
-13. **Human context remains attributed.** Annotation does not rewrite evidence or substitute for structured concepts.
-14. **Explanation is a view over authorized evidence.** Business and engineering views may differ in detail but remain evidence-consistent.
-15. **Synchronization never manufactures authority.** Coordination order cannot choose a source of truth.
-16. **Partial synchronization is valid.** One unresolved context branch must not erase independently valid context.
-17. **Policy transparency is not compliance certification.**
-18. **Monitoring must not broaden raw-data access.** Metadata, topology, intent, claims, and annotations can themselves be sensitive.
-19. **Databricks-native first where it fits; integrate before duplicate.** Favored tools remain evaluations, not concept definitions.
+7. **Prospective reference preparation is not realized transition.** Reference context changes only when sufficient realization evidence establishes the relevant operating boundary.
+8. **Observation is not Assessment.** Missing telemetry is not observed absence.
+9. **Lineage is typed, temporal, and graph-compatible.** Reachability is not cause or confirmed Impact.
+10. **Historical state has ledger-like semantics.** Corrections/supersessions preserve prior knowledge rather than silently rewriting history.
+11. **Degradation is not execution failure.** Successful execution can coexist with stale or poor-quality data.
+12. **Causal claims remain epistemically explicit.** Correlation, deployment timing, and intent consistency do not confirm cause.
+13. **Impact has layers.** Reachability, exposure, downstream effect, and business consequence are different strengths of statement.
+14. **Human context remains attributed.** Annotation does not rewrite evidence or substitute for structured concepts.
+15. **Explanation is a view over authorized evidence.** Business and engineering views may differ in detail but remain evidence-consistent.
+16. **Synchronization never manufactures authority.** Coordination order cannot choose a source of truth.
+17. **Partial synchronization is valid.** One unresolved context branch must not erase independently valid context.
+18. **Policy transparency is not compliance certification.**
+19. **Monitoring must not broaden raw-data access.** Metadata, topology, intent, claims, and annotations can themselves be sensitive.
+20. **Databricks-native first where it fits; integrate before duplicate.** Favored tools remain evaluations, not concept definitions.
 
 ## Canonical example
 
@@ -88,14 +93,17 @@ The accepted model can distinguish at least these possibilities:
 
 - 14M is atypical versus the old Baseline but no normative row-count Expectation exists;
 - 14M violates an explicit row-count Expectation;
-- a registered filter Change Intent anticipated a lower population and a revised prospective Expectation accepts 13–15M;
+- a registered filter Change Intent anticipated a lower population and prompted a prospective Expectation plus a pending Baseline comparability break;
+- the relevant structural configuration becomes active, making the old Baseline non-comparable for the changed context while the new Expectation becomes applicable;
+- the first post-change run can be evaluated against that Expectation even though no new Baseline exists yet;
+- a later Baseline is derived only from sufficient comparable post-change Observations;
 - the lower volume is valid as planned, but a separate completeness/uniqueness/reconciliation Expectation fails;
 - B changed first, join-key quality changed, both contributed, or cause remains unresolved;
-- a nearby Deployment is correlated but contradicted as a cause by earlier upstream timing;
+- a nearby Deployment is correlated but not automatically causal;
 - downstream reports may be reachable, actually exposed, visibly affected, or tied to evidenced business consequence at different levels;
 - an Explanation can show what the team knew during the incident separately from what later retrospective evidence establishes.
 
-Phase 003 additionally requires that each transition among these concept states be governed by explicit synchronization semantics rather than hidden workflow assumptions.
+Phase 003 requires that each transition among these concept states be governed by explicit synchronization semantics rather than hidden workflow assumptions.
 
 ## Repository map
 

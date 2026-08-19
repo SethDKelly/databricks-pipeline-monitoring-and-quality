@@ -6,7 +6,7 @@ The `docs/` tree is the system of record for product and design decisions in thi
 
 **Phase 003 — Concept Synchronizations and Ecosystem Scenarios is active.** Phase 002 is complete with all 20 retained concepts accepted.
 
-**Phase 003 Group 01 — Subject, Scope & Governance Context is accepted. Group 02 — Planned Change & Reference Transition is next.**
+**Phase 003 Groups 01–02 are accepted. Group 03 — Runtime Evidence, Health & Realized Change is next.**
 
 ## Reading order
 
@@ -21,7 +21,7 @@ The `docs/` tree is the system of record for product and design decisions in thi
 9. [`foundation/008_mvp_boundary.md`](foundation/008_mvp_boundary.md) — MVP proof boundary.
 10. [`foundation/009_initial_roadmap.md`](foundation/009_initial_roadmap.md) — phased path and active Phase 003 position.
 11. [`foundation/010_open_questions.md`](foundation/010_open_questions.md) — unresolved decisions that must not be silently chosen.
-12. [`concepts/README.md`](concepts/README.md) — accepted 20-concept catalog.
+12. [`concepts/README.md`](concepts/README.md) — accepted 20-concept catalog and Phase 003 pointer.
 13. [`concepts/concept_template.md`](concepts/concept_template.md) — concept specification shape.
 14. [`concepts/phase_002/README.md`](concepts/phase_002/README.md) — completed Phase 002 review/exit gate.
 15. [`concepts/phase_003/README.md`](concepts/phase_003/README.md) — active synchronization groups, method, scenarios, and exit gate.
@@ -62,6 +62,7 @@ Explicit decisions, reversals, and unresolved choices. Major design choices must
 - Preserve historical decision rationale; supersede/correct rather than silently rewrite meaning.
 - Synchronization specifications must state trigger, participating concept actions, partial ordering, failure/ambiguity propagation, time/provenance, security, invariants, scenarios, and non-goals.
 - Never turn synchronization ordering into source authority or causation.
+- Planned-reference preparation must remain distinct from evidence-backed realized reference transition.
 - Label implementation ideas as candidates until technical architecture approves them.
 - Keep examples synthetic; no real PII, PHI, credentials, secrets, or production values.
 - Preserve uncertainty and authorization limitations explicitly.

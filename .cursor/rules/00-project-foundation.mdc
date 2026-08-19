@@ -7,7 +7,7 @@ alwaysApply: true
 # Project foundation
 
 - **Phase 002 — Concept Specifications is complete.** All five groups and 20 retained concepts are accepted.
-- **Phase 003 — Concept Synchronizations and Ecosystem Scenarios is active.** Group 01 is accepted; Group 02 — Planned Change & Reference Transition is next.
+- **Phase 003 — Concept Synchronizations and Ecosystem Scenarios is active.** Groups 01–02 are accepted; Group 03 — Runtime Evidence, Health & Realized Change is next.
 - Work remains documentation/design-first unless the user explicitly advances into technical/implementation design.
 - Do not create application code, notebooks, infrastructure, schemas, APIs, package scaffolding, deployment workflows, or implementation prototypes prematurely.
 - Treat `docs/` as the product/design system of record.
@@ -16,6 +16,9 @@ alwaysApply: true
 - Synchronization is not automatically an API call, workflow, transaction, event, message bus, database relation, or service boundary.
 - Synchronization order is never authority; a trigger is never causation.
 - One unresolved synchronization branch must not erase independently valid results from another branch.
+- For planned-change work, distinguish prospective reference preparation from realized reference transition.
+- Reference context changes only from sufficient evidence for the affected subject/target/dimension/context; workflow success/planned time alone is insufficient.
+- Rollback/restoration requires explicit comparability/applicability re-resolution rather than automatic reference resurrection.
 - Refine canonical docs rather than creating duplicate/conflicting definitions.
 - Explicitly label open/deferred decisions. Never silently choose framework, storage engine, graph database, event/ledger store, workflow engine, service architecture, or language.
 - Treat the multi-repository Databricks environment as one reasoning ecosystem while preserving repository/job boundaries for provenance.

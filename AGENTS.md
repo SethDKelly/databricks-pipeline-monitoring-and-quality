@@ -4,7 +4,7 @@
 
 **Phase 002 — Concept Specifications is complete.** All five groups and 20 retained concepts are accepted.
 
-**Phase 003 — Concept Synchronizations and Ecosystem Scenarios is active.** Group 01 — Subject, Scope & Governance Context is accepted; Group 02 — Planned Change & Reference Transition is next.
+**Phase 003 — Concept Synchronizations and Ecosystem Scenarios is active.** Groups 01–02 are accepted; Group 03 — Runtime Evidence, Health & Realized Change is next.
 
 Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, services, deployment workflows, prototypes, or implementation scaffolding unless the user explicitly advances the project into technical/implementation design.
 
@@ -39,8 +39,7 @@ Preserve:
 - Change Intent ≠ Deployment ≠ realized Change;
 - anticipated effect ≠ normative Expectation;
 - planned value ≠ empirical Baseline;
-- Deployment attempt ≠ activation;
-- activation ≠ intended effect realized;
+- Deployment attempt ≠ intent association ≠ activation ≠ intended effect realized;
 - successful run ≠ freshness ≠ data quality;
 - Expectation ≠ Baseline;
 - Observation ≠ Assessment;
@@ -68,12 +67,20 @@ Preserve:
 - Preserve ledger-like append/supersede/correction semantics for material synchronization history.
 - Distinguish effective/event time from recorded/knowledge time where material.
 
-## Planned change / Baseline rules
+## Planned change / reference-transition rules
 
-- Register planned modifications through Change Intent when the product is expected to know them.
-- Change Intent may register a prospective Baseline comparability break but cannot set post-change Baseline values.
-- New Baselines require sufficient comparable post-change Observations.
-- Immediate post-change normative validation uses an explicitly established/revised Expectation when appropriate.
+- Change Intent may independently trigger prospective Expectation review and a prospective Baseline comparability break.
+- Never convert anticipated effects into Expectations or intended values into Baselines.
+- Change Intent ↔ Deployment association requires evidence; timing/name similarity alone is insufficient.
+- Deployment attempt, association, activation, intended-effect realization, health, and causation remain separate.
+- A prospective reference boundary becomes effective only from sufficient realization evidence for the relevant subject/dimension/context.
+- Workflow success or planned effective time alone cannot transition reference context.
+- A structural transition makes the old Baseline non-comparable for the changed context/interval; it is not deleted globally.
+- Rollback/restoration requires comparability/applicability re-resolution; never blindly restore a prior Baseline/Expectation.
+- Partial/canary/environment-specific rollout changes only the affected reference context.
+- New Baselines require sufficient comparable post-transition Observations.
+- Explicit Expectations can provide immediate post-change normative evaluation while Baseline remains insufficient.
+- Late intent/activation/correction evidence may refine retrospective interpretation but must preserve what was known and used contemporaneously.
 - Planned change can be valid while another health dimension fails; never suppress unexpected violations merely because intent exists.
 
 ## Investigation / causality / impact rules
@@ -100,4 +107,4 @@ Databricks Metric Views/DQX are favored later evaluations, not settled architect
 
 ## Canonical scenario
 
-Use A+B→C to test both concept truth boundaries and synchronization behavior: distinguish planned structural change from unplanned realized Change; Baseline atypicality from normative violation; valid intended change from unintended side effects; Deployment correlation from Causal Claim; multiple contributing causes from forced single-root answers; downstream reachability from exposure/effect/consequence; and current versus historical context. Preserve responsibility, authorization, evidence, provenance, and uncertainty across the whole chain.
+Use A+B→C to test concept and synchronization boundaries: distinguish planned structural change from unplanned realized Change; prepared reference context from realized reference transition; Baseline atypicality from normative violation; valid intended change from unintended side effects; Deployment correlation from Causal Claim; multiple contributing causes from forced single-root answers; downstream reachability from exposure/effect/consequence; and contemporaneous from retrospective knowledge. Preserve responsibility, authorization, evidence, provenance, and uncertainty across the whole chain.

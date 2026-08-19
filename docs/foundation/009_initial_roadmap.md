@@ -18,15 +18,15 @@ See `../concepts/phase_002/README.md`.
 
 ## Phase 003 — Concept Synchronizations and Ecosystem Scenarios
 
-**Status:** **Active — Group 01 accepted; Group 02 next.**
+**Status:** **Active — Groups 01–02 accepted; Group 03 next.**
 
 **Goal:** define how independent accepted concepts synchronize to satisfy end-to-end behavior while preserving each concept's truth boundary.
 
 Formal review groups:
 
 1. **Subject, Scope & Governance Context** — **Accepted**. Entity Identity → Monitoring Scope and independent semantic/responsibility/classification/policy resolution; Classification may support explicit Policy Context applicability without manufacturing policy.
-2. **Planned Change & Reference Transition** — **Next**. Change Intent → prospective Expectation review/Baseline comparability boundary → realization evidence/post-change reference transition.
-3. **Runtime Evidence, Health & Realized Change** — Planned. Deployment activation → Execution History → Observation → Assessment and realized Change.
+2. **Planned Change & Reference Transition** — **Accepted**. Change Intent → independent prospective Expectation/Baseline preparation; evidence-backed association to Deployment realization; target/context-specific reference transition; empirical post-transition Baseline derivation. Planned time/workflow success never substitutes for realization evidence, and rollback requires reference re-resolution.
+3. **Runtime Evidence, Health & Realized Change** — **Next**. Deployment activation → Execution History → Observation → Assessment and realized Change, resolving the correct time-valid Expectation/Baseline context from Group 02.
 4. **Lineage, Investigation & Causal Reasoning** — Planned. Assessment/Change/question → Investigation; historical Lineage/evidence → competing Causal Claims.
 5. **Downstream Impact, Annotation & Explanation** — Planned. Lineage → Impact candidates/exposure/effect/consequence; Annotation/context → authorized Explanation.
 6. **Historical Replay & Phase 003 Consolidation** — Planned. Full ecosystem scenario composition, contemporaneous/retrospective reconstruction, and exit review.

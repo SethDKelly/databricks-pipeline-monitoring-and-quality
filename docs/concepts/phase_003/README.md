@@ -1,6 +1,6 @@
 # Phase 003 — Concept Synchronizations and Ecosystem Scenarios
 
-**Status:** Active — Group 01 accepted; Group 02 next
+**Status:** Active — Groups 01–02 accepted; Group 03 next
 
 ## Purpose
 
@@ -32,13 +32,20 @@ Use [`synchronization_template.md`](synchronization_template.md).
 | Group | Theme | Primary synchronization focus | Status |
 |---|---|---|---|
 | 01 | Subject, Scope & Governance Context | Entity Identity → Monitoring Scope and independently resolved semantic/responsibility/classification/policy context | **Accepted** |
-| 02 | Planned Change & Reference Transition | Change Intent → prospective Expectation review / Baseline comparability boundary → realization evidence | **Next** |
-| 03 | Runtime Evidence, Health & Realized Change | Deployment activation → Execution History → Observation → Assessment / realized Change | Planned |
+| 02 | Planned Change & Reference Transition | Change Intent → prospective Expectation/Baseline preparation → Deployment realization association → evidence-backed reference transition → empirical post-change Baseline | **Accepted** |
+| 03 | Runtime Evidence, Health & Realized Change | Deployment activation → Execution History → Observation → Assessment / realized Change using the correct time-valid reference context | **Next** |
 | 04 | Lineage, Investigation & Causal Reasoning | Assessment/Change/question → Investigation; historical Lineage/evidence → competing Causal Claims | Planned |
 | 05 | Downstream Impact, Annotation & Explanation | Lineage → Impact candidate/exposure/effect/consequence; Annotation/context → authorization-aware Explanation | Planned |
 | 06 | Historical Replay & Phase 003 Consolidation | Whole-ecosystem scenario composition; contemporaneous vs retrospective reconstruction; exit review | Planned |
 
 The order is a **reasoning dependency**, not an implementation dependency.
+
+## Accepted Group 02 synchronization results
+
+- **SYN-004:** Change Intent can independently prompt explicit prospective Expectation establishment/revision and/or register a prospective Baseline comparability break. Anticipated effects become neither normative criteria nor empirical values automatically.
+- **SYN-005:** Change Intent ↔ Deployment association requires provenance-bearing linkage evidence and remains distinct from Deployment attempt, activation, intended-effect realization, health, and causation.
+- **SYN-006:** reference applicability transitions only when sufficient evidence establishes the changed operating context for the relevant target/dimension/context. Workflow success or planned time alone is insufficient. Baseline non-comparability is interval/context scoped; rollback requires fresh comparability/applicability resolution rather than blind restoration.
+- **SYN-007:** a new Baseline is derived from sufficient comparable post-transition Observations. An explicit Expectation may support immediate normative evaluation while the new Baseline remains unavailable.
 
 ## Cross-cutting synchronization rules
 
@@ -51,6 +58,11 @@ The order is a **reasoning dependency**, not an implementation dependency.
 - Scope does not grant authorization; authorization does not imply Monitoring Scope.
 - Graph traversal does not create Causal Claim or confirmed Impact.
 - Change Intent does not create Observation, realized Change, Expectation, or Baseline values.
+- Planned reference preparation does not equal realized reference transition.
+- Deployment attempt/association/activation/intended-effect realization remain separate.
+- Reference transitions resolve per subject/target/dimension/context; development/canary/partial rollout does not globally switch unrelated references.
+- Old Baselines are not deleted by structural transition; their comparability becomes context/time specific.
+- Rollback does not automatically resurrect prior Baseline/Expectation applicability.
 - Ledger-like history applies across synchronization results: material corrections/supersessions preserve prior knowledge.
 - Where material, effective/event time and recorded/knowledge time remain distinct through the chain.
 - No synchronization requires DQX, Metric Views, Collibra, Immuta, GitHub Actions, a graph database, event store, message bus, workflow engine, LLM, or selected technical architecture.
@@ -104,4 +116,4 @@ Phase 003 is complete when:
 
 ## Current review state
 
-**Group 01 is accepted. Group 02 — Planned Change & Reference Transition is next.**
+**Groups 01–02 are accepted. Group 03 — Runtime Evidence, Health & Realized Change is next.**
