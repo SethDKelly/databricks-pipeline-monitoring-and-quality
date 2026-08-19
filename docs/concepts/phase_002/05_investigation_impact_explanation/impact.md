@@ -1,91 +1,131 @@
 # Concept: Impact
 
-**Status:** Candidate
+**Status:** Accepted — Phase 002 Group 05
 
 ## Purpose
 
-Let users understand which downstream assets, consumers, metrics, reports, applications, or business processes may be affected by a monitored issue.
+Let users understand the downstream exposure and consequences associated with an originating issue or condition while preserving the difference among graph reachability, actual exposure/consumption, observed downstream effect, and evidenced business consequence.
 
 ## Operational principle
 
-A degraded Table C feeds a Metric View and two reports. Downstream lineage identifies them as impact candidates. One report is confirmed to have refreshed from the affected C version; another has not refreshed yet. Impact distinguishes potential exposure from confirmed affected consumption.
+A degraded Table C has downstream Lineage to a Metric View and two reports. All three are downstream candidates. The Metric View and Report 1 are proven to have refreshed from the affected C output, establishing exposure. Report 2 has not refreshed, so it is reachable but not yet exposed. Report 1 also shows a degraded business metric, establishing an observed downstream effect, while no evidence yet shows that a business decision was made from the bad result. Impact preserves these layers rather than calling every reachable node "affected."
 
 ## Actors
 
-- Business Analyst
-- Data Engineer
-- Data Owner / Steward
+- Business Analyst / Data Consumer
+- Data Engineer / Pipeline Maintainer
+- Data Owner / accountable business party
+- Data Steward / Governance Steward
+- Incident responder / on-call engineer
 - Monitoring framework
 
 ## State
 
-- originating issue/subject/time context;
-- downstream candidate identity;
-- relationship/evidence basis;
-- impact status such as potential, exposed, confirmed affected, not affected, unknown (vocabulary deferred);
-- timing and uncertainty;
-- criticality/business context references where available.
+- originating issue/condition/investigation reference and relevant time context;
+- downstream candidate Entity Identity;
+- Lineage/reachability basis and path provenance;
+- **candidate/reachability state** — whether the entity is a plausible downstream candidate under authorized topology;
+- **exposure/consumption state** — whether evidence shows the candidate consumed, depended on, or otherwise encountered the affected state/version/time window;
+- **downstream-effect evidence** — linked Observation/Assessment/Change evidence showing whether the candidate's own condition changed or violated a criterion;
+- **business-consequence evidence** — known effect on a report, metric use, application behavior, process, decision, customer/user outcome, or other business context where established;
+- timing alignment and uncertainty for each layer;
+- criticality/Semantic Definition/Responsibility Assignment context references where useful;
+- revision/history as later downstream evidence arrives;
+- authorization/redaction state for restricted downstream entities.
 
 ## Actions
 
 ### `identifyCandidates`
-Uses authorized downstream relationships/context to enumerate possible exposure.
+- **Intent:** use authorized Lineage and relationship context to enumerate plausible downstream candidates.
+- **Observable result:** candidates with relationship/path basis and completeness limitations.
 
-### `evaluate`
-Adds evidence about whether/how a candidate was actually affected.
+### `evaluateExposure`
+- **Intent:** determine whether a candidate actually encountered the affected source/state/time window.
+- **Observable result:** exposed, not exposed, unknown/insufficient, conflicting, unauthorized, or unavailable with evidence basis.
+
+### `linkDownstreamEffect`
+- **Intent:** associate downstream Observation/Assessment/Change evidence that describes what happened at the candidate.
+- **Important:** an observed downstream degradation does not by itself prove that the originating issue caused it.
+
+### `recordConsequence`
+- **Intent:** associate evidence of a technical, analytical, or business consequence when such evidence exists.
+- **Important:** consequence evidence retains its source/provenance and does not automatically establish causal attribution.
 
 ### `revise`
-Updates impact status as new evidence arrives while preserving history.
+- **Intent:** update the impact picture as downstream evidence arrives while preserving prior knowledge-time state.
 
 ## Invariants / behavioral expectations
 
-- Downstream lineage creates candidates, not automatic proof of impact.
-- Impact status and evidence basis are explicit.
-- Restricted downstream entities may be redacted/abstracted without falsely implying no impact.
-- Business criticality may influence prioritization but is not itself proof of impact.
+- Lineage reachability creates an Impact candidate, not proof of exposure or effect.
+- Actual exposure/consumption is stronger than reachability but is not automatically equivalent to downstream degradation.
+- A downstream Observation/Assessment change can coexist with uncertain causality to the originating issue.
+- If the product asserts that the origin caused a downstream effect, that causal proposition belongs in **Causal Claim** with evidence and epistemic status.
+- Business criticality influences priority/significance but is not evidence that an impact occurred.
+- Business consequence is not inferred merely because a business-facing report is reachable or exposed.
+- `not exposed` or `not affected` requires sufficient evidence for the relevant dimension; missing evidence cannot be converted into a reassuring negative.
+- Restricted or out-of-scope downstream entities may remain opaque without being treated as absent.
+- Different impact layers can disagree: a consumer may be exposed but unchanged, or may have an observed downstream issue without enough evidence to attribute it to the origin.
+- Impact history preserves what was known at each relevant knowledge time.
 
 ## Ambiguity and missing evidence
 
-Incomplete lineage, delayed consumption evidence, restricted consumers, or ambiguous incident timing can make impact only potential/unknown. The concept must not equate reachability with actual affected consumption.
+Incomplete Lineage, delayed consumer refresh data, restricted entities, uncertain version association, ambiguous timing, or missing downstream monitoring can leave exposure or consequence unresolved.
+
+A candidate outside Monitoring Scope can still be known as reachable when authorized, but the product should explicitly communicate reduced confidence/coverage rather than manufacturing downstream health evidence.
 
 ## Synchronizations
 
-- Investigation supplies issue context.
-- Lineage supplies downstream relationships.
-- Execution History/Observation/Assessment can confirm whether a consumer used affected data.
-- Semantic Definition/Ownership add business context.
-- Explanation communicates blast radius appropriately.
+- **Investigation** supplies the originating question/issue context.
+- **Lineage** supplies typed downstream candidate paths but not impact proof.
+- **Execution History**, **Deployment**, **Observation**, **Assessment**, and **Change** can establish consumption/exposure and downstream state.
+- **Causal Claim** owns propositions that an originating condition caused a downstream effect.
+- **Semantic Definition** provides business meaning; **Responsibility Assignment** identifies relevant responsible parties; **Classification** and **Policy Context** constrain safe disclosure.
+- **Explanation** communicates downstream reachability, exposure, effect, and business consequence without collapsing them.
 
 ## Security / privacy / governance considerations
 
-Downstream impact can reveal sensitive reports, applications, business processes, or decision pathways. Results must respect audience authorization and policy context.
+Impact analysis can reveal sensitive reports, applications, business processes, strategic metrics, customer outcomes, or decision pathways. Authorization applies to candidate identity, path detail, exposure evidence, downstream effect, and business-consequence detail independently.
+
+A safe explanation may state that additional restricted downstream consumers are potentially exposed without naming them.
 
 ## Evidence / provenance considerations
 
-Each impact status retains the relationship and consumption/assessment evidence that supports it, plus time context and revisions as downstream state becomes clearer.
+Each reachability path, exposure determination, downstream-effect link, business-consequence assertion, and revision retains provenance, temporal context, and evidence limitations. Historical replay must be able to reconstruct what downstream state was known at the time.
 
 ## Representative scenarios
 
-### Happy path
-A report is confirmed to have refreshed from the affected C output.
+### Reachable but not exposed
+Report 2 is downstream of C but has not refreshed since before the affected output. It remains a candidate, not an exposed consumer.
 
-### Degraded path
-A downstream dashboard is reachable in lineage but has not refreshed, so impact remains potential.
+### Exposed but no observed degradation
+A Metric View refreshes from affected C, but its aggregated metric remains within its Expectation. Exposure is established while downstream health remains acceptable on the monitored dimension.
 
-### Conflicting evidence
-Consumer refresh metadata disagrees with lineage timing.
+### Exposed and downstream effect observed
+Report 1 refreshes from affected C and its key metric violates an Expectation. Impact records both exposure and the downstream Assessment; a separate Causal Claim is needed to state that C caused the metric failure if that inference is not directly established.
 
-### Unauthorized evidence
-A user sees that one restricted downstream consumer may be affected without learning its identity.
+### Business consequence unknown
+A report is affected, but no evidence shows whether a business decision used it. Business consequence remains unknown rather than assumed.
+
+### Cross-repository blast radius
+A source issue traverses several repositories through typed Lineage. Repository boundaries do not prevent candidate discovery or exposure analysis.
+
+### Restricted consumer
+A viewer is told that an additional restricted business process may be exposed but cannot see its identity or detailed path.
 
 ## Non-goals
 
-- remediation workflow;
+- defining Lineage itself;
 - causal root determination;
-- access granting;
-- business criticality definition itself.
+- business criticality definition;
+- incident remediation;
+- granting access;
+- assuming every reachable downstream node is affected;
+- selecting a graph traversal/storage implementation.
 
-## Open questions
+## Deferred questions
 
-- What is the minimum distinction between potential and confirmed impact?
-- Are business processes first-class identified entities in MVP?
+- exact first-MVP impact-layer vocabulary and display semantics;
+- which consumers/business processes require first-class Entity Identity in MVP;
+- what evidence is sufficient to establish version-level exposure for each consumer class;
+- whether formal business-consequence categories are needed beyond provenance-bearing assertions;
+- how impact prioritization combines criticality, exposure, and consequence without hiding uncertainty.

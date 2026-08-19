@@ -1,146 +1,109 @@
 # 003 — Foundational Terminology
 
-This document establishes distinctions that must remain stable during discovery. The fuller glossary remains in [`../reference/glossary.md`](../reference/glossary.md).
+This document establishes distinctions that must remain stable. The fuller canonical glossary is [`../reference/glossary.md`](../reference/glossary.md).
 
 ## Ecosystem terms
 
 ### Data ecosystem
-The connected set of repositories, planned/realized changes, deployments, Databricks jobs/tasks/runs, data assets, dependencies, lineage relationships, governance metadata, health/quality evidence, and downstream consumers relevant to monitoring. Known entities may exist outside Monitoring Scope.
+The connected set of repositories, Change Intents, Deployments, executions, data assets, dependencies, Lineage, governance metadata, health evidence, Investigations, Impact context, and downstream consumers relevant to monitoring.
 
 ### Logical pipeline
-A named data-processing responsibility that transforms or moves data for a purpose. A logical pipeline may span multiple jobs/tasks and is not automatically one repository or Databricks job.
-
-### Pipeline dependency
-A relationship in which one logical pipeline's timely/correct operation depends on another pipeline. This may be operational, data-based, or both.
+A named data-processing responsibility that may span multiple Databricks tasks/jobs and must not automatically equal one repository.
 
 ### Repository
-A source-control boundary. It preserves provenance but is not the product reasoning boundary.
+A source-control/provenance boundary, not the product reasoning boundary.
 
-## Change, execution, and deployment terms
-
-### Change Intent
-A provenance-bearing registered statement of an intended modification and its anticipated effects before the change is proven active/realized.
-
-Change Intent is not Deployment, Observation, Expectation, realized Change, or cause. Anticipated effects are descriptive planned context unless separately established as normative Expectations.
-
-### Job
-A Databricks orchestration/execution definition. Exact mapping from logical pipeline to job is a discovery concern.
-
-### Task
-A unit of execution within a Databricks job.
-
-### Run / execution instance
-A time-bounded instance of actual job/task/logical-pipeline work established by execution evidence.
-
-### Execution History
-Historical continuity/lifecycle of actual execution instances. It does not synthesize expected-but-missing executions from absent telemetry.
-
-### Code revision
-A specific source-controlled version associated with deployment/pipeline definition.
-
-### Deployment
-A provenance-bearing record of attempted and/or active source/configuration state for a runtime target. Deployment attempt and activation are distinct.
-
-Deployment activation does not prove that a Change Intent's anticipated effect occurred and does not prove healthy output.
-
-### Deployment lineage/provenance
-Relationships among repository, revision/configuration, deployment workflow/evidence, active runtime definition, and subsequent executions. It is distinct from data derivation Lineage.
-
-## Data terms
-
-### Data asset
-A data object such as a table, view, Metric View, external/intermediate dataset, or other meaningful data product. A known asset is not necessarily inside Monitoring Scope.
-
-### Consumer-facing data asset
-A data asset intended for consumption outside the producing pipeline's internal processing boundary.
-
-### Dataset state
-Observable condition of a data asset at a time/interval, including freshness, volume, schema, distribution, and quality Observations.
-
-### Upstream / Downstream
-Upstream entities may influence another entity; downstream entities depend on or consume another entity. Reachability alone does not prove cause or confirmed impact.
+### Job / Task / Run
+Job is an orchestration definition; Task is a unit within it; Run/execution instance is time-bounded actual work established by execution evidence.
 
 ## Monitoring and quality terms
 
 ### Expectation
-A provenance-bearing normative assertion of what should be true/acceptable for a subject, dimension, context, and time.
-
-A Change Intent may prompt an Expectation revision, but anticipated effects do not become normative automatically.
+A normative assertion describing what should be acceptable for a subject/dimension/context/time.
 
 ### Baseline
-Descriptive reference behavior derived from comparable Observation evidence. A Baseline is not normative.
-
-A Change Intent may register a **prospective comparability break**. That break becomes effective only when realization evidence establishes the new context. A post-change Baseline must be derived from post-change evidence, never from intended values.
+Descriptive reference behavior empirically derived from comparable evidence. Typical does not automatically mean healthy.
 
 ### Observation
-A provenance-bearing measured/retrieved fact. Observation does not declare health, anomaly, staleness, degradation, intent conformance, or cause. Missing evidence is not observed absence.
+A provenance-bearing measured/retrieved fact. It does not declare health or cause. Missing evidence is not observed absence.
 
 ### Assessment
-A dimension-scoped interpretation of Observation evidence against an explicit Expectation and/or comparable Baseline. Assessment preserves basis/history and does not establish root cause.
+A dimension-scoped interpretation of Observation evidence against explicit Expectation and/or comparable Baseline context.
 
 ### Freshness / Staleness
 Freshness is observed currency/timeliness. Staleness is a normative Assessment that freshness violates an applicable Expectation.
 
-### Data quality
-Degree to which data satisfies explicit Expectations relevant to intended use across applicable dimensions.
-
 ### Degradation
-Meaningful worsening supported by explicit directional/normative interpretation. Baseline deviation or realized Change alone does not establish degradation.
+A meaningful worsening supported by directional/normative interpretation. A realized Change or Baseline deviation alone is insufficient.
 
-## History, lineage, and reasoning terms
+## History, planned change, and topology
 
-### Change
-A provenance-bearing description of a realized difference/state transition established by evidence. Change may be planned or unplanned in context, but the Change record itself describes what actually occurred.
+### Change Intent
+A registered intended modification and anticipated effects before realization. Intent is not Observation, Change, Expectation, Baseline, or cause.
 
-Change is not Change Intent, health judgment, intent-conformance judgment, or cause.
+### Deployment
+Attempt/activation/active-state/supersession history for source/configuration state applied to a runtime target. Deployment success does not prove data effect.
+
+### Execution History
+Actual execution-instance lifecycle history. Missing telemetry cannot create fictional missing runs.
 
 ### Lineage
-Typed, directed, temporal, provenance-bearing relationship semantics for tracing derivation/dependency/production/consumption. Planned topology is not active Lineage until realization evidence establishes it.
+Typed, directed, temporal, provenance-bearing relationships. Planned topology is not active Lineage until evidence establishes it.
 
-Lineage is naturally graph-shaped and must support graph-compatible traversal semantics; no graph-storage technology is selected in Phase 002.
-
-### Data lineage
-How data assets derive from/flow into other data assets.
-
-### Operational dependency lineage
-How pipelines/jobs/executions depend on other availability/execution conditions.
-
-### Evidence ledger semantics
-A cross-cutting product requirement that material historical assertions/events remain provenance-bearing, versioned/superseding, and reconstructable rather than invisibly overwritten.
-
-This does not mean blockchain or any specific event-store technology.
+### Change
+A realized difference/state transition established by evidence, without health/intent/causal judgment.
 
 ### Effective/event time
-When a condition was true or an event occurred in the modeled ecosystem.
+When something occurred or was true.
 
 ### Recorded/knowledge time
-When the monitoring ecosystem learned/recorded an assertion/event. It may differ from effective/event time because evidence can arrive late or be corrected.
+When monitoring learned/recorded it.
 
-### Root-cause hypothesis / Causal Claim
-A proposed causal explanation supported to some degree by evidence but distinct from confirmed cause.
+## Investigation and reasoning terms
 
-### Attribution / Confirmed cause
-Attribution assigns contribution under uncertainty. Confirmed cause requires an agreed evidence/authority standard that is not yet fully defined.
+### Investigation
+A bounded inquiry that links evidence, claims, Impact analysis, and human context without owning those truths.
+
+### Causal Claim
+An explicit proposition that one or more conditions caused/contributed to an outcome, carrying epistemic status plus supporting/contradicting evidence.
+
+### Root-cause hypothesis
+A Causal Claim that is proposed/supported but not confirmed.
+
+### Confirmed cause
+A Causal Claim satisfying an explicit evidence/authority standard. The exact standard remains open.
+
+### Attribution
+A contribution statement represented through Causal Claim semantics when justified; quantitative allocation is not assumed.
 
 ### Impact
-A known or plausible downstream effect; lineage reachability provides candidates, not proof of actual impact.
+Downstream consequence reasoning that distinguishes candidate/reachability, actual exposure, observed downstream effect, and evidenced business consequence.
+
+### Annotation
+Attributed human context that cannot silently become Observation, Change Intent, Expectation, Responsibility Assignment, or causal confirmation.
+
+### Explanation
+Authorization- and time-aware evidence-grounded communication. It is not an independent truth source and can distinguish what was known then from retrospective knowledge now.
 
 ## Governance and policy terms
 
 ### Responsibility Assignment
-A provenance-bearing assertion that a party bears a named responsibility for a subject/time/context. Responsibility is not universal authority or authorization.
+A provenance-bearing assertion that a person/team/role bears a named responsibility for a subject/time/context. Responsibility is not universal authority or authorization.
 
-### Technical owner / Business accountable party / Data steward
-Distinct responsibility types; none is automatically authoritative for all metadata, policy, Expectation, or access decisions.
+### Semantic Definition
+Provenance-bearing meaning/interpretation assertions.
 
 ### Classification
 Category membership under a named governance/sensitivity vocabulary; not Policy Context or authorization.
 
 ### Policy Context
-Declared policy/handling applicability for subject/context/time; not access enforcement, legal interpretation, or compliance determination.
+Declared policy/handling applicability without access enforcement, legal interpretation, or compliance determination.
+
+### PII / PHI / HIPAA-related policy context
+Sensitive-data/legal-organizational categories/context according to applicable definitions. Presence of such metadata does not establish compliance.
 
 ### Provenance
-Where/when/by whom or what an assertion/fact/derivation was produced, including source and temporal context.
+Where a fact/assertion/definition/intent/relationship/evaluation/claim came from, who/what asserted or derived it, and relevant temporal/version context.
 
 ## Terms to avoid conflating
 
@@ -148,20 +111,24 @@ Where/when/by whom or what an assertion/fact/derivation was produced, including 
 - pipeline ≠ repository ≠ Databricks job;
 - Change Intent ≠ Deployment ≠ realized Change;
 - anticipated effect ≠ normative Expectation;
-- Deployment attempt ≠ activation;
-- Deployment activation ≠ intended effect realized;
-- run success ≠ freshness ≠ data quality;
-- Expectation ≠ Baseline;
 - planned value ≠ empirical Baseline;
+- Deployment attempt ≠ activation;
+- activation ≠ intended effect realized;
+- successful run ≠ freshness ≠ data quality;
+- Expectation ≠ Baseline;
 - Observation ≠ Assessment;
 - missing evidence ≠ observed absence;
 - typical ≠ healthy;
 - atypical ≠ degraded/defective;
 - planned topology ≠ active Lineage;
-- Lineage/reachability ≠ cause/confirmed impact;
+- Lineage reachability ≠ cause ≠ confirmed Impact;
 - Change ≠ degradation ≠ cause;
+- Investigation ≠ causal truth;
+- Causal Claim ≠ confirmed cause;
+- Impact candidate ≠ exposure ≠ downstream effect ≠ business consequence;
+- Annotation ≠ structured operational truth;
+- Explanation ≠ truth source;
 - effective/event time ≠ recorded/knowledge time;
 - Semantic Definition ≠ Responsibility Assignment;
-- Classification ≠ Policy Context ≠ authorization ≠ compliance;
-- data Lineage ≠ deployment provenance;
-- current topology ≠ historical topology.
+- Responsibility Assignment ≠ universal authority;
+- Classification ≠ Policy Context ≠ authorization ≠ compliance.

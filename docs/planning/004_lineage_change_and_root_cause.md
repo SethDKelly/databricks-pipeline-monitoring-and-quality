@@ -1,111 +1,53 @@
 # 004 — Lineage, Change Attribution, and Root-Cause Reasoning
 
+**Status:** Discovery input — refined/superseded where necessary by accepted Phase 002 concepts: Change Intent, Execution History, Deployment, Lineage, Change, Investigation, Causal Claim, and Impact.
+
 ## Goal
 
-Turn lineage from a static dependency map into an evidence structure for answering “where did this change come from?” and “what does it affect?”
+Turn Lineage and historical evidence into a structure for asking where a change may have originated and what may be exposed downstream without manufacturing causal certainty.
 
-## Root-cause stance
+## Accepted conceptual refinements
 
-The system should help narrow causes, not manufacture certainty.
+- planned modification is **Change Intent**, not realized Change;
+- Deployment attempt/activation is historical evidence, not cause;
+- Lineage is typed/temporal and identifies relationship paths, not blame;
+- realized Change describes what actually differed;
+- Investigation organizes the inquiry;
+- causal propositions are explicit **Causal Claims** with support/contradiction and epistemic status;
+- multiple contributors/unresolved outcomes are valid;
+- downstream Impact separates reachability, exposure, observed effect, and business consequence;
+- quantitative attribution such as `4.2M rows from B` is a target reasoning pattern only when evidence can justify it, not a default product conclusion.
 
-A useful explanation should be able to separate:
+## Canonical example: A+B→C
 
-- observed facts;
-- correlated events;
-- plausible causes;
-- eliminated causes;
-- unresolved uncertainty;
-- confirmed cause when confirmation exists.
+If C falls materially, investigate whether A/B volume, freshness, schema, key quality/distribution, join match behavior, transformation logic, Change Intent, Deployment activation, upstream execution, or another condition changed.
 
-## Canonical example: join-driven volume change
+The accepted model can represent:
 
-Assume:
+- Observation of A/B/C and join behavior;
+- Assessment against Expectations/Baselines;
+- Change Intent versus realized Change;
+- temporal Lineage and execution/Deployment context;
+- competing Causal Claims;
+- supporting and contradicting evidence;
+- multiple contributors;
+- downstream Impact candidates/exposure/effects;
+- unresolved uncertainty.
 
-`Table C = Table A JOIN Table B`
+## Causal discipline
 
-Historical state:
+The product may say a claim is proposed, supported, weakened, rejected, confirmed under an accepted standard, or unresolved. Correlation, topology, Deployment timing, and intent consistency are evidence/context but not automatic confirmation.
 
-- A = 20M rows
-- B = 10M rows
-- C = 18M rows
+## Historical reasoning
 
-Current state:
-
-- C = 13M rows
-
-A useful investigation should not stop at “C volume decreased.” It should inspect the relevant lineage and time window to determine whether:
-
-- A lost rows;
-- B lost rows;
-- both changed;
-- key uniqueness changed;
-- nulls increased in join keys;
-- key distributions shifted;
-- match rate changed even when source volumes stayed stable;
-- filters or transformation logic changed;
-- a deployment changed join type or conditions;
-- an upstream pipeline failed or became stale;
-- one source contains the same row count but a materially different population.
-
-The framework should support attribution at the level justified by available evidence.
-
-## Temporal lineage
-
-Root-cause analysis requires answering not just “what is upstream?” but “what was upstream, and what state was it in, at the time of the change?”
-
-Useful temporal questions include:
-
-- What changed immediately before the degradation began?
-- Which upstream quality signal moved first?
-- Which deployment was active for the first affected run?
-- Did a dependency become stale before the downstream effect?
-- Did multiple downstream datasets degrade after one shared upstream asset changed?
-
-## Upstream reasoning
-
-For a degraded asset, the system should help explore:
-
-- direct inputs;
-- upstream pipelines;
-- upstream quality/freshness state;
-- source volume and distribution changes;
-- code/deployment changes;
-- structural changes such as schema or key behavior;
-- shared dependencies that might explain multiple symptoms.
+Questions should distinguish effective/event time from recorded/knowledge time so a retrospective explanation can differ from what the team reasonably knew during the incident.
 
 ## Downstream reasoning
 
-For an affected or changing asset, the system should help identify:
-
-- dependent tables/views;
-- dependent pipelines;
-- metrics and analytical products;
-- reports/dashboards where available;
-- business owners and consumers;
-- downstream quality signals that have already moved;
-- downstream assets that are likely exposed but not yet visibly degraded.
-
-## Change attribution as a first-class capability
-
-The framework should aim to answer forms of:
-
-- “C lost 5M rows; 4.2M of that change is consistent with reduced matching population from B, while 0.8M remains unexplained.”
-- “The first abnormal observation occurred in upstream pipeline X two runs before downstream table Y crossed its threshold.”
-- “Three downstream datasets degraded after the same source table became stale.”
-
-These examples are target reasoning patterns, not implementation commitments.
+Lineage traversal creates candidates. Actual exposure requires consumption/version/timing evidence. Observed downstream degradation and business consequence remain stronger/different statements. If the origin is asserted to have caused a downstream effect, use Causal Claim semantics.
 
 ## Evidence chain
 
-A root-cause explanation should be capable of referencing the evidence that supports it, potentially including:
+Potential evidence includes Change Intent, Deployment/Execution History, Observations/Assessments, Baselines/Expectations, Lineage, realized Change, semantic/governance context, and attributed Annotation.
 
-- run history;
-- freshness observations;
-- quality observations;
-- row/distribution metrics;
-- lineage relationships;
-- deployment history;
-- code version;
-- schema changes;
-- ownership and semantic context;
-- analyst or engineer annotations.
+This planning note is not the authoritative definition of those concepts; the Phase 002 specifications are.

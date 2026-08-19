@@ -6,13 +6,14 @@ alwaysApply: true
 
 # Project foundation
 
-- This repository is in **Phase 002 — Concept Specifications**.
-- Work is documentation-only unless the user explicitly advances the project into implementation/technical design.
-- Do not create application code, notebooks, infrastructure, schemas, APIs, package scaffolding, deployment workflows, or implementation prototypes.
+- **Phase 002 — Concept Specifications is complete.** All five groups and 20 retained concepts are accepted.
+- **Phase 003 — Concept Synchronizations and Ecosystem Scenarios is next but not started.** Begin only on explicit user request.
+- Work remains documentation/design-first unless the user explicitly advances into technical/implementation design.
+- Do not create application code, notebooks, infrastructure, schemas, APIs, package scaffolding, deployment workflows, or implementation prototypes prematurely.
 - Treat `docs/` as the product/design system of record.
-- Before modifying product design, read `README.md`, `docs/README.md`, the relevant `docs/foundation/` files, `docs/reference/glossary.md`, and `docs/decisions/README.md`.
+- Before product-design changes, read `README.md`, `docs/README.md`, relevant foundation docs, `docs/reference/glossary.md`, accepted concept specs, and `docs/decisions/README.md`.
 - Refine canonical docs rather than creating duplicate/conflicting definitions.
-- Explicitly label open and deferred decisions. Never silently choose a framework, storage engine, service architecture, or language.
+- Explicitly label open/deferred decisions. Never silently choose framework, storage engine, graph database, event/ledger store, service architecture, or language.
 - Treat the multi-repository Databricks environment as one reasoning ecosystem while preserving repository/job boundaries for provenance.
-- Treat this repository as standalone; do not import domain terminology, actors, or lifecycle assumptions from unrelated projects.
-- Read `docs/concepts/phase_002/README.md` and the active concept-group specifications before modifying concepts.
+- Treat this repository as standalone; do not import domain assumptions from unrelated projects.
+- Preserve the accepted Phase 002 concept boundaries unless later design explicitly reopens them with rationale.

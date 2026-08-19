@@ -1,88 +1,164 @@
 # Phase 002 — Concept Specifications
 
-**Status:** Active — Groups 01–04 accepted; Group 05 next
+**Status:** **Complete — Groups 01–05 accepted. Phase 003 is next and has not yet started.**
 
 ## Purpose
 
-Phase 002 turns the Phase 001 candidate catalog into explicit Concept Design specifications without mapping concepts to services, schemas, APIs, Databricks objects, graph databases, ledger/event-store technologies, or vendor products.
+Phase 002 turned the Phase 001 discovery catalog into explicit, implementation-neutral Concept Design specifications. The resulting concepts define product behavior and truth boundaries without mapping them to services, schemas, APIs, Databricks objects, graph databases, ledger/event-store technologies, language/framework choices, or vendor products.
 
-## Strategic review order
+## Accepted concept groups
 
-| Group | Theme | Concepts | Status |
+| Group | Theme | Accepted concepts | Status |
 |---|---|---|---|
 | 01 | Scope & Identity | Monitoring Scope, Entity Identity | **Accepted** |
 | 02 | Semantics, Governance & Policy | Semantic Definition, Responsibility Assignment, Classification, Policy Context | **Accepted** |
 | 03 | Health Evaluation | Expectation, Baseline, Observation, Assessment | **Accepted** |
 | 04 | History, Lineage & Change | Change Intent, Execution History, Deployment, Lineage, Change | **Accepted** |
-| 05 | Investigation, Impact & Explanation | Investigation, Causal Claim, Impact, Annotation, Explanation | **Next** |
+| 05 | Investigation, Impact & Explanation | Investigation, Causal Claim, Impact, Annotation, Explanation | **Accepted** |
 
-Review order is a design dependency, not an implementation dependency.
+**20 retained concepts** are accepted.
 
-## Accepted Group 04 refinements
+Review order was a design dependency, not an implementation dependency. Concepts remain independently motivated and compose through synchronizations.
 
-- **Change Intent** is added as a separate concept because planned intent has different truth conditions from realized Change.
-- `Deployment Record` → **Deployment**: attempt/activation/configuration history is behavior, not merely a stored record.
-- **Execution History** owns actual execution-instance continuity, not schedule expectations or data health.
-- **Lineage** is typed, temporal, provenance-bearing, historical, and graph-compatible; graph storage/query technology remains deferred.
-- **Change** describes realized differences/state transitions and does not own intent, health, or causation.
-- Change Intent can pre-register a prospective Baseline comparability break, but activation/realized Change evidence is needed before the break becomes effective.
-- planned values never become Baseline values; post-change Baselines require empirical post-change Observations.
-- prospective post-change normative behavior belongs to explicit Expectation establishment/revision.
-- ledger-like append/supersede historical semantics are accepted as a cross-cutting product requirement; persistence technology remains deferred.
-- effective/event time and recorded/knowledge time must remain distinguishable where historical interpretation depends on when the system learned a fact.
+## Accepted boundary refinements
 
-## Cross-cutting distinctions that must survive every group
+### Group 01
 
-- monitoring scope ≠ ecosystem existence ≠ authorization;
-- identity ≠ name ≠ replacement/succession;
-- semantic definition ≠ responsibility assignment;
-- classification ≠ policy context ≠ authorization ≠ compliance;
-- expectation ≠ baseline;
-- planned/anticipated effect ≠ normative expectation;
-- observation ≠ assessment;
+- `Monitored Scope` → **Monitoring Scope**: monitoring responsibility applies to identified entities and does not implicitly propagate.
+- `Asset Identity` → **Entity Identity**: identity behavior spans the ecosystem and remains distinct from replacement/succession.
+
+### Group 02
+
+- `Description / Semantics` → **Semantic Definition**: meaning is facet-, context-, provenance-, and time-aware.
+- `Ownership` → **Responsibility Assignment**: technical ownership, business accountability, stewardship, and other responsibilities are distinct named assignment types.
+- **Classification** is categorical metadata, separate from **Policy Context**, authorization, and compliance.
+- Synchronization order never silently becomes governance authority.
+
+### Group 03
+
+- **Expectation** is normative; **Baseline** is descriptive.
+- **Observation** is provenance-bearing fact; **Assessment** is interpretation against explicit normative and/or comparative basis.
+- Missing telemetry is not observed absence.
+- Typical is not automatically healthy; atypical is not automatically degraded.
+- Health is dimension-scoped by default; composite health requires explicit aggregation semantics.
+
+### Group 04
+
+- **Change Intent** is introduced separately from realized **Change** because planned intent and realized fact have different truth conditions.
+- `Deployment Record` → **Deployment**: attempt, activation, active state, and supersession are behavior, not merely a stored record.
+- Change Intent may register a prospective Baseline comparability break, but intended values never become empirical Baseline values.
+- Prospective acceptable post-change behavior belongs in explicit **Expectation** establishment/revision.
+- **Lineage** is typed, directed, temporal, provenance-bearing, and graph-compatible without selecting graph technology.
+- Material history follows ledger-like append/supersede/correction semantics without selecting persistence architecture.
+- Effective/event time and recorded/knowledge time remain distinct where historical interpretation requires both.
+
+### Group 05
+
+- **Investigation** organizes inquiry and evidence; it does not own causal truth.
+- **Causal Claim** is the explicit home for causal propositions, supporting/contradicting evidence, contribution roles, uncertainty, and confirmation/rejection history.
+- Correlation, Lineage, Deployment timing, realized Change, and intent consistency cannot silently become confirmed causation.
+- **Impact** separates downstream reachability, actual exposure/consumption, observed downstream effect, and evidenced business consequence.
+- `Annotation / Confirmation` → **Annotation** plus confirmation/rejection actions on Causal Claim under an explicit evidence/authority standard.
+- **Annotation** is human context, not a catch-all mechanism for Change Intent, Expectation, Responsibility Assignment, or causal confirmation.
+- `Report / Explanation` → **Explanation**: presentation artifact is secondary; the product purpose is authorized, evidence-grounded communication.
+- Explanation preserves the distinction between **what was known then** and **what we know now**.
+
+## Cross-cutting distinctions accepted by Phase 002
+
+- Monitoring Scope ≠ ecosystem existence ≠ authorization;
+- Entity Identity ≠ name ≠ replacement/succession;
+- Semantic Definition ≠ Responsibility Assignment;
+- Responsibility Assignment ≠ universal authority ≠ authorization;
+- Classification ≠ Policy Context ≠ authorization ≠ compliance;
+- Expectation ≠ Baseline;
+- normative requirement ≠ historical regularity;
+- planned anticipated effect ≠ normative Expectation;
+- planned value ≠ empirical Baseline;
+- Observation ≠ Assessment;
 - missing evidence ≠ observed absence;
 - typical ≠ healthy;
 - atypical ≠ degraded/defective;
 - Change Intent ≠ Deployment ≠ realized Change;
-- Deployment activation ≠ intended effect realized;
-- execution success ≠ freshness ≠ data quality;
+- Deployment attempt ≠ activation;
+- activation ≠ intended effect realized;
+- successful execution ≠ freshness ≠ data quality;
 - planned topology ≠ active Lineage;
-- lineage/reachability ≠ cause/confirmed impact;
-- change ≠ degradation ≠ cause;
-- event/effective time ≠ recorded/knowledge time;
-- hypothesis/causal claim ≠ confirmed cause;
-- explanation ≠ independent truth source.
+- Lineage reachability ≠ cause ≠ confirmed Impact;
+- Change ≠ degradation ≠ cause;
+- effective/event time ≠ recorded/knowledge time;
+- Investigation ≠ evidence/causal truth;
+- Causal Claim ≠ confirmed cause;
+- Impact candidate ≠ exposure ≠ downstream effect ≠ business consequence;
+- Annotation ≠ Observation/Change Intent/Expectation/causal confirmation;
+- Explanation ≠ independent truth source.
 
-## Group workflow
-
-Each group should validate purposes, challenge names/boundaries, test state/actions, preserve ambiguity/security/provenance, run canonical/adversarial scenarios, and update catalog/glossary/decisions before advancing.
-
-## Required scenario set
+## Phase 002 scenario review
 
 ### S-01 — Join-volume degradation
-C is produced from A+B and falls materially. The product must distinguish atypicality, normative violation, planned structural change, realized change, upstream source change, join behavior, and unresolved cause.
+
+**Pass.** A+B→C can be expressed as Observations, Baseline comparison, normative Assessment, Change Intent/Deployment/realized Change context, typed historical Lineage, competing/multiple Causal Claims, downstream Impact analysis, and authorized Explanation without forcing a cause.
 
 ### S-02 — Stale upstream with successful downstream execution
-Execution success and freshness remain separate; no deployment/change is required for staleness.
+
+**Pass.** Execution success, freshness Observation, freshness Expectation/Assessment, upstream Lineage, Causal Claim, and downstream Impact remain separate.
 
 ### S-03 — Deployment-correlated shift
-Registered intent, Deployment activation, execution, realized Change, and Assessment can be aligned without asserting deployment causation.
+
+**Pass.** Registered intent, Deployment activation, execution sequence, realized Change, and Assessment can align temporally while the deployment-cause proposition remains a separately evaluated Causal Claim.
 
 ### S-04 — Cross-repository dependency
-Repository boundaries preserve provenance but do not break Entity Identity/Lineage reasoning.
+
+**Pass.** Repository boundaries preserve provenance but do not break Entity Identity, Lineage, Investigation, or Impact reasoning.
 
 ### S-05 — Conflicting governance metadata
-Conflicts remain provenance-bearing until authority is defined.
+
+**Pass.** Conflicting semantic, responsibility, classification, policy, or Expectation assertions retain provenance and conflict rather than last-write-wins flattening.
 
 ### S-06 — Policy-sensitive explanation
-Authorized abstraction can expose material context without restricted details/raw data.
+
+**Pass.** Authorization-aware opaque/redacted entities, evidence, claims, Annotations, and downstream consumers preserve usefulness without broadening raw-data access or leaking restricted context.
 
 ### S-07 — Historical replay
-The product can reconstruct what was intended, known, active, executed, connected, expected, baselined, observed, assessed, governed, and changed at an earlier time.
+
+**Pass.** Ledger-like history plus effective/event time and recorded/knowledge time can reconstruct what was intended, active, executed, connected, expected, baselined, observed, assessed, investigated, believed, and explained at an earlier time.
 
 ### S-08 — Planned structural change
-A registered filter is expected to alter C's population. The product can transition Expectation/Baseline context without treating the plan as observed fact and can still identify unintended post-change violations.
 
-## Phase 002 exit gate
+**Pass.** A planned filter can prospectively revise an Expectation and register a Baseline comparability break without manufacturing empirical history. Valid intended volume change can coexist with an unintended quality violation and competing causal explanations.
 
-Phase 002 is complete when every retained concept is reviewed; boundaries/rationale are recorded; the catalog/glossary agree; Phase 003 synchronizations are identifiable; no concept depends semantically on a selected implementation architecture/vendor; and all canonical scenarios are expressible without hidden functionality.
+## Phase 002 exit review
+
+The Phase 002 exit gate is **satisfied**:
+
+- every retained concept has a reviewed specification with a singular purpose;
+- renamed, split, and introduced concepts have rationale recorded;
+- state/actions are expressed independently of implementation architecture;
+- missing, conflicting, stale/non-comparable, unauthorized, unavailable, and insufficient evidence behavior is explicit where applicable;
+- security, provenance, effective/event time, and knowledge-time implications are explicit;
+- the concept catalog and glossary are aligned with reviewed specifications;
+- required Phase 003 synchronization chains are identifiable;
+- no accepted concept depends semantically on DQX, Metric Views, Collibra, Immuta, GitHub Actions, a graph database, ledger/event store, or another selected technical architecture;
+- all canonical/adversarial scenarios can be described without hidden functionality or causal overclaim.
+
+## Key synchronization chains for Phase 003
+
+Phase 003 should now define synchronization behavior in detail, including at least:
+
+1. Entity Identity + Monitoring Scope → eligible monitored subjects without authorization conflation.
+2. Classification + Policy Context + authorization view → safe policy-sensitive reasoning.
+3. Change Intent → prospective Expectation review and/or prospective Baseline comparability break.
+4. Change Intent → Deployment activation → Execution History → Observation/realized Change.
+5. Observation + Expectation/Baseline → basis-explicit Assessment.
+6. Assessment/Change/question → Investigation.
+7. Investigation + Lineage/Execution/Deployment/Change Intent/Change/Observation/Assessment → evidence discovery.
+8. Investigation + evidence → Causal Claim support/contradiction/status evolution.
+9. Lineage → Impact candidates; execution/consumption/evidence → exposure/effect/consequence refinement.
+10. Annotation + structured concepts → human context without truth mutation.
+11. all authorized concept state → time-aware Explanation with statement-to-basis traceability.
+12. ledger-like history across the synchronization chain → contemporaneous versus retrospective reconstruction.
+
+## Next phase
+
+The next planned phase is **Phase 003 — Concept Synchronizations and Ecosystem Scenarios**.
+
+Phase 003 is **not started by this document**. It should begin only when explicitly requested, using the accepted Phase 002 concept specifications as its functional source of truth.

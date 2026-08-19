@@ -175,3 +175,53 @@ This decision does **not** select blockchain, event sourcing, append-only databa
 Entity Identity plus typed, directed, temporal, provenance-bearing Lineage forms a naturally graph-shaped reasoning model. Product semantics must support upstream/downstream traversal, historical subgraphs, uncertainty, scope boundaries, and authorized opaque/redacted nodes.
 
 This does **not** select Neo4j, RDF, property graphs, GraphFrames, a graph query language, or any other technical graph architecture. Those are later evaluation candidates.
+
+### D-025 — Investigation organizes inquiry but does not own evidence or causal truth
+
+**Status:** Accepted — Phase 002 Group 05
+
+Investigation is a bounded inquiry that links relevant source evidence, Causal Claims, Impact analysis, and Annotations. It may begin from an Assessment, user question, Change-Intent realization mismatch, or other uncertainty.
+
+Investigation can close unresolved or multi-causal. Closure cannot silently promote a Causal Claim or rewrite linked evidence.
+
+### D-026 — Causal Claim is the explicit epistemic home for causality
+
+**Status:** Accepted — Phase 002 Group 05
+
+Causal statements are explicit provenance-bearing claims with supporting and contradicting evidence, contribution role where useful, uncertainty rationale, review/confirmation provenance, and status history.
+
+Correlation, Lineage, Deployment timing, realized Change, and consistency with Change Intent are never sufficient by themselves to confirm cause. Multiple contributing causes may coexist. `Confirmed` requires an explicit evidence/authority standard that remains deferred.
+
+Phase 002 does not require a separate Attribution concept or quantitative percentage attribution; qualitative contribution can live within Causal Claim until a stronger requirement emerges.
+
+### D-027 — Impact separates reachability, exposure, observed effect, and business consequence
+
+**Status:** Accepted — Phase 002 Group 05
+
+Downstream Lineage produces Impact candidates only. Impact separately records whether a candidate actually consumed/encountered affected state, whether downstream Observation/Assessment/Change evidence shows an effect, and whether a technical/analytical/business consequence is evidenced.
+
+If the product asserts that an originating condition caused a downstream effect, that proposition belongs in Causal Claim. Missing downstream evidence cannot become `not affected`.
+
+### D-028 — Annotation is human context, not a catch-all truth or confirmation mechanism
+
+**Status:** Accepted — Phase 002 Group 05
+
+Annotation preserves attributed human context with revision/dispute/withdrawal history. It cannot silently become Observation, Change Intent, Expectation, Responsibility Assignment, Classification, Policy Context, or causal confirmation.
+
+When human input constitutes structured operational truth, it must be recorded through the concept that owns that purpose and its authority/provenance semantics.
+
+### D-029 — Explanation is an authorization- and time-aware projection over concept state
+
+**Status:** Accepted — Phase 002 Group 05
+
+Explanation is not an independent truth source. It composes audience-appropriate statements from authorized concept state while preserving material epistemic labels and statement-to-basis traceability.
+
+Explanation must distinguish `what was known then` from `what we know now` when recorded/knowledge time materially changes the answer. Audience-specific detail may differ, but safe projections cannot intentionally contradict the same authorized evidence.
+
+### D-030 — Phase 002 concept specification exit gate is satisfied
+
+**Status:** Accepted
+
+All five groups and 20 retained concepts have reviewed specifications; boundary changes/rationale are recorded; catalog/glossary/decision records are aligned; canonical and adversarial scenarios are expressible without hidden functionality; and no concept requires a selected technical architecture or vendor realization.
+
+The next planned work is **Phase 003 — Concept Synchronizations and Ecosystem Scenarios**, which must begin only on explicit user instruction.

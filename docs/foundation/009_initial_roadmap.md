@@ -1,116 +1,117 @@
 # 009 — Initial Roadmap
 
-This roadmap intentionally delays implementation until product concepts, synchronizations, and trust boundaries are stable enough to guide technical design.
+This roadmap delays implementation until product concepts, synchronizations, trust boundaries, evidence semantics, integration authority, and technical constraints are stable enough to guide architecture.
 
 ## Phase 001 — Product Foundation and Concept Discovery
 
-**Goal:** establish product purpose, actors, terminology, Concept Design method, architectural principles, security/policy stance, lifecycles, MVP boundary, and open questions.
+**Status:** Complete.
 
-**Deliverables:** this `docs/foundation/` set, concept catalog seed, Codex/Cursor rules.
-
-**No coding.**
+Established product purpose, actors, terminology, Concept Design method, architectural principles, security/policy stance, lifecycles, MVP boundary, roadmap, and initial concept catalog.
 
 ## Phase 002 — Concept Specifications
 
-**Goal:** turn the candidate catalog into explicit specifications using a strategic group-by-group review order.
+**Status:** **Complete.**
 
-Active groups:
+All five groups and 20 retained concepts are accepted:
 
-1. **Scope & Identity** — Monitored Scope, Asset Identity.
-2. **Semantics, Governance & Policy** — Semantic Definition, Ownership, Classification, Policy Context.
+1. **Scope & Identity** — Monitoring Scope, Entity Identity.
+2. **Semantics, Governance & Policy** — Semantic Definition, Responsibility Assignment, Classification, Policy Context.
 3. **Health Evaluation** — Expectation, Baseline, Observation, Assessment.
-4. **History, Lineage & Change** — Execution History, Deployment, Lineage, Change.
+4. **History, Lineage & Change** — Change Intent, Execution History, Deployment, Lineage, Change.
 5. **Investigation, Impact & Explanation** — Investigation, Causal Claim, Impact, Annotation, Explanation.
 
-Each candidate may be accepted, revised, split, merged, renamed, or rejected during review.
-
-**Key output:** for each retained concept, purpose, operational principle, state, actions, invariants, ambiguity behavior, synchronizations, security/provenance considerations, scenarios, and non-goals.
+Key Phase 002 cross-cutting outcomes include ledger-like historical semantics, graph-compatible typed temporal Lineage, planned-change/Baseline boundaries, explicit causal-claim semantics, downstream Impact layering, and authorization/time-aware Explanation.
 
 See `../concepts/phase_002/README.md`.
 
-**No implementation mapping yet.**
-
 ## Phase 003 — Concept Synchronizations and Ecosystem Scenarios
 
-**Goal:** define how independent concepts synchronize to satisfy end-to-end scenarios.
+**Status:** **Next — not started.**
 
-Stress-test:
+**Goal:** define how independent accepted concepts synchronize to satisfy end-to-end behavior while preserving each concept's truth boundary.
 
-- stale upstream;
-- join-volume degradation;
+Priority scenarios:
+
+- stale upstream with successful downstream execution;
+- A+B→C join-volume degradation with one or multiple contributors;
 - successful run with bad output;
-- schema change;
+- planned structural change with valid outcome;
+- planned change with unintended violation;
+- unregistered source/config/topology change;
+- schema/distribution change;
 - cross-repository dependency degradation;
-- deployment-correlated data shift;
-- conflicting governance metadata;
+- Deployment-correlated data shift;
+- conflicting governance/Expectation metadata;
+- downstream reachability versus actual exposure/consequence;
 - restricted/sensitive asset reporting;
-- recovery and historical replay.
+- contemporaneous versus retrospective historical explanation;
+- recovery/reassessment/reopened investigation.
 
-## Phase 004 — Evidence, Time, and Causality Semantics
+## Phase 004 — Evidence, Time, and Causality Refinement
 
-**Goal:** define product-level semantics for evidence, temporal validity, baselines, change, hypotheses, attribution, confidence, confirmation, and historical topology.
+**Goal:** deepen the accepted evidence/temporal/causal model before technical storage architecture.
 
-This is essential before choosing a storage/graph/time-series architecture.
+Refine:
 
-## Phase 005 — Governance, Semantics, Ownership, and Policy Refinement
+- evidence sufficiency/completeness semantics;
+- event/effective versus knowledge-time query semantics;
+- correction/supersession behavior;
+- Causal Claim status transitions;
+- evidence/authority standard for confirmed cause;
+- qualitative versus quantitative attribution if required;
+- confidence/uncertainty semantics;
+- historical Investigation/Explanation reconstruction.
 
-**Goal:** refine authority, provenance, conflicts, stewardship, criticality, classification, PII/PHI/HIPAA-related transparency, and policy-sensitive presentation.
+Phase 002 already established the concept boundaries; Phase 004 refines synchronization/evidence standards rather than rediscovering them.
 
-Evaluate what must be native versus sourced from Collibra/Immuta.
+## Phase 005 — Governance, Authority, Semantics, and Policy Refinement
 
-## Phase 006 — Health, Freshness, and Quality Semantics
+**Goal:** refine source authority, conflict resolution, stewardship, criticality, Classification, Policy Context, PII/PHI/HIPAA-related transparency, expectation authority, and policy-sensitive disclosure.
 
-**Goal:** define expected execution, freshness/staleness, quality dimensions, quality rules/checks, trend/degradation semantics, and how Databricks Metric Views/DQX could realize accepted concepts.
+Evaluate what must be native versus sourced from Collibra/Immuta/Unity Catalog or other authorities.
 
-## Phase 007 — Lineage, Change Attribution, and Root-Cause Analysis
+## Phase 006 — Health, Freshness, and Quality Refinement
 
-**Goal:** refine typed lineage families, historical topology, upstream investigation, downstream blast radius, multiple contributing causes, and evidence chains.
+**Goal:** refine expectation dimensions, Baseline classes/comparability, Assessment vocabularies, observed-absence coverage semantics, quality checks, and how Databricks Metric Views/DQX could realize accepted concepts.
 
-## Phase 008 — Business Questioning and Reporting
+## Phase 007 — Lineage, Change, Investigation, and Impact Refinement
 
-**Goal:** define question types, layered explanations, report semantics, uncertainty communication, authorized detail levels, and business-facing trust requirements.
+**Goal:** refine Lineage type taxonomy, historical topology evidence, Change Intent realization, execution reconstruction, Causal Claim discovery/review, multiple contributors, and downstream exposure/consequence evidence.
+
+## Phase 008 — Business Questioning and Explanation
+
+**Goal:** define question types, audience-specific Explanation structures, visible evidence citation rules, contemporaneous/retrospective views, uncertainty communication, retained-snapshot policy, and deterministic versus generative behavior.
 
 ## Phase 009 — Integration Contracts and Source Authority
 
-**Goal:** determine required facts and source authority for:
-
-- Databricks;
-- Git repositories;
-- GitHub Actions;
-- DQX;
-- Metric Views;
-- Collibra (optional);
-- Immuta (optional);
-- downstream analytical metadata.
-
-This phase defines integration contracts conceptually before implementation.
+**Goal:** determine required facts and source authority for Databricks, Git repositories, GitHub Actions, DQX, Metric Views, Collibra, Immuta, downstream analytical metadata, and planned-change sources.
 
 ## Phase 010 — Technical Architecture
 
-**Goal:** only now select implementation architecture based on validated product concepts and constraints.
+**Goal:** only now select implementation architecture based on validated product concepts/constraints.
 
-Questions may include:
+Evaluate, without presumption:
 
-- storage forms for historical observations and lineage;
+- historical/evidence storage forms;
+- graph-compatible Lineage realization;
+- ledger/temporal history realization;
 - ingestion/synchronization patterns;
-- API/service boundaries;
-- identity and authorization architecture;
+- service/API boundaries;
+- identity/authorization architecture;
 - Databricks deployment model;
-- UI/question interface;
-- batch versus event-driven behavior;
+- Explanation/question interface;
+- batch/event-driven behavior;
 - tenancy/environment strategy;
-- testing and observability.
-
-No choice is implied by the current roadmap.
+- testing/observability.
 
 ## Phase 011 — MVP Implementation Planning
 
-**Goal:** convert the accepted architecture into implementation phases, interfaces, test strategy, migration/onboarding strategy, and acceptance criteria.
+Convert accepted architecture into implementation phases, interfaces, test strategy, migration/onboarding strategy, and acceptance criteria.
 
 ## Phase 012 — MVP Implementation
 
-**Goal:** implement the minimum vertical slices required to prove the canonical scenarios.
+Implement minimum vertical slices required to prove the accepted MVP scenarios.
 
 ## Roadmap rule
 
-A later phase may reveal a flaw in an earlier concept. The project should revise the concept rather than preserve a bad foundation merely to maintain sequence.
+A later phase may reveal a flaw in an earlier concept. Reopen/revise the concept explicitly with rationale rather than preserving a bad boundary merely to maintain sequence.

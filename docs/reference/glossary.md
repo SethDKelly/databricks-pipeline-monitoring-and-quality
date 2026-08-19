@@ -1,11 +1,11 @@
 # Shared Glossary
 
-This glossary is the canonical vocabulary reference. Terms may evolve during concept discovery, but changes must be reflected consistently across foundation and concept documents.
+This glossary is the canonical vocabulary reference. Terms may evolve during later design, but changes must be reflected consistently across foundation, concept, and decision documents.
 
 ## Core ecosystem
 
 ### Data ecosystem
-The connected set of repositories, Change Intents, deployments, executions, data assets, dependencies, Lineage relationships, governance metadata, health/quality evidence, and downstream consumers relevant to monitoring. An entity may be known while outside Monitoring Scope.
+The connected set of repositories, Change Intents, Deployments, executions, data assets, dependencies, Lineage relationships, governance metadata, health/quality evidence, Investigations, causal reasoning, downstream consumers, and Explanations relevant to monitoring. An entity may be known while outside Monitoring Scope.
 
 ### Logical pipeline
 A logical data-processing responsibility that transforms or moves data. It may span one or more jobs/tasks and does not automatically equal a repository.
@@ -18,40 +18,6 @@ A Job is a Databricks orchestration definition; Task is a unit inside it; Run/ex
 
 ### Code revision
 A source-controlled version of code/configuration relevant to Deployment provenance.
-
-## Group 04 — history, lineage, and change
-
-### Change Intent — Accepted
-The functionality for registering an intended modification and anticipated effects before realization. It preserves target, planned/effective context, anticipated effects, monitoring implications, provenance, and revision/withdrawal history.
-
-Anticipated effects are not automatically Expectations, Observations, Changes, or causes.
-
-### Execution History — Accepted
-The functionality for reconstructing actual execution instances/lifecycle states and their provenance over time. Missing telemetry does not create a fictional missing execution.
-
-### Deployment — Accepted
-The functionality for recording deployment attempts and resolving which source/configuration state was actually active for a target/time. Attempt, workflow success, and activation remain distinct; activation does not prove data effect or health.
-
-### Lineage — Accepted
-The functionality for maintaining/traversing typed, directed, temporal, provenance-bearing relationships among Entity Identities. Current topology does not overwrite historical topology; planned topology is not active until evidence establishes it.
-
-Lineage requires **graph-compatible semantics**, but Phase 002 selects no graph database, graph query language, or graph service.
-
-### Change — Accepted
-The functionality for identifying/describing a realized difference or state transition established by evidence, preserving before/after or source-event basis, time, magnitude, provenance, comparability, and uncertainty.
-
-Change does not by itself mean intended, unintended, healthy, degraded, valid, invalid, or causal.
-
-### Evidence-ledger semantics
-A cross-cutting requirement that material historical facts/assertions remain provenance-bearing, reconstructable, and corrected through append/supersede relationships rather than invisible mutation.
-
-This is **not** a blockchain/event-sourcing/storage selection.
-
-### Effective/event time
-When a condition was true or event occurred.
-
-### Recorded/knowledge time
-When the monitoring ecosystem learned or recorded it. Historical replay may need both.
 
 ## Scope and identity
 
@@ -91,7 +57,7 @@ An Expectation specifically describing acceptable data-quality behavior.
 ### Baseline — Accepted
 Descriptive reference behavior derived from comparable Observation evidence. It preserves evidence population/window, comparison context, derivation meaning, version, and limitations.
 
-A Change Intent can register a prospective comparability break; realization evidence is required before the break becomes effective. A new Baseline must be derived from post-change observations rather than intended values.
+A Change Intent can register a prospective comparability break; realization evidence is required before the break becomes effective. A new Baseline must be derived from post-change Observations rather than intended values.
 
 ### Observation — Accepted
 A provenance-bearing measured/retrieved fact. Observation preserves measurement meaning/time/provenance without declaring health, anomaly, staleness, intent conformance, or cause. Missing evidence is not observed absence.
@@ -105,7 +71,23 @@ Freshness is observed currency/timeliness. Staleness is a normative Assessment t
 ### Degradation
 A meaningful worsening supported by explicit directional/normative interpretation. Baseline deviation or realized Change alone is insufficient.
 
-## Lineage families
+## History, lineage, and change
+
+### Change Intent — Accepted
+Functionality for registering an intended modification and anticipated effects before realization. It preserves target, planned/effective context, monitoring implications, provenance, and revision/withdrawal history.
+
+Anticipated effects are not automatically Expectations, Observations, Changes, or causes.
+
+### Execution History — Accepted
+Functionality for reconstructing actual execution instances/lifecycle states and provenance over time. Missing telemetry does not create a fictional missing execution.
+
+### Deployment — Accepted
+Functionality for recording deployment attempts and resolving which source/configuration state was actually active for a target/time. Attempt, workflow success, and activation remain distinct; activation does not prove data effect or health.
+
+### Lineage — Accepted
+Functionality for maintaining/traversing typed, directed, temporal, provenance-bearing relationships among Entity Identities. Current topology does not overwrite historical topology; planned topology is not active until evidence establishes it.
+
+Lineage requires graph-compatible semantics, but no graph database, query language, or graph service has been selected.
 
 ### Data lineage
 How data assets derive from or flow into other data assets.
@@ -114,44 +96,78 @@ How data assets derive from or flow into other data assets.
 How pipelines/jobs/executions depend on other availability/execution conditions.
 
 ### Deployment provenance
-How repositories/revisions/configuration/deployments/active targets/executions relate over time. It remains distinct from data derivation Lineage.
+How repositories/revisions/configuration/Deployments/active targets/executions relate over time. It remains distinct from data derivation Lineage.
 
-## Reasoning terms
+### Change — Accepted
+Functionality for identifying/describing a realized difference or state transition established by evidence, preserving before/after or source-event basis, time, magnitude, provenance, comparability, and uncertainty.
 
-### Evidence
-A provenance-bearing fact used to support Assessment, Investigation, Causal Claim, or Explanation.
+Change does not by itself mean intended, unintended, healthy, degraded, valid, invalid, or causal.
+
+### Evidence-ledger semantics
+A cross-cutting requirement that material historical facts/assertions remain provenance-bearing, reconstructable, and corrected through append/supersede relationships rather than invisible mutation.
+
+This is not a blockchain, event-sourcing, temporal-database, or persistence selection.
+
+### Effective/event time
+When a condition was true or an event occurred.
+
+### Recorded/knowledge time
+When the monitoring ecosystem learned or recorded it. Historical replay may need both.
+
+## Investigation, causality, impact, and communication
+
+### Investigation — Accepted
+Functionality for organizing a bounded inquiry into a question, symptom, unexpected outcome, or uncertainty by linking evidence, Causal Claims, Impact analysis, and Annotations without becoming the source of those facts/conclusions.
+
+An Investigation can close unresolved or multi-causal.
+
+### Causal Claim — Accepted
+A provenance-bearing proposition that one or more conditions caused, contributed to, enabled, or materially influenced a defined outcome, with explicit epistemic status plus supporting/contradicting evidence and revision history.
+
+Correlation, Lineage, Deployment timing, realized Change, and intent consistency are not confirmed causation by themselves.
 
 ### Root-cause hypothesis
-A plausible explanation supported to some degree by evidence but not confirmed.
+A Causal Claim in a proposed/supported but not confirmed epistemic state.
 
 ### Attribution
-A reasoned statement assigning contribution to one or more conditions with uncertainty.
+A causal contribution statement represented through Causal Claim role/status where the available evidence supports it. Phase 002 does not require a separate Attribution concept or quantitative percentage allocation.
 
 ### Confirmed cause
-A cause supported under an agreed evidence/authority standard or explicit authorized human confirmation.
+A Causal Claim that satisfies an explicit accepted evidence/authority standard. The exact standard remains deferred; human title alone is not universal confirmation authority.
 
-### Impact / business impact
-Known or potential downstream effect. Lineage reachability creates candidates, not confirmed impact.
+### Impact — Accepted
+Functionality for reasoning about downstream consequences while keeping separate:
 
-### Causal Claim — Candidate
-A proposed/reviewed causal explanation with explicit epistemic status and linked supporting/contradicting evidence.
+- candidate/reachability through authorized Lineage;
+- actual exposure/consumption of an affected state;
+- observed downstream effect/condition evidence;
+- evidenced technical, analytical, or business consequence.
 
-### Annotation — Candidate
-Human-authored context attached without mutating underlying source facts.
+Reachability is not exposure; exposure is not automatically degradation; business consequence is not assumed from criticality or report existence.
 
-### Explanation — Candidate
-Evidence-grounded, authorization-aware account of what happened, what is affected, what is known/uncertain, and where evidence comes from.
+### Annotation — Accepted
+Attributed human-authored context attached to ecosystem state without mutating source evidence or silently substituting for structured Change Intent, Expectation, Responsibility Assignment, Classification, Policy Context, or Causal Claim confirmation.
+
+### Explanation — Accepted
+Authorization- and time-aware communication composed from concept state/evidence. Explanation preserves material statement epistemic labels, source traceability, redaction/omission context, and the distinction between what was known at an earlier knowledge time and what a later retrospective view knows now.
+
+Explanation is not an independent truth source.
+
+## Evidence and provenance
+
+### Evidence
+A provenance-bearing fact or assertion used to support Assessment, Investigation, Causal Claim, Impact, or Explanation. Observation is the primary accepted concept for measured/retrieved facts; other concepts provide their own provenance-bearing assertions/state.
+
+### Provenance
+Information describing where a fact/assertion/definition/classification/intent/deployment/relationship/Expectation/Baseline/Observation/Assessment/Change/claim/annotation/impact statement came from, who/what asserted or derived it, and relevant temporal/version context.
+
+### Authority / source precedence
+Rules determining which source/actor is authoritative for a category/subject/context/time. The project has no universal authority rule; unresolved conflicts remain conflicts until accepted category-specific semantics exist.
 
 ## Governance roles/metadata
 
 ### Technical owner / Business accountable party / Data steward
 Distinct Responsibility Assignment types.
-
-### Provenance
-Information describing where a fact/assertion/definition/classification/intent/deployment/relationship/Expectation/Baseline/Observation/Assessment/Change came from, who/what asserted or derived it, and relevant temporal/version context.
-
-### Authority / source precedence
-Rules determining which source/actor is authoritative for a category/subject/context/time. The project has no universal authority rule; unresolved conflicts remain conflicts.
 
 ## Concept Design
 

@@ -1,84 +1,67 @@
 # 005 — Business Analysis, Question Answering, and Reporting
 
+**Status:** Discovery input — refined/superseded where necessary by the accepted Phase 002 Explanation, Impact, Causal Claim, Assessment, Semantic Definition, Responsibility Assignment, Classification, and Policy Context concepts.
+
 ## Goal
 
-Make pipeline and data-quality state understandable to business analysts while preserving enough detail for engineering follow-through.
+Make pipeline/data-quality state understandable to business audiences while preserving enough evidence and epistemic detail for engineering follow-through.
 
 ## Primary interaction model
 
-A central product idea is the ability to **ask questions of the ecosystem**.
+The product should answer questions such as:
 
-The question-answering experience should ultimately support prompts such as:
+- Is this asset healthy or stale according to applicable Expectations?
+- Is behavior atypical versus Baseline even if no normative failure exists?
+- What changed and was it planned?
+- Which Deployment became active and what actually ran?
+- Which causal explanations are supported, contradicted, confirmed under a standard, or unresolved?
+- Which downstream consumers are reachable, actually exposed, visibly affected, or tied to evidenced business consequence?
+- Who bears relevant responsibility?
+- What Classification/Policy Context applies?
+- What evidence supports each material statement?
+- What was known during the incident versus what later evidence establishes?
 
-- Is Customer Orders healthy today?
-- When was this dataset last refreshed?
-- Is this table stale relative to its normal behavior?
-- Has its quality gotten worse this month?
-- What changed yesterday?
-- Why did row count drop?
-- Which upstream source most likely explains the drop?
-- Was there a deployment near the time the change began?
-- What downstream reports may be affected?
-- Who owns the affected assets?
-- Does this data contain PII or PHI?
-- What business definition should I use for this metric?
-- Show me the evidence behind the conclusion.
+## Explanation model
 
-## Layered explanation
+**Explanation** is the accepted foundational concept. A dashboard, chat answer, report, daily digest, or exported artifact is a possible presentation realization.
 
-Different audiences should be able to consume the same incident at different levels.
+Different audiences may receive different authorized detail, but material conclusions must remain evidence-consistent.
 
-### Business summary
+### Business-facing layer
 
-A concise statement of:
+May emphasize:
 
-- what changed;
-- when it changed;
-- business significance;
-- likely source;
-- affected downstream assets;
-- current status;
-- owner / next action.
+- what changed/violated an Expectation;
+- intended versus unintended context;
+- known downstream exposure/consequence;
+- current causal confidence/uncertainty;
+- responsible party;
+- safe business meaning/policy context.
 
-### Analytical detail
+### Analytical/engineering layer
 
-Supporting trends, comparisons, lineage paths, quality observations, and relevant business semantics.
-
-### Engineering detail
-
-Run history, deployment lineage, job/task context, exact upstream/downstream relationships, and technical observations used in the analysis.
-
-## Reporting expectations
-
-The project should later explore recurring and ad hoc reports such as:
-
-- daily/weekly pipeline health summary;
-- stale-data report;
-- quality degradation report;
-- top recurring quality problems;
-- unresolved degradation by owner;
-- critical asset health report;
-- upstream incident impact report;
-- sensitive-data asset health report;
-- change summary after deployments;
-- business-domain quality scorecard with explainable contributing measures.
+May expose deeper Observation/Assessment basis, Change Intent, Deployment/execution sequence, Lineage paths, Causal Claim support/contradiction, Impact evidence, and historical knowledge state.
 
 ## Trust requirements
 
-Business-facing answers should not hide uncertainty.
+Statements must preserve their epistemic kind. For example:
 
-The system should be able to say, in effect:
+- **Observed:** C produced 14M rows.
+- **Assessment:** 14M satisfies the revised post-change volume Expectation but is non-comparable to the pre-change Baseline.
+- **Observed:** completeness also fell and violates its Expectation.
+- **Causal Claim — supported:** B population reduction contributed to C loss.
+- **Causal Claim — unresolved:** join-key quality may also contribute.
+- **Impact — exposed:** Report 1 refreshed from affected C.
+- **Impact — candidate only:** Report 2 is downstream but has not refreshed.
 
-- **Observed:** Table C volume decreased 28% beginning August 17.
-- **Observed:** Table B volume decreased 27% one upstream run earlier.
-- **Observed:** Table A remained within its normal range.
-- **Likely explanation:** The C reduction is primarily attributable to B.
-- **Unresolved:** A smaller change in join match rate remains unexplained.
+The exact UI wording is deferred; these semantic distinctions are not.
 
-The exact presentation may differ, but the distinction between evidence and interpretation should remain.
+## Historical explanation
 
-## Business semantics in analysis
+The product should support both a contemporaneous knowledge view (`what was known then`) and retrospective view (`what we know now`) when later evidence changes the conclusion.
 
-Technical changes should be translated through known semantics where possible. “Column `cust_status_cd` null rate increased” may be less useful than “Customer status is missing for 18% of new records, which affects the Active Customer metric.”
+## Security
 
-This requires semantic metadata to participate in monitoring and reasoning rather than living in a separate catalog that users must consult manually.
+Explanation operates over an authorized evidence view. Restricted evidence, entities, claims, downstream consumers, or annotations cannot be retrieved merely to leak their substance through prose.
+
+This planning note is not the authoritative concept definition; accepted Phase 002 specifications are.

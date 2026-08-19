@@ -1,84 +1,109 @@
 # 010 — Open Questions
 
-These questions are intentionally unresolved. Agents and contributors must not silently convert them into decisions.
+These questions are intentionally unresolved. Accepted Phase 002 concept boundaries constrain the answers but do not silently decide them.
 
-## Ecosystem identity
+## Entity identity and scope realization
 
-- What is the stable identity of a logical pipeline across repositories and Databricks jobs?
-- Can one logical pipeline span multiple jobs?
-- Can one job implement multiple logical pipelines?
-- How are environment-specific instances related to a logical pipeline identity?
-- What represents a cross-repository dependency when no single repository declares it authoritatively?
+- Which entity kinds require first-MVP Entity Identity beyond pipelines, jobs/tasks, data assets, repositories, consumers, and deployment-related entities?
+- How are logical pipeline identities established when one pipeline spans multiple jobs or one job hosts multiple logical pipelines?
+- Which cross-source identity associations may be inferred versus requiring explicit/authoritative assertion?
+- Which intermediate/external assets are independently included in Monitoring Scope for MVP?
 
-## Data asset scope
+## Authority and governance conflict
 
-- Which intermediate tables should be first-class monitored assets?
-- Are views and Metric Views monitored in the same way as materialized tables?
-- How should external sources that are not produced in Databricks participate?
+- What source/actor is authoritative for each metadata/normative category and context?
+- Is Collibra authoritative for Semantic Definition/Responsibility Assignment in the target environment?
+- Is Immuta authoritative for Classification/Policy Context?
+- What Unity Catalog/Databricks metadata is authoritative versus enriching?
+- How are conflicting assertions resolved without deleting provenance?
+- Do repeated authority semantics justify a future standalone authority concept or remain integration contracts?
 
-## Expectations
+## Expectations, Baselines, and health
 
-- Who owns expected cadence/freshness?
-- Who owns data-quality expectations?
-- Are expectations source-controlled, governed centrally, defined in Databricks/DQX, or composed from several authorities?
-- How are expectation versions made historically effective?
-- How are temporary waivers represented without erasing a degradation?
+- Who may establish/revise each class of Expectation?
+- Which first-MVP Expectation dimensions and bounded-exception states are required?
+- Which Baseline classes are required: ranges, distributions, cadence/duration profiles, seasonal cohorts, or others?
+- What evidence is sufficient to mark Baseline non-comparability after structural Change?
+- What statistical/anomaly behavior is needed beyond transparent comparisons?
+- What Assessment status vocabulary is appropriate for normative versus comparative results?
+- What evidence coverage is sufficient to establish observed absence?
+- Does composite/overall health eventually warrant a dedicated concept or only explicit aggregation synchronization?
 
-## Baselines and degradation
+## Change Intent, Deployment, and execution
 
-- Which conditions use explicit thresholds versus historical baselines?
-- What level of statistical/anomaly behavior is needed for MVP?
-- How are expected seasonal/business changes distinguished from degradation?
-- How should insufficient history be represented?
+- Which source/actor may register authoritative Change Intent?
+- What minimum anticipated-effect/monitoring-implication fields are required for MVP?
+- How should Change Intent relate to pull requests, tickets, config changes, release metadata, or other planning systems?
+- What evidence proves Deployment activation rather than attempt/workflow success?
+- How are configuration-only changes related when source revision is unchanged?
+- What minimum logical execution reconstruction is needed when pipelines span jobs/tasks?
 
-## Lineage
+## Lineage and historical topology
 
-- What data lineage is already trustworthy in Databricks?
-- How complete is job/task lineage for Spark ETL patterns in scope?
-- Which lineage must be explicitly declared by repositories?
-- How much historical lineage is available from source systems?
+- What minimal Lineage relationship taxonomy is required for MVP?
+- What Lineage is already trustworthy/historical in Databricks for the relevant Spark patterns?
+- Which relationships must repositories/integrations assert explicitly?
+- How should inferred relationship confidence and topology completeness be communicated?
+- Which graph-compatible technical realization is appropriate later, if any?
 
-## Root-cause semantics
+## Causal Claim and confirmation
 
-- What evidence standard allows a hypothesis to become a confirmed cause?
-- Can the system confirm causes automatically, or only rank hypotheses?
-- How should multiple contributing causes be represented?
-- How should contradicting evidence affect confidence?
-- How should business events be represented as possible expected causes of data changes?
+- What operational evidence/authority standard permits `confirmed` cause?
+- Which first-MVP epistemic statuses are required?
+- Can automated systems ever confirm a cause or only propose/support/rank claims?
+- How should multiple primary/contributing/enabling causes be displayed/reviewed?
+- When does quantitative attribution become necessary, and what evidence standard would justify percentages?
+- How should materially new evidence challenge a previously confirmed claim?
 
-## Governance authority
+## Investigation
 
-- Is Collibra authoritative for glossary/ownership/stewardship in the target environment?
-- Is Immuta authoritative for classification/policy context?
-- What governance metadata already exists in Unity Catalog?
-- How are conflicts among systems resolved?
-- Who may create local overrides, and how long may they live?
+- What lifecycle/status vocabulary is required for MVP?
+- Are related/nested Investigations needed or are explicit cross-references sufficient?
+- Which Assessments/change mismatches automatically open Investigation versus merely surface a prompt?
+- What closure/reopen/retention rules are appropriate?
+
+## Downstream Impact
+
+- What exact first-MVP vocabulary represents candidate/reachability, exposure, downstream effect, and business consequence?
+- What evidence establishes exposure for reports, Metric Views, pipelines, applications, and business processes?
+- Which business processes/decisions need first-class Entity Identity?
+- How should criticality prioritize Impact without being mistaken for consequence evidence?
+- What evidence is sufficient to establish `not exposed`/`not affected` for a given layer?
+
+## Annotation
+
+- Which actors may annotate which referents?
+- Are structured annotation types needed in MVP in addition to free text?
+- What moderation/retention rules prevent unsafe or low-quality sensitive notes?
+- Which annotations may appear in business-facing Explanation without explicit review?
+
+## Explanation and question answering
+
+- Is natural-language interaction required in MVP or is a structured question surface sufficient?
+- Which question types must be deterministic versus generative?
+- Which material statements require visible evidence citations/links by audience?
+- Should generated Explanations be dynamically resolved, retained snapshots, or both?
+- How should authorization differences across a path be explained without inference leakage?
+- What rules govern high-consequence causal/business claims in generated explanations?
 
 ## Security and privacy
 
-- Which monitoring metadata is sensitive by itself?
-- Should users be allowed to see that a restricted asset exists if they cannot read it?
-- Will any root-cause scenario require row-level examples?
-- If samples are needed, how are they minimized/redacted/authorized?
-- What audit/retention requirements apply to incident evidence and user questions?
-
-## Question answering
-
-- Is natural-language interaction required in the first MVP or is a structured question surface sufficient?
-- Which question types must be deterministic versus explanatory?
-- How will answers cite or link evidence?
-- How should authorized-but-different audiences receive different detail without producing contradictory conclusions?
+- Which monitoring metadata, intent, topology, causal claims, Impact details, or Annotations are sensitive by themselves?
+- May users know a restricted entity/path exists if they cannot inspect it?
+- Will any Investigation require row-level examples, and if so how are they minimized/redacted/authorized?
+- What audit/retention requirements apply to evidence, investigations, claims, annotations, questions, and retained explanations?
 
 ## Integration scope
 
-- Which Databricks capabilities provide the needed job/run/lineage history today?
-- Which DQX capabilities align with accepted quality concepts?
-- Where do Metric Views add business-semantic/measurement value?
-- What information can GitHub Actions reliably expose as deployment provenance?
+- Which Databricks capabilities provide required job/run/Lineage/history evidence today?
+- Which DQX capabilities align with accepted Expectation/Observation/Assessment concepts?
+- Where do Metric Views add semantic/measurement value?
+- What can GitHub Actions reliably prove about Deployment attempt and activation?
+- Which systems can provide Change Intent?
 - Are Collibra/Immuta necessary for MVP or later enrichment?
 
 ## MVP pilot
 
-- Which 2–5 representative pipelines can exercise cross-repository dependencies and the canonical join scenario?
-- Which business analyst/report provides a meaningful downstream consumer case?
-- Which assets carry useful governance/policy classifications without requiring unsafe real data in development?
+- Which 2–5 representative pipelines exercise cross-repository dependencies, A+B→C, planned change, unintended side effect, and downstream Impact?
+- Which business analyst/report/Metric View provides a meaningful exposure/consequence case?
+- Which assets carry useful governance/policy context without unsafe real data in development?

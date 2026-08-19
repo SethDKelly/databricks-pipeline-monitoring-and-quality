@@ -1,89 +1,119 @@
 # Concept: Annotation
 
-**Status:** Candidate (split from Annotation / Confirmation)
+**Status:** Accepted — Phase 002 Group 05
 
 ## Purpose
 
-Let authorized humans add contextual knowledge to monitored evidence or investigations without altering the underlying source facts.
+Let authorized humans add attributed contextual knowledge or commentary to ecosystem state without altering source evidence or silently taking over the responsibilities of more structured concepts.
 
 ## Operational principle
 
-A business owner notes that a planned month-end source reduction explains part of a volume shift. The note is attached to the relevant investigation/time window with author and provenance. Original observations remain unchanged, and the note is not automatically promoted to a confirmed causal claim.
+During an Investigation, a business stakeholder notes that a one-time month-end process made the affected period unusual. The Annotation is attached to the relevant Investigation/time context with author, time, and visibility. If the stakeholder is instead registering an intended pipeline filter, that structured fact belongs in Change Intent; if establishing an acceptable threshold, it belongs in Expectation; if confirming a cause, that action belongs on Causal Claim under the applicable confirmation standard.
 
 ## Actors
 
-- Data Engineer
-- Business Owner / Analyst
-- Data Steward
-- Authorized reviewer
+- Data Engineer / Pipeline Maintainer
+- Business Analyst / Data Consumer
+- Data Owner / accountable business party
+- Data Steward / Governance Steward
+- Incident responder / authorized reviewer
 
 ## State
 
-- annotation content/context;
-- subject/evidence/investigation reference;
-- author/actor and timestamp;
+- annotation identity;
+- content/context;
+- referent, such as Entity Identity, Observation, Assessment, Change, Investigation, Causal Claim, Impact, or Explanation snapshot;
+- author/actor identity and responsibility context where relevant;
+- assertion/recorded time and optional effective/context time;
 - visibility/sensitivity context;
-- revision/supersession history where allowed.
+- revision/supersession history;
+- withdrawal/dispute state where applicable.
 
 ## Actions
 
 ### `add`
-Adds contextual information to a referent.
+- **Intent:** attach human-authored context to a defined referent with explicit attribution.
 
 ### `revise`
-Creates a traceable revision rather than silently rewriting material historical context.
+- **Intent:** create a traceable revision of material annotation content rather than silently overwriting history.
 
 ### `withdraw`
-Marks an annotation no longer applicable/endorsed while preserving history as required.
+- **Intent:** mark an annotation as no longer endorsed/applicable while preserving its historical existence where required.
+
+### `dispute`
+- **Intent:** record that an annotation is contested without deleting either the original statement or the dispute.
 
 ## Invariants / behavioral expectations
 
-- Annotation is not source observation.
-- Annotation is not automatically a causal confirmation.
-- Author/provenance is explicit.
-- An annotation cannot overwrite machine/source evidence.
-- Visibility respects authorization/policy context.
+- Annotation is human-authored context, not a source Observation.
+- Annotation is not automatically a Causal Claim or causal confirmation.
+- Annotation is not the primary mechanism for registering a planned modification; structured planned intent belongs in **Change Intent**.
+- Annotation is not the mechanism for defining acceptable behavior; normative criteria belong in **Expectation**.
+- Annotation is not the mechanism for assigning responsibility; that belongs in **Responsibility Assignment**.
+- Annotation is not a governance Classification or Policy Context assertion merely because it mentions sensitive/policy information.
+- A Causal Claim may cite an Annotation as human evidence/context, but the claim retains separate epistemic status and review semantics.
+- Author identity/provenance remains explicit; organizational title alone does not make annotation content universally authoritative.
+- Annotation cannot mutate or overwrite source evidence.
+- Revision, dispute, and withdrawal preserve prior knowledge-time history.
+- Absence of Annotation has no evidentiary meaning.
 
 ## Ambiguity and missing evidence
 
-Annotations can be incomplete, mistaken, disputed, stale, or withdrawn. Their human-authored nature and status must remain explicit; absence of annotation carries no evidentiary implication.
+Annotations can be incomplete, mistaken, stale, disputed, withdrawn, or contradicted by source evidence. The product preserves these states rather than promoting human commentary to machine-observed fact.
+
+If an Annotation contains a statement that should become structured operational truth, the appropriate owning concept must record that fact separately with its own authority/provenance semantics.
 
 ## Synchronizations
 
-- Investigation can collect annotations.
-- Causal Claim may cite an annotation as contextual evidence with appropriate weight.
-- Explanation may surface relevant annotations when authorized and clearly labeled.
+- **Investigation** can collect relevant Annotations.
+- **Causal Claim** can cite Annotation as attributed human context/evidence without treating it as confirmation.
+- **Change Intent**, **Expectation**, **Responsibility Assignment**, **Classification**, and **Policy Context** receive structured assertions when human context crosses into their respective purposes.
+- **Impact** can reference an Annotation describing business consequence, while stronger consequence evidence remains separately attributable.
+- **Explanation** may surface authorized Annotations clearly labeled as human-provided context.
 
 ## Security / privacy / governance considerations
 
-Annotations may contain sensitive organizational context or accidentally include restricted values. Authoring and visibility must be controlled, and examples in this repository must remain synthetic.
+Annotations can contain sensitive operational, personal, business, or policy information and can become a vector for accidental leakage. Authoring, revision, visibility, and retention must be controlled independently from raw-data authorization.
+
+Documentation/tests must use synthetic annotation content and must not encourage copying real restricted values into free-form notes.
 
 ## Evidence / provenance considerations
 
-Author, time, referent, revision/withdrawal history, and visibility context are part of the annotation provenance. Downstream use must cite the annotation rather than presenting its content as machine-observed fact.
+Author, time, referent, visibility context, revision/dispute/withdrawal history, and any downstream citations are part of Annotation provenance. An Explanation or Causal Claim citing Annotation must preserve that the source is human-authored context.
 
 ## Representative scenarios
 
-### Happy path
-A business owner documents a planned source-volume reduction for the incident window.
+### Useful business context
+A stakeholder records that a one-time month-end process changed normal comparison context. The note informs the Investigation but does not alter Observations/Baselines automatically.
 
-### Degraded path
-An old annotation is no longer applicable and is withdrawn without erasing history.
+### Planned change redirected to Change Intent
+An engineer wants to record that a filter will be deployed tomorrow. The structured plan is registered as Change Intent rather than hidden in an Annotation.
 
-### Conflicting evidence
-Two authorized humans provide incompatible context; both remain attributed.
+### Incorrect note
+A human states that a source outage caused the issue, but timing evidence later contradicts it. The Annotation remains attributed; the relevant Causal Claim can be weakened/rejected independently.
 
-### Unauthorized evidence
-Sensitive annotation text is omitted while the investigation can still state that additional restricted context exists.
+### Disputed context
+Two stakeholders disagree about whether a business event explains the unusual volume. Both Annotations and the dispute remain visible with attribution.
+
+### Withdrawal
+An old note is no longer applicable. It is withdrawn without erasing its prior role in historical reasoning.
+
+### Restricted note
+The user can see that restricted human context exists but cannot read its sensitive text.
 
 ## Non-goals
 
 - confirming causes by itself;
-- changing source observations;
-- chat/comment implementation details;
-- ownership assignment.
+- registering structured Change Intent as a substitute;
+- defining Expectations;
+- changing source Observations/Assessments;
+- responsibility assignment;
+- chat/comment UI implementation;
+- universal authority resolution.
 
-## Open questions
+## Deferred questions
 
-- Which actors may annotate which subjects?
-- Do annotations need structured types or only contextual text at MVP?
+- which actors may annotate which referents;
+- whether first-MVP annotations need structured categories in addition to text;
+- moderation/retention rules for unsafe or low-quality free-form content;
+- whether some annotation classes require review before appearing in business-facing Explanation.

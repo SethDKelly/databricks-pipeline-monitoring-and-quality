@@ -2,29 +2,29 @@
 
 ## Purpose
 
-Define meaningful product lifecycles before technical workflows/storage architecture.
+Define meaningful product lifecycles before technical workflow/storage architecture.
 
 ## 1. Planned change and realization lifecycle
 
-1. an intended pipeline/data modification is registered as Change Intent;
-2. anticipated affected entities/dimensions and monitoring implications are recorded;
+1. intended modification is registered as Change Intent;
+2. anticipated affected entities/dimensions/monitoring implications are recorded;
 3. any prospective Expectation revision is explicitly established by appropriate authority;
 4. any prospective Baseline comparability break is registered but remains pending;
 5. source/configuration implementation is created;
 6. Deployment attempt occurs;
 7. activation is established or remains unknown/fails;
-8. executions occur under the active state;
+8. executions occur under active state;
 9. Observations establish actual behavior;
 10. realized Change describes what actually differed;
 11. Assessment evaluates applicable Expectations/Baselines;
-12. realized structural Change may activate the Baseline break and post-change evidence later derives a new Baseline;
-13. Investigation may later compare intent, realization, and outcome without treating chronology as cause.
+12. realized structural Change may activate Baseline non-comparability and later post-change evidence derives a new Baseline;
+13. Investigation may compare intent, realization, and outcome without treating chronology as cause.
 
-A plan can fail to activate, an activated change can differ from intent, and unintended health violations can coexist with expected changes.
+A plan can fail to activate, activated behavior can differ from intent, and unintended violations can coexist with expected changes.
 
 ## 2. Source-to-deployment lifecycle
 
-Repository revision/configuration → deployment attempt → runtime activation evidence → supersession/rollback history. Workflow success and activation are distinct. Historical activation remains reconstructable.
+Repository revision/configuration → Deployment attempt → runtime activation evidence → supersession/rollback history. Workflow success and activation are distinct.
 
 ## 3. Pipeline execution lifecycle
 
@@ -32,11 +32,11 @@ Actual execution instance begins/progresses/terminates; produced/consumed contex
 
 ## 4. Data availability and consumption lifecycle
 
-Produced data becomes observable; freshness/quality Observations are collected; Assessments determine fitness against applicable criteria; downstream consumption relationships remain historically discoverable.
+Produced data becomes observable; freshness/quality Observations are collected; Assessments determine status against applicable criteria; downstream consumption relationships remain historically discoverable.
 
 ## 5. Expectation lifecycle
 
-Expectation is established/revised/excepted/retired with effective time/provenance. Change Intent may trigger explicit prospective review; plan details never become normative automatically.
+Expectation is established/revised/excepted/retired with effective time/provenance. Change Intent may trigger prospective review; plan detail never becomes normative automatically.
 
 ## 6. Baseline lifecycle
 
@@ -50,18 +50,53 @@ Evidence is recorded with event/knowledge time/provenance; applicable references
 
 Relationships are asserted/observed/inferred with type, provenance, confidence, effective time, and correction history. Planned topology remains Change Intent until realized. Current/historical topology remain distinct.
 
-## 9. Investigation / root-cause lifecycle
+## 9. Investigation lifecycle
 
-Symptom/question → relevant historical window → lineage/change/deployment/execution evidence → causal claims/hypotheses → supporting/contradicting evidence → impact → confirmation/unresolved outcome. A valid investigation may end unresolved or multi-causal.
+1. a question, Assessment, Change-Intent realization mismatch, Impact concern, or other uncertainty opens an Investigation;
+2. subject/time/question scope is established;
+3. relevant evidence links are added without copying source truth;
+4. scope may be refined with history preserved;
+5. Causal Claims, Impact evaluations, and Annotations are linked;
+6. evidence gaps/conflicts/restrictions remain explicit;
+7. Investigation may close resolved, unresolved, multi-causal, or otherwise complete;
+8. materially new evidence may reopen it without erasing prior closure/knowledge state.
 
-## 10. Governance metadata lifecycle
+## 10. Causal Claim lifecycle
+
+1. a causal proposition is proposed;
+2. supporting and contradicting evidence accumulate;
+3. epistemic status may move among proposed/supported/weakened/rejected/unresolved states;
+4. multiple contributing claims may coexist;
+5. confirmation occurs only if an explicit accepted evidence/authority standard is satisfied;
+6. later evidence may challenge/supersede prior status while preserving historical review provenance.
+
+## 11. Impact lifecycle
+
+1. downstream Lineage identifies candidates;
+2. exposure/consumption evidence determines whether each candidate actually encountered affected state;
+3. downstream Observation/Assessment/Change evidence records any observed effect;
+4. technical/analytical/business consequence evidence is associated where available;
+5. causal attribution from origin to downstream effect remains a Causal Claim when needed;
+6. Impact state is revised as delayed consumer evidence arrives, preserving prior knowledge state.
+
+## 12. Annotation lifecycle
+
+Human context is added with author/time/referent; material revisions are traceable; disputed/withdrawn notes remain historical. If human input becomes structured planned/normative/governance/causal truth, the appropriate owning concept records it separately.
+
+## 13. Governance metadata lifecycle
 
 Semantic Definition, Responsibility Assignment, Classification, and Policy Context assertions retain provenance/effective time/conflict rather than last-write-wins mutation.
 
-## 11. Business communication lifecycle
+## 14. Explanation lifecycle
 
-Authorized evidence/context are assembled into audience-appropriate Explanation; uncertainty and history remain traceable.
+1. an audience asks a question or a reporting event requests communication;
+2. an authorized evidence/context view and temporal perspective are established;
+3. material statements are composed with epistemic labels and source-basis links;
+4. safe redaction/omission is applied without implying hidden state is absent;
+5. a contemporaneous view can answer `what was known then` using a knowledge-time cut;
+6. a retrospective view may incorporate evidence learned later;
+7. materially changed evidence produces refreshed Explanation rather than invisible rewrite if snapshots are retained.
 
 ## Lifecycle principle — ledger semantics
 
-No lifecycle erases states needed to explain prior behavior. Corrections/supersessions preserve prior knowledge. Where material, record both when something was true/occurred and when the monitoring ecosystem learned it.
+No lifecycle erases states needed to explain prior behavior. Corrections/supersessions preserve prior knowledge. Where material, record both when something was true/occurred and when monitoring learned it.

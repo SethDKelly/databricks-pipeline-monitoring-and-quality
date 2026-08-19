@@ -11,13 +11,13 @@ Technical modules emerge from accepted concepts/synchronizations, not vice versa
 Reason across repository/job/workspace/pipeline/domain boundaries while preserving them for provenance/responsibility.
 
 ## AP-03 — Time and history are first-class
-Future architecture must support point-in-time questions about intent, active Deployment, executions, Lineage/topology, Expectations, Baselines, Observations, Assessments, realized Changes, and later investigations.
+Future architecture must support point-in-time questions about intent, active Deployment, executions, Lineage/topology, Expectations, Baselines, Observations, Assessments, realized Changes, Investigations, causal knowledge, Impact, and Explanation history.
 
-## AP-04 — Evidence is preserved separately from interpretation and intent
-Change Intent, Deployment evidence, execution facts, Observations, Baselines, Expectations, Assessments, realized Changes, hypotheses/attributions, and confirmed causes remain distinguishable.
+## AP-04 — Evidence is preserved separately from interpretation, intent, and causality
+Change Intent, Deployment evidence, execution facts, Observations, Baselines, Expectations, Assessments, realized Changes, Causal Claims, Annotations, and Explanation remain distinguishable.
 
 ## AP-05 — Provenance is part of every material fact
-Responsibility Assignments, semantic definitions, classifications, Policy Context, Change Intents, Deployments, executions, Lineage, Expectations, Observations, Baselines, Assessments, and Changes retain source/temporal provenance appropriate to use.
+Responsibility Assignments, semantic definitions, classifications, Policy Context, Change Intents, Deployments, executions, Lineage, Expectations, Observations, Baselines, Assessments, Changes, claims, Impact evidence, and Annotations retain source/temporal provenance appropriate to use.
 
 ## AP-06 — Lineage is typed
 Distinguish data derivation, operational dependency, production/consumption, and deployment provenance rather than one ambiguous edge.
@@ -32,7 +32,7 @@ What should happen, reference behavior, observed fact, and interpretation remain
 Historical Assessment should resolve the evidence/reference versions available/used at the time. Late/corrected evidence creates traceable reassessment.
 
 ## AP-10 — Security boundaries follow data authority, not monitoring convenience
-Monitoring does not broaden raw-data access; metadata/derived states may also be sensitive.
+Monitoring does not broaden raw-data access; metadata, causal claims, topology, intent, Impact state, and Annotations may also be sensitive.
 
 ## AP-11 — Data minimization is a design requirement
 Prefer metadata/aggregates/checks/fingerprints over copied row-level sensitive data.
@@ -56,16 +56,16 @@ Conversational/reporting experiences derive from authorized evidence/context and
 Incomplete, insufficient, non-comparable, conflicting, unavailable, unauthorized, or unknown context is valid.
 
 ## AP-18 — Human/planned intervention has explicit semantics
-Expectation revision, Change Intent registration, Baseline comparability decisions, causal confirmation, or annotation remain distinct from machine-derived Observations.
+Expectation revision, Change Intent registration, Baseline comparability decisions, Causal Claim review/confirmation, or Annotation remain distinct from machine-derived Observations.
 
 ## AP-19 — Business and engineering views share underlying state
-Different projections may expose different authorized detail but derive from the same evidence/history.
+Different projections may expose different authorized detail but derive from the same evidence/history and cannot intentionally contradict it.
 
 ## AP-20 — The product remains useful with optional systems absent
 Collibra/Immuta absence should degrade enrichment, not invalidate core operation.
 
 ## AP-21 — Planned intent, active deployment, realized change, and health are distinct
-Architecture must preserve the chain **Change Intent → Deployment activation → Execution → Observation/realized Change → Assessment** without collapsing any link. A planned change can be valid yet produce an unintended violation; a violation can occur without a change; a deployment can occur without material data change.
+Architecture must preserve **Change Intent → Deployment activation → Execution → Observation/realized Change → Assessment** without collapsing links. Planned change can be valid yet coexist with unintended violation; violation can occur without change; Deployment can occur without material data Change.
 
 ## AP-22 — Historical state has ledger-like semantics
 Material facts/assertions are append/supersede/correct rather than silently overwritten. Where material, distinguish effective/event time from recorded/knowledge time.
@@ -76,3 +76,17 @@ This is a semantic constraint, not a selection of blockchain, event sourcing, te
 Entity Identity plus typed temporal Lineage must support upstream/downstream traversal, historical subgraphs, incomplete/uncertain paths, and authorization-aware opaque nodes.
 
 This is a semantic constraint, not a selection of graph database, graph query language, or graph-processing framework.
+
+## AP-24 — Inquiry containers do not own truth
+Investigation may organize/link evidence, Causal Claims, Impact, and Annotations but future architecture must not make an Investigation record the authoritative copy of those states.
+
+## AP-25 — Causality is explicit and evidence-bearing
+Causal propositions remain Causal Claims with epistemic status, support/contradiction, and review provenance. Temporal proximity, graph reachability, Deployment, realized Change, intent consistency, or model ranking cannot bypass claim semantics.
+
+## AP-26 — Impact is multi-layered, not graph reachability
+Future architecture must preserve candidate/reachability, actual exposure/consumption, observed downstream effect, and evidenced business consequence separately. Missing evidence cannot become `not affected`.
+
+## AP-27 — Explanation is authorization- and time-aware projection
+Explanation derives from authorized concept state, preserves material statement-to-basis traceability and epistemic labels, and supports both contemporaneous knowledge cuts and retrospective views.
+
+Choice of LLM, rules engine, templates, report generator, or conversational UI remains deferred.

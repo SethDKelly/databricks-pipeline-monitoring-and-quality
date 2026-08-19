@@ -1,93 +1,135 @@
 # Concept: Explanation
 
-**Status:** Candidate (refined from Report / Explanation)
+**Status:** Accepted — Phase 002 Group 05
 
 ## Purpose
 
-Let an authorized audience receive an evidence-grounded account of what happened, what is affected, what is known or uncertain, and where the supporting evidence comes from.
+Let an authorized audience receive an evidence-grounded, time-aware account of what happened, what was intended, what is affected, what is known or uncertain, and where the supporting basis comes from without turning the explanation into an independent truth source.
 
 ## Operational principle
 
-A business analyst asks why Table C volume fell. The explanation states that C is degraded relative to baseline, B's volume changed first, A remained stable, a deployment occurred nearby in time but lacks causal confirmation, downstream reports may be affected, the responsible owners are identified, and the leading causal claim remains only supported—not confirmed. Each material statement is traceable to authorized evidence.
+A business analyst asks why Table C volume fell. The Explanation states that C fell to 14 million rows; the volume shift is consistent with a registered filter Change Intent and active Deployment; the revised volume Expectation is satisfied; a separate completeness Expectation is violated; B also changed; two Causal Claims remain supported but unconfirmed; one downstream report is exposed and has an observed metric violation while another is only reachable. The analyst receives safe business semantics and responsible team information without restricted raw evidence. An engineer can inspect deeper evidence, but both audiences see epistemically consistent conclusions.
 
 ## Actors
 
-- Business Analyst
-- Data Engineer
-- Data Owner / Steward
+- Business Analyst / Data Consumer
+- Data Engineer / Pipeline Maintainer
+- Data Owner / accountable business party
+- Data Steward / Governance Steward
+- Incident responder / on-call engineer
 - Executive / operational stakeholder
 - Monitoring framework
 
 ## State
 
-- question/request or reporting intent;
-- audience/context/time;
-- material claims and their epistemic labels;
-- evidence references/provenance;
-- semantic/ownership/policy context used;
-- generated/refreshed time and historical snapshot if retained;
-- redaction/omission indicators where useful and safe.
+- explanation identity when retained;
+- initiating question/request/reporting intent;
+- intended audience and authorization context;
+- subject(s) and relevant effective/event-time window;
+- temporal perspective, including the requested recorded/knowledge-time cut when historical replay matters;
+- material statements and their statement type/epistemic label, such as observed fact, normative/comparative Assessment, registered intent, realized Change, supported/rejected/confirmed Causal Claim, reachability/exposure/effect Impact statement, human Annotation, unknown, or conflict;
+- references to source concept state/evidence supporting each material statement;
+- Semantic Definition, Responsibility Assignment, Classification, and Policy Context used for audience interpretation;
+- evidence limitations, omissions, redactions, and safe abstraction indicators;
+- generation/composition time;
+- retained snapshot/version linkage when explanations are preserved historically.
 
 ## Actions
 
 ### `compose`
-Produces a layered explanation from authorized concept state/evidence.
+- **Intent:** produce an audience-appropriate explanation from an authorized evidence/context view for a defined question and temporal perspective.
+- **Failure / unknown behavior:** insufficient authorized basis produces an explicit limitation rather than invented narrative completion.
 
-### `inspectEvidence`
-Allows an authorized user to trace a material statement to supporting evidence/context.
+### `composeAt`
+- **Intent:** compose an explanation for a specified effective/event-time and, when requested, a specified recorded/knowledge-time cut.
+- **Use:** distinguishes "what was known then" from a later retrospective explanation using evidence learned afterward.
+
+### `inspectBasis`
+- **Intent:** allow an authorized user to trace a material statement to its source concept state, evidence, rationale, and epistemic status.
 
 ### `refresh`
-Produces an updated explanation as evidence/assessment/investigation state changes without silently rewriting a retained historical explanation.
+- **Intent:** produce an updated explanation after materially changed evidence, Assessment, Causal Claim, Impact, or governance state.
+- **State effect:** if prior explanations are retained, the refreshed version links to rather than silently overwrites the earlier snapshot.
 
 ## Invariants / behavioral expectations
 
-- Explanation is not an independent truth source.
-- Material factual/causal statements are traceable to source concepts.
-- Epistemic status is preserved: observed, assessed, proposed, supported, confirmed, unknown, etc.
-- Audience-specific detail may differ, but conclusions must not contradict the same authorized evidence merely for presentation convenience.
-- Restricted evidence is not retrieved merely to summarize it for an unauthorized user.
-- Policy/classification context is not translated into compliance claims.
+- Explanation is a projection over authorized concept state; it is not an independent truth source.
+- Explanation does not generate new Observations, modify Assessments, confirm Causal Claims, or create Impact evidence merely by stating them.
+- Material factual/causal/impact statements are traceable to source concepts.
+- Epistemic distinctions survive composition: Observation ≠ Assessment ≠ Change Intent ≠ realized Change ≠ Causal Claim ≠ Annotation.
+- `consistent with intent` is not rewritten as `caused by the planned change` unless a Causal Claim supports that statement at the stated epistemic level.
+- Lineage reachability is not presented as actual exposure; exposure is not presented as observed downstream consequence; downstream consequence is not automatically presented as business impact.
+- Competing Causal Claims are not collapsed into one confident answer merely for readability.
+- A current retrospective Explanation may differ from an Explanation of what was known at the incident time; the temporal perspective must be explicit where material.
+- Audience-specific detail/redaction may differ, but conclusions derived from the same authorized evidence cannot be intentionally contradicted for presentation convenience.
+- Restricted evidence is not retrieved merely so an unauthorized audience can receive a summary of it.
+- Safe omission cannot be phrased in a way that falsely implies the omitted entity/evidence does not exist.
+- Classification/Policy Context cannot be transformed into compliance certification.
+- If retained, Explanation history follows ledger-like append/version semantics rather than invisible overwrite.
 
 ## Ambiguity and missing evidence
 
-If evidence is missing, conflicting, stale, insufficient, or redacted, the explanation must say so at the appropriate level. It must not fill gaps with plausible-sounding conclusions.
+Missing, conflicting, stale, inaccessible, redacted, non-comparable, or insufficient evidence must remain visible at an appropriate abstraction level. The product may say that the cause remains unresolved, that downstream exposure cannot be determined, or that restricted evidence limits the answer.
+
+An Explanation should prefer a narrower supported statement over a broader plausible-sounding conclusion.
 
 ## Synchronizations
 
-Explanation consumes authorized projections of Semantic Definition, Ownership, Classification, Policy Context, Assessment, Investigation, Causal Claim, Impact, Observation/Change, and other supporting concepts.
+Explanation composes authorized projections of:
+
+- **Monitoring Scope** and **Entity Identity** for subject/boundary context;
+- **Semantic Definition**, **Responsibility Assignment**, **Classification**, and **Policy Context** for meaning/governance context;
+- **Expectation**, **Baseline**, **Observation**, and **Assessment** for health/reference evidence;
+- **Change Intent**, **Deployment**, **Execution History**, **Lineage**, and **Change** for planned/active/historical context;
+- **Investigation**, **Causal Claim**, **Impact**, and **Annotation** for inquiry, causality, downstream consequence, and human context.
 
 ## Security / privacy / governance considerations
 
-Question answering can combine individually harmless metadata into sensitive inference. Explanation must operate on an authorized evidence view and make safe omission/redaction behavior explicit.
+Question answering and report composition can create cross-source inference risk. Explanation must operate over an authorized evidence view and must preserve source-system disclosure constraints.
+
+Different audiences may receive different entity names, path detail, threshold values, claim detail, or Annotation content, but the safe projection must remain evidence-consistent and avoid using hidden evidence to smuggle restricted facts into prose.
 
 ## Evidence / provenance considerations
 
-Each material claim should retain links to its source concept state and the evidence snapshot/time used. Audience-specific redaction must not destroy internal traceability of how the safe explanation was derived.
+Each material statement should retain sufficient internal traceability to the concept state/evidence snapshot used. A retained Explanation should preserve generation time, effective/event-time perspective, recorded/knowledge-time cut when relevant, source references, and redaction context.
+
+Visible citation/UI requirements are presentation decisions for later phases; internal statement-to-basis traceability is a product requirement.
 
 ## Representative scenarios
 
-### Happy path
-A business analyst receives a concise account of degradation, likely source, impact, owner, and evidence status.
+### Business analyst summary
+The analyst sees that volume changed as planned, completeness failed unexpectedly, root cause is still supported-not-confirmed, one report is exposed/affected, and the responsible team is identified—without restricted raw data.
 
-### Degraded path
-The explanation states that the issue is confirmed degraded but root cause remains unresolved because upstream evidence is incomplete.
+### Engineering detail
+The engineer inspects the same conclusion with deployment activation, execution sequence, A/B/C Observations, Lineage paths, claim support/contradiction, and Impact evidence.
 
-### Conflicting evidence
-Competing causal claims are presented with their differing support rather than collapsed into one answer.
+### Competing causes
+Two Causal Claims remain supported. The Explanation presents both and the evidence limitation rather than inventing a winner.
 
-### Unauthorized evidence
-The explanation safely abstracts a sensitive upstream asset and omits protected values while remaining useful.
+### Historical knowledge view
+A user asks what the team knew during the incident. `composeAt` excludes evidence learned later and explains the then-current uncertainty. A separate retrospective explanation can incorporate later evidence.
+
+### Restricted upstream evidence
+The Explanation states that restricted upstream evidence materially limits causal confidence without naming the entity or exposing prohibited details.
+
+### Reachable versus exposed impact
+A report reachable through Lineage but not refreshed is described as a potential downstream candidate, not as actually affected.
 
 ## Non-goals
 
-- defining the UI/chat/report rendering technology;
-- generating new observations;
+- UI/chat/report rendering technology;
+- generating new evidence;
 - changing causal status;
+- owning Impact truth;
 - replacing governance authorities;
-- granting access.
+- granting access;
+- choosing LLM, template, or rules-based generation architecture;
+- requiring every internal evidence reference to be visibly rendered to every audience.
 
-## Open questions
+## Deferred questions
 
-- Which explanation structures are required for business analysts versus engineers?
-- Which claims always require visible citations/evidence links?
-- Should retained explanations be immutable snapshots or dynamically resolved views, or both?
+- minimum explanation structures for business, engineering, executive, and audit/review audiences;
+- which material statements require visible citations/evidence links in each experience;
+- retention policy for generated Explanation snapshots versus dynamically composed views;
+- safe-answer behavior when authorization differs across portions of a causal path;
+- deterministic versus generative composition requirements for high-consequence claims.
