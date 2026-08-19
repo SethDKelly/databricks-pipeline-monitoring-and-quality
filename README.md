@@ -2,17 +2,17 @@
 
 A planning-first product for understanding the **health, freshness, quality, lineage, governance, planned/realized change history, causal evidence, and downstream business impact** of a Databricks-based Spark data pipeline ecosystem.
 
-The central product idea is not another dashboard of isolated alerts. It is an **evidence-grounded reasoning layer over the data ecosystem**: a person should be able to ask what is happening, what was intended, what changed, where a degradation likely originated, what is actually exposed or affected downstream, who is responsible, what governance/policy context applies, and what evidence supports each conclusion.
+The central product idea is an **evidence-grounded reasoning layer over the data ecosystem**: a person should be able to ask what is happening, what was intended, what changed, where a degradation likely originated, what is actually exposed or affected downstream, who is responsible, what governance/policy context applies, and what evidence supports each conclusion.
 
 ## Current design state
 
-**Phase 002 — Concept Specifications: COMPLETE**
+**Phase 003 — Concept Synchronizations and Ecosystem Scenarios: ACTIVE**
 
-All five strategic concept groups and all **20 retained concepts** have been reviewed and accepted. Phase 002 remained documentation-only and selected no implementation architecture, service decomposition, storage model, graph database, event/ledger store, API design, runtime framework, or vendor mapping.
+Phase 002 is complete with all 20 retained concepts accepted. Phase 003 now defines how those independent concepts coordinate end to end without collapsing their truth boundaries or selecting implementation architecture.
 
-The next planned phase is **Phase 003 — Concept Synchronizations and Ecosystem Scenarios**. Phase 003 has not yet started.
+**Group 01 — Subject, Scope & Governance Context is accepted. Group 02 — Planned Change & Reference Transition is next.**
 
-See [`docs/concepts/phase_002/README.md`](docs/concepts/phase_002/README.md) for the completed Phase 002 review and exit gate.
+See [`docs/concepts/phase_003/README.md`](docs/concepts/phase_003/README.md) for the active Phase 003 group plan and [`docs/concepts/phase_002/README.md`](docs/concepts/phase_002/README.md) for the completed concept specifications.
 
 ## Product thesis
 
@@ -52,11 +52,11 @@ These are environmental facts, not an implementation architecture.
 
 ## Design method: Concept Design
 
-The product uses Concept Design, following Daniel Jackson's approach, before technical architecture. A concept is an independently understandable unit of functionality with one primary purpose, operational principle, state, actions, invariants, ambiguity behavior, provenance/security considerations, and synchronizations.
+The product uses Concept Design, following Daniel Jackson's approach, before technical architecture. Phase 002 established independently understandable concepts; Phase 003 composes them through explicit synchronization contracts.
 
-A concept is **not automatically** a class, service, database table, graph node, UI page, API, Databricks job, or vendor feature.
+A synchronization is **not automatically** a service call, workflow engine, transaction, event, database relation, API, graph traversal implementation, or orchestration mechanism.
 
-See [`docs/foundation/004_concept_design_method.md`](docs/foundation/004_concept_design_method.md) and [`docs/concepts/`](docs/concepts/).
+See [`docs/foundation/004_concept_design_method.md`](docs/foundation/004_concept_design_method.md), [`docs/concepts/`](docs/concepts/), and [`docs/concepts/phase_003/`](docs/concepts/phase_003/).
 
 ## Foundational principles
 
@@ -74,16 +74,17 @@ See [`docs/foundation/004_concept_design_method.md`](docs/foundation/004_concept
 12. **Impact has layers.** Reachability, exposure, downstream effect, and business consequence are different strengths of statement.
 13. **Human context remains attributed.** Annotation does not rewrite evidence or substitute for structured concepts.
 14. **Explanation is a view over authorized evidence.** Business and engineering views may differ in detail but remain evidence-consistent.
-15. **Policy transparency is not compliance certification.**
-16. **Monitoring must not broaden raw-data access.** Metadata, topology, intent, claims, and annotations can themselves be sensitive.
-17. **Authoritative sources/provenance remain explicit.** Synchronization order is not authority.
-18. **Databricks-native first where it fits; integrate before duplicate.** Favored tools remain evaluations, not concept definitions.
+15. **Synchronization never manufactures authority.** Coordination order cannot choose a source of truth.
+16. **Partial synchronization is valid.** One unresolved context branch must not erase independently valid context.
+17. **Policy transparency is not compliance certification.**
+18. **Monitoring must not broaden raw-data access.** Metadata, topology, intent, claims, and annotations can themselves be sensitive.
+19. **Databricks-native first where it fits; integrate before duplicate.** Favored tools remain evaluations, not concept definitions.
 
 ## Canonical example
 
 Suppose **Table C** is produced by joining **Table A** and **Table B**. C historically produces about 20 million rows and the newest run produces 14 million.
 
-The accepted concept model can distinguish at least these possibilities:
+The accepted model can distinguish at least these possibilities:
 
 - 14M is atypical versus the old Baseline but no normative row-count Expectation exists;
 - 14M violates an explicit row-count Expectation;
@@ -94,19 +95,20 @@ The accepted concept model can distinguish at least these possibilities:
 - downstream reports may be reachable, actually exposed, visibly affected, or tied to evidenced business consequence at different levels;
 - an Explanation can show what the team knew during the incident separately from what later retrospective evidence establishes.
 
-This scenario remains the recurring design test.
+Phase 003 additionally requires that each transition among these concept states be governed by explicit synchronization semantics rather than hidden workflow assumptions.
 
 ## Repository map
 
 - [`docs/README.md`](docs/README.md) — documentation system of record and navigation.
 - [`docs/foundation/`](docs/foundation/) — accepted product foundation and roadmap.
-- [`docs/concepts/`](docs/concepts/) — accepted Concept Design catalog and completed Phase 002 specifications.
-- [`docs/planning/`](docs/planning/) — earlier discovery tracks retained as non-authoritative inputs where superseded by accepted concepts.
+- [`docs/concepts/phase_002/`](docs/concepts/phase_002/) — completed 20-concept specifications.
+- [`docs/concepts/phase_003/`](docs/concepts/phase_003/) — active synchronization contracts and ecosystem scenarios.
+- [`docs/planning/`](docs/planning/) — earlier discovery tracks retained as non-authoritative inputs where superseded.
 - [`docs/reference/glossary.md`](docs/reference/glossary.md) — canonical vocabulary.
 - [`docs/decisions/`](docs/decisions/) — durable decision history.
 - [`AGENTS.md`](AGENTS.md) — repository-agent instructions.
 - [`.cursor/rules/`](.cursor/rules/) — Cursor project rules.
 
-## Phase transition
+## Phase direction
 
-Phase 002 exit criteria are satisfied. The repository should **not** jump directly to technical architecture: the next planned work is Phase 003 synchronization/scenario design, followed by deeper evidence/authority/quality/lineage/questioning/integration refinement before technical architecture is selected.
+Phase 003 remains documentation/design-first. The project must not jump from synchronization semantics directly to technical architecture; later refinement phases still define evidence/time/causality, authority/governance, quality, lineage/impact, explanation, and integration contracts before architecture selection.

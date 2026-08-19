@@ -102,7 +102,7 @@ Classification records category membership under a named governance/sensitivity 
 
 **Status:** Accepted — Phase 002 Group 02
 
-Semantic Definition, Responsibility Assignment, Classification, and Policy Context preserve source assertions, provenance, effective time, and conflict. Synchronization order is never treated as an authority rule. Missing governance metadata is also not converted into a safe default: missing semantics are not inferred meaning, missing responsibility is not explicit unassignment, missing classification is not non-sensitive, and missing policy context is not unrestricted.
+Semantic Definition, Responsibility Assignment, Classification, and Policy Context preserve source assertions, provenance, effective time, and conflict. Synchronization order is never treated as an authority rule. Missing governance metadata is also not converted into a safe default.
 
 Whether repeated source-precedence behavior becomes an independent authority concept or an integration/metadata-category contract remains deferred.
 
@@ -110,9 +110,7 @@ Whether repeated source-precedence behavior becomes an independent authority con
 
 **Status:** Accepted — Phase 002 Group 03
 
-Expectation states what should be true or acceptable for a subject/context/time. Baseline describes reference behavior derived from comparable evidence. Historical regularity is not silently promoted into a requirement, and repeated abnormal behavior does not become acceptable merely because it is common.
-
-A Baseline-only comparison may establish typicality/atypicality but does not by itself establish normative health, degradation, defect, or acceptability.
+Expectation states what should be true or acceptable for a subject/context/time. Baseline describes reference behavior derived from comparable evidence. Historical regularity is not silently promoted into a requirement.
 
 ### D-017 — Observation is evidence and missing evidence is not observed absence
 
@@ -120,45 +118,35 @@ A Baseline-only comparison may establish typicality/atypicality but does not by 
 
 Observation records a provenance-bearing measured/retrieved fact without interpreting health or cause. Missing telemetry must never be represented as zero, false, empty, or no event.
 
-A negative/absence Observation is valid only when the evidence collection/query has sufficient coverage to positively establish absence over a defined interval. This prevents monitoring outages from being mislabeled as pipeline failures.
-
 ### D-018 — Assessment must preserve its normative/comparative basis
 
 **Status:** Accepted — Phase 002 Group 03
 
-Assessment interprets Observation evidence against explicit Expectation and/or comparable Baseline context. Every Assessment retains which reference basis and versions were used.
-
-`Within Baseline` does not imply `healthy`, and `outside Baseline` does not imply `degraded`. A normative health/requirement result needs a normative basis. Conflicting or insufficient evidence/reference context remains unresolved rather than being forced into green/red status.
+Assessment interprets Observation evidence against explicit Expectation and/or comparable Baseline context. `Within Baseline` does not imply `healthy`, and `outside Baseline` does not imply `degraded`.
 
 ### D-019 — Health evaluation is dimension-scoped and reassessment is historical
 
 **Status:** Accepted — Phase 002 Group 03
 
-Execution, freshness, completeness, validity, volume, schema, distribution, and other dimensions are assessed independently by default. Success in one dimension does not mask failure or uncertainty in another.
-
-Any composite/overall health result must identify component Assessments and an explicit aggregation rule. Late/corrected evidence produces a new linked Assessment rather than silently rewriting the conclusion previously reached from earlier evidence.
+Execution, freshness, completeness, validity, volume, schema, distribution, and other dimensions are assessed independently by default. Any composite result requires an explicit aggregation rule; late/corrected evidence creates traceable reassessment.
 
 ### D-020 — Planned modification requires Change Intent separate from realized Change
 
 **Status:** Accepted — Phase 002 Group 04
 
-A pipeline/data modification can be registered before activation through **Change Intent**, including anticipated effects and monitoring implications. Intent is planned context, not an Observation, Deployment, realized Change, Expectation, or causal conclusion.
-
-A registered change may activate and behave as intended, activate with unintended side effects, differ materially from anticipated magnitude, never activate, or be absent even when a deployment/change occurs.
+A pipeline/data modification can be registered before activation through **Change Intent**. Intent is planned context, not an Observation, Deployment, realized Change, Expectation, or causal conclusion.
 
 ### D-021 — Planned structural change may create a prospective Baseline boundary but cannot set the Baseline
 
 **Status:** Accepted — Phase 002 Group 04 refinement of Group 03 synchronization
 
-Change Intent may register that an existing Baseline is expected to become non-comparable if a structural modification becomes active. Intent alone does not end current Baseline applicability. Deployment/realized Change evidence establishes the transition.
-
-A new post-change Baseline must be empirically derived from sufficient comparable post-change Observations. Planned values are never inserted as Baseline values. Immediate post-change normative validation should use an explicitly established/revised Expectation when appropriate.
+Change Intent may register that an existing Baseline is expected to become non-comparable if a structural modification becomes active. A new post-change Baseline must be empirically derived from sufficient comparable post-change Observations.
 
 ### D-022 — Deployment, execution, Lineage, and Change preserve distinct historical truth
 
 **Status:** Accepted — Phase 002 Group 04
 
-Deployment distinguishes attempt from activation and cannot prove intended data effect. Execution History reconstructs actual runs and cannot fabricate missing runs from missing telemetry. Lineage records typed temporal relationships and cannot convert planned topology into active topology without evidence. Change records realized differences/transitions and does not judge health, intent conformance, or cause.
+Deployment distinguishes attempt from activation and cannot prove intended data effect. Execution History reconstructs actual runs. Lineage records typed temporal relationships. Change records realized differences/transitions and does not judge health, intent conformance, or cause.
 
 ### D-023 — Adopt ledger-like historical semantics without selecting ledger technology
 
@@ -166,62 +154,74 @@ Deployment distinguishes attempt from activation and cannot prove intended data 
 
 Material historical state should be provenance-bearing and reconstructable. Corrections/supersessions append or link new state rather than invisibly rewriting prior knowledge. Where material, effective/event time and recorded/knowledge time remain distinct.
 
-This decision does **not** select blockchain, event sourcing, append-only database, temporal-table technology, or any persistence architecture. Technical realization belongs to later architecture design.
-
 ### D-024 — Require graph-compatible relationship semantics without selecting a graph database
 
 **Status:** Accepted — cross-cutting product principle
 
-Entity Identity plus typed, directed, temporal, provenance-bearing Lineage forms a naturally graph-shaped reasoning model. Product semantics must support upstream/downstream traversal, historical subgraphs, uncertainty, scope boundaries, and authorized opaque/redacted nodes.
-
-This does **not** select Neo4j, RDF, property graphs, GraphFrames, a graph query language, or any other technical graph architecture. Those are later evaluation candidates.
+Entity Identity plus typed, directed, temporal, provenance-bearing Lineage forms a naturally graph-shaped reasoning model. This does not select a graph technology.
 
 ### D-025 — Investigation organizes inquiry but does not own evidence or causal truth
 
 **Status:** Accepted — Phase 002 Group 05
 
-Investigation is a bounded inquiry that links relevant source evidence, Causal Claims, Impact analysis, and Annotations. It may begin from an Assessment, user question, Change-Intent realization mismatch, or other uncertainty.
-
-Investigation can close unresolved or multi-causal. Closure cannot silently promote a Causal Claim or rewrite linked evidence.
+Investigation is a bounded inquiry that links relevant source evidence, Causal Claims, Impact analysis, and Annotations. It may close unresolved or multi-causal.
 
 ### D-026 — Causal Claim is the explicit epistemic home for causality
 
 **Status:** Accepted — Phase 002 Group 05
 
-Causal statements are explicit provenance-bearing claims with supporting and contradicting evidence, contribution role where useful, uncertainty rationale, review/confirmation provenance, and status history.
-
-Correlation, Lineage, Deployment timing, realized Change, and consistency with Change Intent are never sufficient by themselves to confirm cause. Multiple contributing causes may coexist. `Confirmed` requires an explicit evidence/authority standard that remains deferred.
-
-Phase 002 does not require a separate Attribution concept or quantitative percentage attribution; qualitative contribution can live within Causal Claim until a stronger requirement emerges.
+Causal statements are explicit provenance-bearing claims with supporting and contradicting evidence, contribution role where useful, uncertainty rationale, review/confirmation provenance, and status history. Correlation/Lineage/Deployment timing/intent consistency do not confirm cause.
 
 ### D-027 — Impact separates reachability, exposure, observed effect, and business consequence
 
 **Status:** Accepted — Phase 002 Group 05
 
-Downstream Lineage produces Impact candidates only. Impact separately records whether a candidate actually consumed/encountered affected state, whether downstream Observation/Assessment/Change evidence shows an effect, and whether a technical/analytical/business consequence is evidenced.
-
-If the product asserts that an originating condition caused a downstream effect, that proposition belongs in Causal Claim. Missing downstream evidence cannot become `not affected`.
+Downstream Lineage produces Impact candidates only. Impact separately records actual exposure, downstream effect evidence, and technical/analytical/business consequence evidence.
 
 ### D-028 — Annotation is human context, not a catch-all truth or confirmation mechanism
 
 **Status:** Accepted — Phase 002 Group 05
 
-Annotation preserves attributed human context with revision/dispute/withdrawal history. It cannot silently become Observation, Change Intent, Expectation, Responsibility Assignment, Classification, Policy Context, or causal confirmation.
-
-When human input constitutes structured operational truth, it must be recorded through the concept that owns that purpose and its authority/provenance semantics.
+Annotation preserves attributed human context with revision/dispute/withdrawal history. Structured operational truth belongs to its owning concept.
 
 ### D-029 — Explanation is an authorization- and time-aware projection over concept state
 
 **Status:** Accepted — Phase 002 Group 05
 
-Explanation is not an independent truth source. It composes audience-appropriate statements from authorized concept state while preserving material epistemic labels and statement-to-basis traceability.
-
-Explanation must distinguish `what was known then` from `what we know now` when recorded/knowledge time materially changes the answer. Audience-specific detail may differ, but safe projections cannot intentionally contradict the same authorized evidence.
+Explanation is not an independent truth source. It preserves material epistemic labels, statement-to-basis traceability, and the distinction between `what was known then` and `what we know now`.
 
 ### D-030 — Phase 002 concept specification exit gate is satisfied
 
 **Status:** Accepted
 
-All five groups and 20 retained concepts have reviewed specifications; boundary changes/rationale are recorded; catalog/glossary/decision records are aligned; canonical and adversarial scenarios are expressible without hidden functionality; and no concept requires a selected technical architecture or vendor realization.
+All five groups and 20 retained concepts have reviewed specifications and can express the canonical/adversarial scenarios without hidden functionality or selected technical architecture.
 
-The next planned work is **Phase 003 — Concept Synchronizations and Ecosystem Scenarios**, which must begin only on explicit user instruction.
+### D-031 — Review Phase 003 as six synchronization groups
+
+**Status:** Accepted — Phase 003 foundation
+
+Phase 003 is organized as: (1) Subject, Scope & Governance Context; (2) Planned Change & Reference Transition; (3) Runtime Evidence, Health & Realized Change; (4) Lineage, Investigation & Causal Reasoning; (5) Downstream Impact, Annotation & Explanation; and (6) Historical Replay & Phase 003 Consolidation.
+
+The order is a reasoning/review dependency, not an implementation dependency. Group 06 explicitly composes the whole system and performs the exit review rather than treating historical replay as an incidental concern.
+
+### D-032 — Synchronizations coordinate concept results without becoming hidden architecture
+
+**Status:** Accepted — Phase 003 foundation
+
+A synchronization specifies participating concept actions/results, trigger, semantic preconditions, necessary ordering/independence, ambiguity/failure propagation, temporal/provenance/security behavior, and invariants. It does not imply a service call, workflow engine, transaction, event bus, database relation, API, or deployment architecture.
+
+Synchronization order is never authority, and a synchronization trigger never implies causation.
+
+### D-033 — Subject-specific synchronization starts from Entity Identity and preserves independent context branches
+
+**Status:** Accepted — Phase 003 Group 01
+
+Subject-specific synchronization first resolves Entity Identity rather than attaching state to raw names. Monitoring Scope then resolves independently. Semantic Definition, Responsibility Assignment, Classification, and Policy Context resolve as independent context branches against the common identity/time/context.
+
+An unresolved branch must not erase independently valid branches. Scope does not imply authorization/evidence availability. Synchronization order cannot resolve governance authority conflicts.
+
+### D-034 — Classification can support Policy Context applicability but cannot manufacture policy
+
+**Status:** Accepted — Phase 003 Group 01
+
+Where an explicit Policy Context assertion depends on a Classification predicate, the Classification result may provide supporting/contradicting/uncertain applicability evidence. Classification alone never creates Policy Context, grants authorization, proves enforcement, or establishes compliance. Missing Classification also cannot be converted into policy non-applicability.

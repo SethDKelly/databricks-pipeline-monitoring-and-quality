@@ -7,13 +7,16 @@ alwaysApply: true
 # Project foundation
 
 - **Phase 002 — Concept Specifications is complete.** All five groups and 20 retained concepts are accepted.
-- **Phase 003 — Concept Synchronizations and Ecosystem Scenarios is next but not started.** Begin only on explicit user request.
+- **Phase 003 — Concept Synchronizations and Ecosystem Scenarios is active.** Group 01 is accepted; Group 02 — Planned Change & Reference Transition is next.
 - Work remains documentation/design-first unless the user explicitly advances into technical/implementation design.
 - Do not create application code, notebooks, infrastructure, schemas, APIs, package scaffolding, deployment workflows, or implementation prototypes prematurely.
 - Treat `docs/` as the product/design system of record.
-- Before product-design changes, read `README.md`, `docs/README.md`, relevant foundation docs, `docs/reference/glossary.md`, accepted concept specs, and `docs/decisions/README.md`.
+- Before Phase 003 changes, read `docs/concepts/phase_003/README.md`, the synchronization template, the active group, accepted participating concept specs, glossary, foundation, and decision records.
+- Preserve accepted concept ownership/state boundaries; synchronization coordinates concepts rather than merging them.
+- Synchronization is not automatically an API call, workflow, transaction, event, message bus, database relation, or service boundary.
+- Synchronization order is never authority; a trigger is never causation.
+- One unresolved synchronization branch must not erase independently valid results from another branch.
 - Refine canonical docs rather than creating duplicate/conflicting definitions.
-- Explicitly label open/deferred decisions. Never silently choose framework, storage engine, graph database, event/ledger store, service architecture, or language.
+- Explicitly label open/deferred decisions. Never silently choose framework, storage engine, graph database, event/ledger store, workflow engine, service architecture, or language.
 - Treat the multi-repository Databricks environment as one reasoning ecosystem while preserving repository/job boundaries for provenance.
-- Treat this repository as standalone; do not import domain assumptions from unrelated projects.
 - Preserve the accepted Phase 002 concept boundaries unless later design explicitly reopens them with rationale.

@@ -12,57 +12,34 @@ Established product purpose, actors, terminology, Concept Design method, archite
 
 **Status:** **Complete.**
 
-All five groups and 20 retained concepts are accepted:
-
-1. **Scope & Identity** — Monitoring Scope, Entity Identity.
-2. **Semantics, Governance & Policy** — Semantic Definition, Responsibility Assignment, Classification, Policy Context.
-3. **Health Evaluation** — Expectation, Baseline, Observation, Assessment.
-4. **History, Lineage & Change** — Change Intent, Execution History, Deployment, Lineage, Change.
-5. **Investigation, Impact & Explanation** — Investigation, Causal Claim, Impact, Annotation, Explanation.
-
-Key Phase 002 cross-cutting outcomes include ledger-like historical semantics, graph-compatible typed temporal Lineage, planned-change/Baseline boundaries, explicit causal-claim semantics, downstream Impact layering, and authorization/time-aware Explanation.
+All five groups and 20 retained concepts are accepted. Key outcomes include ledger-like historical semantics, graph-compatible typed temporal Lineage, planned-change/Baseline boundaries, explicit Causal Claim semantics, Impact layering, and authorization/time-aware Explanation.
 
 See `../concepts/phase_002/README.md`.
 
 ## Phase 003 — Concept Synchronizations and Ecosystem Scenarios
 
-**Status:** **Next — not started.**
+**Status:** **Active — Group 01 accepted; Group 02 next.**
 
 **Goal:** define how independent accepted concepts synchronize to satisfy end-to-end behavior while preserving each concept's truth boundary.
 
-Priority scenarios:
+Formal review groups:
 
-- stale upstream with successful downstream execution;
-- A+B→C join-volume degradation with one or multiple contributors;
-- successful run with bad output;
-- planned structural change with valid outcome;
-- planned change with unintended violation;
-- unregistered source/config/topology change;
-- schema/distribution change;
-- cross-repository dependency degradation;
-- Deployment-correlated data shift;
-- conflicting governance/Expectation metadata;
-- downstream reachability versus actual exposure/consequence;
-- restricted/sensitive asset reporting;
-- contemporaneous versus retrospective historical explanation;
-- recovery/reassessment/reopened investigation.
+1. **Subject, Scope & Governance Context** — **Accepted**. Entity Identity → Monitoring Scope and independent semantic/responsibility/classification/policy resolution; Classification may support explicit Policy Context applicability without manufacturing policy.
+2. **Planned Change & Reference Transition** — **Next**. Change Intent → prospective Expectation review/Baseline comparability boundary → realization evidence/post-change reference transition.
+3. **Runtime Evidence, Health & Realized Change** — Planned. Deployment activation → Execution History → Observation → Assessment and realized Change.
+4. **Lineage, Investigation & Causal Reasoning** — Planned. Assessment/Change/question → Investigation; historical Lineage/evidence → competing Causal Claims.
+5. **Downstream Impact, Annotation & Explanation** — Planned. Lineage → Impact candidates/exposure/effect/consequence; Annotation/context → authorized Explanation.
+6. **Historical Replay & Phase 003 Consolidation** — Planned. Full ecosystem scenario composition, contemporaneous/retrospective reconstruction, and exit review.
+
+Priority scenarios include stale upstream with successful downstream execution; A+B→C degradation; planned structural change with valid outcome; planned change with unintended violation; unregistered change; Deployment-correlated shifts; cross-repository dependencies; conflicting governance/Expectation metadata; restricted context; downstream reachability versus actual exposure/consequence; and late historical correction.
+
+See `../concepts/phase_003/README.md`.
 
 ## Phase 004 — Evidence, Time, and Causality Refinement
 
 **Goal:** deepen the accepted evidence/temporal/causal model before technical storage architecture.
 
-Refine:
-
-- evidence sufficiency/completeness semantics;
-- event/effective versus knowledge-time query semantics;
-- correction/supersession behavior;
-- Causal Claim status transitions;
-- evidence/authority standard for confirmed cause;
-- qualitative versus quantitative attribution if required;
-- confidence/uncertainty semantics;
-- historical Investigation/Explanation reconstruction.
-
-Phase 002 already established the concept boundaries; Phase 004 refines synchronization/evidence standards rather than rediscovering them.
+Refine evidence sufficiency/completeness; event/effective versus knowledge-time query semantics; correction/supersession behavior; Causal Claim status transitions; confirmed-cause evidence/authority standards; attribution/confidence semantics; and historical Investigation/Explanation reconstruction.
 
 ## Phase 005 — Governance, Authority, Semantics, and Policy Refinement
 
@@ -90,19 +67,7 @@ Evaluate what must be native versus sourced from Collibra/Immuta/Unity Catalog o
 
 **Goal:** only now select implementation architecture based on validated product concepts/constraints.
 
-Evaluate, without presumption:
-
-- historical/evidence storage forms;
-- graph-compatible Lineage realization;
-- ledger/temporal history realization;
-- ingestion/synchronization patterns;
-- service/API boundaries;
-- identity/authorization architecture;
-- Databricks deployment model;
-- Explanation/question interface;
-- batch/event-driven behavior;
-- tenancy/environment strategy;
-- testing/observability.
+Evaluate historical/evidence storage; graph-compatible Lineage realization; ledger/temporal history realization; ingestion/synchronization patterns; service/API boundaries; identity/authorization architecture; Databricks deployment model; Explanation/question interface; batch/event-driven behavior; tenancy/environment strategy; and testing/observability.
 
 ## Phase 011 — MVP Implementation Planning
 
@@ -114,4 +79,4 @@ Implement minimum vertical slices required to prove the accepted MVP scenarios.
 
 ## Roadmap rule
 
-A later phase may reveal a flaw in an earlier concept. Reopen/revise the concept explicitly with rationale rather than preserving a bad boundary merely to maintain sequence.
+A later phase may reveal a flaw in an earlier concept or synchronization. Reopen/revise it explicitly with rationale rather than preserving a bad boundary merely to maintain sequence.
