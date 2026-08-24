@@ -10,12 +10,12 @@ alwaysApply: true
 - **Phase 003 is complete. Groups 01–06 are accepted; SYN-001–SYN-035 are accepted; E-01–E-22 pass end-to-end consolidation.**
 - **Phase 004 — Evidence, Time, and Causality Refinement is complete. Groups 01–05 are accepted; REF-001–REF-030 are accepted.**
 - **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is complete. Groups 01–07 are accepted; AUTH-001–AUTH-053 are final; G07-01–G07-26 pass.**
-- **Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement is next and has not started.**
+- **Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement is active. Group 01 is accepted with HLTH-001–HLTH-008; H01-01–H01-20 pass; Group 02 — Structural / Schema / DDL Compatibility is next and has not started.**
 - Work remains documentation/design-first unless the user explicitly advances into technical/implementation design.
 - Do not create application code, notebooks, infrastructure, schemas, APIs, IAM/Assertion Authority implementations, approval/workflow engines, deployment workflows, quarantine implementations, Execution Gate/orchestration implementations, metric engines, redaction systems, graph/causal engines, LLMs, or prototypes prematurely.
 - Treat `docs/` as the product/design system of record.
-- Preserve concept ownership boundaries; Phase 004 refinements and Phase 005 authority contracts define standards over accepted concepts rather than creating hidden truth owners.
-- `REF-###` identifiers are evidence/time/causal/control refinement contracts; `AUTH-###` identifiers are authority/governance/capability/disclosure contracts. Neither extends the Phase 003 SYN sequence.
+- Preserve concept ownership boundaries; Phase 004 refinements, Phase 005 authority contracts, and Phase 006 health contracts define standards over accepted concepts rather than creating hidden truth owners.
+- `REF-###` identifiers are evidence/time/causal/control refinement contracts; `AUTH-###` identifiers are authority/governance/capability/disclosure contracts; `HLTH-###` identifiers are health/metric/schema/statistical refinement contracts. None extends the Phase 003 SYN sequence.
 
 Evidence rules:
 
@@ -140,14 +140,32 @@ Phase 005 consolidation / exit rules — accepted Group 07:
 - Conflicts remain explicit when no governed resolver applies.
 - Phase 006 remains free to define actual metric/statistical/schema-health/timing semantics without reopening authority ownership.
 
-Schema / DDL validation handoff:
+Phase 006 Group 01 measurement rules — accepted HLTH-001–HLTH-008:
+
+- Every material measurement binds subject, metric/check definition/version, grain/population, window, relevant output/data/schema/current-cycle context, and material temporal context.
+- Metric definition ≠ metric Observation ≠ Assessment; calculation/extraction success ≠ health pass.
+- Canonical metric families are operational/output; temporal/freshness; structural/schema; volume/population; completeness/missingness; uniqueness/key integrity; validity/domain; distribution/shape; relational/transformation integrity; business-semantic measurement.
+- Readiness, composite health, Impact, causality, authorization, control enforcement, and compliance are not metric families.
+- Material formula/denominator/filter/population/unit/grain/window/missing-value/approximation changes require explicit metric-definition revision/version handling.
+- Profile roles are core operational/table, critical-field/business, transformation-specific reconciliation, and diagnostic/on-demand.
+- AUTH-023 control eligibility and audience are not profile roles.
+- Semantic applicability ≠ profile selection ≠ source support/computability ≠ current availability ≠ Assessment outcome.
+- Preserve `not applicable`, `not selected`, `unsupported`, `unavailable`, `pending/not evaluated`, and unknown/conflicting applicability distinctly; none becomes zero/pass/no issue.
+- Technical availability does not justify routine metric inclusion. Prefer a small stable routine core plus targeted critical/business/transformation checks and diagnostic/on-demand expansion.
+- Diagnostic use during Investigation does not automatically create permanent profile membership.
+- Metric/check Observations retain material definition/version, source/input evidence, subject/window/grain/population, temporal provenance, approximation/sampling/coverage limitations, and restriction status.
+- Duplicated/common-derived metric surfaces do not create independent corroboration.
+- Local metric existence does not imply downstream propagation; Group 05 owns transformation-aware reconciliation.
+- H01-01–H01-20 pass and no 25th concept is required.
+
+Schema / DDL validation handoff — Group 02 next:
 
 - Structural/schema compatibility is a first-class health concern even when a job/load succeeds.
 - Semantic Definition owns governed schema/grain/key meaning; Expectation owns normative structural compatibility; Observation/Change own realized state/change; Assessment owns conformance.
 - Change Intent owns planned schema evolution; Lineage/Impact/Investigation/Causal Claim provide downstream/planned/consequence reasoning where applicable.
 - Column add/drop/rename/type/nullability/grain/key/nested-schema changes can invalidate downstream assumptions, metric definitions, joins, and Baseline comparability.
 - Structural Change triggers **scoped** metric/Baseline/key/join applicability review rather than automatic global reset.
-- GitHub Actions, Databricks/Unity Catalog, and independent monitoring are candidate future validation locations with different temporal roles; Phase 005 does not select one universal mechanism.
+- GitHub Actions, Databricks/Unity Catalog, and independent monitoring are candidate future validation locations with different temporal roles; Phase 006 Group 02 must not select one universal mechanism.
 - Schema/metric conditions used by an Execution Gate remain subject to evidence, normative eligibility, high-consequence capability, and enforcement separation.
 
 Causal/control/Impact rules:
@@ -190,23 +208,14 @@ Historical rules:
 - Historical causal confirmation, gate/safeguard action, approval/delegation, authorization, and disclosure remain reconstructable even if current state changes.
 - Historical authority/authorization/control/disclosure state is evidence about past state but never overrides current requester disclosure authorization.
 
-Metric-health handoff:
+Metric-health phase direction:
 
-- Table health is broader than successful load occurrence.
-- Phase 005 Group 03 accepted governance for metric profiles, structural/schema Expectations, thresholds, margins/severity, waivers/retirement, and high-consequence-use eligibility.
-- Phase 006 owns metric/statistical/schema-health semantics, Baseline comparability, metric-bloat controls, technical/business health meaning, selective transformation-aware propagation, waiver presentation, and timing/evidence suitability for control-eligible conditions.
-- Metrics/governance do not recursively propagate merely because Lineage exists.
-- Phase 006 must consume Phase 005 authority/disclosure rules rather than reopen them.
-
-Phase direction:
-
-- Phase 004 is complete with REF-001–REF-030.
-- Phase 005 Group 01 accepted: Assertion Authority + AUTH-001–AUTH-008; D-161–D-172.
-- Phase 005 Group 02 accepted: AUTH-009–AUTH-015; D-173–D-188.
-- Phase 005 Group 03 accepted: AUTH-016–AUTH-023; D-189–D-202.
-- Phase 005 Group 04 accepted: AUTH-024–AUTH-032; D-203–D-217.
-- Phase 005 Group 05 accepted: AUTH-033–AUTH-043; D-218–D-234.
-- Phase 005 Group 06 accepted: AUTH-044–AUTH-053; D-235–D-250.
-- Phase 005 Group 07 accepted: consolidation/exit; D-251–D-265.
-- **Phase 005 is complete. Phase 006 is next and has not started. Do not begin Phase 006 without explicit user request.**
+- Phase 006 Group 01 accepted: measurement vocabulary, metric families, profiles/applicability/provenance — HLTH-001–HLTH-008.
+- Group 02 Structural / Schema / DDL Compatibility is next and has not started.
+- Group 03 Baselines, Comparability, Distribution & Statistical Context is planned.
+- Group 04 Expectations, Thresholds, Margins, Waivers & Assessment Semantics is planned.
+- Group 05 Transformation Reconciliation & Metric Propagation is planned.
+- Group 06 Composite Health, Readiness Suitability & Progressive Result Timing is planned.
+- Group 07 Consolidation / Exit Review is planned.
+- Do not begin Group 02 or later groups without explicit user request.
 - Never silently choose IAM/approval workflow/Assertion Authority engine, graph/event/temporal/ledger/quarantine/scheduler/orchestration/service/metric/redaction/LLM/causal-algorithm architecture.

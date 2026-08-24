@@ -1,0 +1,73 @@
+---
+description: Phase 006 health/metric design guardrails and Group 01 accepted measurement semantics.
+globs:
+alwaysApply: true
+---
+
+# Phase 006 — health and metric semantics
+
+Status: **Phase 006 is ACTIVE. Group 01 is accepted with HLTH-001–HLTH-008. Group 02 — Structural / Schema / DDL Compatibility is next and has not started.**
+
+Phase 006 uses `HLTH-###` refinement identifiers. They refine existing concepts and do not extend SYN/REF/AUTH ranges or create hidden truth owners.
+
+Accepted delivery order:
+
+1. Measurement Vocabulary, Metric Families, Profiles & Applicability — **accepted**.
+2. Structural / Schema / DDL Compatibility — **next**.
+3. Baselines, Comparability, Distribution & Statistical Context — planned.
+4. Expectations, Thresholds, Margins, Waivers & Assessment Semantics — planned.
+5. Transformation Reconciliation & Metric Propagation — planned.
+6. Composite Health, Readiness Suitability & Progressive Result Timing — planned.
+7. Consolidation / Exit Review — planned.
+
+## Group 01 accepted rules — HLTH-001–HLTH-008
+
+Preserve:
+
+- metric definition ≠ metric Observation ≠ Assessment;
+- calculation/extraction success ≠ health pass;
+- observed structural predicate ≠ structural compatibility unless the applicable Expectation makes it sufficient;
+- every material measurement must bind subject + definition/version + grain/population + window + relevant output/data/schema/current-cycle context + material time context;
+- same display name ≠ same metric definition/version;
+- formula/denominator/filter/unit/grain/window/missing-value/approximation changes require explicit definition revision/version handling;
+- canonical metric families: operational/output; temporal/freshness; structural/schema; volume/population; completeness/missingness; uniqueness/key integrity; validity/domain; distribution/shape; relational/transformation integrity; business-semantic;
+- readiness, composite health, Impact, causality, authorization, control enforcement and compliance are not metric families;
+- semantic applicability ≠ governed profile selection ≠ technical support/computability ≠ current evidence availability ≠ Assessment outcome;
+- `not applicable` ≠ `not selected` ≠ `unsupported` ≠ `unavailable` ≠ `pending` ≠ `pass`;
+- applicability may be `applicable`, `not applicable`, `unknown`, or `conflicting` rather than guessed;
+- profile roles are core operational/table, critical-field/business, transformation-specific reconciliation, and diagnostic/on-demand;
+- AUTH-023 control eligibility is not a profile role;
+- audience is not a profile role; technical/business/executive views remain disclosure projections over one truth;
+- available statistic ≠ useful routine metric;
+- do not auto-compute full column-statistic suites merely because a platform exposes them;
+- prefer a small routine core + targeted critical/business/transformation checks + explicit diagnostic/on-demand expansion;
+- diagnostic use during Investigation does not automatically create permanent profile membership;
+- profile removal/retirement does not erase historical Observations/Assessments;
+- material metric/check Observations retain definition/version, source/input evidence, subject/window/grain/population, material temporal provenance, approximation/sampling/coverage limitations and restriction state;
+- duplicated/mirrored metric surfaces do not create independent corroboration;
+- local metric existence does not imply downstream propagation; Group 05 owns transformation-aware reconciliation.
+
+## Group 02 boundary
+
+Next refine structural/schema health including add/drop/rename, types/precision/scale, nullability/default/generated fields, nested structure, keys/grain, schema-contract versions and consumer-specific compatibility.
+
+Preserve:
+
+**governed schema meaning ≠ normative schema Expectation ≠ realized structural Observation/Change ≠ compatibility Assessment**.
+
+Do not infer rename from drop/add alone. Do not treat every additive change as safe or every change as breaking. Do not choose GitHub Actions, Unity Catalog/Databricks, DQX or monitoring-app validation placement in Group 02.
+
+## Permanent phase boundaries
+
+- Do not weaken REF-001–REF-030 evidence standards.
+- Do not reopen AUTH-001–AUTH-053 authority/authorization/disclosure decisions merely to simplify health semantics.
+- Baseline remains descriptive until an authoritative Expectation adopts a norm.
+- Authority cannot manufacture empirical comparability.
+- Waiver does not rewrite Observation/Assessment or create false pass.
+- Lineage does not recursively propagate metrics.
+- Upstream anomaly does not automatically become downstream failure or cause.
+- High-consequence eligibility does not make stale/unavailable/immature evidence usable.
+- Passive monitoring remains out-of-band/non-blocking for ungated production.
+- Do not select Metric Views/DQX, GitHub Actions, Unity Catalog, storage, streaming, caching, scheduler/orchestrator or service topology during Phase 006.
+
+Do not begin Group 02 or a later group without explicit user direction.
