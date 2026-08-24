@@ -1,0 +1,47 @@
+---
+description: Metric-health and propagation handoff guardrails for future Phase 006/007 work.
+globs:
+alwaysApply: true
+---
+
+# Metric health and propagation handoff
+
+Status: **Pre-Phase-005 consideration accepted. Phase 006 has not started.**
+
+Preserve:
+
+- successful load/run ≠ healthy produced table;
+- available statistic ≠ useful metric;
+- metric existence ≠ normative threshold;
+- threshold authority ≠ metric statistical meaning;
+- Baseline range ≠ normative Expectation;
+- local metric ≠ propagated metric ≠ derived reconciliation expectation;
+- technical metric view ≠ separate business truth;
+- upstream anomaly ≠ downstream failure;
+- metric used for monitoring ≠ automatically safe for Execution Gate control;
+- richer/expensive metric ≠ synchronous production-path requirement.
+
+Future Phase 006 rules:
+
+- Define purposeful per-asset metric profiles rather than calculating every possible statistic.
+- Distinguish core, critical-field/business, transformation-specific, and diagnostic/on-demand metrics.
+- Candidate metric families include load/output, volume, freshness, completeness, uniqueness/key integrity, validity/schema, selected distribution/quantile measures, relational/join/reconciliation measures, and business-semantic metrics.
+- Metric applicability depends on semantic role, data type, grain, transformation, criticality, and consumer use.
+- Avoid meaningless metrics such as quantiles for identifiers or universal column-level statistics without an identified failure mode/use.
+- Threshold/margin semantics must distinguish hard Expectations, warning/failure bands, absolute/relative/asymmetric tolerances, Baseline-derived ranges, seasonality/cohorts, low-volume/sample-size behavior, and bounded exceptions.
+- Metric propagation is selective and transformation-aware; do not recursively cascade every upstream statistic through Lineage.
+- For transformations such as A+B→C, define valid reconciliation relationships from join/filter/aggregation/grain semantics rather than assuming arithmetic count conservation.
+- Preserve local upstream evidence for Investigation even when it is not a downstream metric.
+- Technical and business audiences may receive different authorized projections over the same underlying metric/Assessment truth.
+- Preserve progressive availability: fast operational facts → core table health → enriched DQ/distribution health → diagnostic/RCA → post-ops.
+- Do not force monitoring metrics into the production critical path unless an explicitly accepted high-consequence control requires them.
+
+Phase boundaries:
+
+- Phase 005 decides metric/Expectation/threshold authority and disclosure governance.
+- Phase 006 defines metric and health semantics.
+- Phase 007 refines Lineage-aware propagation/operational use.
+- Phase 009 evaluates actual source support, cost, latency, and retention.
+- Phase 010 selects computation/storage/fast-path architecture.
+
+Do not begin Phase 006 without explicit user request.

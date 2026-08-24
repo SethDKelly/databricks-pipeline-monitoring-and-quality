@@ -1,6 +1,6 @@
 # 009 — Initial Roadmap
 
-This roadmap delays implementation until product concepts, synchronizations, trust boundaries, evidence semantics, integration authority, and technical constraints are stable enough to guide architecture.
+This roadmap delays implementation until product concepts, synchronizations, trust boundaries, evidence semantics, integration authority, health/metric semantics, and technical constraints are stable enough to guide architecture.
 
 ## Phase 001 — Product Foundation and Concept Discovery
 **Status:** Complete.
@@ -46,59 +46,81 @@ For controls/exposure:
 
 The project should return the narrowest trustworthy result as soon as its evidence standard is satisfied. Faster job lifecycle evidence should not wait for slower Metric View/DQ/RCA evidence, while early results must not overstate health, causality, exposure, or control enforcement.
 
-Concrete timing targets remain intentionally deferred:
+## Pre-Phase-005 metric-health handoff
 
-- **Phase 006** defines which health/quality results need immediate, near-real-time, delayed, or post-ops availability and their evidence/result freshness objectives;
-- **Phase 008** defines communication of progressive health/RCA/control maturity;
-- **Phase 009** evaluates actual evidence source availability, collection latency, retention, query cost, and enforcement observability;
-- **Phase 010** selects fast-path/asynchronous architecture, control-path availability strategy, and performance budgets while preserving passive-monitoring non-interference;
-- **Phase 011** converts accepted timing objectives into MVP acceptance criteria.
+Before Phase 005, the project accepted that **table/pipeline health is broader than successful execution** and that metric design needs explicit later treatment.
+
+The handoff establishes:
+
+- Phase 005 governs who may define/approve/revise/waive/retire/disclose metric profiles, Expectations, thresholds, margins/tolerance bands, and severity;
+- Phase 006 defines actual metric families, per-asset metric profiles, statistical/Baseline/threshold semantics, metric bloat controls, technical/business health projections, and selective metric propagation/reconciliation;
+- Phase 007 refines Lineage-aware metric propagation behavior and operational use;
+- Phase 009 determines actual Databricks/Metric Views/DQX/source metric availability, cost, latency, and retention;
+- Phase 010 selects precomputation/on-demand/fast-path architecture.
+
+Metric selection should be purposeful rather than exhaustive: a small core plus critical-field/business, transformation-specific, and diagnostic/on-demand metrics. Metrics do not recursively propagate through Lineage by default; join/filter/aggregation/grain/business semantics determine valid relationships.
+
+See `../concepts/phase_005/pre_phase_metric_health_handoff.md` and `../concepts/phase_006/README.md`.
 
 ## Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement
 
-**Status:** **NEXT — not started.**
+**Status:** **NEXT — delivery groups designed; not started.**
 
-Refine:
+Planned review groups:
 
-- source/actor authority and category/context-specific conflict resolution;
-- Semantic Definition, Responsibility Assignment, Classification, Policy Context, criticality, and stewardship authority;
-- Expectation/normative-setting authority;
-- Capability Authorization vocabulary, conditionality, source precedence/conflict/unknown behavior;
-- safe derived-evidence disclosure and opacity;
-- causal-confirmation capability/authority by claim class/subject/context;
-- safeguard proposal/activation/release authority;
-- Execution Gate configuration/enable/override/control authority;
-- policy-sensitive Explanation/disclosure governance.
+1. **Authority Vocabulary, Source Assertions & Conflict Resolution** — common authority scope, authoritative/advisory/correction/supersession/conflict semantics.
+2. **Semantic, Responsibility, Classification, Policy & Criticality Governance** — category-specific descriptive/governance authority.
+3. **Normative Health, Metric & Threshold Governance** — who may define/approve metric profiles, Expectations, thresholds, margins, severity, waivers, and high-consequence metric use; does not define metric statistical semantics.
+4. **Capability Authorization & Restricted Analytical Visibility** — canonical capability vocabulary, conditional/current/historical authorization, restricted-data analytical projection.
+5. **High-Consequence Action, Control & Causal-Confirmation Authority** — causal confirmation, job operations, safeguards, Execution Gates, override/delegation/separation-of-duties semantics.
+6. **Disclosure, Explanation & Audience Governance** — authorized technical/business disclosure, opacity, inference leakage, high-consequence communication review.
+7. **Consolidation / Exit Review** — compose authority/governance semantics without stealing evidence truth or selecting IAM/technical architecture.
 
-Phase 005 may determine who/what is permitted to confirm, configure, operate, disclose, or resolve state. It must **not** weaken or redefine the Phase 004 evidence meaning of those conclusions or select IAM implementation.
+Phase 005 may determine who/what is permitted to confirm, configure, operate, disclose, define normative metric state, or resolve authoritative assertions. It must **not** weaken or redefine Phase 004 evidence meanings, define Phase 006 metric/statistical behavior, or select IAM implementation.
 
-## Phase 006 — Health, Freshness, Quality, and Result-Timing Refinement
+## Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement
 
-Refine Expectation dimensions, Baseline classes/comparability, Assessment vocabularies, observed-absence coverage, execution-duration/latency dimensions, dependency-readiness criteria/classes, statistical uncertainty/significance, quality checks, downstream-health summarization, Databricks Metric Views/DQX fit, and **functional availability expectations for immediate operational checks, enriched health metrics, and health summaries**.
+**Status:** Future — not started.
+
+Phase 006 explicitly owns the detailed health/metric model, including:
+
+- metric-family taxonomy;
+- per-table/pipeline metric profiles;
+- core versus critical-field versus transformation-specific versus business-critical versus diagnostic/on-demand metrics;
+- output/load, volume, freshness, completeness, uniqueness, validity, schema, distribution/quantile, relational/join/reconciliation, and business-semantic metric families as applicable;
+- metric-bloat control and lifecycle/retirement principles;
+- hard thresholds, warning/failure margins, absolute/relative/asymmetric tolerance bands, Baseline-derived ranges, seasonality/cohort behavior, low-volume/sample-size uncertainty, and structural-change comparability;
+- Assessment/composite-health semantics without hiding dimension disagreement;
+- selective transformation-aware metric propagation/reconciliation across pipelines;
+- technical versus business health projections over the same truth;
+- Databricks Metric Views/DQX semantic fit;
+- functional availability expectations for immediate operational metrics, near-real-time core health, enriched DQ/distribution health, diagnostic/RCA metrics, and post-ops metrics.
+
+Phase 006 must not blindly calculate every possible metric, recursively copy every upstream statistic downstream, or make useful monitoring metrics synchronous production dependencies by default.
 
 ## Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement
 
-Refine Lineage taxonomy/historical topology evidence, Change Intent realization, execution reconstruction, Investigation lifecycle, prospective/actual Impact, consumer/version encounter patterns, consequence categories, safeguard placement/release, Execution Gate classes, timeout/fallback/escalation/override/recovery policy, and control-induced operational effects. Preserve Phase 004 evidence burdens.
+Refine Lineage taxonomy/historical topology evidence, Change Intent realization, execution reconstruction, Investigation lifecycle, prospective/actual Impact, consumer/version encounter patterns, consequence categories, **Lineage-aware health/metric propagation and transformation-reconciliation behavior**, safeguard placement/release, Execution Gate classes, timeout/fallback/escalation/override/recovery policy, and control-induced operational effects. Preserve Phase 004 evidence burdens and Phase 006 metric meanings.
 
 ## Phase 008 — Business Questioning and Explanation
 
-Define question types, audience-specific Explanation structures, visible evidence citations, Authorized Analytical Projection/redaction, layered Impact/control state, contemporaneous/retrospective/comparison views, reconstructed-versus-actual historical Explanation labeling, uncertainty communication, deterministic versus generative behavior, and progressive result maturity communication.
+Define question types, audience-specific Explanation structures, visible evidence citations, Authorized Analytical Projection/redaction, layered Impact/control state, contemporaneous/retrospective/comparison views, reconstructed-versus-actual historical Explanation labeling, uncertainty communication, deterministic versus generative behavior, progressive result maturity communication, and technical-versus-business metric/health presentation.
 
 ## Phase 009 — Integration Contracts, Source Authority, and Evidence Availability
 
-Determine required facts and actual evidence support for Databricks, Git repositories, GitHub Actions, DQX, Metric Views, Collibra, Immuta, downstream consumption/version evidence, Change Intent, safeguard/gate enforcement, authorization sources, and causal evidence inputs.
+Determine required facts and actual evidence support for Databricks, Git repositories, GitHub Actions, DQX, Metric Views, Collibra, Immuta, downstream consumption/version evidence, Change Intent, safeguard/gate enforcement, authorization sources, causal evidence inputs, and **accepted health/metric profiles**.
 
-Characterize **source production/availability time, collection latency, retention, query cost/availability, and control-enforcement observability** needed to satisfy the accepted evidence/timing semantics. Preserve the objective that baseline monitoring be independently deployed and avoid production repository/GitHub Actions changes where platform metadata is sufficient.
+Characterize **source production/availability time, collection latency, retention, query cost/availability, metric computation cost, and control-enforcement observability** needed to satisfy accepted evidence/timing semantics. Preserve the objective that baseline monitoring be independently deployed and avoid production repository/GitHub Actions changes where platform metadata is sufficient.
 
 ## Phase 010 — Technical Architecture
 
-Only now select implementation architecture. Evaluate evidence/history storage; graph-compatible Lineage; temporal/ledger history; ingestion/synchronization; Capability Authorization realization; Databricks deployment model; out-of-band passive monitoring; optional dependency-gating control-plane realization/availability/fallback; safeguard/quarantine realization; Explanation interface; testing/observability; causal reasoning implementation; and **fast-path versus asynchronous/deeper analysis architecture and performance budgets**.
+Only now select implementation architecture. Evaluate evidence/history storage; graph-compatible Lineage; temporal/ledger history; ingestion/synchronization; Capability Authorization realization; Databricks deployment model; out-of-band passive monitoring; optional dependency-gating control-plane realization/availability/fallback; safeguard/quarantine realization; metric precomputation/on-demand evaluation strategy; Explanation interface; testing/observability; causal reasoning implementation; and **fast-path versus asynchronous/deeper analysis architecture and performance budgets**.
 
 A key architecture criterion remains that **ungated production jobs must not depend on monitoring-framework availability**. Explicitly gated paths may require deliberate production-critical control availability under accepted policies.
 
 ## Phase 011 — MVP Implementation Planning
 
-Convert accepted architecture into implementation phases, interfaces, test strategy, onboarding/migration strategy, acceptance criteria, and concrete availability/latency targets for selected MVP monitoring-result, health, RCA, exposure, and control classes.
+Convert accepted architecture into implementation phases, interfaces, test strategy, onboarding/migration strategy, acceptance criteria, and concrete availability/latency targets for selected MVP monitoring-result, metric/health, RCA, exposure, and control classes.
 
 ## Phase 012 — MVP Implementation
 
