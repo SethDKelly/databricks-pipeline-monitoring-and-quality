@@ -1,0 +1,38 @@
+---
+description: Phase 005 Group 06 disclosure, Explanation, audience, opacity, and high-consequence communication guardrails.
+globs:
+alwaysApply: true
+---
+
+# Phase 005 Group 06 — disclosure governance
+
+Status: **Accepted — AUTH-044–AUTH-053. Group 07 — Consolidation / Exit Review is next and not started.**
+
+Preserve:
+
+- disclosure target = requester/audience + information/detail class + subject/context + purpose + temporal perspective + delivery scope;
+- audience labels do not grant authorization;
+- view ≠ publish/export/forward/client disclosure;
+- result visibility ≠ basis/detail/source/actor/authority visibility;
+- hidden/restricted basis ≠ absent basis;
+- safe abstraction/redaction/opacity must preserve proposition meaning and material uncertainty;
+- opaque existence is permitted only when existence itself may be disclosed;
+- aggregation/redaction ≠ automatic declassification;
+- evaluate material mosaic/differencing/repeated-query leakage, not just single-field permission;
+- technical/business/executive/audit views are one truth at different authorized detail;
+- high-consequence communication review/approval ≠ evidence sufficiency/causal confirmation/health/compliance/enforcement;
+- `supported` ≠ `confirmed`; `reachable` ≠ `exposed`; `not exposed to V` ≠ `fresh`; `hold decided` ≠ `hold enforced`; `safeguard active` ≠ `prevented exposure`; `released` ≠ `healthy`; `waived` ≠ clean pass;
+- confirmer/approver/operator/authority-holder/delegation/break-glass/service-principal metadata can be independently sensitive;
+- Annotation disclosed without exact author identity remains human-provided context where material;
+- retained historical Explanation ≠ reconstructed as-known-then Explanation ≠ retrospective Explanation;
+- current requester authorization governs present historical disclosure;
+- unknown/conflicting/unavailable/unsafe-to-project disclosure state never becomes permission;
+- withholding under unresolved disclosure does not fabricate explicit deny or false absence.
+
+Do not:
+
+- create a second business/executive truth model;
+- invent a new Disclosure/Report/Audience concept;
+- let communication review alter underlying causal/health/control state;
+- select UI, LLM, report-template, redaction, differential-privacy, query-throttling, or policy-engine architecture;
+- begin Group 07 without explicit user request.

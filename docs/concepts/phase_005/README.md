@@ -1,6 +1,6 @@
 # Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement
 
-**Status:** ACTIVE — Groups 01–05 accepted; AUTH-001–AUTH-043 accepted; Group 06 next
+**Status:** ACTIVE — Groups 01–06 accepted; AUTH-001–AUTH-053 accepted; Group 07 next
 
 ## Goal
 
@@ -8,7 +8,7 @@ Refine who/what is authoritative or permitted to establish, resolve, view, confi
 
 Phase 005 is a governance/authority/capability refinement phase. It must not select IAM technology, redefine Phase 004 evidence sufficiency, silently treat vendor/source ownership as authority, or prematurely design the Phase 006 metric/statistical/schema-health model.
 
-Phase 005 authority contracts use `AUTH-###` identifiers. They are refinement/governance contracts over accepted concepts, not new Phase 003 synchronizations and not substitutes for concept ownership. Group 01 exposed one genuine missing concept boundary: **Assertion Authority**, accepted as the 24th concept. Groups 02–05 required no additional concept.
+Phase 005 authority contracts use `AUTH-###` identifiers. They are refinement/governance contracts over accepted concepts, not new Phase 003 synchronizations and not substitutes for concept ownership. Group 01 exposed one genuine missing concept boundary: **Assertion Authority**, accepted as the 24th concept. Groups 02–06 required no additional concept.
 
 ## Accepted handoff from Phase 004
 
@@ -207,6 +207,45 @@ Key results:
 
 See [`05_high_consequence_control_confirmation_authority/README.md`](05_high_consequence_control_confirmation_authority/README.md).
 
+## Accepted Group 06 — Disclosure, Explanation & Audience Governance
+
+Group 06 governs **what an authorized audience may learn and how that truth may be released** without creating a separate truth model or allowing abstraction/publication to strengthen underlying state.
+
+Accepted contracts:
+
+- AUTH-044 — Disclosure Target, Audience, Purpose, Context, and Delivery Binding;
+- AUTH-045 — Result, Basis, Provenance, and Detail-Level Disclosure Separation;
+- AUTH-046 — Safe Abstraction, Redaction, Opaque Existence, and Minimization;
+- AUTH-047 — Composite, Mosaic, and Repeated-Query Inference-Leakage Governance;
+- AUTH-048 — Audience Projection Consistency Across Technical, Business, Executive, and Audit Views;
+- AUTH-049 — High-Consequence Communication Review, Approval, Release, Correction, and Retraction;
+- AUTH-050 — Status-Preserving Language and Non-Overstatement in Disclosure;
+- AUTH-051 — Disclosure of Human Attribution, Authority, Authorization, and Control Metadata;
+- AUTH-052 — Historical Disclosure, Retained Explanation, and Current-Authorization Separation;
+- AUTH-053 — Disclosure Conflict, Unknown/Unavailable Review State, and Safe Non-Disclosure.
+
+Key results:
+
+- disclosure binds requester/audience, information/detail class, subject/context, purpose, temporal perspective, and delivery scope;
+- audience labels such as technical/business/executive/client/audit are context, not permission sources;
+- permission to inspect privately does not automatically grant permission to publish, export, forward, or disclose to another audience;
+- result visibility can differ from metric/threshold/schema/evidence/source/actor/authority basis visibility;
+- restricted basis remains restricted rather than absent, while material limitations remain visible at an authorized abstraction when needed to avoid misleading interpretation;
+- safe abstraction can expose exact state, coarser category/range, redacted detail, opaque existence, or an explicit limitation only when the abstraction itself is authorized and semantically valid;
+- opaque existence may be shown only when existence itself is disclosable;
+- aggregation/redaction is not automatic declassification;
+- disclosure review considers material inference from combinations, counts, topology, timing, differencing, repeated narrowing, prior disclosures, authority metadata, and control metadata rather than evaluating each field in isolation;
+- technical, business, executive, and audit views are different authorized projections over the same truth and cannot intentionally contradict or strengthen it;
+- high-consequence statements may require separate compose/review/approve/release/correct/retract authority even when the underlying fact is internally viewable;
+- communication approval cannot create evidence sufficiency, causal confirmation, health, compliance, or enforcement;
+- simplified wording must preserve accepted status: supported ≠ confirmed, reachable ≠ exposed, not exposed to suspect V ≠ fresh/healthy, hold decision ≠ hold enforced, active safeguard ≠ prevented exposure, release ≠ health, waiver ≠ clean pass, authoritative standing ≠ factual infallibility;
+- Annotation author identity, Assertion Authority holder/basis, authorization membership path, causal confirmer/reviewer, gate/safeguard approver/operator, delegation, break-glass, service-principal identity, and other security/control metadata can be independently sensitive;
+- Annotation content shown without exact author identity remains labeled as human-provided context where that distinction is material;
+- historical retained Explanation, reconstructed `as-known-then` Explanation, retrospective Explanation, historical authorization/disclosure, and current requester disclosure remain separate;
+- unknown/conflicting/unavailable/unsafe-to-project disclosure state never becomes permission, and safe withholding does not fabricate an explicit deny or false absence.
+
+See [`06_disclosure_explanation_audience_governance/README.md`](06_disclosure_explanation_audience_governance/README.md).
+
 ## Delivery-group design
 
 The phase is reviewed in **seven logical groups**. The grouping is a design/review dependency, not an implementation or service boundary.
@@ -224,19 +263,17 @@ The phase is reviewed in **seven logical groups**. The grouping is a design/revi
 **Status:** Accepted — AUTH-024–AUTH-032; no new concept.
 
 ### Group 05 — High-Consequence Action, Control & Causal-Confirmation Authority
-**Status:** **Accepted — AUTH-033–AUTH-043; no new concept.**
+**Status:** Accepted — AUTH-033–AUTH-043; no new concept.
 
 ### Group 06 — Disclosure, Explanation & Audience Governance
-**Status:** **Next — not started.**
-
-Govern disclosure of metric/schema/threshold/policy/Lineage/causal/Impact/control state, including high-consequence approval/override/break-glass/delegation/automation detail; opacity; inference leakage; technical versus business projections; and review requirements for high-consequence communication.
-
-Boundary: Group 06 governs what authorized audiences may learn, not underlying permission/high-consequence action truth. Phase 008 retains detailed Explanation/question UX.
+**Status:** **Accepted — AUTH-044–AUTH-053; no new concept.**
 
 ### Group 07 — Phase 005 Consolidation / Exit Review
-**Status:** Planned.
+**Status:** **Next — not started.**
 
-Compose Groups 01–06 and verify authority remains scoped/historical, conflicts remain representable, permissions stay separate from truth/enforcement, restricted-data RCA remains useful, and no IAM/vendor/control/schema-validation architecture is selected.
+Compose Groups 01–06 across representative scenarios and verify that source standing, normative authority, permission, high-consequence action authority, and disclosure remain separate layers over the same evidence-backed truth.
+
+Boundary: Group 07 is a consolidation/exit review. It must not add architecture merely to close the phase, and it should add another AUTH contract only if a genuine unresolved semantic gap is exposed.
 
 ## Phase boundaries
 
@@ -252,16 +289,18 @@ Phase 005 must not:
 - make a critical or authoritative metric automatically control-eligible;
 - treat metadata/aggregate/derived evidence as automatically safe to disclose;
 - make group/role membership, asset containment, or Lineage imply capability inheritance without explicit rules;
-- treat unresolved authorization as allow or silently rewrite it to explicit deny;
-- treat Capability Authorization or approval as proof of external enforcement or successful action;
+- treat unresolved authorization or disclosure state as allow or silently rewrite it to explicit deny;
+- treat Capability Authorization, high-consequence approval, or communication approval as proof of external enforcement, successful action, evidence sufficiency, or truth;
 - treat break-glass as universal superuser access or automation as self-authorized;
 - turn gate override into readiness, safeguard release into health, retry into successful execution, or confirmation authority into evidence sufficiency;
+- create separate technical/business/executive truth models;
+- let redaction/opacity imply restricted entities/evidence/authority do not exist;
 - define the detailed Phase 006 metric/schema-health/statistical model or blindly propagate metrics/governance through Lineage;
-- select RBAC/ABAC/IAM/provider architecture, approval/workflow engine, scheduler/orchestrator, quarantine implementation, causal engine, graph, LLM, metric storage, rule engine, or persistence architecture;
+- select RBAC/ABAC/IAM/provider architecture, approval/workflow engine, redaction/declassification/privacy-budget technology, scheduler/orchestrator, quarantine implementation, causal engine, graph, LLM, metric storage, rule engine, or persistence architecture;
 - select Databricks/Collibra/Immuta/GitHub/Unity Catalog as universally authoritative by default;
 - select GitHub Actions, Unity Catalog, or the monitoring application as the universal schema-validation location;
-- begin Phase 006 health/statistical/timing refinement without explicit user direction.
+- begin Group 07 or Phase 006 without explicit user direction.
 
 ## Phase direction
 
-**Phase 005 Groups 01–05 are accepted with AUTH-001–AUTH-043. Group 06 — Disclosure, Explanation & Audience Governance is next and has not started.**
+**Phase 005 Groups 01–06 are accepted with AUTH-001–AUTH-053. Group 07 — Consolidation / Exit Review is next and has not started.**

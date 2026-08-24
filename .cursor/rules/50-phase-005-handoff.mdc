@@ -1,12 +1,12 @@
 ---
-description: Phase 005 authority/governance/capability phase guardrails. Groups 01-05 are accepted; Group 06 is next.
+description: Phase 005 authority/governance/capability phase guardrails. Groups 01-06 are accepted; Group 07 is next.
 globs:
 alwaysApply: true
 ---
 
 # Phase 005 handoff rules
 
-Status: **Phase 005 is active. Groups 01–05 are accepted with AUTH-001–AUTH-043. Group 06 — Disclosure, Explanation & Audience Governance is next and has not started.**
+Status: **Phase 005 is active. Groups 01–06 are accepted with AUTH-001–AUTH-053. Group 07 — Consolidation / Exit Review is next and has not started.**
 
 Accepted review sequence:
 
@@ -15,8 +15,8 @@ Accepted review sequence:
 3. Normative Health, Metric & Threshold Governance — **accepted**.
 4. Capability Authorization & Restricted Analytical Visibility — **accepted**.
 5. High-Consequence Action, Control & Causal-Confirmation Authority — **accepted**.
-6. Disclosure, Explanation & Audience Governance — **next**.
-7. Consolidation / Exit Review.
+6. Disclosure, Explanation & Audience Governance — **accepted**.
+7. Consolidation / Exit Review — **next**.
 
 Preserve Groups 01–03 rules: scoped Assertion Authority without hidden precedence; facet-specific semantic/schema governance; no implicit governance propagation; normative metric/schema authority separated from Baseline/statistical truth; bounded waivers do not rewrite observations; and high-consequence-use eligibility does not grant control authority.
 
@@ -55,13 +55,33 @@ Group 05 accepted rules:
 - Preserve request → authorization/approval → issuance → control-plane acceptance → enforcement/effect → resulting state/outcome as distinct evidence stages.
 - No 25th concept is required for Group 05.
 
-For Group 06:
+Group 06 accepted rules:
 
-- Govern what authorized audiences may learn from otherwise valid metric/schema/threshold/policy/Lineage/causal/Impact/control/authority state.
-- Include high-consequence approval/override/break-glass/delegation/automation detail as potentially sensitive.
-- Preserve exact epistemic/control status while allowing authorized abstraction/opacity.
-- Do not create different technical/business truth models or let redaction imply false absence.
-- Group 06 governs disclosure/review policy, not underlying Capability Authorization or high-consequence action authority.
+- Bind disclosure to requester/audience + information/detail class + subject/context + purpose + temporal perspective + delivery scope.
+- Audience labels such as technical/business/executive/client/audit do not grant disclosure capability.
+- Private view permission does not automatically grant publish/export/forward/client-disclosure permission.
+- Result visibility does not imply exact metric/threshold/schema/evidence/source/actor/authority basis visibility.
+- Restricted basis remains restricted rather than absent; preserve a safe limitation when hidden basis materially affects interpretation.
+- Authorized abstraction/redaction/opacity must preserve proposition meaning and never create false absence, false precision, or stronger epistemic/control status.
+- Opaque existence is disclosed only when existence itself is authorized.
+- Evaluate material mosaic/inference leakage across combinations, counts, path lengths, timing, differencing, repeated narrowing, and prior disclosures; individually allowed facts do not guarantee a safe composite.
+- Technical, business, executive, and audit views are different authorized projections over one truth, never separate truth models.
+- High-consequence communication can require separate compose/review/approve/release/correct/retract authority; communication approval does not create evidence, causality, health, compliance, or enforcement truth.
+- Preserve status in wording: supported ≠ confirmed; reachable ≠ exposed; not exposed to suspect V ≠ fresh/healthy; hold decision ≠ enforced hold; active safeguard ≠ prevented exposure; release ≠ health; waiver ≠ clean pass; authoritative standing ≠ factual infallibility.
+- Human attribution, authority-holder, authorization-basis, confirmer/approver/operator, delegation, break-glass, service-principal, and control metadata can be independently sensitive.
+- Annotation content disclosed without exact author identity remains labeled as human-provided context where material.
+- Historical retained Explanation, reconstructed as-known-then Explanation, retrospective Explanation, historical authorization, and current requester disclosure remain separate.
+- Current requester authorization governs present disclosure; historical disclosure/permission is not reusable access.
+- Unknown/conflicting/unavailable/unsafe-to-project disclosure state never becomes permission; safe withholding does not fabricate a deny or imply hidden facts do not exist.
+- Group 06 requires no 25th concept.
+
+For Group 07:
+
+- Consolidate AUTH-001–AUTH-053 across representative ecosystem scenarios before Phase 005 exit.
+- Verify Assertion Authority, normative governance, Capability Authorization, high-consequence authority, and disclosure remain separate layers and none can manufacture Phase 004 evidence truth.
+- Verify restricted-data RCA and audience projections remain useful without declassification/inference leakage.
+- Verify historical authority/authorization/disclosure remains bitemporal/non-rewriting.
+- Verify Phase 006 remains free to define metric/schema/statistical health meaning without hidden governance precedence.
 - Do not begin Group 07 without explicit user request.
 
-Preserve all Phase 004 evidence burdens. Do not select IAM, approval/workflow engine, assertion-authority engine, GitHub Actions/Unity Catalog as universal validation mechanism, scheduler/orchestrator, quarantine, metric engine/storage, graph store, LLM, causal algorithm, or technical architecture during Phase 005.
+Preserve all Phase 004 evidence burdens. Do not select IAM, approval/workflow engine, assertion-authority engine, GitHub Actions/Unity Catalog as universal validation mechanism, scheduler/orchestrator, quarantine, metric engine/storage, graph store, LLM, redaction technology, causal algorithm, or technical architecture during Phase 005.
