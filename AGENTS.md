@@ -2,130 +2,100 @@
 
 ## Project status
 
-**Phase 002 concept specification is complete with a post-exit addendum.** The original five groups accepted 20 concepts; Phase 003 Group 03 accepted **Propagation Safeguard** as the 21st concept through a narrow documented boundary reopen.
+Phase 002 originally accepted 20 concepts. Two explicit post-exit addenda are accepted: **Propagation Safeguard** and **Capability Authorization**. Current accepted concept count: **22**.
 
-**Phase 003 — Concept Synchronizations and Ecosystem Scenarios is active. Groups 01–04 are accepted; Group 05 — Downstream Impact, Annotation & Explanation is next.**
+**Phase 003 is active. Groups 01–04 are accepted. Capability Authorization is accepted as a pre-Group-05 input. Group 05 — Downstream Impact, Annotation & Explanation is next and has not started.**
 
-Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, services, deployment workflows, quarantine implementations, graph/causal engines, prototypes, or implementation scaffolding unless the user explicitly advances the project into technical/implementation design.
+Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, deployment workflows, quarantine implementations, IAM implementations, graph/causal engines, or prototypes unless the user explicitly advances the project into technical design.
 
-Treat this repository as a standalone data-pipeline monitoring/quality product. `docs/` is the design system of record.
+Treat `docs/` as the design system of record.
 
-## Read before changes
-
-Read `README.md`, `docs/README.md`, relevant foundation docs, `docs/reference/glossary.md`, decision records, accepted Phase 002 concepts/addenda, `docs/concepts/phase_003/README.md`, the synchronization template, and the active Phase 003 group.
-
-## Concept Design and synchronization discipline
+## Concept Design discipline
 
 - Start from actor/ecosystem outcome, not vendor/tool/storage shape.
 - Preserve accepted concept ownership/state boundaries.
-- A synchronization is not automatically a service call, workflow, transaction, event, database relation, or API.
-- Prefer partial ordering/independent branches where semantics allow it.
+- Synchronization is not automatically a service call, workflow, transaction, event, database relation, or API.
 - Synchronization order is never authority; a trigger is never causation.
 - Do not create umbrella state for convenience.
-- The current catalog has 21 accepted concepts. Reopen earlier boundaries only explicitly with rationale, as done for Propagation Safeguard.
+- Reopen earlier boundaries only explicitly with rationale.
 
-## Product invariants
+## Core invariants
 
 Preserve:
 
 - ecosystem ≠ repository;
 - logical pipeline ≠ Databricks job;
-- Entity Identity ≠ source name/reference;
-- Monitoring Scope ≠ ecosystem existence ≠ authorization;
-- Classification ≠ Policy Context ≠ authorization ≠ compliance;
+- Monitoring Scope ≠ Capability Authorization;
+- Responsibility Assignment ≠ Capability Authorization;
+- Classification ≠ Policy Context ≠ Capability Authorization ≠ compliance;
+- raw-data read authorization ≠ metadata/governance visibility ≠ derived health/metric visibility ≠ Lineage/RCA authorization ≠ job-operation authorization ≠ safeguard authority;
+- authorized derived evidence ≠ unrestricted evidence;
+- permission to act ≠ action succeeded;
 - Change Intent ≠ Deployment ≠ realized Change;
 - prospective Impact ≠ actual Impact ≠ retrospective cause;
 - planned topology ≠ active Lineage;
-- anticipated effect ≠ normative Expectation;
-- planned value ≠ empirical Baseline;
-- prospective reference preparation ≠ realized transition;
-- Deployment attempt ≠ intent association ≠ activation ≠ intended effect realized;
 - successful run ≠ timely run ≠ freshness ≠ data quality;
-- execution-duration Observation ≠ duration violation;
 - Observation ≠ Assessment;
 - missing telemetry ≠ observed absence/missing run/output;
 - raw difference ≠ material Change;
 - typical ≠ healthy;
 - atypical ≠ degraded/defective ≠ mandatory intervention;
 - Investigation ≠ evidence/causal truth;
-- Lineage reachability/evidence candidate ≠ cause;
+- Lineage evidence candidate ≠ cause;
 - first-observed localization ≠ root cause;
 - Causal Claim ≠ confirmed cause;
-- absence of contradiction ≠ confirmation;
-- Investigation closure ≠ Causal Claim confirmation;
+- Investigation closure ≠ confirmation;
 - Impact candidate ≠ exposure ≠ downstream effect ≠ business consequence;
 - safeguard proposal ≠ active safeguard;
-- quarantine ≠ proof of defect;
-- safeguard release ≠ proof of health;
+- quarantine ≠ defect proof;
+- release ≠ health proof;
 - Annotation ≠ structured operational truth;
 - Explanation ≠ independent truth source;
 - effective/event time ≠ recorded/knowledge time.
 
-## Runtime health rules
+## Capability Authorization rules
 
-- Treat run duration, start/completion timing, queue/wait behavior, dependency latency, and delivery readiness as first-class operational evidence/health dimensions.
-- Execution success never masks a timing, freshness, or data-quality issue.
-- Derive timing Observations only from sufficient compatible execution evidence; missing timestamps do not become zero duration.
-- Dependency readiness uses historical Lineage plus actual timing evidence; downstream success does not prove current upstream state was consumed.
-- Use the correct time-valid Expectation/Baseline after Group 02 reference transitions.
-- Ordinary Baseline variation must not become alert noise; raw differences need not become durable Change.
-
-## Analyst intervention rules
-
-- Analysts may manually open Investigation from material, atypical, violated, unresolved, or suspicious Assessments where authorized.
-- Baseline atypicality alone does not mandate Investigation.
-- Automatic Investigation initiation requires explicit accepted response criteria; never invent severity/urgency policy.
-- Insufficient evidence may warrant human review in high-risk contexts without becoming a fabricated failure.
-- Human research routes to the concept owning its meaning: reproducible fact → Observation; realized difference → Change; causal proposition → Causal Claim; context → Annotation; structured plan/norm/governance truth → its owning concept.
+- Capability Authorization answers whether a principal may perform a named capability on a subject/context/time; it does not select IAM/enforcement architecture.
+- Never infer authorization from Responsibility Assignment, Policy Context, Classification, Monitoring Scope, repository ownership, commit history, job creator identity, or platform-administrator status.
+- Raw-data read, derived health/metric visibility, governance metadata visibility, Lineage/RCA participation, job/run operational control, safeguard actions, and Explanation access are independently resolvable.
+- A restricted-data analyst may perform approved RCA over safe aggregate/redacted/opaque evidence without direct row access.
+- A job operator may hold job-operation authority without raw-data read authority.
+- Analytical visibility never implies permission to retry/update/modify a job or activate a safeguard.
+- Derived metrics/thresholds/Lineage/policy/causal details may themselves be restricted; do not assume metadata is safe.
+- Missing authorization evidence is not permission.
+- Preserve authorization effective time and knowledge time for historical reconstruction.
+- Permission to perform an action is not evidence the action succeeded; resulting facts belong to Deployment/Execution History/Observation/etc.
 
 ## Investigation / causality rules
 
-- Investigation organizes bounded inquiry around the outcome/question; it does not confirm cause.
-- Use historical typed Lineage effective during the incident window to discover evidence candidates; current/planned topology cannot substitute silently.
-- Preserve relationship type, direct/transitive path, provenance, completeness, inferred/asserted state, and out-of-scope/restricted boundaries.
-- First-observed deviation is localization within monitored evidence, never automatic root cause.
-- Assemble both supporting and contradicting evidence from Execution History, Observation, Assessment, Change, Deployment, Change Intent, Baseline/Expectation, Lineage, and Propagation Safeguard.
-- Missing evidence cannot become reassuring negative/exclusion evidence. `unchanged`, `not consumed`, or similar negatives require sufficient source/topology coverage.
-- Never infer cause from temporal proximity, Lineage, Deployment, realized Change, safeguard state, Prospective Impact Profile, or intent consistency alone.
-- Every causal proposition belongs in explicit Causal Claim with a defined outcome/cause condition and evidence links.
-- Evaluate claims across temporal ordering, relationship applicability, actual encounter/consumption where required, realized state/change, semantic/mechanism compatibility, controlled contrasts, alternatives, and evidence coverage rather than an unexplained score.
-- Reliable evidence that the effect predates a proposed cause materially contradicts that claim.
-- Preserve supporting and contradicting evidence simultaneously where applicable.
-- Multiple contributing/competing claims and unresolved outcomes are valid; never force one root cause.
-- `confirmed` requires an explicit accepted evidence/authority standard. Automated ranking/support cannot manufacture confirmation.
-- Investigation closure does not upgrade a Causal Claim.
-- Late evidence can reopen Investigation/revise claims while preserving earlier knowledge-time state.
-- Prospective blast-radius context may guide where to inspect but is not retrospective causal evidence by itself.
-- Active safeguard can be a causal condition for delivery delay only when enforcement/timing evidence supports that separate claim; it is not proof that protected data was defective.
+- Investigation starts from a question/outcome, not a presumed cause.
+- Use historical typed Lineage for candidate discovery; current/planned topology cannot silently replace incident-time topology.
+- First-observed deviation is localization, not root cause.
+- Preserve supporting and contradicting evidence.
+- Negative/exclusion evidence requires sufficient coverage.
+- Never infer cause from temporal proximity, Lineage, Deployment, realized Change, safeguard state, Prospective Impact, or intent consistency alone.
+- Every causal proposition belongs in Causal Claim.
+- Multiple contributors/unresolved outcomes are valid.
+- `confirmed` requires an explicit accepted evidence/authority standard; do not invent it.
+- Human reproducible findings use Observation/Change; causal interpretations use Causal Claim; contextual notes use Annotation.
 
-## Propagation Safeguard rules
+## Runtime / safeguard rules
 
-- Propagation Safeguard is protective control state, not health/cause truth.
-- Assessment/Impact/Change Intent may motivate `propose`; they do not automatically establish `active`.
-- Activation requires explicit authority and enforcement evidence under applicable semantics.
-- Use Lineage/Impact to inform the least disruptive effective placement; do not assume source-level quarantine is always correct.
-- If no output exists, hold downstream advancement/current-cycle publication rather than inventing a quarantined object.
-- Safeguard-induced delay/non-delivery remains observable/assessable.
-- Release is explicit and does not itself prove health.
+- Treat execution duration/dependency latency as first-class operational evidence.
+- Use the correct time-valid Expectation/Baseline.
+- Ordinary Baseline variation must not become alert noise.
+- Propagation Safeguard is protective state, not health/cause truth.
+- Activation requires explicit safeguard capability/authority and enforcement evidence where applicable.
+- Safeguard-induced delay remains observable/assessable.
 
-## Impact rules
+## Group 05 preparation rules
 
-- Treat downstream Lineage as candidate discovery; preserve reachability/exposure/effect/consequence separately.
-- Prospective blast-radius profile cannot be represented as actual downstream Impact.
-- Any proposition that an upstream condition caused a downstream effect belongs in Causal Claim rather than being hidden in Impact.
-
-## Historical/graph/security rules
-
-- Preserve ledger-like append/supersede/correction semantics.
-- Treat Entity Identity + typed temporal Lineage as graph-compatible without selecting graph technology.
-- Restricted evidence must not be retrieved merely to leak it through summaries.
-- Monitoring visibility does not grant raw-data access or production-control authority.
-- Do not select graph database, event store, quarantine store, workflow engine, event bus, service decomposition, LLM, or causal algorithm before technical design.
+- **Do not begin Group 05 without explicit user request.**
+- When Group 05 begins, authorized analytical projection must be first-class in Impact/Explanation synchronizations.
+- Restricted raw-data access must not automatically block authorized health/RCA analysis.
+- Policy/restriction/responsibility/health transparency must not become access grants.
+- Any causal assertion about downstream effect remains Causal Claim, not Impact or Explanation narrative.
 
 ## Tooling stance
 
-Databricks Metric Views/DQX are favored later evaluations, not settled architecture. Integrate before duplicate; Collibra/Immuta remain optional until explicitly authoritative for required categories.
-
-## Canonical scenario
-
-Use A+B→C to test planned blast radius, time-valid references, run duration/dependency latency, ordinary versus material variation, independent quality dimensions, first-observed localization, competing causal claims with support/contradiction, analyst research, protective quarantine, multiple causes, downstream exposure, and contemporaneous versus retrospective knowledge—without collapsing any of those truths.
+Databricks Metric Views/DQX are favored later evaluations, not settled architecture. Collibra/Immuta remain optional until explicitly authoritative for required categories. Do not select RBAC/ABAC, IAM provider, graph database, event store, quarantine store, LLM, or causal algorithm prematurely.

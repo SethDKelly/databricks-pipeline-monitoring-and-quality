@@ -5,7 +5,7 @@ This glossary is the canonical vocabulary reference. Terms may evolve during lat
 ## Core ecosystem
 
 ### Data ecosystem
-The connected set of repositories, Change Intents, Deployments, executions, data assets, dependencies, Lineage relationships, governance metadata, health/quality evidence, Investigations, causal reasoning, Impact context, Propagation Safeguards, downstream consumers, and Explanations relevant to monitoring. An entity may be known while outside Monitoring Scope.
+The connected set of repositories, Change Intents, Deployments, executions, data assets, dependencies, Lineage relationships, governance metadata, Capability Authorization state, health/quality evidence, Investigations, causal reasoning, Impact context, Propagation Safeguards, downstream consumers, and Explanations relevant to monitoring. An entity may be known while outside Monitoring Scope.
 
 ### Logical pipeline
 A logical data-processing responsibility that transforms or moves data. It may span one or more jobs/tasks and does not automatically equal a repository.
@@ -16,10 +16,7 @@ A source-control boundary and provenance context, not the product reasoning boun
 ### Job / Task / Run
 A Job is a Databricks orchestration definition; Task is a unit inside it; Run/execution instance is time-bounded actual work established by execution evidence.
 
-### Code revision
-A source-controlled version of code/configuration relevant to Deployment provenance.
-
-## Scope and identity
+## Scope, identity, and authorization
 
 ### Monitoring Scope — Accepted
 The time-aware declaration of whether the product is responsible for monitoring an Entity Identity. Scope is not authorization and does not implicitly propagate through Lineage.
@@ -27,19 +24,37 @@ The time-aware declaration of whether the product is responsible for monitoring 
 ### Entity Identity — Accepted
 Functionality for deciding when source-specific references denote the same logical entity across systems/time while preserving ambiguity, separation, validity, and correction provenance.
 
+### Capability Authorization — Accepted post-exit addendum
+Functionality for resolving whether a principal may perform a named capability on a subject/context/time, with provenance, conditions, effective interval, conflict/unknown behavior, and historical revision.
+
+Capability classes are independently resolvable. The model must be able to distinguish direct/raw data read, sensitive-value access, metadata/governance visibility, derived health/metric visibility, Lineage/RCA participation, operational job/run actions, safeguard actions, and Explanation/report access without selecting an IAM implementation.
+
+Responsibility Assignment, Classification, Policy Context, Monitoring Scope, repository ownership, job creator identity, and platform administration do not silently grant Capability Authorization.
+
+### Authorized evidence view
+The concept/evidence projection a principal is permitted to inspect for a specific analytical purpose. It may expose approved aggregate health metrics, Assessment status, execution timing, redacted/opaque Lineage, policy/restriction summaries, responsibility context, Causal Claim state, Impact, and safeguard state while withholding restricted rows, columns, thresholds, entity identities, or evidence details.
+
+Derived evidence is not automatically unrestricted. Counts, metrics, thresholds, schema/Lineage metadata, policy labels, and causal conclusions may themselves be sensitive.
+
+### Direct/raw data access
+Permission to inspect underlying rows/records/values or sensitive fields. Lack of direct-data access does not automatically prevent independently authorized monitoring, Investigation, RCA, or Explanation.
+
+### Operational job authority
+Permission to perform a named job/run operation where later defined. It is independent from raw-data read and analytical visibility. Authorization to act does not establish that the action succeeded.
+
 ## Semantics, responsibility, governance, policy
 
 ### Semantic Definition — Accepted
 Provenance-bearing semantic assertions describing what an entity means in a relevant business/technical context/time.
 
 ### Responsibility Assignment — Accepted
-Who bears a named responsibility for an identified subject/time. Responsibility does not imply universal authority or authorization.
+Who bears a named responsibility for an identified subject/time. Responsibility does not imply universal authority or Capability Authorization.
 
 ### Classification — Accepted
 Category membership under named governance/sensitivity vocabularies, preserving source meaning/provenance/time/conflict.
 
 ### Policy Context — Accepted
-Declared policy applicability/handling context for subject/context/time without claiming enforcement, legal interpretation, or compliance.
+Declared policy applicability/handling context for subject/context/time without claiming enforcement, Capability Authorization, legal interpretation, or compliance.
 
 ### PII / PHI / HIPAA-related policy context
 Sensitive-data/legal-organizational categories/context according to applicable definitions. Presence of such metadata does not itself establish compliance.
@@ -49,30 +64,25 @@ Sensitive-data/legal-organizational categories/context according to applicable d
 ### Expectation — Accepted
 A provenance-bearing normative assertion describing what should be true/acceptable for subject/dimension/context/time.
 
-A Change Intent may prompt explicit establishment/revision of a post-change Expectation, but anticipated effects do not become normative automatically.
-
-### Quality expectation
-An Expectation specifically describing acceptable data-quality behavior.
-
 ### Baseline — Accepted
-Descriptive reference behavior derived from comparable Observation evidence. It preserves evidence population/window, comparison context, derivation meaning, version, and limitations.
-
-A Change Intent can register a prospective comparability break; realization evidence is required before the break becomes effective. A new Baseline must be derived from post-change Observations rather than intended values. Ordinary variation appropriate to the comparison context should remain within the Baseline model rather than becoming alert noise simply because consecutive runs differ.
+Descriptive reference behavior derived from comparable Observation evidence. Ordinary variation appropriate to the comparison context should remain within the Baseline model rather than becoming alert noise simply because consecutive runs differ.
 
 ### Observation — Accepted
-A provenance-bearing measured/retrieved fact. Observation preserves measurement meaning/time/provenance without declaring health, anomaly, staleness, intent conformance, or cause. Missing evidence is not observed absence.
+A provenance-bearing measured/retrieved fact. Missing evidence is not observed absence.
 
 ### Assessment — Accepted
 A dimension-scoped interpretation of authorized Observation evidence against explicit Expectation and/or comparable Baseline context, preserving its basis/history.
 
-### Freshness / Staleness
-Freshness is observed currency/timeliness. Staleness is a normative Assessment that observed freshness violates an applicable freshness Expectation.
+An actor may be authorized to see an Assessment result while some underlying Observation values, thresholds, or Baseline details remain restricted.
 
 ### Execution duration
-Elapsed execution time derived from compatible execution start/completion evidence. Duration is an Observation before it is compared with a Baseline or Expectation. A successful run may still violate a duration/completion requirement.
+Elapsed execution time derived from compatible execution start/completion evidence. Duration is an Observation before it is compared with a Baseline or Expectation.
 
 ### Operational latency / readiness
-Timing relationship among upstream execution/output availability and downstream execution/delivery needs. Dependency delay can materially affect ecosystem health even when row-level/statistical quality remains acceptable.
+Timing relationship among upstream execution/output availability and downstream execution/delivery needs.
+
+### Freshness / Staleness
+Freshness is observed currency/timeliness. Staleness is a normative Assessment that observed freshness violates an applicable freshness Expectation.
 
 ### Degradation
 A meaningful worsening supported by explicit directional/normative interpretation. Baseline deviation or realized Change alone is insufficient.
@@ -80,151 +90,99 @@ A meaningful worsening supported by explicit directional/normative interpretatio
 ## History, lineage, and change
 
 ### Change Intent — Accepted
-Functionality for registering an intended modification and anticipated effects before realization. It preserves target, planned/effective context, monitoring implications, provenance, and revision/withdrawal history.
-
-Anticipated effects are not automatically Expectations, Observations, Changes, actual Impact, or causes.
+Functionality for registering an intended modification and anticipated effects before realization. Anticipated effects are not automatically Expectations, Observations, Changes, actual Impact, or causes.
 
 ### Prospective Impact Profile
-A pre-realization downstream candidate/blast-radius view built from Change Intent, active Lineage, planned-only topology, and authorized criticality/semantic/governance context. It may inform review, testing, analyst attention, or safeguard proposal. It does not establish actual exposure, downstream effect, business consequence, causal proof, or a numeric probability/severity score unless a later accepted model supports one.
+A pre-realization downstream candidate/blast-radius view built from Change Intent, active Lineage, planned-only topology, and authorized criticality/semantic/governance context. It does not establish actual exposure, downstream effect, business consequence, causal proof, or a numeric probability/severity score.
 
 ### Execution History — Accepted
-Functionality for reconstructing actual execution instances/lifecycle states and provenance over time. Missing telemetry does not create a fictional missing execution.
+Functionality for reconstructing actual execution instances/lifecycle states and provenance over time. Missing telemetry does not create a fictional execution or absence.
 
 ### Deployment — Accepted
-Functionality for recording deployment attempts and resolving which source/configuration state was actually active for a target/time. Attempt, workflow success, and activation remain distinct; activation does not prove data effect or health.
+Functionality for recording deployment attempts and resolving which source/configuration state was active for a target/time. Attempt/workflow success/activation remain distinct; activation does not prove data effect or health.
 
 ### Lineage — Accepted
 Functionality for maintaining/traversing typed, directed, temporal, provenance-bearing relationships among Entity Identities. Current topology does not overwrite historical topology; planned topology is not active until evidence establishes it.
 
-Lineage requires graph-compatible semantics, but no graph database, query language, or graph service has been selected.
-
-### Data lineage
-How data assets derive from or flow into other data assets.
-
-### Operational dependency lineage
-How pipelines/jobs/executions depend on other availability/execution conditions.
-
-### Deployment provenance
-How repositories/revisions/configuration/Deployments/active targets/executions relate over time. It remains distinct from data derivation Lineage.
+Lineage requires graph-compatible semantics, but no graph database/query language/service has been selected. A principal can receive an authorized redacted/opaque Lineage view without receiving direct-data access or every node identity.
 
 ### Change — Accepted
-Functionality for identifying/describing a realized difference or state transition established by evidence, preserving before/after or source-event basis, time, magnitude, provenance, comparability, and uncertainty.
-
-Change does not by itself mean intended, unintended, healthy, degraded, valid, invalid, or causal. Raw numerical difference need not become a durable Change record unless later significance semantics justify it.
-
-### Evidence candidate
-An entity, relationship/path, execution, state, or context identified as structurally relevant to an Investigation and therefore worth evidence inspection. Historical Lineage is a primary candidate-discovery mechanism. Candidate status is not causal support.
-
-### First-observed localization
-The earliest monitored point on a relevant historical path where a related deviation is established. It localizes the problem within observed coverage but does not prove origin/root cause. Upstream monitoring boundaries, restricted nodes, or missing evidence may mean the actual origin lies beyond the first observed point.
-
-### Evidence-ledger semantics
-A cross-cutting requirement that material historical facts/assertions remain provenance-bearing, reconstructable, and corrected through append/supersede relationships rather than invisible mutation.
-
-This is not a blockchain, event-sourcing, temporal-database, or persistence selection.
+Functionality for identifying/describing a realized difference or state transition established by evidence. Change does not itself mean intended, healthy, degraded, valid, invalid, or causal.
 
 ### Effective/event time
 When a condition was true or an event occurred.
 
 ### Recorded/knowledge time
-When the monitoring ecosystem learned or recorded it. Historical replay may need both.
+When the monitoring ecosystem learned or recorded it.
 
 ## Investigation, causality, impact, protection, and communication
 
 ### Investigation — Accepted
 Functionality for organizing a bounded inquiry into a question, symptom, unexpected outcome, or uncertainty by linking evidence, Causal Claims, Impact analysis, and Annotations without becoming the source of those facts/conclusions.
 
-An Investigation can close unresolved or multi-causal. Analysts may open Investigation manually when evidence is material, suspicious, atypical, violated, or unresolved; automatic initiation requires explicit accepted response criteria rather than hidden severity rules. Investigation scope starts from the outcome/question rather than a presumed cause and may be refined as evidence arrives.
+Investigation/RCA capability does not imply direct-data access or complete evidence visibility. Restricted evidence may remain opaque while the Investigation preserves the limitation.
+
+### Evidence candidate
+An entity/relationship/state identified as structurally or temporally relevant enough to inspect during Investigation. Candidate relevance is not causal support by itself.
+
+### First-observed localization
+The earliest monitored point where a related deviation becomes visible within available evidence/coverage. It narrows the problem but is not root cause.
 
 ### Causal Claim — Accepted
-A provenance-bearing proposition that one or more conditions caused, contributed to, enabled, prevented, or materially influenced a defined outcome, with explicit epistemic status plus supporting/contradicting evidence and revision history.
-
-Correlation, Lineage, Deployment timing, realized Change, safeguard state, prospective blast radius, and intent consistency are not confirmed causation by themselves.
-
-### Causal support / contradiction
-Causal evaluation preserves separate evidence dimensions including temporal ordering, relationship applicability, actual encounter/consumption where required, realized state/change, semantic/mechanism compatibility, comparable contrast/intervention evidence, alternative explanations, and evidence coverage.
-
-Supporting and contradicting evidence remain separately traceable rather than collapsing into an unexplained score. Reliable evidence that the effect predates the proposed cause materially contradicts the claim. Negative/unchanged evidence is meaningful only when evidence coverage is sufficient.
-
-### Root-cause hypothesis
-A Causal Claim in a proposed/supported but not confirmed epistemic state.
-
-### Attribution
-A causal contribution statement represented through Causal Claim role/status where the available evidence supports it. Quantitative percentage allocation is not assumed.
+A provenance-bearing proposition that one or more conditions caused/contributed/enabled/materially influenced a defined outcome, with explicit epistemic status plus supporting/contradicting evidence and revision history.
 
 ### Confirmed cause
-A Causal Claim that satisfies an explicit accepted evidence/authority standard. The exact standard remains deferred to Phase 004; human title, automated ranking, historical Lineage, temporal proximity, and lack of known alternatives are insufficient by themselves.
-
-### Analyst research
-Human research during Investigation uses the concept owning the result: reproducible measurement/fact → Observation; evidence-established realized difference → Change; causal proposition → Causal Claim; contextual commentary → Annotation; structured plan/norm/responsibility/governance assertion → its owning concept. Analyst participation therefore strengthens the same provenance-bearing model instead of creating a parallel note store.
+A Causal Claim satisfying an explicit accepted evidence/authority standard. The exact standard remains deferred.
 
 ### Impact — Accepted
-Functionality for reasoning about downstream consequences while keeping separate:
-
-- candidate/reachability through authorized Lineage;
-- actual exposure/consumption of an affected state;
-- observed downstream effect/condition evidence;
-- evidenced technical, analytical, or business consequence.
-
-Reachability is not exposure; exposure is not automatically degradation; business consequence is not assumed from criticality or report existence. A Prospective Impact Profile uses only candidate/risk context before realization and must not be presented as actual Impact or retrospective causal evidence.
+Functionality for reasoning about downstream consequences while keeping separate candidate/reachability, actual exposure/consumption, observed downstream effect, and evidenced technical/analytical/business consequence.
 
 ### Propagation Safeguard — Accepted post-exit addendum
-Functionality for representing a protective proposed/active/released hold or quarantine at a defined output/consumption boundary. A safeguard may be precautionary; active quarantine does not prove the data is defective. `proposed` is distinct from `active`, activation requires accepted authority/enforcement evidence, and release does not prove health.
-
-If no qualifying output exists, a safeguard can hold downstream advancement/current-cycle publication rather than fabricating a quarantined data object. Safeguard state may itself cause operational delay/non-delivery that remains observable and assessable. If asserting that the safeguard caused/contributed to a delivery delay, that proposition belongs in Causal Claim with enforcement/timing evidence.
+Functionality for representing a protective proposed/active/released hold or quarantine at a defined output/consumption boundary. Safeguard action authority is separately resolved through Capability Authorization.
 
 ### Analyst intervention
-Human research through Investigation or an authorized safeguard decision. It is not a separate accepted concept at this stage.
+Human research through Investigation or an authorized operational/safeguard decision. It is not a separate concept.
 
 ### Annotation — Accepted
-Attributed human-authored context attached to ecosystem state without mutating source evidence or silently substituting for structured Change Intent, Expectation, Responsibility Assignment, Classification, Policy Context, Causal Claim, or confirmation.
+Attributed human-authored context attached to ecosystem state without mutating source evidence or silently substituting for structured truth or authorization.
 
 ### Explanation — Accepted
-Authorization- and time-aware communication composed from concept state/evidence. Explanation preserves material statement epistemic labels, source traceability, redaction/omission context, and the distinction between what was known at an earlier knowledge time and what a later retrospective view knows now.
-
-Explanation is not an independent truth source.
+Authorization- and time-aware communication composed from concept state/evidence. Different audiences may receive different safe projections, but conclusions remain evidence-consistent and restricted evidence is not retrieved merely to leak it through prose.
 
 ## Evidence and provenance
 
 ### Evidence
-A provenance-bearing fact or assertion used to support Assessment, Investigation, Causal Claim, Impact, safeguard decisions, or Explanation. Observation is the primary accepted concept for measured/retrieved facts; other concepts provide their own provenance-bearing assertions/state.
+A provenance-bearing fact/assertion used to support Assessment, Investigation, Causal Claim, Impact, safeguard decisions, or Explanation.
 
 ### Observed absence
-A negative fact supported by sufficient source/query coverage. Missing telemetry is not observed absence and cannot establish a missing run/output.
-
-### Negative / exclusion evidence
-A statement such as `A did not change`, `C did not consume B2`, or `no relevant upstream failure occurred` can weaken/exclude a Causal Claim only when the evidence source/topology coverage is sufficient for the relevant condition. Missing monitoring cannot be converted into exclusion evidence.
+A negative fact supported by sufficient source/query coverage. Missing telemetry is not observed absence.
 
 ### Provenance
-Information describing where a fact/assertion/definition/classification/intent/deployment/relationship/Expectation/Baseline/Observation/Assessment/Change/claim/annotation/impact/safeguard state came from, who/what asserted or derived it, and relevant temporal/version context.
+Information describing where a fact/assertion/definition/classification/intent/deployment/relationship/Expectation/Baseline/Observation/Assessment/Change/claim/annotation/impact/safeguard/authorization state came from and its temporal/version context.
 
 ### Authority / source precedence
-Rules determining which source/actor is authoritative for a category/subject/context/time. The project has no universal authority rule; unresolved conflicts remain conflicts until accepted category-specific semantics exist.
-
-## Governance roles/metadata
-
-### Technical owner / Business accountable party / Data steward
-Distinct Responsibility Assignment types.
+Rules determining which source/actor is authoritative for a category/capability/subject/context/time. The project has no universal authority rule; unresolved conflicts remain conflicts until accepted category-specific semantics exist.
 
 ## Key non-equivalences
 
+- Monitoring Scope ≠ Capability Authorization;
+- Responsibility Assignment ≠ Capability Authorization;
+- Policy Context ≠ Capability Authorization;
+- raw-data access ≠ analytical visibility ≠ job-operation authority ≠ safeguard authority;
+- authorized derived evidence ≠ unrestricted evidence;
+- permission to act ≠ action succeeded;
 - successful execution ≠ timely execution ≠ freshness ≠ data quality;
-- execution-duration Observation ≠ duration violation;
 - raw difference ≠ material Change;
 - atypicality ≠ normative violation ≠ mandatory intervention;
-- prospective Impact ≠ actual Impact ≠ retrospective cause;
+- prospective Impact ≠ actual exposure/effect/consequence ≠ retrospective cause;
 - Lineage reachability/evidence candidate ≠ cause;
 - first-observed localization ≠ root cause;
-- temporal proximity ≠ causal proof;
-- absence of contradiction ≠ confirmation;
-- Investigation closure ≠ Causal Claim confirmation;
-- multiple contributors ≠ one forced root cause;
+- Causal Claim ≠ confirmed cause;
+- Investigation closure ≠ confirmation;
 - safeguard proposal ≠ active safeguard;
 - quarantine ≠ defect proof;
 - release ≠ health proof;
-- missing telemetry ≠ observed absence/missing output;
-- reachability ≠ exposure ≠ downstream effect ≠ business consequence;
-- correlation ≠ confirmed cause.
+- missing telemetry ≠ missing run/output.
 
 ## Concept Design
 
@@ -232,4 +190,4 @@ Distinct Responsibility Assignment types.
 An independently understandable unit of functionality with a clear purpose, operational principle, state, and actions, composed via synchronizations.
 
 ### Synchronization
-Defined coordination between independent concepts without collapsing their purposes/state into one concept.
+Defined coordination between independent concepts without collapsing their purposes/state into one concept or selecting technical architecture.

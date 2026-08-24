@@ -2,11 +2,11 @@
 
 ## Status
 
-**21 concepts are Accepted.** Phase 002 originally exited with 20 accepted concepts. Phase 003 Group 03 exposed one missing independent operational-protection behavior, and **Propagation Safeguard** was accepted as a narrow post-exit Phase 002 addendum.
+**22 concepts are Accepted.** Phase 002 originally exited with 20 accepted concepts. Later Phase 003 work exposed two missing independent behaviors: **Propagation Safeguard** and **Capability Authorization**, each accepted through a narrow post-exit addendum.
 
-The project uses Concept Design to define independently understandable units of functionality. Concepts remain implementation-neutral and synchronize rather than collapse into vendor, service, storage, schema, or UI boundaries.
+The project uses Concept Design to define independently understandable units of functionality. Concepts remain implementation-neutral and synchronize rather than collapse into vendor, service, storage, schema, IAM, or UI boundaries.
 
-Use [`concept_template.md`](concept_template.md) as the specification checklist. The completed original review and later addendum are in [`phase_002/README.md`](phase_002/README.md) and [`phase_002/addenda/`](phase_002/addenda/).
+Use [`concept_template.md`](concept_template.md) as the specification checklist. The original review and later addenda are in [`phase_002/README.md`](phase_002/README.md) and [`phase_002/addenda/`](phase_002/addenda/).
 
 ## Accepted concepts
 
@@ -21,8 +21,8 @@ Use [`concept_template.md`](concept_template.md) as the specification checklist.
 - [`Policy Context`](phase_002/02_semantics_governance_policy/policy_context.md) — declared policy/handling applicability without enforcement/compliance claims.
 
 ### Group 03 — Health Evaluation
-- [`Expectation`](phase_002/03_health_evaluation/expectation.md) — normative criteria for what should be acceptable.
-- [`Baseline`](phase_002/03_health_evaluation/baseline.md) — descriptive reference behavior derived from comparable evidence.
+- [`Expectation`](phase_002/03_health_evaluation/expectation.md) — normative criteria for acceptable behavior.
+- [`Baseline`](phase_002/03_health_evaluation/baseline.md) — descriptive reference behavior from comparable evidence.
 - [`Observation`](phase_002/03_health_evaluation/observation.md) — provenance-bearing measured/retrieved facts.
 - [`Assessment`](phase_002/03_health_evaluation/assessment.md) — dimension-scoped interpretation against explicit Expectation/Baseline basis.
 
@@ -40,48 +40,34 @@ Use [`concept_template.md`](concept_template.md) as the specification checklist.
 - [`Annotation`](phase_002/05_investigation_impact_explanation/annotation.md) — attributed human context without source-evidence mutation or hidden structured truth.
 - [`Explanation`](phase_002/05_investigation_impact_explanation/explanation.md) — authorization/time-aware evidence-grounded communication with statement-to-basis traceability.
 
-### Post-exit addendum — Operational protection
-- [`Propagation Safeguard`](phase_002/addenda/propagation_safeguard.md) — proposed/active/released protective hold or quarantine state for an explicit data-output/consumption boundary; it does not turn protective action into health or causal truth.
+### Post-exit addenda
+- [`Propagation Safeguard`](phase_002/addenda/propagation_safeguard.md) — proposed/active/released protective hold or quarantine state for an explicit output/consumption boundary.
+- [`Capability Authorization`](phase_002/addenda/capability_authorization.md) — principal/capability/subject authorization state separating raw-data visibility, analytical visibility, operational control, and safeguard authority.
 
-## Accepted boundary changes from Phase 001 discovery
+## Core access boundary
 
-- `Monitored Scope` → **Monitoring Scope**.
-- `Asset Identity` → **Entity Identity**.
-- `Description / Semantics` → **Semantic Definition**.
-- `Ownership` → **Responsibility Assignment**.
-- **Classification** and **Policy Context** are separate.
-- **Baseline** is separate from normative Expectation.
-- **Observation** is separate from Assessment.
-- `Deployment Record` → **Deployment**.
-- **Change Intent** is separate from realized Change.
-- **Causal Claim** is explicit rather than hidden inside Investigation.
-- `Annotation / Confirmation` → **Annotation** plus explicit Causal Claim confirmation/rejection semantics.
-- `Report / Explanation` → **Explanation**; report/chat/dashboard forms are presentation realizations.
-- Phase 003 later introduced **Propagation Safeguard** because protective propagation state had no valid owner among the original 20 concepts.
+The concept model now explicitly distinguishes:
 
-## Cross-cutting accepted model
+**responsibility/policy context → capability authorization → authorized evidence/action view**
+
+without making Responsibility Assignment or Policy Context themselves authorization sources.
+
+A restricted-data analyst may be permitted to inspect approved aggregate health metrics, execution timing, Assessments, redacted Lineage, policy/restriction summaries, responsibility context, causal status, Impact, and safeguards while being denied rows, sensitive columns, thresholds, identities, or other restricted evidence. A job operator can separately be authorized to retry/update/control a job without receiving raw-data read permission.
+
+Derived evidence is not automatically unrestricted; authorization applies to metadata/metrics/topology/causal detail independently where necessary.
+
+## Cross-cutting reasoning model
 
 The reasoning chain can distinguish:
 
-**identified subject → monitoring/governance context → planned intent / prospective downstream profile → active Deployment → execution/timing/dependency evidence → Observation → time-valid Assessment → realized Change → bounded Investigation → historical Lineage evidence candidates / first-observed localization → explicit Causal Claims with supporting/contradicting evidence → actual downstream Impact → Propagation Safeguard where authorized → Annotation → Explanation**
+**identified subject → monitoring/governance context → Capability Authorization / authorized evidence view → planned intent / prospective downstream profile → active Deployment → execution/timing/dependency evidence → Observation → time-valid Assessment → realized Change → Investigation → Causal Claim → actual downstream Impact → Propagation Safeguard where authorized → Annotation → Explanation**
 
-Key accepted reasoning distinctions now include:
-
-- Lineage evidence candidate ≠ cause;
-- first-observed localization ≠ root cause;
-- supporting evidence ≠ absence of contradiction ≠ confirmation;
-- Investigation closure ≠ Causal Claim confirmation;
-- multiple contributing claims and unresolved outcomes are valid;
-- reproducible analyst findings use Observation/Change rather than Annotation by default;
-- Prospective Impact Profile ≠ actual Impact or retrospective causal evidence;
-- safeguard state may explain operational delay without proving protected-data defect.
-
-This is a reasoning/synchronization model, not a service topology or persistence schema.
+This is a reasoning/synchronization model, not a service topology, IAM architecture, or persistence schema.
 
 ## Domain entities that are not automatically concepts
 
-Logical pipelines, jobs, tasks, runs, tables, views, Metric Views, repositories, workflows, columns, business metrics, reports, applications, business processes, teams, people, source revisions, deployment targets, and client-delivery endpoints may participate in concepts without becoming giant concepts themselves.
+Logical pipelines, jobs, tasks, runs, tables, views, Metric Views, repositories, workflows, columns, business metrics, reports, applications, business processes, teams, people, source revisions, deployment targets, client-delivery endpoints, roles, and groups may participate in concepts without becoming giant concepts themselves.
 
 ## Phase 003 synchronization work
 
-**Groups 01–04 are accepted. Group 05 — Downstream Impact, Annotation & Explanation is next.** Current synchronization work is documented in [`phase_003/README.md`](phase_003/README.md).
+Groups 01–04 are accepted. Capability Authorization is accepted as a pre-Group-05 addendum. Current synchronization work is documented in [`phase_003/README.md`](phase_003/README.md); **Group 05 — Downstream Impact, Annotation & Explanation is next and has not started.**

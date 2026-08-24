@@ -5,6 +5,9 @@ Phase 002 completed its original five-group review with 20 accepted concepts. La
 ## Accepted addenda
 
 - [Propagation Safeguard](propagation_safeguard.md) — protective hold/quarantine/release state for defined data propagation boundaries, discovered during Phase 003 Group 03 runtime/health review.
+- [Capability Authorization](capability_authorization.md) — principal/capability/subject authorization state separating raw-data access, metadata/health analysis, Lineage/RCA participation, operational job authority, and safeguard authority, discovered before Phase 003 Group 05.
+
+The current catalog therefore contains **22 accepted concepts**: the original 20 plus two explicit post-exit addenda.
 
 ## Addendum rule
 

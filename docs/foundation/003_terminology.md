@@ -5,7 +5,7 @@ This document establishes distinctions that must remain stable. The fuller canon
 ## Ecosystem terms
 
 ### Data ecosystem
-The connected set of repositories, Change Intents, Deployments, executions, data assets, dependencies, Lineage, governance metadata, health evidence, Investigations, Impact context, Propagation Safeguards, and downstream consumers relevant to monitoring.
+The connected set of repositories, Change Intents, Deployments, executions, data assets, dependencies, Lineage, governance metadata, authorization state, health evidence, Investigations, Impact context, Propagation Safeguards, and downstream consumers relevant to monitoring.
 
 ### Logical pipeline
 A named data-processing responsibility that may span multiple Databricks tasks/jobs and must not automatically equal one repository.
@@ -31,7 +31,7 @@ A provenance-bearing measured/retrieved fact. It does not declare health or caus
 A dimension-scoped interpretation of Observation evidence against explicit Expectation and/or comparable Baseline context.
 
 ### Execution duration / operational latency
-Observed timing properties of executions or dependencies. Duration, queue/wait time, completion latency, and dependency readiness can materially affect ecosystem health even when table-level statistical quality is acceptable. A timing Observation becomes normatively unacceptable only through an applicable Expectation; Baseline comparison may establish typicality/atypicality.
+Observed timing properties of executions or dependencies. Duration, queue/wait time, completion latency, and dependency readiness can materially affect ecosystem health even when table-level statistical quality is acceptable.
 
 ### Freshness / Staleness
 Freshness is observed currency/timeliness. Staleness is a normative Assessment that freshness violates an applicable Expectation.
@@ -65,43 +65,48 @@ When something occurred or was true.
 ### Recorded/knowledge time
 When monitoring learned/recorded it.
 
+## Authorization and access terms
+
+### Capability Authorization
+A provenance-bearing resolution of whether a principal may perform a named capability on an identified subject/context/time. Capability Authorization is separate from Responsibility Assignment, Policy Context, Classification, Monitoring Scope, and enforcement proof.
+
+### Authorized evidence view
+The subset/abstraction of concept state and evidence a principal may inspect for a particular analytical task. It may include derived/aggregate/redacted/opaque health, timing, governance, Lineage, Investigation, Causal Claim, Impact, and safeguard context while excluding restricted raw values or identities.
+
+### Direct/raw data access
+Permission to inspect underlying row/record/value data or sensitive columns. This is not a prerequisite for every monitoring/RCA capability.
+
+### Analytical visibility
+Permission to inspect approved metadata, aggregate health/Assessment state, Lineage/RCA evidence, and Explanation. Analytical visibility does not imply raw-data access or production-control authority.
+
+### Operational job authority
+Permission to perform a named job/run operation where later defined, such as retry/update/control. Operational authority does not imply raw-data access, and permission itself does not prove the action succeeded.
+
 ## Investigation and reasoning terms
 
 ### Investigation
-A bounded inquiry that links evidence, claims, Impact analysis, and human context without owning those truths. Analyst-driven research is first-class, including cases where automated evidence is insufficient to determine cause or where significance warrants prompt review despite no normative criterion.
-
-### Evidence candidate
-An entity/path/context discovered as structurally relevant to an Investigation, commonly through historical Lineage. Candidate status means **where evidence should be inspected**, not causal support.
-
-### First-observed localization
-The earliest monitored point on a relevant historical path where a related deviation is evidenced. It localizes the problem within observed coverage but is **not root cause**, especially when upstream monitoring is incomplete, restricted, unavailable, or out of scope.
+A bounded inquiry that links evidence, claims, Impact analysis, and human context without owning those truths. Analyst-driven research remains first-class even when direct data is restricted.
 
 ### Causal Claim
-An explicit proposition that one or more conditions caused/contributed/enabled/prevented an outcome, carrying epistemic status plus supporting/contradicting evidence.
+An explicit proposition that one or more conditions caused/contributed to an outcome, carrying epistemic status plus supporting/contradicting evidence.
 
-### Causal support / contradiction
-Relevant evidence dimensions include temporal ordering, relationship applicability, actual encounter/consumption where required, realized state/change, mechanism compatibility, contrast/intervention evidence, alternatives, and evidence coverage. Support and contradiction remain separately traceable.
+### First-observed localization
+The earliest monitored point where a related deviation is observed within available evidence/coverage. It narrows investigation but is not root cause.
 
 ### Root-cause hypothesis
 A Causal Claim that is proposed/supported but not confirmed.
 
 ### Confirmed cause
-A Causal Claim satisfying an explicit evidence/authority standard. The exact standard remains open for Phase 004; automated ranking, human title, Lineage reachability, and lack of known alternatives do not create confirmation authority.
-
-### Attribution
-A contribution statement represented through Causal Claim semantics when justified; quantitative allocation is not assumed.
-
-### Analyst research
-Human investigation results route to the concept owning their meaning: reproducible facts → Observation; realized difference → Change; causal proposition → Causal Claim; contextual commentary → Annotation; structured plan/norm/governance assertion → its respective concept.
+A Causal Claim satisfying an explicit evidence/authority standard. The exact standard remains open.
 
 ### Impact
 Downstream consequence reasoning that distinguishes candidate/reachability, actual exposure, observed downstream effect, and evidenced business consequence.
 
 ### Propagation Safeguard
-A protective proposed/active/released state that holds or quarantines a defined output/consumption boundary to reduce downstream exposure. It is not a quality Assessment, Causal Claim, access-control grant, or proof that the data is defective or safe. Safeguard state can itself become a proposed causal condition for operational delay when enforcement/timing evidence supports that separate claim.
+A protective proposed/active/released state that holds or quarantines a defined output/consumption boundary. It is not a quality Assessment, Causal Claim, Capability Authorization, or proof that the data is defective or safe.
 
 ### Annotation
-Attributed human context that cannot silently become Observation, Change Intent, Expectation, Responsibility Assignment, or causal confirmation.
+Attributed human context that cannot silently become Observation, Change Intent, Expectation, Responsibility Assignment, authorization, or causal confirmation.
 
 ### Explanation
 Authorization- and time-aware evidence-grounded communication. It is not an independent truth source and can distinguish what was known then from retrospective knowledge now.
@@ -109,7 +114,7 @@ Authorization- and time-aware evidence-grounded communication. It is not an inde
 ## Governance and policy terms
 
 ### Responsibility Assignment
-A provenance-bearing assertion that a person/team/role bears a named responsibility for a subject/time/context. Responsibility is not universal authority or authorization.
+A provenance-bearing assertion that a person/team/role bears a named responsibility for a subject/time/context. Responsibility is not universal authority or Capability Authorization.
 
 ### Semantic Definition
 Provenance-bearing meaning/interpretation assertions.
@@ -118,27 +123,26 @@ Provenance-bearing meaning/interpretation assertions.
 Category membership under a named governance/sensitivity vocabulary; not Policy Context or authorization.
 
 ### Policy Context
-Declared policy/handling applicability without access enforcement, legal interpretation, or compliance determination.
+Declared policy/handling applicability without access enforcement, legal interpretation, Capability Authorization, or compliance determination.
 
 ### PII / PHI / HIPAA-related policy context
 Sensitive-data/legal-organizational categories/context according to applicable definitions. Presence of such metadata does not establish compliance.
 
 ### Provenance
-Where a fact/assertion/definition/intent/relationship/evaluation/claim/safeguard came from, who/what asserted or derived it, and relevant temporal/version context.
+Where a fact/assertion/definition/intent/relationship/evaluation/claim/safeguard/authorization came from, who/what asserted or derived it, and relevant temporal/version context.
 
 ## Terms to avoid conflating
 
-- ecosystem existence ≠ Monitoring Scope ≠ authorization;
+- ecosystem existence ≠ Monitoring Scope ≠ Capability Authorization;
+- responsibility ≠ authorization;
+- Policy Context ≠ Capability Authorization;
+- raw-data read authorization ≠ metadata/health-analysis authorization ≠ Lineage/RCA authorization ≠ job-operation authorization ≠ safeguard authority;
+- authorized derived evidence ≠ unrestricted evidence;
+- permission to act ≠ evidence action succeeded;
 - pipeline ≠ repository ≠ Databricks job;
 - Change Intent ≠ Deployment ≠ realized Change;
 - prospective Impact ≠ actual Impact ≠ retrospective cause;
-- anticipated effect ≠ normative Expectation;
-- planned value ≠ empirical Baseline;
-- Deployment attempt ≠ activation;
-- activation ≠ intended effect realized;
 - successful run ≠ timely run ≠ freshness ≠ data quality;
-- execution-duration Observation ≠ duration violation;
-- Expectation ≠ Baseline;
 - Observation ≠ Assessment;
 - missing evidence ≠ observed absence;
 - raw difference ≠ material Change;
@@ -147,10 +151,8 @@ Where a fact/assertion/definition/intent/relationship/evaluation/claim/safeguard
 - planned topology ≠ active Lineage;
 - Lineage reachability/evidence candidate ≠ cause;
 - first-observed localization ≠ root cause;
-- temporal proximity ≠ causal proof;
-- absence of contradiction ≠ confirmation;
-- Investigation closure ≠ Causal Claim confirmation;
 - Causal Claim ≠ confirmed cause;
+- Investigation closure ≠ confirmation;
 - Impact candidate ≠ exposure ≠ downstream effect ≠ business consequence;
 - safeguard proposal ≠ active safeguard;
 - quarantine ≠ proof of defect;
@@ -158,6 +160,4 @@ Where a fact/assertion/definition/intent/relationship/evaluation/claim/safeguard
 - Annotation ≠ structured operational truth;
 - Explanation ≠ truth source;
 - effective/event time ≠ recorded/knowledge time;
-- Semantic Definition ≠ Responsibility Assignment;
-- Responsibility Assignment ≠ universal authority;
 - Classification ≠ Policy Context ≠ authorization ≠ compliance.

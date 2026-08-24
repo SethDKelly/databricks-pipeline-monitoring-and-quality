@@ -1,12 +1,12 @@
 # Phase 002 — Concept Specifications
 
-**Status:** **Complete — Groups 01–05 accepted; post-exit Propagation Safeguard addendum accepted during Phase 003.**
+**Status:** **Complete — Groups 01–05 accepted; two explicit post-exit addenda accepted during Phase 003 preparation.**
 
 ## Purpose
 
-Phase 002 turned the Phase 001 discovery catalog into explicit, implementation-neutral Concept Design specifications. The resulting concepts define product behavior and truth boundaries without mapping them to services, schemas, APIs, Databricks objects, graph databases, ledger/event-store technologies, language/framework choices, or vendor products.
+Phase 002 turned the Phase 001 discovery catalog into explicit, implementation-neutral Concept Design specifications. The concepts define product behavior and truth boundaries without mapping them to services, schemas, APIs, Databricks objects, graph databases, ledger/event-store technologies, IAM schemes, language/framework choices, or vendor products.
 
-The original Phase 002 review completed with 20 concepts. Phase 003 Group 03 later exposed one missing independently motivated behavior—protective hold/quarantine/release of data propagation. Phase 002 was therefore narrowly reopened through the accepted [`Propagation Safeguard`](addenda/propagation_safeguard.md) post-exit addendum. The original exit remains historically true for the requirements known at that time.
+The original Phase 002 review completed with 20 concepts. Later Phase 003 work exposed two independently motivated behaviors that could not be cleanly owned by those concepts. Phase 002 was therefore narrowly reopened through explicit addenda while preserving the original exit as historical truth.
 
 ## Accepted concept groups
 
@@ -18,149 +18,109 @@ The original Phase 002 review completed with 20 concepts. Phase 003 Group 03 lat
 | 04 | History, Lineage & Change | Change Intent, Execution History, Deployment, Lineage, Change | **Accepted** |
 | 05 | Investigation, Impact & Explanation | Investigation, Causal Claim, Impact, Annotation, Explanation | **Accepted** |
 
-## Accepted post-exit addendum
+## Accepted post-exit addenda
 
 - **Propagation Safeguard** — protective proposed/active/released hold or quarantine state for a defined data output, execution context, propagation boundary, environment/cohort, or consumer set. It does not own health Assessment, Investigation, causal truth, authorization, or implementation enforcement mechanics.
+- **Capability Authorization** — provenance-bearing resolution of whether a principal may perform a named capability on a subject/context/time. It separates raw-data read, metadata/health visibility, Lineage/RCA participation, operational job authority, safeguard authority, and other capability categories without selecting an IAM/enforcement implementation.
 
-**21 concepts are currently accepted.**
+**22 concepts are currently accepted.**
 
 Review order was a design dependency, not an implementation dependency. Concepts remain independently motivated and compose through synchronizations.
 
 ## Accepted boundary refinements
 
 ### Group 01
-
-- `Monitored Scope` → **Monitoring Scope**: monitoring responsibility applies to identified entities and does not implicitly propagate.
-- `Asset Identity` → **Entity Identity**: identity behavior spans the ecosystem and remains distinct from replacement/succession.
+- Monitoring Scope is monitoring responsibility, not authorization.
+- Entity Identity is ecosystem-wide and distinct from replacement/succession.
 
 ### Group 02
-
-- `Description / Semantics` → **Semantic Definition**: meaning is facet-, context-, provenance-, and time-aware.
-- `Ownership` → **Responsibility Assignment**: technical ownership, business accountability, stewardship, and other responsibilities are distinct named assignment types.
-- **Classification** is categorical metadata, separate from **Policy Context**, authorization, and compliance.
+- Semantic Definition is facet/context/provenance/time-aware.
+- Responsibility Assignment replaces overloaded Ownership and is not universal authority or authorization.
+- Classification is categorical metadata, separate from Policy Context, authorization, and compliance.
 - Synchronization order never silently becomes governance authority.
 
 ### Group 03
-
-- **Expectation** is normative; **Baseline** is descriptive.
-- **Observation** is provenance-bearing fact; **Assessment** is interpretation against explicit normative and/or comparative basis.
+- Expectation is normative; Baseline is descriptive.
+- Observation is provenance-bearing fact; Assessment is interpretation against explicit normative/comparative basis.
 - Missing telemetry is not observed absence.
 - Typical is not automatically healthy; atypical is not automatically degraded.
-- Health is dimension-scoped by default; composite health requires explicit aggregation semantics.
+- Health is dimension-scoped by default.
 
 ### Group 04
-
-- **Change Intent** is introduced separately from realized **Change** because planned intent and realized fact have different truth conditions.
-- `Deployment Record` → **Deployment**: attempt, activation, active state, and supersession are behavior, not merely a stored record.
-- Change Intent may register a prospective Baseline comparability break, but intended values never become empirical Baseline values.
-- Prospective acceptable post-change behavior belongs in explicit **Expectation** establishment/revision.
-- **Lineage** is typed, directed, temporal, provenance-bearing, and graph-compatible without selecting graph technology.
-- Material history follows ledger-like append/supersede/correction semantics without selecting persistence architecture.
-- Effective/event time and recorded/knowledge time remain distinct where historical interpretation requires both.
+- Change Intent is separate from realized Change.
+- Deployment attempt/activation/active state/supersession are distinct from intended effect.
+- Planned values never become empirical Baselines.
+- Lineage is typed, directed, temporal, provenance-bearing, graph-compatible, and not causal proof.
+- Material history follows ledger-like append/supersede/correction semantics.
 
 ### Group 05
-
-- **Investigation** organizes inquiry and evidence; it does not own causal truth.
-- **Causal Claim** is the explicit home for causal propositions, supporting/contradicting evidence, contribution roles, uncertainty, and confirmation/rejection history.
+- Investigation organizes inquiry; Causal Claim owns causal propositions.
 - Correlation, Lineage, Deployment timing, realized Change, and intent consistency cannot silently become confirmed causation.
-- **Impact** separates downstream reachability, actual exposure/consumption, observed downstream effect, and evidenced business consequence.
-- `Annotation / Confirmation` → **Annotation** plus confirmation/rejection actions on Causal Claim under an explicit evidence/authority standard.
-- **Annotation** is human context, not a catch-all mechanism for Change Intent, Expectation, Responsibility Assignment, or causal confirmation.
-- `Report / Explanation` → **Explanation**: presentation artifact is secondary; the product purpose is authorized, evidence-grounded communication.
-- Explanation preserves the distinction between **what was known then** and **what we know now**.
+- Impact separates reachability, exposure, observed effect, and business consequence.
+- Annotation is attributed context rather than a catch-all truth mechanism.
+- Explanation is authorization/time-aware communication over source concept state and does not become an independent truth source.
 
-### Post-exit addendum
-
-- **Propagation Safeguard** is separate from Assessment, Investigation, Impact, and Policy Context because those concepts explicitly do not own remediation/protective-control state.
+### Post-exit addendum — Propagation Safeguard
+- Protective propagation state could not be owned by Assessment, Investigation, Impact, or Policy Context.
 - A violated Expectation or Baseline atypicality can motivate safeguard review but does not automatically activate quarantine.
-- `proposed` is distinct from `active`; activation requires explicit authority/enforcement evidence under applicable semantics.
-- Quarantine may be precautionary and does not prove defect; release does not prove health.
-- If no output exists, downstream advancement/current-cycle publication may be held rather than inventing a quarantined data object.
-- Safeguard placement is context-specific and may itself create observable delivery delay.
+- `proposed` ≠ `active`; quarantine ≠ proof of defect; release ≠ proof of health.
+- Missing output is not represented as a quarantined object; downstream advancement may be held instead.
 
-## Cross-cutting distinctions accepted by Phase 002/current addendum model
+### Post-exit addendum — Capability Authorization
+- The model repeatedly relied on an `authorized evidence view`, but no concept owned whether a principal may perform a named capability on a subject/context/time.
+- Raw-data read authorization, metadata/governance visibility, derived health/metric visibility, Lineage/RCA participation, job/run operational control, and safeguard authority are independent capability categories.
+- Denial of raw-data access does not automatically prohibit approved monitoring or RCA.
+- Permission to operate/update a job does not grant raw-data read access; analysis permission does not grant production-control authority.
+- Responsibility Assignment, Classification, Policy Context, and Monitoring Scope remain separate from authorization.
+- Derived evidence can itself be sensitive and remains subject to its own authorized projection.
 
-- Monitoring Scope ≠ ecosystem existence ≠ authorization;
+## Cross-cutting distinctions accepted by the current model
+
+- Monitoring Scope ≠ ecosystem existence ≠ Capability Authorization;
 - Entity Identity ≠ name ≠ replacement/succession;
 - Semantic Definition ≠ Responsibility Assignment;
-- Responsibility Assignment ≠ universal authority ≠ authorization;
-- Classification ≠ Policy Context ≠ authorization ≠ compliance;
+- Responsibility Assignment ≠ universal authority ≠ Capability Authorization;
+- Classification ≠ Policy Context ≠ Capability Authorization ≠ compliance;
+- raw-data read authorization ≠ metadata/health-analysis authorization ≠ Lineage/RCA authorization ≠ job-operation authorization ≠ safeguard authority;
 - Expectation ≠ Baseline;
 - normative requirement ≠ historical regularity;
-- planned anticipated effect ≠ normative Expectation;
-- planned value ≠ empirical Baseline;
 - Observation ≠ Assessment;
 - missing evidence ≠ observed absence;
 - typical ≠ healthy;
 - atypical ≠ degraded/defective;
 - Change Intent ≠ Deployment ≠ realized Change;
-- Deployment attempt ≠ activation;
-- activation ≠ intended effect realized;
 - successful execution ≠ timely execution ≠ freshness ≠ data quality;
 - planned topology ≠ active Lineage;
-- Lineage reachability ≠ cause ≠ confirmed Impact;
-- Change ≠ degradation ≠ cause;
-- effective/event time ≠ recorded/knowledge time;
-- Investigation ≠ evidence/causal truth;
+- Lineage reachability/evidence candidate ≠ cause;
+- first-observed localization ≠ root cause;
 - Causal Claim ≠ confirmed cause;
+- Investigation closure ≠ confirmation;
 - Impact candidate ≠ exposure ≠ downstream effect ≠ business consequence;
 - Propagation Safeguard ≠ health or causal truth;
 - safeguard proposal ≠ active safeguard;
 - quarantine ≠ proof of defect;
 - release ≠ proof of health;
-- Annotation ≠ Observation/Change Intent/Expectation/causal confirmation;
-- Explanation ≠ independent truth source.
+- Annotation ≠ structured operational truth;
+- Explanation ≠ independent truth source;
+- effective/event time ≠ recorded/knowledge time.
 
-## Phase 002 scenario review
+## Scenario implications of the addenda
 
-### S-01 — Join-volume degradation
+### Protective hold/quarantine
+A suspect or missing output can be protected at an explicit propagation boundary without rewriting the underlying Observation/Assessment or claiming defect/cause. Protected interval, authority, enforcement evidence, release, and safeguard-induced delay remain historical facts.
 
-**Pass.** A+B→C can be expressed as Observations, Baseline comparison, normative Assessment, Change Intent/Deployment/realized Change context, typed historical Lineage, competing/multiple Causal Claims, downstream Impact analysis, and authorized Explanation without forcing a cause.
+### Restricted-data analyst
+A user may be denied direct Table C rows while being permitted approved aggregate health metrics, runtime/freshness Assessments, redacted Lineage, policy/restriction summaries, responsibility context, Investigation/Causal Claim state, and Impact/safeguard context. RCA remains possible over the authorized evidence view without smuggling restricted data into summaries.
 
-### S-02 — Stale upstream with successful downstream execution
+### Job operator without raw-data read
+A user may hold an explicit job/run operational capability while lacking permission to inspect the data the job processes. The action's actual outcome remains owned by Deployment/Execution History/Observation rather than being implied by permission.
 
-**Pass.** Execution success, freshness Observation, freshness Expectation/Assessment, upstream Lineage, Causal Claim, and downstream Impact remain separate.
+## Phase 002 exit review and later boundary corrections
 
-### S-03 — Deployment-correlated shift
+D-030 records that the original Phase 002 exit gate was satisfied with 20 concepts. That decision remains historically correct. Later requirements were added explicitly rather than silently overloading accepted concept purposes.
 
-**Pass.** Registered intent, Deployment activation, execution sequence, realized Change, and Assessment can align temporally while the deployment-cause proposition remains a separately evaluated Causal Claim.
-
-### S-04 — Cross-repository dependency
-
-**Pass.** Repository boundaries preserve provenance but do not break Entity Identity, Lineage, Investigation, or Impact reasoning.
-
-### S-05 — Conflicting governance metadata
-
-**Pass.** Conflicting semantic, responsibility, classification, policy, or Expectation assertions retain provenance and conflict rather than last-write-wins flattening.
-
-### S-06 — Policy-sensitive explanation
-
-**Pass.** Authorization-aware opaque/redacted entities, evidence, claims, Annotations, and downstream consumers preserve usefulness without broadening raw-data access or leaking restricted context.
-
-### S-07 — Historical replay
-
-**Pass.** Ledger-like history plus effective/event time and recorded/knowledge time can reconstruct what was intended, active, executed, connected, expected, baselined, observed, assessed, investigated, believed, and explained at an earlier time.
-
-### S-08 — Planned structural change
-
-**Pass.** A planned filter can prospectively revise an Expectation and register a Baseline comparability break without manufacturing empirical history. Valid intended volume change can coexist with an unintended quality violation and competing causal explanations.
-
-### Addendum scenario — Protective hold/quarantine
-
-**Pass after addendum.** A suspect or missing output can be protected at an explicit propagation boundary without rewriting the underlying Observation/Assessment or claiming defect/cause. The protected interval, authority, enforcement evidence, release, and any safeguard-induced delay remain historical facts.
-
-## Phase 002 exit review and later boundary correction
-
-D-030 records that the original Phase 002 exit gate was satisfied with 20 concepts. That decision remains historically correct. Phase 003 later uncovered a new requirement that could not be expressed without overloading an accepted concept, so the catalog was explicitly extended rather than silently modifying ownership boundaries.
-
-The current model still satisfies the original exit principles:
-
-- every retained concept has a singular purpose and reviewed specification;
-- boundary changes/addenda have rationale recorded;
-- state/actions remain implementation-independent;
-- ambiguity, evidence, security, and temporal behavior remain explicit;
-- no concept depends semantically on DQX, Metric Views, Collibra, Immuta, GitHub Actions, graph database, event store, quarantine mechanism, or selected architecture.
+The current model still satisfies the original exit principles: each retained concept/addendum has a singular purpose; state/actions remain implementation-independent; ambiguity/evidence/security/temporal behavior are explicit; and no concept semantically requires DQX, Metric Views, Collibra, Immuta, GitHub Actions, a graph database, event store, quarantine mechanism, IAM model, or selected architecture.
 
 ## Current synchronization direction
 
-Phase 003 composes all 21 concepts. Groups 01–03 are accepted, including prospective blast-radius review, execution-duration/dependency health, analyst Investigation handoff, and Propagation Safeguard. See [`../phase_003/README.md`](../phase_003/README.md).
+Phase 003 composes all 22 concepts. Groups 01–04 are accepted. Capability Authorization is an accepted pre-Group-05 input. **Group 05 — Downstream Impact, Annotation & Explanation remains next and has not yet started.** See [`../phase_003/README.md`](../phase_003/README.md).
