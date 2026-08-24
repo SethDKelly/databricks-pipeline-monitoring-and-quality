@@ -18,9 +18,11 @@ The current catalog contains **23 accepted concepts**.
 
 **Groups 01–06 are accepted. The accepted synchronization range is SYN-001–SYN-035, and E-01–E-22 pass end-to-end historical/consolidation review.**
 
-**Phase 004 — Evidence, Time, and Causality Refinement is ACTIVE. Groups 01–04 are accepted with REF-001–REF-030. Group 05 — Consolidation / Exit Review is next and has not started.**
+**Phase 004 — Evidence, Time, and Causality Refinement: COMPLETE. Groups 01–05 are accepted with REF-001–REF-030.**
 
-Phase 004 Group 01 defines common evidence applicability/coverage/sufficiency rules. Group 02 defines exact temporal knowledge-cut, correction, and progressive analytical-availability semantics. Group 03 defines causal proposition/status, confirmation, multiple-contributor, progressive-RCA, and post-confirmation challenge semantics. Group 04 defines exposure/non-exposure, criterion-bound readiness, gate/safeguard enforcement, prevented-exposure, degraded-control, and control-effect evidence standards.
+Phase 004 Group 01 defines common evidence applicability/coverage/sufficiency rules. Group 02 defines exact temporal knowledge-cut, correction, and progressive analytical-availability semantics. Group 03 defines causal proposition/status, confirmation, multiple-contributor, progressive-RCA, and post-confirmation challenge semantics. Group 04 defines exposure/non-exposure, criterion-bound readiness, gate/safeguard enforcement, prevented-exposure, degraded-control, and control-effect evidence standards. Group 05 consolidates REF-001–REF-030 across E-01–E-22 and the Phase 004 scenario suites and accepts the Phase 004 exit without another Concept, synchronization, or refinement contract.
+
+**Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is next and has not started.**
 
 ## Product thesis
 
@@ -337,11 +339,12 @@ If downstream consumption, enforcement, or corrected timing evidence arrives lat
 - [`docs/foundation/`](docs/foundation/) — accepted foundation and roadmap.
 - [`docs/concepts/phase_002/`](docs/concepts/phase_002/) — concept specifications and post-exit addenda.
 - [`docs/concepts/phase_003/`](docs/concepts/phase_003/) — completed synchronization contracts/scenarios and exit review.
-- [`docs/concepts/phase_004/`](docs/concepts/phase_004/) — active evidence/time/causality refinement contracts.
+- [`docs/concepts/phase_004/`](docs/concepts/phase_004/) — completed evidence/time/causality refinement contracts and exit review.
+- [`docs/concepts/phase_005/README.md`](docs/concepts/phase_005/README.md) — next-phase handoff; Phase 005 not started.
 - [`docs/reference/glossary.md`](docs/reference/glossary.md) — canonical vocabulary.
 - [`docs/decisions/`](docs/decisions/) — durable decision history.
 - [`AGENTS.md`](AGENTS.md) and [`.cursor/rules/`](.cursor/rules/) — repository-agent guardrails.
 
 ## Phase direction
 
-**Phase 004 is active. Groups 01–04 are accepted with REF-001–REF-030. Group 05 — Consolidation / Exit Review is next and has not started.** Group 05 will verify that evidence applicability/coverage, temporal replay, causal confirmation, exposure/non-exposure, criterion-bound readiness, gate/safeguard enforcement, degraded-control, and progressive-result semantics compose across the accepted ecosystem scenarios before Phase 004 exits.
+**Phase 004 is complete. Groups 01–05 are accepted with REF-001–REF-030. Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is next and has not started.**

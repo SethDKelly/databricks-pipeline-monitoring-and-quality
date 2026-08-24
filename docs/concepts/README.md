@@ -42,7 +42,7 @@ Use [`concept_template.md`](concept_template.md) as the specification checklist.
 
 ### Post-exit addenda
 - [`Propagation Safeguard`](phase_002/addenda/propagation_safeguard.md) — proposed/active/released protective hold or quarantine state for an explicit output/consumption boundary.
-- [`Capability Authorization`](phase_002/addenda/capability_authorization.md) — principal/capability/subject authorization state separating raw-data visibility, analytical visibility, operational control, safeguard/gate authority, and later causal-confirmation capability.
+- [`Capability Authorization`](phase_002/addenda/capability_authorization.md) — principal/capability/subject authorization state separating raw-data visibility, analytical visibility, operational control, safeguard/gate authority, and causal-confirmation capability.
 - [`Execution Gate`](phase_002/addenda/execution_gate.md) — optional downstream execution admission/hold/admit/override control based on explicit prerequisite readiness evidence, separate from passive monitoring and output quarantine.
 
 ## Core access boundary
@@ -65,7 +65,7 @@ An **Execution Gate** is an explicit opt-in active-control boundary. It can hold
 
 **Execution Gate ≠ Propagation Safeguard**: a gate controls whether a downstream run starts; a safeguard controls whether output/current state propagates or is consumed. Both can independently create observable latency/delivery consequences.
 
-Phase 004 Group 04 further preserves:
+Phase 004 further preserves:
 
 **readiness result ≠ gate decision ≠ gate enforcement ≠ actual execution**
 
@@ -98,7 +98,7 @@ It preserves:
 
 A present-day `as-known-then` computation may be useful, but it cannot be presented as an Assessment, belief, causal status, readiness/enforcement conclusion, decision, or Explanation that actually existed then unless historical state proves that it did.
 
-## Phase 004 refinement boundary
+## Phase 004 refinement boundary — COMPLETE
 
 Phase 004 does **not** add a new evidence, causal, exposure, readiness, or control concept merely to hold refinement metadata. The accepted concepts already own their evidence/state. Phase 004 `REF-###` contracts define standards for how that evidence can support conclusions.
 
@@ -157,6 +157,21 @@ Examples:
 - `safeguard active + consumer not exposed` is not automatically `prevented exposure` if no relevant encounter opportunity existed;
 - blocking suspect V does not prove the downstream state is fresh/healthy.
 
+### Group 05 — accepted consolidation / exit
+
+Group 05 adds no new Concept, synchronization, or `REF-031`. It applies REF-001–REF-030 across E-01–E-22 and all Phase 004 scenario checks and confirms:
+
+- one evidence model composes across positive and negative runtime/historical/causal/exposure/control conclusions;
+- progressive analytical availability does not weaken evidence burden;
+- causal confirmation, multiple contributors, and challenge/reversal compose with control/Impact reasoning;
+- exposure/readiness/decision/enforcement/action/prevention remain separately evidenced;
+- restricted-data analysis remains useful without declassification;
+- late evidence may revise retrospective conclusions without rewriting historical actions/communications;
+- passive monitoring remains non-blocking for ungated production, while active gates may later require stronger control-path availability;
+- source/actor authority remains deliberately deferred to Phase 005/009 rather than being inferred from evidence order/count/recency.
+
+See [`phase_004/05_consolidation_and_exit/README.md`](phase_004/05_consolidation_and_exit/README.md), [`scenario_consolidation_matrix.md`](phase_004/05_consolidation_and_exit/scenario_consolidation_matrix.md), and [`phase_004_exit_review.md`](phase_004/05_consolidation_and_exit/phase_004_exit_review.md).
+
 ## Domain entities that are not automatically concepts
 
 Logical pipelines, jobs, tasks, runs, execution opportunities, tables, views, Metric Views, repositories, workflows, columns, business metrics, reports, applications, business processes, teams, people, source revisions, deployment targets, client-delivery endpoints, roles, and groups may participate in concepts without becoming giant concepts themselves.
@@ -165,4 +180,6 @@ Logical pipelines, jobs, tasks, runs, execution opportunities, tables, views, Me
 
 **Phase 003 is complete.** Accepted synchronization range: **SYN-001–SYN-035**. E-01–E-22 pass end-to-end consolidation. Current results are documented in [`phase_003/README.md`](phase_003/README.md), with Group 06 in [`phase_003/06_historical_replay_and_consolidation/`](phase_003/06_historical_replay_and_consolidation/).
 
-**Phase 004 is active. Groups 01–04 are accepted with REF-001–REF-030. Group 05 — Consolidation / Exit Review is next and has not started.** See [`phase_004/README.md`](phase_004/README.md).
+**Phase 004 is complete. Groups 01–05 are accepted with REF-001–REF-030.** See [`phase_004/README.md`](phase_004/README.md).
+
+**Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is next and has not started.** See [`phase_005/README.md`](phase_005/README.md).

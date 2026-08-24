@@ -6,7 +6,9 @@ Phase 002 originally accepted 20 concepts. Three explicit post-exit addenda are 
 
 **Phase 003 is complete. Groups 01–06 are accepted. Accepted synchronization range: SYN-001–SYN-035. E-01–E-22 pass end-to-end consolidation.**
 
-**Phase 004 — Evidence, Time, and Causality Refinement is active. Groups 01–04 are accepted with REF-001–REF-030. Group 05 — Consolidation / Exit Review is next and has not started.**
+**Phase 004 — Evidence, Time, and Causality Refinement is complete. Groups 01–05 are accepted with REF-001–REF-030.**
+
+**Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is next and has not started.**
 
 Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, deployment workflows, quarantine implementations, gate/orchestration implementations, IAM implementations, graph/causal engines, LLMs, or prototypes unless the user explicitly advances the project into technical design.
 
@@ -31,12 +33,13 @@ Preserve:
 - Monitoring Scope ≠ Capability Authorization;
 - Responsibility Assignment ≠ Capability Authorization;
 - Classification ≠ Policy Context ≠ Capability Authorization ≠ compliance;
+- evidence sufficiency ≠ source authority ≠ Capability Authorization ≠ action authority;
 - raw-data read authorization ≠ metadata/governance visibility ≠ derived health/metric visibility ≠ Lineage/RCA authorization ≠ job-operation authorization ≠ safeguard authority ≠ gate-control authority ≠ causal-confirmation authority;
 - authorized derived evidence ≠ unrestricted evidence;
 - Authorized Analytical Projection ≠ new truth/declassification mechanism;
 - passive monitoring ≠ active Execution Gate;
 - monitoring availability ≠ ungated production-job availability;
-- dependency readiness Assessment ≠ Execution Gate admission state;
+- dependency readiness Assessment ≠ criterion-bound readiness;
 - readiness result ≠ gate decision ≠ gate enforcement ≠ actual execution;
 - Execution Gate ≠ Execution History ≠ Propagation Safeguard;
 - gate hold ≠ execution failure;
@@ -95,7 +98,7 @@ Preserve:
 - late evidence ≠ source correction ≠ independent conflict ≠ reinterpretation ≠ later authority resolution;
 - immediate operational validation ≠ enriched health evaluation ≠ investigative/RCA reasoning ≠ retrospective/post-ops review.
 
-## Phase 004 Group 01 evidence rules
+## Phase 004 Group 01 evidence rules — accepted REF-001–REF-005
 
 - Bind every material evidence-sufficiency evaluation to a defined proposition/conclusion, subject, context, event time/window, grain/version, and intended conclusion strength.
 - Evaluate evidence applicability before treating it as support, contradiction, exclusion, or corroboration.
@@ -104,13 +107,13 @@ Preserve:
 - No telemetry, query failure, monitoring outage, inaccessible/restricted evidence, out-of-scope evidence, or unresolved identity/version state is not a negative fact.
 - Positive and negative propositions can require asymmetric coverage.
 - Do not multiply evidentiary strength because the same telemetry is copied/mirrored/indexed in several systems.
-- Preserve independent, partially independent, duplicated/common-derived, complementary, contradicting, non-comparable, and unknown relationships where provenance permits.
+- Preserve independent, partially independent, duplicated/common-derived, complementary, contradicting, non-comparable, unavailable, and unknown relationships where provenance permits.
 - Applicable conflicts remain explicit unless an accepted authority rule resolves them; do not use majority vote, recency alone, synchronization order, repository ownership, or source count as hidden authority.
 - Evidence sufficiency is conclusion-relative and may resolve sufficient, insufficient, conflicting/indeterminate, non-applicable/non-comparable, unavailable, or unknown.
 - Do not create a universal evidence trust/confidence number.
 - Sufficiency evaluation does not grant Capability Authorization, source authority, job/safeguard/gate/confirmation authority, or action permission.
 
-## Phase 004 Group 02 temporal and progressive-availability rules
+## Phase 004 Group 02 temporal and progressive-availability rules — accepted REF-006–REF-012
 
 - Distinguish event/effective time, source production/observation time, source availability time, framework collection/retrieval time, framework recorded/knowledge time, derived evaluation time, and correction/supersession time where material.
 - Source availability before a cutoff does not mean the framework knew the evidence by that cutoff.
@@ -128,7 +131,7 @@ Preserve:
 - Closed Investigations can become review/reopen candidates when materially challenged; do not auto-reopen every closed Investigation.
 - Exact monitoring-result timing targets remain deferred to Phases 006/009/010/011.
 
-## Phase 004 Group 03 causal epistemics rules
+## Phase 004 Group 03 causal epistemics rules — accepted REF-013–REF-020
 
 - Bind a material causal proposition to cause, effect, subjects/context/time, causal role, and material mechanism/transmission assumptions.
 - Accepted status vocabulary: `proposed`, `supported`, `weakened`, `unresolved`, `rejected`, `confirmed`.
@@ -146,7 +149,7 @@ Preserve:
 - RCA may mature progressively; elapsed time never upgrades causal status.
 - Confirmed claims remain challengeable while historical confirmation remains reconstructable.
 
-## Phase 004 Group 04 exposure/readiness/control evidence rules
+## Phase 004 Group 04 exposure/readiness/control evidence rules — accepted REF-021–REF-030
 
 - Bind every exposure proposition to affected subject/state/version/window, downstream candidate, historical relationship, encounter mode, consumer opportunity/window, and exact conclusion.
 - Reachability, downstream timing, a refresh, or a run alone does not prove the affected state was encountered.
@@ -174,6 +177,16 @@ Preserve:
 - Blocking suspect V does not prove downstream freshness/health; earlier state or non-delivery remains separately assessed.
 - Control-effect causal claims use REF-013–REF-020. Direct deterministic mechanism evidence may support strong status quickly, but broader delay/non-delivery/business consequence claims still require material alternatives/coverage review.
 - Late enforcement/execution/refresh/version/consumption evidence may revise retrospective readiness/exposure/prevention/causal conclusions without rewriting historical decisions/actions/executions/Explanations.
+
+## Phase 004 Group 05 consolidation / exit rules — accepted
+
+- REF-001–REF-030 compose across E-01–E-22 and all Phase 004 scenario checks without another Concept, synchronization, or refinement contract.
+- Negative-evidence semantics remain unified across run/output absence, historical negative claims, causal exclusion, non-exposure, control suppression, and prevented exposure.
+- Progressive analytical availability never weakens evidence burden.
+- Passive monitoring remains non-blocking for ungated production; explicitly gated paths may later require stronger/faster control-path availability.
+- Evidence sufficiency remains separate from source authority, Capability Authorization, control authority, and confirmation authority.
+- Historical reevaluation remains non-rewriting across Assessment, causality, exposure, readiness, enforcement, prevention, and Explanation.
+- Phase 005 may refine authority/capability but must not redefine the Phase 004 evidence meaning of any accepted conclusion.
 
 ## Passive monitoring / integration-independence rules
 
@@ -256,7 +269,7 @@ Preserve:
 - Safe omission/redaction cannot be worded as evidence hidden entities/evidence do not exist.
 - Explanation may surface authorized operational/gate/confirmation capability but never executes the action.
 
-## Historical replay rules — accepted Phase 003 Group 06 + Phase 004 Groups 02–04 refinement
+## Historical replay rules — Phase 003 Group 06 + Phase 004 refinement
 
 - Historical replay uses **event/effective time + recorded/knowledge cutoff**.
 - Resolve each concept from state/evidence available under the cut; never project current identity/topology/reference/governance/authorization/control backward.
@@ -270,15 +283,14 @@ Preserve:
 - Historical Capability Authorization is evidence about past permission; current requester authorization governs disclosure.
 - Partial/unknown/conflicting/restricted replay remains valid rather than being completed by guesswork.
 
-## Phase 004 direction
+## Phase direction
 
-- Group 01 accepted: REF-001–REF-005.
-- Group 02 accepted: REF-006–REF-012.
-- Group 03 accepted: REF-013–REF-020.
-- Group 04 accepted: REF-021–REF-030.
-- **Do not begin Group 05 — Consolidation / Exit Review without explicit user request.**
-- Group 05 must apply REF-001–REF-030 across accepted scenarios and verify evidence/time/causal/exposure/readiness/control semantics compose without hidden truth ownership or architecture assumptions.
-- Do not choose implementation architecture while consolidating these semantics.
+- Phase 003 is complete: SYN-001–SYN-035.
+- Phase 004 is complete: REF-001–REF-030; Group 05 exit accepted; D-140–D-152.
+- **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is next and has not started.**
+- Do not begin Phase 005 without explicit user request.
+- When Phase 005 begins, keep source/actor authority, semantic/governance/normative authority, Capability Authorization, control/confirmation authority, and disclosure governance independently reviewable.
+- Phase 005 authority decisions must not weaken Phase 004 evidence burdens.
 
 ## Tooling stance
 

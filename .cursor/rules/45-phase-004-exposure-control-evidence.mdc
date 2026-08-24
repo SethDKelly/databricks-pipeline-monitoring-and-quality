@@ -1,54 +1,53 @@
 ---
-description: Phase 004 exposure, non-exposure, dependency readiness, gate enforcement, safeguard enforcement, and control-evidence rules.
+description: Phase 004 exposure, consumption, readiness, gate/safeguard enforcement, prevented-exposure, and control-evidence rules.
 globs:
 alwaysApply: true
 ---
 
 # Phase 004 exposure and control evidence rules
 
-Status: **Groups 01–04 accepted — REF-001–REF-030. Group 05 next and not started.**
+Status: **Phase 004 complete — REF-021–REF-030 accepted within REF-001–REF-030. Phase 005 next and not started.**
 
 Preserve:
 
-- downstream reachability ≠ exposure;
-- downstream run/refresh timing ≠ encounter with affected state;
-- no encounter opportunity ≠ no encounter ≠ safe-version encounter ≠ unknown-version encounter ≠ affected-version encounter;
-- `not exposed to suspect version` ≠ fresh/current/healthy;
-- upstream run success ≠ global readiness;
-- readiness ≠ gate decision ≠ gate enforcement ≠ actual execution;
+- reachability ≠ affected-state exposure;
+- exposure ≠ downstream effect ≠ consequence ≠ causal attribution;
+- `not exposed` ≠ missing telemetry;
+- `not exposed to V` ≠ fresh/current/healthy delivery;
+- upstream completion ≠ global readiness;
+- readiness ≠ gate decision;
+- gate decision/request ≠ gate enforcement;
+- gate enforcement ≠ actual execution;
 - configured/enabled gate ≠ opportunity-specific enforcement;
-- gate hold ≠ execution failure;
-- gate admit ≠ actual execution;
-- gate override ≠ readiness;
-- configured fallback ≠ actual fallback application;
-- safeguard proposal/configuration/request ≠ enforced active safeguard;
-- safeguard enforcement at one boundary/path ≠ enforcement everywhere;
-- safeguard active + non-exposure ≠ automatically prevented exposure;
-- prevented exposure ≠ fresh/healthy delivery;
-- control telemetry unavailable ≠ fail-open/fail-closed/success/failure.
+- safeguard proposal/request/configuration ≠ active/enforced safeguard;
+- active/enforced safeguard ≠ prevented exposure;
+- configured fallback ≠ actual fallback recognition/application/enforcement;
+- control state ≠ causal conclusion.
 
 Rules:
 
-- Bind exposure to affected subject/state/version/window, downstream candidate, historical relationship, encounter mode, consumer opportunity/window, and exact conclusion.
-- Positive exposure requires actual encounter evidence sufficiently associated with the affected state.
-- `Not exposed` requires opportunity-to-observe plus sufficient negative-consumption/version and material-path coverage.
-- A safe/earlier version may establish non-exposure to suspect V while separately supporting stale/freshness analysis.
-- Bind readiness to downstream/gate opportunity, prerequisites, explicit criterion/profile/version, current-cycle context, evidence cut, and evaluation time.
-- Keep completion, output existence, version/currentness, freshness, publication availability, and named quality predicates separate when the criterion requires them.
-- If a required predicate is unknown/conflicting/unavailable, readiness remains so unless the criterion logically determines another result. A fallback can act on uncertainty but does not create readiness.
-- Preserve gate evaluation, gate decision/action, opportunity-specific enforcement, and Execution History independently.
-- Reliable evidence of a downstream start during an applicable unoverridden hold contradicts full hold enforcement.
-- Lack of a downstream run supports hold enforcement only when execution-opportunity/history coverage is sufficient.
-- An admitted opportunity that never runs does not prove admission failed.
-- A gate decision emitted to an external control plane is not enforcement proof unless evidence shows the specific opportunity was affected as intended.
-- Preserve control-source unavailable, decision-delivery unknown, enforcement unknown, and enforcement contradicted distinctly.
-- Bind safeguard enforcement to protected subject/output/missing-output context, exact boundary, consumer/path scope, effective interval, action/state, evidence source, and knowledge time.
-- Safeguard enforcement at one route does not imply alternate routes are blocked.
-- `Prevented exposure` requires materially operative safeguard enforcement, relevant encounter/control opportunity, sufficient negative-consumption/version evidence, and adequate alternate-path coverage.
-- If no relevant encounter opportunity existed, prefer `safeguard active; consumer not exposed` over `safeguard prevented exposure` unless other evidence establishes material prevention.
-- Blocking suspect V does not prove freshness or delivery; older state/non-delivery remains separately assessed.
-- A known fallback rule is intended behavior. Actual runtime recognition/application/enforcement/outcome requires evidence.
-- Control-effect causal claims use Phase 004 Group 03 standards; direct mechanism evidence may support a result quickly but never bypasses the applicable causal profile.
-- Late control/consumption evidence may revise retrospective readiness/exposure/prevention/causal conclusions without rewriting historical decisions/actions/executions.
+- Bind material exposure to affected state/version/window, consumer, historical relationship, encounter mode, encounter opportunity/window, and exact conclusion.
+- Positive exposure requires evidence sufficiently associating the consumer encounter/use with the affected state.
+- Timing overlap, downstream activity, reachability, or general publication do not automatically prove a more specific encounter mode.
+- `Not exposed` requires adequate opportunity-to-observe plus sufficient coverage of relevant consumption/version/path opportunities.
+- Preserve no encounter opportunity, no encounter, safe-version encounter, unknown-version encounter, unavailable/restricted evidence, and affected-state encounter separately.
+- A safe prior version can prove non-exposure to suspect V while freshness remains stale.
+- Readiness is criterion-relative. Required predicates may include completion, output existence, identity/version, currentness, freshness, publication availability, or named quality conditions.
+- Unresolved required predicate means readiness is not established; fallback may control action without changing readiness truth.
+- Gate decisions require separate evidence from readiness; external enforcement requires separate opportunity/control evidence from decision records.
+- A reliable run during an applicable unoverridden hold contradicts full hold enforcement.
+- Lack of a run supports hold suppression only with sufficient execution-opportunity/history coverage.
+- Admit without a subsequent run does not prove admission failed because other barriers can prevent execution.
+- Safeguard enforcement is explicit to protected subject/version/boundary/path scope/interval.
+- Prevented exposure requires materially operative safeguard enforcement plus sufficient negative consumption/version and alternate-path coverage.
+- Blocking suspect state does not prove current/fresh/healthy delivery; stale prior-state delivery and non-delivery are assessed separately.
+- Missing/degraded control telemetry does not prove fail-open/fail-closed, control success, or control failure.
+- Control-effect causal claims use REF-013–REF-020; direct deterministic mechanism evidence may support strong results quickly without bypassing confirmation authority.
+- Late enforcement/execution/consumption evidence may revise retrospective conclusions without rewriting historical gate decisions, safeguard actions, actual executions, or Explanations.
 
-Do not begin Phase 004 Group 05 without explicit user request.
+Phase 005 handoff:
+
+- Phase 005 may refine who can configure/enable/override gates and propose/activate/release safeguards, and which authority sources/policies resolve those permissions.
+- Authority/capability must never substitute for the Phase 004 evidence required to prove readiness, enforcement, execution, exposure, or prevention.
+
+Do not begin Phase 005 without explicit user request.

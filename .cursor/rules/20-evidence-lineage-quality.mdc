@@ -6,11 +6,14 @@ alwaysApply: true
 
 # Evidence and reasoning invariants
 
+Status: **Phase 004 complete — REF-001–REF-030 accepted. Phase 005 next and not started.**
+
 Preserve:
 
 - Monitoring Scope ≠ Capability Authorization;
 - Responsibility Assignment ≠ Capability Authorization;
 - Policy Context ≠ Capability Authorization;
+- evidence sufficiency ≠ source authority ≠ Capability Authorization ≠ action authority;
 - raw-data read authorization ≠ analytical visibility ≠ job-operation authority ≠ safeguard authority ≠ gate-control authority ≠ causal-confirmation authority;
 - authorized derived evidence ≠ unrestricted evidence;
 - Authorized Analytical Projection ≠ new truth/declassification mechanism;
@@ -146,5 +149,12 @@ Historical replay rules:
 - Historical Capability Authorization may be reconstructed as evidence; current requester authorization still governs current disclosure.
 - Restricted/opaque evidence remains restricted/opaque through replay and is never described as absent merely because the requester cannot see it.
 - Partial, unknown, conflicting, unavailable, and authorization-limited replay remain valid outcomes.
+
+Phase handoff:
+
+- Phase 004 Group 05 exit confirms REF-001–REF-030 compose across E-01–E-22 and the Phase 004 scenario checks without another Concept, synchronization, or refinement contract.
+- Phase 005 may refine source/actor authority, normative authority, Capability Authorization, control/confirmation authority, and disclosure governance.
+- Phase 005 authority decisions must not weaken Phase 004 evidence burdens or infer authority from source count, recency alone, repository ownership, role/title, technical availability, or refinement order.
+- Do not begin Phase 005 without explicit user request.
 
 Do not select IAM, graph database, temporal/event store, quarantine store, scheduler/orchestrator, gate implementation, persistence architecture, LLM, causal algorithm, or technical architecture from these semantics alone.

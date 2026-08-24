@@ -1,0 +1,29 @@
+---
+description: Phase 005 authority/governance/capability handoff guardrails. Phase 005 is next but not started.
+globs:
+alwaysApply: true
+---
+
+# Phase 005 handoff rules
+
+Status: **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is next and has not started.**
+
+Do not begin Phase 005 without explicit user request.
+
+When Phase 005 begins:
+
+- Decompose the phase into review groups before detailed work; do not create one monolithic authority model.
+- Keep at least source/actor authority, semantic/governance/normative authority, Capability Authorization, control/confirmation authority, and disclosure governance independently reviewable.
+- Preserve all Phase 004 evidence burdens. Authority cannot turn insufficient evidence into sufficient evidence or change `unknown` into a reassuring result.
+- Source/actor authority must be category/context/time specific; do not invent universal precedence.
+- Do not infer authority from source count, recency alone, repository ownership, technical availability, synchronization order, admin status, analyst role, or Responsibility Assignment.
+- Policy Context/Classification do not themselves prove compliance or grant authorization.
+- Responsibility Assignment does not automatically grant edit, operational, safeguard, gate, or confirmation authority.
+- Raw-data read, metadata/governance visibility, derived health visibility, Lineage/RCA, job operations, safeguard actions, gate actions/override, causal confirmation, and Explanation access remain independently resolvable capabilities.
+- Derived/metadata evidence may itself be sensitive; safe analytical projection is not automatic declassification.
+- Causal-confirmation authority must remain separate from the REF-017 evidence gate; no human title or automated process self-authorizes confirmation.
+- Gate/safeguard authority is separate from evidence that a configured/requested control was actually enforced.
+- Historical authorization is evidence about past capability and never overrides current requester disclosure authorization.
+- Do not select RBAC/ABAC/IAM provider, scheduler/orchestrator, quarantine mechanism, graph store, LLM, causal algorithm, or technical architecture during authority refinement.
+
+Accepted Phase 004 range remains **REF-001–REF-030**. Reopen it only if a concrete Phase 005 scenario exposes a genuine semantic contradiction, with explicit rationale.

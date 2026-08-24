@@ -8,7 +8,8 @@ alwaysApply: true
 
 - Current accepted concept count: **23** — original 20 plus Propagation Safeguard, Capability Authorization, and Execution Gate addenda.
 - **Phase 003 is complete. Groups 01–06 are accepted; SYN-001–SYN-035 are accepted; E-01–E-22 pass end-to-end consolidation.**
-- **Phase 004 — Evidence, Time, and Causality Refinement is active. Groups 01–04 are accepted; REF-001–REF-030 are accepted. Group 05 — Consolidation / Exit Review is next and has not started.**
+- **Phase 004 — Evidence, Time, and Causality Refinement is complete. Groups 01–05 are accepted; REF-001–REF-030 are accepted.**
+- **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is next and has not started.**
 - Work remains documentation/design-first unless the user explicitly advances into technical/implementation design.
 - Do not create application code, notebooks, infrastructure, schemas, APIs, IAM implementations, deployment workflows, quarantine implementations, Execution Gate/orchestration implementations, graph/causal engines, LLMs, or prototypes prematurely.
 - Treat `docs/` as the product/design system of record.
@@ -77,5 +78,7 @@ alwaysApply: true
 - Actual historical gate/safeguard actions are not counterfactually replaced by what later evidence suggests should have happened.
 - Historical causal confirmation remains reconstructable even if current claim status later changes.
 - Historical authorization/control state is evidence about past capability but never overrides current requester disclosure authorization.
-- Do not begin Phase 004 Group 05 without explicit user request.
+- **Phase 004 Group 05 exit confirms REF-001–REF-030 compose across E-01–E-22 and all Phase 004 scenario checks without another Concept, synchronization, or refinement contract.**
+- Phase 005 authority/capability work must not weaken Phase 004 evidence burdens or infer authority from source count, recency alone, repository ownership, technical availability, role/title, or refinement order.
+- Do not begin Phase 005 without explicit user request.
 - Never silently choose graph/event/temporal/ledger/quarantine/scheduler/orchestration/workflow/service/LLM/causal-algorithm/IAM architecture.

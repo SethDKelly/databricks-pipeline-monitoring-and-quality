@@ -16,25 +16,21 @@ The original five groups accepted 20 concepts. Phase 003 later added **Propagati
 
 Phase 003 defines end-to-end coordination for subject/governance context; planned change/reference transition; runtime timing/health/change; optional execution gating; safeguards; Investigation/causality; layered downstream Impact; Annotation; authorized analytical projection/Explanation; and bitemporal historical replay.
 
-Group 06 establishes event/effective-time + knowledge-cut replay, late/corrected-evidence retrospective re-evaluation, current-authorization-safe historical Explanation, and the completed Phase 003 exit review.
-
-See `../concepts/phase_003/README.md` and `../concepts/phase_003/06_historical_replay_and_consolidation/phase_003_exit_review.md`.
-
 ## Phase 004 — Evidence, Time, and Causality Refinement
 
-**Status:** **Active — Groups 01–04 accepted; Group 05 next.**
+**Status:** **COMPLETE — Groups 01–05 accepted; REF-001–REF-030 accepted.**
 
-Phase 004 uses `REF-###` refinement contracts over the accepted concepts/synchronizations. These are not new truth-owning concepts and do not extend the Phase 003 SYN sequence.
+Phase 004 uses `REF-###` refinement contracts over accepted concepts/synchronizations. These are not new truth-owning concepts and do not extend the Phase 003 SYN sequence.
 
-Review groups:
+Accepted groups:
 
-1. **Evidence Sufficiency, Coverage & Negative Evidence** — **Accepted.** REF-001–REF-005 define proposition binding/evidence applicability, bounded Coverage Profiles/opportunity-to-observe, negative/absence/exclusion evidence, corroboration/conflict/independence, and conclusion-specific sufficiency.
-2. **Event/Effective Time, Knowledge Cut & Correction** — **Accepted.** REF-006–REF-012 distinguish event/source-availability/framework-knowledge/evaluation time, exact `as-known` eligibility, epistemic negative claims, progressive analytical availability, late/corrected evidence classes, dependent reevaluation/reopen materiality, and actual-retained versus reconstructed historical state.
-3. **Causal Epistemics, Confirmation & Multiple Contributors** — **Accepted.** REF-013–REF-020 define causal proposition/role binding; proposed/supported/weakened/unresolved/rejected/confirmed status semantics; multidimensional support/contradiction; bounded material alternatives; claim-class confirmation profiles; confirmation evidence/authority separation; multiple contributors/qualitative roles; progressive RCA maturity; and post-confirmation challenge/reversal.
-4. **Exposure, Consumption, Readiness & Control Evidence** — **Accepted.** REF-021–REF-030 define affected-state/encounter binding, positive exposure proof, negative-consumption/path coverage, criterion-bound readiness, gate decision versus enforcement versus actual execution, gate/safeguard enforcement proof, prevented-exposure materiality, degraded-control/fallback evidence, and control-effect causal/replay semantics.
-5. **Phase 004 Consolidation / Exit Review** — **Next.** Apply REF-001–REF-030 across the full accepted ecosystem behavior, verify no hidden truth ownership or architecture assumption, and hand remaining authority/statistical/integration/control-policy/implementation questions to later phases.
+1. **Evidence Sufficiency, Coverage & Negative Evidence — REF-001–REF-005.** Proposition binding/evidence applicability, bounded coverage/opportunity-to-observe, negative/absence/exclusion evidence, corroboration/conflict/independence, conclusion-specific sufficiency.
+2. **Event/Effective Time, Knowledge Cut & Correction — REF-006–REF-012.** Event/source-availability/framework-knowledge/evaluation time, exact `as-known` eligibility, negative epistemic claims, progressive analytical availability, late/corrected evidence classes, material reassessment/reopen behavior, actual-retained versus reconstructed historical state.
+3. **Causal Epistemics, Confirmation & Multiple Contributors — REF-013–REF-020.** Causal proposition/status, multidimensional support/contradiction, bounded alternatives, claim-class confirmation profiles, evidence/authority separation, multiple contributors, qualitative roles, progressive RCA, post-confirmation challenge.
+4. **Exposure, Consumption, Readiness & Control Evidence — REF-021–REF-030.** Encounter-bound exposure, non-exposure coverage, criterion-relative readiness, gate decision/enforcement/execution separation, safeguard enforcement/prevention, fallback evidence, control-effect causality and retrospective revision.
+5. **Consolidation / Exit Review — accepted.** E-01–E-22 and all Phase 004 scenario checks pass under REF-001–REF-030. No additional Concept, synchronization, or REF contract is required.
 
-### Progressive monitoring, RCA, exposure, and control availability
+### Progressive monitoring-result and RCA availability
 
 Phase 004 establishes functional sequences rather than fixed SLAs:
 
@@ -42,51 +38,72 @@ Phase 004 establishes functional sequences rather than fixed SLAs:
 
 Within RCA:
 
-**candidate/proposed claim → early supported/weakened/unresolved evaluation → deeper investigative RCA → retrospective/confirmation review**.
+**candidate/proposed claim → early supported/weakened/unresolved evaluation → deeper investigative RCA → retrospective/confirmation review**
 
-For readiness/control/exposure:
+For controls/exposure:
 
-**execution/output/readiness facts → gate decision state → enforcement evidence → actual execution/consumption evidence → negative/prevention/causal conclusions as coverage matures**.
+**readiness/output facts → gate decision → enforcement evidence → execution/consumption evidence → negative/prevention/causal conclusions as coverage matures**.
 
-The project should return the narrowest trustworthy result as soon as the evidence required for that result is available. Faster evidence such as job lifecycle state should not wait for slower Metric View/DQ/RCA/consumption evidence, while early results must not overstate broader health, causality, exposure, readiness, or control enforcement.
-
-Explicitly gated production paths may require stronger/faster control-path evidence than ordinary passive monitoring, because a gate can intentionally become part of the production execution path. This does not change the rule that ungated monitoring remains out-of-band/non-blocking.
+The project should return the narrowest trustworthy result as soon as its evidence standard is satisfied. Faster job lifecycle evidence should not wait for slower Metric View/DQ/RCA evidence, while early results must not overstate health, causality, exposure, or control enforcement.
 
 Concrete timing targets remain intentionally deferred:
 
-- **Phase 006** defines which health/quality/readiness results need immediate, near-real-time, delayed, or post-ops availability and what freshness/latency expectations apply;
-- **Phase 008** defines how progressive health/RCA/control/exposure maturity and epistemic status are communicated to audiences;
-- **Phase 009** evaluates actual source production/availability/collection characteristics for Databricks jobs, Metric Views, DQX, GitHub/deployment, Lineage, governance, consumption/version evidence, gate/safeguard enforcement, and other sources;
-- **Phase 010** selects architecture/performance budgets for fast-path, asynchronous/deeper analysis, and explicitly gated control paths while preserving passive-monitoring non-interference;
+- **Phase 006** defines which health/quality results need immediate, near-real-time, delayed, or post-ops availability and their evidence/result freshness objectives;
+- **Phase 008** defines communication of progressive health/RCA/control maturity;
+- **Phase 009** evaluates actual evidence source availability, collection latency, retention, query cost, and enforcement observability;
+- **Phase 010** selects fast-path/asynchronous architecture, control-path availability strategy, and performance budgets while preserving passive-monitoring non-interference;
 - **Phase 011** converts accepted timing objectives into MVP acceptance criteria.
 
-See `../concepts/phase_004/README.md`.
-
 ## Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement
-Refine source authority, conflict resolution, stewardship, criticality, Classification, Policy Context, PII/PHI/HIPAA-related transparency, Expectation authority, safeguard authority, Capability Authorization vocabulary/source precedence/conditional semantics, Execution Gate configuration/override authority, safe derived-evidence disclosure, policy-sensitive Explanation, and **causal-confirmation capability/authority by claim/context**. Also define authority boundaries for gate configuration/fallback/override and safeguard proposal/activation/release without changing the Phase 004 evidence meaning of readiness/enforcement/confirmation.
+
+**Status:** **NEXT — not started.**
+
+Refine:
+
+- source/actor authority and category/context-specific conflict resolution;
+- Semantic Definition, Responsibility Assignment, Classification, Policy Context, criticality, and stewardship authority;
+- Expectation/normative-setting authority;
+- Capability Authorization vocabulary, conditionality, source precedence/conflict/unknown behavior;
+- safe derived-evidence disclosure and opacity;
+- causal-confirmation capability/authority by claim class/subject/context;
+- safeguard proposal/activation/release authority;
+- Execution Gate configuration/enable/override/control authority;
+- policy-sensitive Explanation/disclosure governance.
+
+Phase 005 may determine who/what is permitted to confirm, configure, operate, disclose, or resolve state. It must **not** weaken or redefine the Phase 004 evidence meaning of those conclusions or select IAM implementation.
 
 ## Phase 006 — Health, Freshness, Quality, and Result-Timing Refinement
-Refine Expectation dimensions, Baseline classes/comparability, Assessment vocabularies, observed-absence coverage, execution-duration/latency dimensions, dependency-readiness criteria, statistical uncertainty/significance, quality checks, downstream-health summarization, Databricks Metric Views/DQX fit, and **functional availability expectations for immediate operational checks, enriched health metrics, readiness evidence, and health summaries**. Define evidence/result freshness and latency objectives without selecting architecture.
+
+Refine Expectation dimensions, Baseline classes/comparability, Assessment vocabularies, observed-absence coverage, execution-duration/latency dimensions, dependency-readiness criteria/classes, statistical uncertainty/significance, quality checks, downstream-health summarization, Databricks Metric Views/DQX fit, and **functional availability expectations for immediate operational checks, enriched health metrics, and health summaries**.
 
 ## Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement
-Refine Lineage taxonomy, historical topology evidence, Change Intent realization, execution reconstruction, prospective/actual Impact, causal discovery/review integration, multiple contributors, consumer/version exposure evidence, consequence evidence, criticality prioritization, safeguard placement/prevention/effect evidence, and Execution Gate readiness/hold/admit/override/timeout/fallback behavior. Specialize how accepted Phase 004 proof standards map to representative downstream consumer and control patterns.
+
+Refine Lineage taxonomy/historical topology evidence, Change Intent realization, execution reconstruction, Investigation lifecycle, prospective/actual Impact, consumer/version encounter patterns, consequence categories, safeguard placement/release, Execution Gate classes, timeout/fallback/escalation/override/recovery policy, and control-induced operational effects. Preserve Phase 004 evidence burdens.
 
 ## Phase 008 — Business Questioning and Explanation
-Define question types, audience-specific Explanation structures, visible evidence citations, Authorized Analytical Projection/redaction, layered Impact/control state, contemporaneous/retrospective/comparison views, reconstructed-versus-actual historical Explanation labeling, uncertainty communication, retention, and deterministic versus generative behavior. Define how progressive result maturity, causal statuses, exposure states, readiness predicate state, and control enforcement limitations are communicated without status inflation.
+
+Define question types, audience-specific Explanation structures, visible evidence citations, Authorized Analytical Projection/redaction, layered Impact/control state, contemporaneous/retrospective/comparison views, reconstructed-versus-actual historical Explanation labeling, uncertainty communication, deterministic versus generative behavior, and progressive result maturity communication.
 
 ## Phase 009 — Integration Contracts, Source Authority, and Evidence Availability
-Determine required facts/source authority for Databricks, Git repositories, GitHub Actions, DQX, Metric Views, Collibra, Immuta, downstream consumption/version evidence, Change Intent, safeguard/gate enforcement, authorization sources, and causal evidence inputs. Characterize **source production/availability, collection latency, historical retention, query cost/availability, encounter/version resolution, and opportunity-specific control-enforcement evidence** needed to support the accepted monitoring-result horizons. Preserve the objective that baseline monitoring is independently deployed and should not require production repository/GitHub Actions changes where platform metadata is sufficient.
+
+Determine required facts and actual evidence support for Databricks, Git repositories, GitHub Actions, DQX, Metric Views, Collibra, Immuta, downstream consumption/version evidence, Change Intent, safeguard/gate enforcement, authorization sources, and causal evidence inputs.
+
+Characterize **source production/availability time, collection latency, retention, query cost/availability, and control-enforcement observability** needed to satisfy the accepted evidence/timing semantics. Preserve the objective that baseline monitoring be independently deployed and avoid production repository/GitHub Actions changes where platform metadata is sufficient.
 
 ## Phase 010 — Technical Architecture
-Only now select implementation architecture. Evaluate historical/evidence storage; graph-compatible Lineage; temporal/ledger history; ingestion/synchronization; identity/Capability Authorization realization; service/API boundaries; Databricks deployment model; out-of-band passive monitoring; optional dependency-gating control-plane realization and availability/fallback; safeguard/quarantine realization; consumption/version evidence integrations; Explanation interface; tenancy/environment strategy; testing/observability; causal reasoning implementation; and **fast-path versus asynchronous/deeper analysis plus explicitly gated control-path performance budgets**.
 
-A key architecture criterion is that ungated production jobs should not depend on monitoring-framework availability and baseline monitoring should add as little production-path latency as practical.
+Only now select implementation architecture. Evaluate evidence/history storage; graph-compatible Lineage; temporal/ledger history; ingestion/synchronization; Capability Authorization realization; Databricks deployment model; out-of-band passive monitoring; optional dependency-gating control-plane realization/availability/fallback; safeguard/quarantine realization; Explanation interface; testing/observability; causal reasoning implementation; and **fast-path versus asynchronous/deeper analysis architecture and performance budgets**.
+
+A key architecture criterion remains that **ungated production jobs must not depend on monitoring-framework availability**. Explicitly gated paths may require deliberate production-critical control availability under accepted policies.
 
 ## Phase 011 — MVP Implementation Planning
-Convert accepted architecture into implementation phases, interfaces, test strategy, migration/onboarding strategy, acceptance criteria, and concrete availability/latency targets for selected MVP monitoring-result, RCA, exposure, readiness, and control-enforcement classes.
+
+Convert accepted architecture into implementation phases, interfaces, test strategy, onboarding/migration strategy, acceptance criteria, and concrete availability/latency targets for selected MVP monitoring-result, health, RCA, exposure, and control classes.
 
 ## Phase 012 — MVP Implementation
+
 Implement minimum vertical slices required to prove the accepted MVP scenarios.
 
 ## Roadmap rule
-A later phase may reveal a flaw in an earlier concept or synchronization. Reopen/revise it explicitly with rationale rather than preserving a bad boundary merely to maintain sequence.
+
+A later phase may reveal a flaw in an earlier concept, synchronization, or refinement. Reopen/revise it explicitly with rationale rather than preserving a bad boundary merely to maintain sequence.
