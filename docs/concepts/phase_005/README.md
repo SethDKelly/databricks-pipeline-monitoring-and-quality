@@ -1,38 +1,39 @@
 # Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement
 
-**Status:** ACTIVE — Groups 01–06 accepted; AUTH-001–AUTH-053 accepted; Group 07 next
+**Status:** COMPLETE — Groups 01–07 accepted; AUTH-001–AUTH-053 final
 
 ## Goal
 
 Refine who/what is authoritative or permitted to establish, resolve, view, confirm, operate, override, or disclose accepted ecosystem state without weakening the evidence, temporal, causal, exposure, readiness, or control-proof standards completed in Phase 004.
 
-Phase 005 is a governance/authority/capability refinement phase. It must not select IAM technology, redefine Phase 004 evidence sufficiency, silently treat vendor/source ownership as authority, or prematurely design the Phase 006 metric/statistical/schema-health model.
+Phase 005 uses `AUTH-###` refinement/governance contracts over accepted concepts. It does not define an IAM architecture, policy engine, workflow engine, metric engine, causal engine, scheduler/orchestrator, redaction technology, or service topology.
 
-Phase 005 authority contracts use `AUTH-###` identifiers. They are refinement/governance contracts over accepted concepts, not new Phase 003 synchronizations and not substitutes for concept ownership. Group 01 exposed one genuine missing concept boundary: **Assertion Authority**, accepted as the 24th concept. Groups 02–06 required no additional concept.
+Group 01 exposed one genuine missing concept boundary: **Assertion Authority**, accepted as the 24th concept. Groups 02–07 require no additional concept.
+
+## Accepted Phase 005 result
+
+- accepted concept catalog: **24 concepts**;
+- Phase 003 synchronization range: **SYN-001–SYN-035** unchanged;
+- Phase 004 refinement range: **REF-001–REF-030** unchanged;
+- Phase 005 authority/governance range: **AUTH-001–AUTH-053 final**;
+- Group 07 consolidation scenarios **G07-01–G07-26 PASS**;
+- no technical architecture selected;
+- **Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement is next and has not started.**
 
 ## Accepted handoff from Phase 004
 
-- evidence applicability, bounded coverage, corroboration/conflict, and conclusion-specific sufficiency are independent from source/actor authority;
+Phase 005 never changes these Phase 004 rules:
+
+- evidence applicability, bounded coverage, corroboration/conflict, and conclusion-specific sufficiency remain independent from source/actor authority;
 - missing/restricted/unavailable evidence remains a limitation, never a negative fact;
-- evidence sufficiency does not grant Capability Authorization or action authority;
-- internal evidentiary sufficiency can coexist with requester-visible redaction/opacity;
-- causal `confirmed` status requires both the accepted evidence gate and independently resolved confirmation authority/capability;
-- raw-data read, metadata/health visibility, Lineage/RCA participation, job operation, safeguard actions, Execution Gate actions/override, causal confirmation, and Explanation access remain independently resolvable capabilities;
-- responsibility, Classification, Policy Context, Monitoring Scope, repository ownership, job creator identity, administrator status, or analyst role do not silently grant those capabilities;
-- gate/safeguard configuration/operation authority is separate from evidence that the control was actually enforced;
-- historical authorization is reconstructable evidence about past capability but never overrides current requester disclosure authorization;
-- restricted metadata/derived evidence can itself be sensitive and is not automatically safe to disclose;
-- conflicting applicable evidence/assertions remain conflict until accepted category/context-specific authority semantics resolve them.
+- causal `confirmed` status requires the accepted evidence profile plus independently resolved confirmation capability/authority;
+- exposure, non-exposure, readiness, gate enforcement, safeguard prevention, and historical negative claims keep their REF evidence burdens;
+- historical correction may change retrospective understanding without rewriting what was known, done, or communicated earlier;
+- passive monitoring remains out-of-band/non-blocking for ungated production.
 
-## Accepted Group 01 — Assertion Authority and AUTH-001–AUTH-008
+## Group 01 — Authority Vocabulary, Source Assertions & Conflict Resolution
 
-Group 01 accepts **Assertion Authority** as a narrow post-Phase-002 addendum because source-precedence/conflict/history behavior recurs across Semantic Definition, Responsibility Assignment, Classification, Policy Context, Expectation, and later metric/threshold governance.
-
-Assertion Authority answers:
-
-> Which source/actor/role/governed process has authoritative standing for this exact assertion category/facet/subject scope/context/time?
-
-It does not answer whether the assertion is factually infallible, whether evidence is sufficient, whether the principal is allowed to perform an action, or whether a control actually enforced something.
+**Status:** Accepted — Assertion Authority + AUTH-001–AUTH-008
 
 Accepted contracts:
 
@@ -48,32 +49,27 @@ Accepted contracts:
 Key results:
 
 - authority is category/facet/context/time scoped, never universal by default;
-- assertion recording and authoritative standing are separate;
-- source count, recency, ingestion order, availability, repository ownership, title, responsibility, and apparent specificity do not create authority;
-- co-authoritative disagreement remains authoritative conflict unless an explicit resolver applies;
-- conditional/fallback authority requires an explicit rule plus evidence that its condition holds;
-- authority rules require provenance/governing basis and cannot self-validate;
-- authority history is bitemporal and corrections do not rewrite what was known then;
-- authority cannot waive REF-001–REF-030 evidence burdens or prove enforcement.
+- source assertion recording and authoritative standing are separate;
+- source count, majority, recency, ingestion order, availability, repository ownership, title, responsibility, and apparent specificity do not create hidden authority;
+- co-authoritative disagreement remains conflict unless an explicit resolver applies;
+- fallback requires an explicit rule plus evidence that the activation condition holds;
+- authority rules require provenance and governing basis and cannot self-validate;
+- authority is bitemporal and non-rewriting;
+- Assertion Authority cannot manufacture evidence sufficiency, permission, or enforcement.
 
 See [`01_authority_vocabulary_and_conflict/README.md`](01_authority_vocabulary_and_conflict/README.md).
 
-## Accepted pre-Group-02 schema / DDL validation handoff
+## Pre-Group-02 schema / DDL handoff
 
-[`pre_group_02_schema_ddl_validation_handoff.md`](pre_group_02_schema_ddl_validation_handoff.md) records schema/DDL compatibility as a first-class pipeline-health concern.
+[`pre_group_02_schema_ddl_validation_handoff.md`](pre_group_02_schema_ddl_validation_handoff.md) establishes schema/DDL compatibility as a first-class health concern while preserving:
 
-The accepted split is:
+**governed schema/grain/key/field meaning → normative schema/compatibility Expectation → realized schema Observation/Change → compatibility Assessment**.
 
-- governed schema/grain/key/field meaning → Semantic Definition;
-- normative schema/compatibility requirement → Expectation;
-- realized schema state/change → Observation/Change;
-- planned schema evolution → Change Intent;
-- conformance/health → Assessment;
-- downstream compatibility/effect → Lineage/Impact/Investigation/Causal Claim as applicable.
+Pre-deployment CI validation, realized-state platform validation, and independent monitoring validation may all be useful because they answer different temporal questions. Phase 005 selects no universal validation location.
 
-Pre-deployment validation in source control/CI, realized-state validation from Databricks/Unity Catalog metadata, and independent monitoring validation may all be useful because they answer different temporal questions. No universal validation location is selected in Phase 005.
+## Group 02 — Semantic, Responsibility, Classification, Policy & Criticality Governance
 
-## Accepted Group 02 — Semantic / Governance Authority and AUTH-009–AUTH-015
+**Status:** Accepted — AUTH-009–AUTH-015
 
 Accepted contracts:
 
@@ -88,26 +84,32 @@ Accepted contracts:
 Key results:
 
 - semantic authority is facet-specific across business definition, technical schema declaration, grain, units, population, calculation meaning, field roles, and key roles;
-- **declared/governed schema meaning ≠ normative schema contract ≠ realized schema state**;
-- declared key role does not prove uniqueness/nullability health;
-- column rename identity is not inferred from drop/add names alone;
+- **declared/governed schema meaning ≠ normative schema contract ≠ realized schema state ≠ compatibility Assessment**;
+- declared key role does not prove uniqueness/nullability;
 - responsibility authority is responsibility-type scoped;
-- Classification authority is scheme/context specific;
-- business/operational/consumer/delivery criticality remains Classification under explicit schemes/contexts rather than a new concept;
+- Classification authority is scheme/context scoped, with criticality represented as Classification rather than Impact/health truth;
 - policy text/reference authority may differ from subject/context policy-applicability authority;
-- narrower/local governance does not automatically override broader governance;
-- Lineage, repository/container membership, schema/tag inference, and parent state do not implicitly propagate governance assertions or authority;
-- descriptive governance authority does not become normative health, Capability Authorization, control enforcement, compliance, or actual Impact truth.
+- local/context governance does not automatically override broader governance;
+- Lineage, repository/container membership, tags, or parent state do not implicitly propagate governance assertions or authority;
+- descriptive governance does not become normative health, permission, enforcement, compliance, or actual Impact.
 
 See [`02_semantic_governance_authority/README.md`](02_semantic_governance_authority/README.md).
 
-## Accepted pre-phase metric-health handoff
+## Pre-phase metric-health handoff
 
 [`pre_phase_metric_health_handoff.md`](pre_phase_metric_health_handoff.md) establishes that successful execution is insufficient for table/pipeline health and that metric selection/propagation must be purposeful rather than exhaustive.
 
-Phase 005 owns governance around metric/schema normative state; Phase 006 owns the actual metric/statistical/schema-health model; Phase 007 owns Lineage-aware propagation/change behavior; Phase 009 characterizes concrete source support/latency; Phase 010 chooses technical realization.
+The accepted split is:
 
-## Accepted Group 03 — Normative Health, Metric & Threshold Governance
+- Phase 005 governs who may define/approve/revise/waive/retire/disclose metric profiles, Expectations, thresholds, severity, and control-use eligibility;
+- Phase 006 defines metric/statistical/schema-health semantics and result timing;
+- Phase 007 refines Lineage-aware propagation/change/control behavior;
+- Phase 009 evaluates concrete evidence/source support and latency;
+- Phase 010 selects technical realization.
+
+## Group 03 — Normative Health, Metric & Threshold Governance
+
+**Status:** Accepted — AUTH-016–AUTH-023
 
 Accepted contracts:
 
@@ -122,23 +124,23 @@ Accepted contracts:
 
 Key results:
 
-- Expectation authority is dimension/property/context/time scoped and may differ by lifecycle action;
-- metric meaning, profile inclusion, threshold, severity, waiver, and high-consequence-use eligibility can have different authoritative holders;
+- Expectation authority is dimension/property/context/time/action scoped;
+- **metric meaning ≠ profile inclusion ≠ threshold/margin ≠ severity ≠ waiver ≠ high-consequence-use eligibility**;
 - metric profiles are governed selection/applicability structures, not a new truth concept;
-- metric availability does not justify profile inclusion;
-- Baseline-derived ranges remain descriptive until explicitly adopted through an authoritative Expectation;
+- technical availability does not justify metric bloat;
+- Baseline-derived ranges remain descriptive until an authoritative Expectation adopts them;
 - structural/schema compatibility Expectations require explicit normative authority;
-- authority may retire/suspend metric/Baseline use but cannot manufacture empirical Baseline comparability;
-- bounded exceptions/waivers change normative applicability or required response without rewriting Observations, structural state, Baseline deviations, or historical evidence;
+- structural Change triggers scoped review of metric/profile/Baseline use, but authority cannot manufacture empirical comparability;
+- bounded waivers/exception/suspension do not rewrite Observations/Baselines/realized schema or create a false pass;
 - `strictest wins`, `business wins`, `technical wins`, `highest severity wins`, and recency are not implicit normative conflict resolvers;
-- criticality can influence governance priority/review but does not automatically tighten thresholds or prove Impact;
-- a metric/Expectation must be explicitly eligible before high-consequence control use, but eligibility is not control authority, evidence readiness, or enforcement.
+- criticality can influence priority/review but does not automatically tighten thresholds or prove Impact;
+- control-use eligibility is separate from control capability, evidence readiness, and enforcement.
 
 See [`03_normative_health_metric_threshold_governance/README.md`](03_normative_health_metric_threshold_governance/README.md).
 
-## Accepted Group 04 — Capability Authorization & Restricted Analytical Visibility
+## Group 04 — Capability Authorization & Restricted Analytical Visibility
 
-Group 04 refines **permission truth** and least-privilege analytical visibility without creating a new authorization/IAM architecture or weakening evidence truth.
+**Status:** Accepted — AUTH-024–AUTH-032
 
 Accepted contracts:
 
@@ -154,26 +156,25 @@ Accepted contracts:
 
 Key results:
 
-- authorization binds exact principal + capability/action + subject + context/time and, where material, detail level;
+- authorization binds exact principal + capability/action + subject + context/time and material detail level;
 - accepted states include `allowed`, `denied`, `conditional`, `unknown`, `conflicting`, and `unavailable`;
 - missing/conflicting/unavailable authorization never becomes permission;
-- runtime fail-safe refusal is separate from authorization truth and must not invent a `denied` decision;
-- no universal `deny wins`, `direct user wins`, `role wins`, `latest wins`, or `most specific wins` combination rule exists;
-- user/group/role/service-principal entitlements require evidenced applicable membership/assumption and explicit combination rules;
-- capability inheritance through domain/catalog/schema/table/pipeline/repository/Lineage relationships is never implicit;
-- raw rows, sensitive fields, schema, governance metadata, metric values, Assessment summaries, thresholds, Baselines, Lineage identities/paths, RCA evidence, causal/Impact/control details, and Explanation can be independently authorized;
-- permission to perform a normative action and Assertion Authority over its result are separate requirements;
-- Authorized Analytical Projection is a requester-capability-filtered synchronization/view, not declassification or a 25th concept;
+- runtime fail-safe refusal does not rewrite unresolved truth into a fabricated deny;
+- no universal `deny wins`, direct-user, role, latest, or specificity precedence exists;
+- user/group/role/service-principal composition and capability inheritance require explicit rules and historical evidence;
+- raw rows, sensitive fields, schema, metrics, thresholds, Baselines, Lineage, RCA, causal/Impact/control detail, governance actions, and Explanation may be independently authorized;
+- permission to perform a normative action and Assertion Authority over the resulting rule are separate;
+- Authorized Analytical Projection is a view over existing truth, not declassification or a new concept;
 - requester visibility and framework/service-principal processing authorization are separate;
-- derived/aggregate monitoring state can itself be sensitive and inference-leaking;
-- historical authorization is non-rewriting and never reusable as current permission;
-- authorization does not prove external enforcement, action occurrence, or action success.
+- aggregates/derived monitoring state can remain sensitive or inference-leaking;
+- historical authorization is non-rewriting and not reusable as current permission;
+- authorization never proves action occurrence, enforcement, or success.
 
 See [`04_capability_authorization_and_restricted_analysis/README.md`](04_capability_authorization_and_restricted_analysis/README.md).
 
-## Accepted Group 05 — High-Consequence Action, Control & Causal-Confirmation Authority
+## Group 05 — High-Consequence Action, Control & Causal-Confirmation Authority
 
-Group 05 applies Capability Authorization to high-consequence actions without creating a workflow/control concept or weakening evidence/control truth.
+**Status:** Accepted — AUTH-033–AUTH-043
 
 Accepted contracts:
 
@@ -191,25 +192,26 @@ Accepted contracts:
 
 Key results:
 
-- high-consequence authorization is exact-action and lifecycle-stage scoped: proposal/request, approval, execution/issuance, override/release/cancel, and review may differ;
-- causal confirmation remains jointly evidence- and authority-gated, with human-versus-automation rules scoped by claim profile/class;
-- job operational permissions are granular and independent from raw-data, gate, safeguard, and deployment authority;
-- gate registration/configuration, normal hold/admit operation, override, fallback-policy configuration, enable/disable, and retirement may have different authorized principals;
+- high-consequence authorization is exact action/lifecycle-stage scoped: request/propose, approve, execute/issue, override/release/cancel, and review may differ;
+- causal confirmation remains jointly evidence- and authority-gated, with human-versus-automation rules scoped by claim class/profile;
+- job trigger/retry/restart/cancel and other operational actions are granular and independent from raw-data, gate, safeguard, and deployment authority;
+- gate registration/configuration/readiness-fallback/enable-disable/normal HOLD-ADMIT/override/retirement may have different principals;
 - gate override never rewrites readiness or proves enforcement;
-- safeguard proposal, activation, and release are independently governable, and release does not prove health;
-- multi-party approval/separation-of-duties rules are explicit conditions on Capability Authorization rather than a new workflow concept;
-- capability exercise does not imply delegation authority; temporary grants are bounded, expiring, revocable, and non-transitive by default;
-- break-glass is explicit, bounded emergency permission rather than universal superuser state and cannot manufacture evidence/readiness/health/causality;
-- automation/service principals can perform high-consequence actions only through exact explicit grants and cannot bypass required human approval;
-- authorization-outage fallback is action-specific; there is no universal fail-open/fail-closed/always-hold/always-release behavior;
-- existing control state during an authorization outage is separate from authority to change that state;
+- safeguard proposal/approval/activation/extension/cancel/release/retirement are independently governable, and release does not prove health;
+- multi-party approval, quorum, ordering, independence, and self-approval are explicit conditional-authorization rules;
+- approval completion does not execute an action;
+- capability exercise does not imply delegation authority; delegated grants are bounded, expiring/revocable, and non-transitive unless explicit;
+- break-glass is scoped emergency authorization rather than universal superuser state and cannot manufacture evidence/readiness/health/causality;
+- automation/service principals require exact explicit grants and cannot bypass mandatory human review;
+- authorization-outage fallback is action-specific; there is no universal fail-open/fail-closed/always-hold/always-release rule;
+- existing protective state during an outage is separate from authority to change it;
 - request → authorization/approval → issuance → control-plane acceptance → enforcement/effect → resulting state/outcome remain separate facts.
 
 See [`05_high_consequence_control_confirmation_authority/README.md`](05_high_consequence_control_confirmation_authority/README.md).
 
-## Accepted Group 06 — Disclosure, Explanation & Audience Governance
+## Group 06 — Disclosure, Explanation & Audience Governance
 
-Group 06 governs **what an authorized audience may learn and how that truth may be released** without creating a separate truth model or allowing abstraction/publication to strengthen underlying state.
+**Status:** Accepted — AUTH-044–AUTH-053
 
 Accepted contracts:
 
@@ -227,80 +229,79 @@ Accepted contracts:
 Key results:
 
 - disclosure binds requester/audience, information/detail class, subject/context, purpose, temporal perspective, and delivery scope;
-- audience labels such as technical/business/executive/client/audit are context, not permission sources;
-- permission to inspect privately does not automatically grant permission to publish, export, forward, or disclose to another audience;
+- audience labels are context, not permission sources;
+- private inspection does not automatically grant export/forward/publish/client disclosure;
 - result visibility can differ from metric/threshold/schema/evidence/source/actor/authority basis visibility;
-- restricted basis remains restricted rather than absent, while material limitations remain visible at an authorized abstraction when needed to avoid misleading interpretation;
-- safe abstraction can expose exact state, coarser category/range, redacted detail, opaque existence, or an explicit limitation only when the abstraction itself is authorized and semantically valid;
-- opaque existence may be shown only when existence itself is disclosable;
+- restricted basis remains restricted rather than absent;
+- safe abstraction may expose exact state, coarser category/range, redacted detail, opaque existence, or explicit limitation only when separately authorized and semantically valid;
 - aggregation/redaction is not automatic declassification;
-- disclosure review considers material inference from combinations, counts, topology, timing, differencing, repeated narrowing, prior disclosures, authority metadata, and control metadata rather than evaluating each field in isolation;
-- technical, business, executive, and audit views are different authorized projections over the same truth and cannot intentionally contradict or strengthen it;
-- high-consequence statements may require separate compose/review/approve/release/correct/retract authority even when the underlying fact is internally viewable;
+- disclosure safety includes mosaic/differencing/repeated-query risk;
+- technical/business/executive/audit views are projections over one truth and cannot strengthen or intentionally contradict it;
+- high-consequence communication may require compose/review/approve/release/correct/retract authority even when the underlying fact is internally viewable;
 - communication approval cannot create evidence sufficiency, causal confirmation, health, compliance, or enforcement;
-- simplified wording must preserve accepted status: supported ≠ confirmed, reachable ≠ exposed, not exposed to suspect V ≠ fresh/healthy, hold decision ≠ hold enforced, active safeguard ≠ prevented exposure, release ≠ health, waiver ≠ clean pass, authoritative standing ≠ factual infallibility;
-- Annotation author identity, Assertion Authority holder/basis, authorization membership path, causal confirmer/reviewer, gate/safeguard approver/operator, delegation, break-glass, service-principal identity, and other security/control metadata can be independently sensitive;
-- Annotation content shown without exact author identity remains labeled as human-provided context where that distinction is material;
-- historical retained Explanation, reconstructed `as-known-then` Explanation, retrospective Explanation, historical authorization/disclosure, and current requester disclosure remain separate;
-- unknown/conflicting/unavailable/unsafe-to-project disclosure state never becomes permission, and safe withholding does not fabricate an explicit deny or false absence.
+- simplified wording must preserve status such as supported vs confirmed, reachable vs exposed, hold decision vs enforcement, waiver vs clean pass, and release vs health;
+- actor/authority/authorization/control metadata may be independently sensitive;
+- historical retained Explanation, reconstructed `as-known-then`, retrospective Explanation, historical authorization/disclosure, and current disclosure remain separate;
+- unknown/conflicting/unavailable/unsafe-to-project disclosure state never becomes permission.
 
 See [`06_disclosure_explanation_audience_governance/README.md`](06_disclosure_explanation_audience_governance/README.md).
 
-## Delivery-group design
+## Group 07 — Consolidation / Exit Review
 
-The phase is reviewed in **seven logical groups**. The grouping is a design/review dependency, not an implementation or service boundary.
+**Status:** Accepted — Phase 005 complete
 
-### Group 01 — Authority Vocabulary, Source Assertions & Conflict Resolution
-**Status:** Accepted — AUTH-001–AUTH-008; Assertion Authority added as 24th concept.
+Group 07 replays Groups 01–06 together across A+B→C metric/schema governance, threshold conflict/waiver, structural-change comparability, restricted multi-cause RCA, causal confirmation, multi-party gate override, safeguard release, break-glass during authorization outage, automated control, technical/business/client projection, and historical Explanation scenarios.
 
-### Group 02 — Semantic, Responsibility, Classification, Policy & Criticality Governance
-**Status:** Accepted — AUTH-009–AUTH-015; no new concept.
+Results:
 
-### Group 03 — Normative Health, Metric & Threshold Governance
-**Status:** Accepted — AUTH-016–AUTH-023; no new concept.
+- [`consolidation_scenario_matrix.md`](07_consolidation_and_exit/consolidation_scenario_matrix.md) — **G07-01–G07-26 PASS**;
+- [`phase_005_exit_review.md`](07_consolidation_and_exit/phase_005_exit_review.md) — all exit checks pass;
+- no 25th concept;
+- no AUTH-054;
+- **AUTH-001–AUTH-053 is the final accepted Phase 005 range.**
 
-### Group 04 — Capability Authorization & Restricted Analytical Visibility
-**Status:** Accepted — AUTH-024–AUTH-032; no new concept.
+The accepted phase-wide composition is:
 
-### Group 05 — High-Consequence Action, Control & Causal-Confirmation Authority
-**Status:** Accepted — AUTH-033–AUTH-043; no new concept.
+**source assertion / Assertion Authority → semantic or normative governance resolution → Capability Authorization / Authorized Analytical Projection → high-consequence authorization where applicable → disclosure / Explanation projection**
 
-### Group 06 — Disclosure, Explanation & Audience Governance
-**Status:** **Accepted — AUTH-044–AUTH-053; no new concept.**
+without moving operational, health, causal, control, Impact, or historical truth out of their owning concepts.
 
-### Group 07 — Phase 005 Consolidation / Exit Review
-**Status:** **Next — not started.**
+## Phase boundaries after exit
 
-Compose Groups 01–06 across representative scenarios and verify that source standing, normative authority, permission, high-consequence action authority, and disclosure remain separate layers over the same evidence-backed truth.
+Phase 005 decisions must not be used to:
 
-Boundary: Group 07 is a consolidation/exit review. It must not add architecture merely to close the phase, and it should add another AUTH contract only if a genuine unresolved semantic gap is exposed.
-
-## Phase boundaries
-
-Phase 005 must not:
-
-- redefine Phase 004 evidence sufficiency/coverage or causal-confirmation evidence semantics;
-- grant authority merely from source count, recency, repository ownership, technical availability, synchronization order, job creator identity, organizational title, or responsibility;
-- treat authority as factual infallibility;
-- treat policy applicability as enforcement/compliance proof;
-- make derived evidence/governance state automatically unrestricted or authoritative;
-- promote Baseline typicality into normative truth without explicit Expectation authority;
-- treat a waiver as a rewrite of observed evidence or a false health pass;
-- make a critical or authoritative metric automatically control-eligible;
-- treat metadata/aggregate/derived evidence as automatically safe to disclose;
-- make group/role membership, asset containment, or Lineage imply capability inheritance without explicit rules;
-- treat unresolved authorization or disclosure state as allow or silently rewrite it to explicit deny;
-- treat Capability Authorization, high-consequence approval, or communication approval as proof of external enforcement, successful action, evidence sufficiency, or truth;
-- treat break-glass as universal superuser access or automation as self-authorized;
+- weaken Phase 004 evidence sufficiency/coverage or causal-confirmation evidence semantics;
+- infer authority from source count, recency, repository ownership, technical availability, synchronization order, title, responsibility, or apparent specificity;
+- turn authority into factual infallibility;
+- turn Policy Context into compliance proof;
+- turn Baseline typicality into a normative rule without an Expectation;
+- let a waiver rewrite observed evidence or create a false pass;
+- make an authoritative/business-critical metric automatically control-eligible;
+- treat metadata/aggregate/derived evidence as automatically unrestricted;
+- make group/role membership, containment, or Lineage imply capability inheritance;
+- treat unresolved authorization/disclosure as permission or fabricate deny state;
+- equate permission/approval with action issuance, enforcement, success, or truth;
+- treat break-glass as universal superuser authority or automation as self-authorized;
 - turn gate override into readiness, safeguard release into health, retry into successful execution, or confirmation authority into evidence sufficiency;
-- create separate technical/business/executive truth models;
-- let redaction/opacity imply restricted entities/evidence/authority do not exist;
-- define the detailed Phase 006 metric/schema-health/statistical model or blindly propagate metrics/governance through Lineage;
-- select RBAC/ABAC/IAM/provider architecture, approval/workflow engine, redaction/declassification/privacy-budget technology, scheduler/orchestrator, quarantine implementation, causal engine, graph, LLM, metric storage, rule engine, or persistence architecture;
-- select Databricks/Collibra/Immuta/GitHub/Unity Catalog as universally authoritative by default;
-- select GitHub Actions, Unity Catalog, or the monitoring application as the universal schema-validation location;
-- begin Group 07 or Phase 006 without explicit user direction.
+- create different technical/business/executive truth models;
+- let redaction/opacity imply hidden entities/evidence do not exist;
+- define Phase 006 metric/statistical/schema-health behavior;
+- select RBAC/ABAC/IAM, authority engine, workflow engine, redaction/privacy technology, scheduler/orchestrator, metric engine/storage, graph, LLM, causal engine, or persistence architecture;
+- select Databricks, Unity Catalog, Collibra, Immuta, GitHub, or GitHub Actions as universally authoritative or as a universal validation/control mechanism.
 
-## Phase direction
+## Phase 006 handoff
 
-**Phase 005 Groups 01–06 are accepted with AUTH-001–AUTH-053. Group 07 — Consolidation / Exit Review is next and has not started.**
+Phase 006 inherits explicit authority/disclosure constraints but remains free to define the actual health model. It must address:
+
+- metric-family taxonomy and purposeful per-asset metric profiles;
+- core, critical-field/business, transformation-specific, and diagnostic/on-demand metrics;
+- execution/output/freshness/schema/completeness/uniqueness/validity/distribution/relational/business-semantic health;
+- schema/DDL compatibility and consumer-specific structural validity;
+- Baseline classes, statistical comparability, seasonality/cohorts, low-volume behavior, and anomaly semantics;
+- thresholds/margins/tolerance evaluation and bounded waiver representation;
+- selective transformation-aware metric propagation/reconciliation;
+- composite/overall health without hiding dimension disagreement;
+- technical versus business health projection requirements under AUTH-044–AUTH-053;
+- functional result timing/freshness/maturity requirements, especially for AUTH-023 control-use eligible conditions.
+
+**Phase 005 is complete. Phase 006 is next and remains not started until explicit user direction.**

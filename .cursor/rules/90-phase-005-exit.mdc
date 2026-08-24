@@ -1,0 +1,63 @@
+---
+description: Phase 005 consolidation/exit invariants and Phase 006 entry guardrails.
+globs:
+alwaysApply: true
+---
+
+# Phase 005 exit — accepted
+
+Status: **Phase 005 is complete. AUTH-001–AUTH-053 are final. The concept catalog remains 24; SYN-001–SYN-035 and REF-001–REF-030 remain unchanged. Phase 006 is next and has not started.**
+
+Group 07 consolidation result:
+
+- G07-01–G07-26 pass;
+- no 25th concept;
+- no AUTH-054;
+- no authority/workflow/policy umbrella owns domain truth;
+- no IAM, metric, scheduler, redaction, graph, causal, LLM, or persistence architecture was selected.
+
+Preserve the Phase 005 stack:
+
+**source assertion / Assertion Authority → semantic or normative governance resolution → Capability Authorization / Authorized Analytical Projection → high-consequence action authorization where applicable → disclosure / Explanation projection**
+
+while Observation, Assessment, Change, Causal Claim, Execution History, Execution Gate, Propagation Safeguard, Impact, Explanation history, and other owning concepts retain actual domain truth.
+
+Exit invariants:
+
+- authority never substitutes for Phase 004 evidence sufficiency;
+- descriptive semantic/schema governance never substitutes for normative health;
+- normative authority never manufactures empirical metric/Baseline/schema comparability;
+- Capability Authorization never implies Assertion Authority, action occurrence, enforcement, or outcome;
+- high-consequence approval never implies issuance/enforcement/success;
+- break-glass/delegation/automation remain explicit bounded authorization, never universal authority;
+- disclosure never creates a second truth model or upgrades status;
+- conflicts remain explicit when no accepted resolver applies;
+- restricted-data RCA remains useful through Authorized Analytical Projection without declassification;
+- historical authority, authorization, action, and disclosure remain non-rewriting;
+- current requester authorization governs current disclosure even when examining historical state.
+
+Phase 006 must consume—not reopen—the following accepted governance constraints:
+
+- metric profile selection and lifecycle are governed and should resist bloat;
+- thresholds/margins/severity/waivers/control-use eligibility have explicit authority separate from metric meaning;
+- schema meaning and structural compatibility Expectation are different;
+- structural Change may trigger scoped review but does not globally reset every metric/Baseline;
+- technical/business health are projections over one underlying health truth;
+- control-use eligibility does not make unavailable/stale/non-comparable evidence safe for gating;
+- disclosure constraints apply to metric/schema/threshold/Baseline detail and composite health outputs.
+
+Phase 006 is free to define:
+
+- metric families and purposeful profile classes;
+- execution/output/freshness/schema/completeness/uniqueness/validity/distribution/relational/business-semantic health;
+- Baseline classes and comparability;
+- statistical/anomaly semantics;
+- threshold/tolerance evaluation;
+- waiver representation in Assessment/composite health;
+- consumer-aware DDL/schema compatibility;
+- selective transformation-aware metric propagation/reconciliation;
+- composite/overall health without hiding unknown/conflict;
+- functional result timing/freshness/maturity;
+- Metric Views/DQX semantic fit.
+
+Do not begin Phase 006 without explicit user direction.

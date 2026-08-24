@@ -4,7 +4,9 @@
 
 **24 concepts are Accepted.** Phase 002 originally exited with 20 accepted concepts. Later work exposed four missing independent behaviors: **Propagation Safeguard**, **Capability Authorization**, **Execution Gate**, and **Assertion Authority**, each accepted through a narrow post-exit addendum.
 
-The project uses Concept Design to define independently understandable units of functionality. Concepts remain implementation-neutral and synchronize rather than collapse into vendor, service, storage, schema, IAM, authority-rule engine, approval-workflow, orchestration, temporal-replay, metric-governance, or UI boundaries.
+**Phase 003 is complete with SYN-001–SYN-035. Phase 004 is complete with REF-001–REF-030. Phase 005 is complete with AUTH-001–AUTH-053. Phase 006 is next and has not started.**
+
+The project uses Concept Design to define independently understandable units of functionality. Concepts remain implementation-neutral and synchronize rather than collapse into vendor, service, storage, schema, IAM, authority-rule engine, approval-workflow, orchestration, temporal-replay, metric-governance, disclosure, or UI boundaries.
 
 Use [`concept_template.md`](concept_template.md) as the specification checklist. The original review and later addenda are in [`phase_002/README.md`](phase_002/README.md) and [`phase_002/addenda/`](phase_002/addenda/).
 
@@ -42,13 +44,13 @@ Use [`concept_template.md`](concept_template.md) as the specification checklist.
 
 ### Post-exit addenda
 - [`Propagation Safeguard`](phase_002/addenda/propagation_safeguard.md) — proposed/active/released protective hold or quarantine state for an explicit output/consumption boundary.
-- [`Capability Authorization`](phase_002/addenda/capability_authorization.md) — principal/capability/subject authorization state separating raw-data visibility, analytical visibility, operational control, safeguard/gate authority, and causal-confirmation capability.
+- [`Capability Authorization`](phase_002/addenda/capability_authorization.md) — principal/capability/subject authorization state separating raw-data visibility, analytical visibility, operational control, safeguard/gate authority, causal-confirmation capability, governance actions, and disclosure.
 - [`Execution Gate`](phase_002/addenda/execution_gate.md) — optional downstream execution admission/hold/admit/override control based on explicit prerequisite readiness evidence, separate from passive monitoring and output quarantine.
 - [`Assertion Authority`](phase_002/addenda/assertion_authority.md) — target/context/time-scoped rules determining which source/actor assertions have authoritative standing without owning the domain assertions, evidence sufficiency, permission, or enforcement.
 
 ## Core authority and access boundaries
 
-The concept model explicitly distinguishes three cross-cutting questions:
+The concept model explicitly distinguishes:
 
 **Which assertion has authoritative standing? → Assertion Authority**
 
@@ -60,13 +62,17 @@ versus:
 
 **May this principal perform/view this capability? → Capability Authorization**
 
-without making Responsibility Assignment, Policy Context, Classification, Monitoring Scope, source availability, repository ownership, job creator identity, organizational title, metric computation, or criticality an automatic authority/permission source.
+versus:
+
+**What may this authorized audience receive or publish? → Authorized Analytical Projection + disclosure governance + Explanation**
+
+without making Responsibility Assignment, Policy Context, Classification, Monitoring Scope, source availability, repository ownership, job creator identity, organizational title, metric computation, criticality, or audience label an automatic authority/permission source.
 
 A principal may be permitted to submit an assertion that remains advisory. A responsible steward may not have authoritative standing for every category. A source may be authoritative for one semantic facet and advisory for another. An authoritative source can still later be corrected; authority does not create factual infallibility.
 
-A restricted-data analyst may be permitted to inspect approved aggregate health metrics, execution timing, Assessments, redacted Lineage, policy/restriction summaries, responsibility context, causal status, Impact, safeguards, gate state, authority standing, normative result/waiver state, and Annotation while being denied rows, sensitive columns, exact thresholds, schemas, source-holder identities, or other restricted evidence. A job operator can separately be authorized to retry/update/control a job without receiving raw-data read permission. Causal-confirmation capability is independently resolvable.
+A restricted-data analyst may be permitted to inspect approved aggregate health metrics, execution timing, Assessments, redacted Lineage, policy/restriction summaries, responsibility context, causal status, Impact, safeguards, gate state, authority standing, normative result/waiver state, and Annotation while being denied rows, sensitive columns, exact thresholds, schemas, source-holder identities, or other restricted evidence. A job operator can separately be authorized to retry/update/control a job without receiving raw-data read permission. Causal-confirmation capability and publication/disclosure capability are independently resolvable.
 
-Derived evidence, authority metadata, schemas, metric values, thresholds, normative rules, and high-consequence approval/control detail are not automatically unrestricted; authorization applies to metadata/metrics/topology/causal/consequence/control/authority/normative detail independently where necessary.
+Derived evidence, authority metadata, schemas, metric values, thresholds, normative rules, high-consequence approval/control detail, and disclosure/review state are not automatically unrestricted; authorization applies independently where necessary.
 
 ## Assertion Authority boundary — Phase 005 Group 01
 
@@ -117,13 +123,13 @@ Group 02 requires no 25th concept.
 
 ## Normative health / metric governance boundary — Phase 005 Group 03
 
-AUTH-016–AUTH-023 govern normative health standing while leaving measured/statistical truth in the existing concepts.
+AUTH-016–AUTH-023 govern normative health standing while leaving measured/statistical truth in existing concepts.
 
 Preserve:
 
 **metric/schema meaning ≠ metric-profile selection ≠ Expectation/threshold ≠ severity ≠ waiver/exception ≠ high-consequence-use eligibility**.
 
-A metric profile is a governed selection/applicability structure, not a new truth-owning concept. It should preserve the reason a metric/check matters, its applicability, intended use/audience, authority/owner, and lifecycle/retirement context. Technical availability alone is not enough reason to compute or retain a metric, which creates the governance-side anti-bloat rule.
+A metric profile is a governed selection/applicability structure, not a new truth-owning concept. It should preserve why a metric/check matters, applicability, intended use/audience, authority/owner, and lifecycle/retirement context. Technical availability alone is not enough reason to compute or retain a metric.
 
 Baseline remains descriptive. A Baseline-derived range becomes normative only when an authoritative Expectation explicitly adopts a criterion. Authority can suspend or retire Baseline use after structural Change but cannot make empirically non-comparable evidence comparable; replacement Baselines remain evidence-derived.
 
@@ -187,6 +193,26 @@ Capability Authorization continues to own permission/conditional-approval truth.
 
 Group 05 requires no 25th concept.
 
+## Disclosure / audience governance boundary — Phase 005 Group 06
+
+AUTH-044–AUTH-053 govern what an authorized audience may learn and how otherwise valid truth may be released without creating a new truth model.
+
+Disclosure binds requester/audience, information/detail class, subject/context, purpose, temporal perspective, and delivery scope. Audience labels such as technical, business, executive, client, or audit are context rather than permission sources.
+
+Private view permission does not imply export, forward, publish, or client-disclosure permission. Result visibility can differ from exact metric, threshold, schema, source, evidence, authority, confirmer, approver, or control-basis visibility. Restricted basis remains restricted rather than absent.
+
+Safe abstraction can expose exact state, a coarser category/range, redacted detail, opaque existence, or an explicit limitation only when the abstraction itself is authorized and preserves proposition meaning. Opaque existence is shown only when existence itself may be disclosed.
+
+Aggregation/redaction is not automatic declassification. Counts, topology, timestamps, role names, prior disclosures, and repeated/narrower queries can combine into restricted inference; mosaic/differencing risk is therefore evaluated compositionally.
+
+Technical, business, executive, audit, and client views are authorized projections over one underlying truth. Simplification can reduce detail but cannot strengthen status. High-consequence communication may require separate compose/review/approve/release/correct/retract authority, but communication approval never creates evidence sufficiency, causal confirmation, health, compliance, or enforcement.
+
+Preserve status in disclosure: `supported` ≠ `confirmed`; `reachable` ≠ `exposed`; `not exposed to V` ≠ `fresh/healthy`; `hold decision` ≠ `hold enforced`; `safeguard active` ≠ `prevented exposure`; `released` ≠ `healthy`; `waived` ≠ clean pass; authoritative standing ≠ factual infallibility.
+
+Human attribution, authority-holder/basis, authorization membership path, confirmer/approver/operator, delegation, break-glass, service-principal, and control metadata can be independently sensitive. Historical retained Explanation, reconstructed `as-known-then` Explanation, retrospective Explanation, historical authorization/disclosure, and current requester disclosure remain separate. Unknown/conflicting/unavailable/unsafe-to-project disclosure state never becomes permission.
+
+Group 06 requires no 25th concept.
+
 ## Observation versus active control boundary
 
 The default framework mode is observational and should remain out-of-band from production execution. Monitoring evidence collection or framework degradation must not delay production merely because an asset is monitored.
@@ -211,13 +237,13 @@ Group 05 adds:
 
 The reasoning chain can distinguish:
 
-**identified subject → source assertions / Assertion Authority resolution → semantic/responsibility/classification/policy context → governed metric-profile / Expectation / threshold / waiver state → Capability Authorization / Authorized Analytical Projection → planned intent / prospective downstream profile → active Deployment → execution/timing/dependency evidence → Observation → time-valid Assessment → criterion-bound readiness → optional Execution Gate decision/enforcement when explicitly enabled → actual Execution History / realized Change → Investigation → Causal Claim with explicit epistemic status → downstream Impact candidate → exposure/non-exposure → observed effect → consequence evidence → Propagation Safeguard enforcement/prevention/operational effect where applicable → Annotation → Explanation**
+**identified subject → source assertions / Assertion Authority resolution → semantic/responsibility/classification/policy context → governed metric-profile / Expectation / threshold / waiver state → Capability Authorization / Authorized Analytical Projection → planned intent / prospective downstream profile → active Deployment → execution/timing/dependency evidence → Observation → time-valid Assessment → criterion-bound readiness → optional Execution Gate decision/enforcement when explicitly enabled → actual Execution History / realized Change → Investigation → Causal Claim with explicit epistemic status → downstream Impact candidate → exposure/non-exposure → observed effect → consequence evidence → Propagation Safeguard enforcement/prevention/operational effect where applicable → Annotation → disclosure / Explanation**
 
-High-consequence action approvals/authorizations/issuance/enforcement provenance synchronize around the affected concept without becoming a generic workflow truth store.
+High-consequence action approvals/authorizations/issuance/enforcement provenance synchronize around affected concepts without becoming a generic workflow truth store. Disclosure/review similarly constrains release without owning underlying truth.
 
 Causal attribution from an origin, gate, or safeguard to a downstream effect remains explicit **Causal Claim** rather than becoming an Impact/control/authority shortcut.
 
-This is a reasoning/synchronization model, not a service topology, IAM architecture, authority-rule engine, approval workflow engine, scheduler/orchestration design, metric engine, persistence schema, causal algorithm, or temporal replay implementation.
+This is a reasoning/synchronization model, not a service topology, IAM architecture, authority-rule engine, approval workflow engine, scheduler/orchestration design, metric engine, redaction engine, persistence schema, causal algorithm, LLM, or temporal replay implementation.
 
 ## Historical replay boundary
 
@@ -230,7 +256,7 @@ Historical replay preserves:
 - later evidence/authority/normative/authorization correction ≠ evidence/authority/rule/permission known then;
 - actual historical state/action/Explanation ≠ replay-derived interpretation/reconstruction;
 - actual gate/safeguard/high-consequence action ≠ counterfactual action now preferred;
-- historical Assertion Authority/Capability Authorization/normative/control/approval/delegation state ≠ current authority/disclosure permission.
+- historical Assertion Authority/Capability Authorization/normative/control/approval/delegation/disclosure state ≠ current authority/disclosure permission.
 
 A present-day `as-known-then` computation may be useful, but it cannot be presented as an Assessment, belief, authority resolution, normative rule/waiver state, causal status, readiness/enforcement conclusion, authorization/approval/action, or Explanation that actually existed then unless historical state proves that it did.
 
@@ -270,9 +296,9 @@ Examples remain:
 
 REF-001–REF-030 compose across E-01–E-22 and all Phase 004 scenario checks. Progressive analytical availability does not weaken evidence burden; restricted-data analysis remains useful without declassification; late evidence may revise retrospective conclusions without rewriting historical actions; passive monitoring remains non-blocking for ungated production; source/actor authority remained deliberately deferred to Phase 005.
 
-Assertion Authority and later Phase 005 governance now fill those authority boundaries without changing the Phase 004 evidence meaning of any conclusion.
+Assertion Authority and later Phase 005 governance fill those authority boundaries without changing the Phase 004 evidence meaning of any conclusion.
 
-## Phase 005 authority refinement boundary — ACTIVE
+## Phase 005 authority refinement boundary — COMPLETE
 
 ### Group 01 — accepted AUTH-001–AUTH-008
 
@@ -332,13 +358,34 @@ Assertion Authority and later Phase 005 governance now fill those authority boun
 - AUTH-042 — authorization unavailability, conflict, fallback, and control-path recovery;
 - AUTH-043 — action, approval, enforcement, outcome, and historical audit separation.
 
-### Group 06 — next
+### Group 06 — accepted AUTH-044–AUTH-053
 
-Disclosure, Explanation & Audience Governance is next and has not started. It will govern what authorized audiences may learn from otherwise valid metric/schema/threshold/policy/Lineage/causal/Impact/control/authority/authorization state—including high-consequence approval/override/break-glass/delegation/automation detail—without creating separate technical/business truth models.
+- AUTH-044 — disclosure target, audience, purpose, context, and delivery binding;
+- AUTH-045 — result, basis, provenance, and detail-level disclosure separation;
+- AUTH-046 — safe abstraction, redaction, opaque existence, and minimization;
+- AUTH-047 — composite, mosaic, and repeated-query inference-leakage governance;
+- AUTH-048 — audience projection consistency across technical, business, executive, and audit views;
+- AUTH-049 — high-consequence communication review, approval, release, correction, and retraction;
+- AUTH-050 — status-preserving language and non-overstatement in disclosure;
+- AUTH-051 — disclosure of human attribution, authority, authorization, and control metadata;
+- AUTH-052 — historical disclosure, retained Explanation, and current-authorization separation;
+- AUTH-053 — disclosure conflict, unknown/unavailable review state, and safe non-disclosure.
+
+### Group 07 — accepted consolidation / exit
+
+G07-01–G07-26 replay Groups 01–06 across metric/schema governance, threshold conflict/waiver, structural-change comparability, restricted RCA, causal confirmation, multi-party gate override, safeguard release, break-glass/outage, automation, audience projection, and historical Explanation.
+
+All pass without a new Concept, SYN, REF, or AUTH contract. **AUTH-001–AUTH-053 is the final Phase 005 range; there is no AUTH-054.**
+
+The accepted stack is:
+
+**source assertion / Assertion Authority → semantic or normative governance resolution → Capability Authorization / Authorized Analytical Projection → high-consequence authorization where applicable → disclosure / Explanation projection**
+
+while underlying domain concepts retain operational, health, causal, control, Impact, and historical truth.
 
 ## Domain entities that are not automatically concepts
 
-Logical pipelines, jobs, tasks, runs, execution opportunities, tables, views, Metric Views, repositories, workflows, columns, business metrics, metric profiles, reports, applications, business processes, teams, people, source revisions, deployment targets, client-delivery endpoints, roles, groups, approvals, emergency incidents, and service principals may participate in concepts without becoming giant concepts themselves.
+Logical pipelines, jobs, tasks, runs, execution opportunities, tables, views, Metric Views, repositories, workflows, columns, business metrics, metric profiles, reports, applications, business processes, teams, people, source revisions, deployment targets, client-delivery endpoints, roles, groups, approvals, emergency incidents, service principals, audiences, and delivery channels may participate in concepts without becoming giant concepts themselves.
 
 ## Phase state
 
@@ -346,4 +393,6 @@ Logical pipelines, jobs, tasks, runs, execution opportunities, tables, views, Me
 
 **Phase 004 is complete.** Groups 01–05 are accepted with **REF-001–REF-030**.
 
-**Phase 005 is active. Groups 01–05 are accepted with AUTH-001–AUTH-043. Group 06 — Disclosure, Explanation & Audience Governance is next and has not started.**
+**Phase 005 is complete.** Groups 01–07 are accepted with **AUTH-001–AUTH-053** final.
+
+**Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement is next and has not started.**

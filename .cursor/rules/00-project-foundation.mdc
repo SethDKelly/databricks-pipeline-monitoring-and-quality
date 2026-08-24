@@ -9,12 +9,13 @@ alwaysApply: true
 - Current accepted concept count: **24** — original 20 plus Propagation Safeguard, Capability Authorization, Execution Gate, and Assertion Authority addenda.
 - **Phase 003 is complete. Groups 01–06 are accepted; SYN-001–SYN-035 are accepted; E-01–E-22 pass end-to-end consolidation.**
 - **Phase 004 — Evidence, Time, and Causality Refinement is complete. Groups 01–05 are accepted; REF-001–REF-030 are accepted.**
-- **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is active. Groups 01–05 are accepted with AUTH-001–AUTH-043; Group 06 — Disclosure, Explanation & Audience Governance is next and has not started.**
+- **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is complete. Groups 01–07 are accepted; AUTH-001–AUTH-053 are final; G07-01–G07-26 pass.**
+- **Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement is next and has not started.**
 - Work remains documentation/design-first unless the user explicitly advances into technical/implementation design.
-- Do not create application code, notebooks, infrastructure, schemas, APIs, IAM/Assertion Authority implementations, approval/workflow engines, deployment workflows, quarantine implementations, Execution Gate/orchestration implementations, graph/causal engines, LLMs, or prototypes prematurely.
+- Do not create application code, notebooks, infrastructure, schemas, APIs, IAM/Assertion Authority implementations, approval/workflow engines, deployment workflows, quarantine implementations, Execution Gate/orchestration implementations, metric engines, redaction systems, graph/causal engines, LLMs, or prototypes prematurely.
 - Treat `docs/` as the product/design system of record.
 - Preserve concept ownership boundaries; Phase 004 refinements and Phase 005 authority contracts define standards over accepted concepts rather than creating hidden truth owners.
-- `REF-###` identifiers are evidence/time/causal/control refinement contracts; `AUTH-###` identifiers are authority/governance contracts. Neither extends the Phase 003 SYN sequence.
+- `REF-###` identifiers are evidence/time/causal/control refinement contracts; `AUTH-###` identifiers are authority/governance/capability/disclosure contracts. Neither extends the Phase 003 SYN sequence.
 
 Evidence rules:
 
@@ -109,6 +110,36 @@ High-consequence authority rules — accepted Phase 005 Group 05:
 - Current revocation/expiry changes future authorization without rewriting earlier legitimate actions.
 - Group 05 requires no 25th concept.
 
+Disclosure governance rules — accepted Phase 005 Group 06:
+
+- Bind disclosure to requester/audience + information/detail class + subject/context + purpose + temporal perspective + delivery scope.
+- Audience labels such as technical/business/executive/client/audit do not grant disclosure capability.
+- Private view permission does not automatically grant publish/export/forward/client-disclosure permission.
+- Result visibility does not imply exact metric/threshold/schema/evidence/source/actor/authority basis visibility.
+- Restricted basis remains restricted rather than absent; preserve a safe limitation when hidden basis materially affects interpretation.
+- Authorized abstraction/redaction/opacity must preserve proposition meaning and never create false absence, false precision, or stronger epistemic/control status.
+- Opaque existence is disclosed only when existence itself is authorized.
+- Evaluate material mosaic/inference leakage across combinations, counts, path lengths, timing, differencing, repeated narrowing, and prior disclosures; individually allowed facts do not guarantee a safe composite.
+- Technical, business, executive, audit, and client views are different authorized projections over one truth, never separate truth models.
+- High-consequence communication can require separate compose/review/approve/release/correct/retract authority; communication approval does not create evidence, causality, health, compliance, or enforcement truth.
+- Preserve status in wording: supported ≠ confirmed; reachable ≠ exposed; not exposed to suspect V ≠ fresh/healthy; hold decision ≠ enforced hold; active safeguard ≠ prevented exposure; release ≠ health; waiver ≠ clean pass; authoritative standing ≠ factual infallibility.
+- Human attribution, authority-holder, authorization-basis, confirmer/approver/operator, delegation, break-glass, service-principal, and control metadata can be independently sensitive.
+- Annotation content disclosed without exact author identity remains labeled as human-provided context where material.
+- Historical retained Explanation, reconstructed as-known-then Explanation, retrospective Explanation, historical authorization, and current requester disclosure remain separate.
+- Current requester authorization governs present disclosure; historical disclosure/permission is not reusable access.
+- Unknown/conflicting/unavailable/unsafe-to-project disclosure state never becomes permission; safe withholding does not fabricate a deny or imply hidden facts do not exist.
+- Group 06 requires no 25th concept.
+
+Phase 005 consolidation / exit rules — accepted Group 07:
+
+- G07-01–G07-26 pass across metric/schema governance, threshold conflict/waiver, structural-change comparability, restricted RCA, causal confirmation, gating, safeguards, break-glass/outage, automation, disclosure, and history.
+- No 25th concept and no AUTH-054 are required.
+- **AUTH-001–AUTH-053 is final for Phase 005.**
+- Source standing → semantic/normative governance → Capability Authorization/Authorized Analytical Projection → high-consequence authorization where applicable → disclosure/Explanation remains a constraint stack, not a new truth owner.
+- No Phase 005 layer can manufacture Phase 004 evidence truth.
+- Conflicts remain explicit when no governed resolver applies.
+- Phase 006 remains free to define actual metric/statistical/schema-health/timing semantics without reopening authority ownership.
+
 Schema / DDL validation handoff:
 
 - Structural/schema compatibility is a first-class health concern even when a job/load succeeds.
@@ -136,8 +167,8 @@ Causal/control/Impact rules:
 
 Authorization and integration rules:
 
-- Evidence sufficiency does not grant Assertion Authority, Capability Authorization, operational authority, or confirmation authority.
-- Raw-data read, metadata/health visibility, Lineage/RCA participation, job-operation authority, safeguard authority, gate-control authority, and causal-confirmation authority remain independently resolvable.
+- Evidence sufficiency does not grant Assertion Authority, Capability Authorization, operational authority, confirmation authority, or disclosure authority.
+- Raw-data read, metadata/health visibility, Lineage/RCA participation, job-operation authority, safeguard authority, gate-control authority, causal-confirmation authority, and publication/disclosure authority remain independently resolvable.
 - **Passive monitoring is out-of-band/non-blocking by default**; monitoring-framework degradation must not delay ungated production jobs.
 - Baseline monitoring should prefer independent deployment and no production ETL/GitHub Actions changes where platform metadata is sufficient.
 - **Execution Gate is explicit opt-in control**; monitoring/Lineage/readiness/normative eligibility does not automatically block a run.
@@ -145,26 +176,27 @@ Authorization and integration rules:
 - Missing readiness/control/authorization evidence does not create permission or readiness; no universal fail-open/fail-closed rule.
 - Authorized Analytical Projection is a view over independently authorized state, not declassification.
 - Restricted raw-data access must not automatically block approved monitoring/RCA/Impact analysis over authorized derived evidence.
-- Derived evidence/metadata/authority/normative/high-consequence-action detail can itself be sensitive.
+- Derived evidence/metadata/authority/normative/high-consequence-action/disclosure detail can itself be sensitive.
 - Investigation starts from outcome/question; Lineage yields candidates, not causes.
 - Impact candidate ≠ exposure ≠ downstream effect ≠ consequence ≠ causal attribution.
-- Explanation consumes only authorized projected state and must preserve exact causal/authority/normative/control/action-stage truth.
+- Explanation consumes only authorized projected state and must preserve exact causal/authority/normative/control/action-stage/disclosure truth.
 
 Historical rules:
 
 - **Historical replay uses event/effective time + recorded/knowledge cutoff.**
-- Current identity/topology/governance/Assertion Authority/Capability Authorization/normative/approval/delegation/break-glass/control state must not be projected backward.
+- Current identity/topology/governance/Assertion Authority/Capability Authorization/normative/approval/delegation/break-glass/control/disclosure state must not be projected backward.
 - Actual historical state/actions/Explanation remain distinct from replay-derived reconstruction.
 - Late/corrected evidence or authority/authorization rules may change retrospective understanding without rewriting what was known or done then.
-- Historical causal confirmation, gate/safeguard action, approval/delegation, and authorization remain reconstructable even if current state changes.
-- Historical authority/authorization/control state is evidence about past state but never overrides current requester disclosure authorization.
+- Historical causal confirmation, gate/safeguard action, approval/delegation, authorization, and disclosure remain reconstructable even if current state changes.
+- Historical authority/authorization/control/disclosure state is evidence about past state but never overrides current requester disclosure authorization.
 
 Metric-health handoff:
 
 - Table health is broader than successful load occurrence.
-- Phase 005 Group 03 has accepted governance for metric profiles, structural/schema Expectations, thresholds, margins/severity, waivers/retirement, and high-consequence-use eligibility.
+- Phase 005 Group 03 accepted governance for metric profiles, structural/schema Expectations, thresholds, margins/severity, waivers/retirement, and high-consequence-use eligibility.
 - Phase 006 owns metric/statistical/schema-health semantics, Baseline comparability, metric-bloat controls, technical/business health meaning, selective transformation-aware propagation, waiver presentation, and timing/evidence suitability for control-eligible conditions.
 - Metrics/governance do not recursively propagate merely because Lineage exists.
+- Phase 006 must consume Phase 005 authority/disclosure rules rather than reopen them.
 
 Phase direction:
 
@@ -174,5 +206,7 @@ Phase direction:
 - Phase 005 Group 03 accepted: AUTH-016–AUTH-023; D-189–D-202.
 - Phase 005 Group 04 accepted: AUTH-024–AUTH-032; D-203–D-217.
 - Phase 005 Group 05 accepted: AUTH-033–AUTH-043; D-218–D-234.
-- **Group 06 — Disclosure, Explanation & Audience Governance is next and has not started. Do not begin it without explicit user request.**
-- Never silently choose IAM/approval workflow/Assertion Authority engine, graph/event/temporal/ledger/quarantine/scheduler/orchestration/service/LLM/causal-algorithm architecture.
+- Phase 005 Group 06 accepted: AUTH-044–AUTH-053; D-235–D-250.
+- Phase 005 Group 07 accepted: consolidation/exit; D-251–D-265.
+- **Phase 005 is complete. Phase 006 is next and has not started. Do not begin Phase 006 without explicit user request.**
+- Never silently choose IAM/approval workflow/Assertion Authority engine, graph/event/temporal/ledger/quarantine/scheduler/orchestration/service/metric/redaction/LLM/causal-algorithm architecture.

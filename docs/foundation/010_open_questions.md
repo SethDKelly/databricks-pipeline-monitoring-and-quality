@@ -2,23 +2,23 @@
 
 These questions are intentionally unresolved. Accepted Phase 002–005 boundaries constrain the answers but do not silently decide them.
 
-**Phase 004 is complete with REF-001–REF-030 accepted. Phase 005 is active: Groups 01–05 are accepted with AUTH-001–AUTH-043; Group 06 — Disclosure, Explanation & Audience Governance is next and has not started.**
+**Phase 004 is complete with REF-001–REF-030. Phase 005 is complete with Groups 01–07 accepted and AUTH-001–AUTH-053 final. Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement is next and has not started.**
 
-## Accepted Phase 005 authority/governance foundation — Groups 01–05 complete
+## Accepted Phase 005 authority/governance foundation — no longer open
 
-The following are no longer open questions:
+The following are settled functional boundaries:
 
 - authority is target/category/facet/scheme/type/subject-scope/context/effective-time scoped rather than globally source-scoped;
-- source assertions remain provenance-bearing independently from their authority standing;
+- source assertions remain provenance-bearing independently from authority standing;
 - no hidden authority precedence from source count, recency, synchronization order, availability, responsibility, title, repository ownership, or apparent specificity;
 - Assertion Authority and Capability Authorization are independent;
 - authority history is bitemporal and cannot manufacture evidence sufficiency, factual infallibility, compliance, or enforcement;
 - semantic authority is facet-specific, including technical schema, grain, field/key role, business definition, population, and calculation meaning;
 - responsibility authority is responsibility-type scoped;
-- Classification/criticality authority is scheme/context scoped; criticality remains contextual priority, not Impact/health proof;
+- Classification/criticality authority is scheme/context scoped; criticality remains contextual priority rather than Impact/health proof;
 - policy reference authority can differ from subject/context policy-applicability authority;
 - local/context governance does not automatically override broader governance and governance assertions do not implicitly propagate through Lineage/containers;
-- governed schema meaning, normative structural compatibility, and realized schema state remain separate truths;
+- governed schema meaning, normative structural compatibility, realized schema state, and compatibility Assessment remain separate;
 - Expectation authority is dimension/property/context/time/lifecycle-action scoped;
 - metric meaning, metric-profile inclusion, threshold/margin, severity, waiver, and high-consequence-use eligibility are independently governable;
 - metric profiles are governed selection/applicability structures and technical availability does not justify metric bloat;
@@ -30,43 +30,66 @@ The following are no longer open questions:
 - authoritative/business-critical metrics are not automatically eligible for active control;
 - control-use eligibility remains separate from control capability, evidence readiness, and enforcement;
 - Capability Authorization is exact-action/detail scoped with `allowed`, `denied`, `conditional`, `unknown`, `conflicting`, and `unavailable` retained distinctly;
-- unresolved authorization never becomes permission, while runtime refusal without positive allow does not rewrite unresolved truth into a fabricated deny;
-- user/group/role/service-principal composition and capability inheritance require explicit rules and historical evidence rather than hidden precedence;
+- unresolved authorization never becomes permission, while runtime refusal without positive allow does not rewrite unresolved truth into fabricated deny;
+- user/group/role/service-principal composition and capability inheritance require explicit rules and historical evidence;
 - raw rows, schema, metrics, thresholds, Baselines, Lineage, RCA, causal/Impact/control detail, normative actions, and Explanation can be independently authorized;
-- Authorized Analytical Projection is a synchronization/view over existing truth, not declassification or a new concept;
+- Authorized Analytical Projection is a view over existing truth, not declassification or a new concept;
 - requester visibility and framework/service-principal evidence-processing authorization are separate;
 - aggregate/derived monitoring evidence may itself be sensitive or inference-leaking;
 - historical authorization is non-rewriting and is not reusable as current permission;
 - authorization never proves action occurrence, external enforcement, or success;
-- high-consequence proposal/request, approval/authorization, execution/issuance, external acceptance, enforcement/effect, and outcome remain separate facts;
-- causal confirmation remains jointly evidence- and authority-gated, with human-versus-automated confirmation governed by claim class/profile rather than a universal rule;
+- high-consequence request/proposal, approval/authorization, execution/issuance, external acceptance, enforcement/effect, and outcome remain separate facts;
+- causal confirmation remains jointly evidence- and authority-gated, with human-versus-automated confirmation governed by claim class/profile;
 - job/run operational actions are granular and independent from raw-data, gate, safeguard, and deployment authority;
 - Execution Gate registration/configuration/normal operation/override/fallback/retirement and Propagation Safeguard proposal/activation/release/recovery can have different authorized principals;
 - multi-party approval, quorum, ordering, distinct-principal requirements, and self-approval rules are explicit conditional-authorization semantics rather than universal defaults;
-- exercising a high-consequence capability does not implicitly grant delegation authority; delegated grants are bounded, historical, expiring/revocable, and non-transitive unless explicit;
-- break-glass is explicit bounded emergency authorization, not universal superuser access, and cannot manufacture raw-data access, readiness, health, evidence sufficiency, causality, or enforcement;
-- service/model technical ability does not create automated high-consequence authority; exact service-principal capability and any required human review remain explicit;
-- authorization-outage fallback is action-specific and does not rewrite `unknown`, `conflicting`, or `unavailable` authorization truth;
-- an already enforced protective state may remain actual during an authorization outage without implying that anyone has new authority to change it.
+- exercising a high-consequence capability does not implicitly grant delegation authority; delegated grants are bounded, expiring/revocable, and non-transitive unless explicit;
+- break-glass is bounded emergency authorization, not universal superuser access, and cannot manufacture raw-data access, readiness, health, evidence sufficiency, causality, or enforcement;
+- service/model technical ability does not create automated high-consequence authority;
+- authorization-outage fallback is action-specific and does not rewrite unresolved authorization truth;
+- existing protective state may remain actual during an authorization outage without implying new authority to change it;
+- disclosure is requester/audience/purpose/context/delivery scoped;
+- view permission does not imply export/forward/publish/client disclosure;
+- result visibility and basis visibility are independently governable;
+- safe abstraction/opaque existence must be separately authorized and preserve proposition meaning;
+- mosaic/repeated-query inference leakage is a disclosure concern;
+- technical/business/executive/audit views remain projections over one truth;
+- high-consequence communication review cannot create truth;
+- current authorization governs present disclosure of historical material;
+- unknown/conflicting/unavailable disclosure state never becomes permission.
 
-Concrete source/actor mappings, organizational approver classes, and technical realization remain later work. Metric/statistical/schema-health calculation semantics remain Phase 006 work.
+Concrete source/actor mappings, organization-specific approver classes, claim-profile policy, disclosure-review policy, and technical realization remain later work.
 
-## Phase 005 Group 06 priority — disclosure / Explanation governance
+## Phase 006 priority — Expectations, Baselines, health, metrics, schema, and quality
 
-- Which policy/restriction/metric/schema/threshold/waiver/authority/authorization/causal/Impact/control details may be disclosed by audience and capability?
-- When may a restricted entity/path, authoritative source, approver, confirmer, delegate, break-glass actor, or service principal be acknowledged as existing but remain opaque?
-- Which high-consequence statements require additional review before business/client-facing Explanation?
-- How should authorization-limited basis affect wording without turning hidden evidence into absence?
-- How should technical versus business projections differ without creating separate truth?
-- Which authority-rule/holder, approval-chain, delegation, break-glass, gate/safeguard configuration, or control-service details are sensitive and may require opaque disclosure?
-- How should the product communicate `confirmed`, `overridden`, `held`, `released`, `break-glass`, or `automated action` without implying broader health, safety, compliance, or causal certainty than the underlying state supports?
-- When is it safe to disclose that multiple approvals occurred while hiding actor identities or role structure?
-- What historical authority/authorization/normative/high-consequence-action detail can be disclosed without revealing restricted governance or security hierarchy?
-- How should unresolved/conflicting authorization or authority be explained when the rule/source detail itself is restricted?
+- Which first-MVP Expectation dimensions and bounded-exception states are required?
+- Which first-MVP metric families and per-table/pipeline metric-profile semantics are required?
+- Which metrics belong in a small core versus critical-field/business, transformation-specific, and diagnostic/on-demand tiers?
+- Which asset classes need different metric profiles: staging/raw, conformed, dimensional/fact, aggregate, Metric View, report-facing, export/delivery, others?
+- Which metric families are meaningful by field/data type and semantic role rather than merely computable?
+- Which Baseline classes are required: ranges, distributions, cadence/duration profiles, seasonal cohorts, peer/segment cohorts, others?
+- What evidence establishes Baseline non-comparability after structural Change?
+- What statistical/anomaly behavior is needed beyond transparent comparisons?
+- What threshold/margin/tolerance semantics are required: absolute, relative, asymmetric, warning/failure bands, low-volume/sample-size rules?
+- How should multiple simultaneously valid Expectations in different contexts compose?
+- How should true unresolved normative conflict appear in health output?
+- How should a bounded waiver/exception be represented in Assessment/overall-health output without creating a false pass?
+- What schema/DDL compatibility taxonomy is needed for add/drop/rename/type/precision/scale/nullability/key/grain/nested-field and consumer-specific compatibility?
+- Which schema changes should invalidate or trigger review of null, uniqueness, quantile, distribution, reconciliation, or Baseline logic?
+- What Assessment status vocabulary is appropriate for normative versus comparative results?
+- Does composite/overall health warrant dedicated behavior or only explicit aggregation?
+- If composite health exists, how should it preserve degraded/unknown/conflicting/not-applicable/waived dimensions rather than hiding them?
+- Which health Assessments are expected immediately, near-real-time, delayed, or post-ops?
+- Which dependency-readiness criterion classes belong in the health model versus control policy?
+- How do Metric Views and DQX align with accepted Expectation/Observation/Assessment semantics?
+- What selective transformation-aware metric propagation/reconciliation is valid across joins, filters, aggregations, deduplication, unions, pivots, and other patterns?
+- Which upstream health state should propagate only as Investigation context rather than downstream health truth?
+- How should technical and business health projections remain one truth while showing different metric detail?
+- For AUTH-023 control-eligible conditions, what evidence freshness/availability/computation characteristics make them safe inputs to readiness/control evaluation?
 
 ## Monitoring result, authorization, and control-path availability — Phases 006/009/010/011
 
-Phase 004 accepts progressive analytical availability and Group 05 accepts action-specific authorization fallback, but exact targets remain open:
+Phase 004 accepts progressive analytical availability and Phase 005 accepts action-specific authorization/disclosure behavior, but exact targets remain open:
 
 - Which validations belong on an **immediate operational** path: job start/completion/success/failure, queue/duration, direct output existence, dependency state, gate state, simple schema-contract state?
 - Which health results can be **near-real-time/enriched** versus delayed because they depend on Metric Views, DQX, Baseline comparison, semantic context, schema evidence, or source refresh?
@@ -81,21 +104,21 @@ Phase 004 accepts progressive analytical availability and Group 05 accepts actio
 - Which action classes may preserve current protective state, escalate, refuse action, or use an explicitly authorized fallback principal when authorization resolution is unavailable?
 - How quickly must revocation, expiry, delegated-grant changes, and break-glass termination become effective on production control paths?
 
-## Historical time, retention, authority, authorization, and replay — later phases
+## Historical time, retention, authority, authorization, disclosure, and replay — later phases
 
 - Which historical states require retained events/snapshots versus reconstructible version history in MVP?
 - Which authority rules/assertions and normative rule/waiver/profile states need retained snapshots/events versus reconstructible history?
-- Which Capability Authorization, approval, delegation, break-glass, service-principal authorization, action issuance, control-plane acceptance, and enforcement states must be retained rather than reconstructed?
+- Which Capability Authorization, approval, delegation, break-glass, service-principal authorization, action issuance, control-plane acceptance, enforcement, and disclosure-review states must be retained rather than reconstructed?
 - What source/integration evidence establishes source-availability time when it differs from framework knowledge time?
 - What retention/coverage is needed before `not recorded by` or `not known by` is safely answerable for each evidence class?
-- What evidence establishes authority/authorization-source availability time separately from framework knowledge time?
-- What notification/escalation behavior should occur when retrospective conclusions, authority/normative resolutions, or authorization/action history materially change?
+- What evidence establishes authority/authorization/disclosure-review source availability time separately from framework knowledge time?
+- What notification/escalation behavior should occur when retrospective conclusions, authority/normative resolutions, authorization/action history, or external communications materially change?
 - What retention/audit requirements apply to actual historical Explanation versus reconstructed Explanation?
-- What immutable or append-only audit properties, if any, are required for high-consequence approvals/actions in the eventual implementation?
+- What immutable or append-only audit properties, if any, are required for high-consequence approvals/actions and released communications in eventual implementation?
 
 ## Causal profiles and quantitative reasoning — Phases 007/010+
 
-Group 05 establishes the generic authority framework; concrete causal-profile design remains open:
+Phase 005 establishes generic confirmation authority; concrete profiles remain open:
 
 - Which claim classes need distinct confirmation profiles for MVP: deterministic control mechanism, version-mediated propagation, data transformation, Deployment causation, business consequence causation, others?
 - Which causal evidence dimensions are mandatory versus optional for each profile?
@@ -113,35 +136,15 @@ Group 05 establishes the generic authority framework; concrete causal-profile de
 - Which intermediate/external assets are independently included in Monitoring Scope for MVP?
 - How does Assertion Authority scope reference domains/sets without creating implicit Entity Identity or authority inheritance?
 
-## Expectations, Baselines, health, metrics, schema, and quality — Phase 006
-
-- Which first-MVP Expectation dimensions and bounded-exception states are required?
-- Which first-MVP metric families and per-table/pipeline metric-profile semantics are required?
-- Which metrics belong in a small core versus critical-field/business, transformation-specific, and diagnostic/on-demand tiers?
-- Which Baseline classes are required: ranges, distributions, cadence/duration profiles, seasonal cohorts, others?
-- What evidence establishes Baseline non-comparability after structural Change?
-- What statistical/anomaly behavior is needed beyond transparent comparisons?
-- What threshold/margin/tolerance semantics are required: absolute, relative, asymmetric, warning/failure bands, low-volume/sample-size rules?
-- How should a bounded waiver/exception be represented in Assessment/overall-health output without creating a false pass?
-- What schema/DDL compatibility taxonomy is needed for add/drop/rename/type/nullability/key/grain/nested-field and consumer-specific compatibility?
-- What Assessment status vocabulary is appropriate for normative versus comparative results?
-- Does composite/overall health warrant dedicated behavior or only explicit aggregation?
-- Which health Assessments are expected immediately, near-real-time, delayed, or post-ops?
-- Which dependency-readiness criterion classes belong in the health model versus control policy?
-- How do Metric Views and DQX align with accepted Expectation/Observation/Assessment semantics?
-- What selective transformation-aware metric propagation/reconciliation is valid across A+B→C joins, filters, aggregations, deduplication, and other patterns?
-- How should technical and business health projections remain one truth while showing different metric detail?
-- For AUTH-023 control-eligible conditions, what evidence freshness/availability/computation characteristics make them safe inputs to readiness/control evaluation?
-
 ## Change Intent, Deployment, execution, and control policy — Phases 007/009/010
 
-- Which source/actor may register authoritative Change Intent?
+- Which source/actor may register authoritative Change Intent in the target deployment?
 - What minimum anticipated-effect/monitoring-implication fields are required for MVP?
 - How should Change Intent relate to pull requests, tickets, configuration changes, release metadata, or other planning systems?
 - What evidence proves Deployment activation rather than attempt/workflow success for representative patterns?
 - How are configuration-only changes related when source revision is unchanged?
 - What minimum logical execution reconstruction is needed when pipelines span jobs/tasks?
-- Which dependency/readiness criteria are safe for automatic gating after AUTH-023 eligibility and Group 05 control authority are resolved?
+- Which dependency/readiness criteria are safe for automatic gating after AUTH-023 eligibility and Group 05 authority semantics?
 - Which concrete gate/safeguard action classes require one approver, multiple approvers, separation of duties, delegated authority, or break-glass in the target deployment?
 - What gate classes need explicit hold/allow/escalate/expire behavior for unavailable readiness or authorization evidence?
 - What maximum wait, timeout, escalation, expiry, and override semantics are required?
@@ -194,13 +197,14 @@ Group 05 establishes the generic authority framework; concrete causal-profile de
 - How should UI distinguish ordinary, delegated, break-glass, and automated high-consequence actions without implying broader authority?
 - How should UI distinguish contemporaneous, retrospective, comparison, actual-retained, and reconstructed historical Explanation?
 - How should `available now`, `pending evidence`, `enriched`, `RCA in progress`, and `retrospectively updated` be communicated?
+- Which high-consequence statement classes require communication review and how should review status be shown?
 
 ## Security and privacy
 
-- Which monitoring metadata, authority rules/holders, normative metric/schema/threshold/waiver state, intent, topology, causal claims, Impact details, control state, approval chains, delegation/break-glass state, service-principal identity, or Annotations are sensitive by themselves?
+- Which monitoring metadata, authority rules/holders, normative metric/schema/threshold/waiver state, intent, topology, causal claims, Impact details, control state, approval chains, delegation/break-glass state, service-principal identity, disclosure-review state, or Annotations are sensitive by themselves?
 - May users know a restricted entity/path, authority holder, approver, confirmer, delegate, or control service exists if they cannot inspect it?
 - Will any Investigation require row-level examples, and if so how are they minimized/redacted/authorized?
-- What audit/retention requirements apply to evidence, authority/normative resolutions, authorization, approvals/delegations/break-glass actions, Investigations, causal confirmation, questions, control state, and retained Explanations?
+- What audit/retention requirements apply to evidence, authority/normative resolutions, authorization, approvals/delegations/break-glass actions, Investigations, causal confirmation, questions, control state, disclosure/review, and retained Explanations?
 
 ## Integration scope — Phase 009
 
@@ -211,8 +215,8 @@ Group 05 establishes the generic authority framework; concrete causal-profile de
 - Which systems can provide Change Intent?
 - Which concrete authority targets should Collibra, Immuta, Unity Catalog/Databricks, GitHub/repository metadata, or human governance actors satisfy in the deployment environment?
 - Which sources are authoritative versus advisory for each category, and what evidence/governing basis establishes those mappings?
-- Which sources can authoritatively resolve Capability Authorization, approval/delegation/break-glass state, and service-principal high-consequence capability for each action class?
-- Which sources provide sufficiently historical evidence for event-time + knowledge-cut replay, including authority/normative/authorization/action history?
+- Which sources can authoritatively resolve Capability Authorization, approval/delegation/break-glass state, service-principal high-consequence capability, and disclosure-review authority?
+- Which sources provide sufficiently historical evidence for event-time + knowledge-cut replay, including authority/normative/authorization/action/disclosure history?
 - What are production-to-queryable and queryable-to-framework latency characteristics of each evidence/authority/authorization source?
 - Which sources provide version/refresh/consumer-use evidence for representative downstream classes?
 - Which sources provide trustworthy gate/safeguard action-issuance, control-plane acceptance, and enforcement evidence?
@@ -223,12 +227,10 @@ Group 05 establishes the generic authority framework; concrete causal-profile de
 - Which 2–5 representative pipelines exercise cross-repository dependencies, A+B→C, planned/schema change, unintended side effect, downstream Impact, and optional gating?
 - Which business analyst/report/Metric View provides a meaningful exposure/consequence case?
 - Which assets carry useful governance/policy context without unsafe real data in development?
-- Which pilot validates authoritative versus advisory semantics, co-authoritative conflict, and an authority correction over time?
-- Which pilot validates normative threshold conflict, a bounded waiver, metric-profile anti-bloat, and schema compatibility by consumer?
-- Which pilot validates restricted-data RCA with result visibility while threshold/raw/schema/Lineage basis remains partly opaque?
-- Which pilot validates high-consequence request → approval → action → enforcement → outcome separation, including a delegated or break-glass path?
-- Which pilot validates a service-principal normal gate action while override remains human-authorized?
-- Which pilot validates contemporaneous/retrospective replay with intentionally late/corrected synthetic evidence?
+- Which pilot validates authoritative versus advisory semantics, co-authoritative conflict, and authority correction over time?
+- Which pilot validates normative threshold conflict, bounded waiver, metric-profile anti-bloat, and schema compatibility by consumer?
+- Which pilot validates restricted-data RCA with opaque upstream evidence and different technical/business projections?
+- Which pilot validates causal confirmation with restricted confirmer/evidence detail and client-facing communication review?
+- Which pilot validates multi-party gate override, actual enforcement evidence, safeguard release, and break-glass/outage handling?
+- Which pilot validates contemporaneous/retrospective replay with intentionally late/corrected synthetic evidence and retained historical Explanation?
 - Which pilot validates progressive result availability from job validation through health metrics, RCA, and post-ops review?
-- Which pilot validates multiple simultaneous causal contributors and later challenge/reversal?
-- Which pilot validates gate decision versus actual enforcement and safeguard active versus materially prevented exposure?
