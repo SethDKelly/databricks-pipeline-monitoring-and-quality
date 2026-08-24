@@ -1,50 +1,52 @@
 ---
-description: Phase 005 authority/governance/capability handoff guardrails. Phase 005 groups are designed but the phase is not started.
+description: Phase 005 authority/governance/capability phase guardrails. Group 01 is accepted; Group 02 is next.
 globs:
 alwaysApply: true
 ---
 
 # Phase 005 handoff rules
 
-Status: **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is next; seven review groups are designed; the phase has not started.**
-
-Do not begin Phase 005 without explicit user request.
+Status: **Phase 005 is active. Group 01 — Authority Vocabulary, Source Assertions & Conflict Resolution is accepted with Assertion Authority and AUTH-001–AUTH-008. Group 02 — Semantic, Responsibility, Classification, Policy & Criticality Governance is next and has not started.**
 
 Accepted review sequence:
 
-1. Authority Vocabulary, Source Assertions & Conflict Resolution.
-2. Semantic, Responsibility, Classification, Policy & Criticality Governance.
+1. Authority Vocabulary, Source Assertions & Conflict Resolution — **accepted**.
+2. Semantic, Responsibility, Classification, Policy & Criticality Governance — **next**.
 3. Normative Health, Metric & Threshold Governance.
 4. Capability Authorization & Restricted Analytical Visibility.
 5. High-Consequence Action, Control & Causal-Confirmation Authority.
 6. Disclosure, Explanation & Audience Governance.
 7. Consolidation / Exit Review.
 
-When Phase 005 begins:
+Group 01 accepted rules:
 
-- Start with Group 01 only unless the user explicitly asks to group work differently.
-- Treat the review order as design dependency, not service/module architecture.
-- Preserve all Phase 004 evidence burdens. Authority cannot turn insufficient evidence into sufficient evidence or change `unknown` into a reassuring result.
-- Source/actor authority must be category/context/time specific; do not invent universal precedence.
-- Do not infer authority from source count, recency alone, repository ownership, technical availability, synchronization order, admin status, analyst role, job creator identity, or Responsibility Assignment.
-- Policy Context/Classification do not themselves prove compliance or grant authorization.
-- Responsibility Assignment does not automatically grant edit, operational, safeguard, gate, metric-setting, or confirmation authority.
-- Phase 005 Group 03 may decide **who** may define/approve/revise/waive/retire metric profiles, Expectations, thresholds, margins/tolerance bands, severity, or high-consequence metric use. It must not define the detailed metric taxonomy, statistical model, propagation algorithm, or overall-health aggregation reserved for Phase 006/007.
-- Metric availability does not imply metric importance. Avoid authority semantics that force every available Databricks/Metric View/DQ statistic into a table health profile.
-- Raw-data read, metadata/governance visibility, derived health/metric visibility, Lineage/RCA, job operations, safeguard actions, gate actions/override, causal confirmation, Annotation, and Explanation access remain independently resolvable capabilities.
-- Derived/metadata/metric evidence may itself be sensitive; safe analytical projection is not automatic declassification.
-- Causal-confirmation authority must remain separate from the REF-017 evidence gate; no human title or automated process self-authorizes confirmation.
-- Gate/safeguard authority is separate from evidence that a configured/requested control was actually enforced.
-- A metric/threshold authorized for monitoring does not automatically become acceptable as an Execution Gate criterion; high-consequence use requires explicit authority plus accepted evidence/readiness semantics.
-- Historical authorization is evidence about past capability and never overrides current requester disclosure authorization.
-- Do not select RBAC/ABAC/IAM provider, scheduler/orchestrator, quarantine mechanism, graph store, metric engine/storage, LLM, causal algorithm, or technical architecture during authority refinement.
+- Assertion Authority is the 24th concept and owns assertion-standing/authority-rule history rather than underlying domain assertions.
+- Authority must be bound to category/facet/scheme/type, subject scope, context, effective time, and knowledge cut where relevant.
+- Preserve source assertion regardless of standing.
+- Authoritative/advisory/non-authoritative/conditional/unknown/unavailable/conflicting standing remain distinct.
+- Keep assertion disagreement, resolved disagreement, authoritative assertion conflict, and authority-rule conflict distinct.
+- Authority rules require provenance and governing basis; sources/rules cannot self-authorize merely by claiming authority.
+- No hidden precedence from source count, recency, synchronization/ingestion order, availability, repository ownership, admin/title/responsibility, or apparent specificity.
+- Sole authority, co-authority, ordered precedence, and fallback are valid only when explicit.
+- Fallback requires an explicit rule plus evidence that its activation condition holds.
+- Authority history is bitemporal and non-rewriting; current corrections may revise retrospective resolution without changing what was known then.
+- Assertion Authority is independent from Capability Authorization, Responsibility Assignment, Policy Context, Classification, Monitoring Scope, evidence sufficiency, and enforcement.
+- Authoritative standing does not waive REF-001–REF-030 or prove factual correctness/compliance/control enforcement.
 
-Metric-health handoff:
+For Group 02:
+
+- Apply AUTH-001–AUTH-008 separately to Semantic Definition facets, Responsibility Assignment types, Classification schemes, Policy Context applicability, and criticality.
+- Distinguish context-specific valid authorities from same-target conflicts.
+- Do not decide that Collibra, Immuta, Databricks/Unity Catalog, GitHub, repository metadata, or a human role is universally authoritative.
+- Do not begin Group 03 metric/threshold authority, Group 04 capability authorization, Group 05 high-consequence action authority, or Group 06 disclosure governance unless explicitly requested.
+
+Metric-health handoff remains:
 
 - Table health is broader than successful load occurrence.
+- Group 03 may decide **who** may define/approve/revise/waive/retire metric profiles, Expectations, thresholds, margins/tolerance bands, severity, or high-consequence metric use.
 - Phase 006 owns metric families, metric profiles, threshold/statistical semantics, metric-bloat controls, technical/business health composition, selective metric propagation/reconciliation, and metric timing objectives.
-- Phase 007 later owns Lineage-aware propagation behavior.
 - Metrics do not recursively propagate merely because Lineage exists.
-- Technical and business metric views are authorized projections over the same health truth, not separate truth models.
 
-Accepted Phase 004 range remains **REF-001–REF-030**. Reopen it only if a concrete Phase 005 scenario exposes a genuine semantic contradiction, with explicit rationale.
+Preserve all Phase 004 evidence burdens. Do not select IAM, assertion-authority engine, scheduler/orchestrator, quarantine, metric engine/storage, graph store, LLM, causal algorithm, or technical architecture during Phase 005.
+
+**Do not begin Group 02 without explicit user request.**

@@ -1,12 +1,12 @@
 # Phase 002 — Concept Specifications
 
-**Status:** **Complete — Groups 01–05 accepted; three explicit post-exit addenda accepted during Phase 003.**
+**Status:** **Complete — Groups 01–05 accepted; four explicit post-exit addenda accepted through later-phase review.**
 
 ## Purpose
 
-Phase 002 turned the Phase 001 discovery catalog into explicit, implementation-neutral Concept Design specifications. The concepts define product behavior and truth boundaries without mapping them to services, schemas, APIs, Databricks objects, graph databases, ledger/event-store technologies, IAM schemes, orchestration products, language/framework choices, or vendor products.
+Phase 002 turned the Phase 001 discovery catalog into explicit, implementation-neutral Concept Design specifications. The concepts define product behavior and truth boundaries without mapping them to services, schemas, APIs, Databricks objects, graph databases, ledger/event-store technologies, IAM schemes, authority-rule engines, orchestration products, language/framework choices, or vendor products.
 
-The original Phase 002 review completed with 20 concepts. Later Phase 003 work exposed three independently motivated behaviors that could not be cleanly owned by those concepts. Phase 002 was therefore narrowly reopened through explicit addenda while preserving the original exit as historical truth.
+The original Phase 002 review completed with 20 concepts. Later work exposed four independently motivated behaviors that could not be cleanly owned by those concepts. Phase 002 was therefore narrowly reopened through explicit addenda while preserving the original exit as historical truth.
 
 ## Accepted concept groups
 
@@ -21,17 +21,18 @@ The original Phase 002 review completed with 20 concepts. Later Phase 003 work e
 ## Accepted post-exit addenda
 
 - **Propagation Safeguard** — protective proposed/active/released hold or quarantine state for a defined data output, execution context, propagation boundary, environment/cohort, or consumer set. It does not own health Assessment, Investigation, causal truth, authorization, or implementation enforcement mechanics.
-- **Capability Authorization** — provenance-bearing resolution of whether a principal may perform a named capability on a subject/context/time. It separates raw-data read, metadata/health visibility, Lineage/RCA participation, operational job authority, safeguard/gate authority, and other capability categories without selecting an IAM/enforcement implementation.
+- **Capability Authorization** — provenance-bearing resolution of whether a principal may perform a named capability on a subject/context/time. It separates raw-data read, metadata/health visibility, Lineage/RCA participation, operational job authority, safeguard/gate authority, causal-confirmation capability, and other capability categories without selecting an IAM/enforcement implementation.
 - **Execution Gate** — optional active control over whether a downstream execution opportunity is admitted, held, admitted after readiness, expired/cancelled, or explicitly overridden based on declared prerequisite readiness evidence. It remains separate from passive monitoring, Execution History, Assessment, Capability Authorization, and Propagation Safeguard.
+- **Assertion Authority** — provenance-bearing authority-rule state determining which source/actor/role/governed process has authoritative standing for a bounded assertion category/facet/subject scope/context/time. It remains separate from the domain assertion itself, Responsibility Assignment, Capability Authorization, evidence sufficiency, Policy Context/Classification, and enforcement.
 
-**23 concepts are currently accepted.**
+**24 concepts are currently accepted.**
 
-Review order was a design dependency, not an implementation dependency. Concepts remain independently motivated and compose through synchronizations.
+Review order remains a design dependency, not an implementation dependency. Concepts remain independently motivated and compose through synchronizations/refinement contracts.
 
 ## Accepted boundary refinements
 
 ### Group 01
-- Monitoring Scope is monitoring responsibility, not authorization.
+- Monitoring Scope is monitoring responsibility, not authorization or assertion authority.
 - Entity Identity is ecosystem-wide and distinct from replacement/succession.
 
 ### Group 02
@@ -39,6 +40,7 @@ Review order was a design dependency, not an implementation dependency. Concepts
 - Responsibility Assignment replaces overloaded Ownership and is not universal authority or authorization.
 - Classification is categorical metadata, separate from Policy Context, authorization, and compliance.
 - Synchronization order never silently becomes governance authority.
+- Group 02 concepts preserve source assertions/conflicts; Phase 005 Assertion Authority later determines source/actor standing without moving those assertions out of their owning concepts.
 
 ### Group 03
 - Expectation is normative; Baseline is descriptive.
@@ -69,29 +71,49 @@ Review order was a design dependency, not an implementation dependency. Concepts
 
 ### Post-exit addendum — Capability Authorization
 - The model repeatedly relied on an `authorized evidence view`, but no concept owned whether a principal may perform a named capability on a subject/context/time.
-- Raw-data read authorization, metadata/governance visibility, derived health/metric visibility, Lineage/RCA participation, job/run operational control, safeguard authority, and gate authority are independent capability categories.
+- Raw-data read authorization, metadata/governance visibility, derived health/metric visibility, Lineage/RCA participation, job/run operational control, safeguard authority, gate authority, and causal-confirmation capability are independent categories.
 - Denial of raw-data access does not automatically prohibit approved monitoring or RCA.
 - Permission to operate/update a job does not grant raw-data read access; analysis permission does not grant production-control authority.
-- Responsibility Assignment, Classification, Policy Context, and Monitoring Scope remain separate from authorization.
+- Responsibility Assignment, Classification, Policy Context, Monitoring Scope, and Assertion Authority remain separate from Capability Authorization.
 - Derived evidence can itself be sensitive and remains subject to its own authorized projection.
 
 ### Post-exit addendum — Execution Gate
-- SYN-011 can assess upstream dependency readiness but explicitly does not own scheduler blocking; Execution History records actual runs; Propagation Safeguard protects output/consumption rather than downstream start admission.
+- SYN-011 can assess upstream dependency readiness but does not own scheduler blocking; Execution History records actual runs; Propagation Safeguard protects output/consumption rather than downstream start admission.
 - Execution Gate therefore owns explicit downstream execution admission/hold/admit/override state for enabled dependency-readiness control.
-- Passive monitoring remains non-blocking by default; no dependency or readiness Assessment silently creates a gate.
+- Passive monitoring remains non-blocking by default; no dependency/readiness Assessment silently creates a gate.
 - A gate may require current-cycle output availability/freshness/version or another explicit readiness criterion rather than only successful upstream execution.
 - `held` ≠ execution failure; `admitted` ≠ execution occurred; `override` ≠ prerequisite ready.
 - Gate-induced delay remains observable/assessable and can create downstream Impact.
 - Unknown/unavailable gate evidence requires explicit fallback semantics; no universal fail-open/fail-closed rule is assumed.
 
+### Post-exit addendum — Assertion Authority
+- Semantic Definition, Responsibility Assignment, Classification, Policy Context, Expectation, and later metric/threshold governance repeatedly relied on source precedence/authority context but no concept owned the authority rules themselves.
+- Assertion Authority therefore owns authority target, holder standing, conditions, explicit precedence/fallback, rule provenance/governing basis, effective/knowledge time, and authority-rule conflict/history.
+- Source assertions remain in their owning concepts regardless of standing.
+- A principal may have Capability Authorization to submit/revise an assertion while that assertion remains advisory.
+- A responsible party does not automatically become authoritative for the assertion category they maintain.
+- Authority is category/facet/scope/context/time specific; no source/vendor is globally authoritative by default.
+- Authoritative/advisory/non-authoritative/conditional/unknown/unavailable/conflicting standing remain distinct.
+- Assertion disagreement, resolved disagreement, authoritative assertion conflict, and authority-rule conflict remain distinct.
+- Source count/majority, recency alone, synchronization/ingestion order, source availability, repository ownership, title/admin/responsibility, and apparent specificity do not create authority.
+- Co-authority, ordered precedence, and conditional/fallback authority are valid only when explicitly defined.
+- Fallback requires an explicit rule plus evidence the activation condition holds.
+- Authority rules require provenance/governing basis and cannot self-validate.
+- Authority history is bitemporal; later correction can revise retrospective resolution without changing what authority was known then.
+- Assertion Authority does not waive REF-001–REF-030, prove factual correctness/compliance, or prove enforcement.
+
 ## Cross-cutting distinctions accepted by the current model
 
-- Monitoring Scope ≠ ecosystem existence ≠ Capability Authorization;
+- Monitoring Scope ≠ ecosystem existence ≠ Assertion Authority ≠ Capability Authorization;
 - Entity Identity ≠ name ≠ replacement/succession;
 - Semantic Definition ≠ Responsibility Assignment;
-- Responsibility Assignment ≠ universal authority ≠ Capability Authorization;
-- Classification ≠ Policy Context ≠ Capability Authorization ≠ compliance;
-- raw-data read authorization ≠ metadata/health-analysis authorization ≠ Lineage/RCA authorization ≠ job-operation authorization ≠ safeguard/gate authority;
+- Responsibility Assignment ≠ Assertion Authority ≠ Capability Authorization;
+- Classification ≠ Policy Context ≠ Assertion Authority ≠ Capability Authorization ≠ compliance;
+- source assertion ≠ authoritative assertion;
+- authoritative standing ≠ factual infallibility;
+- assertion disagreement ≠ authoritative assertion conflict ≠ authority-rule conflict;
+- evidence sufficiency ≠ Assertion Authority ≠ Capability Authorization ≠ enforcement;
+- raw-data read authorization ≠ metadata/health-analysis authorization ≠ Lineage/RCA authorization ≠ job-operation authorization ≠ safeguard/gate/confirmation authority;
 - passive monitoring ≠ active execution gating;
 - dependency readiness Assessment ≠ Execution Gate admission state;
 - Execution Gate ≠ Execution History ≠ Propagation Safeguard;
@@ -111,8 +133,7 @@ Review order was a design dependency, not an implementation dependency. Concepts
 - first-observed localization ≠ root cause;
 - Causal Claim ≠ confirmed cause;
 - Investigation closure ≠ confirmation;
-- Impact candidate ≠ exposure ≠ downstream effect ≠ business consequence;
-- downstream consequence ≠ causal attribution;
+- Impact candidate ≠ exposure ≠ downstream effect ≠ business consequence ≠ causal attribution;
 - criticality/policy sensitivity ≠ actual Impact evidence;
 - Propagation Safeguard ≠ health or causal truth;
 - safeguard proposal ≠ active safeguard;
@@ -122,41 +143,44 @@ Review order was a design dependency, not an implementation dependency. Concepts
 - Explanation ≠ independent truth source;
 - effective/event time ≠ recorded/knowledge time.
 
-## Scenario implications of the addenda and Phase 003 synchronizations
+## Scenario implications of the addenda
 
 ### Protective hold/quarantine
-A suspect or missing output can be protected at an explicit propagation boundary without rewriting the underlying Observation/Assessment or claiming defect/cause. Protected interval, authority, enforcement evidence, release, and safeguard-induced delay remain historical facts.
+A suspect or missing output can be protected at an explicit propagation boundary without rewriting Observation/Assessment or claiming defect/cause. Protected interval, authority, enforcement evidence, release, and safeguard-induced delay remain historical facts.
 
 ### Restricted-data analyst
-A user may be denied direct Table C rows while being permitted approved aggregate health metrics, runtime/freshness Assessments, redacted Lineage, policy/restriction summaries, responsibility context, Investigation/Causal Claim state, and Impact/safeguard context. RCA remains possible over the authorized evidence view without smuggling restricted data into summaries.
+A user may be denied direct Table C rows while being permitted approved aggregate health metrics, runtime/freshness Assessments, redacted Lineage, policy/restriction summaries, responsibility context, authority standing, Investigation/Causal Claim state, and Impact/safeguard/gate context. RCA remains possible without smuggling restricted data into summaries.
 
 ### Job operator without raw-data read
-A user may hold an explicit job/run operational capability while lacking permission to inspect the data the job processes. The action's actual outcome remains owned by Deployment/Execution History/Observation rather than being implied by permission.
+A user may hold an explicit job/run operational capability while lacking permission to inspect the data the job processes. The action outcome remains owned by Deployment/Execution History/Observation rather than being implied by permission.
 
 ### Layered downstream Impact
-A downstream report can be reachable without exposure, exposed without observed degradation, affected with business consequence still unknown, or protected from a suspect version while becoming late. Causal attribution from the origin to any downstream outcome remains explicit Causal Claim.
+A downstream report can be reachable without exposure, exposed without observed degradation, affected with business consequence unknown, or protected from a suspect version while becoming late. Causal attribution remains explicit Causal Claim.
 
 ### Dependency-gated downstream execution
-A downstream pipeline normally scheduled at 07:00 depends on a current upstream output. With no gate enabled, monitoring reports if it starts too early but does not delay it. With an explicit Execution Gate enabled, the downstream execution can be held until the declared readiness condition is met or an explicit fallback/override applies. Gate waiting remains separate operational health evidence.
+With no gate enabled, monitoring reports early/stale execution but does not delay it. With an explicit Execution Gate, downstream can be held until readiness or explicit fallback/override applies. Gate waiting remains separate operational health evidence.
 
-## Phase 003 replay consequence
+### Authoritative versus advisory assertion
+A governance catalog may be authoritative for a business-definition facet while a repository description remains advisory. Both remain recorded; the authoritative resolution uses Assertion Authority. If two co-authoritative sources disagree, conflict remains explicit instead of choosing the newest or most available source.
 
-Group 06 did **not** require another post-exit concept. Historical replay is a synchronization view over the 23 concept histories rather than a new truth-owning concept.
+## Historical replay consequence
 
-The completed Phase 003 model additionally preserves:
+Phase 003 Group 06 did **not** require another concept at that time. Historical replay remains a synchronization view over concept histories. The later 24th concept is Assertion Authority, discovered in Phase 005 Group 01.
+
+The model preserves:
 
 - current state ≠ historical state cut;
-- later evidence ≠ evidence known then;
-- actual historical Assessment/claim/control/Explanation ≠ replay-derived reconstruction;
+- later evidence/authority correction ≠ evidence/authority known then;
+- actual historical Assessment/authority/claim/control/Explanation ≠ replay-derived reconstruction;
 - actual gate/safeguard action ≠ counterfactual action now preferred;
-- historical authorization/control state ≠ current disclosure permission.
+- historical Assertion Authority/Capability Authorization/control state ≠ current authority/disclosure permission.
 
 ## Phase 002 exit review and later boundary corrections
 
 D-030 records that the original Phase 002 exit gate was satisfied with 20 concepts. That decision remains historically correct. Later requirements were added explicitly rather than silently overloading accepted concept purposes.
 
-The current model still satisfies the original exit principles: each retained concept/addendum has a singular purpose; state/actions remain implementation-independent; ambiguity/evidence/security/temporal behavior are explicit; and no concept semantically requires DQX, Metric Views, Collibra, Immuta, GitHub Actions, a graph database, event store, quarantine mechanism, IAM model, scheduler/orchestrator, or selected architecture.
+The current model still satisfies the original exit principles: each retained concept/addendum has a singular purpose; state/actions remain implementation-independent; ambiguity/evidence/security/temporal behavior are explicit; and no concept semantically requires DQX, Metric Views, Collibra, Immuta, GitHub Actions, an assertion-authority engine, graph database, event store, quarantine mechanism, IAM model, scheduler/orchestrator, or selected architecture.
 
-## Current synchronization direction
+## Current direction
 
-**Phase 003 is complete with all 23 concepts composed through SYN-001–SYN-035 and E-01–E-22 passing consolidation. Phase 004 — Evidence, Time, and Causality Refinement is next and has not started.** See [`../phase_003/README.md`](../phase_003/README.md).
+**Phase 003 is complete with SYN-001–SYN-035. Phase 004 is complete with REF-001–REF-030. Phase 005 is active: Group 01 accepted Assertion Authority and AUTH-001–AUTH-008; Group 02 — Semantic, Responsibility, Classification, Policy & Criticality Governance is next and has not started.**

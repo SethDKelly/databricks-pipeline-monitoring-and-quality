@@ -1,12 +1,14 @@
 # Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement
 
-**Status:** Next phase — not yet started
+**Status:** ACTIVE — Group 01 accepted; AUTH-001–AUTH-008 accepted; Group 02 next
 
 ## Goal
 
 Refine who/what is authoritative or permitted to establish, resolve, view, confirm, operate, override, or disclose accepted ecosystem state without weakening the evidence, temporal, causal, exposure, readiness, or control-proof standards completed in Phase 004.
 
 Phase 005 is a governance/authority/capability refinement phase. It must not select IAM technology, redefine Phase 004 evidence sufficiency, silently treat vendor/source ownership as authority, or prematurely design the Phase 006 metric/statistical model.
+
+Phase 005 authority contracts use `AUTH-###` identifiers. They are refinement/governance contracts over accepted concepts, not new Phase 003 synchronizations and not substitutes for concept ownership. Group 01 did expose one genuine missing concept boundary: **Assertion Authority**, accepted as the 24th concept.
 
 ## Accepted handoff from Phase 004
 
@@ -22,6 +24,40 @@ Phase 005 is a governance/authority/capability refinement phase. It must not sel
 - restricted metadata/derived evidence can itself be sensitive and is not automatically safe to disclose;
 - conflicting applicable evidence/assertions remain conflict until accepted category/context-specific authority semantics resolve them.
 
+## Accepted Group 01 — Assertion Authority and AUTH-001–AUTH-008
+
+Group 01 accepts **Assertion Authority** as a narrow post-Phase-002 addendum because source-precedence/conflict/history behavior recurs across Semantic Definition, Responsibility Assignment, Classification, Policy Context, Expectation, and later metric/threshold governance.
+
+Assertion Authority answers:
+
+> Which source/actor/role/governed process has authoritative standing for this exact assertion category/facet/subject scope/context/time?
+
+It does not answer whether the assertion is factually infallible, whether evidence is sufficient, whether the principal is allowed to perform an action, or whether a control actually enforced something.
+
+Accepted authority contracts:
+
+- **AUTH-001** — Authority Target Binding and Vocabulary;
+- **AUTH-002** — Authority Rule Provenance and Governing Basis;
+- **AUTH-003** — Assertion Standing and Conditional Authority;
+- **AUTH-004** — Assertion Disagreement and Authority Conflict;
+- **AUTH-005** — Explicit Precedence, Co-Authority, and Fallback;
+- **AUTH-006** — Authority Revision, Correction, Supersession, and Time;
+- **AUTH-007** — Unknown, Unavailable, and Resolution Limits;
+- **AUTH-008** — Authority Separation from Evidence, Permission, Responsibility, Policy, and Enforcement.
+
+Key Group 01 decisions:
+
+- authority is category/facet/context/time scoped, never universal by default;
+- assertion recording and authoritative standing are separate;
+- source count, recency, ingestion order, availability, repository ownership, title, responsibility, and apparent specificity do not create authority;
+- co-authoritative disagreement remains authoritative conflict unless an explicit resolver applies;
+- conditional/fallback authority requires an explicit rule plus evidence that its condition holds;
+- authority rules require provenance/governing basis and cannot self-validate;
+- authority history is bitemporal and corrections do not rewrite what was known then;
+- authority cannot waive REF-001–REF-030 evidence burdens or prove enforcement.
+
+See [`01_authority_vocabulary_and_conflict/README.md`](01_authority_vocabulary_and_conflict/README.md) and [`../phase_002/addenda/assertion_authority.md`](../phase_002/addenda/assertion_authority.md).
+
 ## Pre-phase metric-health handoff
 
 The accepted pre-Phase-005 metric consideration is documented in [`pre_phase_metric_health_handoff.md`](pre_phase_metric_health_handoff.md).
@@ -32,133 +68,66 @@ A metric used by an Execution Gate or other high-consequence control requires bo
 
 ## Delivery-group design
 
-The phase will be reviewed in **seven logical groups**. The grouping is a design/review dependency, not an implementation or service boundary.
+The phase is reviewed in **seven logical groups**. The grouping is a design/review dependency, not an implementation or service boundary.
 
 ### Group 01 — Authority Vocabulary, Source Assertions & Conflict Resolution
+**Status:** **Accepted — AUTH-001–AUTH-008; Assertion Authority added as 24th concept.**
 
-**Purpose:** define the common authority model before applying it to specific governance categories.
-
-Primary questions:
-
-- What is the difference between a source assertion, authoritative assertion, advisory/enriching assertion, correction, supersession, and unresolved conflict?
-- How is authority scoped by category, subject, environment, tenant/context, purpose, effective time, and knowledge time?
-- What makes an authority rule itself valid and provenance-bearing?
-- How do source/actor conflicts remain visible when no accepted precedence rule resolves them?
-- How do corrections/supersessions change current authoritative state without deleting historical assertions?
-- Which authority questions belong to Phase 005 versus source-specific evidence contracts in Phase 009?
-
-**Boundary:** do not decide that Databricks, GitHub, Collibra, Immuta, or any human role is universally authoritative.
+Defines common authority targets, assertion standing, authority-rule provenance, conflict vocabulary, explicit precedence/co-authority/fallback, temporal correction, and separation from evidence/permission/enforcement.
 
 ### Group 02 — Semantic, Responsibility, Classification, Policy & Criticality Governance
+**Status:** **Next — not started.**
 
-**Purpose:** apply Group 01 authority semantics to descriptive/governance context.
+Apply Group 01 authority semantics to descriptive/governance state: Semantic Definition facets, Responsibility Assignment types, Classification schemes, Policy Context applicability, criticality, contextual overrides, stewardship, and historical supersession.
 
-Primary questions:
-
-- Who/what may establish or revise Semantic Definition facets?
-- Who/what may establish Responsibility Assignment and stewardship roles?
-- Which sources/actors are authoritative for Classification and Policy Context by context?
-- Who may establish business/operational criticality?
-- How do governance conflicts, local overrides, context-specific definitions, and historical supersession behave?
-- How do policy/classification assertions influence handling without becoming compliance or health conclusions?
-
-**Boundary:** descriptive/governance authority does not automatically grant normative, access, or production-control authority.
+Boundary: descriptive/governance authority does not automatically grant normative, access, or production-control authority.
 
 ### Group 03 — Normative Health, Metric & Threshold Governance
+**Status:** Planned.
 
-**Purpose:** define who is permitted/authoritative to establish the normative health rules that Phase 006 will later give detailed metric semantics.
+Define who may establish/revise Expectations, metric profiles, thresholds, warning/failure margins, tolerance bands, severity, exceptions/waivers, retirement, and high-consequence metric use.
 
-Primary questions:
-
-- Who may establish/revise an Expectation by asset, health dimension, environment, business context, or consumer?
-- Who may approve a table/pipeline metric profile or declare a metric business-critical?
-- Who may set/revise thresholds, warning/failure margins, tolerance bands, severity, or bounded exceptions?
-- How are temporary waivers/exceptions authorized without changing Observation or pretending the underlying condition is healthy?
-- Who may retire a metric/Expectation and what historical state must remain?
-- How are conflicting technical and business thresholds resolved without majority vote or hidden source precedence?
-- Which metric/Expectation authority is required before a metric may participate in an Execution Gate or other high-consequence decision?
-
-**Boundary:** Group 03 decides authority/governance only. Phase 006 defines metric families, statistical behavior, Baseline comparison, propagation, aggregation, and health semantics.
+Boundary: Phase 006 owns metric families, statistical behavior, Baseline comparison, propagation, aggregation, and health semantics.
 
 ### Group 04 — Capability Authorization & Restricted Analytical Visibility
+**Status:** Planned.
 
-**Purpose:** refine permission truth independently from governance authority and evidence sufficiency.
+Refine canonical capability vocabulary; allow/deny/conditional/unknown/conflicting states; purpose/environment/tenant/subject/time conditions; user/group/role/service-principal interactions; current versus historical authorization; and Authorized Analytical Projection.
 
-Primary questions:
-
-- What capability vocabulary is required for direct/raw data, metadata/governance, metric/Assessment visibility, Lineage/RCA, operational job actions, safeguard actions, gate actions/override, causal confirmation, Annotation, and Explanation?
-- How do `allow`, `deny`, `conditional`, `unknown`, and `conflicting` authorization states behave?
-- How are purpose, environment, tenant, subject, consumer, time, and emergency/break-glass conditions represented?
-- How do user/group/role/service-principal grants combine without hidden precedence?
-- What current-versus-historical authorization semantics are required?
-- How can useful restricted-data analysis remain available through Authorized Analytical Projection without inference leakage?
-
-**Boundary:** do not select RBAC, ABAC, IAM provider, enforcement architecture, or declassification mechanism.
+Boundary: do not select RBAC/ABAC/IAM or declassification architecture.
 
 ### Group 05 — High-Consequence Action, Control & Causal-Confirmation Authority
+**Status:** Planned.
 
-**Purpose:** refine who may perform or authorize actions whose consequences extend beyond ordinary viewing/analysis.
+Refine causal-confirmation capability, job operations, safeguard/gate configuration/activation/release/override, delegation, multi-party approval, break-glass, expiry/revocation, and separation of duties.
 
-Primary questions:
-
-- Who may confirm which Causal Claim classes under which accepted confirmation profiles?
-- Which claim classes require explicit human confirmation versus possibly authorized automation?
-- Who may configure/enable/retire/override an Execution Gate?
-- Who may propose/activate/release/cancel/expire a Propagation Safeguard?
-- Which job/run operational actions require distinct capability from gate/safeguard authority?
-- What delegation, multi-party approval, emergency/break-glass, expiry, revocation, or separation-of-duties semantics are needed?
-- How do action authority and actual enforcement/success evidence remain distinct?
-
-**Boundary:** authority never weakens REF-013–REF-030 confirmation/control evidence standards and does not select scheduler/orchestrator/quarantine implementation.
+Boundary: authority never weakens REF-013–REF-030 evidence/control standards or proves action success.
 
 ### Group 06 — Disclosure, Explanation & Audience Governance
+**Status:** Planned.
 
-**Purpose:** govern what authorized audiences can learn from otherwise valid ecosystem truth.
-
-Primary questions:
-
-- Which metric, threshold, policy, Lineage, causal, Impact, safeguard, gate, Annotation, and business-consequence details may be disclosed by audience/capability?
-- When may a restricted entity/path be acknowledged but remain opaque?
-- How should technical teams receive detailed diagnostic metrics while business audiences receive smaller semantic health projections without creating different truth?
-- Which high-consequence statements require additional review before business/client-facing Explanation?
-- How should redaction/opacity preserve evidence limitations without implying hidden evidence is absent?
-- What historical authorization/disclosure information may itself be safely exposed?
-
-**Boundary:** Phase 006/008 define metric-health and Explanation presentation semantics; this group defines governance/permission constraints on disclosure.
+Govern which metric, threshold, policy, Lineage, causal, Impact, safeguard, gate, Annotation, and consequence details may be disclosed; opaque references; inference leakage; technical versus business projections; and review requirements for high-consequence communication.
 
 ### Group 07 — Phase 005 Consolidation / Exit Review
+**Status:** Planned.
 
-**Purpose:** compose Groups 01–06 across representative ecosystem scenarios and verify authority semantics do not steal truth from evidence-bearing concepts/refinements.
-
-Exit checks should confirm:
-
-- authority is category/context/time scoped rather than universal;
-- conflicting authority/assertion state remains representable;
-- semantic/governance authority does not imply access/control authority;
-- metric/Expectation authority does not define metric statistical meaning;
-- Capability Authorization remains independent from Responsibility Assignment, Policy Context, and source authority;
-- causal confirmation/control permission never weakens Phase 004 evidence requirements;
-- action authorization remains separate from action/enforcement success;
-- disclosure governance supports restricted-data RCA without inference leakage;
-- historical authority/authorization remains reconstructable without granting current access;
-- no IAM, source-vendor, scheduler, metric engine, or technical architecture is selected.
+Compose Groups 01–06 and verify authority remains scoped/historical, conflicts remain representable, permissions stay separate from truth/enforcement, restricted-data RCA remains useful, and no IAM/vendor/control architecture is selected.
 
 ## Phase boundaries
 
 Phase 005 must not:
 
 - redefine Phase 004 evidence sufficiency/coverage or causal-confirmation evidence semantics;
-- grant authority merely from source count, recency, repository ownership, technical availability, synchronization order, job creator identity, or organizational title;
+- grant authority merely from source count, recency, repository ownership, technical availability, synchronization order, job creator identity, organizational title, or responsibility;
+- treat authority as factual infallibility;
 - treat policy applicability as enforcement/compliance proof;
 - make derived evidence automatically unrestricted;
 - define the detailed Phase 006 metric taxonomy/statistical model or blindly propagate metrics through Lineage;
 - select RBAC/ABAC/IAM/provider architecture;
-- select Databricks/Collibra/Immuta/GitHub as universally authoritative by default;
-- select scheduler/orchestrator, quarantine, causal, graph, LLM, metric storage, or persistence architecture;
+- select Databricks/Collibra/Immuta/GitHub/Unity Catalog as universally authoritative by default;
+- select scheduler/orchestrator, quarantine, causal, graph, LLM, metric storage, rule engine, or persistence architecture;
 - begin Phase 006 health/statistical/timing refinement without explicit user direction.
 
-## Phase start direction
+## Phase direction
 
-When Phase 005 begins, start with **Group 01 — Authority Vocabulary, Source Assertions & Conflict Resolution**. Do not start later groups or Phase 006 unless explicitly requested.
-
-**Phase 005 has not started.**
+**Phase 005 Group 01 is accepted. Group 02 — Semantic, Responsibility, Classification, Policy & Criticality Governance is next and has not started.**

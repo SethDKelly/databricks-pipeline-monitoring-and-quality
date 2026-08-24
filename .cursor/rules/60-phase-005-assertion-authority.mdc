@@ -1,0 +1,44 @@
+---
+description: Accepted Phase 005 Group 01 Assertion Authority and source-conflict invariants.
+globs:
+alwaysApply: true
+---
+
+# Assertion Authority invariants — AUTH-001–AUTH-008
+
+- **Assertion Authority** is an accepted concept. It determines authoritative standing for provenance-bearing assertions; it does not own the assertions themselves.
+- Bind every authority resolution to an explicit authority target: concept/category/facet/scheme/type, subject scope, context, effective interval, and knowledge cutoff where relevant.
+- A source/actor may be authoritative for one target and advisory/unknown for another.
+- Preserve all source assertions regardless of standing; advisory/non-authoritative does not mean false or deleted.
+- Authoritative standing does not mean factual infallibility and can later be corrected/challenged.
+- Distinguish:
+  - assertion disagreement;
+  - resolved assertion disagreement;
+  - authoritative assertion conflict;
+  - authority-rule conflict;
+  - authority unknown/unavailable.
+- Authority rules require provenance and governing basis. A source/rule cannot self-promote simply by asserting that it is authoritative.
+- Never infer authority or precedence from:
+  - source count / majority;
+  - recency alone;
+  - synchronization/ingestion order;
+  - source availability;
+  - repository ownership;
+  - job creator/admin/organizational title;
+  - Responsibility Assignment;
+  - apparent scope specificity.
+- Specific-over-broad precedence is valid only if an accepted rule explicitly defines it.
+- Sole authority, co-authority, ordered precedence, and conditional/fallback authority must be explicit.
+- Co-authoritative disagreement remains authoritative conflict unless an explicit accepted resolver applies.
+- Fallback authority requires both an accepted fallback rule and evidence that its activation condition holds.
+- If primary authority is unavailable and no explicit fallback applies, authority remains unknown/unavailable.
+- Authority-rule conflict cannot be solved by letting one conflicting rule validate itself.
+- Prospective revision, supersession, correction, retirement, and late discovery remain distinct.
+- Historical authority resolution uses the rule/assertion state applicable to event time and known by the knowledge cutoff.
+- Later authority correction may change retrospective resolution without rewriting what source was considered authoritative then.
+- **Assertion Authority ≠ Capability Authorization.** Permission to submit/edit an assertion does not make it authoritative; authoritative standing does not grant unrelated permission.
+- **Assertion Authority ≠ Responsibility Assignment / Policy Context / Classification / Monitoring Scope.**
+- **Assertion Authority ≠ evidence sufficiency.** An authoritative source cannot make incomplete run/exposure/causal/control evidence sufficient.
+- **Assertion Authority ≠ enforcement.** An authoritative control policy does not prove a gate/safeguard/access mechanism actually enforced it.
+- Authority metadata may itself be sensitive; safe abstraction/opacity must respect Capability Authorization.
+- Concrete source assignments (Databricks/Unity Catalog, GitHub, Collibra, Immuta, human stewards, etc.) remain category/environment-specific later work, never universal defaults.
