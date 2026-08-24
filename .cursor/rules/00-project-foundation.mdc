@@ -7,8 +7,8 @@ alwaysApply: true
 # Project foundation
 
 - Current accepted concept count: **23** — original 20 plus Propagation Safeguard, Capability Authorization, and Execution Gate addenda.
-- **Phase 003 is active. Groups 01–05 are accepted; SYN-032 Execution Gate extension is accepted; Group 06 — Historical Replay & Phase 003 Consolidation is next and has not started.**
-- Accepted synchronization range: **SYN-001–SYN-032**.
+- **Phase 003 is complete. Groups 01–06 are accepted; SYN-001–SYN-035 are accepted; E-01–E-22 pass end-to-end consolidation.**
+- **Phase 004 — Evidence, Time, and Causality Refinement is next and has not started.**
 - Work remains documentation/design-first unless the user explicitly advances into technical/implementation design.
 - Do not create application code, notebooks, infrastructure, schemas, APIs, IAM implementations, deployment workflows, quarantine implementations, Execution Gate/orchestration implementations, graph/causal engines, LLMs, or prototypes prematurely.
 - Treat `docs/` as the product/design system of record.
@@ -26,7 +26,6 @@ alwaysApply: true
 - Authorized Analytical Projection is a view over independently authorized concept state, not a new truth concept or declassification mechanism.
 - Restricted raw-data access must not automatically block approved monitoring/RCA/Impact analysis over authorized derived evidence.
 - Derived evidence/metadata can itself be sensitive; use explicit authorized projection/redaction/opacity.
-- Historical authorization/control state is evidence about past capability but never overrides current requester disclosure authorization.
 - Investigation starts from outcome/question; Lineage yields candidates, not causes; first-observed localization is not root cause.
 - Impact candidate ≠ exposure ≠ downstream effect ≠ consequence ≠ causal attribution.
 - `Not exposed` requires sufficient negative evidence; missing consumer telemetry is not a reassuring negative.
@@ -34,5 +33,11 @@ alwaysApply: true
 - Prevented exposure requires active/enforced safeguard evidence plus sufficient negative-consumption coverage.
 - Explanation consumes only authorized projected concept state and preserves statement-to-basis traceability.
 - `confirmed` cause requires an explicit accepted evidence/authority standard.
-- Do not start Group 06 without explicit user request.
-- Never silently choose graph/event/ledger/quarantine/scheduler/orchestration/workflow/service/LLM/IAM architecture.
+- **Historical replay uses event/effective time + recorded/knowledge cutoff.**
+- Current identity/topology/reference/governance/authorization/control state must not be projected backward.
+- Actual historical state/actions/Explanation remain distinct from replay-derived reconstruction.
+- Late/corrected evidence may change retrospective understanding without rewriting what was known then.
+- Actual historical gate/safeguard actions are not counterfactually replaced by what later evidence suggests should have happened.
+- Historical authorization/control state is evidence about past capability but never overrides current requester disclosure authorization.
+- Do not begin Phase 004 without explicit user request.
+- Never silently choose graph/event/temporal/ledger/quarantine/scheduler/orchestration/workflow/service/LLM/IAM architecture.

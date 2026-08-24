@@ -5,7 +5,7 @@ This document establishes distinctions that must remain stable. The fuller canon
 ## Ecosystem terms
 
 ### Data ecosystem
-The connected set of repositories, Change Intents, Deployments, executions, data assets, dependencies, Lineage, governance metadata, authorization state, health evidence, Execution Gates, Investigations, Causal Claims, Impact context, Propagation Safeguards, Annotations, and downstream consumers relevant to monitoring.
+The connected set of repositories, Change Intents, Deployments, executions, data assets, dependencies, Lineage, governance metadata, authorization state, health evidence, Execution Gates, Investigations, Causal Claims, Impact context, Propagation Safeguards, Annotations, downstream consumers, Explanations, and historical knowledge evolution relevant to monitoring.
 
 ### Logical pipeline
 A named data-processing responsibility that may span multiple Databricks tasks/jobs and must not automatically equal one repository.
@@ -45,7 +45,7 @@ Freshness is observed currency/timeliness. Staleness is a normative Assessment t
 ### Degradation
 A meaningful worsening supported by directional/normative interpretation. A realized Change or Baseline deviation alone is insufficient.
 
-## History, planned change, topology, and execution control
+## History, planned change, topology, execution control, and replay
 
 ### Change Intent
 A registered intended modification and anticipated effects before realization. Intent is not Observation, Change, Expectation, Baseline, actual Impact, or cause.
@@ -60,7 +60,7 @@ Attempt/activation/active-state/supersession history for source/configuration st
 Actual execution-instance lifecycle history. Missing telemetry cannot create fictional missing runs.
 
 ### Execution Gate
-An accepted optional active-control concept that owns whether a downstream execution opportunity is admitted, held, admitted after readiness, or explicitly overridden based on declared prerequisite readiness. It is separate from passive monitoring, Assessment, Execution History, Capability Authorization, and Propagation Safeguard.
+An accepted optional active-control concept that owns whether a downstream execution opportunity is admitted, held, or explicitly overridden based on declared prerequisite readiness. It is separate from passive monitoring, Assessment, Execution History, Capability Authorization, and Propagation Safeguard.
 
 ### Passive monitoring
 Observation/analysis mode in which the framework is not a production start-admission dependency. Monitoring degradation should not delay ungated production jobs merely because they are monitored.
@@ -90,7 +90,25 @@ A realized difference/state transition established by evidence, without health/i
 When something occurred or was true.
 
 ### Recorded/knowledge time
-When monitoring learned/recorded it.
+When monitoring learned or recorded it.
+
+### Historical state cut
+A Phase 003 Group 06 synchronization view over accepted concept histories for an event/effective-time question under a specified recorded/knowledge-time cutoff. It is **not a new concept** and does not own canonical state.
+
+### Contemporaneous view
+A historical state cut using a knowledge cutoff representative of what was known at or near the historical event/decision time.
+
+### Retrospective view
+The same historical event/window considered with a later knowledge cutoff that may include late or corrected evidence.
+
+### Replay-derived interpretation
+A present computation over a historical state cut. It may be useful for analysis but does not prove an Assessment, Causal Claim, Impact conclusion, decision, or Explanation was actually recorded or believed at the historical time.
+
+### Actual historical state
+Concept state/action/assertion that evidence establishes was actually recorded/effective by the historical cutoff, such as an Assessment, gate hold, safeguard activation, Causal Claim status, Annotation, or retained Explanation.
+
+### Reconstructed historical Explanation
+A present-day Explanation composed from an `as-known-then` historical state cut when no retained Explanation proves the same answer/report existed then. It must be labeled as reconstruction rather than historical communication.
 
 ## Authorization and access terms
 
@@ -130,7 +148,7 @@ The earliest monitored point where a related deviation is observed within availa
 A Causal Claim that is proposed/supported but not confirmed.
 
 ### Confirmed cause
-A Causal Claim satisfying an explicit evidence/authority standard. The exact standard remains open.
+A Causal Claim satisfying an explicit evidence/authority standard. The exact standard remains open for Phase 004.
 
 ## Downstream Impact terms
 
@@ -165,7 +183,7 @@ A protective proposed/active/released state that holds or quarantines a defined 
 Attributed human context that cannot silently become Observation, Change Intent, Expectation, Responsibility Assignment, authorization, Impact proof, or causal confirmation.
 
 ### Explanation
-Authorization- and time-aware evidence-grounded communication composed from the Authorized Analytical Projection. It is not an independent truth or authorization source and can distinguish what was known then from retrospective knowledge now.
+Authorization- and time-aware evidence-grounded communication composed from the Authorized Analytical Projection. It is not an independent truth or authorization source and can distinguish contemporaneous, retrospective, and reconstructed perspectives.
 
 ## Governance and policy terms
 
@@ -185,7 +203,7 @@ Declared policy/handling applicability without access enforcement, legal interpr
 Sensitive-data/legal-organizational categories/context according to applicable definitions. Presence of such metadata does not establish compliance.
 
 ### Provenance
-Where a fact/assertion/definition/intent/relationship/evaluation/gate/claim/impact/safeguard/authorization came from, who/what asserted or derived it, and relevant temporal/version context.
+Where a fact/assertion/definition/intent/relationship/evaluation/gate/claim/impact/safeguard/authorization/Explanation came from, who/what asserted or derived it, and relevant temporal/version context.
 
 ## Terms to avoid conflating
 
@@ -228,6 +246,11 @@ Where a fact/assertion/definition/intent/relationship/evaluation/gate/claim/impa
 - safeguard release ≠ proof of health;
 - Annotation ≠ structured operational truth;
 - Explanation ≠ truth/authorization source;
-- historical authorization/control state ≠ current disclosure permission;
 - effective/event time ≠ recorded/knowledge time;
+- current state ≠ historical state cut;
+- later evidence ≠ evidence known then;
+- actual historical state ≠ replay-derived interpretation;
+- actual historical control action ≠ counterfactual preferred action;
+- actual retained historical Explanation ≠ reconstructed historical Explanation;
+- historical authorization/control state ≠ current disclosure permission;
 - Classification ≠ Policy Context ≠ authorization ≠ compliance.

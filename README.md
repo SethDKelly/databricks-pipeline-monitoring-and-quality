@@ -1,12 +1,12 @@
 # Databricks Pipeline Monitoring and Quality
 
-A planning-first product for understanding the **operational health, freshness, quality, lineage, governance, authorization, planned/realized change history, causal evidence, downstream business impact, protective propagation state, and optional dependency-aware execution control** of a Databricks-based Spark data pipeline ecosystem.
+A planning-first product for understanding the **operational health, freshness, quality, lineage, governance, authorization, planned/realized change history, causal evidence, downstream business impact, protective propagation state, optional dependency-aware execution control, and historical evolution of knowledge** of a Databricks-based Spark data pipeline ecosystem.
 
-The central product idea is an **evidence-grounded reasoning layer over the data ecosystem**. A person should be able to ask what is happening, what was intended, what changed, whether timing/data behavior is acceptable, whether an upstream prerequisite was actually ready before a downstream run, where a degradation first became observable, what causal explanations are supported, what may be at risk downstream, what is actually reachable/exposed/affected, what consequences are evidenced, what policies/restrictions apply, who is responsible, what the analyst is authorized to inspect or operate, and what evidence supports each conclusion.
+The central product idea is an **evidence-grounded reasoning layer over the data ecosystem**. A person should be able to ask what is happening, what was intended, what changed, whether timing/data behavior is acceptable, whether an upstream prerequisite was actually ready before a downstream run, where a degradation first became observable, what causal explanations are supported, what may be at risk downstream, what is actually reachable/exposed/affected, what consequences are evidenced, what policies/restrictions apply, who is responsible, what the analyst is authorized to inspect or operate, and **what was known/authorized/controlled/explained at an earlier point compared with what is known now**.
 
 ## Current design state
 
-**Phase 003 — Concept Synchronizations and Ecosystem Scenarios: ACTIVE**
+**Phase 003 — Concept Synchronizations and Ecosystem Scenarios: COMPLETE**
 
 Phase 002 originally completed with 20 retained concepts. Later requirements exposed three missing independent boundaries:
 
@@ -16,15 +16,15 @@ Phase 002 originally completed with 20 retained concepts. Later requirements exp
 
 The current catalog contains **23 accepted concepts**.
 
-**Groups 01–05 are accepted. SYN-032 — Dependency Readiness Evidence → Execution Gate Admission is accepted as a later Group 03 extension. Group 06 — Historical Replay & Phase 003 Consolidation is next and has not started.**
+**Groups 01–06 are accepted. The accepted synchronization range is SYN-001–SYN-035, and E-01–E-22 pass end-to-end historical/consolidation review. Phase 004 — Evidence, Time, and Causality Refinement is next and has not started.**
 
-Group 05 formalized layered downstream Impact, evidence-backed exposure/non-exposure, observed downstream effects, consequence evidence, safeguard-prevented exposure, Annotation boundaries, Capability Authorization-based analytical projection, and audience-specific Explanation without direct-data-access assumptions. The pre-Group-06 refinement adds explicit separation between passive monitoring and optional active dependency gating.
+Group 05 formalized layered downstream Impact, evidence-backed exposure/non-exposure, observed downstream effects, consequence evidence, safeguard-prevented exposure, Annotation boundaries, Capability Authorization-based analytical projection, and audience-specific Explanation without direct-data-access assumptions. The pre-Group-06 refinement added explicit separation between passive monitoring and optional active dependency gating. Group 06 completed bitemporal historical replay and the Phase 003 exit review.
 
 ## Product thesis
 
 A modern data pipeline can be operationally successful and still produce an unhealthy ecosystem outcome. A job may complete successfully but too late, use stale inputs, lose rows through a join, experience a source-shape change, legitimately change population under planned logic, threaten downstream client delivery, or produce an output risky enough to hold while evidence is reviewed.
 
-The product therefore treats **execution occurrence, execution timing, dependency readiness, freshness, data quality, planned intent, realized change, historical topology, governance, authorization, causality, downstream consequence, human investigation, optional execution gating, and protective propagation control as related but distinct concerns**.
+The product therefore treats **execution occurrence, execution timing, dependency readiness, freshness, data quality, planned intent, realized change, historical topology, governance, authorization, causality, downstream consequence, human investigation, optional execution gating, protective propagation control, and evolving knowledge over time as related but distinct concerns**.
 
 ## Passive monitoring should not become production overhead
 
@@ -103,6 +103,33 @@ A high-criticality or client-facing report can warrant immediate attention while
 
 An enforced safeguard can establish **prevented exposure** when enforcement and negative-consumption evidence are sufficient. Preventing suspect-state exposure does not prove downstream delivery was fresh/healthy; the hold may itself create a separate delay/non-delivery consequence.
 
+## Historical replay is bitemporal and non-rewriting
+
+Group 06 formalizes historical replay around two independent coordinates:
+
+- **event/effective time** — when the questioned condition/event/state applied;
+- **recorded/knowledge cutoff** — which evidence/assertions the ecosystem was allowed to know for that historical view.
+
+The same event window can therefore support multiple valid perspectives:
+
+- **what happened**;
+- **what was known then**;
+- **what was actually assessed/believed then**;
+- **what was authorized then**;
+- **what gate/safeguard control state or action actually applied then**;
+- **what was actually explained then**;
+- **what is known retrospectively now**.
+
+Late or corrected evidence can change the current retrospective conclusion without rewriting the contemporaneous record. Evidence discovered tomorrow but effective yesterday does not belong in yesterday's `as-known-then` view.
+
+A historical gate hold, admission, override, safeguard activation, or release remains the actual action that occurred even if later evidence shows a different action would now be preferred. Historical replay is not a counterfactual rewrite.
+
+Similarly, later realized Lineage, exposure, Impact, or causal evidence cannot be backfilled into an earlier Prospective Impact Profile as though it was known before deployment.
+
+A current system may generate an `as-known-then` explanation from the historical state cut. That answer is explicitly **reconstructed** unless an actual retained Explanation/report proves what was communicated at the time.
+
+Historical actor authorization is reconstructable evidence, but it is not reusable permission: the current requester's applicable Capability Authorization still governs current disclosure.
+
 ## Key product questions
 
 The system should ultimately make questions like these straightforward to answer:
@@ -113,7 +140,7 @@ The system should ultimately make questions like these straightforward to answer
 - Is the job merely being monitored, or is an explicit dependency gate active?
 - If a gate is holding the run, what prerequisite is unmet, what evidence supports that, and what timeout/fallback/override semantics apply?
 - Is current behavior normal Baseline variation, materially atypical, or normatively unacceptable?
-- Was a relevant change planned and what prospective blast radius exists?
+- Was a relevant change planned and what prospective blast radius existed **using what was known at planning time**?
 - Which Deployment was active and what actually changed?
 - Where did a relevant condition first become observable?
 - Which causal explanations are proposed, supported, contradicted, rejected, or unresolved?
@@ -122,7 +149,9 @@ The system should ultimately make questions like these straightforward to answer
 - What policy/restriction context applies and who is responsible?
 - What can this analyst see, investigate, operate, gate, or override without direct-data access?
 - What is intentionally hidden/redacted, and how does that limit confidence?
-- What was known, authorized, gated, held, or explained at incident time versus what is known/allowed retrospectively?
+- What was known, believed, authorized, gated/held/safeguarded, and explained at incident time?
+- What changed in the retrospective conclusion after late/corrected evidence arrived?
+- Is this historical Explanation an actual retained artifact or a present reconstruction?
 
 ## Operating environment
 
@@ -142,7 +171,7 @@ These are environmental facts, not implementation architecture. The monitoring f
 
 1. **Concepts before architecture.**
 2. **Ecosystem over repository.**
-3. **Time/history are first-class.**
+3. **Time/history are first-class; event time and knowledge time remain distinct.**
 4. **Evidence over narrative completion.**
 5. **Expectation is normative; Baseline is descriptive.**
 6. **Observation is not Assessment.**
@@ -164,8 +193,12 @@ These are environmental facts, not implementation architecture. The monitoring f
 22. **Analyst Investigation remains first-class even with restricted evidence.**
 23. **Annotation is attributed context, not a shadow truth store.**
 24. **Explanation consumes the authorized analytical projection; it is not a truth or authorization source.**
-25. **Monitoring must not broaden raw-data or production-control authority.**
-26. **Databricks-native first where it fits; integrate before duplicate.**
+25. **Actual historical state remains distinct from replay-derived reconstruction.**
+26. **Late evidence can revise retrospective knowledge without rewriting what was known then.**
+27. **Actual historical control actions are not counterfactually rewritten.**
+28. **Historical authorization is not current disclosure permission.**
+29. **Monitoring must not broaden raw-data or production-control authority.**
+30. **Databricks-native first where it fits; integrate before duplicate.**
 
 ## Canonical A+B→C scenario
 
@@ -179,16 +212,18 @@ Downstream, a Metric View and two reports may all be reachable. Version/refresh 
 
 If an enforced safeguard blocks the suspect version before a client report refreshes, Impact may establish prevented exposure while still assessing any delivery lateness caused by the hold. If the analyst also holds a separate job-operation capability, the analyst may be permitted to retry/update a job without gaining raw-data read access. Actual action success remains separately evidenced by Deployment/Execution History.
 
+If downstream consumption evidence arrives late, the historical 08:15 view may correctly remain `exposure unknown` while the current retrospective view becomes `exposed`. Both are valid because they answer different knowledge-cut questions. The later evidence does not rewrite what responders knew or what the system actually explained at 08:15.
+
 ## Repository map
 
 - [`docs/README.md`](docs/README.md) — documentation navigation/system of record.
 - [`docs/foundation/`](docs/foundation/) — accepted foundation and roadmap.
 - [`docs/concepts/phase_002/`](docs/concepts/phase_002/) — concept specifications and post-exit addenda.
-- [`docs/concepts/phase_003/`](docs/concepts/phase_003/) — synchronization contracts/scenarios.
+- [`docs/concepts/phase_003/`](docs/concepts/phase_003/) — completed synchronization contracts/scenarios and exit review.
 - [`docs/reference/glossary.md`](docs/reference/glossary.md) — canonical vocabulary.
 - [`docs/decisions/`](docs/decisions/) — durable decision history.
 - [`AGENTS.md`](AGENTS.md) and [`.cursor/rules/`](.cursor/rules/) — repository-agent guardrails.
 
 ## Phase direction
 
-Phase 003 remains documentation/design-first. **Group 06 is next and will consolidate E-01–E-22 across the 23 concepts and SYN-001–SYN-032.** IAM implementation, graph/causal architecture, quarantine enforcement, scheduler/gate implementation, service decomposition, and runtime integration choices remain deferred until later refinement/technical phases.
+**Phase 003 is complete. Phase 004 — Evidence, Time, and Causality Refinement is next and has not started.** Phase 004 will refine evidence sufficiency/completeness, temporal query semantics, correction/reassessment, causal confirmation, negative/absence/exposure/readiness/enforcement evidence, and historical retention-versus-reconstruction semantics before later governance, health, Lineage/Impact/control, Explanation, integration, and technical phases.

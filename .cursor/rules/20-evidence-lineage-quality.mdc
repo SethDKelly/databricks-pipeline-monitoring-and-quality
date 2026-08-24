@@ -1,5 +1,5 @@
 ---
-description: Evidence, timing, authorization, planned change, lineage, execution gating, investigation, health, safeguards, causality, impact, annotation, and explanation invariants.
+description: Evidence, timing, authorization, planned change, lineage, execution gating, investigation, health, safeguards, causality, impact, annotation, explanation, and historical replay invariants.
 globs:
 alwaysApply: true
 ---
@@ -50,8 +50,13 @@ Preserve:
 - release ≠ proof of health;
 - Annotation ≠ structured operational truth;
 - Explanation ≠ independent truth/authorization source;
-- historical authorization/control state ≠ current disclosure permission;
-- effective/event time ≠ recorded/knowledge time.
+- effective/event time ≠ recorded/knowledge time;
+- current state ≠ historical state cut;
+- later evidence ≠ evidence known then;
+- actual historical state ≠ replay-derived interpretation;
+- actual historical control action ≠ counterfactual preferred action;
+- actual retained historical Explanation ≠ reconstructed historical Explanation;
+- historical authorization/control state ≠ current disclosure permission.
 
 Rules:
 
@@ -73,7 +78,6 @@ Rules:
 - Restricted evidence is never retrieved merely to summarize it to an unauthorized audience.
 - Permission to operate a job, safeguard, or gate does not grant raw-data access; analytical visibility does not grant production-control authority.
 - Permission to act does not create Deployment/Execution/Observation facts.
-- Historical authorization/control state can be reconstructed as evidence but current requester authorization still governs disclosure.
 - Treat execution timing/dependency latency as first-class evidence.
 - Assess runtime/data evidence against the correct time-valid Expectation/Baseline.
 - Ordinary variation must not become alert noise.
@@ -97,5 +101,20 @@ Rules:
 - Human Annotation remains attributed context; structured truths belong to their owning concepts.
 - Explanation composes only from the Authorized Analytical Projection; it cannot query hidden evidence for narrative completion.
 - Explanation preserves statement-to-basis traceability, Impact layers, gate/safeguard state, causal status, redaction, and temporal perspective.
-- Distinguish contemporaneous from retrospective evidence, Impact, Explanation, authorization, and control state when later state changes.
-- Do not select IAM, graph database, event store, quarantine store, scheduler/orchestrator, gate implementation, persistence architecture, LLM, causal algorithm, or technical architecture from these semantics alone.
+
+Historical replay rules:
+
+- Select an explicit event/effective-time target or window and recorded/knowledge cutoff for `as-known` historical questions.
+- Resolve each concept using only state/evidence available by the cutoff; current state is never used as a shortcut for historical state.
+- Evidence recorded later but effective earlier is excluded from a contemporaneous cut and may enter a later retrospective cut.
+- Distinguish actual recorded historical state from present replay-derived interpretation.
+- A replay-derived Assessment, claim, Impact conclusion, or Explanation does not prove the same interpretation actually existed historically.
+- New/corrected evidence may create later retrospective Assessment/Change/Causal Claim/Impact/Explanation state without deleting prior knowledge.
+- Do not rewrite actual historical gate/safeguard actions based on later evidence; replay is not counterfactual control substitution.
+- Do not backfill later realized Lineage/Impact/causal evidence into earlier Prospective Impact knowledge.
+- If no retained historical Explanation exists, label a current `as-known-then` answer as reconstruction rather than historical communication.
+- Historical Capability Authorization may be reconstructed as evidence; current requester authorization still governs current disclosure.
+- Restricted/opaque evidence remains restricted/opaque through replay and is never described as absent merely because the current requester cannot see it.
+- Partial, unknown, conflicting, unavailable, and authorization-limited replay remain valid outcomes.
+
+Do not select IAM, graph database, temporal/event store, quarantine store, scheduler/orchestrator, gate implementation, persistence architecture, LLM, causal algorithm, or technical architecture from these semantics alone.

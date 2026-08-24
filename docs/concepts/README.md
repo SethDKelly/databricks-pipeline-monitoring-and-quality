@@ -4,7 +4,7 @@
 
 **23 concepts are Accepted.** Phase 002 originally exited with 20 accepted concepts. Later Phase 003 work exposed three missing independent behaviors: **Propagation Safeguard**, **Capability Authorization**, and **Execution Gate**, each accepted through a narrow post-exit addendum.
 
-The project uses Concept Design to define independently understandable units of functionality. Concepts remain implementation-neutral and synchronize rather than collapse into vendor, service, storage, schema, IAM, orchestration, or UI boundaries.
+The project uses Concept Design to define independently understandable units of functionality. Concepts remain implementation-neutral and synchronize rather than collapse into vendor, service, storage, schema, IAM, orchestration, temporal-replay, or UI boundaries.
 
 Use [`concept_template.md`](concept_template.md) as the specification checklist. The original review and later addenda are in [`phase_002/README.md`](phase_002/README.md) and [`phase_002/addenda/`](phase_002/addenda/).
 
@@ -42,7 +42,7 @@ Use [`concept_template.md`](concept_template.md) as the specification checklist.
 
 ### Post-exit addenda
 - [`Propagation Safeguard`](phase_002/addenda/propagation_safeguard.md) — proposed/active/released protective hold or quarantine state for an explicit output/consumption boundary.
-- [`Capability Authorization`](phase_002/addenda/capability_authorization.md) — principal/capability/subject authorization state separating raw-data visibility, analytical visibility, operational control, and safeguard authority.
+- [`Capability Authorization`](phase_002/addenda/capability_authorization.md) — principal/capability/subject authorization state separating raw-data visibility, analytical visibility, operational control, and safeguard/gate authority.
 - [`Execution Gate`](phase_002/addenda/execution_gate.md) — optional downstream execution admission/hold/admit/override control based on explicit prerequisite readiness evidence, separate from passive monitoring and output quarantine.
 
 ## Core access boundary
@@ -53,9 +53,9 @@ The concept model explicitly distinguishes:
 
 without making Responsibility Assignment or Policy Context themselves authorization sources.
 
-A restricted-data analyst may be permitted to inspect approved aggregate health metrics, execution timing, Assessments, redacted Lineage, policy/restriction summaries, responsibility context, causal status, Impact, safeguards, and Annotation while being denied rows, sensitive columns, thresholds, identities, or other restricted evidence. A job operator can separately be authorized to retry/update/control a job without receiving raw-data read permission.
+A restricted-data analyst may be permitted to inspect approved aggregate health metrics, execution timing, Assessments, redacted Lineage, policy/restriction summaries, responsibility context, causal status, Impact, safeguards, gate state, and Annotation while being denied rows, sensitive columns, thresholds, identities, or other restricted evidence. A job operator can separately be authorized to retry/update/control a job without receiving raw-data read permission.
 
-Derived evidence is not automatically unrestricted; authorization applies to metadata/metrics/topology/causal/consequence detail independently where necessary.
+Derived evidence is not automatically unrestricted; authorization applies to metadata/metrics/topology/causal/consequence/control detail independently where necessary.
 
 ## Observation versus active control boundary
 
@@ -73,7 +73,22 @@ The reasoning chain can distinguish:
 
 Causal attribution from an origin, gate, or safeguard to a downstream effect remains explicit **Causal Claim** rather than becoming an Impact or control-state shortcut.
 
-This is a reasoning/synchronization model, not a service topology, IAM architecture, scheduler/orchestration design, or persistence schema.
+This is a reasoning/synchronization model, not a service topology, IAM architecture, scheduler/orchestration design, persistence schema, or temporal replay implementation.
+
+## Historical replay boundary
+
+Phase 003 Group 06 adds **no 24th concept**. Historical replay is a synchronization view over the existing concept histories.
+
+It preserves:
+
+- **effective/event time ≠ recorded/knowledge time**;
+- current state ≠ historical state cut;
+- later evidence ≠ evidence known then;
+- actual historical state/action/Explanation ≠ replay-derived interpretation/reconstruction;
+- actual gate/safeguard action ≠ counterfactual action now preferred;
+- historical authorization/control state ≠ current disclosure permission.
+
+A present-day `as-known-then` computation may be useful, but it cannot be presented as an Assessment, belief, decision, or Explanation that actually existed then unless historical state proves that it did.
 
 ## Domain entities that are not automatically concepts
 
@@ -81,4 +96,6 @@ Logical pipelines, jobs, tasks, runs, execution opportunities, tables, views, Me
 
 ## Phase 003 synchronization work
 
-Groups 01–05 are accepted. **SYN-032 — Dependency Readiness Evidence → Execution Gate Admission** is accepted as a later Group 03 extension discovered before Group 06. Current synchronization work is documented in [`phase_003/README.md`](phase_003/README.md); **Group 06 — Historical Replay & Phase 003 Consolidation is next and has not started.**
+**Phase 003 is complete.** Accepted synchronization range: **SYN-001–SYN-035**. E-01–E-22 pass end-to-end consolidation. Current results are documented in [`phase_003/README.md`](phase_003/README.md), with Group 06 in [`phase_003/06_historical_replay_and_consolidation/`](phase_003/06_historical_replay_and_consolidation/).
+
+**Phase 004 — Evidence, Time, and Causality Refinement is next and has not started.**

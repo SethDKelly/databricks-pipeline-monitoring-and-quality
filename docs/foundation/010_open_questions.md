@@ -1,6 +1,35 @@
 # 010 — Open Questions
 
-These questions are intentionally unresolved. Accepted Phase 002 concept boundaries constrain the answers but do not silently decide them.
+These questions are intentionally unresolved. Accepted Phase 002/003 boundaries constrain the answers but do not silently decide them. **Phase 004 — Evidence, Time, and Causality Refinement is next.**
+
+## Evidence, historical time, and replay — Phase 004 priority
+
+- What evidence sufficiency/completeness vocabulary is needed across positive, negative, absence, exposure, readiness, enforcement, and contradiction evidence?
+- What source/query coverage is enough to assert `not observed`, `not exposed`, `did not run`, or `not known by knowledge cutoff` rather than merely `evidence unavailable`?
+- What exact query semantics select event/effective time and recorded/knowledge cutoff across concepts with different validity models?
+- Which historical states require retained snapshots versus reconstructible version history?
+- How should replay-derived Assessment/Impact/Explanation be labeled and retained relative to actually recorded historical state?
+- What materiality rules trigger dependent reassessment, Investigation reopen prompts, or updated Explanation after late/corrected evidence?
+- How should corrected identity/Lineage/reference/authorization state affect retrospective analysis without rewriting contemporaneous conclusions?
+- What retention/audit requirements apply to actual historical Explanation versus reconstructed historical Explanation?
+
+## Causal Claim and confirmation — Phase 004 priority
+
+- What operational evidence/authority standard permits `confirmed` cause?
+- Which first-MVP epistemic statuses are required?
+- Can automated systems ever confirm a cause or only propose/support/rank claims?
+- How should multiple primary/contributing/enabling causes be displayed/reviewed?
+- When does quantitative attribution become necessary, and what evidence standard would justify percentages?
+- How should materially new evidence challenge a previously confirmed claim?
+- What support/contradiction/alternative-explanation coverage is required before a claim status changes?
+
+## Exposure, absence, and readiness evidence — Phase 004 priority
+
+- What evidence establishes exposure for reports, Metric Views, pipelines, applications, and business processes?
+- What evidence is sufficient to establish `not exposed` for each consumer class?
+- What evidence proves a current qualifying upstream output for an Execution Gate: completion, output identity/version, freshness, or combinations?
+- What proves an external gate hold/admission or safeguard activation actually enforced the intended boundary?
+- How should late readiness/enforcement telemetry alter retrospective interpretation while preserving actual historical control action?
 
 ## Entity identity and scope realization
 
@@ -29,7 +58,7 @@ These questions are intentionally unresolved. Accepted Phase 002 concept boundar
 - What evidence coverage is sufficient to establish observed absence?
 - Does composite/overall health eventually warrant a dedicated concept or only explicit aggregation synchronization?
 
-## Change Intent, Deployment, and execution
+## Change Intent, Deployment, execution, and gating
 
 - Which source/actor may register authoritative Change Intent?
 - What minimum anticipated-effect/monitoring-implication fields are required for MVP?
@@ -37,6 +66,9 @@ These questions are intentionally unresolved. Accepted Phase 002 concept boundar
 - What evidence proves Deployment activation rather than attempt/workflow success?
 - How are configuration-only changes related when source revision is unchanged?
 - What minimum logical execution reconstruction is needed when pipelines span jobs/tasks?
+- Which dependency/readiness criteria are safe for automatic gating?
+- What gate classes need explicit fail-open/fail-closed/hold/escalate behavior?
+- What maximum wait, timeout, escalation, expiry, and override semantics are required?
 
 ## Lineage and historical topology
 
@@ -45,15 +77,6 @@ These questions are intentionally unresolved. Accepted Phase 002 concept boundar
 - Which relationships must repositories/integrations assert explicitly?
 - How should inferred relationship confidence and topology completeness be communicated?
 - Which graph-compatible technical realization is appropriate later, if any?
-
-## Causal Claim and confirmation
-
-- What operational evidence/authority standard permits `confirmed` cause?
-- Which first-MVP epistemic statuses are required?
-- Can automated systems ever confirm a cause or only propose/support/rank claims?
-- How should multiple primary/contributing/enabling causes be displayed/reviewed?
-- When does quantitative attribution become necessary, and what evidence standard would justify percentages?
-- How should materially new evidence challenge a previously confirmed claim?
 
 ## Investigation
 
@@ -65,10 +88,8 @@ These questions are intentionally unresolved. Accepted Phase 002 concept boundar
 ## Downstream Impact
 
 - What exact first-MVP vocabulary represents candidate/reachability, exposure, downstream effect, and business consequence?
-- What evidence establishes exposure for reports, Metric Views, pipelines, applications, and business processes?
 - Which business processes/decisions need first-class Entity Identity?
 - How should criticality prioritize Impact without being mistaken for consequence evidence?
-- What evidence is sufficient to establish `not exposed`/`not affected` for a given layer?
 
 ## Annotation
 
@@ -85,13 +106,14 @@ These questions are intentionally unresolved. Accepted Phase 002 concept boundar
 - Should generated Explanations be dynamically resolved, retained snapshots, or both?
 - How should authorization differences across a path be explained without inference leakage?
 - What rules govern high-consequence causal/business claims in generated explanations?
+- How should UI distinguish contemporaneous, retrospective, comparison, actual-retained, and reconstructed historical Explanation?
 
 ## Security and privacy
 
-- Which monitoring metadata, intent, topology, causal claims, Impact details, or Annotations are sensitive by themselves?
+- Which monitoring metadata, intent, topology, causal claims, Impact details, control state, or Annotations are sensitive by themselves?
 - May users know a restricted entity/path exists if they cannot inspect it?
 - Will any Investigation require row-level examples, and if so how are they minimized/redacted/authorized?
-- What audit/retention requirements apply to evidence, investigations, claims, annotations, questions, and retained explanations?
+- What audit/retention requirements apply to evidence, investigations, claims, annotations, questions, control state, and retained explanations?
 
 ## Integration scope
 
@@ -101,9 +123,12 @@ These questions are intentionally unresolved. Accepted Phase 002 concept boundar
 - What can GitHub Actions reliably prove about Deployment attempt and activation?
 - Which systems can provide Change Intent?
 - Are Collibra/Immuta necessary for MVP or later enrichment?
+- Which sources provide sufficiently historical/authoritative evidence for event-time + knowledge-cut replay?
+- Can optional Execution Gate semantics be realized without modifying production repositories/GitHub Actions, and where would exceptions be unavoidable?
 
 ## MVP pilot
 
-- Which 2–5 representative pipelines exercise cross-repository dependencies, A+B→C, planned change, unintended side effect, and downstream Impact?
+- Which 2–5 representative pipelines exercise cross-repository dependencies, A+B→C, planned change, unintended side effect, downstream Impact, and optional gating?
 - Which business analyst/report/Metric View provides a meaningful exposure/consequence case?
 - Which assets carry useful governance/policy context without unsafe real data in development?
+- Which pilot incident can validate both contemporaneous and retrospective replay after intentionally late/corrected synthetic evidence?

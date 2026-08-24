@@ -21,7 +21,7 @@ The original Phase 002 review completed with 20 concepts. Later Phase 003 work e
 ## Accepted post-exit addenda
 
 - **Propagation Safeguard** — protective proposed/active/released hold or quarantine state for a defined data output, execution context, propagation boundary, environment/cohort, or consumer set. It does not own health Assessment, Investigation, causal truth, authorization, or implementation enforcement mechanics.
-- **Capability Authorization** — provenance-bearing resolution of whether a principal may perform a named capability on a subject/context/time. It separates raw-data read, metadata/health visibility, Lineage/RCA participation, operational job authority, safeguard authority, and other capability categories without selecting an IAM/enforcement implementation.
+- **Capability Authorization** — provenance-bearing resolution of whether a principal may perform a named capability on a subject/context/time. It separates raw-data read, metadata/health visibility, Lineage/RCA participation, operational job authority, safeguard/gate authority, and other capability categories without selecting an IAM/enforcement implementation.
 - **Execution Gate** — optional active control over whether a downstream execution opportunity is admitted, held, admitted after readiness, expired/cancelled, or explicitly overridden based on declared prerequisite readiness evidence. It remains separate from passive monitoring, Execution History, Assessment, Capability Authorization, and Propagation Safeguard.
 
 **23 concepts are currently accepted.**
@@ -69,7 +69,7 @@ Review order was a design dependency, not an implementation dependency. Concepts
 
 ### Post-exit addendum — Capability Authorization
 - The model repeatedly relied on an `authorized evidence view`, but no concept owned whether a principal may perform a named capability on a subject/context/time.
-- Raw-data read authorization, metadata/governance visibility, derived health/metric visibility, Lineage/RCA participation, job/run operational control, and safeguard authority are independent capability categories.
+- Raw-data read authorization, metadata/governance visibility, derived health/metric visibility, Lineage/RCA participation, job/run operational control, safeguard authority, and gate authority are independent capability categories.
 - Denial of raw-data access does not automatically prohibit approved monitoring or RCA.
 - Permission to operate/update a job does not grant raw-data read access; analysis permission does not grant production-control authority.
 - Responsibility Assignment, Classification, Policy Context, and Monitoring Scope remain separate from authorization.
@@ -139,6 +139,18 @@ A downstream report can be reachable without exposure, exposed without observed 
 ### Dependency-gated downstream execution
 A downstream pipeline normally scheduled at 07:00 depends on a current upstream output. With no gate enabled, monitoring reports if it starts too early but does not delay it. With an explicit Execution Gate enabled, the downstream execution can be held until the declared readiness condition is met or an explicit fallback/override applies. Gate waiting remains separate operational health evidence.
 
+## Phase 003 replay consequence
+
+Group 06 did **not** require another post-exit concept. Historical replay is a synchronization view over the 23 concept histories rather than a new truth-owning concept.
+
+The completed Phase 003 model additionally preserves:
+
+- current state ≠ historical state cut;
+- later evidence ≠ evidence known then;
+- actual historical Assessment/claim/control/Explanation ≠ replay-derived reconstruction;
+- actual gate/safeguard action ≠ counterfactual action now preferred;
+- historical authorization/control state ≠ current disclosure permission.
+
 ## Phase 002 exit review and later boundary corrections
 
 D-030 records that the original Phase 002 exit gate was satisfied with 20 concepts. That decision remains historically correct. Later requirements were added explicitly rather than silently overloading accepted concept purposes.
@@ -147,4 +159,4 @@ The current model still satisfies the original exit principles: each retained co
 
 ## Current synchronization direction
 
-Phase 003 composes all 23 concepts. **Groups 01–05 are accepted; SYN-032 is accepted as a later Group 03 execution-control extension; Group 06 — Historical Replay & Phase 003 Consolidation is next and has not started.** See [`../phase_003/README.md`](../phase_003/README.md).
+**Phase 003 is complete with all 23 concepts composed through SYN-001–SYN-035 and E-01–E-22 passing consolidation. Phase 004 — Evidence, Time, and Causality Refinement is next and has not started.** See [`../phase_003/README.md`](../phase_003/README.md).

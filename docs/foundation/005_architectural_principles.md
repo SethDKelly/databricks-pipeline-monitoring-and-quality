@@ -11,13 +11,13 @@ Technical modules emerge from accepted concepts/synchronizations, not vice versa
 Reason across repository/job/workspace/pipeline/domain boundaries while preserving them for provenance/responsibility.
 
 ## AP-03 — Time and history are first-class
-Future architecture must support point-in-time questions about intent, active Deployment, executions, Lineage/topology, Expectations, Baselines, Observations, Assessments, realized Changes, Investigations, causal knowledge, Impact, and Explanation history.
+Future architecture must support point-in-time questions about intent, active Deployment, executions, Lineage/topology, Expectations, Baselines, Observations, Assessments, realized Changes, Investigations, causal knowledge, Impact, control state, authorization, and Explanation history.
 
 ## AP-04 — Evidence is preserved separately from interpretation, intent, and causality
 Change Intent, Deployment evidence, execution facts, Observations, Baselines, Expectations, Assessments, realized Changes, Causal Claims, Annotations, and Explanation remain distinguishable.
 
 ## AP-05 — Provenance is part of every material fact
-Responsibility Assignments, semantic definitions, classifications, Policy Context, Change Intents, Deployments, executions, Lineage, Expectations, Observations, Baselines, Assessments, Changes, claims, Impact evidence, and Annotations retain source/temporal provenance appropriate to use.
+Responsibility Assignments, semantic definitions, classifications, Policy Context, Change Intents, Deployments, executions, Lineage, Expectations, Observations, Baselines, Assessments, Changes, gate/safeguard state, claims, Impact evidence, Annotations, authorization, and Explanations retain source/temporal provenance appropriate to use.
 
 ## AP-06 — Lineage is typed
 Distinguish data derivation, operational dependency, production/consumption, and deployment provenance rather than one ambiguous edge.
@@ -29,10 +29,10 @@ Successful execution can coexist with freshness/quality violations; Baseline dev
 What should happen, reference behavior, observed fact, and interpretation remain distinct. Planned values do not become Baselines; planned effects do not become Expectations automatically.
 
 ## AP-09 — Historical comparisons and assessments must be reproducible
-Historical Assessment should resolve the evidence/reference versions available/used at the time. Late/corrected evidence creates traceable reassessment.
+Historical Assessment should resolve the evidence/reference versions available/used at the time. Late/corrected evidence creates traceable reassessment without deleting prior knowledge.
 
 ## AP-10 — Security boundaries follow data authority, not monitoring convenience
-Monitoring does not broaden raw-data access; metadata, causal claims, topology, intent, Impact state, and Annotations may also be sensitive.
+Monitoring does not broaden raw-data access; metadata, causal claims, topology, intent, Impact state, control state, and Annotations may also be sensitive.
 
 ## AP-11 — Data minimization is a design requirement
 Prefer metadata/aggregates/checks/fingerprints over copied row-level sensitive data.
@@ -87,7 +87,7 @@ Causal propositions remain Causal Claims with epistemic status, support/contradi
 Future architecture must preserve candidate/reachability, actual exposure/consumption, observed downstream effect, and evidenced business consequence separately. Missing evidence cannot become `not affected`.
 
 ## AP-27 — Explanation is authorization- and time-aware projection
-Explanation derives from authorized concept state, preserves material statement-to-basis traceability and epistemic labels, and supports both contemporaneous knowledge cuts and retrospective views.
+Explanation derives from authorized concept state, preserves material statement-to-basis traceability and epistemic labels, and supports contemporaneous, retrospective, and comparative knowledge views.
 
 Choice of LLM, rules engine, templates, report generator, or conversational UI remains deferred.
 
@@ -97,11 +97,23 @@ Baseline monitoring, evidence collection, Assessment, Investigation, Impact anal
 Future architecture should prefer asynchronous/platform metadata observation where it can satisfy accepted evidence needs without adding work to the production critical path.
 
 ## AP-29 — Baseline onboarding prefers production-repository independence
-The monitoring framework should be independently deployable and versioned from the production Git repositories and GitHub Actions workflows that deploy Databricks jobs. Where Databricks/platform/source metadata can supply the required evidence, baseline onboarding should not require ETL-code changes, framework libraries, or monitoring workflow steps to be added to every production repository.
+The monitoring framework should be independently deployable and versioned from production Git repositories/GitHub Actions workflows. Where Databricks/platform/source metadata can supply required evidence, baseline onboarding should not require ETL-code changes, framework libraries, or monitoring workflow steps in every production repository.
 
 This is an architectural objective, not a claim that no specialized future integration will ever require source changes. Exceptions must be explicit, minimal, and justified.
 
 ## AP-30 — Active execution control is explicit and separable from observation
-Dependency-aware execution gating is an optional control capability, not an automatic consequence of monitoring or Lineage. When an **Execution Gate** is enabled, intentional waiting can become part of the production path; the gate's availability, decision basis, fallback/timeout behavior, authorization, override, and induced delay must therefore be explicit and observable.
+Dependency-aware execution gating is an optional control capability, not an automatic consequence of monitoring or Lineage. When an Execution Gate is enabled, intentional waiting can become part of the production path; the gate's availability, decision basis, fallback/timeout behavior, authorization, override, and induced delay must therefore be explicit and observable.
 
-No universal fail-open or fail-closed rule is selected at this phase. Execution Gate and Propagation Safeguard remain separate protective boundaries: one controls downstream start admission, the other controls output/consumption propagation.
+No universal fail-open/fail-closed rule is selected. Execution Gate and Propagation Safeguard remain separate protective boundaries: one controls downstream start admission, the other controls output/consumption propagation.
+
+## AP-31 — Historical replay is bitemporal and non-mutating
+Future architecture must support historical questions over both **event/effective time** and **recorded/knowledge cutoff**. Evidence that became known later cannot appear in a contemporaneous cut merely because its effective time was earlier.
+
+Late/corrected evidence may create a new retrospective conclusion, but prior knowledge, Assessment, causal/Impact state, authorization/control state, and retained Explanation remain historically reconstructable.
+
+This principle does not select a temporal database, event store, snapshot strategy, or query engine.
+
+## AP-32 — Actual history and replay-derived reconstruction remain distinguishable
+A current computation over historical inputs is not proof that the result was actually assessed, believed, decided, controlled, or communicated at the time. Actual gate/safeguard actions are not counterfactually rewritten from later evidence, and a reconstructed `as-known-then` Explanation is distinguishable from an actual retained historical Explanation.
+
+Future architecture must preserve this distinction even if both views are rendered through the same user experience.

@@ -1,69 +1,101 @@
 # Group 06 — Historical Replay & Phase 003 Consolidation
 
-**Status:** Next review group — not yet started
+**Status:** Review complete — synchronizations accepted; Phase 003 exit gate satisfied
 
 ## Goal
 
-Compose Groups 01–05 plus the pre-Group-06 Execution Gate extension across complete ecosystem scenarios, verify effective/event-time versus recorded/knowledge-time behavior plus historical authorization/control state, identify any hidden concept/synchronization flaws, and perform the Phase 003 exit review before entering Phase 004 refinement.
+Compose Groups 01–05 plus the Execution Gate extension across complete ecosystem scenarios; formalize bitemporal historical replay, late-evidence re-evaluation, and authorization-safe historical Explanation; verify all accepted truth/control boundaries; and perform the Phase 003 exit review.
 
-## Accepted handoff from Group 05
+## Accepted synchronizations
 
-- Impact preserves candidate/reachability, exposure, downstream effect, consequence, and causal attribution as separate strengths.
-- Exposure and non-exposure require sufficient encounter/coverage evidence.
-- Criticality/policy sensitivity does not manufacture actual Impact or compliance consequence.
-- Prevented exposure requires enforced safeguard evidence plus sufficient negative-consumption coverage.
-- Annotation remains attributed context and cannot silently become structured truth.
-- Capability Authorization permits useful derived/opaque RCA without direct data access while keeping operational authority separate.
-- Explanation is an authorized, time-aware projection over concept state with statement-to-basis traceability; it cannot retrieve hidden evidence merely to summarize it.
-- Historical authorization may be reconstructed, but current disclosure authorization cannot be bypassed through historical replay.
+- [`SYN-033 — Event-Time + Knowledge Cut → Historical State Reconstruction`](033_event_time_knowledge_cut_reconstruction.md)
+- [`SYN-034 — Late/Corrected Evidence → Retrospective Re-evaluation`](034_late_corrected_evidence_retrospective_re_evaluation.md)
+- [`SYN-035 — Historical State + Current Authorization → Safe Replay Explanation`](035_current_authorization_historical_projection_explanation.md)
 
-## Accepted pre-Group-06 execution-control handoff
+## Consolidation artifacts
 
-- **Execution Gate** is accepted as the 23rd concept through a narrow Phase 002 post-exit addendum.
-- **SYN-032 — Dependency Readiness Evidence → Execution Gate Admission** is accepted as a later Group 03 extension.
-- Passive monitoring remains non-blocking/out-of-band by default; monitoring degradation must not delay ungated production jobs.
-- Baseline monitoring should prefer independent deployment and no required changes to production ETL repositories/GitHub Actions when platform/source metadata is sufficient.
-- Lineage/readiness Assessment does not automatically create gating. Execution Gate is explicit opt-in active control.
-- Gate criteria may require qualifying current output/freshness/version evidence rather than only `upstream job ran`.
-- Execution Gate controls downstream start admission; Propagation Safeguard controls output/consumption propagation.
-- Gate hold/admission/override state remains separate from actual Execution History.
-- Gate-induced delay remains observable/assessable and can create downstream Impact.
-- Missing gate/readiness evidence does not imply ready; no universal fail-open/fail-closed rule is selected. Fallback/timeout/escalation/override semantics must be explicit per accepted gate policy/class.
+- [`Scenario Replay Matrix`](scenario_replay_matrix.md) — E-01–E-22 end-to-end composition review.
+- [`Phase 003 Exit Review`](phase_003_exit_review.md) — concept/synchronization/architecture boundary audit and Phase 004 handoff.
 
-## Planned checks
+## Boundary decisions
 
-- walk E-01 through E-22 end to end;
-- reconstruct `what happened`, `what was known then`, `what was believed then`, `what was authorized then`, `what control state applied then`, `what was explained then`, and `what we know now` without conflating those questions;
-- verify corrections/supersessions do not erase prior identity, governance, intent, reference, execution, Lineage, Assessment, Investigation, causal, Impact, safeguard, gate, authorization, Annotation, or Explanation state;
-- verify current topology/reference/governance/authorization/gate configuration is not projected backward;
-- verify restricted/opaque paths remain analytically useful without leakage;
-- verify a current requester cannot obtain historically restricted evidence merely because a past actor had access;
-- verify partial failures/gaps do not become default certainty or reassuring absence;
-- verify prospective blast radius remains separate from realized Impact/causality;
-- verify successful execution, timing health, freshness, DQ, execution gating, safeguards, downstream exposure, and delivery consequence remain separately expressible;
-- verify passive monitoring failure does not become production failure for ungated jobs;
-- verify explicitly gated jobs have traceable readiness, fallback/override, hold/admission, and enforcement evidence without silently fabricating scheduler state;
-- verify Execution Gate does not collapse into Propagation Safeguard or Execution History;
-- verify no synchronization has become a hidden service/database/workflow/IAM/graph/LLM/orchestration concept;
-- enumerate the evidence/time/causality/governance/quality/Lineage/Impact/control/Explanation questions handed to later refinement phases.
+### 1. Historical replay is bitemporal
+A historical question resolves both **event/effective time** and **recorded/knowledge cutoff**. Same event time can have different valid `as-known` results as knowledge evolves.
 
-## Priority consolidation scenarios
+### 2. Historical state is not current state projected backward
+Identity, scope, governance, Expectations/Baselines, Deployments, Execution History, Lineage, authorization, gate/safeguard state, claims, Impact, Annotation, and Explanation resolve from their applicable historical versions/evidence.
 
-- A+B→C unplanned multi-causal degradation with downstream exposure/effect;
-- planned structural change with correct reference transition plus an unintended quality failure;
-- long-running/stale upstream with successful downstream execution;
-- missing output with enforced downstream hold and delivery consequence;
-- restricted-data analyst performing useful RCA without row access;
-- job operator with operational capability but no raw-data permission;
-- safeguard prevented exposure versus safeguard-induced lateness;
-- dependency-gated C waiting for current A/B readiness instead of blindly running on schedule;
-- gate hold preventing stale recomputation while causing a delivery-delay Assessment;
-- passive monitoring degradation with ungated production continuing normally;
-- explicitly gated control degradation following configured unavailable-state behavior;
-- historical correction that changes causal/Impact interpretation;
-- historical authorization/control change where current disclosure remains least-privilege;
-- cross-repository and restricted/opaque Lineage.
+### 3. Actual historical state and replay-derived state are distinct
+A current system may compute an interpretation over a historical evidence cut. That does not prove an Assessment, claim, Impact conclusion, decision, or Explanation actually existed then. Replay-derived outputs are labeled as reconstruction.
 
-## Exit direction
+### 4. Late/corrected evidence changes retrospective understanding, not historical knowledge
+New evidence may produce new Assessment/Change/Causal Claim/Impact/Explanation versions with a later knowledge time. Earlier conclusions remain reconstructable.
 
-Phase 003 exits only when the **23 accepted concepts and SYN-001–SYN-032** can compose into complete, historically reproducible, authorization-safe ecosystem behavior without architecture assumptions, hidden truth ownership, forced causality, downstream-impact overstatement, or accidental conversion of passive monitoring into a universal production dependency.
+### 5. Historical control actions are not counterfactually rewritten
+Later readiness evidence may show a gate would be evaluated differently now, but the actual historical hold/admit/override remains the action that occurred. The same applies to safeguard proposal/activation/release.
+
+### 6. Prospective knowledge stays prospective
+Later realized Lineage, Impact, or causality cannot be backfilled into an earlier Prospective Impact Profile as though known before deployment.
+
+### 7. Historical authorization is evidence, not current access
+The product can reconstruct what a historical actor was permitted to know/do, but current requester Capability Authorization still governs present disclosure.
+
+### 8. Historical Explanation snapshot and reconstructed Explanation differ
+If an actual Explanation was retained, it can be identified as historical communication. Otherwise an `as-known-then` Explanation is a reconstruction and cannot be presented as something responders actually saw.
+
+### 9. Redaction/opacity persists through replay
+Restricted evidence can remain useful through authorized abstraction without being retrieved or paraphrased beyond current disclosure permission. Hidden evidence is not represented as absent.
+
+### 10. Passive-monitoring non-interference survives consolidation
+Monitoring outages do not become production outages for ungated jobs. Explicitly gated jobs use their configured unavailable-state behavior; Group 06 does not invent a global fallback.
+
+### 11. Execution Gate and Propagation Safeguard remain independent through history
+Gate state owns start admission; safeguard state owns output/consumption protection. Their actual actions and any induced delays are replayed independently.
+
+### 12. Phase 003 requires no additional concept
+The full scenario replay exposes no new truth-owning functionality. Remaining gaps are evidence, authority, policy, statistical, integration, retention, and implementation refinements.
+
+## Seven historical questions
+
+Group 06 makes these separately answerable when evidence permits:
+
+1. **What happened?**
+2. **What was known then?**
+3. **What was believed/interpreted then?**
+4. **What was authorized then?**
+5. **What control state/action applied then?**
+6. **What was actually explained then?**
+7. **What do we know now?**
+
+A replay may answer only some of these. Partial truth is preferable to inferred completion.
+
+## Scenario review
+
+All **E-01–E-22 pass**. See [`scenario_replay_matrix.md`](scenario_replay_matrix.md) for the end-to-end composition record.
+
+Especially important stress cases pass:
+
+- late Deployment/Lineage/consumption evidence changes retrospective interpretation while preserving incident-time uncertainty;
+- a restricted-data analyst can compare contemporaneous and retrospective conclusions without receiving historical privileged evidence;
+- a gate hold remains the actual historical control action even if later evidence shows the upstream was already ready;
+- an actual retained incident Explanation is distinguishable from a newly generated historical reconstruction;
+- passive monitoring degradation leaves ungated production independent;
+- explicitly gated control degradation follows the gate's historical configured fallback rather than a framework-wide default;
+- safeguard prevention and safeguard-induced lateness remain simultaneously true where supported.
+
+## Deferred questions handed to Phase 004+
+
+- exact evidence sufficiency/completeness standards;
+- precise event-time/knowledge-cut query semantics and `not known by cutoff` proof;
+- correction/reassessment/reopen materiality;
+- Causal Claim confirmation standards and confidence/attribution semantics;
+- exposure/non-exposure evidence classes;
+- Execution Gate readiness/enforcement evidence sufficiency;
+- retention versus reconstruction requirements for historical Assessment/Investigation/Impact/Explanation;
+- later authority, statistical, integration, control-policy, and technical realization choices.
+
+## Group exit gate
+
+**Satisfied.** The 23 accepted concepts and SYN-001–SYN-035 compose into historically reproducible, authorization-safe, control-aware ecosystem behavior across E-01–E-22 without hidden architecture, forced causality, downstream-impact overstatement, historical rewriting, or accidental conversion of passive monitoring into a universal production dependency.
+
+**Phase 003 is complete. Phase 004 — Evidence, Time, and Causality Refinement is next and has not started.**

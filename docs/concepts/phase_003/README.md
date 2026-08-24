@@ -1,6 +1,6 @@
 # Phase 003 — Concept Synchronizations and Ecosystem Scenarios
 
-**Status:** Active — Groups 01–05 accepted; pre-Group-06 Execution Gate extension accepted; Group 06 next and not started
+**Status:** **Complete — Groups 01–06 accepted; SYN-001–SYN-035 accepted**
 
 ## Purpose
 
@@ -8,11 +8,11 @@ Phase 003 defines how the **23 accepted concepts** coordinate to satisfy end-to-
 
 The original Phase 002 exit had 20 concepts. Phase 003 Group 03 exposed one missing independent behavior—protective hold/quarantine/release—and Phase 002 was narrowly reopened through the accepted Propagation Safeguard addendum. Before Group 05, authorization-separated analytical transparency exposed a second missing independent behavior: determining whether a principal may perform a named capability on a subject/context/time. Capability Authorization was therefore accepted as the 22nd concept. Before Group 06, dependency-aware start control exposed a third missing behavior: whether a downstream execution opportunity itself may be held/admitted based on explicit prerequisite readiness. Execution Gate was therefore accepted as the 23rd concept.
 
-A synchronization describes when concept actions/results coordinate, what information passes between them, necessary semantic ordering, and how ambiguity/failure/provenance/time/security behavior propagates. It is not automatically a workflow engine, service, transaction, event bus, database relationship, API call, scheduler, or orchestration technology.
+A synchronization describes when concept actions/results coordinate, what information passes between them, necessary semantic ordering, and how ambiguity/failure/provenance/time/security behavior propagates. It is not automatically a workflow engine, service, transaction, event bus, database relationship, API call, scheduler, orchestration technology, temporal store, or snapshot implementation.
 
 ## Phase method
 
-Every synchronization specification identifies outcome, participating concepts/actions, initiating condition, semantic preconditions, coordination/partial ordering, state/evidence ownership, ambiguity propagation, time semantics, provenance, authorization, invariants, scenarios, non-goals, and deferred questions. Use [`synchronization_template.md`](synchronization_template.md).
+Every synchronization specification identifies outcome, participating accepted concepts/actions, initiating condition, semantic preconditions, coordination/partial ordering, state/evidence ownership, ambiguity propagation, time semantics, provenance, authorization, invariants, scenarios, non-goals, and deferred questions. Use [`synchronization_template.md`](synchronization_template.md).
 
 ## Strategic groups
 
@@ -23,7 +23,7 @@ Every synchronization specification identifies outcome, participating concepts/a
 | 03 | Runtime Evidence, Health & Realized Change | Deployment/Execution → timing/dependency Observations → time-valid Assessment / Change → analyst handoff / Propagation Safeguard; later optional Execution Gate extension | **Accepted + SYN-032 extension** |
 | 04 | Lineage, Investigation & Causal Reasoning | Bounded Investigation → historical Lineage candidate discovery → evidence assembly → competing Causal Claims / analyst research | **Accepted** |
 | 05 | Downstream Impact, Annotation & Explanation | Historical downstream Lineage → candidate/exposure/effect/consequence; safeguard prevention; Annotation; capability-bounded analytical projection → Explanation | **Accepted** |
-| 06 | Historical Replay & Phase 003 Consolidation | Whole-system composition; contemporaneous vs retrospective reconstruction; authorization/control-safe replay; exit review | **Next** |
+| 06 | Historical Replay & Phase 003 Consolidation | Event/effective-time + knowledge-cut reconstruction → retrospective re-evaluation → authorization-safe historical Explanation → exit review | **Accepted** |
 
 The order is a reasoning dependency, not an implementation dependency.
 
@@ -50,7 +50,7 @@ The order is a reasoning dependency, not an implementation dependency.
 
 - **SYN-016:** Investigation opens around a defined question/outcome and bounded historical context rather than a presumed cause.
 - **SYN-017:** historical typed Lineage yields evidence candidates; reachability and first-observed localization are not causal conclusions.
-- **SYN-018:** candidate history assembles execution/timing/Observation/Assessment/Change/Deployment/intent/reference/safeguard evidence including contradiction and explicit gaps.
+- **SYN-018:** candidate history assembles execution/timing/Observation/Assessment/Change/Deployment/intent/reference/safeguard/gate evidence including contradiction and explicit gaps.
 - **SYN-019:** causal propositions become explicit Causal Claims rather than remaining implicit in topology, timing, or narrative.
 - **SYN-020:** claims are evaluated using temporal ordering, relationship applicability, encounter/consumption where required, realized state/change, mechanism compatibility, contrasts/alternatives, and evidence coverage.
 - **SYN-021:** multiple contributing/competing claims and unresolved outcomes remain valid; Investigation closure never promotes claim status. `confirmed` remains gated on a later accepted evidence/authority standard.
@@ -76,7 +76,7 @@ The order is a reasoning dependency, not an implementation dependency.
 - **SYN-028:** enforced safeguard plus sufficient negative consumption coverage may support `prevented exposure`; protection can separately cause delay/non-delivery effects while remaining no proof of protected-data defect.
 - **SYN-029:** Annotation contributes attributed human context; structured facts/causal/planned/normative/governance assertions route to their owning concepts and disputed/withdrawn notes retain status.
 - **SYN-030:** Capability Authorization + concept state produces a task-specific **Authorized Analytical Projection** that enables useful health/governance/RCA work without row access while independently restricting sensitive derived evidence and action authority.
-- **SYN-031:** Explanation composes only from the authorized analytical projection, preserving statement-to-basis traceability, Impact layers, causal status, human-source status, policy/authorization limitations, and event/knowledge-time perspective.
+- **SYN-031:** Explanation composes only from the authorized analytical projection, preserving statement-to-basis traceability, Impact layers, causal status, human-source status, policy/authorization limitations, gate/safeguard state, and event/knowledge-time perspective.
 
 ## Accepted pre-Group-06 execution-control refinement
 
@@ -88,6 +88,18 @@ The order is a reasoning dependency, not an implementation dependency.
 - Gate-induced delay is separate health/Impact evidence.
 - Missing readiness/control evidence is not automatically `ready`; no universal fail-open/fail-closed behavior is accepted. Fallback, timeout, escalation, and override must be explicit per gate class/configuration.
 - Execution Gate protects the **start/admission boundary**; Propagation Safeguard protects the **output/consumption boundary**.
+
+## Accepted Group 06 results
+
+- **SYN-033 — Event-Time + Knowledge Cut → Historical State Reconstruction:** every historical replay resolves both the event/effective-time question and the knowledge cutoff limiting which evidence/assertions may contribute.
+- **SYN-034 — Late/Corrected Evidence → Retrospective Re-evaluation:** later evidence can create new retrospective Assessment/Change/Causal Claim/Impact/Explanation state while preserving what was known and recorded earlier.
+- **SYN-035 — Historical State + Current Authorization → Safe Replay Explanation:** historical actor authorization remains historical evidence; current requester authorization governs present disclosure.
+- Actual historical state is distinct from replay-derived interpretation.
+- Actual historical gate/safeguard actions are never counterfactually rewritten by later evidence.
+- Later realized Lineage/Impact/causal evidence is not backfilled into earlier prospective knowledge.
+- An actual retained historical Explanation is distinguishable from a newly generated `as-known-then` reconstruction.
+- [`06_historical_replay_and_consolidation/scenario_replay_matrix.md`](06_historical_replay_and_consolidation/scenario_replay_matrix.md) records **Pass for E-01–E-22**.
+- [`06_historical_replay_and_consolidation/phase_003_exit_review.md`](06_historical_replay_and_consolidation/phase_003_exit_review.md) records the satisfied Phase 003 exit gate and Phase 004 handoff.
 
 ## Cross-cutting synchronization rules
 
@@ -107,7 +119,6 @@ The order is a reasoning dependency, not an implementation dependency.
 - An authorized projection may hide raw values/identities while retaining usable Assessment, timing, Lineage, policy, responsibility, causal, Impact, safeguard, gate, and Annotation context where separately permitted.
 - Derived/aggregate evidence is not automatically unrestricted.
 - Restricted evidence must never be retrieved merely to create an unauthorized summary.
-- Historical authorization/control state can be reconstructed as evidence, but current disclosure authorization cannot be bypassed by historical replay.
 - Change Intent does not create Observation, realized Change, Expectation, Baseline, actual Impact, or cause.
 - Prospective Impact ≠ actual exposure/effect/consequence and ≠ retrospective causal evidence by itself.
 - Planned reference preparation ≠ realized transition.
@@ -129,7 +140,14 @@ The order is a reasoning dependency, not an implementation dependency.
 - Gate-held downstream execution can prevent stale recomputation while still creating delay/non-delivery risk.
 - Annotation is not a shadow evidence/authority store.
 - Explanation consumes authorized projected truth; it cannot promote Impact/Causal Claim/control state or use hidden evidence for narrative completion.
-- Ledger-like correction/supersession semantics and event-time vs knowledge-time distinctions persist through every chain.
+- **Effective/event time ≠ recorded/knowledge time.**
+- **Current state ≠ historical state cut.**
+- **Later evidence ≠ evidence known then.**
+- **Actual historical state ≠ replay-derived interpretation.**
+- **Actual gate/safeguard action ≠ counterfactual preferred action.**
+- **Actual retained historical Explanation ≠ reconstructed historical Explanation.**
+- Historical authorization/control state can be reconstructed as evidence, but current disclosure authorization cannot be bypassed by replay.
+- Ledger-like correction/supersession semantics persist through every chain.
 - No synchronization requires DQX, Metric Views, Collibra, Immuta, GitHub Actions, graph database, event store, message bus, workflow engine, scheduler/orchestrator, LLM, IAM model, quarantine implementation, gate implementation, or selected technical architecture.
 
 ## Required ecosystem scenarios
@@ -180,7 +198,7 @@ A client-critical result is materially atypical without a normative volume crite
 Protective quarantine is correct while separately causing measurable downstream latency/non-delivery risk.
 
 ### E-16 — Restricted-data analyst remains operationally useful
-Raw-data read is denied while independently authorized health, execution, governance, Lineage/RCA, Impact, safeguard, responsibility, and Explanation context remains usable; job-operation authority is separate.
+Raw-data read is denied while independently authorized health, execution, governance, Lineage/RCA, Impact, safeguard, gate, responsibility, and Explanation context remains usable; production-control authority is separate.
 
 ### E-17 — Safeguard prevents exposure
 A reachable downstream consumer does not consume the suspect state because an enforced safeguard blocks the relevant path; prevented exposure requires enforcement and negative-consumption evidence.
@@ -195,15 +213,17 @@ A downstream metric/report effect is established, but evidence does not show whe
 A past responder had broader incident-time evidence access; retrospective analysis may describe that authorization state, but a current requester cannot obtain those restricted values unless currently authorized.
 
 ### E-21 — Dependency gate prevents stale downstream run
-A current upstream prerequisite is not ready when a downstream schedule/window arrives. An explicitly enabled Execution Gate holds the downstream start until qualifying readiness evidence arrives, then admits it. The hold prevents blind stale recomputation without rewriting the upstream condition or creating a fictional failed run.
+A current upstream prerequisite is not ready when a downstream schedule/window arrives. An explicitly enabled Execution Gate holds the downstream start until qualifying readiness evidence arrives, then admits it.
 
 ### E-22 — Monitoring/gate degradation and production continuity
 Passive/ungated production continues when monitoring is degraded. An explicitly gated job follows its configured unavailable-control behavior; no hidden global fail-open/fail-closed behavior is invented.
 
+See [`06_historical_replay_and_consolidation/scenario_replay_matrix.md`](06_historical_replay_and_consolidation/scenario_replay_matrix.md) for the complete end-to-end Group 06 result. **All E-01–E-22 pass.**
+
 ## Phase 003 exit gate
 
-Phase 003 is complete when all retained synchronization chains have explicit contracts; group scenarios compose without hidden state/architecture; planned change, runtime timing, health, optional execution gating, safeguard, authorization, causality, Impact, Annotation, and Explanation remain distinct; ambiguity and authorization/control state are explicit; historical replay works across event/knowledge time, authorization, and gate history; and E-01–E-22 can be walked end-to-end using accepted concepts/synchronizations.
+**Satisfied.** All retained synchronization chains have explicit contracts; group scenarios compose without hidden state/architecture; planned change, runtime timing, health, optional execution gating, safeguard, authorization, causality, Impact, Annotation, and Explanation remain distinct; ambiguity/security/time behavior is explicit; historical replay distinguishes event-time from knowledge-time and actual history from reconstruction; and E-01–E-22 can be walked end to end using accepted concepts/synchronizations.
 
 ## Current review state
 
-**Groups 01–05 are accepted. Execution Gate is accepted as a pre-Group-06 addendum and SYN-032 is accepted as a later Group 03 extension. Group 06 — Historical Replay & Phase 003 Consolidation is next and has not started.**
+**Phase 003 is complete. Phase 004 — Evidence, Time, and Causality Refinement is next and has not started.**

@@ -4,9 +4,9 @@
 
 Phase 002 originally accepted 20 concepts. Three explicit post-exit addenda are accepted: **Propagation Safeguard**, **Capability Authorization**, and **Execution Gate**. Current accepted concept count: **23**.
 
-**Phase 003 is active. Groups 01–05 are accepted. SYN-032 — Dependency Readiness Evidence → Execution Gate Admission is accepted as a later Group 03 extension. Group 06 — Historical Replay & Phase 003 Consolidation is next and has not started.**
+**Phase 003 is complete. Groups 01–06 are accepted. Accepted synchronization range: SYN-001–SYN-035. E-01–E-22 pass end-to-end consolidation.**
 
-Accepted synchronization range: **SYN-001–SYN-032**.
+**Phase 004 — Evidence, Time, and Causality Refinement is next and has not started. Do not begin Phase 004 without explicit user request.**
 
 Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, deployment workflows, quarantine implementations, gate/orchestration implementations, IAM implementations, graph/causal engines, LLMs, or prototypes unless the user explicitly advances the project into technical design.
 
@@ -16,7 +16,7 @@ Treat `docs/` as the design system of record.
 
 - Start from actor/ecosystem outcome, not vendor/tool/storage shape.
 - Preserve accepted concept ownership/state boundaries.
-- Synchronization is not automatically a service call, workflow, transaction, event, database relation, API, persisted view, scheduler, or orchestrator.
+- Synchronization is not automatically a service call, workflow, transaction, event, database relation, API, persisted view, scheduler, orchestrator, temporal snapshot, or replay store.
 - Synchronization order is never authority; a trigger is never causation.
 - Do not create umbrella state for convenience.
 - Reopen earlier boundaries only explicitly with rationale.
@@ -65,8 +65,13 @@ Preserve:
 - release ≠ health proof;
 - Annotation ≠ structured operational truth;
 - Explanation ≠ independent truth/authorization source;
-- historical authorization/control state ≠ current disclosure permission;
-- effective/event time ≠ recorded/knowledge time.
+- effective/event time ≠ recorded/knowledge time;
+- current state ≠ historical state;
+- later evidence ≠ evidence known then;
+- actual historical state ≠ replay-derived interpretation;
+- actual historical control action ≠ counterfactual preferred action;
+- actual retained historical Explanation ≠ reconstructed historical Explanation;
+- historical authorization/control state ≠ current disclosure permission.
 
 ## Passive monitoring / integration-independence rules
 
@@ -151,20 +156,25 @@ Preserve:
 - Safe omission/redaction cannot be worded as evidence that hidden entities/evidence do not exist.
 - Explanation may surface an authorized operational/gate capability but never executes the action.
 
-## Group 06 preparation rules
+## Historical replay rules — accepted Phase 003 Group 06
 
-- **Do not start Group 06 unless the user explicitly asks to proceed.**
-- Compose E-01–E-22 end to end using only accepted concepts/SYN-001–SYN-032.
-- Reconstruct separately: what happened, what was known then, what was believed then, what was authorized then, what gate/safeguard control state applied then, what was explained then, and what is known now.
-- Current topology/reference/governance/authorization/gate configuration must not be silently projected backward.
-- Historical authorization/control state cannot bypass current requester disclosure controls.
-- Verify corrections/supersessions preserve prior knowledge and explanation state.
-- Verify restricted/opaque paths remain useful without leakage.
-- Verify monitoring outages do not become production outages for ungated pipelines.
-- Verify enabled gates preserve explicit readiness/fallback/override/enforcement state and never manufacture Execution History.
-- Verify Execution Gate and Propagation Safeguard remain distinct.
-- Verify no synchronization has become a hidden architecture/persistence/IAM/LLM/scheduler/orchestration concept.
+- Historical replay uses **event/effective time + recorded/knowledge cutoff**.
+- Resolve each concept from state/evidence available under the cut; never project current identity/topology/reference/governance/authorization/control backward.
+- Evidence recorded later but effective earlier is excluded from a contemporaneous cut and may appear in a later retrospective cut.
+- Distinguish **actual historical state** from **replay-derived interpretation**. A current replay result does not prove an Assessment/claim/Impact/decision/Explanation actually existed then.
+- Late/corrected evidence may create a new retrospective conclusion with a later knowledge time; preserve the prior contemporaneous conclusion.
+- Do not counterfactually rewrite actual historical Execution Gate or Propagation Safeguard actions.
+- Do not backfill later realized Lineage/Impact/causal evidence into earlier prospective knowledge.
+- If no historical Explanation snapshot exists, an `as-known-then` answer is reconstructed—not something responders actually saw.
+- Historical Capability Authorization is evidence about past permission; current requester authorization still governs disclosure.
+- Partial/unknown/conflicting/restricted replay remains valid rather than being completed by guesswork.
+
+## Phase 004 preparation rules
+
+- **Do not begin Phase 004 without explicit user request.**
+- Phase 004 must refine evidence sufficiency/completeness; exact event-time/knowledge-cut query semantics; correction/supersession/reassessment; Causal Claim statuses/confirmation; negative/absence/exposure evidence; gate readiness/enforcement evidence; and retained-versus-reconstructed historical state.
+- Do not choose implementation architecture while refining these semantics.
 
 ## Tooling stance
 
-Databricks Metric Views/DQX are favored later evaluations, not settled architecture. Collibra/Immuta remain optional until explicitly authoritative for required categories. Do not select RBAC/ABAC, IAM provider, graph database, event store, quarantine store, scheduler/orchestrator, Execution Gate implementation, LLM, or causal algorithm prematurely.
+Databricks Metric Views/DQX are favored later evaluations, not settled architecture. Collibra/Immuta remain optional until explicitly authoritative for required categories. Do not select RBAC/ABAC, IAM provider, graph database, event/temporal store, quarantine store, scheduler/orchestrator, Execution Gate implementation, LLM, or causal algorithm prematurely.
