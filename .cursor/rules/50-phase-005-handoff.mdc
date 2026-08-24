@@ -1,18 +1,18 @@
 ---
-description: Phase 005 authority/governance/capability phase guardrails. Group 01 is accepted; Group 02 is next.
+description: Phase 005 authority/governance/capability phase guardrails. Groups 01-02 are accepted; Group 03 is next.
 globs:
 alwaysApply: true
 ---
 
 # Phase 005 handoff rules
 
-Status: **Phase 005 is active. Group 01 — Authority Vocabulary, Source Assertions & Conflict Resolution is accepted with Assertion Authority and AUTH-001–AUTH-008. Group 02 — Semantic, Responsibility, Classification, Policy & Criticality Governance is next and has not started.**
+Status: **Phase 005 is active. Groups 01–02 are accepted with AUTH-001–AUTH-015. Group 03 — Normative Health, Metric & Threshold Governance is next and has not started.**
 
 Accepted review sequence:
 
 1. Authority Vocabulary, Source Assertions & Conflict Resolution — **accepted**.
-2. Semantic, Responsibility, Classification, Policy & Criticality Governance — **next**.
-3. Normative Health, Metric & Threshold Governance.
+2. Semantic, Responsibility, Classification, Policy & Criticality Governance — **accepted**.
+3. Normative Health, Metric & Threshold Governance — **next**.
 4. Capability Authorization & Restricted Analytical Visibility.
 5. High-Consequence Action, Control & Causal-Confirmation Authority.
 6. Disclosure, Explanation & Audience Governance.
@@ -22,31 +22,41 @@ Group 01 accepted rules:
 
 - Assertion Authority is the 24th concept and owns assertion-standing/authority-rule history rather than underlying domain assertions.
 - Authority must be bound to category/facet/scheme/type, subject scope, context, effective time, and knowledge cut where relevant.
-- Preserve source assertion regardless of standing.
-- Authoritative/advisory/non-authoritative/conditional/unknown/unavailable/conflicting standing remain distinct.
-- Keep assertion disagreement, resolved disagreement, authoritative assertion conflict, and authority-rule conflict distinct.
-- Authority rules require provenance and governing basis; sources/rules cannot self-authorize merely by claiming authority.
+- Preserve source assertions regardless of standing.
 - No hidden precedence from source count, recency, synchronization/ingestion order, availability, repository ownership, admin/title/responsibility, or apparent specificity.
 - Sole authority, co-authority, ordered precedence, and fallback are valid only when explicit.
 - Fallback requires an explicit rule plus evidence that its activation condition holds.
-- Authority history is bitemporal and non-rewriting; current corrections may revise retrospective resolution without changing what was known then.
+- Authority rules require provenance/governing basis and cannot self-authorize.
+- Authority history is bitemporal and non-rewriting.
 - Assertion Authority is independent from Capability Authorization, Responsibility Assignment, Policy Context, Classification, Monitoring Scope, evidence sufficiency, and enforcement.
-- Authoritative standing does not waive REF-001–REF-030 or prove factual correctness/compliance/control enforcement.
 
-For Group 02:
+Group 02 accepted rules:
 
-- Apply AUTH-001–AUTH-008 separately to Semantic Definition facets, Responsibility Assignment types, Classification schemes, Policy Context applicability, and criticality.
-- Distinguish context-specific valid authorities from same-target conflicts.
-- Do not decide that Collibra, Immuta, Databricks/Unity Catalog, GitHub, repository metadata, or a human role is universally authoritative.
-- Do not begin Group 03 metric/threshold authority, Group 04 capability authorization, Group 05 high-consequence action authority, or Group 06 disclosure governance unless explicitly requested.
+- Semantic authority is facet-specific: business definition, technical/schema declaration, grain, units, population, calculation meaning, field roles, and key roles may have different authority holders.
+- Preserve **declared/governed schema meaning ≠ normative schema contract ≠ realized schema state**.
+- A declared primary/business key does not prove observed uniqueness or nullability health.
+- A column rename is not inferred merely from one drop plus one add; planned/semantic/identity evidence is required.
+- Responsibility authority is responsibility-type scoped. Technical ownership/business accountability/stewardship/etc. do not grant other assertion or action authority.
+- Classification authority is scheme/context specific.
+- Criticality remains Classification under named business/operational/consumer/delivery schemes; criticality influences priority, not actual Impact/health/causality.
+- Policy text/reference authority may differ from authority over subject/context applicability.
+- Context-specific/local assertions may coexist, but specificity never automatically creates precedence.
+- Lineage, repository/container membership, schema/tag inference, and parent state do not implicitly propagate governance assertions or authority.
+- Descriptive governance authority does not create normative health, Capability Authorization, enforcement, compliance, or Impact truth.
+- No 25th concept is required for Group 02.
 
-Metric-health handoff remains:
+Schema/DDL handoff:
 
-- Table health is broader than successful load occurrence.
-- Group 03 may decide **who** may define/approve/revise/waive/retire metric profiles, Expectations, thresholds, margins/tolerance bands, severity, or high-consequence metric use.
-- Phase 006 owns metric families, metric profiles, threshold/statistical semantics, metric-bloat controls, technical/business health composition, selective metric propagation/reconciliation, and metric timing objectives.
-- Metrics do not recursively propagate merely because Lineage exists.
+- Structural/schema compatibility is a first-class Phase 006 health concern.
+- Semantic Definition owns governed schema/grain/key meaning; Expectation owns normative structural compatibility; Observation/Change own realized state/change; Assessment owns conformance.
+- Schema changes trigger scoped metric/Baseline/key/join applicability review rather than automatic global reset.
+- Pre-deployment GitHub Actions checks, Databricks/Unity Catalog realized-state checks, and independent monitoring checks are candidate future integration points with different temporal roles; do not select one universal location in Phase 005.
+- A schema/metric condition used by an Execution Gate is a high-consequence control criterion and still requires Phase 004 evidence plus later authority/availability semantics.
 
-Preserve all Phase 004 evidence burdens. Do not select IAM, assertion-authority engine, scheduler/orchestrator, quarantine, metric engine/storage, graph store, LLM, causal algorithm, or technical architecture during Phase 005.
+For Group 03:
 
-**Do not begin Group 02 without explicit user request.**
+- Define **who** may establish/revise/waive/retire Expectations, metric profiles, schema compatibility rules, thresholds, margins/tolerance bands, severity, and high-consequence metric/schema-condition use.
+- Do not define detailed metric families, statistical calculations, schema-compatibility algorithms, Baseline behavior, metric propagation, overall-health aggregation, or validation architecture; those belong to Phase 006/007/009/010.
+- Do not begin Group 04+ without explicit user request.
+
+Preserve all Phase 004 evidence burdens. Do not select IAM, assertion-authority engine, GitHub Actions/Unity Catalog as universal validation mechanism, scheduler/orchestrator, quarantine, metric engine/storage, graph store, LLM, causal algorithm, or technical architecture during Phase 005.

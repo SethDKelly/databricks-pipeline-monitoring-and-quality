@@ -9,7 +9,7 @@ alwaysApply: true
 - Current accepted concept count: **24** — original 20 plus Propagation Safeguard, Capability Authorization, Execution Gate, and Assertion Authority addenda.
 - **Phase 003 is complete. Groups 01–06 are accepted; SYN-001–SYN-035 are accepted; E-01–E-22 pass end-to-end consolidation.**
 - **Phase 004 — Evidence, Time, and Causality Refinement is complete. Groups 01–05 are accepted; REF-001–REF-030 are accepted.**
-- **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is active. Group 01 is accepted with AUTH-001–AUTH-008; Group 02 — Semantic, Responsibility, Classification, Policy & Criticality Governance is next and has not started.**
+- **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is active. Groups 01–02 are accepted with AUTH-001–AUTH-015; Group 03 — Normative Health, Metric & Threshold Governance is next and has not started.**
 - Work remains documentation/design-first unless the user explicitly advances into technical/implementation design.
 - Do not create application code, notebooks, infrastructure, schemas, APIs, IAM/Assertion Authority implementations, deployment workflows, quarantine implementations, Execution Gate/orchestration implementations, graph/causal engines, LLMs, or prototypes prematurely.
 - Treat `docs/` as the product/design system of record.
@@ -56,6 +56,38 @@ Assertion Authority rules — accepted Phase 005 Group 01:
 - Authoritative standing does not waive REF-001–REF-030, prove factual correctness/compliance, or prove external enforcement.
 - Databricks/Unity Catalog, GitHub, Collibra, Immuta, repository metadata, and human roles are never universally authoritative merely because they exist.
 
+Semantic / governance authority rules — accepted Phase 005 Group 02:
+
+- Semantic authority is **facet-specific**. Business definition, technical description/schema declaration, grain, unit, population/inclusion meaning, calculation meaning, field role, and key/identifier role may have different authority holders.
+- Preserve **declared/governed schema meaning ≠ normative schema contract/Expectation ≠ realized schema Observation/Change ≠ compatibility Assessment**.
+- An authoritative schema/key declaration does not prove the physical schema conforms, nor that a declared key is actually unique/non-null.
+- Runtime schema metadata does not by itself establish authoritative business meaning.
+- A column rename is not inferred merely from one dropped column plus one added column; planned/semantic/identity evidence is needed.
+- Responsibility authority is responsibility-type scoped. Technical ownership, business accountability, stewardship, security/privacy responsibility, operational responsibility, and platform administration remain distinct.
+- Responsibility Assignment does not grant Assertion Authority or Capability Authorization elsewhere.
+- Classification authority is scheme/context specific. Different named schemes can coexist without conflict.
+- **Criticality remains Classification** under explicit business/operational/consumer/delivery schemes/contexts unless later behavior proves a separate concept is needed.
+- Criticality influences priority/context but is not evidence of health failure, exposure, consequence, or cause.
+- Policy reference/text authority may differ from subject/context policy-applicability authority.
+- Classification may inform Policy Context but does not determine it; Policy Context does not grant access, prove enforcement/compliance, or perform legal interpretation.
+- Narrower/local governance does not automatically override broader governance. Specificity precedence must be explicit.
+- Lineage, repository/container membership, parent-domain state, schema/tag inference, and downstream dependency do not silently propagate Semantic Definition, Responsibility Assignment, Classification/criticality, Policy Context, or Assertion Authority.
+- Derived/inherited assertions retain provenance and require explicit standing.
+- Descriptive governance truth does not become normative health, access/Capability Authorization, control enforcement, compliance, or actual Impact truth.
+- Group 02 requires no 25th concept; accepted range is AUTH-009–AUTH-015.
+
+Schema / DDL validation handoff:
+
+- Structural/schema compatibility is a first-class health concern even when a job/load succeeds.
+- Semantic Definition owns governed schema/grain/key meaning; Expectation owns normative structural compatibility; Observation/Change own realized state/change; Assessment owns conformance.
+- Change Intent owns planned schema evolution; Lineage/Impact/Investigation/Causal Claim provide downstream/planned/consequence reasoning where applicable.
+- Column add/drop/rename/type/nullability/grain/key/nested-schema changes can invalidate downstream assumptions, metric definitions, joins, and Baseline comparability.
+- Structural Change triggers **scoped** metric/Baseline/key/join applicability review rather than automatic global reset.
+- Pre-deployment GitHub Actions checks, Databricks/Unity Catalog realized-state checks, and independent monitoring checks are candidate future integration points with different temporal roles; Phase 005 does not select one universal validation location.
+- A CI validation result does not prove production schema state; runtime catalog evidence does not prove intended/business schema meaning.
+- Schema/metric conditions used by an Execution Gate are high-consequence control criteria and still require Phase 004 evidence plus later normative authority/availability/control semantics.
+- Phase 006 owns schema-health/compatibility semantics; Phase 007 owns change/Lineage-aware downstream behavior; Phase 009 evaluates source support; Phase 010 selects technical placement.
+
 Causal/control/Impact rules:
 
 - **Causal status vocabulary is proposed / supported / weakened / unresolved / rejected / confirmed.**
@@ -88,7 +120,7 @@ Authorization and integration rules:
 - Raw-data read, metadata/health visibility, Lineage/RCA participation, job-operation authority, safeguard authority, gate-control authority, and causal-confirmation authority remain independently resolvable.
 - **Passive monitoring is out-of-band/non-blocking by default**; monitoring-framework degradation must not delay ungated production jobs.
 - Baseline monitoring should prefer independent deployment and no production ETL/GitHub Actions changes where Databricks/platform metadata is sufficient.
-- **Execution Gate is explicit opt-in control**; Lineage, schedule, readiness Assessment, or Assertion Authority does not automatically block a downstream run.
+- **Execution Gate is explicit opt-in control**; Lineage, schedule, readiness Assessment, Assertion Authority, or schema change does not automatically block a downstream run.
 - Execution Gate controls downstream start admission; Propagation Safeguard controls output/consumption propagation.
 - Gate hold ≠ execution failure; gate admission ≠ actual run occurrence; gate override ≠ prerequisite ready.
 - Missing readiness/control evidence ≠ ready. Do not invent a universal fail-open/fail-closed rule.
@@ -115,13 +147,14 @@ Historical rules:
 Metric-health handoff:
 
 - Table health is broader than successful load occurrence.
-- Phase 005 Group 03 governs who may define/approve/revise/waive/retire/disclose metric profiles, Expectations, thresholds, margins, severity, and high-consequence metric use.
-- Phase 006 owns detailed metric taxonomy/statistics/Baseline semantics, metric-bloat controls, technical/business health meaning, and selective transformation-aware propagation.
-- Metrics do not recursively propagate merely because Lineage exists.
+- Phase 005 Group 03 governs who may define/approve/revise/waive/retire/disclose metric profiles, **schema compatibility Expectations**, thresholds, margins, severity, and high-consequence metric/schema-condition use.
+- Phase 006 owns detailed metric taxonomy, schema-health/compatibility semantics, statistics/Baseline semantics, metric-bloat controls, technical/business health meaning, and selective transformation-aware propagation.
+- Metrics/governance do not recursively propagate merely because Lineage exists.
 
 Phase direction:
 
 - Phase 004 exit confirms REF-001–REF-030 compose across E-01–E-22 and all Phase 004 scenario checks.
 - Phase 005 Group 01 is accepted with Assertion Authority + AUTH-001–AUTH-008 and D-161–D-172.
-- **Do not begin Group 02 — Semantic, Responsibility, Classification, Policy & Criticality Governance without explicit user request.**
-- Never silently choose IAM/Assertion Authority engine, graph/event/temporal/ledger/quarantine/scheduler/orchestration/workflow/service/LLM/causal-algorithm architecture.
+- Phase 005 Group 02 is accepted with AUTH-009–AUTH-015 and D-173–D-188.
+- **Group 03 — Normative Health, Metric & Threshold Governance is next and has not started. Do not begin it without explicit user request.**
+- Never silently choose IAM/Assertion Authority engine, GitHub Actions/Unity Catalog as universal schema validation mechanism, graph/event/temporal/ledger/quarantine/scheduler/orchestration/workflow/service/LLM/causal-algorithm architecture.

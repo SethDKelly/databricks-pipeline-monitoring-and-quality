@@ -1,6 +1,6 @@
 # 009 — Initial Roadmap
 
-This roadmap delays implementation until product concepts, synchronizations, trust boundaries, evidence semantics, governance/authority, integration authority, health/metric semantics, and technical constraints are stable enough to guide architecture.
+This roadmap delays implementation until product concepts, synchronizations, trust boundaries, evidence semantics, governance/authority, integration authority, health/metric/schema semantics, and technical constraints are stable enough to guide architecture.
 
 ## Phase 001 — Product Foundation and Concept Discovery
 **Status:** Complete.
@@ -44,14 +44,14 @@ For controls/exposure:
 
 **readiness/output facts → gate decision → enforcement evidence → execution/consumption evidence → negative/prevention/causal conclusions as coverage matures**.
 
-The project should return the narrowest trustworthy result as soon as its evidence standard is satisfied. Faster job lifecycle evidence should not wait for slower Metric View/DQ/RCA evidence, while early results must not overstate health, causality, exposure, or control enforcement.
+The project should return the narrowest trustworthy result as soon as its evidence standard is satisfied. Faster job lifecycle evidence should not wait for slower schema/Metric View/DQ/RCA evidence, while early results must not overstate health, causality, exposure, or control enforcement.
 
 Concrete timing targets remain intentionally deferred:
 
-- **Phase 006** defines which health/quality results need immediate, near-real-time, delayed, or post-ops availability and their evidence/result freshness objectives;
+- **Phase 006** defines which health/schema/quality results need immediate, near-real-time, delayed, or post-ops availability and their evidence/result freshness objectives;
 - **Phase 008** defines communication of progressive health/RCA/control maturity;
-- **Phase 009** evaluates actual evidence-source availability, collection latency, retention, query cost, and enforcement observability;
-- **Phase 010** selects fast-path/asynchronous architecture, control-path availability strategy, and performance budgets while preserving passive-monitoring non-interference;
+- **Phase 009** evaluates actual evidence-source availability, collection latency, retention, query cost, schema-evidence support, and enforcement observability;
+- **Phase 010** selects fast-path/asynchronous architecture, validation placement, control-path availability strategy, and performance budgets while preserving passive-monitoring non-interference;
 - **Phase 011** converts accepted timing objectives into MVP acceptance criteria.
 
 ## Pre-Phase-005 metric-health handoff
@@ -70,9 +70,29 @@ Metric selection should be purposeful rather than exhaustive: a small core plus 
 
 See `../concepts/phase_005/pre_phase_metric_health_handoff.md` and `../concepts/phase_006/README.md`.
 
+## Pre-Group-02 schema / DDL validation handoff
+
+Before Phase 005 Group 02, the project accepted **schema/DDL compatibility as a first-class validation dimension**.
+
+The handoff preserves:
+
+**governed schema meaning → normative schema contract → realized schema evidence/change → compatibility Assessment**
+
+as separate truths, with Change Intent and Lineage/Impact supplying planned/downstream context.
+
+Key implications:
+
+- a successful run/load does not prove structural compatibility;
+- column add/drop/rename/type/nullability/key/grain/nested-schema changes can affect downstream correctness, metric definitions, joins, and Baseline comparability;
+- schema changes trigger scoped metric/Baseline/applicability review rather than automatic global reset;
+- proposed/pre-deployment validation, realized-state platform validation, and independent monitoring validation can coexist because they answer different temporal questions;
+- GitHub Actions, Databricks/Unity Catalog, and the monitoring framework are candidate future validation/integration locations, not selected universal mechanisms.
+
+See `../concepts/phase_005/pre_group_02_schema_ddl_validation_handoff.md`.
+
 ## Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement
 
-**Status:** **ACTIVE — Group 01 accepted; AUTH-001–AUTH-008 accepted; Group 02 next.**
+**Status:** **ACTIVE — Groups 01–02 accepted; AUTH-001–AUTH-015 accepted; Group 03 next.**
 
 Phase 005 uses `AUTH-###` governance/refinement contracts over accepted concept state. Group 01 also exposed one genuine missing concept boundary: **Assertion Authority**, accepted as the **24th concept**.
 
@@ -80,75 +100,80 @@ Phase 005 uses `AUTH-###` governance/refinement contracts over accepted concept 
 
 **Status:** **Accepted — Assertion Authority + AUTH-001–AUTH-008.**
 
+Accepted results include target/context/time-scoped authority, provenance-bearing authority rules, explicit conflict states, no hidden precedence, explicit co-authority/fallback rules, bitemporal authority history, and strict separation from evidence sufficiency/Capability Authorization/enforcement.
+
+### Group 02 — Semantic, Responsibility, Classification, Policy & Criticality Governance
+
+**Status:** **Accepted — AUTH-009–AUTH-015; no new concept.**
+
 Accepted results:
 
-- authority resolves against an explicit assertion category/facet/scheme/type, subject scope, context, effective interval, and knowledge cutoff where relevant;
-- source assertion and authoritative standing are separate;
-- Assertion Authority and Capability Authorization are separate;
-- Responsibility Assignment, Classification, Policy Context, Monitoring Scope, repository ownership, job creator/admin/title, and technical availability do not silently confer authority;
-- source count/majority, recency alone, synchronization/ingestion order, availability, and apparent scope specificity are not precedence rules;
-- sole authority, co-authority, ordered precedence, and conditional/fallback authority are valid only when explicitly defined;
-- co-authoritative disagreement remains authoritative assertion conflict unless an accepted resolver applies;
-- fallback authority requires an explicit rule plus evidence that its activation condition holds;
-- authority rules require provenance and an accepted governing basis; a source/rule cannot self-promote merely by asserting its own authority;
-- authority history is bitemporal and non-rewriting;
-- later authority-rule correction may revise retrospective resolution without changing what authority was known/used at an earlier cutoff;
-- Assertion Authority does not waive REF-001–REF-030, make an assertion factually infallible, prove compliance, or prove enforcement.
+- semantic authority is facet-specific, including business definition, technical schema declaration, grain, unit, population, calculation meaning, field role, and key role;
+- declared/governed schema meaning, normative schema contract, and realized schema state remain separate;
+- responsibility authority is responsibility-type scoped and does not grant other authority/capability;
+- Classification authority is scheme/context specific;
+- criticality remains Classification under named business/operational/consumer/delivery schemes rather than a new concept;
+- criticality provides priority/context, not actual Impact or health evidence;
+- policy reference/text authority can differ from subject/context applicability authority;
+- context-specific/local assertions may coexist, but specificity does not automatically create precedence;
+- Lineage/container/schema/tag inference does not implicitly propagate governance assertions or authority;
+- descriptive governance authority does not become normative health, Capability Authorization, enforcement, or compliance truth.
 
 ### Remaining Phase 005 groups
 
-2. **Semantic, Responsibility, Classification, Policy & Criticality Governance — NEXT.** Apply Assertion Authority to descriptive/governance facets and context-specific authority without choosing universal vendors.
-3. **Normative Health, Metric & Threshold Governance.** Who may define/approve metric profiles, Expectations, thresholds, margins, severity, waivers, retirement, and high-consequence metric use; Phase 006 retains statistical semantics.
+3. **Normative Health, Metric & Threshold Governance — NEXT.** Who may define/approve metric profiles, schema/DDL compatibility Expectations, thresholds, margins, severity, waivers, retirement, and high-consequence condition use; Phase 006 retains statistical/schema-health semantics.
 4. **Capability Authorization & Restricted Analytical Visibility.** Canonical capability vocabulary, conditional/current/historical authorization, restricted-data analytical projection.
 5. **High-Consequence Action, Control & Causal-Confirmation Authority.** Causal confirmation, job operations, safeguards, Execution Gates, override/delegation/separation-of-duties semantics.
 6. **Disclosure, Explanation & Audience Governance.** Authorized technical/business disclosure, opacity, inference leakage, high-consequence communication review.
 7. **Consolidation / Exit Review.** Compose authority/governance semantics without stealing evidence truth or selecting IAM/technical architecture.
 
-Phase 005 may determine who/what is permitted or authoritative to confirm, configure, operate, disclose, define normative metric state, or resolve assertions. It must **not** weaken/redefine Phase 004 evidence meanings, define Phase 006 metric/statistical behavior, or select IAM/assertion-authority implementation.
+Phase 005 may determine who/what is permitted or authoritative to confirm, configure, operate, disclose, define normative metric/schema state, or resolve assertions. It must **not** weaken/redefine Phase 004 evidence meanings, define Phase 006 metric/statistical/schema-health behavior, or select IAM/assertion-authority implementation.
 
 ## Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement
 
 **Status:** Future — not started.
 
-Phase 006 explicitly owns the detailed health/metric model, including:
+Phase 006 explicitly owns the detailed health/metric/schema model, including:
 
 - metric-family taxonomy;
 - per-table/pipeline metric profiles;
 - core versus critical-field versus transformation-specific versus business-critical versus diagnostic/on-demand metrics;
-- output/load, volume, freshness, completeness, uniqueness, validity, schema, distribution/quantile, relational/join/reconciliation, and business-semantic metric families as applicable;
-- metric-bloat control and lifecycle/retirement principles;
+- output/load, volume, freshness, **schema/DDL structural compatibility**, completeness, uniqueness, validity, distribution/quantile, relational/join/reconciliation, and business-semantic dimensions as applicable;
+- required/optional column, type/precision/scale, nullability, nested-field, key/grain, and consumer-specific schema-compatibility semantics;
+- metric/schema-check bloat control and lifecycle/retirement principles;
 - hard thresholds, warning/failure margins, absolute/relative/asymmetric tolerance bands, Baseline-derived ranges, seasonality/cohort behavior, low-volume/sample-size uncertainty, and structural-change comparability;
+- scoped metric/Baseline applicability after schema/grain/key/type Change rather than global reset;
 - Assessment/composite-health semantics without hiding dimension disagreement;
 - selective transformation-aware metric propagation/reconciliation across pipelines;
 - technical versus business health projections over the same truth;
 - Databricks Metric Views/DQX semantic fit;
-- functional availability expectations for immediate operational metrics, near-real-time core health, enriched DQ/distribution health, diagnostic/RCA metrics, and post-ops metrics.
+- functional availability expectations for immediate operational/schema checks, near-real-time core health, enriched DQ/distribution health, diagnostic/RCA metrics, and post-ops metrics.
 
-Phase 006 must not blindly calculate every possible metric, recursively copy every upstream statistic downstream, or make useful monitoring metrics synchronous production dependencies by default.
+Phase 006 must not blindly calculate every possible metric, treat every schema change as universally breaking, recursively copy every upstream statistic downstream, or make useful passive monitoring checks synchronous production dependencies by default.
 
 ## Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement
 
-Refine Lineage taxonomy/historical topology evidence, Change Intent realization, execution reconstruction, Investigation lifecycle, prospective/actual Impact, consumer/version encounter patterns, consequence categories, **Lineage-aware health/metric propagation and transformation-reconciliation behavior**, safeguard placement/release, Execution Gate classes, timeout/fallback/escalation/override/recovery policy, and control-induced operational effects. Preserve Phase 004 evidence burdens, Phase 005 authority semantics, and Phase 006 metric meanings.
+Refine Lineage taxonomy/historical topology evidence, Change Intent realization, **planned/realized schema change and prospective downstream compatibility/blast radius**, execution reconstruction, Investigation lifecycle, prospective/actual Impact, consumer/version encounter patterns, consequence categories, Lineage-aware health/metric propagation and transformation-reconciliation behavior, safeguard placement/release, Execution Gate classes, timeout/fallback/escalation/override/recovery policy, and control-induced operational effects. Preserve Phase 004 evidence burdens, Phase 005 authority semantics, and Phase 006 metric/schema meanings.
 
 ## Phase 008 — Business Questioning and Explanation
 
-Define question types, audience-specific Explanation structures, visible evidence citations, Authorized Analytical Projection/redaction, layered Impact/control state, authority standing/conflict communication, contemporaneous/retrospective/comparison views, reconstructed-versus-actual historical Explanation labeling, uncertainty communication, deterministic versus generative behavior, progressive result maturity communication, and technical-versus-business metric/health presentation.
+Define question types, audience-specific Explanation structures, visible evidence citations, Authorized Analytical Projection/redaction, layered Impact/control state, authority standing/conflict communication, contemporaneous/retrospective/comparison views, reconstructed-versus-actual historical Explanation labeling, uncertainty communication, deterministic versus generative behavior, progressive result maturity communication, schema-change communication, and technical-versus-business metric/health presentation.
 
 ## Phase 009 — Integration Contracts, Source Authority, and Evidence Availability
 
-Determine required facts and actual evidence support for Databricks/Unity Catalog, Git repositories, GitHub Actions, DQX, Metric Views, Collibra, Immuta, downstream consumption/version evidence, Change Intent, safeguard/gate enforcement, authorization sources, causal evidence inputs, authority-rule sources, and accepted health/metric profiles.
+Determine required facts and actual evidence support for Databricks/Unity Catalog, Git repositories, GitHub Actions, DQX, Metric Views, Collibra, Immuta, downstream consumption/version evidence, Change Intent, **declared/proposed/realized schema evidence**, safeguard/gate enforcement, authorization sources, causal evidence inputs, authority-rule sources, and accepted health/metric profiles.
 
-Map concrete systems/actors to the Assertion Authority targets accepted in Phase 005 rather than treating source availability as authority. Characterize **source production/availability time, collection latency, retention, query cost/availability, metric computation cost, authority-rule availability, and control-enforcement observability** needed to satisfy accepted evidence/timing semantics. Preserve the objective that baseline monitoring be independently deployed and avoid production repository/GitHub Actions changes where platform metadata is sufficient.
+Map concrete systems/actors to the Assertion Authority targets accepted in Phase 005 rather than treating source availability as authority. Determine what GitHub/GitHub Actions can prove about proposed schema contracts/DDL before deployment versus what Databricks/Unity Catalog can prove about realized schema after activation. Characterize **source production/availability time, collection latency, retention, query cost/availability, metric/schema-check computation cost, authority-rule availability, and control-enforcement observability** needed to satisfy accepted evidence/timing semantics. Preserve the objective that baseline monitoring be independently deployed and avoid production repository/GitHub Actions changes where platform metadata is sufficient.
 
 ## Phase 010 — Technical Architecture
 
-Only now select implementation architecture. Evaluate evidence/history storage; graph-compatible Lineage; temporal/ledger history; ingestion/synchronization; Assertion Authority and Capability Authorization realization; Databricks deployment model; out-of-band passive monitoring; optional dependency-gating control-plane realization/availability/fallback; safeguard/quarantine realization; metric precomputation/on-demand evaluation strategy; Explanation interface; testing/observability; causal reasoning implementation; and **fast-path versus asynchronous/deeper analysis architecture and performance budgets**.
+Only now select implementation architecture. Evaluate evidence/history storage; graph-compatible Lineage; temporal/ledger history; ingestion/synchronization; Assertion Authority and Capability Authorization realization; Databricks deployment model; out-of-band passive monitoring; **proactive CI schema validation versus runtime Unity Catalog/Databricks validation versus monitoring-app validation and their composition**; optional dependency-gating control-plane realization/availability/fallback; safeguard/quarantine realization; metric precomputation/on-demand evaluation strategy; Explanation interface; testing/observability; causal reasoning implementation; and **fast-path versus asynchronous/deeper analysis architecture and performance budgets**.
 
 A key architecture criterion remains that **ungated production jobs must not depend on monitoring-framework availability**. Explicitly gated paths may require deliberate production-critical control availability under accepted policies.
 
 ## Phase 011 — MVP Implementation Planning
 
-Convert accepted architecture into implementation phases, interfaces, test strategy, onboarding/migration strategy, acceptance criteria, and concrete availability/latency targets for selected MVP monitoring-result, metric/health, RCA, exposure, authority, and control classes.
+Convert accepted architecture into implementation phases, interfaces, test strategy, onboarding/migration strategy, acceptance criteria, and concrete availability/latency targets for selected MVP monitoring-result, schema/metric/health, RCA, exposure, authority, and control classes.
 
 ## Phase 012 — MVP Implementation
 
