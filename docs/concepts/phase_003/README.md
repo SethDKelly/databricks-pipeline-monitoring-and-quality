@@ -1,6 +1,6 @@
 # Phase 003 — Concept Synchronizations and Ecosystem Scenarios
 
-**Status:** Active — Groups 01–04 accepted; pre-Group-05 Capability Authorization addendum accepted; Group 05 next
+**Status:** Active — Groups 01–05 accepted; Group 06 next
 
 ## Purpose
 
@@ -22,8 +22,8 @@ Every synchronization specification identifies outcome, participating concepts/a
 | 02 | Planned Change & Reference Transition | Change Intent → prospective references / prospective Impact → Deployment realization → reference transition → empirical Baseline | **Accepted** |
 | 03 | Runtime Evidence, Health & Realized Change | Deployment/Execution → timing/dependency Observations → time-valid Assessment / Change → analyst handoff / Propagation Safeguard | **Accepted** |
 | 04 | Lineage, Investigation & Causal Reasoning | Bounded Investigation → historical Lineage candidate discovery → evidence assembly → competing Causal Claims / analyst research | **Accepted** |
-| 05 | Downstream Impact, Annotation & Explanation | Impact reachability/exposure/effect/consequence; authorized analytical projection; Annotation/context → authorized Explanation | **Next** |
-| 06 | Historical Replay & Phase 003 Consolidation | Whole-system composition; contemporaneous vs retrospective reconstruction; exit review | Planned |
+| 05 | Downstream Impact, Annotation & Explanation | Historical downstream Lineage → candidate/exposure/effect/consequence; safeguard prevention; Annotation; capability-bounded analytical projection → Explanation | **Accepted** |
+| 06 | Historical Replay & Phase 003 Consolidation | Whole-system composition; contemporaneous vs retrospective reconstruction; authorization-safe replay; exit review | **Next** |
 
 The order is a reasoning dependency, not an implementation dependency.
 
@@ -65,6 +65,18 @@ The order is a reasoning dependency, not an implementation dependency.
 - Authorized analytical projection may safely expose derived/aggregate/redacted/opaque evidence while preserving restricted details and explicit limitations.
 - Metadata and derived evidence can themselves be sensitive; they are not globally exempt from authorization.
 
+## Accepted Group 05 results
+
+- **SYN-023:** incident-time typed downstream Lineage identifies Impact candidates only; planned-only topology stays prospective and criticality does not manufacture actual Impact.
+- **SYN-024:** actual exposure/non-exposure requires consumption/refresh/version evidence with sufficient positive or negative coverage; timing and reachability alone are insufficient.
+- **SYN-025:** downstream Observation/Assessment/Change can establish observed effect independently of exposure proof; exposure and downstream health may disagree.
+- **SYN-026:** technical/analytical/business consequence requires provenance-bearing consequence evidence. Criticality, client-facing status, Classification, or Policy Context cannot substitute for consequence or compliance evidence.
+- **SYN-027:** any proposition that an origin caused/contributed to a downstream effect/consequence becomes explicit Causal Claim rather than being hidden in Impact or Explanation.
+- **SYN-028:** enforced safeguard plus sufficient negative consumption coverage may support `prevented exposure`; protection can separately cause delay/non-delivery effects while remaining no proof of protected-data defect.
+- **SYN-029:** Annotation contributes attributed human context; structured facts/causal/planned/normative/governance assertions route to their owning concepts and disputed/withdrawn notes retain status.
+- **SYN-030:** Capability Authorization + concept state produces a task-specific **Authorized Analytical Projection** that enables useful health/governance/RCA work without row access while independently restricting sensitive derived evidence and action authority.
+- **SYN-031:** Explanation composes only from the authorized analytical projection, preserving statement-to-basis traceability, Impact layers, causal status, human-source status, policy/authorization limitations, and event/knowledge-time perspective.
+
 ## Cross-cutting synchronization rules
 
 - Concepts own their own state/truth; synchronization does not manufacture umbrella state.
@@ -73,8 +85,11 @@ The order is a reasoning dependency, not an implementation dependency.
 - Partial progress is valid; one unresolved branch does not erase another.
 - Monitoring Scope ≠ Responsibility Assignment ≠ Policy Context ≠ Capability Authorization.
 - Raw-data read authorization ≠ metadata/health-analysis authorization ≠ Lineage/RCA authorization ≠ job-operation authorization ≠ safeguard authority.
-- An authorized evidence projection may hide raw values/identities while retaining usable Assessment, timing, Lineage, policy, responsibility, causal, and Impact context where separately permitted.
+- Authorized Analytical Projection is a synchronization result/view, not a new truth-owning concept or declassification mechanism.
+- An authorized projection may hide raw values/identities while retaining usable Assessment, timing, Lineage, policy, responsibility, causal, Impact, safeguard, and Annotation context where separately permitted.
+- Derived/aggregate evidence is not automatically unrestricted.
 - Restricted evidence must never be retrieved merely to create an unauthorized summary.
+- Historical authorization can be reconstructed as evidence, but current disclosure authorization cannot be bypassed by historical replay.
 - Change Intent does not create Observation, realized Change, Expectation, Baseline, actual Impact, or cause.
 - Prospective Impact ≠ actual exposure/effect/consequence and ≠ retrospective causal evidence by itself.
 - Planned reference preparation ≠ realized transition.
@@ -87,21 +102,83 @@ The order is a reasoning dependency, not an implementation dependency.
 - Causal support and contradiction both remain provenance-bearing; absence/exclusion evidence requires adequate coverage.
 - Multiple contributing causes and unresolved outcomes are valid.
 - Automated reasoning may propose/support/weaken claims but cannot call a cause `confirmed` without an accepted confirmation standard.
-- Human research routes to the concept owning the statement's meaning; Annotation is not a shadow evidence store.
-- Baseline atypicality alone does not mandate Investigation or quarantine.
-- Propagation Safeguard proposal ≠ active safeguard; active quarantine ≠ proof of defect; release ≠ proof of health.
-- Downstream graph traversal does not create confirmed Impact or causal proof.
+- Impact candidate ≠ exposure ≠ downstream effect ≠ consequence ≠ causal attribution.
+- `Not exposed` requires sufficient negative evidence; missing consumer telemetry is not a reassuring negative.
+- Downstream effect may be known while exposure remains unknown; exposure may be known while monitored downstream health remains acceptable.
+- Criticality/business-facing/policy-sensitive context can influence priority but not create exposure/effect/consequence.
+- Propagation Safeguard proposal ≠ active/enforced protection; prevented exposure requires enforcement plus sufficient negative-consumption coverage.
+- Blocked suspect state ≠ fresh/healthy downstream state.
+- Annotation is not a shadow evidence/authority store.
+- Explanation consumes authorized projected truth; it cannot promote Impact/Causal Claim state or use hidden evidence for narrative completion.
 - Ledger-like correction/supersession semantics and event-time vs knowledge-time distinctions persist through every chain.
 - No synchronization requires DQX, Metric Views, Collibra, Immuta, GitHub Actions, graph database, event store, message bus, workflow engine, LLM, IAM model, quarantine implementation, or selected technical architecture.
 
 ## Required ecosystem scenarios
 
-Existing E-01 through E-15 remain required. Group 05 must additionally stress-test restricted-data analyst scenarios in which direct data access is denied but independently authorized health metrics, governance context, Lineage/RCA evidence, and Explanation remain usable; as well as the converse case where an operator may perform a job action without obtaining raw-data read authority.
+### E-01 — A+B→C unplanned degradation
+C drops materially; A/B/join/multiple contributors/unresolved remain possible.
+
+### E-02 — Planned structural change with valid outcome
+Planned filter changes C population with correct prospective reference handling.
+
+### E-03 — Planned change with unintended violation
+Intended volume shift occurs while another quality dimension fails.
+
+### E-04 — Unregistered change
+Change occurs without Change Intent; monitoring lacks planned context but remains useful.
+
+### E-05 — Stale upstream with successful downstream execution
+Execution success and freshness/quality truth remain independent.
+
+### E-06 — Deployment-correlated shift
+Activation timing supports inquiry but never silently becomes cause.
+
+### E-07 — Cross-repository dependency
+Identity, Lineage, evidence, responsibility cross repositories with provenance.
+
+### E-08 — Conflicting governance / expectation context
+Conflicts remain until explicit authority semantics resolve them.
+
+### E-09 — Restricted upstream/downstream context
+Opaque/redacted context permits useful reasoning without wider authorization.
+
+### E-10 — Historical correction
+Late evidence changes retrospective conclusion while preserving contemporaneous knowledge.
+
+### E-11 — Long-running upstream threatens delivery
+Execution succeeds but duration/completion timing violates operational expectations and threatens downstream readiness.
+
+### E-12 — Missing output and protective hold
+Sufficient absence evidence establishes no qualifying output; downstream advancement may be safeguarded without inventing a quarantined object.
+
+### E-13 — Ordinary variation needs no intervention
+Small changes remain within Baseline/reference behavior and do not automatically produce Change/Investigation noise.
+
+### E-14 — Material atypicality with analyst research
+A client-critical result is materially atypical without a normative volume criterion; an analyst can investigate without mislabeling the comparative result as failure.
+
+### E-15 — Safeguard creates delivery delay
+Protective quarantine is correct while separately causing measurable downstream latency/non-delivery risk.
+
+### E-16 — Restricted-data analyst remains operationally useful
+Raw-data read is denied while independently authorized health, execution, governance, Lineage/RCA, Impact, safeguard, responsibility, and Explanation context remains usable; job-operation authority is separate.
+
+### E-17 — Safeguard prevents exposure
+A reachable downstream consumer does not consume the suspect state because an enforced safeguard blocks the relevant path; prevented exposure requires enforcement and negative-consumption evidence.
+
+### E-18 — Critical but unexposed consumer
+A high-criticality/client-facing consumer is reachable and prioritized but evidence establishes it did not consume the affected state. Criticality does not manufacture actual Impact.
+
+### E-19 — Downstream effect with unknown business consequence
+A downstream metric/report effect is established, but evidence does not show whether a client, decision, or business process used it; consequence remains unknown.
+
+### E-20 — Historical authorization is not current access
+A past responder had broader incident-time evidence access; retrospective analysis may describe that authorization state, but a current requester cannot obtain those restricted values unless currently authorized.
 
 ## Phase 003 exit gate
 
-Phase 003 is complete when all retained synchronization chains have explicit contracts; group scenarios compose without hidden state/architecture; planned change, runtime timing, health, safeguard, authorization, causality, Impact, and Explanation remain distinct; ambiguity and authorization are explicit; historical replay works across event/knowledge time; and ecosystem scenarios can be walked end-to-end using accepted concepts/synchronizations.
+Phase 003 is complete when all retained synchronization chains have explicit contracts; group scenarios compose without hidden state/architecture; planned change, runtime timing, health, safeguard, authorization, causality, Impact, Annotation, and Explanation remain distinct; ambiguity and authorization are explicit; historical replay works across event/knowledge time and authorization history; and E-01–E-20 can be walked end-to-end using accepted concepts/synchronizations.
 
 ## Current review state
 
-**Groups 01–04 are accepted. Capability Authorization is accepted as a pre-Group-05 addendum. Group 05 — Downstream Impact, Annotation & Explanation is next and has not yet started.**
+**Groups 01–05 are accepted. Group 06 — Historical Replay & Phase 003 Consolidation is next.**

@@ -7,19 +7,24 @@ alwaysApply: true
 # Project foundation
 
 - Current accepted concept count: **22** — original 20 plus Propagation Safeguard and Capability Authorization addenda.
-- **Phase 003 is active. Groups 01–04 are accepted; Group 05 is next and has not started.**
+- **Phase 003 is active. Groups 01–05 are accepted; Group 06 — Historical Replay & Phase 003 Consolidation is next.**
+- Accepted synchronization range: **SYN-001–SYN-031**.
 - Work remains documentation/design-first unless the user explicitly advances into technical/implementation design.
-- Do not create application code, notebooks, infrastructure, schemas, APIs, IAM implementations, deployment workflows, quarantine implementations, graph/causal engines, or prototypes prematurely.
+- Do not create application code, notebooks, infrastructure, schemas, APIs, IAM implementations, deployment workflows, quarantine implementations, graph/causal engines, LLMs, or prototypes prematurely.
 - Treat `docs/` as the product/design system of record.
 - Preserve concept ownership boundaries; synchronization coordinates concepts rather than merging them.
 - Synchronization order is never authority; a trigger is never causation.
 - Monitoring Scope, Responsibility Assignment, Policy Context, Classification, and Capability Authorization remain distinct.
 - Raw-data read, metadata/health visibility, Lineage/RCA participation, job-operation authority, and safeguard authority remain independently resolvable.
-- Restricted raw-data access must not automatically block approved monitoring/RCA over authorized derived evidence.
+- Authorized Analytical Projection is a view over independently authorized concept state, not a new truth concept or declassification mechanism.
+- Restricted raw-data access must not automatically block approved monitoring/RCA/Impact analysis over authorized derived evidence.
 - Derived evidence/metadata can itself be sensitive; use explicit authorized projection/redaction/opacity.
-- Capability Authorization does not select IAM or enforcement architecture.
-- Permission to act is not evidence that the action succeeded.
+- Historical authorization is evidence about past capability but never overrides current requester disclosure authorization.
 - Investigation starts from outcome/question; Lineage yields candidates, not causes; first-observed localization is not root cause.
+- Impact candidate ≠ exposure ≠ downstream effect ≠ consequence ≠ causal attribution.
+- `Not exposed` requires sufficient negative evidence; missing consumer telemetry is not a reassuring negative.
+- Criticality/policy sensitivity does not manufacture actual Impact or compliance consequence.
+- Prevented exposure requires active/enforced safeguard evidence plus sufficient negative-consumption coverage.
+- Explanation consumes only authorized projected concept state and preserves statement-to-basis traceability.
 - `confirmed` cause requires an explicit accepted evidence/authority standard.
-- Do not begin Group 05 without explicit user request.
 - Never silently choose graph/event/ledger/quarantine/workflow/service/LLM/IAM architecture.

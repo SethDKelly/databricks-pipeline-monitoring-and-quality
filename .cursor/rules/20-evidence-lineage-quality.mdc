@@ -1,5 +1,5 @@
 ---
-description: Evidence, timing, authorization, planned change, lineage, investigation, health, safeguards, causality, impact, and explanation invariants.
+description: Evidence, timing, authorization, planned change, lineage, investigation, health, safeguards, causality, impact, annotation, and explanation invariants.
 globs:
 alwaysApply: true
 ---
@@ -13,6 +13,7 @@ Preserve:
 - Policy Context ≠ Capability Authorization;
 - raw-data read authorization ≠ analytical visibility ≠ job-operation authority ≠ safeguard authority;
 - authorized derived evidence ≠ unrestricted evidence;
+- Authorized Analytical Projection ≠ new truth/declassification mechanism;
 - permission to act ≠ action succeeded;
 - Change Intent ≠ Deployment ≠ realized Change;
 - prospective Impact ≠ actual Impact ≠ retrospective cause;
@@ -29,10 +30,19 @@ Preserve:
 - Causal Claim ≠ confirmed cause;
 - absence of contradiction ≠ confirmation;
 - Investigation closure ≠ confirmation;
-- Impact candidate ≠ exposure ≠ downstream effect ≠ business consequence;
-- safeguard proposal ≠ active safeguard;
+- Impact candidate/reachability ≠ exposure;
+- exposure ≠ downstream effect;
+- downstream effect ≠ consequence;
+- consequence ≠ causal attribution;
+- `not exposed` ≠ missing consumer telemetry;
+- criticality ≠ actual Impact;
+- safeguard proposal ≠ active/enforced safeguard;
+- prevented exposure ≠ fresh/healthy delivery;
 - quarantine ≠ proof of defect;
 - release ≠ proof of health;
+- Annotation ≠ structured operational truth;
+- Explanation ≠ independent truth/authorization source;
+- historical authorization ≠ current disclosure permission;
 - effective/event time ≠ recorded/knowledge time.
 
 Rules:
@@ -40,11 +50,12 @@ Rules:
 - Material conclusions remain traceable to provenance-bearing evidence.
 - Capability Authorization resolves principal/capability/subject/context/time without choosing IAM implementation.
 - Never infer authorization from policy applicability, responsibility, scope, technical ownership, or synchronization order.
-- An analyst denied raw data may still receive separately authorized aggregate/redacted/opaque health, timing, Lineage, governance, Investigation, causal, Impact, and safeguard context.
+- An analyst denied raw data may still receive separately authorized aggregate/redacted/opaque health, timing, Lineage, governance, Investigation, causal, Impact, safeguard, and Annotation context.
 - Metadata/derived evidence can itself be sensitive and must be independently authorized.
 - Restricted evidence is never retrieved merely to summarize it to an unauthorized audience.
 - Permission to operate a job or safeguard does not grant raw-data access; analytical visibility does not grant production-control authority.
 - Permission to act does not create Deployment/Execution/Observation facts.
+- Historical authorization can be reconstructed as evidence but current requester authorization still governs disclosure.
 - Treat execution timing/dependency latency as first-class evidence.
 - Assess runtime/data evidence against the correct time-valid Expectation/Baseline.
 - Ordinary variation must not become alert noise.
@@ -55,8 +66,18 @@ Rules:
 - Make causal propositions explicit Causal Claims.
 - Multiple contributing claims and unresolved Investigations are valid.
 - `confirmed` requires an accepted evidence/authority standard; automated ranking cannot manufacture it.
-- Propagation Safeguard remains separate from health/cause and requires separate action authority.
-- Downstream traversal yields Impact candidates; exposure/effect/consequence require separate evidence.
-- Explanation is an authorized projection over concept state and evidence, not an authorization bypass.
-- Distinguish contemporaneous from retrospective evidence and authorization when later state changes.
+- Historical downstream traversal yields Impact candidates only.
+- Exposure requires actual encounter/consumption evidence; temporal adjacency or reachability alone is insufficient.
+- `Not exposed` requires adequate negative consumption/refresh/version coverage.
+- Downstream Observation/Assessment/Change may establish effect even when exposure is unresolved.
+- Exposure does not automatically imply downstream degradation.
+- Consequence evidence is separate from criticality, exposure, and policy sensitivity.
+- Any origin→downstream-effect/consequence assertion belongs in Causal Claim.
+- Active/enforced Propagation Safeguard plus sufficient negative-consumption coverage can support prevented exposure.
+- Blocked suspect-version exposure does not prove downstream freshness/health.
+- Safeguard-induced delay remains separate operational effect/consequence; causal attribution to safeguard uses Causal Claim.
+- Human Annotation remains attributed context; structured truths belong to their owning concepts.
+- Explanation composes only from the Authorized Analytical Projection; it cannot query hidden evidence for narrative completion.
+- Explanation preserves statement-to-basis traceability, Impact layers, causal status, redaction, and temporal perspective.
+- Distinguish contemporaneous from retrospective evidence, Impact, Explanation, and authorization when later state changes.
 - Do not select IAM, graph database, event store, quarantine store, persistence architecture, LLM, causal algorithm, or technical architecture from these semantics alone.

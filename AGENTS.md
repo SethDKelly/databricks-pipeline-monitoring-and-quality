@@ -4,9 +4,11 @@
 
 Phase 002 originally accepted 20 concepts. Two explicit post-exit addenda are accepted: **Propagation Safeguard** and **Capability Authorization**. Current accepted concept count: **22**.
 
-**Phase 003 is active. Groups 01–04 are accepted. Capability Authorization is accepted as a pre-Group-05 input. Group 05 — Downstream Impact, Annotation & Explanation is next and has not started.**
+**Phase 003 is active. Groups 01–05 are accepted. Group 06 — Historical Replay & Phase 003 Consolidation is next.**
 
-Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, deployment workflows, quarantine implementations, IAM implementations, graph/causal engines, or prototypes unless the user explicitly advances the project into technical design.
+Accepted synchronization range: **SYN-001–SYN-031**.
+
+Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, deployment workflows, quarantine implementations, IAM implementations, graph/causal engines, LLMs, or prototypes unless the user explicitly advances the project into technical design.
 
 Treat `docs/` as the design system of record.
 
@@ -14,7 +16,7 @@ Treat `docs/` as the design system of record.
 
 - Start from actor/ecosystem outcome, not vendor/tool/storage shape.
 - Preserve accepted concept ownership/state boundaries.
-- Synchronization is not automatically a service call, workflow, transaction, event, database relation, or API.
+- Synchronization is not automatically a service call, workflow, transaction, event, database relation, API, or persisted view.
 - Synchronization order is never authority; a trigger is never causation.
 - Do not create umbrella state for convenience.
 - Reopen earlier boundaries only explicitly with rationale.
@@ -30,6 +32,7 @@ Preserve:
 - Classification ≠ Policy Context ≠ Capability Authorization ≠ compliance;
 - raw-data read authorization ≠ metadata/governance visibility ≠ derived health/metric visibility ≠ Lineage/RCA authorization ≠ job-operation authorization ≠ safeguard authority;
 - authorized derived evidence ≠ unrestricted evidence;
+- Authorized Analytical Projection ≠ new truth/declassification mechanism;
 - permission to act ≠ action succeeded;
 - Change Intent ≠ Deployment ≠ realized Change;
 - prospective Impact ≠ actual Impact ≠ retrospective cause;
@@ -45,25 +48,31 @@ Preserve:
 - first-observed localization ≠ root cause;
 - Causal Claim ≠ confirmed cause;
 - Investigation closure ≠ confirmation;
-- Impact candidate ≠ exposure ≠ downstream effect ≠ business consequence;
-- safeguard proposal ≠ active safeguard;
+- Impact candidate ≠ exposure ≠ downstream effect ≠ business consequence ≠ causal attribution;
+- `not exposed` ≠ missing consumer telemetry;
+- criticality ≠ actual Impact;
+- safeguard proposal ≠ active/enforced safeguard;
+- prevented exposure ≠ fresh/healthy delivery;
 - quarantine ≠ defect proof;
 - release ≠ health proof;
 - Annotation ≠ structured operational truth;
-- Explanation ≠ independent truth source;
+- Explanation ≠ independent truth/authorization source;
+- historical authorization ≠ current disclosure permission;
 - effective/event time ≠ recorded/knowledge time.
 
-## Capability Authorization rules
+## Capability Authorization / analytical projection rules
 
 - Capability Authorization answers whether a principal may perform a named capability on a subject/context/time; it does not select IAM/enforcement architecture.
 - Never infer authorization from Responsibility Assignment, Policy Context, Classification, Monitoring Scope, repository ownership, commit history, job creator identity, or platform-administrator status.
 - Raw-data read, derived health/metric visibility, governance metadata visibility, Lineage/RCA participation, job/run operational control, safeguard actions, and Explanation access are independently resolvable.
-- A restricted-data analyst may perform approved RCA over safe aggregate/redacted/opaque evidence without direct row access.
+- A restricted-data analyst may perform approved RCA/Impact analysis over safe aggregate/redacted/opaque evidence without direct row access.
 - A job operator may hold job-operation authority without raw-data read authority.
 - Analytical visibility never implies permission to retry/update/modify a job or activate a safeguard.
-- Derived metrics/thresholds/Lineage/policy/causal details may themselves be restricted; do not assume metadata is safe.
+- Derived metrics/thresholds/Lineage/policy/causal/Impact details may themselves be restricted; do not assume metadata is safe.
 - Missing authorization evidence is not permission.
-- Preserve authorization effective time and knowledge time for historical reconstruction.
+- The Authorized Analytical Projection is a synchronization result/view over permitted concept state; it does not create new truth or declassify by inference.
+- Restricted evidence is never retrieved merely to summarize it to an unauthorized audience.
+- Historical authorization can be evidence about what a past actor could know/do; current requester authorization still governs current disclosure.
 - Permission to perform an action is not evidence the action succeeded; resulting facts belong to Deployment/Execution History/Observation/etc.
 
 ## Investigation / causality rules
@@ -88,13 +97,38 @@ Preserve:
 - Activation requires explicit safeguard capability/authority and enforcement evidence where applicable.
 - Safeguard-induced delay remains observable/assessable.
 
-## Group 05 preparation rules
+## Downstream Impact rules
 
-- **Do not begin Group 05 without explicit user request.**
-- When Group 05 begins, authorized analytical projection must be first-class in Impact/Explanation synchronizations.
-- Restricted raw-data access must not automatically block authorized health/RCA analysis.
-- Policy/restriction/responsibility/health transparency must not become access grants.
-- Any causal assertion about downstream effect remains Causal Claim, not Impact or Explanation narrative.
+- Historical downstream Lineage yields Impact candidates only.
+- Exposure requires actual encounter/consumption evidence appropriate to the consumer class.
+- `Not exposed` requires sufficient negative consumption/refresh/version coverage; missing telemetry cannot become non-exposure.
+- Downstream effect uses Observation/Assessment/Change and can exist while exposure remains unknown.
+- Exposure can exist while monitored downstream health remains acceptable.
+- Technical/analytical/business consequence requires separate provenance-bearing consequence evidence.
+- Criticality, client-facing status, Classification, or Policy Context may affect priority/handling but do not manufacture exposure/effect/consequence or compliance harm.
+- Any assertion that an origin caused/contributed to downstream effect/consequence belongs in Causal Claim.
+- Prevented exposure requires active/enforced safeguard evidence plus sufficient negative-consumption coverage.
+- Blocking a suspect version does not prove fresh/healthy downstream delivery.
+- A safeguard may prevent suspect exposure while separately causing lateness/non-delivery.
+
+## Annotation / Explanation rules
+
+- Annotation remains attributed human context; structured facts/claims/intents/norms/governance assertions route to their owning concepts.
+- Disputed/withdrawn Annotation cannot be presented as uncontested current fact.
+- Explanation composes only from the Authorized Analytical Projection.
+- Explanation preserves statement-to-basis traceability, Impact layers, Causal Claim status, human-source status, policy/authorization limitations, and temporal perspective.
+- Safe omission/redaction cannot be worded as evidence that hidden entities/evidence do not exist.
+- Explanation may surface an authorized operational capability but never executes the action.
+
+## Group 06 preparation rules
+
+- Compose E-01–E-20 end to end using only accepted concepts/SYN-001–SYN-031.
+- Reconstruct separately: what happened, what was known then, what was believed then, what was authorized then, what was explained then, and what is known now.
+- Current topology/reference/governance/authorization must not be silently projected backward.
+- Historical authorization cannot bypass current requester disclosure controls.
+- Verify corrections/supersessions preserve prior knowledge and explanation state.
+- Verify restricted/opaque paths remain useful without leakage.
+- Verify no synchronization has become a hidden architecture/persistence/IAM/LLM concept.
 
 ## Tooling stance
 

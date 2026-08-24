@@ -46,21 +46,23 @@ Use [`concept_template.md`](concept_template.md) as the specification checklist.
 
 ## Core access boundary
 
-The concept model now explicitly distinguishes:
+The concept model explicitly distinguishes:
 
-**responsibility/policy context → capability authorization → authorized evidence/action view**
+**responsibility/policy context → Capability Authorization → authorized evidence/action view**
 
 without making Responsibility Assignment or Policy Context themselves authorization sources.
 
-A restricted-data analyst may be permitted to inspect approved aggregate health metrics, execution timing, Assessments, redacted Lineage, policy/restriction summaries, responsibility context, causal status, Impact, and safeguards while being denied rows, sensitive columns, thresholds, identities, or other restricted evidence. A job operator can separately be authorized to retry/update/control a job without receiving raw-data read permission.
+A restricted-data analyst may be permitted to inspect approved aggregate health metrics, execution timing, Assessments, redacted Lineage, policy/restriction summaries, responsibility context, causal status, Impact, safeguards, and Annotation while being denied rows, sensitive columns, thresholds, identities, or other restricted evidence. A job operator can separately be authorized to retry/update/control a job without receiving raw-data read permission.
 
-Derived evidence is not automatically unrestricted; authorization applies to metadata/metrics/topology/causal detail independently where necessary.
+Derived evidence is not automatically unrestricted; authorization applies to metadata/metrics/topology/causal/consequence detail independently where necessary.
 
 ## Cross-cutting reasoning model
 
 The reasoning chain can distinguish:
 
-**identified subject → monitoring/governance context → Capability Authorization / authorized evidence view → planned intent / prospective downstream profile → active Deployment → execution/timing/dependency evidence → Observation → time-valid Assessment → realized Change → Investigation → Causal Claim → actual downstream Impact → Propagation Safeguard where authorized → Annotation → Explanation**
+**identified subject → monitoring/governance context → Capability Authorization / Authorized Analytical Projection → planned intent / prospective downstream profile → active Deployment → execution/timing/dependency evidence → Observation → time-valid Assessment → realized Change → Investigation → Causal Claim → downstream Impact candidate → exposure/non-exposure → observed effect → consequence evidence → Propagation Safeguard prevention/operational effect where applicable → Annotation → Explanation**
+
+Causal attribution from an origin to a downstream effect remains explicit **Causal Claim** rather than becoming an Impact layer.
 
 This is a reasoning/synchronization model, not a service topology, IAM architecture, or persistence schema.
 
@@ -70,4 +72,4 @@ Logical pipelines, jobs, tasks, runs, tables, views, Metric Views, repositories,
 
 ## Phase 003 synchronization work
 
-Groups 01–04 are accepted. Capability Authorization is accepted as a pre-Group-05 addendum. Current synchronization work is documented in [`phase_003/README.md`](phase_003/README.md); **Group 05 — Downstream Impact, Annotation & Explanation is next and has not started.**
+Groups 01–05 are accepted, including Capability Authorization as the pre-Group-05 addendum and SYN-023–SYN-031 for downstream Impact, Annotation, authorized analytical projection, and Explanation. Current synchronization work is documented in [`phase_003/README.md`](phase_003/README.md); **Group 06 — Historical Replay & Phase 003 Consolidation is next.**

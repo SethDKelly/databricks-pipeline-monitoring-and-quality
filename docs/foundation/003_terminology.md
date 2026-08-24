@@ -5,7 +5,7 @@ This document establishes distinctions that must remain stable. The fuller canon
 ## Ecosystem terms
 
 ### Data ecosystem
-The connected set of repositories, Change Intents, Deployments, executions, data assets, dependencies, Lineage, governance metadata, authorization state, health evidence, Investigations, Impact context, Propagation Safeguards, and downstream consumers relevant to monitoring.
+The connected set of repositories, Change Intents, Deployments, executions, data assets, dependencies, Lineage, governance metadata, authorization state, health evidence, Investigations, Causal Claims, Impact context, Propagation Safeguards, Annotations, and downstream consumers relevant to monitoring.
 
 ### Logical pipeline
 A named data-processing responsibility that may span multiple Databricks tasks/jobs and must not automatically equal one repository.
@@ -71,13 +71,16 @@ When monitoring learned/recorded it.
 A provenance-bearing resolution of whether a principal may perform a named capability on an identified subject/context/time. Capability Authorization is separate from Responsibility Assignment, Policy Context, Classification, Monitoring Scope, and enforcement proof.
 
 ### Authorized evidence view
-The subset/abstraction of concept state and evidence a principal may inspect for a particular analytical task. It may include derived/aggregate/redacted/opaque health, timing, governance, Lineage, Investigation, Causal Claim, Impact, and safeguard context while excluding restricted raw values or identities.
+The general evidence/concept state a principal may inspect under applicable Capability Authorization.
+
+### Authorized Analytical Projection
+The task-specific Phase 003 synchronization result that assembles only the permitted concept state/abstractions needed for monitoring, Impact, RCA, or Explanation. It is not a new truth concept or declassification mechanism.
 
 ### Direct/raw data access
 Permission to inspect underlying row/record/value data or sensitive columns. This is not a prerequisite for every monitoring/RCA capability.
 
 ### Analytical visibility
-Permission to inspect approved metadata, aggregate health/Assessment state, Lineage/RCA evidence, and Explanation. Analytical visibility does not imply raw-data access or production-control authority.
+Permission to inspect approved metadata, aggregate health/Assessment state, Lineage/RCA evidence, Impact, safeguards, and Explanation. Analytical visibility does not imply raw-data access or production-control authority.
 
 ### Operational job authority
 Permission to perform a named job/run operation where later defined, such as retry/update/control. Operational authority does not imply raw-data access, and permission itself does not prove the action succeeded.
@@ -99,17 +102,40 @@ A Causal Claim that is proposed/supported but not confirmed.
 ### Confirmed cause
 A Causal Claim satisfying an explicit evidence/authority standard. The exact standard remains open.
 
+## Downstream Impact terms
+
+### Impact candidate / reachability
+A downstream subject identified through historical typed Lineage as plausibly connected to the originating condition. Reachability does not prove the candidate consumed the affected state.
+
+### Exposure / consumption
+Evidence that a downstream candidate actually encountered the relevant affected state/version/time window.
+
+### Not exposed
+An exposure conclusion supported by sufficient negative consumption/refresh/version coverage. Missing consumer telemetry is not non-exposure.
+
+### Observed downstream effect
+Observation/Assessment/Change evidence describing what happened at the downstream candidate. Effect can be known while exposure remains unresolved and does not establish upstream causation.
+
+### Consequence evidence
+Evidence of a technical, analytical, or business outcome such as delay, non-delivery, application behavior, report/metric use, client delivery, process interruption, or decision use. Criticality, client-facing status, exposure, or policy sensitivity alone is not consequence.
+
+### Prevented exposure
+Evidence that an active/enforced Propagation Safeguard blocked the relevant suspect state from an otherwise reachable consumer, with sufficient negative-consumption coverage. Prevented suspect-state exposure does not prove fresh/healthy delivery.
+
 ### Impact
-Downstream consequence reasoning that distinguishes candidate/reachability, actual exposure, observed downstream effect, and evidenced business consequence.
+Downstream reasoning that preserves candidate/reachability, exposure, observed effect, consequence evidence, and causal attribution as distinct strengths. Causal attribution belongs in Causal Claim.
+
+### Criticality
+Priority/significance context about downstream importance. It may affect urgency but is not evidence that actual Impact occurred.
 
 ### Propagation Safeguard
 A protective proposed/active/released state that holds or quarantines a defined output/consumption boundary. It is not a quality Assessment, Causal Claim, Capability Authorization, or proof that the data is defective or safe.
 
 ### Annotation
-Attributed human context that cannot silently become Observation, Change Intent, Expectation, Responsibility Assignment, authorization, or causal confirmation.
+Attributed human context that cannot silently become Observation, Change Intent, Expectation, Responsibility Assignment, authorization, Impact proof, or causal confirmation.
 
 ### Explanation
-Authorization- and time-aware evidence-grounded communication. It is not an independent truth source and can distinguish what was known then from retrospective knowledge now.
+Authorization- and time-aware evidence-grounded communication composed from the Authorized Analytical Projection. It is not an independent truth or authorization source and can distinguish what was known then from retrospective knowledge now.
 
 ## Governance and policy terms
 
@@ -129,7 +155,7 @@ Declared policy/handling applicability without access enforcement, legal interpr
 Sensitive-data/legal-organizational categories/context according to applicable definitions. Presence of such metadata does not establish compliance.
 
 ### Provenance
-Where a fact/assertion/definition/intent/relationship/evaluation/claim/safeguard/authorization came from, who/what asserted or derived it, and relevant temporal/version context.
+Where a fact/assertion/definition/intent/relationship/evaluation/claim/impact/safeguard/authorization came from, who/what asserted or derived it, and relevant temporal/version context.
 
 ## Terms to avoid conflating
 
@@ -138,6 +164,7 @@ Where a fact/assertion/definition/intent/relationship/evaluation/claim/safeguard
 - Policy Context ≠ Capability Authorization;
 - raw-data read authorization ≠ metadata/health-analysis authorization ≠ Lineage/RCA authorization ≠ job-operation authorization ≠ safeguard authority;
 - authorized derived evidence ≠ unrestricted evidence;
+- Authorized Analytical Projection ≠ new truth/declassification mechanism;
 - permission to act ≠ evidence action succeeded;
 - pipeline ≠ repository ≠ Databricks job;
 - Change Intent ≠ Deployment ≠ realized Change;
@@ -151,13 +178,18 @@ Where a fact/assertion/definition/intent/relationship/evaluation/claim/safeguard
 - planned topology ≠ active Lineage;
 - Lineage reachability/evidence candidate ≠ cause;
 - first-observed localization ≠ root cause;
+- Impact candidate ≠ exposure ≠ downstream effect ≠ consequence ≠ causal attribution;
+- `not exposed` ≠ missing telemetry;
+- criticality ≠ actual Impact;
+- policy sensitivity ≠ compliance consequence;
 - Causal Claim ≠ confirmed cause;
 - Investigation closure ≠ confirmation;
-- Impact candidate ≠ exposure ≠ downstream effect ≠ business consequence;
-- safeguard proposal ≠ active safeguard;
+- safeguard proposal ≠ active/enforced safeguard;
+- prevented exposure ≠ fresh/healthy delivery;
 - quarantine ≠ proof of defect;
 - safeguard release ≠ proof of health;
 - Annotation ≠ structured operational truth;
-- Explanation ≠ truth source;
+- Explanation ≠ truth/authorization source;
+- historical authorization ≠ current disclosure permission;
 - effective/event time ≠ recorded/knowledge time;
 - Classification ≠ Policy Context ≠ authorization ≠ compliance.

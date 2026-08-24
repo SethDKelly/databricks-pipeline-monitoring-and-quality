@@ -1,6 +1,6 @@
 # Phase 002 — Concept Specifications
 
-**Status:** **Complete — Groups 01–05 accepted; two explicit post-exit addenda accepted during Phase 003 preparation.**
+**Status:** **Complete — Groups 01–05 accepted; two explicit post-exit addenda accepted during Phase 003.**
 
 ## Purpose
 
@@ -96,6 +96,8 @@ Review order was a design dependency, not an implementation dependency. Concepts
 - Causal Claim ≠ confirmed cause;
 - Investigation closure ≠ confirmation;
 - Impact candidate ≠ exposure ≠ downstream effect ≠ business consequence;
+- downstream consequence ≠ causal attribution;
+- criticality/policy sensitivity ≠ actual Impact evidence;
 - Propagation Safeguard ≠ health or causal truth;
 - safeguard proposal ≠ active safeguard;
 - quarantine ≠ proof of defect;
@@ -104,7 +106,7 @@ Review order was a design dependency, not an implementation dependency. Concepts
 - Explanation ≠ independent truth source;
 - effective/event time ≠ recorded/knowledge time.
 
-## Scenario implications of the addenda
+## Scenario implications of the addenda and Phase 003 synchronizations
 
 ### Protective hold/quarantine
 A suspect or missing output can be protected at an explicit propagation boundary without rewriting the underlying Observation/Assessment or claiming defect/cause. Protected interval, authority, enforcement evidence, release, and safeguard-induced delay remain historical facts.
@@ -115,6 +117,9 @@ A user may be denied direct Table C rows while being permitted approved aggregat
 ### Job operator without raw-data read
 A user may hold an explicit job/run operational capability while lacking permission to inspect the data the job processes. The action's actual outcome remains owned by Deployment/Execution History/Observation rather than being implied by permission.
 
+### Layered downstream Impact
+A downstream report can be reachable without exposure, exposed without observed degradation, affected with business consequence still unknown, or protected from a suspect version while becoming late. Causal attribution from the origin to any downstream outcome remains explicit Causal Claim.
+
 ## Phase 002 exit review and later boundary corrections
 
 D-030 records that the original Phase 002 exit gate was satisfied with 20 concepts. That decision remains historically correct. Later requirements were added explicitly rather than silently overloading accepted concept purposes.
@@ -123,4 +128,4 @@ The current model still satisfies the original exit principles: each retained co
 
 ## Current synchronization direction
 
-Phase 003 composes all 22 concepts. Groups 01–04 are accepted. Capability Authorization is an accepted pre-Group-05 input. **Group 05 — Downstream Impact, Annotation & Explanation remains next and has not yet started.** See [`../phase_003/README.md`](../phase_003/README.md).
+Phase 003 composes all 22 concepts. **Groups 01–05 are accepted; Group 06 — Historical Replay & Phase 003 Consolidation is next.** See [`../phase_003/README.md`](../phase_003/README.md).
