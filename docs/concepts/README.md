@@ -65,11 +65,19 @@ An **Execution Gate** is an explicit opt-in active-control boundary. It can hold
 
 **Execution Gate ≠ Propagation Safeguard**: a gate controls whether a downstream run starts; a safeguard controls whether output/current state propagates or is consumed. Both can independently create observable latency/delivery consequences.
 
+Phase 004 Group 04 further preserves:
+
+**readiness result ≠ gate decision ≠ gate enforcement ≠ actual execution**
+
+and:
+
+**safeguard proposal/configuration/request ≠ enforced active safeguard ≠ prevented exposure**.
+
 ## Cross-cutting reasoning model
 
 The reasoning chain can distinguish:
 
-**identified subject → monitoring/governance context → Capability Authorization / Authorized Analytical Projection → planned intent / prospective downstream profile → active Deployment → execution/timing/dependency evidence → Observation → time-valid Assessment → optional Execution Gate admission/hold when explicitly enabled → realized execution/Change → Investigation → Causal Claim with explicit epistemic status → downstream Impact candidate → exposure/non-exposure → observed effect → consequence evidence → Propagation Safeguard prevention/operational effect where applicable → Annotation → Explanation**
+**identified subject → monitoring/governance context → Capability Authorization / Authorized Analytical Projection → planned intent / prospective downstream profile → active Deployment → execution/timing/dependency evidence → Observation → time-valid Assessment → criterion-bound readiness → optional Execution Gate decision/enforcement when explicitly enabled → actual Execution History / realized Change → Investigation → Causal Claim with explicit epistemic status → downstream Impact candidate → exposure/non-exposure → observed effect → consequence evidence → Propagation Safeguard enforcement/prevention/operational effect where applicable → Annotation → Explanation**
 
 Causal attribution from an origin, gate, or safeguard to a downstream effect remains explicit **Causal Claim** rather than becoming an Impact or control-state shortcut.
 
@@ -88,11 +96,11 @@ It preserves:
 - actual gate/safeguard action ≠ counterfactual action now preferred;
 - historical authorization/control/confirmation capability ≠ current disclosure permission.
 
-A present-day `as-known-then` computation may be useful, but it cannot be presented as an Assessment, belief, causal status, decision, or Explanation that actually existed then unless historical state proves that it did.
+A present-day `as-known-then` computation may be useful, but it cannot be presented as an Assessment, belief, causal status, readiness/enforcement conclusion, decision, or Explanation that actually existed then unless historical state proves that it did.
 
 ## Phase 004 refinement boundary
 
-Phase 004 does **not** add a new evidence or causal concept merely to hold evidence-quality/epistemic metadata. The accepted concepts already own their evidence/state. Phase 004 `REF-###` contracts define standards for how that evidence can support conclusions.
+Phase 004 does **not** add a new evidence, causal, exposure, readiness, or control concept merely to hold refinement metadata. The accepted concepts already own their evidence/state. Phase 004 `REF-###` contracts define standards for how that evidence can support conclusions.
 
 ### Group 01 — accepted REF-001–REF-005
 
@@ -101,14 +109,6 @@ The key chain is:
 **evidence item → applicability to a defined proposition → bounded coverage/opportunity-to-observe → corroboration/conflict relationship → conclusion-specific sufficiency**
 
 without turning that chain into a universal trust score, new source authority, or new authorization grant.
-
-Examples:
-
-- one observed qualifying run may be sufficient for `a run occurred` while insufficient for `only one run occurred`;
-- zero returned events are not `no run` unless the relevant bounded execution opportunities were actually observable and sufficiently covered;
-- no consumer telemetry is not `not exposed`;
-- three copies of the same Databricks event are not three independent corroborating observations;
-- an Assessment can be internally well-supported while its exact evidence remains restricted from a particular analyst.
 
 ### Group 02 — accepted REF-006–REF-012
 
@@ -131,6 +131,32 @@ Group 03 defines:
 
 `Confirmed` is not merely `strongly supported` or the leading hypothesis. It requires the applicable confirmation profile/standard, sufficient evidence, material contradiction/alternative review, adequate negative-evidence coverage where relied upon, independently resolved confirmation capability/authority, and provenance-bearing confirmation action. Phase 005 determines who/what may confirm by context; Phase 004 does not grant that authority.
 
+### Group 04 — accepted REF-021–REF-030
+
+Group 04 defines:
+
+- exposure propositions bound to affected state/version/window, consumer, historical relationship, encounter mode, and consumer opportunity;
+- positive exposure from actual encounter evidence rather than reachability/timing/activity;
+- `not exposed` as a negative conclusion requiring sufficient consumption/version and material-path coverage;
+- explicit distinction among no encounter opportunity, no encounter, safe-version encounter, unknown-version encounter, unavailable/restricted evidence, and affected-state encounter;
+- criterion-bound readiness rather than global upstream readiness;
+- separate completion/output/version/currentness/freshness/publication/quality predicates where a criterion requires them;
+- gate readiness evaluation, gate decision, opportunity-specific enforcement, and actual Execution History as separate claims;
+- hold/admit enforcement asymmetry: a reliable run during an unoverridden hold contradicts full hold enforcement, while an admitted opportunity that never runs does not prove admission failed;
+- safeguard proposal/configuration/request separate from boundary-specific enforcement;
+- prevented exposure only when safeguard enforcement was materially operative on the encounter path with sufficient negative-consumption/version and alternate-path coverage;
+- configured fallback policy separate from actual fallback recognition/application/enforcement/outcome;
+- control-effect causal conclusions under the same REF-013–REF-020 causal standards;
+- retrospective revision from late control/consumption evidence without rewriting historical actions.
+
+Examples:
+
+- a report can be `not exposed to suspect V` because it used V-1 while separately being stale;
+- `upstream job succeeded` may satisfy one readiness predicate but not a gate requiring current output + freshness;
+- a configured hold is not proven enforced merely because no run is visible when execution telemetry is incomplete;
+- `safeguard active + consumer not exposed` is not automatically `prevented exposure` if no relevant encounter opportunity existed;
+- blocking suspect V does not prove the downstream state is fresh/healthy.
+
 ## Domain entities that are not automatically concepts
 
 Logical pipelines, jobs, tasks, runs, execution opportunities, tables, views, Metric Views, repositories, workflows, columns, business metrics, reports, applications, business processes, teams, people, source revisions, deployment targets, client-delivery endpoints, roles, and groups may participate in concepts without becoming giant concepts themselves.
@@ -139,4 +165,4 @@ Logical pipelines, jobs, tasks, runs, execution opportunities, tables, views, Me
 
 **Phase 003 is complete.** Accepted synchronization range: **SYN-001–SYN-035**. E-01–E-22 pass end-to-end consolidation. Current results are documented in [`phase_003/README.md`](phase_003/README.md), with Group 06 in [`phase_003/06_historical_replay_and_consolidation/`](phase_003/06_historical_replay_and_consolidation/).
 
-**Phase 004 is active. Groups 01–03 are accepted with REF-001–REF-020. Group 04 — Exposure, Consumption, Readiness & Control Evidence is next and has not started.** See [`phase_004/README.md`](phase_004/README.md).
+**Phase 004 is active. Groups 01–04 are accepted with REF-001–REF-030. Group 05 — Consolidation / Exit Review is next and has not started.** See [`phase_004/README.md`](phase_004/README.md).

@@ -1,0 +1,54 @@
+---
+description: Phase 004 exposure, non-exposure, dependency readiness, gate enforcement, safeguard enforcement, and control-evidence rules.
+globs:
+alwaysApply: true
+---
+
+# Phase 004 exposure and control evidence rules
+
+Status: **Groups 01–04 accepted — REF-001–REF-030. Group 05 next and not started.**
+
+Preserve:
+
+- downstream reachability ≠ exposure;
+- downstream run/refresh timing ≠ encounter with affected state;
+- no encounter opportunity ≠ no encounter ≠ safe-version encounter ≠ unknown-version encounter ≠ affected-version encounter;
+- `not exposed to suspect version` ≠ fresh/current/healthy;
+- upstream run success ≠ global readiness;
+- readiness ≠ gate decision ≠ gate enforcement ≠ actual execution;
+- configured/enabled gate ≠ opportunity-specific enforcement;
+- gate hold ≠ execution failure;
+- gate admit ≠ actual execution;
+- gate override ≠ readiness;
+- configured fallback ≠ actual fallback application;
+- safeguard proposal/configuration/request ≠ enforced active safeguard;
+- safeguard enforcement at one boundary/path ≠ enforcement everywhere;
+- safeguard active + non-exposure ≠ automatically prevented exposure;
+- prevented exposure ≠ fresh/healthy delivery;
+- control telemetry unavailable ≠ fail-open/fail-closed/success/failure.
+
+Rules:
+
+- Bind exposure to affected subject/state/version/window, downstream candidate, historical relationship, encounter mode, consumer opportunity/window, and exact conclusion.
+- Positive exposure requires actual encounter evidence sufficiently associated with the affected state.
+- `Not exposed` requires opportunity-to-observe plus sufficient negative-consumption/version and material-path coverage.
+- A safe/earlier version may establish non-exposure to suspect V while separately supporting stale/freshness analysis.
+- Bind readiness to downstream/gate opportunity, prerequisites, explicit criterion/profile/version, current-cycle context, evidence cut, and evaluation time.
+- Keep completion, output existence, version/currentness, freshness, publication availability, and named quality predicates separate when the criterion requires them.
+- If a required predicate is unknown/conflicting/unavailable, readiness remains so unless the criterion logically determines another result. A fallback can act on uncertainty but does not create readiness.
+- Preserve gate evaluation, gate decision/action, opportunity-specific enforcement, and Execution History independently.
+- Reliable evidence of a downstream start during an applicable unoverridden hold contradicts full hold enforcement.
+- Lack of a downstream run supports hold enforcement only when execution-opportunity/history coverage is sufficient.
+- An admitted opportunity that never runs does not prove admission failed.
+- A gate decision emitted to an external control plane is not enforcement proof unless evidence shows the specific opportunity was affected as intended.
+- Preserve control-source unavailable, decision-delivery unknown, enforcement unknown, and enforcement contradicted distinctly.
+- Bind safeguard enforcement to protected subject/output/missing-output context, exact boundary, consumer/path scope, effective interval, action/state, evidence source, and knowledge time.
+- Safeguard enforcement at one route does not imply alternate routes are blocked.
+- `Prevented exposure` requires materially operative safeguard enforcement, relevant encounter/control opportunity, sufficient negative-consumption/version evidence, and adequate alternate-path coverage.
+- If no relevant encounter opportunity existed, prefer `safeguard active; consumer not exposed` over `safeguard prevented exposure` unless other evidence establishes material prevention.
+- Blocking suspect V does not prove freshness or delivery; older state/non-delivery remains separately assessed.
+- A known fallback rule is intended behavior. Actual runtime recognition/application/enforcement/outcome requires evidence.
+- Control-effect causal claims use Phase 004 Group 03 standards; direct mechanism evidence may support a result quickly but never bypasses the applicable causal profile.
+- Late control/consumption evidence may revise retrospective readiness/exposure/prevention/causal conclusions without rewriting historical decisions/actions/executions.
+
+Do not begin Phase 004 Group 05 without explicit user request.

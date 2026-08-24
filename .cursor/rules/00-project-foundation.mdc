@@ -8,7 +8,7 @@ alwaysApply: true
 
 - Current accepted concept count: **23** — original 20 plus Propagation Safeguard, Capability Authorization, and Execution Gate addenda.
 - **Phase 003 is complete. Groups 01–06 are accepted; SYN-001–SYN-035 are accepted; E-01–E-22 pass end-to-end consolidation.**
-- **Phase 004 — Evidence, Time, and Causality Refinement is active. Groups 01–03 are accepted; REF-001–REF-020 are accepted. Group 04 — Exposure, Consumption, Readiness & Control Evidence is next and has not started.**
+- **Phase 004 — Evidence, Time, and Causality Refinement is active. Groups 01–04 are accepted; REF-001–REF-030 are accepted. Group 05 — Consolidation / Exit Review is next and has not started.**
 - Work remains documentation/design-first unless the user explicitly advances into technical/implementation design.
 - Do not create application code, notebooks, infrastructure, schemas, APIs, IAM implementations, deployment workflows, quarantine implementations, Execution Gate/orchestration implementations, graph/causal engines, LLMs, or prototypes prematurely.
 - Treat `docs/` as the product/design system of record.
@@ -26,7 +26,7 @@ alwaysApply: true
 - Source availability does not imply framework knowledge; current retrieval of an old fact does not backdate knowledge.
 - `Known by`, `learned after`, `not recorded by`, `not known by`, and `not available by` are different propositions.
 - Monitoring/reasoning may mature progressively: immediate operational validation → enriched health evaluation → investigative/RCA reasoning → retrospective/post-ops review.
-- Produce the narrowest trustworthy result as soon as its evidence standard is satisfied; never promote fast operational facts into broader health/causal conclusions while slower evidence is pending.
+- Produce the narrowest trustworthy result as soon as its evidence standard is satisfied; never promote fast operational facts into broader health/causal/control conclusions while slower evidence is pending.
 - Concrete monitoring-result latency targets are deferred to Phases 006/009/010/011.
 - Late evidence, source correction, independent conflict, reinterpretation, and later authority resolution remain distinct.
 - Dependent reevaluation is basis/materiality driven; closed Investigations may become review/reopen candidates but do not auto-reopen.
@@ -39,6 +39,20 @@ alwaysApply: true
 - `Primary` causal role requires comparative evidence.
 - RCA can mature progressively; speed or elapsed analysis time never upgrades causal status by itself.
 - Confirmed claims remain challengeable; later status change preserves historical confirmation and its evidence cut/standard/provenance.
+- **Exposure is encounter-specific.** Reachability, downstream timing, a run, or a refresh alone does not prove encounter with the affected state/version.
+- `Not exposed` requires sufficient negative-consumption and material-path coverage; missing consumer telemetry is not reassurance.
+- Safe-version use can be `not exposed to suspect V` while still stale; preserve inactivity, safe-version use, unknown-version encounter, unavailable evidence, and affected-version encounter separately.
+- **Readiness is criterion-relative.** Upstream execution success is not global readiness unless the criterion says completion alone is enough.
+- Keep completion, output existence, version/currentness, freshness, publication availability, and named quality predicates separate when the criterion requires them.
+- Readiness uncertainty may trigger configured fallback but never becomes `ready` merely because a fallback exists.
+- **Readiness result ≠ gate decision ≠ gate enforcement ≠ actual execution.**
+- A reliable downstream run during an applicable unoverridden hold contradicts full hold enforcement; an admit not followed by a run does not by itself prove admission failed.
+- Configured/enabled gate state or a decision emitted to an external control plane is not opportunity-specific enforcement proof.
+- **Safeguard proposal/configuration/request ≠ active/enforced safeguard.** Enforcement is boundary-, scope-, and time-specific.
+- `Safeguard active + consumer not exposed` is not automatically prevented exposure. Prevention requires materially operative enforcement plus sufficient negative-consumption/version and alternate-path coverage.
+- Blocking the suspect version does not prove current/fresh/healthy delivery.
+- Configured fallback policy does not prove actual fallback application/enforcement; missing control telemetry does not prove fail-open/fail-closed/success/failure.
+- Control-effect causal claims use the accepted causal status rules; direct mechanism evidence may be strong without bypassing broader alternative/coverage review.
 - Evidence sufficiency does not grant Capability Authorization or operational/confirmation authority.
 - Monitoring Scope, Responsibility Assignment, Policy Context, Classification, and Capability Authorization remain distinct.
 - Raw-data read, metadata/health visibility, Lineage/RCA participation, job-operation authority, safeguard authority, gate-control authority, and causal-confirmation authority remain independently resolvable.
@@ -48,22 +62,20 @@ alwaysApply: true
 - Execution Gate controls downstream start admission; Propagation Safeguard controls output/consumption propagation.
 - Gate hold ≠ execution failure; gate admission ≠ actual run occurrence; gate override ≠ prerequisite ready.
 - Missing readiness/control evidence ≠ ready. Do not invent a universal fail-open/fail-closed rule.
-- Gate-induced delay remains observable/assessable/Impact evidence; causal claims about that delay use the accepted causal status rules.
+- Gate-induced delay remains observable/assessable/Impact evidence; causal claims about that delay use accepted causal rules.
 - Authorized Analytical Projection is a view over independently authorized concept state, not a new truth concept or declassification mechanism.
 - Restricted raw-data access must not automatically block approved monitoring/RCA/Impact analysis over authorized derived evidence.
 - Derived evidence/metadata can itself be sensitive; use explicit authorized projection/redaction/opacity.
 - Investigation starts from outcome/question; Lineage yields candidates, not causes; first-observed localization is not root cause.
 - Impact candidate ≠ exposure ≠ downstream effect ≠ consequence ≠ causal attribution.
-- `Not exposed` requires sufficient negative evidence; missing consumer telemetry is not a reassuring negative.
 - Criticality/policy sensitivity does not manufacture actual Impact or compliance consequence.
-- Prevented exposure requires active/enforced safeguard evidence plus sufficient negative-consumption coverage.
-- Explanation consumes only authorized projected concept state and preserves statement-to-basis traceability and exact causal status.
+- Explanation consumes only authorized projected concept state and preserves statement-to-basis traceability, exact causal status, and exact control-evidence state.
 - **Historical replay uses event/effective time + recorded/knowledge cutoff.**
 - Current identity/topology/reference/governance/authorization/control state must not be projected backward.
 - Actual historical state/actions/Explanation remain distinct from replay-derived reconstruction.
-- Late/corrected evidence may change retrospective understanding without rewriting what was known then.
+- Late/corrected evidence may change retrospective readiness/exposure/enforcement/prevention/causal understanding without rewriting what was known or done then.
 - Actual historical gate/safeguard actions are not counterfactually replaced by what later evidence suggests should have happened.
-- Historical causal confirmation remains reconstructable even if the current claim status later changes.
+- Historical causal confirmation remains reconstructable even if current claim status later changes.
 - Historical authorization/control state is evidence about past capability but never overrides current requester disclosure authorization.
-- Do not begin Phase 004 Group 04 without explicit user request.
+- Do not begin Phase 004 Group 05 without explicit user request.
 - Never silently choose graph/event/temporal/ledger/quarantine/scheduler/orchestration/workflow/service/LLM/causal-algorithm/IAM architecture.

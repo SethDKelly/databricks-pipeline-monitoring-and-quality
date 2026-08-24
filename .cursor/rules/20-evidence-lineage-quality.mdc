@@ -11,22 +11,25 @@ Preserve:
 - Monitoring Scope ≠ Capability Authorization;
 - Responsibility Assignment ≠ Capability Authorization;
 - Policy Context ≠ Capability Authorization;
-- raw-data read authorization ≠ analytical visibility ≠ job-operation authority ≠ safeguard authority ≠ gate-control authority;
+- raw-data read authorization ≠ analytical visibility ≠ job-operation authority ≠ safeguard authority ≠ gate-control authority ≠ causal-confirmation authority;
 - authorized derived evidence ≠ unrestricted evidence;
 - Authorized Analytical Projection ≠ new truth/declassification mechanism;
 - passive monitoring ≠ active Execution Gate;
 - monitoring availability ≠ ungated production-job availability;
 - dependency readiness Assessment ≠ Execution Gate admission state;
+- readiness result ≠ gate decision ≠ gate enforcement ≠ actual execution;
 - Execution Gate ≠ Execution History ≠ Propagation Safeguard;
 - gate hold ≠ execution failure;
 - gate admission ≠ actual run occurrence;
 - gate override ≠ prerequisite ready;
-- missing readiness/control evidence ≠ ready;
+- configured fallback ≠ actual fallback application;
+- missing readiness/control evidence ≠ ready/enforced/fail-open/fail-closed;
 - permission to act ≠ action succeeded;
 - Change Intent ≠ Deployment ≠ realized Change;
 - prospective Impact ≠ actual Impact ≠ retrospective cause;
 - planned topology ≠ active Lineage;
 - successful execution ≠ timely execution ≠ freshness ≠ data quality;
+- successful upstream execution ≠ criterion-bound readiness;
 - Observation ≠ Assessment;
 - missing evidence ≠ observed absence;
 - raw difference ≠ material Change;
@@ -35,26 +38,37 @@ Preserve:
 - Investigation ≠ source evidence/causal truth;
 - Lineage reachability/evidence candidate ≠ cause;
 - first-observed localization ≠ root cause;
-- Causal Claim ≠ confirmed cause;
+- proposed Causal Claim ≠ supported Causal Claim ≠ confirmed cause;
+- leading hypothesis ≠ confirmed cause;
+- unresolved ≠ unevaluated/proposed;
+- rejected ≠ unsupported/lower-ranked;
 - absence of contradiction ≠ confirmation;
 - Investigation closure ≠ confirmation;
+- causal contribution ≠ primary cause ≠ percentage attribution;
+- one supported/confirmed contributor ≠ exclusion of compatible contributors;
 - Impact candidate/reachability ≠ exposure;
+- downstream run/refresh timing ≠ affected-state encounter;
+- no encounter opportunity ≠ no encounter ≠ safe-version encounter ≠ unknown-version encounter;
 - exposure ≠ downstream effect;
 - downstream effect ≠ consequence;
 - consequence ≠ causal attribution;
 - `not exposed` ≠ missing consumer telemetry;
+- `not exposed to suspect version` ≠ fresh/current/healthy;
 - criticality ≠ actual Impact;
-- safeguard proposal ≠ active/enforced safeguard;
+- safeguard proposal/configuration/request ≠ active/enforced safeguard;
+- safeguard enforcement at one boundary/path ≠ enforcement everywhere;
+- active safeguard + non-exposure ≠ automatically prevented exposure;
 - prevented exposure ≠ fresh/healthy delivery;
 - quarantine ≠ proof of defect;
 - release ≠ proof of health;
 - Annotation ≠ structured operational truth;
 - Explanation ≠ independent truth/authorization source;
-- effective/event time ≠ recorded/knowledge time;
+- effective/event time ≠ source availability time ≠ recorded/knowledge time ≠ derived evaluation time;
 - current state ≠ historical state cut;
 - later evidence ≠ evidence known then;
 - actual historical state ≠ replay-derived interpretation;
 - actual historical control action ≠ counterfactual preferred action;
+- actual historical enforcement/exposure conclusion ≠ later retrospective conclusion;
 - actual retained historical Explanation ≠ reconstructed historical Explanation;
 - historical authorization/control state ≠ current disclosure permission.
 
@@ -63,58 +77,74 @@ Rules:
 - Material conclusions remain traceable to provenance-bearing evidence.
 - Baseline monitoring should remain out-of-band/non-blocking and independently deployable where possible; monitoring degradation must not delay ungated production jobs.
 - Prefer Databricks/platform/source metadata over production-code/repository modifications when equivalent monitoring evidence is available externally.
+- Evidence sufficiency is conclusion-relative; applicability, bounded coverage, corroboration/conflict, and sufficiency remain distinct.
+- Negative/absence/exclusion conclusions require opportunity-to-observe plus sufficient bounded coverage; missing telemetry is not negative evidence.
+- Do not count copied/common-derived telemetry as independent corroboration or invent a universal evidence-confidence score.
 - Execution Gate is explicit opt-in active control; never infer an enabled gate from Lineage, schedule timing, or readiness Assessment.
-- A gate can use explicit prerequisite criteria such as qualifying completion/current-cycle output/freshness/version; successful upstream execution alone is not silently sufficient.
-- Gate hold/admission/override state belongs to Execution Gate; actual run state belongs to Execution History.
+- Bind readiness to the downstream opportunity, prerequisite set, explicit criterion/profile/version, current-cycle context, evidence cut, and evaluation time.
+- Keep execution completion, output existence, version/currentness, freshness, publication availability, and named quality predicates separate when the criterion requires them.
+- Successful upstream execution alone is sufficient only when the explicit criterion says so.
+- If a required readiness predicate is unknown/conflicting/unavailable, readiness remains so unless the criterion logically resolves otherwise; fallback can act on uncertainty but never turns it into readiness.
+- Gate readiness/evaluation, decision/action, opportunity-specific enforcement, and actual run state remain separate.
 - A held opportunity is not a failed run; admission is not proof the run occurred; override is not readiness.
-- Missing gate/readiness evidence is not automatically ready. Do not invent a universal fail-open/fail-closed behavior.
-- Gate timeout/fallback/escalation/override semantics must remain explicit and provenance-bearing.
+- Reliable downstream execution during an applicable unoverridden hold contradicts full hold enforcement.
+- Lack of a run supports hold enforcement only with sufficient execution-opportunity/history coverage.
+- An admitted opportunity that does not run does not prove admission failed because the gate only removes its own barrier.
+- A configured/enabled gate or emitted decision is not proof an external control plane enforced that decision for the specific opportunity.
+- Preserve control source unavailable, decision delivery unknown, enforcement unknown, enforcement contradicted, fallback configured, and fallback application known/unknown distinctly.
+- Missing gate/control telemetry does not prove success/failure/fail-open/fail-closed.
 - Gate-induced delay remains Observation/Assessment/Impact evidence; causal attribution to the gate uses Causal Claim.
 - Execution Gate protects start/admission; Propagation Safeguard protects output/consumption. Do not merge them.
 - Capability Authorization resolves principal/capability/subject/context/time without choosing IAM implementation.
-- Never infer authorization from policy applicability, responsibility, scope, technical ownership, or synchronization order.
+- Never infer authorization from policy applicability, responsibility, scope, technical ownership, synchronization order, or analyst/expert title.
+- Raw-data visibility, analytical visibility, job operation, safeguard action, gate control/override, and causal-confirmation capability remain independently resolvable.
 - An analyst denied raw data may still receive separately authorized aggregate/redacted/opaque health, timing, Lineage, governance, Investigation, causal, Impact, safeguard, gate, and Annotation context.
 - Metadata/derived evidence can itself be sensitive and must be independently authorized.
 - Restricted evidence is never retrieved merely to summarize it to an unauthorized audience.
-- Permission to operate a job, safeguard, or gate does not grant raw-data access; analytical visibility does not grant production-control authority.
-- Permission to act does not create Deployment/Execution/Observation facts.
+- Permission to act does not create Deployment/Execution/Observation/control-enforcement facts.
 - Treat execution timing/dependency latency as first-class evidence.
 - Assess runtime/data evidence against the correct time-valid Expectation/Baseline.
 - Ordinary variation must not become alert noise.
 - Investigation begins with a question/outcome and historical window.
 - Historical typed Lineage discovers evidence candidates only.
 - First-observed deviation is localization within monitoring coverage, not causal origin.
-- Assemble supporting and contradicting evidence; exclusion claims require sufficient coverage.
-- Make causal propositions explicit Causal Claims.
-- Multiple contributing claims and unresolved Investigations are valid.
-- `confirmed` requires an accepted evidence/authority standard; automated ranking cannot manufacture it.
-- Historical downstream traversal yields Impact candidates only.
-- Exposure requires actual encounter/consumption evidence; temporal adjacency or reachability alone is insufficient.
-- `Not exposed` requires adequate negative consumption/refresh/version coverage.
-- Downstream Observation/Assessment/Change may establish effect even when exposure is unresolved.
-- Exposure does not automatically imply downstream degradation.
+- Make causal propositions explicit Causal Claims with bound cause/effect/role/context/time/mechanism assumptions.
+- Use `proposed`, `supported`, `weakened`, `unresolved`, `rejected`, `confirmed`; preserve exact status in Explanation.
+- `Rejected` requires sufficient contradiction/exclusion evidence; `confirmed` requires the applicable claim-class evidence profile plus independently resolved confirmation authority.
+- Multiple compatible contributors and unresolved Investigations are valid; never force one root cause or infer percentage attribution.
+- Exposure propositions bind affected state/version/window, consumer, historical relationship, encounter mode, and consumer opportunity.
+- Exposure requires actual encounter/consumption evidence; temporal adjacency, reachability, a downstream run, or a refresh alone is insufficient.
+- `Not exposed` requires adequate negative consumption/version and material-path coverage.
+- Preserve no encounter opportunity, no encounter, safe-version encounter, unknown-version encounter, unavailable/restricted evidence, and affected-state encounter separately.
+- Safe-version use can support non-exposure to suspect V while separately being stale.
+- Downstream Observation/Assessment/Change may establish effect even when exposure is unresolved; exposure does not automatically imply degradation.
 - Consequence evidence is separate from criticality, exposure, and policy sensitivity.
 - Any origin/gate/safeguard→downstream-effect/consequence assertion belongs in Causal Claim.
-- Active/enforced Propagation Safeguard plus sufficient negative-consumption coverage can support prevented exposure.
-- Blocked suspect-version exposure does not prove downstream freshness/health.
-- Safeguard-induced delay remains separate operational effect/consequence; causal attribution to safeguard uses Causal Claim.
+- Bind safeguard enforcement to the protected subject/output/missing-output context, exact boundary, consumer/path scope, interval, state/action, evidence source, and knowledge time.
+- Safeguard proposal/configuration/activation request/operator intent is not enforcement proof.
+- Enforcement at one route does not imply alternate routes are protected.
+- `Prevented exposure` requires materially operative enforced safeguard state, relevant encounter/control opportunity or equivalent materiality, sufficient negative-consumption/version evidence, and adequate alternate-path coverage.
+- `Safeguard active + consumer not exposed` is not automatically prevention when the safeguard was incidental or no relevant encounter opportunity existed.
+- Blocked suspect-version exposure does not prove downstream freshness/health; older state/non-delivery remains separately assessable.
+- Safeguard-induced delay remains separate operational effect/consequence; causal attribution uses Causal Claim.
 - Human Annotation remains attributed context; structured truths belong to their owning concepts.
 - Explanation composes only from the Authorized Analytical Projection; it cannot query hidden evidence for narrative completion.
-- Explanation preserves statement-to-basis traceability, Impact layers, gate/safeguard state, causal status, redaction, and temporal perspective.
+- Explanation preserves statement-to-basis traceability, Impact layers, readiness/control enforcement state, exact causal status, redaction, and temporal perspective.
+- Never translate `configured/requested` into `enforced`, or `not exposed to suspect V` into `healthy/current`.
 
 Historical replay rules:
 
-- Select an explicit event/effective-time target or window and recorded/knowledge cutoff for `as-known` historical questions.
-- Resolve each concept using only state/evidence available by the cutoff; current state is never used as a shortcut for historical state.
+- Select an explicit event/effective-time target/window and recorded/knowledge cutoff for `as-known` questions.
+- Resolve each concept using only state/evidence available by the cutoff; current state is never a shortcut for historical state.
 - Evidence recorded later but effective earlier is excluded from a contemporaneous cut and may enter a later retrospective cut.
 - Distinguish actual recorded historical state from present replay-derived interpretation.
-- A replay-derived Assessment, claim, Impact conclusion, or Explanation does not prove the same interpretation actually existed historically.
-- New/corrected evidence may create later retrospective Assessment/Change/Causal Claim/Impact/Explanation state without deleting prior knowledge.
-- Do not rewrite actual historical gate/safeguard actions based on later evidence; replay is not counterfactual control substitution.
+- A replay-derived Assessment, claim, Impact, readiness/enforcement/exposure conclusion, or Explanation does not prove the same interpretation actually existed historically.
+- New/corrected evidence may create later retrospective Assessment/Change/Causal Claim/Impact/readiness/enforcement/exposure/Explanation state without deleting prior knowledge.
+- Do not rewrite actual historical gate/safeguard actions or Execution History based on later evidence; replay is not counterfactual control substitution.
 - Do not backfill later realized Lineage/Impact/causal evidence into earlier Prospective Impact knowledge.
 - If no retained historical Explanation exists, label a current `as-known-then` answer as reconstruction rather than historical communication.
 - Historical Capability Authorization may be reconstructed as evidence; current requester authorization still governs current disclosure.
-- Restricted/opaque evidence remains restricted/opaque through replay and is never described as absent merely because the current requester cannot see it.
+- Restricted/opaque evidence remains restricted/opaque through replay and is never described as absent merely because the requester cannot see it.
 - Partial, unknown, conflicting, unavailable, and authorization-limited replay remain valid outcomes.
 
 Do not select IAM, graph database, temporal/event store, quarantine store, scheduler/orchestrator, gate implementation, persistence architecture, LLM, causal algorithm, or technical architecture from these semantics alone.

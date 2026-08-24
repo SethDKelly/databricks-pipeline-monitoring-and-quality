@@ -4,7 +4,7 @@ The `docs/` tree is the system of record for product and design decisions in thi
 
 ## Current state
 
-**Phase 003 — Concept Synchronizations and Ecosystem Scenarios is complete. Phase 004 — Evidence, Time, and Causality Refinement is active. Groups 01–03 are accepted; Group 04 — Exposure, Consumption, Readiness & Control Evidence is next.**
+**Phase 003 — Concept Synchronizations and Ecosystem Scenarios is complete. Phase 004 — Evidence, Time, and Causality Refinement is active. Groups 01–04 are accepted; Group 05 — Consolidation / Exit Review is next.**
 
 The original Phase 002 catalog contained 20 concepts. Three post-exit addenda are accepted:
 
@@ -12,7 +12,7 @@ The original Phase 002 catalog contained 20 concepts. Three post-exit addenda ar
 2. **Capability Authorization**;
 3. **Execution Gate**.
 
-The current catalog contains **23 accepted concepts**. Phase 003 contains accepted **SYN-001–SYN-035** and E-01–E-22 pass the Group 06 replay/consolidation review. Phase 004 contains accepted **REF-001–REF-020** through Groups 01–03.
+The current catalog contains **23 accepted concepts**. Phase 003 contains accepted **SYN-001–SYN-035** and E-01–E-22 pass the Group 06 replay/consolidation review. Phase 004 contains accepted **REF-001–REF-030** through Groups 01–04.
 
 ## Reading order
 
@@ -25,8 +25,8 @@ The current catalog contains **23 accepted concepts**. Phase 003 contains accept
 7. [`foundation/006_security_governance_and_policy_model.md`](foundation/006_security_governance_and_policy_model.md) — security/governance/authorization foundation.
 8. [`foundation/007_ecosystem_lifecycles.md`](foundation/007_ecosystem_lifecycles.md) — functional lifecycles.
 9. [`foundation/008_mvp_boundary.md`](foundation/008_mvp_boundary.md) — MVP boundary.
-10. [`foundation/009_initial_roadmap.md`](foundation/009_initial_roadmap.md) — roadmap/current phase, including progressive monitoring/RCA timing handoffs.
-11. [`foundation/010_open_questions.md`](foundation/010_open_questions.md) — unresolved choices, including concrete monitoring-result availability/latency targets and later authority/integration questions.
+10. [`foundation/009_initial_roadmap.md`](foundation/009_initial_roadmap.md) — roadmap/current phase, including progressive monitoring/RCA/control timing handoffs.
+11. [`foundation/010_open_questions.md`](foundation/010_open_questions.md) — unresolved choices, including later authority, health timing, control policy, integration, and architecture questions.
 12. [`concepts/README.md`](concepts/README.md) — 23-concept catalog.
 13. [`concepts/phase_002/README.md`](concepts/phase_002/README.md) — original concept review + addenda history.
 14. [`concepts/phase_002/addenda/`](concepts/phase_002/addenda/) — Propagation Safeguard, Capability Authorization, and Execution Gate.
@@ -40,18 +40,21 @@ The current catalog contains **23 accepted concepts**. Phase 003 contains accept
 22. [`concepts/phase_004/01_evidence_sufficiency_and_coverage/README.md`](concepts/phase_004/01_evidence_sufficiency_and_coverage/README.md) — accepted Group 01 evidence applicability/coverage/sufficiency framework.
 23. [`concepts/phase_004/02_event_time_knowledge_cut_and_correction/README.md`](concepts/phase_004/02_event_time_knowledge_cut_and_correction/README.md) — accepted Group 02 temporal evidence, progressive analytical availability, correction, and reconstruction framework.
 24. [`concepts/phase_004/03_causal_epistemics_confirmation/README.md`](concepts/phase_004/03_causal_epistemics_confirmation/README.md) — accepted Group 03 causal epistemics/confirmation/multiple-contributor framework.
-25. [`concepts/phase_004/04_exposure_consumption_readiness_control/README.md`](concepts/phase_004/04_exposure_consumption_readiness_control/README.md) — next Group 04 handoff; not started.
-26. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
-27. [`decisions/README.md`](decisions/README.md) — D-001–D-039.
-28. [`decisions/phase_003_group_03_runtime_health_and_safeguard.md`](decisions/phase_003_group_03_runtime_health_and_safeguard.md) — D-040–D-046.
-29. [`decisions/phase_003_group_04_lineage_investigation_causality.md`](decisions/phase_003_group_04_lineage_investigation_causality.md) — D-047–D-055.
-30. [`decisions/pre_group_05_capability_authorization.md`](decisions/pre_group_05_capability_authorization.md) — D-056–D-060.
-31. [`decisions/phase_003_group_05_impact_annotation_explanation.md`](decisions/phase_003_group_05_impact_annotation_explanation.md) — D-061–D-070.
-32. [`decisions/pre_group_06_execution_gating.md`](decisions/pre_group_06_execution_gating.md) — D-071–D-078.
-33. [`decisions/phase_003_group_06_historical_replay_and_exit.md`](decisions/phase_003_group_06_historical_replay_and_exit.md) — D-079–D-088.
-34. [`decisions/phase_004_group_01_evidence_sufficiency_and_coverage.md`](decisions/phase_004_group_01_evidence_sufficiency_and_coverage.md) — D-089–D-097.
-35. [`decisions/phase_004_group_02_time_knowledge_correction.md`](decisions/phase_004_group_02_time_knowledge_correction.md) — D-098–D-110.
-36. [`decisions/phase_004_group_03_causal_epistemics_confirmation.md`](decisions/phase_004_group_03_causal_epistemics_confirmation.md) — D-111–D-123.
+25. [`concepts/phase_004/04_exposure_consumption_readiness_control/README.md`](concepts/phase_004/04_exposure_consumption_readiness_control/README.md) — accepted Group 04 exposure/readiness/control evidence framework.
+26. [`concepts/phase_004/04_exposure_consumption_readiness_control/scenario_checks.md`](concepts/phase_004/04_exposure_consumption_readiness_control/scenario_checks.md) — Group 04 stress checks.
+27. [`concepts/phase_004/05_consolidation_and_exit/README.md`](concepts/phase_004/05_consolidation_and_exit/README.md) — next Group 05 handoff; not started.
+28. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
+29. [`decisions/README.md`](decisions/README.md) — D-001–D-039.
+30. [`decisions/phase_003_group_03_runtime_health_and_safeguard.md`](decisions/phase_003_group_03_runtime_health_and_safeguard.md) — D-040–D-046.
+31. [`decisions/phase_003_group_04_lineage_investigation_causality.md`](decisions/phase_003_group_04_lineage_investigation_causality.md) — D-047–D-055.
+32. [`decisions/pre_group_05_capability_authorization.md`](decisions/pre_group_05_capability_authorization.md) — D-056–D-060.
+33. [`decisions/phase_003_group_05_impact_annotation_explanation.md`](decisions/phase_003_group_05_impact_annotation_explanation.md) — D-061–D-070.
+34. [`decisions/pre_group_06_execution_gating.md`](decisions/pre_group_06_execution_gating.md) — D-071–D-078.
+35. [`decisions/phase_003_group_06_historical_replay_and_exit.md`](decisions/phase_003_group_06_historical_replay_and_exit.md) — D-079–D-088.
+36. [`decisions/phase_004_group_01_evidence_sufficiency_and_coverage.md`](decisions/phase_004_group_01_evidence_sufficiency_and_coverage.md) — D-089–D-097.
+37. [`decisions/phase_004_group_02_time_knowledge_correction.md`](decisions/phase_004_group_02_time_knowledge_correction.md) — D-098–D-110.
+38. [`decisions/phase_004_group_03_causal_epistemics_confirmation.md`](decisions/phase_004_group_03_causal_epistemics_confirmation.md) — D-111–D-123.
+39. [`decisions/phase_004_group_04_exposure_readiness_control.md`](decisions/phase_004_group_04_exposure_readiness_control.md) — D-124–D-139.
 
 ## Documentation discipline
 
@@ -71,7 +74,7 @@ The current catalog contains **23 accepted concepts**. Phase 003 contains accept
 - Source availability does not imply framework knowledge; current retrieval of an old source fact does not backdate knowledge.
 - `Known by`, `learned after`, `not recorded by`, `not known by`, and `not available by` have different evidence standards.
 - Monitoring/reasoning results may mature progressively from immediate operational validation through enriched health, RCA, and post-operations review.
-- A faster narrow result must not be promoted into broader health/causal truth while slower evidence is pending.
+- A faster narrow result must not be promoted into broader health/causal/control truth while slower evidence is pending.
 - Concrete monitoring-result latency objectives remain deferred to Phases 006/009/010/011.
 - Late evidence, source correction, independent conflict, reinterpretation, and later authority resolution remain distinct.
 - Dependent reevaluation is basis/materiality driven; closed Investigations can become review/reopen candidates without automatic reopening.
@@ -85,6 +88,20 @@ The current catalog contains **23 accepted concepts**. Phase 003 contains accept
 - `Primary` is a comparative causal-role claim and requires comparative evidence; qualitative roles never imply percentage attribution.
 - RCA may mature progressively; speed or duration never upgrades causal status by itself.
 - Confirmed claims remain challengeable by materially new evidence while historical confirmation remains reconstructable.
+- Exposure is bound to an affected state/version/window, consumer, encounter mode, and opportunity; reachability/timing/activity alone are insufficient.
+- `Not exposed` requires sufficient negative consumption and material path coverage; missing consumer telemetry never becomes non-exposure.
+- Safe-version use can be non-exposure to the suspect version while still stale; inactivity, safe-version use, unknown version, unavailable evidence, and affected-version encounter remain distinct.
+- Readiness is criterion-relative; successful upstream execution is not global readiness.
+- Execution completion, output existence, version/currentness, freshness, publication availability, and named quality predicates remain separate when a criterion uses them.
+- Fallback may act on unknown readiness but does not convert the prerequisite into `ready`.
+- Gate readiness result, gate decision, gate enforcement, and actual Execution History remain separate.
+- A reliable run during an applicable unoverridden hold contradicts full hold enforcement; an admitted opportunity that never runs does not by itself prove admission failed.
+- Configured/enabled gate state does not prove opportunity-specific enforcement.
+- Safeguard proposal/configuration/request is not enforced active state; safeguard enforcement is boundary-, scope-, and time-specific.
+- Prevented exposure requires materially operative safeguard enforcement plus sufficient negative-consumption/version and alternate-path coverage.
+- Blocking a suspect version does not prove fresh/healthy downstream delivery.
+- Configured fallback policy does not prove actual fallback application/enforcement; degraded control telemetry remains explicit.
+- Control-effect causal claims use the accepted causal framework; direct mechanism evidence may be strong without bypassing broader alternative/coverage review.
 - Evidence sufficiency does not grant disclosure or production-control authority.
 - Monitoring Scope, Responsibility Assignment, Policy Context, and Capability Authorization remain distinct.
 - Raw-data read, metadata/health analysis, Lineage/RCA, job-operation, safeguard-control, gate-control/override, and causal-confirmation capabilities remain distinct.
@@ -95,13 +112,6 @@ The current catalog contains **23 accepted concepts**. Phase 003 contains accept
 - Baseline monitoring should prefer framework deployment independent of production ETL repositories/GitHub Actions when platform metadata is sufficient.
 - **Execution Gate is explicit opt-in active control**, not an automatic effect of Lineage, schedules, or readiness Assessment.
 - Execution Gate start/admission control remains separate from Execution History and Propagation Safeguard output/consumption control.
-- `held` is not execution failure; `admitted` is not actual run occurrence; `override` is not readiness.
-- Missing gate/readiness evidence is not automatically ready; fallback/timeout/override semantics must be explicit.
-- Gate-induced delay remains observable/assessable/Impact evidence.
-- Impact candidate/reachability, exposure, downstream effect, consequence, and causal attribution remain distinct.
-- `Not exposed` requires sufficient negative evidence; missing telemetry never becomes non-exposure.
-- Criticality/policy sensitivity can affect priority/handling but not manufacture actual Impact or compliance consequence.
-- Prevented exposure requires active/enforced safeguard evidence plus sufficient negative-consumption coverage.
 - Annotation remains attributed human context, not hidden structured truth.
 - Explanation consumes only authorized projected evidence and preserves statement-to-basis/epistemic/redaction/control/temporal context.
 - **Historical replay uses event/effective time + recorded/knowledge cutoff.**

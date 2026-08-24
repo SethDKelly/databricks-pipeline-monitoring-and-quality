@@ -18,9 +18,9 @@ The current catalog contains **23 accepted concepts**.
 
 **Groups 01–06 are accepted. The accepted synchronization range is SYN-001–SYN-035, and E-01–E-22 pass end-to-end historical/consolidation review.**
 
-**Phase 004 — Evidence, Time, and Causality Refinement is ACTIVE. Groups 01–03 are accepted with REF-001–REF-020. Group 04 — Exposure, Consumption, Readiness & Control Evidence is next and has not started.**
+**Phase 004 — Evidence, Time, and Causality Refinement is ACTIVE. Groups 01–04 are accepted with REF-001–REF-030. Group 05 — Consolidation / Exit Review is next and has not started.**
 
-Phase 004 Group 01 defines common evidence applicability/coverage/sufficiency rules. Group 02 defines exact temporal knowledge-cut, correction, and progressive analytical-availability semantics. Group 03 defines causal proposition/status, confirmation, multiple-contributor, progressive-RCA, and post-confirmation challenge semantics.
+Phase 004 Group 01 defines common evidence applicability/coverage/sufficiency rules. Group 02 defines exact temporal knowledge-cut, correction, and progressive analytical-availability semantics. Group 03 defines causal proposition/status, confirmation, multiple-contributor, progressive-RCA, and post-confirmation challenge semantics. Group 04 defines exposure/non-exposure, criterion-bound readiness, gate/safeguard enforcement, prevented-exposure, degraded-control, and control-effect evidence standards.
 
 ## Product thesis
 
@@ -85,6 +85,30 @@ Phase 004 does not grant confirmation authority. Neither a human title nor an au
 The model does not require one root cause. B population decline and join-key degradation can both remain supported or confirmed contributors when compatible. `Primary` is a stronger comparative claim requiring comparative evidence, and qualitative causal roles never imply percentage attribution.
 
 Confirmed claims remain challengeable. Later corrected evidence can change the current status while preserving who/what confirmed the earlier claim, under which standard and evidence cut.
+
+## Exposure, readiness, and control proof are evidence-layered
+
+Phase 004 Group 04 makes control and downstream encounter evidence as explicit as causal evidence.
+
+For downstream exposure, the framework binds the **affected state/version/window**, downstream candidate, historical relationship, encounter mode, and consumer opportunity. Reachability, timing overlap, or a downstream run/refresh alone do not establish that the affected state was consumed.
+
+`Not exposed` is a negative conclusion requiring sufficient coverage of the relevant encounter paths. A consumer may be **not exposed to the suspect version while still stale** because it refreshed from an earlier safe state. `No encounter opportunity`, `no encounter`, `safe-version encounter`, `unknown-version encounter`, unavailable/restricted evidence, and actual affected-state encounter remain distinct.
+
+Readiness is also criterion-relative. `Upstream job succeeded` is not global readiness unless completion is the entire declared criterion. A gate can explicitly require completion, qualifying output existence, expected version/current-cycle state, freshness, publication availability, or named quality conditions. Unknown required evidence remains unknown; a fallback can govern the control response but cannot turn the prerequisite into `ready`.
+
+Control evidence is layered:
+
+**readiness result ≠ gate decision ≠ gate enforcement ≠ actual downstream execution**
+
+and:
+
+**safeguard proposal/configuration/request ≠ enforced active safeguard ≠ prevented exposure**.
+
+A reliable downstream run during an applicable unoverridden hold contradicts full hold enforcement. By contrast, an admitted opportunity that never runs does not prove admission failed because the gate only removes its own barrier. Safeguard enforcement is specific to the protected boundary, consumer/path scope, and time; protection at one boundary does not silently prove all alternate paths were blocked.
+
+`Prevented exposure` requires more than `safeguard active + consumer not exposed`: the safeguard must have been materially operative on the relevant encounter path, with sufficient negative consumption/version and alternate-path coverage. Blocking the suspect version does not prove the downstream result is current, fresh, or healthy.
+
+Configured fallback behavior describes intended unavailable-state control semantics; actual fallback application/enforcement requires evidence. Missing control telemetry never proves fail-open, fail-closed, success, or failure.
 
 ## Passive monitoring should not become production overhead
 
@@ -162,7 +186,7 @@ Group 05 rejects a generic `affected` flag. For every downstream subject the mod
 
 A high-criticality or client-facing report can warrant immediate attention while remaining only reachable. Conversely, a downstream effect can be observed while consumed-version evidence remains insufficient. The model preserves these disagreements rather than forcing one `impact` answer.
 
-An enforced safeguard can establish **prevented exposure** when enforcement and negative-consumption evidence are sufficient. Preventing suspect-state exposure does not prove downstream delivery was fresh/healthy; the hold may itself create a separate delay/non-delivery consequence.
+An enforced safeguard can establish **prevented exposure** when the Group 04 material-control and negative-consumption/path evidence standard is satisfied. Preventing suspect-state exposure does not prove downstream delivery was fresh/healthy; the hold may itself create a separate delay/non-delivery consequence.
 
 ## Historical replay is bitemporal and non-rewriting
 
@@ -201,7 +225,9 @@ The system should ultimately make questions like these straightforward to answer
 - What evidence coverage supports saying it ran—or did not run?
 - Is a run slower than usual or violating a completion/readiness requirement?
 - Was the required upstream state actually ready before this downstream run started?
+- Which readiness predicates are satisfied, failed, or still unknown?
 - Is the evidence sufficient for `upstream job completed` only, or also for `current qualifying output was available`?
+- Is a gate merely configured, did it issue a decision, and was that decision actually enforced for this execution opportunity?
 - Is the job merely being monitored, or is an explicit dependency gate active?
 - If a gate is holding the run, what prerequisite is unmet, what evidence supports that, and what timeout/fallback/override semantics apply?
 - What monitoring/health result is available now, what evidence is still pending, and what later analytical horizon should enrich it?
@@ -214,8 +240,12 @@ The system should ultimately make questions like these straightforward to answer
 - Are multiple contributors compatible, and is there enough comparative evidence to call any contributor primary?
 - What evidence is truly independent corroboration versus copied/common-source telemetry?
 - Which downstream assets are merely reachable, actually exposed, visibly affected, or tied to evidenced business consequence?
-- Does `not exposed` have sufficient negative consumption coverage, or is consumer telemetry simply missing?
-- Did a safeguard actually prevent a suspect state from reaching a consumer, and did the safeguard create a separate delay?
+- Did this consumer actually encounter the affected version, an earlier safe version, or an unresolved version?
+- Does `not exposed` have sufficient negative consumption and alternate-path coverage, or is consumer telemetry simply missing?
+- Was a safeguard merely proposed/requested or actually enforced at the relevant boundary?
+- Did a safeguard materially prevent exposure, or did non-exposure occur for another reason/no encounter opportunity?
+- Did protection block the suspect version while still leaving an older stale version served?
+- What control/fallback behavior was configured, and what evidence shows what actually happened during a control outage?
 - What policy/restriction context applies and who is responsible?
 - What can this analyst see, investigate, operate, gate, confirm, or override without direct-data access?
 - What is intentionally hidden/redacted, and how does that limit the visible basis without changing internal evidence sufficiency?
@@ -252,29 +282,34 @@ These are environmental facts, not implementation architecture. The monitoring f
 11. **Baseline monitoring prefers production-repository independence.**
 12. **Execution gating is explicit opt-in control, not an automatic effect of monitoring or Lineage.**
 13. **Execution Gate is separate from Execution History and Propagation Safeguard.**
-14. **Lineage discovers relationships/candidates, not cause.**
-15. **First-observed localization is not root cause.**
-16. **Causal propositions and epistemic status remain explicit.**
-17. **Leading/supported hypothesis is not confirmed cause.**
-18. **Multiple contributors and unresolved outcomes are valid; one root cause is not required.**
-19. **Causal contribution does not imply percentage attribution; primary cause requires comparative evidence.**
-20. **Confirmed causes require an explicit evidence profile/standard plus separately resolved confirmation authority.**
-21. **Confirmed claims remain challengeable without rewriting historical confirmation.**
-22. **Prospective Impact is not actual Impact or retrospective cause.**
-23. **Actual Impact is layered: candidate ≠ exposure ≠ effect ≠ consequence ≠ causal attribution.**
-24. **Criticality influences priority, not evidence strength.**
-25. **Propagation Safeguard is protective state, not defect proof; prevented exposure requires enforcement evidence.**
-26. **Capability Authorization is separate from policy, responsibility, scope, and enforcement.**
-27. **Raw-data access is separate from analytical visibility, operational control, and causal-confirmation authority.**
-28. **Analyst Investigation remains first-class even with restricted evidence.**
-29. **Annotation is attributed context, not a shadow truth store.**
-30. **Explanation consumes the authorized analytical projection; it is not a truth or authorization source.**
-31. **Actual historical state remains distinct from replay-derived reconstruction.**
-32. **Late evidence can revise retrospective knowledge without rewriting what was known then.**
-33. **Actual historical control actions are not counterfactually rewritten.**
-34. **Historical authorization is not current disclosure permission.**
-35. **Monitoring must not broaden raw-data or production-control authority.**
-36. **Databricks-native first where it fits; integrate before duplicate.**
+14. **Readiness is criterion-relative; successful execution is not global readiness.**
+15. **Gate decision is not gate enforcement or actual execution.**
+16. **Safeguard proposal/request is not enforced active protection.**
+17. **Prevented exposure requires material enforced control plus sufficient negative/path coverage.**
+18. **Lineage discovers relationships/candidates, not cause.**
+19. **First-observed localization is not root cause.**
+20. **Causal propositions and epistemic status remain explicit.**
+21. **Leading/supported hypothesis is not confirmed cause.**
+22. **Multiple contributors and unresolved outcomes are valid; one root cause is not required.**
+23. **Causal contribution does not imply percentage attribution; primary cause requires comparative evidence.**
+24. **Confirmed causes require an explicit evidence profile/standard plus separately resolved confirmation authority.**
+25. **Confirmed claims remain challengeable without rewriting historical confirmation.**
+26. **Prospective Impact is not actual Impact or retrospective cause.**
+27. **Actual Impact is layered: candidate ≠ exposure ≠ effect ≠ consequence ≠ causal attribution.**
+28. **Non-exposure requires negative consumption/path evidence; missing telemetry is not reassurance.**
+29. **Criticality influences priority, not evidence strength.**
+30. **Propagation Safeguard is protective state, not defect proof.**
+31. **Capability Authorization is separate from policy, responsibility, scope, and enforcement.**
+32. **Raw-data access is separate from analytical visibility, operational control, and causal-confirmation authority.**
+33. **Analyst Investigation remains first-class even with restricted evidence.**
+34. **Annotation is attributed context, not a shadow truth store.**
+35. **Explanation consumes the authorized analytical projection; it is not a truth or authorization source.**
+36. **Actual historical state remains distinct from replay-derived reconstruction.**
+37. **Late evidence can revise retrospective knowledge without rewriting what was known then.**
+38. **Actual historical control actions are not counterfactually rewritten.**
+39. **Historical authorization is not current disclosure permission.**
+40. **Monitoring must not broaden raw-data or production-control authority.**
+41. **Databricks-native first where it fits; integrate before duplicate.**
 
 ## Canonical A+B→C scenario
 
@@ -288,13 +323,13 @@ A supported claim can be useful before confirmation. `Confirmed` requires the ap
 
 A business analyst may conduct that investigation without being allowed to inspect A/B/C rows. The analyst can use authorized aggregate health metrics, runtime timing, safe Lineage, policy/restriction context, responsibility metadata, causal status, Impact, safeguard/gate state, and Annotation. Restricted nodes/evidence remain opaque rather than being retrieved and summarized behind the user's permission boundary.
 
-Before C runs, an optional Execution Gate could require the current A and B outputs to be ready. If B is late, C may be held instead of blindly joining A-current + B-stale. The hold may prevent stale recomputation while also threatening C's completion/client-delivery deadline. If no gate is enabled, monitoring remains observational and C proceeds according to its existing production schedule/orchestration.
+Before C runs, an optional Execution Gate could require the current A and B outputs to be ready. If B is late, C may be held instead of blindly joining A-current + B-stale. If the criterion requires B's current output and freshness, a successful B run alone does not satisfy the gate. A hold decision is still distinct from evidence that the external control actually suppressed C. If reliable Execution History shows C started during an unoverridden hold, full hold enforcement is contradicted. If the gate admits C but C never starts, admission can still be valid because another scheduler/compute condition may have prevented execution.
 
-Downstream, a Metric View and two reports may all be reachable. Version/refresh evidence can establish that one report consumed the affected C output, another did not, and a third remains exposure-unknown. A report's own metric failure is observed downstream effect; a client delivery/decision consequence requires separate evidence; saying C caused that effect requires Causal Claim.
+Downstream, a Metric View and two reports may all be reachable. Version/refresh evidence can establish that one report consumed the affected C output, another refreshed from an earlier safe version, and a third remains exposure-unknown. The safe-version report can be `not exposed to affected V` while still stale. A report's own metric failure is observed downstream effect; a client delivery/decision consequence requires separate evidence; saying C caused that effect requires Causal Claim.
 
-If an enforced safeguard blocks the suspect version before a client report refreshes, Impact may establish prevented exposure while still assessing any delivery lateness caused by the hold. A separate Causal Claim evaluates whether the safeguard contributed to that delay; direct enforcement evidence can support that proposition strongly without implying the underlying data was defective.
+If an enforced safeguard blocks the suspect version before a client report refreshes, Impact may establish prevented exposure only when the safeguard was materially operative on the encounter path and negative-consumption/alternate-path coverage is sufficient. If the report never had a relevant refresh opportunity, the correct statement may instead be `safeguard active; consumer not exposed`, without claiming the safeguard prevented exposure. Any older state still being served remains separately assessed for freshness.
 
-If downstream consumption or corrected timing evidence arrives late, the historical incident-time view remains what was known then while current causal/Impact status may change. A historically confirmed claim can later be challenged without erasing that it had been confirmed at the earlier knowledge cut.
+If downstream consumption, enforcement, or corrected timing evidence arrives late, the historical incident-time view remains what was known then while current readiness/exposure/prevention/causal status may change. Actual historical gate/safeguard decisions and executions are never rewritten.
 
 ## Repository map
 
@@ -309,4 +344,4 @@ If downstream consumption or corrected timing evidence arrives late, the histori
 
 ## Phase direction
 
-**Phase 004 is active. Groups 01–03 are accepted with REF-001–REF-020. Group 04 — Exposure, Consumption, Readiness & Control Evidence is next and has not started.** Group 04 will specialize the accepted evidence/time/causal standards for exposure/non-exposure, qualifying upstream readiness, gate decision versus enforcement, safeguard enforcement/prevented exposure, unavailable/degraded control evidence, and causal use of direct control-mechanism evidence before Phase 004 consolidation.
+**Phase 004 is active. Groups 01–04 are accepted with REF-001–REF-030. Group 05 — Consolidation / Exit Review is next and has not started.** Group 05 will verify that evidence applicability/coverage, temporal replay, causal confirmation, exposure/non-exposure, criterion-bound readiness, gate/safeguard enforcement, degraded-control, and progressive-result semantics compose across the accepted ecosystem scenarios before Phase 004 exits.

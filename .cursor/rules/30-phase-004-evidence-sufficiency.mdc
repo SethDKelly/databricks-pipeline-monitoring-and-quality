@@ -6,7 +6,7 @@ alwaysApply: true
 
 # Phase 004 evidence sufficiency rules
 
-Status: **Phase 004 Group 01 accepted — REF-001–REF-005. Groups 02–03 refinements are also accepted in their separate Phase 004 rules; Group 04 is next and not started.**
+Status: **Phase 004 Group 01 accepted — REF-001–REF-005. Groups 02–04 refinements are also accepted in their separate Phase 004 rules; Group 05 is next and not started.**
 
 Preserve:
 
@@ -36,6 +36,6 @@ Rules:
 - Do not invent a universal trust/confidence score.
 - Sufficiency evaluation may resolve sufficient, insufficient, conflicting/indeterminate, non-applicable/non-comparable, unavailable, or unknown for the specified conclusion.
 - A safe authorized result may hide restricted basis detail; if the framework itself cannot access required evidence, the basis remains unavailable/insufficient.
-- Later Phase 004 groups must specialize these rules rather than bypass them for historical knowledge, causality, exposure/non-exposure, gate readiness/enforcement, or safeguard prevention.
+- Later Phase 004 work must specialize these rules rather than bypass them for historical knowledge, causality, exposure/non-exposure, gate readiness/enforcement, safeguard prevention, or Phase 004 consolidation.
 
-Do not begin Phase 004 Group 04 without explicit user request.
+Do not begin Phase 004 Group 05 without explicit user request.

@@ -102,6 +102,12 @@ Timing relationship among upstream execution/output availability and downstream 
 ### Dependency readiness
 Evidence-backed state describing whether an explicitly relevant upstream prerequisite satisfies the readiness criterion required for a downstream context. The criterion may involve execution completion, current-cycle output availability, freshness, expected version, or another accepted condition. Dependency readiness is not automatically an Execution Gate decision.
 
+### Readiness criterion / profile
+The explicit set of prerequisite conditions that must be satisfied for a particular downstream/gate context. It may include execution completion, qualifying output existence, expected version/currentness, freshness, publication availability, or named quality/Assessment conditions. No upstream asset is globally `ready`; readiness is relative to the applicable criterion/profile and execution opportunity.
+
+### Readiness predicate
+One independently evaluable condition inside a readiness criterion, such as `execution completed`, `qualifying output exists`, `required version is current`, or `freshness requirement satisfied`. Predicates do not substitute for each other unless the criterion explicitly defines that logic.
+
 ### Freshness / Staleness
 Freshness is observed currency/timeliness. Staleness is a normative Assessment that observed freshness violates an applicable freshness Expectation.
 
@@ -135,7 +141,7 @@ When the monitoring framework retrieved/received the evidence.
 When the evidence/assertion became part of the framework knowledge state usable for reasoning/replay. Current retrieval of an older source fact does not backdate framework knowledge.
 
 ### Derived evaluation time
-When an Assessment, causal evaluation, Impact determination, Explanation, or other derived reasoning result was produced. Framework knowledge of source evidence may precede derived evaluation.
+When an Assessment, causal evaluation, Impact determination, readiness/enforcement conclusion, Explanation, or other derived reasoning result was produced. Framework knowledge of source evidence may precede derived evaluation.
 
 ### Progressive analytical availability
 The requirement that the framework expose the narrowest trustworthy result as soon as the evidence required for that result is known rather than forcing fast operational checks to wait for slower evidence sources. Accepted functional horizons are **immediate operational validation → enriched health evaluation → investigative/RCA reasoning → retrospective/post-operations review**. These are not fixed services or SLAs.
@@ -171,8 +177,20 @@ An Execution Gate state indicating the gate permits the downstream execution to 
 ### Gate override
 An authorized bypass of the normal gate readiness outcome. The underlying prerequisite remains not-ready/unknown/conflicting as applicable; override records permission to proceed despite that state.
 
+### Gate decision
+The gate action/state selected or requested for a specific downstream opportunity after readiness/fallback/override evaluation, such as hold, admit, or override. A gate decision is not automatically proof that an external control plane enforced it.
+
+### Gate enforcement
+Evidence-backed conclusion that the gate decision actually affected the specific downstream execution opportunity as intended at the relevant control boundary/time. A configured/enabled gate or emitted decision alone is not opportunity-specific enforcement proof. Reliable downstream execution during an unoverridden hold can contradict full hold enforcement.
+
 ### Gate fallback behavior
 Explicit configured behavior for unavailable/unknown readiness or control evidence, such as hold, allow, expire, or escalate where later accepted. The project has **no universal fail-open or fail-closed rule**.
+
+### Control fallback application
+Evidence that a configured unavailable/unknown-state fallback was actually recognized/applied/enforced for a particular opportunity. A known fallback policy is intended behavior, not proof of runtime application.
+
+### Control evidence state
+The evidence status of an active-control path, such as decision known, decision delivery unknown, enforcement known, enforcement unknown, enforcement contradicted, control source unavailable, fallback configured, or fallback application known/unknown. Missing control telemetry does not imply success/failure/fail-open/fail-closed.
 
 ### Production-repository independence
 The architectural objective that baseline monitoring be independently deployed/versioned and prefer no required ETL-code/library/GitHub Actions changes when the necessary evidence is available through Databricks/platform/source metadata. It is an objective rather than an absolute guarantee for every future specialized integration.
@@ -206,10 +224,10 @@ A historical state cut using a knowledge cutoff representative of what the ecosy
 The same historical event/window evaluated using a later knowledge cutoff that may include late/corrected evidence.
 
 ### Replay-derived interpretation
-A current computation over a historical state cut. It does not prove the same Assessment, claim, Impact conclusion, decision, or Explanation was actually recorded/believed then.
+A current computation over a historical state cut. It does not prove the same Assessment, claim, Impact conclusion, readiness/enforcement conclusion, decision, or Explanation was actually recorded/believed then.
 
 ### Actual historical state
-Concept state/action/assertion established as actually recorded/effective by the historical cutoff, such as an Assessment, gate hold, safeguard activation, claim status/confirmation, Annotation, or retained Explanation.
+Concept state/action/assertion established as actually recorded/effective by the historical cutoff, such as an Assessment, gate decision/hold, safeguard activation, claim status/confirmation, Annotation, or retained Explanation.
 
 ### Historical correction / retrospective re-evaluation
 Late/corrected evidence is recorded at its real knowledge time and may cause new derived state about an earlier event. Prior contemporaneous state remains reconstructable rather than silently overwritten.
@@ -276,11 +294,23 @@ Functionality for reasoning about downstream consequence while keeping separate 
 ### Impact candidate / reachability
 A downstream Entity Identity is a plausible candidate because historical typed Lineage shows a relevant path from the originating condition/subject. Candidate status is not evidence that the downstream entity consumed the affected state, changed, or experienced business consequence.
 
+### Exposure proposition
+The bounded proposition asking whether a specified downstream consumer encountered a specified affected state/version/window through a relevant historical relationship and **encounter mode** during a defined consumer opportunity/window.
+
+### Encounter mode
+The functional way a downstream subject can encounter/use a state, such as execution input, refresh/materialization, publication/serving, query/application use, or business-process use. Different encounter modes can require different evidence; there is no universal consumption signal.
+
 ### Exposure / consumption
 Evidence that a downstream candidate actually encountered the relevant affected state/version/time window. Exposure is stronger than reachability but is not automatically downstream degradation or causal attribution.
 
+### Safe-version encounter
+Evidence that a consumer acted/refreshed/used a sufficiently identified non-affected earlier or alternate state rather than the affected state. It may support `not exposed to affected V` while separately being stale or unhealthy.
+
 ### Not exposed
-A negative Impact exposure determination supported by sufficient consumption/refresh/version coverage. Missing consumer telemetry is not `not exposed`.
+A negative Impact exposure determination supported by sufficient consumption/refresh/version **and material-path** coverage for the bounded exposure proposition. Missing consumer telemetry is not `not exposed`.
+
+### No encounter opportunity
+A bounded situation in which the consumer had no relevant run/refresh/use opportunity for the affected-state proposition. This differs from an observed opportunity where no encounter occurred and does not automatically mean a safeguard prevented exposure.
 
 ### Observed downstream effect
 Downstream Observation/Assessment/Change evidence showing a condition at the candidate itself. The effect may be known while exposure to the originating state remains unknown; exposure may also be proven while monitored downstream health remains acceptable.
@@ -289,14 +319,17 @@ Downstream Observation/Assessment/Change evidence showing a condition at the can
 Provenance-bearing evidence of a technical, analytical, or business consequence such as delayed publication, application behavior, report/metric use, client delivery, process interruption, decision use, or other established outcome. Criticality, client-facing status, exposure, or policy sensitivity alone is not consequence evidence.
 
 ### Prevented exposure
-An evidence-backed statement that an otherwise reachable downstream consumer did not encounter the relevant suspect state because an **active/enforced Propagation Safeguard** blocked the applicable path/boundary, with sufficient negative-consumption coverage. A proposed safeguard is insufficient.
+An evidence-backed statement that an otherwise reachable downstream consumer did not encounter the relevant suspect state because an **active/enforced Propagation Safeguard was materially operative on the relevant encounter path**. Phase 004 requires a sufficiently bound affected state/consumer/window, applicable path, enforcement evidence, a relevant encounter/control opportunity or equivalent materiality evidence, sufficient negative-consumption/version coverage, and adequate alternate-path coverage.
 
-Prevented exposure does not mean the downstream state was fresh/healthy. A safeguard can prevent suspect-version exposure while separately causing lateness or non-delivery.
+`Safeguard active + consumer not exposed` is not automatically prevented exposure when no relevant encounter opportunity existed or the safeguard was incidental. Prevented exposure does not mean the downstream state was fresh/healthy.
 
 ### Propagation Safeguard — Accepted post-exit addendum
 Functionality for representing a protective proposed/active/released hold or quarantine at a defined output/consumption boundary. Safeguard action authority is separately resolved through Capability Authorization.
 
 Execution Gate and Propagation Safeguard protect different control boundaries: Execution Gate controls **whether a downstream execution starts**; Propagation Safeguard controls **whether output/current state propagates or is consumed**.
+
+### Safeguard enforcement
+Evidence-backed conclusion that the safeguard actually placed the specified protected subject/output/missing-output context into the intended protected state at the exact propagation/consumption boundary, consumer/path scope, and effective interval. Proposal/configuration/activation request/operator intent is not enforcement proof.
 
 ### Analyst intervention
 Human research through Investigation or an authorized operational/safeguard/gate decision. It is not a separate concept.
@@ -307,7 +340,7 @@ Attributed human-authored context attached to ecosystem state without mutating s
 ### Explanation — Accepted
 Authorization- and time-aware communication composed from concept state/evidence. Explanation consumes the Authorized Analytical Projection rather than hidden evidence directly. Different audiences may receive different safe detail/abstraction, but epistemic status, Impact layering, human-source status, control state, and material statement-to-basis traceability remain intact.
 
-Explanation must preserve exact causal epistemic status; `supported`, `weakened`, or `unresolved` cannot be paraphrased as `confirmed root cause`.
+Explanation must preserve exact causal epistemic and control-evidence status; `supported` cannot become `confirmed`, `configured/requested` control cannot become `enforced`, and `not exposed to suspect V` cannot be paraphrased as `healthy/current`.
 
 ### Actual retained historical Explanation
 An Explanation/report that evidence establishes was actually generated/retained at the historical knowledge time. Current disclosure authorization still applies.
@@ -321,7 +354,7 @@ The requirement that each material Explanation statement be internally traceable
 ## Evidence and provenance
 
 ### Evidence
-A provenance-bearing fact/assertion used to support Assessment, Execution Gate decisions, Investigation, Causal Claim, Impact, safeguard decisions, or Explanation.
+A provenance-bearing fact/assertion used to support Assessment, Execution Gate decisions/enforcement evaluation, Investigation, Causal Claim, Impact, safeguard decisions/enforcement evaluation, or Explanation.
 
 ### Observed absence
 A negative fact supported by sufficient source/query coverage and opportunity to observe. Missing telemetry is not observed absence.
@@ -338,12 +371,13 @@ Group 06 and Phase 004 temporal refinement treat these as independently answerab
 
 1. **What happened?** — actual event/effective-time facts/actions.
 2. **What was known then?** — evidence/state available under the historical knowledge cutoff.
-3. **What was believed/interpreted then?** — actually recorded Assessment/claim/Impact/Annotation/etc., not merely what could now be computed.
+3. **What was believed/interpreted then?** — actually recorded Assessment/claim/Impact/readiness/enforcement/etc., not merely what could now be computed.
 4. **What was authorized then?** — historical Capability Authorization, including relevant operational/confirmation capability where recorded.
-5. **What control state/action applied then?** — actual gate/safeguard state/action.
-6. **What causal status existed then?** — actual recorded Causal Claim status/confirmation, not a present replay-derived evaluation.
-7. **What was actually explained then?** — retained Explanation if it exists.
-8. **What do we know now?** — later/current retrospective state.
+5. **What control state/action applied then?** — actual gate/safeguard decision/action.
+6. **What enforcement/exposure conclusion was known then?** — actual retained conclusion when it existed, distinct from a later reconstruction.
+7. **What causal status existed then?** — actual recorded Causal Claim status/confirmation, not a present replay-derived evaluation.
+8. **What was actually explained then?** — retained Explanation if it exists.
+9. **What do we know now?** — later/current retrospective state.
 
 ## Key non-equivalences
 
@@ -356,12 +390,15 @@ Group 06 and Phase 004 temporal refinement treat these as independently answerab
 - passive monitoring ≠ active execution gating;
 - monitoring availability ≠ ungated production-job availability;
 - dependency readiness Assessment ≠ Execution Gate admission state;
+- readiness result ≠ gate decision ≠ gate enforcement ≠ actual execution;
 - Execution Gate ≠ Execution History ≠ Propagation Safeguard;
 - gate hold ≠ execution failure;
 - gate admission ≠ actual run occurrence;
 - gate override ≠ prerequisite ready;
-- successful upstream run ≠ current qualifying output unless the gate criterion defines it so;
+- configured fallback ≠ actual fallback application;
+- successful upstream run ≠ current qualifying output/readiness unless the gate criterion defines it so;
 - missing readiness evidence ≠ ready;
+- missing control telemetry ≠ enforcement/fail-open/fail-closed;
 - permission to act ≠ action succeeded;
 - successful execution ≠ timely execution ≠ freshness ≠ data quality;
 - evidence applicability ≠ coverage ≠ conclusion-specific sufficiency;
@@ -371,10 +408,13 @@ Group 06 and Phase 004 temporal refinement treat these as independently answerab
 - atypicality ≠ normative violation ≠ mandatory intervention;
 - prospective Impact ≠ actual Impact ≠ retrospective cause;
 - Impact candidate/reachability ≠ exposure;
+- downstream run/refresh timing ≠ affected-state encounter;
+- no encounter opportunity ≠ no encounter ≠ safe-version encounter ≠ unknown-version encounter;
 - exposure ≠ observed downstream effect;
 - observed downstream effect ≠ consequence;
 - consequence ≠ causal attribution;
 - `not exposed` ≠ missing telemetry;
+- `not exposed to suspect V` ≠ fresh/current/healthy;
 - criticality ≠ actual Impact;
 - policy sensitivity ≠ policy breach/compliance failure;
 - Lineage reachability/evidence candidate ≠ causal proposal/support;
@@ -387,7 +427,9 @@ Group 06 and Phase 004 temporal refinement treat these as independently answerab
 - confirmation evidence sufficiency ≠ confirmation authority;
 - causal contribution ≠ primary cause ≠ percentage attribution;
 - one causal contributor ≠ exclusion of compatible contributors;
-- safeguard proposal ≠ active/enforced safeguard;
+- safeguard proposal/configuration/request ≠ active/enforced safeguard;
+- safeguard enforcement at one boundary ≠ enforcement on every route;
+- active safeguard + non-exposure ≠ automatically prevented exposure;
 - prevented exposure ≠ fresh/healthy delivery;
 - quarantine ≠ defect proof;
 - release ≠ health proof;
@@ -398,6 +440,7 @@ Group 06 and Phase 004 temporal refinement treat these as independently answerab
 - **later evidence ≠ evidence known then**;
 - **actual historical state ≠ replay-derived interpretation**;
 - **actual gate/safeguard action ≠ counterfactual preferred action**;
+- **actual historical enforcement/exposure conclusion ≠ later retrospective conclusion**;
 - **actual historical causal confirmation ≠ immutable current confirmation**;
 - **actual retained historical Explanation ≠ reconstructed historical Explanation**;
 - **historical authorization/control state ≠ current disclosure permission**;
