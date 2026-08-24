@@ -1,0 +1,41 @@
+---
+description: Phase 004 evidence applicability, coverage, negative-evidence, corroboration, and sufficiency refinement rules.
+globs:
+alwaysApply: true
+---
+
+# Phase 004 evidence sufficiency rules
+
+Status: **Phase 004 Group 01 accepted — REF-001–REF-005. Group 02 next and not started.**
+
+Preserve:
+
+- evidence applicability ≠ coverage ≠ conclusion sufficiency;
+- evidence not found ≠ observed absence;
+- empty result ≠ negative fact unless opportunity-to-observe + coverage are sufficient;
+- positive existence evidence ≠ negative/exclusion evidence;
+- source/record count ≠ independent corroboration;
+- duplicated/common-source evidence ≠ independent evidence;
+- evidence sufficiency ≠ source authority;
+- evidence sufficiency ≠ Capability Authorization;
+- evidence sufficiency ≠ causal confirmation;
+- sufficient for conclusion A ≠ sufficient for broader conclusion B;
+- insufficient evidence ≠ proposition false.
+
+Rules:
+
+- Bind every evidence evaluation to a proposition with subject, property/outcome, context, event time/window, grain/version and conclusion strength where material.
+- Evaluate subject, semantic/property, temporal, grain/version, derivation, relationship, and historical knowledge-cut applicability before using evidence as support/contradiction/exclusion.
+- Coverage must name its bounded observation universe/window.
+- Preserve temporal, population/partition, source/query, identity/version, measurement, sampling/estimation, instrumentation, derivation, and known-gap coverage where material.
+- A negative conclusion requires a mechanism capable of detecting the event/state plus enough bounded coverage to rule out the relevant opportunities.
+- Query failure, monitoring outage, inaccessible/restricted evidence, out-of-scope evidence, or unresolved identity/version is an evidence limitation, not a negative fact.
+- Preserve independently corroborating, partially independent, duplicated, common-derived, complementary, contradicting, non-comparable, and unknown evidence relationships when provenance permits.
+- Never count an Assessment and its own supporting Observation as two independent confirmations of the same evidence fact.
+- Preserve applicable conflicts unless an accepted authority rule resolves them; do not use source count, recency alone, repository ownership, or synchronization order as hidden precedence.
+- Do not invent a universal trust/confidence score.
+- Sufficiency evaluation may resolve sufficient, insufficient, conflicting/indeterminate, non-applicable/non-comparable, unavailable, or unknown for the specified conclusion.
+- A safe authorized result may hide restricted basis detail; if the framework itself cannot access required evidence, the basis remains unavailable/insufficient.
+- Later Phase 004 groups must specialize these rules rather than bypass them for historical knowledge, causality, exposure/non-exposure, gate readiness/enforcement, or safeguard prevention.
+
+Do not begin Phase 004 Group 02 without explicit user request.

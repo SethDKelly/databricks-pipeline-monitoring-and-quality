@@ -4,7 +4,7 @@ The `docs/` tree is the system of record for product and design decisions in thi
 
 ## Current state
 
-**Phase 003 — Concept Synchronizations and Ecosystem Scenarios is complete. Phase 004 — Evidence, Time, and Causality Refinement is next and has not started.**
+**Phase 003 — Concept Synchronizations and Ecosystem Scenarios is complete. Phase 004 — Evidence, Time, and Causality Refinement is active. Group 01 — Evidence Sufficiency, Coverage & Negative Evidence is accepted; Group 02 — Event/Effective Time, Knowledge Cut & Correction is next.**
 
 The original Phase 002 catalog contained 20 concepts. Three post-exit addenda are accepted:
 
@@ -12,7 +12,7 @@ The original Phase 002 catalog contained 20 concepts. Three post-exit addenda ar
 2. **Capability Authorization**;
 3. **Execution Gate**.
 
-The current catalog contains **23 accepted concepts**. Phase 003 contains accepted **SYN-001–SYN-035** and E-01–E-22 pass the Group 06 replay/consolidation review.
+The current catalog contains **23 accepted concepts**. Phase 003 contains accepted **SYN-001–SYN-035** and E-01–E-22 pass the Group 06 replay/consolidation review. Phase 004 Group 01 contains accepted **REF-001–REF-005**.
 
 ## Reading order
 
@@ -36,20 +36,33 @@ The current catalog contains **23 accepted concepts**. Phase 003 contains accept
 18. [`concepts/phase_003/06_historical_replay_and_consolidation/README.md`](concepts/phase_003/06_historical_replay_and_consolidation/README.md) — accepted Group 06 historical replay/consolidation.
 19. [`concepts/phase_003/06_historical_replay_and_consolidation/scenario_replay_matrix.md`](concepts/phase_003/06_historical_replay_and_consolidation/scenario_replay_matrix.md) — E-01–E-22 end-to-end replay matrix.
 20. [`concepts/phase_003/06_historical_replay_and_consolidation/phase_003_exit_review.md`](concepts/phase_003/06_historical_replay_and_consolidation/phase_003_exit_review.md) — Phase 003 exit decision and Phase 004 handoff.
-21. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
-22. [`decisions/README.md`](decisions/README.md) — D-001–D-039.
-23. [`decisions/phase_003_group_03_runtime_health_and_safeguard.md`](decisions/phase_003_group_03_runtime_health_and_safeguard.md) — D-040–D-046.
-24. [`decisions/phase_003_group_04_lineage_investigation_causality.md`](decisions/phase_003_group_04_lineage_investigation_causality.md) — D-047–D-055.
-25. [`decisions/pre_group_05_capability_authorization.md`](decisions/pre_group_05_capability_authorization.md) — D-056–D-060.
-26. [`decisions/phase_003_group_05_impact_annotation_explanation.md`](decisions/phase_003_group_05_impact_annotation_explanation.md) — D-061–D-070.
-27. [`decisions/pre_group_06_execution_gating.md`](decisions/pre_group_06_execution_gating.md) — D-071–D-078.
-28. [`decisions/phase_003_group_06_historical_replay_and_exit.md`](decisions/phase_003_group_06_historical_replay_and_exit.md) — D-079–D-088.
+21. [`concepts/phase_004/README.md`](concepts/phase_004/README.md) — active Phase 004 structure/status.
+22. [`concepts/phase_004/01_evidence_sufficiency_and_coverage/README.md`](concepts/phase_004/01_evidence_sufficiency_and_coverage/README.md) — accepted Group 01 evidence applicability/coverage/sufficiency framework.
+23. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
+24. [`decisions/README.md`](decisions/README.md) — D-001–D-039.
+25. [`decisions/phase_003_group_03_runtime_health_and_safeguard.md`](decisions/phase_003_group_03_runtime_health_and_safeguard.md) — D-040–D-046.
+26. [`decisions/phase_003_group_04_lineage_investigation_causality.md`](decisions/phase_003_group_04_lineage_investigation_causality.md) — D-047–D-055.
+27. [`decisions/pre_group_05_capability_authorization.md`](decisions/pre_group_05_capability_authorization.md) — D-056–D-060.
+28. [`decisions/phase_003_group_05_impact_annotation_explanation.md`](decisions/phase_003_group_05_impact_annotation_explanation.md) — D-061–D-070.
+29. [`decisions/pre_group_06_execution_gating.md`](decisions/pre_group_06_execution_gating.md) — D-071–D-078.
+30. [`decisions/phase_003_group_06_historical_replay_and_exit.md`](decisions/phase_003_group_06_historical_replay_and_exit.md) — D-079–D-088.
+31. [`decisions/phase_004_group_01_evidence_sufficiency_and_coverage.md`](decisions/phase_004_group_01_evidence_sufficiency_and_coverage.md) — D-089–D-097.
 
 ## Documentation discipline
 
-- Concepts/synchronizations remain implementation-neutral.
+- Concepts/synchronizations/refinements remain implementation-neutral.
+- Phase 004 `REF-###` artifacts define standards over accepted concepts/synchronizations and are not new truth owners.
 - Preserve historical decision rationale; add/supersede rather than silently rewrite.
-- Synchronization order never becomes source authority or causation.
+- Synchronization/refinement order never becomes source authority or causation.
+- **Evidence sufficiency is conclusion-relative**; bind the target proposition before evaluating adequacy.
+- Evidence applicability, bounded coverage, corroboration/conflict, and conclusion sufficiency remain separate.
+- Coverage is always scoped to an explicit observation universe/window; never imply global completeness.
+- Negative/absence/exclusion conclusions require an adequate opportunity to observe and sufficient bounded coverage.
+- Missing telemetry, failed/unavailable queries, restricted evidence, out-of-scope evidence, or unresolved identity/version state are not negative facts.
+- Duplicated/common-source telemetry is not independent corroboration merely because it appears in multiple systems.
+- Applicable conflicts remain explicit unless an accepted authority rule resolves them; do not use majority vote/source count/synchronization order as hidden authority.
+- Do not invent a universal evidence trust/confidence score.
+- Evidence sufficiency does not grant disclosure or production-control authority.
 - Monitoring Scope, Responsibility Assignment, Policy Context, and Capability Authorization remain distinct.
 - Raw-data read, metadata/health analysis, Lineage/RCA, job-operation, safeguard-control, and gate-control/override capabilities remain distinct.
 - Denial of direct-data access must not automatically block independently authorized analytical evidence.

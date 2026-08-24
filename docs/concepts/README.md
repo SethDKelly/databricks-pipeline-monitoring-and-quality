@@ -17,7 +17,7 @@ Use [`concept_template.md`](concept_template.md) as the specification checklist.
 ### Group 02 — Semantics, Governance & Policy
 - [`Semantic Definition`](phase_002/02_semantics_governance_policy/semantic_definition.md) — facet/context-aware meaning and interpretation.
 - [`Responsibility Assignment`](phase_002/02_semantics_governance_policy/responsibility_assignment.md) — named responsibility assignments without universal authority implication.
-- [`Classification`](phase_002/02_semantics_governance_policy/classification.md) — category membership in a named governance/sensitivity vocabulary.
+- [`Classification`](phase_002/02_semantics_governance_policy/classification.md) — category membership under named governance/sensitivity vocabularies.
 - [`Policy Context`](phase_002/02_semantics_governance_policy/policy_context.md) — declared policy/handling applicability without enforcement/compliance claims.
 
 ### Group 03 — Health Evaluation
@@ -90,12 +90,38 @@ It preserves:
 
 A present-day `as-known-then` computation may be useful, but it cannot be presented as an Assessment, belief, decision, or Explanation that actually existed then unless historical state proves that it did.
 
+## Phase 004 refinement boundary
+
+Phase 004 does **not** add a new evidence concept merely to hold evidence-quality metadata. The accepted concepts already own their evidence/state. Phase 004 `REF-###` contracts define standards for how that evidence can support conclusions.
+
+Group 01 accepts:
+
+- **REF-001 — Evidence Applicability and Proposition Binding**;
+- **REF-002 — Coverage Profile and Opportunity to Observe**;
+- **REF-003 — Negative, Absence, and Exclusion Evidence**;
+- **REF-004 — Corroboration, Conflict, and Evidence Independence**;
+- **REF-005 — Conclusion-Specific Evidence Sufficiency Evaluation**.
+
+The key boundary is:
+
+**evidence item → applicability to a defined proposition → bounded coverage/opportunity-to-observe → corroboration/conflict relationship → conclusion-specific sufficiency**
+
+without turning that chain into a universal trust score, new source authority, or new authorization grant.
+
+Examples:
+
+- one observed qualifying run may be sufficient for `a run occurred` while insufficient for `only one run occurred`;
+- zero returned events are not `no run` unless the relevant bounded execution opportunities were actually observable and sufficiently covered;
+- no consumer telemetry is not `not exposed`;
+- three copies of the same Databricks event are not three independent corroborating observations;
+- an Assessment can be internally well-supported while its exact evidence remains restricted from a particular analyst.
+
 ## Domain entities that are not automatically concepts
 
 Logical pipelines, jobs, tasks, runs, execution opportunities, tables, views, Metric Views, repositories, workflows, columns, business metrics, reports, applications, business processes, teams, people, source revisions, deployment targets, client-delivery endpoints, roles, and groups may participate in concepts without becoming giant concepts themselves.
 
-## Phase 003 synchronization work
+## Phase state
 
 **Phase 003 is complete.** Accepted synchronization range: **SYN-001–SYN-035**. E-01–E-22 pass end-to-end consolidation. Current results are documented in [`phase_003/README.md`](phase_003/README.md), with Group 06 in [`phase_003/06_historical_replay_and_consolidation/`](phase_003/06_historical_replay_and_consolidation/).
 
-**Phase 004 — Evidence, Time, and Causality Refinement is next and has not started.**
+**Phase 004 is active. Group 01 is accepted with REF-001–REF-005. Group 02 — Event/Effective Time, Knowledge Cut & Correction is next and has not started.** See [`phase_004/README.md`](phase_004/README.md).

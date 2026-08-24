@@ -14,7 +14,7 @@ The original five groups accepted 20 concepts. Phase 003 later added **Propagati
 
 **Status:** **Complete — Groups 01–06 accepted; SYN-001–SYN-035 accepted; E-01–E-22 pass.**
 
-Phase 003 now defines end-to-end coordination for subject/governance context; planned change/reference transition; runtime timing/health/change; optional execution gating; safeguards; Investigation/causality; layered downstream Impact; Annotation; authorized analytical projection/Explanation; and bitemporal historical replay.
+Phase 003 defines end-to-end coordination for subject/governance context; planned change/reference transition; runtime timing/health/change; optional execution gating; safeguards; Investigation/causality; layered downstream Impact; Annotation; authorized analytical projection/Explanation; and bitemporal historical replay.
 
 Group 06 establishes event/effective-time + knowledge-cut replay, late/corrected-evidence retrospective re-evaluation, current-authorization-safe historical Explanation, and the completed Phase 003 exit review.
 
@@ -22,18 +22,19 @@ See `../concepts/phase_003/README.md` and `../concepts/phase_003/06_historical_r
 
 ## Phase 004 — Evidence, Time, and Causality Refinement
 
-**Status:** **Next — not started.**
+**Status:** **Active — Group 01 accepted; Group 02 next.**
 
-Refine:
+Phase 004 uses `REF-###` refinement contracts over the accepted concepts/synchronizations. These are not new truth-owning concepts and do not extend the Phase 003 SYN sequence.
 
-- evidence sufficiency/completeness and source-coverage semantics;
-- event/effective versus recorded/knowledge-time query semantics and `not known by cutoff` standards;
-- correction/supersession and dependent reassessment/reopen materiality;
-- Causal Claim status transitions, confirmation evidence/authority standards, attribution/confidence, multiple contributors, and challenge after confirmation;
-- positive/negative/absence evidence;
-- exposure/non-exposure proof;
-- gate readiness/hold/admission/enforcement evidence sufficiency;
-- historical Investigation/Impact/Explanation retention versus reconstruction.
+Review groups:
+
+1. **Evidence Sufficiency, Coverage & Negative Evidence** — **Accepted.** REF-001–REF-005 define proposition binding/evidence applicability, bounded Coverage Profiles/opportunity-to-observe, negative/absence/exclusion evidence, corroboration/conflict/independence, and conclusion-specific sufficiency. Evidence sufficiency is conclusion-relative rather than a universal score; missing telemetry is never a reassuring negative.
+2. **Event/Effective Time, Knowledge Cut & Correction** — **Next.** Refine exact `as-known` eligibility, `known by`/`not known by` standards, late evidence, correction/supersession, dependent reassessment/reopen behavior, and retained-versus-reconstructed historical state.
+3. **Causal Epistemics, Confirmation & Multiple Contributors** — Planned. Refine Causal Claim status transitions, support/contradiction, confirmation evidence/authority standards, qualitative contribution roles, and challenge after confirmation.
+4. **Exposure, Consumption, Readiness & Control Evidence** — Planned. Specialize evidence standards for exposure/non-exposure, gate readiness, actual hold/admission enforcement, safeguard enforcement/prevented exposure, and unavailable-control evidence.
+5. **Phase 004 Consolidation / Exit Review** — Planned. Apply the standards across the full Phase 003 behavior and hand remaining authority/statistical/integration/implementation questions to later phases.
+
+See `../concepts/phase_004/README.md`.
 
 ## Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement
 Refine source authority, conflict resolution, stewardship, criticality, Classification, Policy Context, PII/PHI/HIPAA-related transparency, Expectation authority, safeguard authority, Capability Authorization vocabulary/source precedence/conditional semantics, Execution Gate configuration/override authority, safe derived-evidence disclosure, and policy-sensitive Explanation.

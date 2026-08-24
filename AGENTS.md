@@ -6,7 +6,7 @@ Phase 002 originally accepted 20 concepts. Three explicit post-exit addenda are 
 
 **Phase 003 is complete. Groups 01–06 are accepted. Accepted synchronization range: SYN-001–SYN-035. E-01–E-22 pass end-to-end consolidation.**
 
-**Phase 004 — Evidence, Time, and Causality Refinement is next and has not started. Do not begin Phase 004 without explicit user request.**
+**Phase 004 — Evidence, Time, and Causality Refinement is active. Group 01 — Evidence Sufficiency, Coverage & Negative Evidence is accepted with REF-001–REF-005. Group 02 — Event/Effective Time, Knowledge Cut & Correction is next and has not started.**
 
 Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, deployment workflows, quarantine implementations, gate/orchestration implementations, IAM implementations, graph/causal engines, LLMs, or prototypes unless the user explicitly advances the project into technical design.
 
@@ -17,7 +17,8 @@ Treat `docs/` as the design system of record.
 - Start from actor/ecosystem outcome, not vendor/tool/storage shape.
 - Preserve accepted concept ownership/state boundaries.
 - Synchronization is not automatically a service call, workflow, transaction, event, database relation, API, persisted view, scheduler, orchestrator, temporal snapshot, or replay store.
-- Synchronization order is never authority; a trigger is never causation.
+- Phase 004 `REF-###` artifacts refine evidence/time/causal standards over accepted concepts and synchronizations; they are not new truth-owning concepts or Phase 003 synchronizations.
+- Synchronization/refinement order is never authority; a trigger is never causation.
 - Do not create umbrella state for convenience.
 - Reopen earlier boundaries only explicitly with rationale.
 
@@ -71,7 +72,30 @@ Preserve:
 - actual historical state ≠ replay-derived interpretation;
 - actual historical control action ≠ counterfactual preferred action;
 - actual retained historical Explanation ≠ reconstructed historical Explanation;
-- historical authorization/control state ≠ current disclosure permission.
+- historical authorization/control state ≠ current disclosure permission;
+- evidence applicability ≠ evidence coverage ≠ conclusion sufficiency;
+- evidence not found ≠ observed absence;
+- source count ≠ independent corroboration;
+- evidence sufficiency ≠ disclosure authorization.
+
+## Phase 004 Group 01 evidence rules
+
+- Bind every material evidence-sufficiency evaluation to a defined proposition/conclusion, subject, context, event time/window, grain/version, and intended conclusion strength.
+- Evaluate evidence applicability before treating it as support, contradiction, exclusion, or corroboration.
+- Applicability considers subject identity, semantic/property alignment, time, grain/version, derivation, and relevant Lineage/dependency context.
+- Coverage is bounded and multidimensional. Name the observation universe/window before using terms such as `complete` or `sufficient coverage`.
+- Preserve temporal, population/partition, source/query, identity/version, measurement, sampling/estimation, monitoring/instrumentation, derivation, and known-gap context where material.
+- Negative/absence/exclusion conclusions require both an adequate opportunity to observe and sufficient coverage of the bounded opportunities where the event/state could have occurred.
+- No telemetry, query failure, monitoring outage, inaccessible/restricted evidence, out-of-scope evidence, or unresolved identity/version state is not a negative fact.
+- Positive and negative propositions can require asymmetric coverage: one observed event can establish existence while absence normally requires coverage of all relevant bounded opportunities.
+- Do not multiply evidentiary strength merely because the same underlying telemetry is copied/mirrored/indexed in several systems.
+- Preserve duplicated, commonly derived, complementary, independently corroborating, partially independent, conflicting, and non-comparable evidence relationships where provenance permits.
+- Applicable conflicts remain explicit unless an accepted category-specific authority rule resolves them. Do not use majority vote, recency alone, synchronization order, repository ownership, or source count as hidden authority.
+- Evidence sufficiency is conclusion-relative and may resolve sufficient, insufficient, conflicting/indeterminate, non-applicable/non-comparable, unavailable, or unknown.
+- `Sufficient` for one conclusion does not imply sufficiency for related broader conclusions; `insufficient` does not mean false.
+- Do not create a universal evidence trust/confidence number. Statistical uncertainty may later be represented for appropriate measurements without becoming a generic evidence score.
+- Sufficiency evaluation does not grant Capability Authorization, source authority, job/safeguard/gate authority, or action permission.
+- A requester may receive an authorized safe conclusion/limitation while basis details remain restricted; if the framework itself cannot access required evidence, that is an evidence-availability limitation.
 
 ## Passive monitoring / integration-independence rules
 
@@ -117,11 +141,11 @@ Preserve:
 - Use historical typed Lineage for candidate discovery; current/planned topology cannot silently replace incident-time topology.
 - First-observed deviation is localization, not root cause.
 - Preserve supporting and contradicting evidence.
-- Negative/exclusion evidence requires sufficient coverage.
+- Negative/exclusion evidence requires sufficient applicability and coverage under the Phase 004 Group 01 framework.
 - Never infer cause from temporal proximity, Lineage, Deployment, realized Change, safeguard state, gate state, Prospective Impact, or intent consistency alone.
 - Every causal proposition belongs in Causal Claim.
 - Multiple contributors/unresolved outcomes are valid.
-- `confirmed` requires an explicit accepted evidence/authority standard; do not invent it.
+- `confirmed` requires an explicit accepted evidence/authority standard; do not invent it before Phase 004 causal refinement.
 - Human reproducible findings use Observation/Change; causal interpretations use Causal Claim; contextual notes use Annotation.
 
 ## Runtime / safeguard rules
@@ -169,10 +193,12 @@ Preserve:
 - Historical Capability Authorization is evidence about past permission; current requester authorization still governs disclosure.
 - Partial/unknown/conflicting/restricted replay remains valid rather than being completed by guesswork.
 
-## Phase 004 preparation rules
+## Phase 004 direction
 
-- **Do not begin Phase 004 without explicit user request.**
-- Phase 004 must refine evidence sufficiency/completeness; exact event-time/knowledge-cut query semantics; correction/supersession/reassessment; Causal Claim statuses/confirmation; negative/absence/exposure evidence; gate readiness/enforcement evidence; and retained-versus-reconstructed historical state.
+- Group 01 is accepted: REF-001–REF-005 define applicability, bounded coverage, opportunity-to-observe, negative/absence/exclusion evidence, corroboration/conflict/independence, and conclusion-specific sufficiency.
+- **Do not begin Group 02 — Event/Effective Time, Knowledge Cut & Correction without explicit user request.**
+- Group 02 must refine exact `as-known` evidence eligibility, `known by`/`not known by` claims, late/corrected evidence, correction/supersession, dependent reassessment/reopen behavior, and retained-versus-reconstructed state.
+- Later Group 03 refines causal epistemics/confirmation; Group 04 specializes exposure/readiness/control evidence; Group 05 consolidates Phase 004.
 - Do not choose implementation architecture while refining these semantics.
 
 ## Tooling stance
