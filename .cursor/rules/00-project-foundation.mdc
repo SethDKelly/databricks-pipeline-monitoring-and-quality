@@ -9,7 +9,7 @@ alwaysApply: true
 - Current accepted concept count: **24** — original 20 plus Propagation Safeguard, Capability Authorization, Execution Gate, and Assertion Authority addenda.
 - **Phase 003 is complete. Groups 01–06 are accepted; SYN-001–SYN-035 are accepted; E-01–E-22 pass end-to-end consolidation.**
 - **Phase 004 — Evidence, Time, and Causality Refinement is complete. Groups 01–05 are accepted; REF-001–REF-030 are accepted.**
-- **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is active. Groups 01–02 are accepted with AUTH-001–AUTH-015; Group 03 — Normative Health, Metric & Threshold Governance is next and has not started.**
+- **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is active. Groups 01–03 are accepted with AUTH-001–AUTH-023; Group 04 — Capability Authorization & Restricted Analytical Visibility is next and has not started.**
 - Work remains documentation/design-first unless the user explicitly advances into technical/implementation design.
 - Do not create application code, notebooks, infrastructure, schemas, APIs, IAM/Assertion Authority implementations, deployment workflows, quarantine implementations, Execution Gate/orchestration implementations, graph/causal engines, LLMs, or prototypes prematurely.
 - Treat `docs/` as the product/design system of record.
@@ -76,6 +76,25 @@ Semantic / governance authority rules — accepted Phase 005 Group 02:
 - Descriptive governance truth does not become normative health, access/Capability Authorization, control enforcement, compliance, or actual Impact truth.
 - Group 02 requires no 25th concept; accepted range is AUTH-009–AUTH-015.
 
+Normative health / metric / threshold governance rules — accepted Phase 005 Group 03:
+
+- Expectation authority is bound to explicit subject, dimension/property/check, context, lifecycle action, and time.
+- Semantic/schema authority, Responsibility Assignment, Classification/criticality, Policy Context, Baseline behavior, metric computation ownership, and source availability do not automatically grant normative authority.
+- **Metric meaning ≠ metric-profile selection ≠ threshold/margin authority ≠ severity authority ≠ waiver authority ≠ high-consequence-use eligibility.**
+- Metric profiles are governed selection/applicability structures, not operational truth concepts.
+- Do not add checks merely because they are available. Preserve purpose, applicability, use/audience, authority/owner, and lifecycle/retirement rationale.
+- Baseline remains descriptive. A Baseline-derived range becomes normative only through an explicit authoritative Expectation.
+- Technical schema meaning does not automatically define structural/schema compatibility Expectations.
+- Structural Change triggers scoped metric/profile/Baseline review rather than global reset.
+- Governance can suspend/retire use of a Baseline but cannot manufacture empirical comparability; new Baselines require sufficient comparable evidence.
+- Bounded exception/waiver/suspension does not mutate Observations, realized schema, Baseline deviations, or historical evidence and must not create false `pass` state.
+- Normative conflict remains explicit; never infer strictest/latest/business/technical/highest-severity precedence.
+- Criticality may affect review/priority but does not automatically tighten thresholds or prove health failure/Impact.
+- An authoritative or business-critical metric/Expectation is not automatically control-eligible.
+- High-consequence-use eligibility must be explicit and bound to rule/version, target/context/use class, and time.
+- **Control-use eligibility ≠ gate/safeguard/job capability ≠ evidence readiness/sufficiency ≠ actual enforcement.**
+- Group 03 requires no 25th concept; accepted range is AUTH-016–AUTH-023.
+
 Schema / DDL validation handoff:
 
 - Structural/schema compatibility is a first-class health concern even when a job/load succeeds.
@@ -85,7 +104,7 @@ Schema / DDL validation handoff:
 - Structural Change triggers **scoped** metric/Baseline/key/join applicability review rather than automatic global reset.
 - Pre-deployment GitHub Actions checks, Databricks/Unity Catalog realized-state checks, and independent monitoring checks are candidate future integration points with different temporal roles; Phase 005 does not select one universal validation location.
 - A CI validation result does not prove production schema state; runtime catalog evidence does not prove intended/business schema meaning.
-- Schema/metric conditions used by an Execution Gate are high-consequence control criteria and still require Phase 004 evidence plus later normative authority/availability/control semantics.
+- Schema/metric conditions used by an Execution Gate are high-consequence control criteria and still require Phase 004 evidence plus accepted normative eligibility and later availability/control semantics.
 - Phase 006 owns schema-health/compatibility semantics; Phase 007 owns change/Lineage-aware downstream behavior; Phase 009 evaluates source support; Phase 010 selects technical placement.
 
 Causal/control/Impact rules:
@@ -120,25 +139,26 @@ Authorization and integration rules:
 - Raw-data read, metadata/health visibility, Lineage/RCA participation, job-operation authority, safeguard authority, gate-control authority, and causal-confirmation authority remain independently resolvable.
 - **Passive monitoring is out-of-band/non-blocking by default**; monitoring-framework degradation must not delay ungated production jobs.
 - Baseline monitoring should prefer independent deployment and no production ETL/GitHub Actions changes where Databricks/platform metadata is sufficient.
-- **Execution Gate is explicit opt-in control**; Lineage, schedule, readiness Assessment, Assertion Authority, or schema change does not automatically block a downstream run.
+- **Execution Gate is explicit opt-in control**; Lineage, schedule, readiness Assessment, Assertion Authority, schema change, or normative control eligibility does not automatically block a downstream run.
 - Execution Gate controls downstream start admission; Propagation Safeguard controls output/consumption propagation.
 - Gate hold ≠ execution failure; gate admission ≠ actual run occurrence; gate override ≠ prerequisite ready.
 - Missing readiness/control evidence ≠ ready. Do not invent a universal fail-open/fail-closed rule.
 - Gate-induced delay remains observable/assessable/Impact evidence; causal claims about that delay use accepted causal rules.
 - Authorized Analytical Projection is a view over independently authorized concept state, not a new truth concept or declassification mechanism.
 - Restricted raw-data access must not automatically block approved monitoring/RCA/Impact analysis over authorized derived evidence.
-- Derived evidence/metadata/authority detail can itself be sensitive; use explicit authorized projection/redaction/opacity.
+- Derived evidence/metadata/authority/normative-rule detail can itself be sensitive; use explicit authorized projection/redaction/opacity.
 - Investigation starts from outcome/question; Lineage yields candidates, not causes; first-observed localization is not root cause.
 - Impact candidate ≠ exposure ≠ downstream effect ≠ consequence ≠ causal attribution.
 - Criticality/policy sensitivity does not manufacture actual Impact or compliance consequence.
-- Explanation consumes only authorized projected concept state and preserves statement-to-basis traceability, exact causal status, authority standing/conflict, and exact control-evidence state.
+- Explanation consumes only authorized projected concept state and preserves statement-to-basis traceability, exact causal status, authority standing/conflict, normative exception state, and exact control-evidence state.
 
 Historical rules:
 
 - **Historical replay uses event/effective time + recorded/knowledge cutoff.**
-- Current identity/topology/reference/governance/Assertion Authority/Capability Authorization/control state must not be projected backward.
+- Current identity/topology/reference/governance/Assertion Authority/Capability Authorization/normative/control state must not be projected backward.
 - Actual historical state/actions/Explanation remain distinct from replay-derived reconstruction.
 - Late/corrected evidence or authority rules may change retrospective readiness/exposure/enforcement/prevention/causal/authority understanding without rewriting what was known or done then.
+- Normative revision/waiver/suspension/retirement/correction is historical and does not rewrite the rule/Assessment/control state actually applicable/known earlier.
 - Actual historical gate/safeguard actions are not counterfactually replaced by what later evidence/authority suggests should have happened.
 - Historical causal confirmation remains reconstructable even if current claim status later changes.
 - Historical authority/authorization/control state is evidence about past state but never overrides current authority/requester disclosure authorization.
@@ -147,8 +167,8 @@ Historical rules:
 Metric-health handoff:
 
 - Table health is broader than successful load occurrence.
-- Phase 005 Group 03 governs who may define/approve/revise/waive/retire/disclose metric profiles, **schema compatibility Expectations**, thresholds, margins, severity, and high-consequence metric/schema-condition use.
-- Phase 006 owns detailed metric taxonomy, schema-health/compatibility semantics, statistics/Baseline semantics, metric-bloat controls, technical/business health meaning, and selective transformation-aware propagation.
+- Phase 005 Group 03 has accepted governance for metric profiles, schema compatibility Expectations, thresholds/margins/severity, bounded exceptions/waivers, retirement, and high-consequence-use eligibility.
+- Phase 006 owns detailed metric taxonomy, schema-health/compatibility semantics, statistics/Baseline semantics, metric-bloat controls, technical/business health meaning, selective transformation-aware propagation, waiver presentation semantics, and evidence/timing suitability for control-eligible conditions.
 - Metrics/governance do not recursively propagate merely because Lineage exists.
 
 Phase direction:
@@ -156,5 +176,6 @@ Phase direction:
 - Phase 004 exit confirms REF-001–REF-030 compose across E-01–E-22 and all Phase 004 scenario checks.
 - Phase 005 Group 01 is accepted with Assertion Authority + AUTH-001–AUTH-008 and D-161–D-172.
 - Phase 005 Group 02 is accepted with AUTH-009–AUTH-015 and D-173–D-188.
-- **Group 03 — Normative Health, Metric & Threshold Governance is next and has not started. Do not begin it without explicit user request.**
+- Phase 005 Group 03 is accepted with AUTH-016–AUTH-023 and D-189–D-202.
+- **Group 04 — Capability Authorization & Restricted Analytical Visibility is next and has not started. Do not begin it without explicit user request.**
 - Never silently choose IAM/Assertion Authority engine, GitHub Actions/Unity Catalog as universal schema validation mechanism, graph/event/temporal/ledger/quarantine/scheduler/orchestration/workflow/service/LLM/causal-algorithm architecture.

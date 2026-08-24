@@ -92,9 +92,9 @@ See `../concepts/phase_005/pre_group_02_schema_ddl_validation_handoff.md`.
 
 ## Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement
 
-**Status:** **ACTIVE — Groups 01–02 accepted; AUTH-001–AUTH-015 accepted; Group 03 next.**
+**Status:** **ACTIVE — Groups 01–03 accepted; AUTH-001–AUTH-023 accepted; Group 04 next.**
 
-Phase 005 uses `AUTH-###` governance/refinement contracts over accepted concept state. Group 01 also exposed one genuine missing concept boundary: **Assertion Authority**, accepted as the **24th concept**.
+Phase 005 uses `AUTH-###` governance/refinement contracts over accepted concept state. Group 01 exposed one genuine missing concept boundary: **Assertion Authority**, accepted as the **24th concept**. Groups 02–03 require no additional concept.
 
 ### Group 01 — Authority Vocabulary, Source Assertions & Conflict Resolution
 
@@ -106,24 +106,30 @@ Accepted results include target/context/time-scoped authority, provenance-bearin
 
 **Status:** **Accepted — AUTH-009–AUTH-015; no new concept.**
 
+Accepted results include facet-specific semantic/schema authority, responsibility-type authority, scheme/context-specific Classification/criticality authority, separate policy-reference/applicability authority, explicit local/context override semantics, no implicit governance propagation, and strict descriptive-governance separation from normative/operational truth.
+
+### Group 03 — Normative Health, Metric & Threshold Governance
+
+**Status:** **Accepted — AUTH-016–AUTH-023; no new concept.**
+
 Accepted results:
 
-- semantic authority is facet-specific, including business definition, technical schema declaration, grain, unit, population, calculation meaning, field role, and key role;
-- declared/governed schema meaning, normative schema contract, and realized schema state remain separate;
-- responsibility authority is responsibility-type scoped and does not grant other authority/capability;
-- Classification authority is scheme/context specific;
-- criticality remains Classification under named business/operational/consumer/delivery schemes rather than a new concept;
-- criticality provides priority/context, not actual Impact or health evidence;
-- policy reference/text authority can differ from subject/context applicability authority;
-- context-specific/local assertions may coexist, but specificity does not automatically create precedence;
-- Lineage/container/schema/tag inference does not implicitly propagate governance assertions or authority;
-- descriptive governance authority does not become normative health, Capability Authorization, enforcement, or compliance truth.
+- Expectation authority is dimension/property/context/time scoped and can differ by lifecycle action;
+- metric meaning, profile inclusion, threshold, severity, waiver, and high-consequence-use eligibility are independently governable;
+- metric profiles remain governed selection/applicability structures rather than a new truth concept;
+- metric availability does not justify profile inclusion; profile governance should preserve purpose/applicability/use/authority/lifecycle to resist metric bloat;
+- Baseline-derived ranges remain descriptive unless explicitly adopted through an authoritative Expectation;
+- structural/schema compatibility Expectations require explicit normative authority separate from schema meaning and realized structure;
+- structural Change triggers scoped metric/profile/Baseline review, while authority cannot manufacture empirical Baseline comparability;
+- bounded exceptions/waivers/suspensions do not rewrite Observations, structural state, Baseline deviations, or historical evidence;
+- normative conflicts remain explicit without implicit strictest/business/technical/highest-severity precedence;
+- criticality can influence review/priority but does not automatically tighten thresholds or prove Impact;
+- high-consequence metric/Expectation use requires explicit eligibility, which remains separate from control capability, evidence readiness, and enforcement.
 
 ### Remaining Phase 005 groups
 
-3. **Normative Health, Metric & Threshold Governance — NEXT.** Who may define/approve metric profiles, schema/DDL compatibility Expectations, thresholds, margins, severity, waivers, retirement, and high-consequence condition use; Phase 006 retains statistical/schema-health semantics.
-4. **Capability Authorization & Restricted Analytical Visibility.** Canonical capability vocabulary, conditional/current/historical authorization, restricted-data analytical projection.
-5. **High-Consequence Action, Control & Causal-Confirmation Authority.** Causal confirmation, job operations, safeguards, Execution Gates, override/delegation/separation-of-duties semantics.
+4. **Capability Authorization & Restricted Analytical Visibility — NEXT.** Canonical capability vocabulary, permission to view/propose/edit/approve normative state, conditional/current/historical authorization, and restricted-data analytical projection.
+5. **High-Consequence Action, Control & Causal-Confirmation Authority.** Causal confirmation, job operations, safeguards, Execution Gates, override/delegation/separation-of-duties semantics. Group 03 control-use eligibility is a prerequisite governance layer, not control permission.
 6. **Disclosure, Explanation & Audience Governance.** Authorized technical/business disclosure, opacity, inference leakage, high-consequence communication review.
 7. **Consolidation / Exit Review.** Compose authority/governance semantics without stealing evidence truth or selecting IAM/technical architecture.
 
@@ -136,20 +142,22 @@ Phase 005 may determine who/what is permitted or authoritative to confirm, confi
 Phase 006 explicitly owns the detailed health/metric/schema model, including:
 
 - metric-family taxonomy;
-- per-table/pipeline metric profiles;
+- per-table/pipeline metric profiles and functional semantics for profile classes accepted in governance;
 - core versus critical-field versus transformation-specific versus business-critical versus diagnostic/on-demand metrics;
 - output/load, volume, freshness, **schema/DDL structural compatibility**, completeness, uniqueness, validity, distribution/quantile, relational/join/reconciliation, and business-semantic dimensions as applicable;
 - required/optional column, type/precision/scale, nullability, nested-field, key/grain, and consumer-specific schema-compatibility semantics;
-- metric/schema-check bloat control and lifecycle/retirement principles;
+- metric/schema-check bloat control and lifecycle/retirement principles consistent with AUTH-017;
 - hard thresholds, warning/failure margins, absolute/relative/asymmetric tolerance bands, Baseline-derived ranges, seasonality/cohort behavior, low-volume/sample-size uncertainty, and structural-change comparability;
+- semantics for bounded exceptions/waivers without false pass presentation;
 - scoped metric/Baseline applicability after schema/grain/key/type Change rather than global reset;
 - Assessment/composite-health semantics without hiding dimension disagreement;
 - selective transformation-aware metric propagation/reconciliation across pipelines;
 - technical versus business health projections over the same truth;
 - Databricks Metric Views/DQX semantic fit;
-- functional availability expectations for immediate operational/schema checks, near-real-time core health, enriched DQ/distribution health, diagnostic/RCA metrics, and post-ops metrics.
+- functional availability expectations for immediate operational/schema checks, near-real-time core health, enriched DQ/distribution health, diagnostic/RCA metrics, and post-ops metrics;
+- evidence/timing suitability for any criterion explicitly made high-consequence-use eligible under AUTH-023.
 
-Phase 006 must not blindly calculate every possible metric, treat every schema change as universally breaking, recursively copy every upstream statistic downstream, or make useful passive monitoring checks synchronous production dependencies by default.
+Phase 006 must not blindly calculate every possible metric, treat every schema change as universally breaking, recursively copy every upstream statistic downstream, turn waivers into false passes, or make useful passive monitoring checks synchronous production dependencies by default.
 
 ## Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement
 
@@ -157,7 +165,7 @@ Refine Lineage taxonomy/historical topology evidence, Change Intent realization,
 
 ## Phase 008 — Business Questioning and Explanation
 
-Define question types, audience-specific Explanation structures, visible evidence citations, Authorized Analytical Projection/redaction, layered Impact/control state, authority standing/conflict communication, contemporaneous/retrospective/comparison views, reconstructed-versus-actual historical Explanation labeling, uncertainty communication, deterministic versus generative behavior, progressive result maturity communication, schema-change communication, and technical-versus-business metric/health presentation.
+Define question types, audience-specific Explanation structures, visible evidence citations, Authorized Analytical Projection/redaction, layered Impact/control state, authority standing/conflict communication, contemporaneous/retrospective/comparison views, reconstructed-versus-actual historical Explanation labeling, uncertainty communication, deterministic versus generative behavior, progressive result maturity communication, schema-change communication, normative conflict/waiver communication, and technical-versus-business metric/health presentation.
 
 ## Phase 009 — Integration Contracts, Source Authority, and Evidence Availability
 

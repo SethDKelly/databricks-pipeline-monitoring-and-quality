@@ -1,19 +1,19 @@
 ---
-description: Phase 005 authority/governance/capability phase guardrails. Groups 01-02 are accepted; Group 03 is next.
+description: Phase 005 authority/governance/capability phase guardrails. Groups 01-03 are accepted; Group 04 is next.
 globs:
 alwaysApply: true
 ---
 
 # Phase 005 handoff rules
 
-Status: **Phase 005 is active. Groups 01–02 are accepted with AUTH-001–AUTH-015. Group 03 — Normative Health, Metric & Threshold Governance is next and has not started.**
+Status: **Phase 005 is active. Groups 01–03 are accepted with AUTH-001–AUTH-023. Group 04 — Capability Authorization & Restricted Analytical Visibility is next and has not started.**
 
 Accepted review sequence:
 
 1. Authority Vocabulary, Source Assertions & Conflict Resolution — **accepted**.
 2. Semantic, Responsibility, Classification, Policy & Criticality Governance — **accepted**.
-3. Normative Health, Metric & Threshold Governance — **next**.
-4. Capability Authorization & Restricted Analytical Visibility.
+3. Normative Health, Metric & Threshold Governance — **accepted**.
+4. Capability Authorization & Restricted Analytical Visibility — **next**.
 5. High-Consequence Action, Control & Causal-Confirmation Authority.
 6. Disclosure, Explanation & Audience Governance.
 7. Consolidation / Exit Review.
@@ -51,12 +51,28 @@ Schema/DDL handoff:
 - Semantic Definition owns governed schema/grain/key meaning; Expectation owns normative structural compatibility; Observation/Change own realized state/change; Assessment owns conformance.
 - Schema changes trigger scoped metric/Baseline/key/join applicability review rather than automatic global reset.
 - Pre-deployment GitHub Actions checks, Databricks/Unity Catalog realized-state checks, and independent monitoring checks are candidate future integration points with different temporal roles; do not select one universal location in Phase 005.
-- A schema/metric condition used by an Execution Gate is a high-consequence control criterion and still requires Phase 004 evidence plus later authority/availability semantics.
 
-For Group 03:
+Group 03 accepted rules:
 
-- Define **who** may establish/revise/waive/retire Expectations, metric profiles, schema compatibility rules, thresholds, margins/tolerance bands, severity, and high-consequence metric/schema-condition use.
-- Do not define detailed metric families, statistical calculations, schema-compatibility algorithms, Baseline behavior, metric propagation, overall-health aggregation, or validation architecture; those belong to Phase 006/007/009/010.
-- Do not begin Group 04+ without explicit user request.
+- Expectation authority is dimension/property/context/time scoped and can differ by lifecycle action.
+- Metric meaning, profile inclusion, threshold, severity, waiver, and high-consequence-use eligibility are independently governable layers.
+- Metric profiles are governed selection/applicability structures, not new truth concepts.
+- Metric/check availability alone does not justify profile inclusion; require purpose, applicability, use/audience, authority/owner, and lifecycle/retirement context.
+- Baseline-derived ranges stay descriptive until an authoritative Expectation explicitly adopts normative criteria.
+- Technical schema meaning does not automatically define structural/schema compatibility Expectations.
+- Governance can retire/suspend metric/Baseline use but cannot manufacture empirical Baseline comparability.
+- Bounded exceptions/waivers/suspensions do not rewrite Observations, realized schema, Baseline deviations, or historical evidence and must not create false `pass` results.
+- Normative conflict preserves explicit conflict; never infer strictest/latest/business/technical/highest-severity precedence.
+- Criticality may influence review/priority but does not silently tighten thresholds or prove Impact.
+- A metric/Expectation is not control-eligible merely because it is authoritative or business-critical.
+- High-consequence-use eligibility remains separate from gate/safeguard configuration/activation/override capability, evidence readiness, and enforcement.
+- No 25th concept is required for Group 03.
+
+For Group 04:
+
+- Refine **permission** independently from Assertion Authority: view, propose, edit, approve, waive/retire normative rules; view metric/schema/threshold detail; raw-data read; metadata/health; Lineage/RCA; operational/control/confirmation capabilities.
+- Preserve restricted-data analytical usefulness without treating metrics/schema/threshold/authority metadata as automatically unrestricted.
+- Capability Authorization must not create Assertion Authority, alter normative standing, or prove action success/enforcement.
+- Do not begin Group 05+ without explicit user request.
 
 Preserve all Phase 004 evidence burdens. Do not select IAM, assertion-authority engine, GitHub Actions/Unity Catalog as universal validation mechanism, scheduler/orchestrator, quarantine, metric engine/storage, graph store, LLM, causal algorithm, or technical architecture during Phase 005.

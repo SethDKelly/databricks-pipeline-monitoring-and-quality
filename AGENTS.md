@@ -8,7 +8,7 @@ Phase 002 originally accepted 20 concepts. Four explicit post-exit addenda are n
 
 **Phase 004 — Evidence, Time, and Causality Refinement is complete. Groups 01–05 are accepted with REF-001–REF-030.**
 
-**Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is active. Group 01 — Authority Vocabulary, Source Assertions & Conflict Resolution is accepted with AUTH-001–AUTH-008. Group 02 — Semantic, Responsibility, Classification, Policy & Criticality Governance is next and has not started.**
+**Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is active. Groups 01–03 are accepted with AUTH-001–AUTH-023. Group 04 — Capability Authorization & Restricted Analytical Visibility is next and has not started.**
 
 Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, deployment workflows, quarantine implementations, gate/orchestration implementations, IAM implementations, assertion-authority engines, graph/causal engines, LLMs, or prototypes unless the user explicitly advances the project into technical design.
 
@@ -39,6 +39,11 @@ Preserve:
 - authoritative standing ≠ factual infallibility;
 - authoritative standing ≠ permission to act;
 - authoritative rule/configuration ≠ actual enforcement;
+- metric meaning ≠ metric-profile selection ≠ threshold/margin authority ≠ severity authority ≠ waiver authority ≠ high-consequence-use eligibility;
+- Baseline-derived range ≠ normative Expectation unless explicitly adopted;
+- criticality ≠ threshold severity ≠ actual Impact;
+- waiver/exception ≠ rewritten Observation/Baseline/Assessment ≠ false `pass`;
+- control-use eligibility ≠ control capability ≠ evidence readiness ≠ enforcement;
 - assertion disagreement ≠ authoritative assertion conflict ≠ authority-rule conflict;
 - source count/majority ≠ authority precedence;
 - record recency ≠ authority precedence;
@@ -87,7 +92,6 @@ Preserve:
 - `not exposed` ≠ missing consumer telemetry;
 - `not exposed to suspect version` ≠ current/fresh/healthy delivery;
 - no encounter opportunity ≠ no encounter ≠ safe-version encounter ≠ unknown-version encounter;
-- criticality ≠ actual Impact;
 - safeguard proposal/configuration/request ≠ active/enforced safeguard;
 - active safeguard + non-exposure ≠ automatically prevented exposure;
 - prevented exposure ≠ fresh/healthy delivery;
@@ -102,7 +106,7 @@ Preserve:
 - actual historical state ≠ replay-derived interpretation;
 - actual historical control action ≠ counterfactual preferred action;
 - actual retained historical Explanation ≠ reconstructed historical Explanation;
-- historical Assertion Authority/Capability Authorization/control state ≠ current authority/disclosure permission;
+- historical Assertion Authority/Capability Authorization/control/normative state ≠ current authority/disclosure permission;
 - evidence applicability ≠ evidence coverage ≠ conclusion sufficiency;
 - evidence not found ≠ observed absence;
 - source count ≠ independent corroboration;
@@ -222,6 +226,22 @@ Preserve:
 - Assertion Authority does not waive REF-001–REF-030, prove factual correctness, prove compliance, or prove enforcement.
 - Concrete source/vendor authority assignments remain category/environment-specific later work; do not infer that Collibra, Immuta, Databricks/Unity Catalog, GitHub, or a human role is universally authoritative.
 
+## Phase 005 Group 03 normative governance rules — accepted AUTH-016–AUTH-023
+
+- Expectation authority is dimension/property/context/time/action scoped.
+- Metric profiles are governance structures over existing metric/check dimensions; they do not own measured values or statistical methods.
+- Reject metric bloat by default: technical availability is not sufficient for profile inclusion.
+- Threshold, warning/failure margin, severity, waiver, and control-use eligibility can have separate authority.
+- Baseline regularity is descriptive and cannot become normative without an authoritative Expectation.
+- Structural/schema compatibility Expectations require explicit normative authority separate from technical schema meaning and realized structure.
+- Structural changes trigger scoped metric/profile/Baseline review; governance cannot make empirically non-comparable evidence comparable.
+- A waiver/exception/suspension changes normative applicability/response without rewriting evidence or producing a false pass.
+- Normative conflict remains explicit; no implicit strictest/business/technical/latest/highest-severity winner.
+- Criticality may affect priority/review but not automatically thresholds, health failure, or Impact.
+- High-consequence-use eligibility must be explicit; authoritative/business-critical does not imply control-eligible.
+- Control-use eligibility does not grant control capability or prove evidence readiness/enforcement.
+- Group 03 requires no 25th concept.
+
 ## Passive monitoring / integration-independence rules
 
 - Baseline monitoring is **out-of-band and non-blocking by default**.
@@ -232,7 +252,7 @@ Preserve:
 
 ## Execution Gate rules
 
-- **Execution Gate is optional active control.** Lineage, schedule timing, readiness Assessment, or Assertion Authority does not silently enable gating.
+- **Execution Gate is optional active control.** Lineage, schedule timing, readiness Assessment, Assertion Authority, or high-consequence-use eligibility does not silently enable gating.
 - A gate may hold a downstream execution opportunity until explicitly declared prerequisite readiness is evidenced.
 - Gate `hold` does not mean execution failure; `admit` does not prove execution occurred; `override` does not prove readiness.
 - Missing readiness/control evidence is not automatically ready.
@@ -245,11 +265,11 @@ Preserve:
 ## Capability Authorization / analytical projection rules
 
 - Capability Authorization answers whether a principal may perform a named capability on a subject/context/time; it does not select IAM/enforcement architecture.
-- Never infer authorization from Responsibility Assignment, Assertion Authority, Policy Context, Classification, Monitoring Scope, repository ownership, commit history, job creator identity, platform-admin status, Investigation role, or causal expertise.
+- Never infer authorization from Responsibility Assignment, Assertion Authority, Policy Context, Classification, Monitoring Scope, repository ownership, commit history, job creator identity, platform-admin status, Investigation role, causal expertise, normative authority, or control-use eligibility.
 - Raw-data read, derived health/metric visibility, governance metadata visibility, Lineage/RCA participation, job/run operational control, safeguard actions, gate actions/override, causal-confirmation capability, and Explanation access are independently resolvable.
 - A restricted-data analyst may perform approved RCA/Impact analysis over safe aggregate/redacted/opaque evidence without direct row access.
 - Analytical visibility never implies permission to retry/update/modify a job, activate a safeguard, override a gate, confirm a Causal Claim, or authoritatively define governance state.
-- Derived metrics/thresholds/Lineage/policy/causal/Impact/gate/authority details may themselves be restricted.
+- Derived metrics/thresholds/schema/Lineage/policy/causal/Impact/gate/authority details may themselves be restricted.
 - Missing authorization evidence is not permission.
 - Authorized Analytical Projection is a view over permitted concept state; it does not create truth or declassify by inference.
 - Restricted evidence is never retrieved merely to summarize it to an unauthorized audience.
@@ -272,7 +292,7 @@ Preserve:
 ## Runtime / safeguard rules
 
 - Treat execution duration/dependency latency as first-class operational evidence.
-- Use the correct time-valid Expectation/Baseline.
+- Use the correct time-valid Expectation/Baseline/waiver state.
 - Ordinary Baseline variation must not become alert noise.
 - Propagation Safeguard is protective state, not health/cause truth.
 - Activation requires explicit safeguard capability/authority and enforcement evidence where applicable.
@@ -297,16 +317,16 @@ Preserve:
 - Annotation remains attributed human context; structured facts/claims/intents/norms/governance assertions route to owning concepts.
 - Disputed/withdrawn Annotation cannot be presented as uncontested current fact.
 - Explanation composes only from the Authorized Analytical Projection.
-- Explanation preserves statement-to-basis traceability, Impact layers, exact Causal Claim status, Assertion Authority standing/conflict, readiness/control evidence state, human-source status, policy/authorization limitations, and temporal perspective.
+- Explanation preserves statement-to-basis traceability, Impact layers, exact Causal Claim status, Assertion Authority standing/conflict, normative rule/waiver state, readiness/control evidence state, human-source status, policy/authorization limitations, and temporal perspective.
 - Never paraphrase `supported`, `weakened`, or `unresolved` as `confirmed root cause`.
-- Never paraphrase `configured/requested` control as `enforced`, `not exposed to suspect version` as `healthy/current`, or advisory assertion as authoritative state.
+- Never paraphrase `configured/requested` control as `enforced`, `not exposed to suspect version` as `healthy/current`, advisory assertion as authoritative state, or waived violation as a clean underlying measurement.
 - Safe omission/redaction cannot be worded as evidence hidden entities/evidence/authority rules do not exist.
 - Explanation may surface authorized operational/gate/confirmation capability but never executes the action.
 
 ## Historical replay rules — Phase 003 Group 06 + Phase 004/005 refinement
 
 - Historical replay uses **event/effective time + recorded/knowledge cutoff**.
-- Resolve each concept, Assertion Authority, Capability Authorization, and control state from evidence/rules available under the cut; never project current identity/topology/reference/governance/authority/authorization/control backward.
+- Resolve each concept, Assertion Authority, Capability Authorization, normative rule/waiver, and control state from evidence/rules available under the cut; never project current identity/topology/reference/governance/authority/authorization/normative/control backward.
 - Evidence or authority rules recorded later but effective earlier are excluded from a contemporaneous cut and may appear in a later retrospective cut.
 - Distinguish actual historical state/authority resolution from replay-derived interpretation.
 - Late/corrected evidence or authority rules may create a new retrospective conclusion; preserve the prior contemporaneous conclusion.
@@ -320,8 +340,8 @@ Preserve:
 ## Metric-health handoff
 
 - Table health is broader than successful load occurrence.
-- Phase 005 Group 03 may decide **who** may define/approve/revise/waive/retire metric profiles, Expectations, thresholds, margins/tolerance bands, severity, or high-consequence metric use.
-- Phase 006 owns metric families, metric profiles, threshold/statistical semantics, metric-bloat controls, technical/business health composition, selective metric propagation/reconciliation, and metric timing objectives.
+- Phase 005 Group 03 has accepted **who** can govern metric profiles, structural/schema Expectations, thresholds, margins/tolerance bands, severity, waivers/retirement, and high-consequence-use eligibility through AUTH-016–AUTH-023.
+- Phase 006 owns metric families, metric/statistical/schema-health semantics, Baseline comparability behavior, metric-bloat operational semantics, technical/business health composition, selective metric propagation/reconciliation, waiver presentation, and metric timing objectives.
 - Phase 007 later owns Lineage-aware propagation behavior.
 - Metrics do not recursively propagate merely because Lineage exists.
 - Technical and business metric views are authorized projections over the same health truth, not separate truth models.
@@ -332,8 +352,10 @@ Preserve:
 - Phase 004 is complete: REF-001–REF-030; Group 05 exit accepted; D-140–D-152.
 - Pre-Phase-005 metric-health planning accepted: D-153–D-160.
 - Phase 005 Group 01 accepted: Assertion Authority + AUTH-001–AUTH-008; D-161–D-172.
-- **Group 02 — Semantic, Responsibility, Classification, Policy & Criticality Governance is next and has not started.**
-- Do not begin Group 02 or later groups without explicit user request.
+- Phase 005 Group 02 accepted: AUTH-009–AUTH-015; D-173–D-188.
+- Phase 005 Group 03 accepted: AUTH-016–AUTH-023; D-189–D-202.
+- **Group 04 — Capability Authorization & Restricted Analytical Visibility is next and has not started.**
+- Do not begin Group 04 or later groups without explicit user request.
 - Phase 005 authority decisions must not weaken Phase 004 evidence burdens or select technical architecture.
 
 ## Tooling stance

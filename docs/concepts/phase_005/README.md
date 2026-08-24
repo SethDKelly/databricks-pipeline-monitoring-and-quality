@@ -1,6 +1,6 @@
 # Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement
 
-**Status:** ACTIVE — Groups 01–02 accepted; AUTH-001–AUTH-015 accepted; Group 03 next
+**Status:** ACTIVE — Groups 01–03 accepted; AUTH-001–AUTH-023 accepted; Group 04 next
 
 ## Goal
 
@@ -8,7 +8,7 @@ Refine who/what is authoritative or permitted to establish, resolve, view, confi
 
 Phase 005 is a governance/authority/capability refinement phase. It must not select IAM technology, redefine Phase 004 evidence sufficiency, silently treat vendor/source ownership as authority, or prematurely design the Phase 006 metric/statistical/schema-health model.
 
-Phase 005 authority contracts use `AUTH-###` identifiers. They are refinement/governance contracts over accepted concepts, not new Phase 003 synchronizations and not substitutes for concept ownership. Group 01 did expose one genuine missing concept boundary: **Assertion Authority**, accepted as the 24th concept. Group 02 required no additional concept.
+Phase 005 authority contracts use `AUTH-###` identifiers. They are refinement/governance contracts over accepted concepts, not new Phase 003 synchronizations and not substitutes for concept ownership. Group 01 exposed one genuine missing concept boundary: **Assertion Authority**, accepted as the 24th concept. Groups 02–03 required no additional concept.
 
 ## Accepted handoff from Phase 004
 
@@ -105,13 +105,42 @@ Key Group 02 results:
 
 See [`02_semantic_governance_authority/README.md`](02_semantic_governance_authority/README.md).
 
-## Pre-phase metric-health handoff
+## Accepted pre-phase metric-health handoff
 
-The accepted pre-Phase-005 metric consideration is documented in [`pre_phase_metric_health_handoff.md`](pre_phase_metric_health_handoff.md).
+[`pre_phase_metric_health_handoff.md`](pre_phase_metric_health_handoff.md) establishes that successful execution is insufficient for table/pipeline health and that metric selection/propagation must be purposeful rather than exhaustive.
 
-Phase 005 owns **governance around metrics**, not the metric/statistical model itself. In particular, Phase 005 should establish who may define/approve/revise/waive/retire metric profiles, Expectations, thresholds, margins/tolerance bands, severity and audience disclosure. Phase 006 will define the actual metric families, table/pipeline metric profiles, threshold semantics, schema-health checks, bloat controls, audience health projections, and selective metric propagation behavior.
+Phase 005 owns governance around metric/schema normative state; Phase 006 owns the actual metric/statistical/schema-health model; Phase 007 owns Lineage-aware propagation/change behavior; Phase 009 characterizes concrete source support/latency; Phase 010 chooses technical realization.
 
-A metric or schema Expectation used by an Execution Gate or other high-consequence control requires both accepted normative authority and the Phase 004 evidence/control standards; authority does not make the condition timely or sufficient by itself.
+## Accepted Group 03 — Normative Health, Metric & Threshold Governance
+
+Group 03 applies Assertion Authority to normative health rules without moving health evidence or calculation semantics into governance.
+
+Accepted contracts:
+
+- **AUTH-016** — Expectation-Class and Normative Authority;
+- **AUTH-017** — Metric Profile Selection, Purpose, and Critical-Metric Authority;
+- **AUTH-018** — Threshold, Margin, Tolerance, and Severity Authority;
+- **AUTH-019** — Structural / Schema Compatibility Expectation Authority;
+- **AUTH-020** — Metric Applicability, Baseline Use, and Structural-Change Review Authority;
+- **AUTH-021** — Exception, Waiver, Suspension, and Retirement Governance;
+- **AUTH-022** — Normative Conflict, Business/Technical Coexistence, and Rule Composition;
+- **AUTH-023** — High-Consequence Metric / Expectation Use Eligibility.
+
+Key Group 03 results:
+
+- Expectation authority is bound to dimension/property/context/time and may differ by lifecycle action;
+- metric meaning, profile inclusion, threshold, severity, waiver, and high-consequence-use eligibility can have different authoritative holders;
+- metric profiles are governed selection/applicability structures, not a new truth concept;
+- metric availability does not justify profile inclusion; retained checks should have purpose, applicability, use/audience, authority/owner, and lifecycle;
+- Baseline-derived ranges remain descriptive until explicitly adopted through an authoritative Expectation;
+- structural/schema compatibility Expectations require explicit normative authority separate from technical schema meaning and realized schema state;
+- authority may retire/suspend metric/Baseline use but cannot manufacture empirical Baseline comparability;
+- bounded exceptions/waivers change normative applicability or required response without rewriting Observations, structural state, Baseline deviations, or historical evidence;
+- `strictest wins`, `business wins`, `technical wins`, `highest severity wins`, and recency are not implicit normative conflict resolvers;
+- criticality can influence governance priority/review but does not automatically tighten thresholds or prove Impact;
+- a metric/Expectation must be explicitly eligible before high-consequence control use, but eligibility is not control authority, evidence readiness, or enforcement.
+
+See [`03_normative_health_metric_threshold_governance/README.md`](03_normative_health_metric_threshold_governance/README.md).
 
 ## Delivery-group design
 
@@ -123,28 +152,22 @@ The phase is reviewed in **seven logical groups**. The grouping is a design/revi
 ### Group 02 — Semantic, Responsibility, Classification, Policy & Criticality Governance
 **Status:** **Accepted — AUTH-009–AUTH-015; no new concept.**
 
-Defines facet-specific semantic/schema authority, responsibility-type governance, scheme-specific Classification/criticality authority, Policy Context applicability authority, explicit contextual override/conflict semantics, no implicit governance propagation, and descriptive-governance separation from normative/operational truth.
-
 ### Group 03 — Normative Health, Metric & Threshold Governance
-**Status:** **Next — not started.**
-
-Define who may establish/revise Expectations, metric profiles, **schema compatibility Expectations**, thresholds, warning/failure margins, tolerance bands, severity, exceptions/waivers, retirement, and high-consequence metric/schema-condition use.
-
-Boundary: Phase 006 owns metric families, schema-health/compatibility semantics, statistical behavior, Baseline comparison, propagation, aggregation, and health meanings.
+**Status:** **Accepted — AUTH-016–AUTH-023; no new concept.**
 
 ### Group 04 — Capability Authorization & Restricted Analytical Visibility
-**Status:** Planned.
+**Status:** **Next — not started.**
 
-Refine canonical capability vocabulary; allow/deny/conditional/unknown/conflicting states; purpose/environment/tenant/subject/time conditions; user/group/role/service-principal interactions; current versus historical authorization; and Authorized Analytical Projection.
+Refine canonical capability vocabulary; allow/deny/conditional/unknown/conflicting states; purpose/environment/tenant/subject/time conditions; user/group/role/service-principal interactions; permissions to view/propose/edit/approve normative state; current versus historical authorization; and Authorized Analytical Projection.
 
-Boundary: do not select RBAC/ABAC/IAM or declassification architecture.
+Boundary: do not select RBAC/ABAC/IAM or declassification architecture. Capability Authorization does not create Assertion Authority or prove action success.
 
 ### Group 05 — High-Consequence Action, Control & Causal-Confirmation Authority
 **Status:** Planned.
 
 Refine causal-confirmation capability, job operations, safeguard/gate configuration/activation/release/override, delegation, multi-party approval, break-glass, expiry/revocation, and separation of duties.
 
-Boundary: authority never weakens REF-013–REF-030 evidence/control standards or proves action success.
+Boundary: Group 03 control-use eligibility does not itself grant these capabilities; authority never weakens REF-013–REF-030 evidence/control standards or proves action success.
 
 ### Group 06 — Disclosure, Explanation & Audience Governance
 **Status:** Planned.
@@ -165,6 +188,9 @@ Phase 005 must not:
 - treat authority as factual infallibility;
 - treat policy applicability as enforcement/compliance proof;
 - make derived evidence/governance state automatically unrestricted or authoritative;
+- promote Baseline typicality into normative truth without explicit Expectation authority;
+- treat a waiver as a rewrite of observed evidence or a false health pass;
+- make a critical or authoritative metric automatically control-eligible;
 - define the detailed Phase 006 metric/schema-health/statistical model or blindly propagate metrics/governance through Lineage;
 - select RBAC/ABAC/IAM/provider architecture;
 - select Databricks/Collibra/Immuta/GitHub/Unity Catalog as universally authoritative by default;
@@ -174,4 +200,4 @@ Phase 005 must not:
 
 ## Phase direction
 
-**Phase 005 Groups 01–02 are accepted with AUTH-001–AUTH-015. Group 03 — Normative Health, Metric & Threshold Governance is next and has not started.**
+**Phase 005 Groups 01–03 are accepted with AUTH-001–AUTH-023. Group 04 — Capability Authorization & Restricted Analytical Visibility is next and has not started.**

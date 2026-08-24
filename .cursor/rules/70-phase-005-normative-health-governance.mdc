@@ -1,0 +1,34 @@
+---
+description: Accepted Phase 005 Group 03 normative health, metric, threshold, schema-contract, waiver, and high-consequence-use governance rules.
+globs:
+alwaysApply: true
+---
+
+# Phase 005 Group 03 normative governance rules
+
+Status: **Accepted — AUTH-016–AUTH-023.**
+
+Preserve:
+
+- Expectation authority is bound to explicit subject, dimension/property/check, context, lifecycle action, and time.
+- Semantic/schema authority, Responsibility Assignment, Classification/criticality, Policy Context, Baseline behavior, metric computation ownership, and source availability do not automatically grant normative authority.
+- **Metric meaning ≠ metric-profile selection ≠ threshold/margin authority ≠ severity authority ≠ waiver authority ≠ control-use eligibility.**
+- Metric profiles are governed selection/applicability structures, not operational truth concepts.
+- Never add metrics/checks merely because they are cheap/available. Preserve purpose, applicability, intended use/audience, authority/owner, and lifecycle/retirement rationale.
+- Baseline remains descriptive. A Baseline-derived range becomes normative only through an explicit authoritative Expectation.
+- Governed schema meaning ≠ structural/schema compatibility Expectation ≠ realized schema state/Change ≠ compatibility Assessment.
+- Consumer-specific schema compatibility can legitimately differ by context.
+- Structural Change triggers scoped metric/profile/Baseline review, not global reset.
+- Governance can suspend/retire use of a Baseline but cannot make empirically non-comparable evidence comparable.
+- A new Baseline is derived from sufficient post-change evidence, never from approved targets or Change Intent anticipated values.
+- Bounded exception/waiver/suspension state does not mutate Observations, realized schema, Baseline deviations, or historical evidence. Do not convert waived violations to fictional `pass` measurements.
+- Expired waivers do not silently persist.
+- Preserve historical normative rule, waiver, retirement, and control-use eligibility state by effective time and knowledge cutoff.
+- Normative conflict stays explicit. Never assume strictest/latest/business/technical/highest-severity precedence.
+- Criticality may affect priority/review but does not automatically tighten thresholds, establish a violation, or prove Impact/consequence.
+- An authoritative/business-critical metric/Expectation is not automatically eligible for active control.
+- High-consequence-use eligibility must be explicit and bound to metric/check/Expectation version, target/context, use class, and time.
+- **Control-use eligibility ≠ gate/safeguard/job capability ≠ evidence readiness/sufficiency ≠ actual enforcement.**
+- Group 05 owns control/confirmation capability; Phase 004 owns evidence/enforcement standards; Phase 006 owns health/statistical/schema-check semantics; Phase 009 owns concrete source timing/support.
+
+Do not select Metric Views, DQX, GitHub Actions, Unity Catalog, SQL, a rule engine, or the monitoring application as the mandatory normative or validation implementation.
