@@ -1,6 +1,6 @@
 # Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement
 
-**Status:** ACTIVE — Groups 01–03 accepted; AUTH-001–AUTH-023 accepted; Group 04 next
+**Status:** ACTIVE — Groups 01–04 accepted; AUTH-001–AUTH-032 accepted; Group 05 next
 
 ## Goal
 
@@ -8,7 +8,7 @@ Refine who/what is authoritative or permitted to establish, resolve, view, confi
 
 Phase 005 is a governance/authority/capability refinement phase. It must not select IAM technology, redefine Phase 004 evidence sufficiency, silently treat vendor/source ownership as authority, or prematurely design the Phase 006 metric/statistical/schema-health model.
 
-Phase 005 authority contracts use `AUTH-###` identifiers. They are refinement/governance contracts over accepted concepts, not new Phase 003 synchronizations and not substitutes for concept ownership. Group 01 exposed one genuine missing concept boundary: **Assertion Authority**, accepted as the 24th concept. Groups 02–03 required no additional concept.
+Phase 005 authority contracts use `AUTH-###` identifiers. They are refinement/governance contracts over accepted concepts, not new Phase 003 synchronizations and not substitutes for concept ownership. Group 01 exposed one genuine missing concept boundary: **Assertion Authority**, accepted as the 24th concept. Groups 02–04 required no additional concept.
 
 ## Accepted handoff from Phase 004
 
@@ -34,18 +34,18 @@ Assertion Authority answers:
 
 It does not answer whether the assertion is factually infallible, whether evidence is sufficient, whether the principal is allowed to perform an action, or whether a control actually enforced something.
 
-Accepted authority contracts:
+Accepted contracts:
 
-- **AUTH-001** — Authority Target Binding and Vocabulary;
-- **AUTH-002** — Authority Rule Provenance and Governing Basis;
-- **AUTH-003** — Assertion Standing and Conditional Authority;
-- **AUTH-004** — Assertion Disagreement and Authority Conflict;
-- **AUTH-005** — Explicit Precedence, Co-Authority, and Fallback;
-- **AUTH-006** — Authority Revision, Correction, Supersession, and Time;
-- **AUTH-007** — Unknown, Unavailable, and Resolution Limits;
-- **AUTH-008** — Authority Separation from Evidence, Permission, Responsibility, Policy, and Enforcement.
+- AUTH-001 — Authority Target Binding and Vocabulary;
+- AUTH-002 — Authority Rule Provenance and Governing Basis;
+- AUTH-003 — Assertion Standing and Conditional Authority;
+- AUTH-004 — Assertion Disagreement and Authority Conflict;
+- AUTH-005 — Explicit Precedence, Co-Authority, and Fallback;
+- AUTH-006 — Authority Revision, Correction, Supersession, and Time;
+- AUTH-007 — Unknown, Unavailable, and Resolution Limits;
+- AUTH-008 — Authority Separation from Evidence, Permission, Responsibility, Policy, and Enforcement.
 
-Key Group 01 decisions:
+Key results:
 
 - authority is category/facet/context/time scoped, never universal by default;
 - assertion recording and authoritative standing are separate;
@@ -56,7 +56,7 @@ Key Group 01 decisions:
 - authority history is bitemporal and corrections do not rewrite what was known then;
 - authority cannot waive REF-001–REF-030 evidence burdens or prove enforcement.
 
-See [`01_authority_vocabulary_and_conflict/README.md`](01_authority_vocabulary_and_conflict/README.md) and [`../phase_002/addenda/assertion_authority.md`](../phase_002/addenda/assertion_authority.md).
+See [`01_authority_vocabulary_and_conflict/README.md`](01_authority_vocabulary_and_conflict/README.md).
 
 ## Accepted pre-Group-02 schema / DDL validation handoff
 
@@ -75,33 +75,29 @@ Pre-deployment validation in source control/CI, realized-state validation from D
 
 ## Accepted Group 02 — Semantic / Governance Authority and AUTH-009–AUTH-015
 
-Group 02 applies Assertion Authority to descriptive/governance truth while preserving descriptive, normative, observed, authorization, Impact, and enforcement boundaries.
-
 Accepted contracts:
 
-- **AUTH-009** — Semantic Facet and Schema-Meaning Authority;
-- **AUTH-010** — Responsibility-Type Authority and Assignment Governance;
-- **AUTH-011** — Classification-Scheme and Criticality Authority;
-- **AUTH-012** — Policy-Context Applicability Authority;
-- **AUTH-013** — Contextual Overrides, Local Governance, and Cross-Facet Conflict;
-- **AUTH-014** — Derived, Inherited, and Propagated Governance Assertions;
-- **AUTH-015** — Governance State Separation from Normative Health and Operational Truth.
+- AUTH-009 — Semantic Facet and Schema-Meaning Authority;
+- AUTH-010 — Responsibility-Type Authority and Assignment Governance;
+- AUTH-011 — Classification-Scheme and Criticality Authority;
+- AUTH-012 — Policy-Context Applicability Authority;
+- AUTH-013 — Contextual Overrides, Local Governance, and Cross-Facet Conflict;
+- AUTH-014 — Derived, Inherited, and Propagated Governance Assertions;
+- AUTH-015 — Governance State Separation from Normative Health and Operational Truth.
 
-Key Group 02 results:
+Key results:
 
-- semantic authority is facet-specific; business definition, technical schema declaration, grain, units, population, calculation meaning, field roles, and key roles may have different holders;
+- semantic authority is facet-specific across business definition, technical schema declaration, grain, units, population, calculation meaning, field roles, and key roles;
 - **declared/governed schema meaning ≠ normative schema contract ≠ realized schema state**;
 - declared key role does not prove uniqueness/nullability health;
 - column rename identity is not inferred from drop/add names alone;
-- responsibility authority is responsibility-type scoped and assignment does not grant semantic/policy/access/control authority;
+- responsibility authority is responsibility-type scoped;
 - Classification authority is scheme/context specific;
 - business/operational/consumer/delivery criticality remains Classification under explicit schemes/contexts rather than a new concept;
-- criticality influences priority/context but does not prove exposure, consequence, health failure, or cause;
 - policy text/reference authority may differ from subject/context policy-applicability authority;
-- narrower/local governance does not automatically override broader governance unless an explicit authority rule defines the relationship;
+- narrower/local governance does not automatically override broader governance;
 - Lineage, repository/container membership, schema/tag inference, and parent state do not implicitly propagate governance assertions or authority;
-- descriptive governance authority does not become normative health, Capability Authorization, control enforcement, compliance, or actual Impact truth;
-- Group 02 schema/governance scenarios require no 25th concept.
+- descriptive governance authority does not become normative health, Capability Authorization, control enforcement, compliance, or actual Impact truth.
 
 See [`02_semantic_governance_authority/README.md`](02_semantic_governance_authority/README.md).
 
@@ -113,27 +109,25 @@ Phase 005 owns governance around metric/schema normative state; Phase 006 owns t
 
 ## Accepted Group 03 — Normative Health, Metric & Threshold Governance
 
-Group 03 applies Assertion Authority to normative health rules without moving health evidence or calculation semantics into governance.
-
 Accepted contracts:
 
-- **AUTH-016** — Expectation-Class and Normative Authority;
-- **AUTH-017** — Metric Profile Selection, Purpose, and Critical-Metric Authority;
-- **AUTH-018** — Threshold, Margin, Tolerance, and Severity Authority;
-- **AUTH-019** — Structural / Schema Compatibility Expectation Authority;
-- **AUTH-020** — Metric Applicability, Baseline Use, and Structural-Change Review Authority;
-- **AUTH-021** — Exception, Waiver, Suspension, and Retirement Governance;
-- **AUTH-022** — Normative Conflict, Business/Technical Coexistence, and Rule Composition;
-- **AUTH-023** — High-Consequence Metric / Expectation Use Eligibility.
+- AUTH-016 — Expectation-Class and Normative Authority;
+- AUTH-017 — Metric Profile Selection, Purpose, and Critical-Metric Authority;
+- AUTH-018 — Threshold, Margin, Tolerance, and Severity Authority;
+- AUTH-019 — Structural / Schema Compatibility Expectation Authority;
+- AUTH-020 — Metric Applicability, Baseline Use, and Structural-Change Review Authority;
+- AUTH-021 — Exception, Waiver, Suspension, and Retirement Governance;
+- AUTH-022 — Normative Conflict, Business/Technical Coexistence, and Rule Composition;
+- AUTH-023 — High-Consequence Metric / Expectation Use Eligibility.
 
-Key Group 03 results:
+Key results:
 
-- Expectation authority is bound to dimension/property/context/time and may differ by lifecycle action;
+- Expectation authority is dimension/property/context/time scoped and may differ by lifecycle action;
 - metric meaning, profile inclusion, threshold, severity, waiver, and high-consequence-use eligibility can have different authoritative holders;
 - metric profiles are governed selection/applicability structures, not a new truth concept;
-- metric availability does not justify profile inclusion; retained checks should have purpose, applicability, use/audience, authority/owner, and lifecycle;
+- metric availability does not justify profile inclusion;
 - Baseline-derived ranges remain descriptive until explicitly adopted through an authoritative Expectation;
-- structural/schema compatibility Expectations require explicit normative authority separate from technical schema meaning and realized schema state;
+- structural/schema compatibility Expectations require explicit normative authority;
 - authority may retire/suspend metric/Baseline use but cannot manufacture empirical Baseline comparability;
 - bounded exceptions/waivers change normative applicability or required response without rewriting Observations, structural state, Baseline deviations, or historical evidence;
 - `strictest wins`, `business wins`, `technical wins`, `highest severity wins`, and recency are not implicit normative conflict resolvers;
@@ -142,32 +136,63 @@ Key Group 03 results:
 
 See [`03_normative_health_metric_threshold_governance/README.md`](03_normative_health_metric_threshold_governance/README.md).
 
+## Accepted Group 04 — Capability Authorization & Restricted Analytical Visibility
+
+Group 04 refines **permission truth** and least-privilege analytical visibility without creating a new authorization/IAM architecture or weakening evidence truth.
+
+Accepted contracts:
+
+- **AUTH-024** — Capability Target Binding and Canonical Capability Vocabulary;
+- **AUTH-025** — Authorization State, Conditions, and Resolution Semantics;
+- **AUTH-026** — Principal Composition, Membership, Role, and Service Identity;
+- **AUTH-027** — Capability Scope, Inheritance, and Derived Grants;
+- **AUTH-028** — Analytical Visibility Decomposition and Least Privilege;
+- **AUTH-029** — Normative Governance Action Capabilities;
+- **AUTH-030** — Authorized Analytical Projection, Opacity, and Evidence Minimization;
+- **AUTH-031** — Restricted Derived Evidence and Inference-Leakage Constraints;
+- **AUTH-032** — Authorization History, Revocation, and Enforcement Separation.
+
+Key results:
+
+- authorization binds exact principal + capability/action + subject + context/time and, where material, detail level;
+- accepted states include `allowed`, `denied`, `conditional`, `unknown`, `conflicting`, and `unavailable`;
+- missing/conflicting/unavailable authorization never becomes permission;
+- runtime fail-safe refusal is separate from authorization truth and must not invent a `denied` decision;
+- no universal `deny wins`, `direct user wins`, `role wins`, `latest wins`, or `most specific wins` combination rule exists;
+- user/group/role/service-principal entitlements require evidenced applicable membership/assumption and explicit combination rules;
+- capability inheritance through domain/catalog/schema/table/pipeline/repository/Lineage relationships is never implicit;
+- raw rows, sensitive fields, schema, governance metadata, metric values, Assessment summaries, thresholds, Baselines, Lineage identities/paths, RCA evidence, causal/Impact/control details, and Explanation can be independently authorized;
+- permission to perform a normative action and Assertion Authority over its result are separate requirements;
+- Authorized Analytical Projection is a requester-capability-filtered synchronization/view, not declassification or a 25th concept;
+- requester visibility and framework/service-principal processing authorization are separate;
+- derived/aggregate monitoring state can itself be sensitive and inference-leaking;
+- historical authorization is non-rewriting and never reusable as current permission;
+- authorization does not prove external enforcement, action occurrence, or action success.
+
+See [`04_capability_authorization_and_restricted_analysis/README.md`](04_capability_authorization_and_restricted_analysis/README.md).
+
 ## Delivery-group design
 
 The phase is reviewed in **seven logical groups**. The grouping is a design/review dependency, not an implementation or service boundary.
 
 ### Group 01 — Authority Vocabulary, Source Assertions & Conflict Resolution
-**Status:** **Accepted — AUTH-001–AUTH-008; Assertion Authority added as 24th concept.**
+**Status:** Accepted — AUTH-001–AUTH-008; Assertion Authority added as 24th concept.
 
 ### Group 02 — Semantic, Responsibility, Classification, Policy & Criticality Governance
-**Status:** **Accepted — AUTH-009–AUTH-015; no new concept.**
+**Status:** Accepted — AUTH-009–AUTH-015; no new concept.
 
 ### Group 03 — Normative Health, Metric & Threshold Governance
-**Status:** **Accepted — AUTH-016–AUTH-023; no new concept.**
+**Status:** Accepted — AUTH-016–AUTH-023; no new concept.
 
 ### Group 04 — Capability Authorization & Restricted Analytical Visibility
-**Status:** **Next — not started.**
-
-Refine canonical capability vocabulary; allow/deny/conditional/unknown/conflicting states; purpose/environment/tenant/subject/time conditions; user/group/role/service-principal interactions; permissions to view/propose/edit/approve normative state; current versus historical authorization; and Authorized Analytical Projection.
-
-Boundary: do not select RBAC/ABAC/IAM or declassification architecture. Capability Authorization does not create Assertion Authority or prove action success.
+**Status:** **Accepted — AUTH-024–AUTH-032; no new concept.**
 
 ### Group 05 — High-Consequence Action, Control & Causal-Confirmation Authority
-**Status:** Planned.
+**Status:** **Next — not started.**
 
 Refine causal-confirmation capability, job operations, safeguard/gate configuration/activation/release/override, delegation, multi-party approval, break-glass, expiry/revocation, and separation of duties.
 
-Boundary: Group 03 control-use eligibility does not itself grant these capabilities; authority never weakens REF-013–REF-030 evidence/control standards or proves action success.
+Boundary: Group 03 control-use eligibility does not itself grant these capabilities; Group 04 general permission semantics do not decide high-consequence approval/delegation/control policy; authority never weakens REF-013–REF-030 evidence/control standards or proves action success.
 
 ### Group 06 — Disclosure, Explanation & Audience Governance
 **Status:** Planned.
@@ -191,6 +216,10 @@ Phase 005 must not:
 - promote Baseline typicality into normative truth without explicit Expectation authority;
 - treat a waiver as a rewrite of observed evidence or a false health pass;
 - make a critical or authoritative metric automatically control-eligible;
+- treat metadata/aggregate/derived evidence as automatically safe to disclose;
+- make group/role membership, asset containment, or Lineage imply capability inheritance without explicit rules;
+- treat unresolved authorization as allow or silently rewrite it to explicit deny;
+- treat Capability Authorization as proof of external enforcement or successful action;
 - define the detailed Phase 006 metric/schema-health/statistical model or blindly propagate metrics/governance through Lineage;
 - select RBAC/ABAC/IAM/provider architecture;
 - select Databricks/Collibra/Immuta/GitHub/Unity Catalog as universally authoritative by default;
@@ -200,4 +229,4 @@ Phase 005 must not:
 
 ## Phase direction
 
-**Phase 005 Groups 01–03 are accepted with AUTH-001–AUTH-023. Group 04 — Capability Authorization & Restricted Analytical Visibility is next and has not started.**
+**Phase 005 Groups 01–04 are accepted with AUTH-001–AUTH-032. Group 05 — High-Consequence Action, Control & Causal-Confirmation Authority is next and has not started.**

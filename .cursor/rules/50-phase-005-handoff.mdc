@@ -1,78 +1,52 @@
 ---
-description: Phase 005 authority/governance/capability phase guardrails. Groups 01-03 are accepted; Group 04 is next.
+description: Phase 005 authority/governance/capability phase guardrails. Groups 01-04 are accepted; Group 05 is next.
 globs:
 alwaysApply: true
 ---
 
 # Phase 005 handoff rules
 
-Status: **Phase 005 is active. Groups 01–03 are accepted with AUTH-001–AUTH-023. Group 04 — Capability Authorization & Restricted Analytical Visibility is next and has not started.**
+Status: **Phase 005 is active. Groups 01–04 are accepted with AUTH-001–AUTH-032. Group 05 — High-Consequence Action, Control & Causal-Confirmation Authority is next and has not started.**
 
 Accepted review sequence:
 
 1. Authority Vocabulary, Source Assertions & Conflict Resolution — **accepted**.
 2. Semantic, Responsibility, Classification, Policy & Criticality Governance — **accepted**.
 3. Normative Health, Metric & Threshold Governance — **accepted**.
-4. Capability Authorization & Restricted Analytical Visibility — **next**.
-5. High-Consequence Action, Control & Causal-Confirmation Authority.
+4. Capability Authorization & Restricted Analytical Visibility — **accepted**.
+5. High-Consequence Action, Control & Causal-Confirmation Authority — **next**.
 6. Disclosure, Explanation & Audience Governance.
 7. Consolidation / Exit Review.
 
-Group 01 accepted rules:
+Preserve Group 01–03 rules already accepted: scoped Assertion Authority without hidden precedence; facet-specific semantic/schema governance; no implicit governance propagation; normative metric/schema authority separated from Baseline/statistical truth; bounded waivers do not rewrite observations; and high-consequence-use eligibility does not grant control authority.
 
-- Assertion Authority is the 24th concept and owns assertion-standing/authority-rule history rather than underlying domain assertions.
-- Authority must be bound to category/facet/scheme/type, subject scope, context, effective time, and knowledge cut where relevant.
-- Preserve source assertions regardless of standing.
-- No hidden precedence from source count, recency, synchronization/ingestion order, availability, repository ownership, admin/title/responsibility, or apparent specificity.
-- Sole authority, co-authority, ordered precedence, and fallback are valid only when explicit.
-- Fallback requires an explicit rule plus evidence that its activation condition holds.
-- Authority rules require provenance/governing basis and cannot self-authorize.
-- Authority history is bitemporal and non-rewriting.
-- Assertion Authority is independent from Capability Authorization, Responsibility Assignment, Policy Context, Classification, Monitoring Scope, evidence sufficiency, and enforcement.
+Group 04 accepted rules:
 
-Group 02 accepted rules:
+- Capability Authorization is the existing truth owner; no 25th concept is added.
+- Bind permission to exact principal + capability/action + subject + context/time and material detail level.
+- Preserve `allowed`, `denied`, `conditional`, `unknown`, `conflicting`, and `unavailable` distinctly.
+- Missing/conflicting/unavailable authorization never becomes permission.
+- Runtime fail-safe refusal is separate from authorization truth; do not invent an explicit deny merely because a system refuses without positive allow.
+- Never infer universal `deny wins`, direct-user precedence, role precedence, latest-wins, specificity, source-count, or source-availability combination rules.
+- User/group/role/service-principal entitlements require evidenced applicable membership/assumption and explicit combination semantics.
+- Domain/catalog/schema/table/pipeline/repository/Lineage relationships do not implicitly propagate capabilities.
+- Raw data, sensitive fields, schema, governance metadata, metric values, Assessment summaries, thresholds, Baselines, Lineage identity/path detail, RCA evidence, causal/Impact/control state, authority basis, Annotation, and Explanation may be independently authorized.
+- Permission to view a result does not imply permission to inspect every basis item.
+- Permission to propose/edit/approve/waive/retire a normative rule is separate by action.
+- Capability Authorization to act and Assertion Authority over the resulting assertion/action remain independent requirements.
+- Authorized Analytical Projection is a view/synchronization over existing truth, not declassification or a new concept.
+- Hidden/restricted evidence is represented as restricted/opaque where authorized, never as absent.
+- Requester visibility and framework/service-principal evidence-processing authorization are separate; evidence inaccessible to the framework cannot count as internally present.
+- Aggregates/derived evidence can remain sensitive; counts, thresholds, schemas, topology, causal/Impact/control state, and authority/authorization metadata can leak restricted information.
+- Historical authorization is non-rewriting and not reusable as current permission.
+- Capability Authorization does not prove external enforcement, action occurrence, or action success.
 
-- Semantic authority is facet-specific: business definition, technical/schema declaration, grain, units, population, calculation meaning, field roles, and key roles may have different authority holders.
-- Preserve **declared/governed schema meaning ≠ normative schema contract ≠ realized schema state**.
-- A declared primary/business key does not prove observed uniqueness or nullability health.
-- A column rename is not inferred merely from one drop plus one add; planned/semantic/identity evidence is required.
-- Responsibility authority is responsibility-type scoped. Technical ownership/business accountability/stewardship/etc. do not grant other assertion or action authority.
-- Classification authority is scheme/context specific.
-- Criticality remains Classification under named business/operational/consumer/delivery schemes; criticality influences priority, not actual Impact/health/causality.
-- Policy text/reference authority may differ from authority over subject/context applicability.
-- Context-specific/local assertions may coexist, but specificity never automatically creates precedence.
-- Lineage, repository/container membership, schema/tag inference, and parent state do not implicitly propagate governance assertions or authority.
-- Descriptive governance authority does not create normative health, Capability Authorization, enforcement, compliance, or Impact truth.
-- No 25th concept is required for Group 02.
+For Group 05:
 
-Schema/DDL handoff:
-
-- Structural/schema compatibility is a first-class Phase 006 health concern.
-- Semantic Definition owns governed schema/grain/key meaning; Expectation owns normative structural compatibility; Observation/Change own realized state/change; Assessment owns conformance.
-- Schema changes trigger scoped metric/Baseline/key/join applicability review rather than automatic global reset.
-- Pre-deployment GitHub Actions checks, Databricks/Unity Catalog realized-state checks, and independent monitoring checks are candidate future integration points with different temporal roles; do not select one universal location in Phase 005.
-
-Group 03 accepted rules:
-
-- Expectation authority is dimension/property/context/time scoped and can differ by lifecycle action.
-- Metric meaning, profile inclusion, threshold, severity, waiver, and high-consequence-use eligibility are independently governable layers.
-- Metric profiles are governed selection/applicability structures, not new truth concepts.
-- Metric/check availability alone does not justify profile inclusion; require purpose, applicability, use/audience, authority/owner, and lifecycle/retirement context.
-- Baseline-derived ranges stay descriptive until an authoritative Expectation explicitly adopts normative criteria.
-- Technical schema meaning does not automatically define structural/schema compatibility Expectations.
-- Governance can retire/suspend metric/Baseline use but cannot manufacture empirical Baseline comparability.
-- Bounded exceptions/waivers/suspensions do not rewrite Observations, realized schema, Baseline deviations, or historical evidence and must not create false `pass` results.
-- Normative conflict preserves explicit conflict; never infer strictest/latest/business/technical/highest-severity precedence.
-- Criticality may influence review/priority but does not silently tighten thresholds or prove Impact.
-- A metric/Expectation is not control-eligible merely because it is authoritative or business-critical.
-- High-consequence-use eligibility remains separate from gate/safeguard configuration/activation/override capability, evidence readiness, and enforcement.
-- No 25th concept is required for Group 03.
-
-For Group 04:
-
-- Refine **permission** independently from Assertion Authority: view, propose, edit, approve, waive/retire normative rules; view metric/schema/threshold detail; raw-data read; metadata/health; Lineage/RCA; operational/control/confirmation capabilities.
-- Preserve restricted-data analytical usefulness without treating metrics/schema/threshold/authority metadata as automatically unrestricted.
-- Capability Authorization must not create Assertion Authority, alter normative standing, or prove action success/enforcement.
-- Do not begin Group 05+ without explicit user request.
+- Refine high-consequence capabilities using AUTH-024–AUTH-032 rather than inventing a new generic permission model.
+- Keep causal-confirmation capability, job operations, safeguard actions, gate actions/override, delegation, multi-party approval, break-glass, expiry/revocation, and separation of duties independently reviewable.
+- Group 03 control-use eligibility is a prerequisite governance property, not control permission.
+- Never weaken REF-013–REF-030 evidence/confirmation/enforcement standards.
+- Do not begin Group 06+ without explicit user request.
 
 Preserve all Phase 004 evidence burdens. Do not select IAM, assertion-authority engine, GitHub Actions/Unity Catalog as universal validation mechanism, scheduler/orchestrator, quarantine, metric engine/storage, graph store, LLM, causal algorithm, or technical architecture during Phase 005.

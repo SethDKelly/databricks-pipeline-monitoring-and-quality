@@ -1,0 +1,24 @@
+---
+description: Accepted Phase 005 Group 04 capability authorization and restricted analytical visibility rules.
+globs:
+alwaysApply: true
+---
+
+# Phase 005 Group 04 capability guardrails
+
+- Capability Authorization is exact permission truth for principal + action + subject + context/time; do not collapse permissions into `asset access`.
+- Preserve `allowed`, `denied`, `conditional`, `unknown`, `conflicting`, and `unavailable` as distinct states.
+- Missing/conflicting/unavailable authorization never means allow.
+- Conservative refusal without positive allow is an enforcement/fallback behavior, not evidence that an explicit deny existed.
+- Do not infer `deny wins`, direct-user precedence, group/role precedence, latest-wins, specificity, or source availability unless an accepted rule explicitly defines it.
+- Group/role/service-principal authorization requires evidenced membership/assumption for the relevant time/context.
+- No implicit capability inheritance through domain/catalog/schema/table/pipeline/repository/Lineage relationships.
+- Keep raw rows, sensitive values, schema, metadata, metric values, Assessment summaries, thresholds, Baselines, Lineage, RCA evidence, causal/Impact/control state, authority basis, normative actions, and Explanation visibility independently resolvable.
+- Result visibility does not imply basis visibility; restricted basis must not be represented as absence.
+- Normative rule actions such as view/propose/edit/approve/waive/retire remain separately authorized and also require applicable Assertion Authority for authoritative effect.
+- Authorized Analytical Projection is a view/synchronization, not a new truth concept or declassification mechanism.
+- Requester visibility is independent from framework/service-principal processing authorization. Evidence the framework cannot access cannot be counted as internally present.
+- Aggregates/derived metadata can be sensitive and inference-leaking.
+- Historical authorization does not grant current permission; current requester authorization governs current disclosure.
+- Authorization does not prove external enforcement, attempted action, or successful action.
+- Group 05 owns high-consequence control/confirmation/delegation/break-glass authority; do not decide it here.
