@@ -6,7 +6,7 @@ Phase 002 originally accepted 20 concepts. Three explicit post-exit addenda are 
 
 **Phase 003 is complete. Groups 01–06 are accepted. Accepted synchronization range: SYN-001–SYN-035. E-01–E-22 pass end-to-end consolidation.**
 
-**Phase 004 — Evidence, Time, and Causality Refinement is active. Group 01 — Evidence Sufficiency, Coverage & Negative Evidence is accepted with REF-001–REF-005. Group 02 — Event/Effective Time, Knowledge Cut & Correction is next and has not started.**
+**Phase 004 — Evidence, Time, and Causality Refinement is active. Groups 01–02 are accepted with REF-001–REF-012. Group 03 — Causal Epistemics, Confirmation & Multiple Contributors is next and has not started.**
 
 Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, deployment workflows, quarantine implementations, gate/orchestration implementations, IAM implementations, graph/causal engines, LLMs, or prototypes unless the user explicitly advances the project into technical design.
 
@@ -66,7 +66,8 @@ Preserve:
 - release ≠ health proof;
 - Annotation ≠ structured operational truth;
 - Explanation ≠ independent truth/authorization source;
-- effective/event time ≠ recorded/knowledge time;
+- effective/event time ≠ source availability time ≠ framework recorded/knowledge time ≠ derived evaluation time;
+- source availability ≠ framework knowledge;
 - current state ≠ historical state;
 - later evidence ≠ evidence known then;
 - actual historical state ≠ replay-derived interpretation;
@@ -76,7 +77,10 @@ Preserve:
 - evidence applicability ≠ evidence coverage ≠ conclusion sufficiency;
 - evidence not found ≠ observed absence;
 - source count ≠ independent corroboration;
-- evidence sufficiency ≠ disclosure authorization.
+- evidence sufficiency ≠ disclosure authorization;
+- `known by K` ≠ `learned after K` ≠ `not recorded by K` ≠ `not known by K` ≠ `not available by K`;
+- late evidence ≠ source correction ≠ independent conflict ≠ reinterpretation ≠ later authority resolution;
+- immediate operational validation ≠ enriched health evaluation ≠ investigative/RCA reasoning ≠ retrospective/post-ops review.
 
 ## Phase 004 Group 01 evidence rules
 
@@ -96,6 +100,26 @@ Preserve:
 - Do not create a universal evidence trust/confidence number. Statistical uncertainty may later be represented for appropriate measurements without becoming a generic evidence score.
 - Sufficiency evaluation does not grant Capability Authorization, source authority, job/safeguard/gate authority, or action permission.
 - A requester may receive an authorized safe conclusion/limitation while basis details remain restricted; if the framework itself cannot access required evidence, that is an evidence-availability limitation.
+
+## Phase 004 Group 02 temporal and progressive-availability rules
+
+- Distinguish event/effective time, source production/observation time, source availability time, framework collection/retrieval time, framework recorded/knowledge time, derived evaluation time, and correction/supersession time where material.
+- Source availability before a cutoff does not mean the framework knew the evidence by that cutoff.
+- Current retrieval of an old source record gives current framework knowledge unless retained evidence proves earlier framework knowledge.
+- For event/window `T` and knowledge cutoff `K`, an `as-known` cut includes only evidence applicable to `T` that was recorded/known by the framework at or before `K`; corrections used in the cut must also be known by `K`.
+- `Not known by K` is a negative epistemic claim and requires sufficient retention/collection coverage; missing historical records or monitoring outages cannot establish it.
+- Actual historical Assessment/claim/Impact/control/Explanation state requires evidence the state/action/communication existed by the cutoff. Otherwise label the output replay-derived/reconstructed.
+- Produce the narrowest trustworthy result as soon as the evidence required for that result is available.
+- Preserve progressive analytical horizons: immediate operational validation, enriched health evaluation, investigative/RCA reasoning, retrospective/post-operations review.
+- Do not treat those horizons as services, jobs, UI screens, fixed SLAs, or architecture tiers.
+- A fast `job succeeded` result never implies pipeline health, freshness, quality, or causal resolution while those evidence classes remain pending.
+- Do not weaken high-consequence evidence standards for latency convenience.
+- Late evidence, source correction, independent conflict, semantic reinterpretation, and later authority resolution remain distinct.
+- Source correction/supersession preserves prior state; independent disagreement remains conflict absent accepted resolution.
+- Reevaluate retained conclusions only when new/corrected evidence materially bears on their basis/applicability/coverage/contradiction set.
+- Closed Investigations can become review/reopen candidates when materially challenged; do not automatically reopen every closed Investigation.
+- Current requester authorization continues to govern historical/reconstructed disclosure.
+- Exact monitoring-result timing targets are deferred: Phase 006 defines health-result timing expectations, Phase 009 source availability/collection characteristics, Phase 010 architecture/performance budgets, and Phase 011 MVP acceptance criteria.
 
 ## Passive monitoring / integration-independence rules
 
@@ -145,7 +169,7 @@ Preserve:
 - Never infer cause from temporal proximity, Lineage, Deployment, realized Change, safeguard state, gate state, Prospective Impact, or intent consistency alone.
 - Every causal proposition belongs in Causal Claim.
 - Multiple contributors/unresolved outcomes are valid.
-- `confirmed` requires an explicit accepted evidence/authority standard; do not invent it before Phase 004 causal refinement.
+- `confirmed` requires an explicit accepted evidence/authority standard; do not invent it before Phase 004 Group 03.
 - Human reproducible findings use Observation/Change; causal interpretations use Causal Claim; contextual notes use Annotation.
 
 ## Runtime / safeguard rules
@@ -180,7 +204,7 @@ Preserve:
 - Safe omission/redaction cannot be worded as evidence that hidden entities/evidence do not exist.
 - Explanation may surface an authorized operational/gate capability but never executes the action.
 
-## Historical replay rules — accepted Phase 003 Group 06
+## Historical replay rules — accepted Phase 003 Group 06 + Phase 004 Group 02 refinement
 
 - Historical replay uses **event/effective time + recorded/knowledge cutoff**.
 - Resolve each concept from state/evidence available under the cut; never project current identity/topology/reference/governance/authorization/control backward.
@@ -195,10 +219,11 @@ Preserve:
 
 ## Phase 004 direction
 
-- Group 01 is accepted: REF-001–REF-005 define applicability, bounded coverage, opportunity-to-observe, negative/absence/exclusion evidence, corroboration/conflict/independence, and conclusion-specific sufficiency.
-- **Do not begin Group 02 — Event/Effective Time, Knowledge Cut & Correction without explicit user request.**
-- Group 02 must refine exact `as-known` evidence eligibility, `known by`/`not known by` claims, late/corrected evidence, correction/supersession, dependent reassessment/reopen behavior, and retained-versus-reconstructed state.
-- Later Group 03 refines causal epistemics/confirmation; Group 04 specializes exposure/readiness/control evidence; Group 05 consolidates Phase 004.
+- Group 01 is accepted: REF-001–REF-005.
+- Group 02 is accepted: REF-006–REF-012.
+- **Do not begin Group 03 — Causal Epistemics, Confirmation & Multiple Contributors without explicit user request.**
+- Group 03 must refine Causal Claim status vocabulary/transitions, support/contradiction, alternatives, confirmation evidence/authority boundaries, multiple contributors, progressive RCA maturity, and challenge after confirmation.
+- Group 04 specializes exposure/readiness/control evidence; Group 05 consolidates Phase 004.
 - Do not choose implementation architecture while refining these semantics.
 
 ## Tooling stance

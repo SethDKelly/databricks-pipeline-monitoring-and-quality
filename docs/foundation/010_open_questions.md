@@ -1,19 +1,49 @@
 # 010 — Open Questions
 
-These questions are intentionally unresolved. Accepted Phase 002/003 boundaries constrain the answers but do not silently decide them. **Phase 004 — Evidence, Time, and Causality Refinement is next.**
+These questions are intentionally unresolved. Accepted Phase 002/003 boundaries constrain the answers but do not silently decide them. **Phase 004 — Evidence, Time, and Causality Refinement is active; Groups 01–02 are accepted and Group 03 is next.**
 
-## Evidence, historical time, and replay — Phase 004 priority
+## Evidence, historical time, and replay — Phase 004
 
-- What evidence sufficiency/completeness vocabulary is needed across positive, negative, absence, exposure, readiness, enforcement, and contradiction evidence?
-- What source/query coverage is enough to assert `not observed`, `not exposed`, `did not run`, or `not known by knowledge cutoff` rather than merely `evidence unavailable`?
-- What exact query semantics select event/effective time and recorded/knowledge cutoff across concepts with different validity models?
-- Which historical states require retained snapshots versus reconstructible version history?
-- How should replay-derived Assessment/Impact/Explanation be labeled and retained relative to actually recorded historical state?
-- What materiality rules trigger dependent reassessment, Investigation reopen prompts, or updated Explanation after late/corrected evidence?
-- How should corrected identity/Lineage/reference/authorization state affect retrospective analysis without rewriting contemporaneous conclusions?
+Accepted through Groups 01–02:
+
+- evidence sufficiency is conclusion-relative rather than a universal score;
+- evidence applicability, bounded coverage, corroboration/conflict, and conclusion sufficiency remain distinct;
+- negative/absence/exclusion evidence requires adequate opportunity-to-observe and coverage;
+- event/effective time, source availability, framework knowledge time, and evaluation time remain distinct;
+- `as-known` cuts use evidence known to the framework by the cutoff;
+- source availability does not backdate framework knowledge;
+- `known by`, `learned after`, `not recorded by`, `not known by`, and `not available by` are distinct claims;
+- late evidence, source correction, independent conflict, reinterpretation, and later authority resolution remain distinct;
+- dependent reevaluation is basis/materiality driven;
+- actual historical state requires evidence that it existed then; otherwise replay is reconstructed.
+
+Remaining temporal/replay questions include:
+
+- Which historical states require retained snapshots/events versus reconstructible version history in MVP?
+- What exact source/integration evidence is needed to establish source-availability time when it differs from framework knowledge time?
+- What retention/coverage is needed before `not recorded by` or `not known by` is safely available for each evidence class?
+- What notification/escalation behavior should occur when retrospective conclusions materially change?
 - What retention/audit requirements apply to actual historical Explanation versus reconstructed historical Explanation?
+- Which high-consequence historical states must be retained rather than merely reconstructible?
 
-## Causal Claim and confirmation — Phase 004 priority
+## Monitoring result availability and execution timing
+
+Phase 004 Group 02 accepts progressive analytical availability as a functional requirement. Exact targets remain open:
+
+- Which validations should be available on an **immediate operational** path—for example job start/completion/success/failure, queue/duration, direct output existence, or dependency state?
+- Which health results can reasonably be **near-real-time/enriched** versus delayed because they depend on Metric Views, DQX, Baseline comparison, semantic context, or source refresh?
+- What evidence is required before **RCA** should begin automatically, and which RCA outputs should be available incrementally versus after a fuller evidence window?
+- What belongs specifically in **post-operations review** because it depends on late/corrected consumption, consequence, or historical evidence?
+- What maximum evidence age/result age is acceptable for each health dimension and consumer audience?
+- How should the UI/API communicate `available now`, `pending evidence`, `enriched`, `RCA in progress`, and `retrospectively updated` without implying service/workflow architecture?
+- Which source availability/collection latencies are inherent to Databricks job metadata, Metric Views, DQX, GitHub/deployment evidence, Lineage, consumption evidence, and governance systems?
+- Which analyses can be precomputed/cached versus reconstructed on demand without violating historical truth?
+- What latency budgets preserve useful near-real-time monitoring without putting passive monitoring on the ungated production critical path?
+- Which explicitly gated decisions require synchronous evidence/control behavior even if ordinary health analysis is asynchronous?
+
+These questions are handed primarily to Phases 006, 009, 010, and 011.
+
+## Causal Claim and confirmation — Phase 004 Group 03 priority
 
 - What operational evidence/authority standard permits `confirmed` cause?
 - Which first-MVP epistemic statuses are required?
@@ -22,8 +52,9 @@ These questions are intentionally unresolved. Accepted Phase 002/003 boundaries 
 - When does quantitative attribution become necessary, and what evidence standard would justify percentages?
 - How should materially new evidence challenge a previously confirmed claim?
 - What support/contradiction/alternative-explanation coverage is required before a claim status changes?
+- How should fast RCA expose an early supported hypothesis without implying later confirmation?
 
-## Exposure, absence, and readiness evidence — Phase 004 priority
+## Exposure, absence, and readiness evidence — Phase 004 Group 04 priority
 
 - What evidence establishes exposure for reports, Metric Views, pipelines, applications, and business processes?
 - What evidence is sufficient to establish `not exposed` for each consumer class?
@@ -57,6 +88,7 @@ These questions are intentionally unresolved. Accepted Phase 002/003 boundaries 
 - What Assessment status vocabulary is appropriate for normative versus comparative results?
 - What evidence coverage is sufficient to establish observed absence?
 - Does composite/overall health eventually warrant a dedicated concept or only explicit aggregation synchronization?
+- Which health Assessments are expected to be available immediately, near-real-time, delayed, or post-ops?
 
 ## Change Intent, Deployment, execution, and gating
 
@@ -107,6 +139,7 @@ These questions are intentionally unresolved. Accepted Phase 002/003 boundaries 
 - How should authorization differences across a path be explained without inference leakage?
 - What rules govern high-consequence causal/business claims in generated explanations?
 - How should UI distinguish contemporaneous, retrospective, comparison, actual-retained, and reconstructed historical Explanation?
+- How should progressive result maturity and evidence-pending state be communicated across audiences?
 
 ## Security and privacy
 
@@ -124,6 +157,7 @@ These questions are intentionally unresolved. Accepted Phase 002/003 boundaries 
 - Which systems can provide Change Intent?
 - Are Collibra/Immuta necessary for MVP or later enrichment?
 - Which sources provide sufficiently historical/authoritative evidence for event-time + knowledge-cut replay?
+- What are the production-to-queryable and queryable-to-framework latency characteristics of each evidence source?
 - Can optional Execution Gate semantics be realized without modifying production repositories/GitHub Actions, and where would exceptions be unavoidable?
 
 ## MVP pilot
@@ -132,3 +166,4 @@ These questions are intentionally unresolved. Accepted Phase 002/003 boundaries 
 - Which business analyst/report/Metric View provides a meaningful exposure/consequence case?
 - Which assets carry useful governance/policy context without unsafe real data in development?
 - Which pilot incident can validate both contemporaneous and retrospective replay after intentionally late/corrected synthetic evidence?
+- Which pilot should validate progressive result availability from job validation through health metrics, RCA, and post-ops review?

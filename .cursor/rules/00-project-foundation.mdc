@@ -8,7 +8,7 @@ alwaysApply: true
 
 - Current accepted concept count: **23** — original 20 plus Propagation Safeguard, Capability Authorization, and Execution Gate addenda.
 - **Phase 003 is complete. Groups 01–06 are accepted; SYN-001–SYN-035 are accepted; E-01–E-22 pass end-to-end consolidation.**
-- **Phase 004 — Evidence, Time, and Causality Refinement is active. Group 01 — Evidence Sufficiency, Coverage & Negative Evidence is accepted; REF-001–REF-005 are accepted. Group 02 — Event/Effective Time, Knowledge Cut & Correction is next and has not started.**
+- **Phase 004 — Evidence, Time, and Causality Refinement is active. Groups 01–02 are accepted; REF-001–REF-012 are accepted. Group 03 — Causal Epistemics, Confirmation & Multiple Contributors is next and has not started.**
 - Work remains documentation/design-first unless the user explicitly advances into technical/implementation design.
 - Do not create application code, notebooks, infrastructure, schemas, APIs, IAM implementations, deployment workflows, quarantine implementations, Execution Gate/orchestration implementations, graph/causal engines, LLMs, or prototypes prematurely.
 - Treat `docs/` as the product/design system of record.
@@ -20,8 +20,17 @@ alwaysApply: true
 - Negative/absence/exclusion conclusions require adequate opportunity-to-observe plus sufficient bounded coverage.
 - Missing telemetry, unavailable queries, authorization restrictions, and unresolved identity/version state are not negative evidence.
 - Duplicated or commonly derived telemetry is not automatically independent corroboration.
-- Applicable conflict remains explicit unless an accepted source-authority rule resolves it; Phase 004 Group 01 does not invent authority precedence.
+- Applicable conflict remains explicit unless an accepted source-authority rule resolves it; Phase 004 does not invent authority precedence.
 - Do not introduce a universal evidence confidence/trust score.
+- **Event/effective time, source availability time, framework recorded/knowledge time, and derived evaluation time remain distinct where material.**
+- Source availability does not imply framework knowledge; current retrieval of an old fact does not backdate knowledge.
+- `Known by`, `learned after`, `not recorded by`, `not known by`, and `not available by` are different propositions.
+- Monitoring/reasoning may mature progressively: immediate operational validation → enriched health evaluation → investigative/RCA reasoning → retrospective/post-ops review.
+- Produce the narrowest trustworthy result as soon as its evidence standard is satisfied; never promote fast operational facts into broader health/causal conclusions while slower evidence is pending.
+- Concrete monitoring-result latency targets are deferred to Phases 006/009/010/011.
+- Late evidence, source correction, independent conflict, reinterpretation, and later authority resolution remain distinct.
+- Dependent reevaluation is basis/materiality driven; closed Investigations may become review/reopen candidates but do not auto-reopen.
+- Actual historical state requires evidence that the state/action/communication existed then; otherwise label replay as reconstructed.
 - Evidence sufficiency does not grant Capability Authorization or operational authority.
 - Monitoring Scope, Responsibility Assignment, Policy Context, Classification, and Capability Authorization remain distinct.
 - Raw-data read, metadata/health visibility, Lineage/RCA participation, job-operation authority, safeguard authority, and gate-control authority remain independently resolvable.
@@ -48,5 +57,5 @@ alwaysApply: true
 - Late/corrected evidence may change retrospective understanding without rewriting what was known then.
 - Actual historical gate/safeguard actions are not counterfactually replaced by what later evidence suggests should have happened.
 - Historical authorization/control state is evidence about past capability but never overrides current requester disclosure authorization.
-- Do not begin Phase 004 Group 02 without explicit user request.
+- Do not begin Phase 004 Group 03 without explicit user request.
 - Never silently choose graph/event/temporal/ledger/quarantine/scheduler/orchestration/workflow/service/LLM/IAM architecture.

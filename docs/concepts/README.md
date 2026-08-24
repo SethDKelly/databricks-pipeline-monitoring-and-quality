@@ -92,9 +92,9 @@ A present-day `as-known-then` computation may be useful, but it cannot be presen
 
 ## Phase 004 refinement boundary
 
-Phase 004 does **not** add a new evidence concept merely to hold evidence-quality metadata. The accepted concepts already own their evidence/state. Phase 004 `REF-###` contracts define standards for how that evidence can support conclusions.
+Phase 004 does **not** add a new evidence or temporal-state concept merely to hold evidence-quality/availability metadata. The accepted concepts already own their evidence/state. Phase 004 `REF-###` contracts define standards for how that evidence can support conclusions and historical views.
 
-Group 01 accepts:
+### Group 01 — accepted
 
 - **REF-001 — Evidence Applicability and Proposition Binding**;
 - **REF-002 — Coverage Profile and Opportunity to Observe**;
@@ -102,18 +102,43 @@ Group 01 accepts:
 - **REF-004 — Corroboration, Conflict, and Evidence Independence**;
 - **REF-005 — Conclusion-Specific Evidence Sufficiency Evaluation**.
 
-The key boundary is:
+The evidence boundary is:
 
 **evidence item → applicability to a defined proposition → bounded coverage/opportunity-to-observe → corroboration/conflict relationship → conclusion-specific sufficiency**
 
 without turning that chain into a universal trust score, new source authority, or new authorization grant.
 
-Examples:
+### Group 02 — accepted
+
+- **REF-006 — Temporal Coordinates and Evidence Availability**;
+- **REF-007 — Historical Knowledge-Cut Eligibility**;
+- **REF-008 — Known By, Learned After, and Not Known By Claims**;
+- **REF-009 — Progressive Evidence Availability and Analytical Maturity**;
+- **REF-010 — Late Evidence, Correction, Conflict, and Reinterpretation**;
+- **REF-011 — Dependent Re-evaluation and Investigation Reopen Materiality**;
+- **REF-012 — Actual Retained State versus Reconstructible Historical State**.
+
+The temporal boundary is:
+
+**event/effective time → source production/availability → framework collection/knowledge → derived evaluation → later correction/reassessment**
+
+without silently treating source availability as framework knowledge or replay-derived conclusions as historical actions/beliefs.
+
+Group 02 also accepts progressive analytical availability as a functional behavior:
+
+**immediate operational validation → enriched health evaluation → investigative/RCA reasoning → retrospective/post-operations review**.
+
+These are not service tiers or fixed SLAs. They allow a narrow trustworthy result such as `job succeeded` to appear promptly while slower Metric View/DQ/RCA/post-ops evidence arrives later. The early result never implies broader health or causality merely because later evidence is pending. Concrete timing targets are deferred to Phases 006, 009, 010, and 011.
+
+Examples across Groups 01–02:
 
 - one observed qualifying run may be sufficient for `a run occurred` while insufficient for `only one run occurred`;
 - zero returned events are not `no run` unless the relevant bounded execution opportunities were actually observable and sufficiently covered;
 - no consumer telemetry is not `not exposed`;
 - three copies of the same Databricks event are not three independent corroborating observations;
+- a source fact that was queryable at 08:00 but not collected until 09:00 was not framework-known at 08:30;
+- a 07:04 `job succeeded` result may be valid even if an 07:08 Metric View later establishes a quality violation;
+- a current reconstruction over an 08:15 evidence cut is not proof an Assessment or Explanation actually existed at 08:15;
 - an Assessment can be internally well-supported while its exact evidence remains restricted from a particular analyst.
 
 ## Domain entities that are not automatically concepts
@@ -124,4 +149,4 @@ Logical pipelines, jobs, tasks, runs, execution opportunities, tables, views, Me
 
 **Phase 003 is complete.** Accepted synchronization range: **SYN-001–SYN-035**. E-01–E-22 pass end-to-end consolidation. Current results are documented in [`phase_003/README.md`](phase_003/README.md), with Group 06 in [`phase_003/06_historical_replay_and_consolidation/`](phase_003/06_historical_replay_and_consolidation/).
 
-**Phase 004 is active. Group 01 is accepted with REF-001–REF-005. Group 02 — Event/Effective Time, Knowledge Cut & Correction is next and has not started.** See [`phase_004/README.md`](phase_004/README.md).
+**Phase 004 is active. Groups 01–02 are accepted with REF-001–REF-012. Group 03 — Causal Epistemics, Confirmation & Multiple Contributors is next and has not started.** See [`phase_004/README.md`](phase_004/README.md).

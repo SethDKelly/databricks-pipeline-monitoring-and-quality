@@ -1,0 +1,48 @@
+---
+description: Phase 004 temporal evidence, knowledge-cut, progressive analytical availability, correction, and historical reconstruction rules.
+globs:
+alwaysApply: true
+---
+
+# Phase 004 temporal evidence rules
+
+Status: **Groups 01–02 accepted — REF-001–REF-012. Group 03 next and not started.**
+
+Preserve:
+
+- event/effective time ≠ source production time ≠ source availability time ≠ framework collection time ≠ framework recorded/knowledge time ≠ derived evaluation time;
+- source availability ≠ framework knowledge;
+- framework knowledge ≠ actual historical interpretation/communication;
+- current retrieval of an old fact ≠ historical framework knowledge;
+- `known by K` ≠ `learned after K` ≠ `not recorded by K` ≠ `not known by K` ≠ `not available by K`;
+- late evidence ≠ source correction ≠ independent conflict ≠ reinterpretation ≠ later authority resolution;
+- actual retained historical state ≠ replay-derived reconstruction;
+- early operational validation ≠ enriched health ≠ RCA ≠ post-operations retrospective review.
+
+Rules:
+
+- For an `as-known` cut at event/window `T` and knowledge cutoff `K`, include only evidence applicable to `T` whose framework recorded/knowledge time is at or before `K`.
+- Corrections/supersessions used in the cut must themselves have been known by `K`.
+- A source record that existed/queryable before `K` but was not collected by the framework is not silently treated as framework-known by `K`.
+- A current query of historical source state produces current framework knowledge unless retained evidence proves earlier knowledge.
+- `Not known by K` requires sufficient opportunity-to-observe/retention coverage; missing history or monitoring outage cannot establish the negative.
+- Produce the narrowest trustworthy result as soon as its evidence standard is satisfied; do not wait for slower enrichment merely for completeness.
+- A fast `job succeeded` result never implies freshness/quality/pipeline health while those evidence classes are pending.
+- Do not weaken gate/safeguard/causal or other high-consequence evidence standards for latency convenience.
+- Preserve the provisional analytical horizons: immediate operational validation, enriched health evaluation, investigative/RCA reasoning, retrospective/post-ops review.
+- Do not treat those horizons as services, workflows, or fixed SLAs.
+- Late/corrected evidence creates later knowledge/evaluation state and never backdates contemporaneous knowledge.
+- Explicit source correction preserves prior state; independent disagreement remains conflict unless an accepted authority/correction rule resolves it.
+- Reevaluate retained conclusions only where new evidence materially bears on their basis/applicability/coverage/contradiction set.
+- Closed Investigations can become review/reopen candidates when materially challenged; do not auto-reopen every closed Investigation.
+- Call historical state `actual` only when provenance-bearing evidence establishes that state/action/communication existed then. Otherwise label it replay-derived/reconstructed.
+- Current requester authorization governs disclosure of historical and reconstructed state.
+
+Timing handoff:
+
+- Phase 006 defines health-result availability/freshness objectives by analytical horizon.
+- Phase 009 characterizes source evidence availability/collection latency and query cost/retention.
+- Phase 010 selects fast-path/asynchronous architecture and performance budgets while preserving non-blocking passive monitoring.
+- Phase 011 turns accepted timing objectives into MVP acceptance criteria.
+
+Do not begin Phase 004 Group 03 without explicit user request.
