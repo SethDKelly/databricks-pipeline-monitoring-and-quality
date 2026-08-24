@@ -6,7 +6,7 @@ Phase 002 originally accepted 20 concepts. Three explicit post-exit addenda are 
 
 **Phase 003 is complete. Groups 01–06 are accepted. Accepted synchronization range: SYN-001–SYN-035. E-01–E-22 pass end-to-end consolidation.**
 
-**Phase 004 — Evidence, Time, and Causality Refinement is active. Groups 01–02 are accepted with REF-001–REF-012. Group 03 — Causal Epistemics, Confirmation & Multiple Contributors is next and has not started.**
+**Phase 004 — Evidence, Time, and Causality Refinement is active. Groups 01–03 are accepted with REF-001–REF-020. Group 04 — Exposure, Consumption, Readiness & Control Evidence is next and has not started.**
 
 Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, deployment workflows, quarantine implementations, gate/orchestration implementations, IAM implementations, graph/causal engines, LLMs, or prototypes unless the user explicitly advances the project into technical design.
 
@@ -31,7 +31,7 @@ Preserve:
 - Monitoring Scope ≠ Capability Authorization;
 - Responsibility Assignment ≠ Capability Authorization;
 - Classification ≠ Policy Context ≠ Capability Authorization ≠ compliance;
-- raw-data read authorization ≠ metadata/governance visibility ≠ derived health/metric visibility ≠ Lineage/RCA authorization ≠ job-operation authorization ≠ safeguard authority ≠ gate-control authority;
+- raw-data read authorization ≠ metadata/governance visibility ≠ derived health/metric visibility ≠ Lineage/RCA authorization ≠ job-operation authorization ≠ safeguard authority ≠ gate-control authority ≠ causal-confirmation authority;
 - authorized derived evidence ≠ unrestricted evidence;
 - Authorized Analytical Projection ≠ new truth/declassification mechanism;
 - passive monitoring ≠ active Execution Gate;
@@ -55,8 +55,13 @@ Preserve:
 - Investigation ≠ evidence/causal truth;
 - Lineage evidence candidate ≠ cause;
 - first-observed localization ≠ root cause;
-- Causal Claim ≠ confirmed cause;
+- proposed Causal Claim ≠ supported Causal Claim ≠ confirmed cause;
+- leading hypothesis ≠ confirmed cause;
+- rejected claim ≠ merely unsupported/lower-ranked claim;
+- unresolved claim ≠ unevaluated/proposed claim;
 - Investigation closure ≠ confirmation;
+- causal contribution ≠ quantitative percentage attribution;
+- one supported/confirmed contributor ≠ rejection of compatible contributors;
 - Impact candidate ≠ exposure ≠ downstream effect ≠ business consequence ≠ causal attribution;
 - `not exposed` ≠ missing consumer telemetry;
 - criticality ≠ actual Impact;
@@ -98,7 +103,7 @@ Preserve:
 - Evidence sufficiency is conclusion-relative and may resolve sufficient, insufficient, conflicting/indeterminate, non-applicable/non-comparable, unavailable, or unknown.
 - `Sufficient` for one conclusion does not imply sufficiency for related broader conclusions; `insufficient` does not mean false.
 - Do not create a universal evidence trust/confidence number. Statistical uncertainty may later be represented for appropriate measurements without becoming a generic evidence score.
-- Sufficiency evaluation does not grant Capability Authorization, source authority, job/safeguard/gate authority, or action permission.
+- Sufficiency evaluation does not grant Capability Authorization, source authority, job/safeguard/gate/confirmation authority, or action permission.
 - A requester may receive an authorized safe conclusion/limitation while basis details remain restricted; if the framework itself cannot access required evidence, that is an evidence-availability limitation.
 
 ## Phase 004 Group 02 temporal and progressive-availability rules
@@ -112,7 +117,7 @@ Preserve:
 - Produce the narrowest trustworthy result as soon as the evidence required for that result is available.
 - Preserve progressive analytical horizons: immediate operational validation, enriched health evaluation, investigative/RCA reasoning, retrospective/post-operations review.
 - Do not treat those horizons as services, jobs, UI screens, fixed SLAs, or architecture tiers.
-- A fast `job succeeded` result never implies pipeline health, freshness, quality, or causal resolution while those evidence classes remain pending.
+- A fast `job succeeded` result never implies pipeline health, freshness, quality, or causal resolution while those evidence classes are pending.
 - Do not weaken high-consequence evidence standards for latency convenience.
 - Late evidence, source correction, independent conflict, semantic reinterpretation, and later authority resolution remain distinct.
 - Source correction/supersession preserves prior state; independent disagreement remains conflict absent accepted resolution.
@@ -120,6 +125,27 @@ Preserve:
 - Closed Investigations can become review/reopen candidates when materially challenged; do not automatically reopen every closed Investigation.
 - Current requester authorization continues to govern historical/reconstructed disclosure.
 - Exact monitoring-result timing targets are deferred: Phase 006 defines health-result timing expectations, Phase 009 source availability/collection characteristics, Phase 010 architecture/performance budgets, and Phase 011 MVP acceptance criteria.
+
+## Phase 004 Group 03 causal epistemics rules
+
+- Bind a material causal proposition to proposed cause, defined effect, subjects/context/time, causal role, and material mechanism/transmission assumptions.
+- Accepted status vocabulary: `proposed`, `supported`, `weakened`, `unresolved`, `rejected`, `confirmed`.
+- `Unresolved` means substantive evaluation occurred but evidence remains insufficient/conflicting/non-discriminating/unavailable/restricted. It is not the same as `proposed`.
+- `Rejected` requires sufficient contradiction/exclusion evidence under the applicable claim/rejection standard. Lack of support or lower ranking is not rejection.
+- Evaluate causal support/contradiction across applicable dimensions: cause/effect occurrence, temporal ordering, relationship/mechanism, encounter/transmission, semantic direction, contrasts/interventions, material alternatives, and coverage for exclusions.
+- Do not collapse causal evidence into a universal numeric confidence score.
+- Maintain a bounded material alternative set appropriate to Investigation scope. Do not require exclusion of every imaginable cause.
+- Compatible contributors do not compete merely because several Causal Claims exist; support for one does not automatically weaken another.
+- `Confirmed` is a separate high-consequence evidence gate, not `strongly supported`, `leading`, `first observed`, or `Investigation closed`.
+- Each claim-class confirmation profile/standard must identify its required causal dimensions/evidence conditions.
+- Every confirmation requires a bound proposition, sufficient cause/effect evidence, required ordering/mechanism/transmission evidence, review of material contradiction and alternatives, sufficient coverage for relied-upon exclusions, named standard/profile provenance, resolved confirmation authority/capability, and a provenance-bearing confirmation action.
+- Phase 004 does not decide who/what has confirmation authority. Human title, team ownership, analyst role, service identity, or automated reasoning do not self-authorize confirmation.
+- Automated confirmation is possible only if later accepted semantics explicitly permit it, Capability Authorization resolves appropriately, and the applicable confirmation evidence gate is satisfied. Otherwise automation stops below `confirmed`.
+- Multiple compatible contributors may be simultaneously supported/confirmed. Never force exactly one root cause.
+- Qualitative roles such as direct/contributing/enabling/triggering/preventing/primary can be used where supported. `Primary` requires comparative evidence; no role implies percentage attribution.
+- RCA may mature progressively: candidate/proposed → early supported/weakened/unresolved → deeper investigative RCA → retrospective/confirmation review.
+- Elapsed time never upgrades causal status. Direct deterministic evidence may justify strong status quickly if the applicable standard is actually satisfied.
+- Confirmed claims remain challengeable. Material late/corrected evidence can move current status to supported/weakened/unresolved/rejected while preserving historical confirmation and its evidence cut/standard/actor.
 
 ## Passive monitoring / integration-independence rules
 
@@ -141,23 +167,23 @@ Preserve:
 - Never invent a universal fail-open/fail-closed policy. Gate unavailable/unknown behavior, timeout, escalation, expiry, and override must come from explicit accepted semantics/configuration.
 - Gate configuration/control/override authority is resolved separately through Capability Authorization.
 - Execution Gate controls **start/admission**. Propagation Safeguard controls **output/consumption propagation**. Do not merge them.
-- Gate-induced delay/non-delivery remains Observation/Assessment/Impact evidence. Any proposition that the gate caused a consequence belongs in Causal Claim.
+- Gate-induced delay/non-delivery remains Observation/Assessment/Impact evidence. Any proposition that the gate caused a consequence belongs in Causal Claim and uses Phase 004 causal evidence/status rules.
 - Do not choose Databricks Workflows dependencies, external orchestration, sensors, event triggers, or another gate implementation before the technical architecture phase.
 
 ## Capability Authorization / analytical projection rules
 
 - Capability Authorization answers whether a principal may perform a named capability on a subject/context/time; it does not select IAM/enforcement architecture.
-- Never infer authorization from Responsibility Assignment, Policy Context, Classification, Monitoring Scope, repository ownership, commit history, job creator identity, or platform-administrator status.
-- Raw-data read, derived health/metric visibility, governance metadata visibility, Lineage/RCA participation, job/run operational control, safeguard actions, gate actions/override, and Explanation access are independently resolvable.
+- Never infer authorization from Responsibility Assignment, Policy Context, Classification, Monitoring Scope, repository ownership, commit history, job creator identity, platform-administrator status, Investigation role, or causal expertise.
+- Raw-data read, derived health/metric visibility, governance metadata visibility, Lineage/RCA participation, job/run operational control, safeguard actions, gate actions/override, causal-confirmation capability, and Explanation access are independently resolvable.
 - A restricted-data analyst may perform approved RCA/Impact analysis over safe aggregate/redacted/opaque evidence without direct row access.
 - A job/gate operator may hold operational authority without raw-data read authority.
-- Analytical visibility never implies permission to retry/update/modify a job, activate a safeguard, or override a gate.
+- Analytical visibility never implies permission to retry/update/modify a job, activate a safeguard, override a gate, or confirm a Causal Claim.
 - Derived metrics/thresholds/Lineage/policy/causal/Impact/gate details may themselves be restricted; do not assume metadata is safe.
 - Missing authorization evidence is not permission.
 - The Authorized Analytical Projection is a synchronization result/view over permitted concept state; it does not create new truth or declassify by inference.
 - Restricted evidence is never retrieved merely to summarize it to an unauthorized audience.
-- Historical authorization/control state can be evidence about what a past actor could know/do; current requester authorization still governs current disclosure.
-- Permission to perform an action is not evidence the action succeeded; resulting facts belong to Deployment/Execution History/Observation/etc.
+- Historical authorization/control/confirmation capability state can be evidence about what a past actor could know/do; current requester authorization still governs current disclosure.
+- Permission to perform an action is not evidence the action succeeded; resulting facts belong to Deployment/Execution History/Observation/Causal Claim/etc.
 
 ## Investigation / causality rules
 
@@ -169,7 +195,7 @@ Preserve:
 - Never infer cause from temporal proximity, Lineage, Deployment, realized Change, safeguard state, gate state, Prospective Impact, or intent consistency alone.
 - Every causal proposition belongs in Causal Claim.
 - Multiple contributors/unresolved outcomes are valid.
-- `confirmed` requires an explicit accepted evidence/authority standard; do not invent it before Phase 004 Group 03.
+- Investigation closure never changes Causal Claim status.
 - Human reproducible findings use Observation/Change; causal interpretations use Causal Claim; contextual notes use Annotation.
 
 ## Runtime / safeguard rules
@@ -179,7 +205,7 @@ Preserve:
 - Ordinary Baseline variation must not become alert noise.
 - Propagation Safeguard is protective state, not health/cause truth.
 - Activation requires explicit safeguard capability/authority and enforcement evidence where applicable.
-- Safeguard-induced delay remains observable/assessable.
+- Safeguard-induced delay remains observable/assessable; causal attribution of that delay uses Causal Claim evidence/status rules.
 
 ## Downstream Impact rules
 
@@ -200,17 +226,19 @@ Preserve:
 - Annotation remains attributed human context; structured facts/claims/intents/norms/governance assertions route to their owning concepts.
 - Disputed/withdrawn Annotation cannot be presented as uncontested current fact.
 - Explanation composes only from the Authorized Analytical Projection.
-- Explanation preserves statement-to-basis traceability, Impact layers, Causal Claim status, human-source status, gate/safeguard state, policy/authorization limitations, and temporal perspective.
+- Explanation preserves statement-to-basis traceability, Impact layers, exact Causal Claim status, human-source status, gate/safeguard state, policy/authorization limitations, and temporal perspective.
+- Never paraphrase `supported`, `weakened`, or `unresolved` as `confirmed root cause`.
 - Safe omission/redaction cannot be worded as evidence that hidden entities/evidence do not exist.
-- Explanation may surface an authorized operational/gate capability but never executes the action.
+- Explanation may surface an authorized operational/gate/confirmation capability but never executes the action.
 
-## Historical replay rules — accepted Phase 003 Group 06 + Phase 004 Group 02 refinement
+## Historical replay rules — accepted Phase 003 Group 06 + Phase 004 Groups 02–03 refinement
 
 - Historical replay uses **event/effective time + recorded/knowledge cutoff**.
 - Resolve each concept from state/evidence available under the cut; never project current identity/topology/reference/governance/authorization/control backward.
 - Evidence recorded later but effective earlier is excluded from a contemporaneous cut and may appear in a later retrospective cut.
 - Distinguish **actual historical state** from **replay-derived interpretation**. A current replay result does not prove an Assessment/claim/Impact/decision/Explanation actually existed then.
 - Late/corrected evidence may create a new retrospective conclusion with a later knowledge time; preserve the prior contemporaneous conclusion.
+- A historical confirmed Causal Claim remains reconstructable even if later evidence changes the current status.
 - Do not counterfactually rewrite actual historical Execution Gate or Propagation Safeguard actions.
 - Do not backfill later realized Lineage/Impact/causal evidence into earlier prospective knowledge.
 - If no historical Explanation snapshot exists, an `as-known-then` answer is reconstructed—not something responders actually saw.
@@ -221,11 +249,12 @@ Preserve:
 
 - Group 01 is accepted: REF-001–REF-005.
 - Group 02 is accepted: REF-006–REF-012.
-- **Do not begin Group 03 — Causal Epistemics, Confirmation & Multiple Contributors without explicit user request.**
-- Group 03 must refine Causal Claim status vocabulary/transitions, support/contradiction, alternatives, confirmation evidence/authority boundaries, multiple contributors, progressive RCA maturity, and challenge after confirmation.
-- Group 04 specializes exposure/readiness/control evidence; Group 05 consolidates Phase 004.
+- Group 03 is accepted: REF-013–REF-020.
+- **Do not begin Group 04 — Exposure, Consumption, Readiness & Control Evidence without explicit user request.**
+- Group 04 must specialize evidence standards for exposure/non-exposure, upstream readiness, gate decision versus enforcement, safeguard enforcement/prevented exposure, unavailable control evidence, and causal use of direct control-mechanism evidence.
+- Group 05 consolidates Phase 004.
 - Do not choose implementation architecture while refining these semantics.
 
 ## Tooling stance
 
-Databricks Metric Views/DQX are favored later evaluations, not settled architecture. Collibra/Immuta remain optional until explicitly authoritative for required categories. Do not select RBAC/ABAC, IAM provider, graph database, event/temporal store, quarantine store, scheduler/orchestrator, Execution Gate implementation, LLM, or causal algorithm prematurely.
+Databricks Metric Views/DQX are favored later evaluations, not settled architecture. Collibra/Immuta remain optional until explicitly authoritative for required categories. Do not select RBAC/ABAC, IAM provider, graph database, event/temporal store, quarantine store, scheduler/orchestrator, Execution Gate implementation, LLM, causal algorithm, or technical architecture prematurely.

@@ -1,12 +1,12 @@
 # Phase 004 — Evidence, Time, and Causality Refinement
 
-**Status:** Active — Groups 01–02 accepted; Group 03 next
+**Status:** Active — Groups 01–03 accepted; Group 04 next
 
 ## Purpose
 
 Phase 004 refines the evidence, temporal, and causal standards that Phase 003 intentionally left abstract. It does **not** replace the 23 accepted concepts or SYN-001–SYN-035, and it does not select storage, orchestration, IAM, graph, DQ, statistical, LLM, or other technical architecture.
 
-Phase 003 established which truths must remain separate. Phase 004 establishes what evidence is adequate to support those truths, how historical evidence cuts are evaluated precisely, how results can mature as evidence arrives, and what standards govern high-consequence causal statuses.
+Phase 003 established which truths must remain separate. Phase 004 establishes what evidence is adequate to support those truths, how historical evidence cuts are evaluated precisely, how results can mature as evidence arrives, and what standards govern high-consequence causal statuses and control/exposure conclusions.
 
 ## Phase method
 
@@ -20,6 +20,7 @@ A Phase 004 refinement:
 - never converts missing telemetry into a reassuring negative;
 - never converts an evidence-strength rule into source authority or user authorization unless those semantics are explicitly in scope;
 - allows narrow trustworthy results to appear before slower enrichment while preserving scope/knowledge-cut limitations;
+- keeps causal status explicit and never promotes a leading/fast hypothesis into confirmation merely for operational convenience;
 - remains implementation-neutral.
 
 Refinement artifacts use `REF-###` identifiers. These identifiers are **not new synchronizations** and do not extend the Phase 003 SYN sequence.
@@ -30,8 +31,8 @@ Refinement artifacts use `REF-###` identifiers. These identifiers are **not new 
 |---|---|---|---|
 | 01 | Evidence Sufficiency, Coverage & Negative Evidence | applicability; bounded coverage; opportunity-to-observe; absence/exclusion; corroboration/conflict; conclusion-specific sufficiency | **Accepted** |
 | 02 | Event/Effective Time, Knowledge Cut & Correction | evidence availability; exact `as-known` semantics; progressive analytical maturity; late evidence; correction/supersession; `not known by cutoff`; dependent reassessment/reopen | **Accepted** |
-| 03 | Causal Epistemics, Confirmation & Multiple Contributors | claim-status vocabulary; support/contradiction; confirmation standard; review authority boundary; challenge after confirmation; progressive RCA maturity | **Next** |
-| 04 | Exposure, Consumption, Readiness & Control Evidence | exposure/non-exposure proof; gate readiness; hold/admit enforcement; safeguard enforcement/prevention evidence | Planned |
+| 03 | Causal Epistemics, Confirmation & Multiple Contributors | causal proposition/status; support/contradiction; alternatives; confirmation evidence/authority boundary; multiple contributors; progressive RCA; challenge after confirmation | **Accepted** |
+| 04 | Exposure, Consumption, Readiness & Control Evidence | exposure/non-exposure proof; gate readiness; hold/admit enforcement; safeguard enforcement/prevention evidence | **Next** |
 | 05 | Phase 004 Consolidation / Exit Review | cross-domain application; retained vs reconstructed state; scenario stress test; later-phase handoff | Planned |
 
 ## Accepted Group 01 results
@@ -81,6 +82,34 @@ Key results:
 - actual historical state requires evidence it existed then; otherwise historical answers are replay-derived/reconstructed;
 - exact product latency objectives are deferred, but Phases 006/009/010/011 must define them by health output, evidence source, architecture, and MVP acceptance criteria.
 
+## Accepted Group 03 results
+
+Group 03 is documented in [`03_causal_epistemics_confirmation/README.md`](03_causal_epistemics_confirmation/README.md) and accepts:
+
+- **REF-013 — Causal Proposition and Role Binding**;
+- **REF-014 — Causal Epistemic Status Vocabulary and Transition Semantics**;
+- **REF-015 — Causal Support, Contradiction, and Evidence-Dimension Evaluation**;
+- **REF-016 — Material Alternatives and Causal Discrimination**;
+- **REF-017 — Confirmation Evidence Gate and Authority Separation**;
+- **REF-018 — Multiple Contributors and Qualitative Causal Roles**;
+- **REF-019 — Progressive RCA Maturity and Fast-Path Causal Communication**;
+- **REF-020 — Challenge, Reversal, and Historical Preservation After Confirmation**.
+
+Key results:
+
+- causal propositions explicitly bind cause, effect, role, context/time, and material mechanism/transmission assumptions;
+- the accepted epistemic vocabulary is `proposed`, `supported`, `weakened`, `unresolved`, `rejected`, and `confirmed`;
+- `unresolved` means substantive evaluation remains non-discriminating/insufficient; `rejected` requires sufficient contradiction/exclusion evidence rather than mere lack of support;
+- support/contradiction is evaluated across applicable causal dimensions rather than a universal confidence score;
+- stronger causal status considers a bounded set of material alternatives; compatible contributors need not be excluded;
+- `confirmed` is a separate claim-class confirmation gate, not a synonym for `strongly supported` or `leading hypothesis`;
+- confirmation requires an explicit profile/standard, sufficient evidence across its required dimensions, material contradiction/alternative review, sufficient negative-evidence coverage where relied upon, resolved confirmation authority/capability, and provenance-bearing confirmation action;
+- Phase 004 does not assign confirmation authority; neither human title nor automated process can self-authorize confirmation;
+- multiple contributors can coexist and no single root cause is required;
+- qualitative roles do not imply percentage attribution; `primary` requires comparative evidence;
+- RCA may mature progressively from proposed claims through deeper support/contradiction and later confirmation review without latency-driven status inflation;
+- confirmed claims remain challengeable by materially new evidence while historical confirmation remains reconstructable.
+
 ## Progressive analytical availability handoff
 
 Phase 004 establishes functional evidence-maturity horizons but does not choose service topology or performance budgets:
@@ -90,15 +119,20 @@ Phase 004 establishes functional evidence-maturity horizons but does not choose 
 3. investigative/RCA reasoning;
 4. retrospective/post-operations review.
 
-Later work must define how quickly each class should become available and which evidence sources are realistically capable of supporting those targets. Passive monitoring remains out-of-band/non-blocking for ungated production regardless of monitoring-result latency targets.
+For RCA, this further means:
+
+**candidate/proposed claims → early supported/weakened/unresolved evaluation → deeper investigative RCA → retrospective/confirmation review**.
+
+Later work must define how quickly each class should become available and which evidence sources can realistically support those targets. Passive monitoring remains out-of-band/non-blocking for ungated production regardless of monitoring-result latency targets.
 
 ## Phase boundaries
 
 Phase 004 may refine evidence standards used by Observation, Assessment, Causal Claim, Impact, Execution Gate, Propagation Safeguard, historical replay, and Explanation. It must not:
 
-- invent source-authority rules that belong in Phase 005;
+- invent source/actor authority rules that belong in Phase 005;
+- grant causal-confirmation authority by human title or automated-process identity;
 - invent statistical/anomaly models that belong in Phase 006;
-- select Lineage/control implementations that belong in Phase 007/010;
+- select causal algorithms, Lineage/control implementations, or orchestration technology that belong in later phases;
 - decide Explanation UX/LLM behavior that belongs in Phase 008/010;
 - silently require production-repository changes or make passive monitoring blocking.
 
@@ -106,4 +140,4 @@ Phase 004 may refine evidence standards used by Observation, Assessment, Causal 
 
 Phase 004 exits when the project has explicit, internally consistent standards for evidence applicability/coverage/sufficiency, temporal evidence availability and historical knowledge cuts/corrections, causal epistemic transitions/confirmation, exposure/readiness/control proof, and retained-versus-reconstructed historical conclusions—without collapsing source authority, authorization, health, causality, latency objectives, or architecture.
 
-**Group 03 — Causal Epistemics, Confirmation & Multiple Contributors is next and has not started.**
+**Group 04 — Exposure, Consumption, Readiness & Control Evidence is next and has not started.**

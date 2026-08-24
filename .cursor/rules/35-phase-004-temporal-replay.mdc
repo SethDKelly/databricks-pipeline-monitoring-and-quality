@@ -6,7 +6,7 @@ alwaysApply: true
 
 # Phase 004 temporal evidence rules
 
-Status: **Groups 01–02 accepted — REF-001–REF-012. Group 03 next and not started.**
+Status: **Groups 01–03 accepted — REF-001–REF-020. Group 04 next and not started.**
 
 Preserve:
 
@@ -29,20 +29,23 @@ Rules:
 - Produce the narrowest trustworthy result as soon as its evidence standard is satisfied; do not wait for slower enrichment merely for completeness.
 - A fast `job succeeded` result never implies freshness/quality/pipeline health while those evidence classes are pending.
 - Do not weaken gate/safeguard/causal or other high-consequence evidence standards for latency convenience.
-- Preserve the provisional analytical horizons: immediate operational validation, enriched health evaluation, investigative/RCA reasoning, retrospective/post-ops review.
+- Preserve the analytical horizons: immediate operational validation, enriched health evaluation, investigative/RCA reasoning, retrospective/post-ops review.
+- Causal maturity can further progress from proposed/candidate through supported/weakened/unresolved evaluation to deeper RCA and confirmation review; timing itself does not upgrade causal status.
 - Do not treat those horizons as services, workflows, or fixed SLAs.
 - Late/corrected evidence creates later knowledge/evaluation state and never backdates contemporaneous knowledge.
 - Explicit source correction preserves prior state; independent disagreement remains conflict unless an accepted authority/correction rule resolves it.
 - Reevaluate retained conclusions only where new evidence materially bears on their basis/applicability/coverage/contradiction set.
 - Closed Investigations can become review/reopen candidates when materially challenged; do not auto-reopen every closed Investigation.
 - Call historical state `actual` only when provenance-bearing evidence establishes that state/action/communication existed then. Otherwise label it replay-derived/reconstructed.
+- Historical causal confirmation remains actual historical state when provenance establishes it existed then, even if later evidence changes the current claim status.
 - Current requester authorization governs disclosure of historical and reconstructed state.
 
 Timing handoff:
 
 - Phase 006 defines health-result availability/freshness objectives by analytical horizon.
+- Phase 008 defines communication of progressive health/RCA maturity.
 - Phase 009 characterizes source evidence availability/collection latency and query cost/retention.
 - Phase 010 selects fast-path/asynchronous architecture and performance budgets while preserving non-blocking passive monitoring.
 - Phase 011 turns accepted timing objectives into MVP acceptance criteria.
 
-Do not begin Phase 004 Group 03 without explicit user request.
+Do not begin Phase 004 Group 04 without explicit user request.

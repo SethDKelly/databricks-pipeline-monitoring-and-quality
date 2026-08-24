@@ -42,7 +42,7 @@ Use [`concept_template.md`](concept_template.md) as the specification checklist.
 
 ### Post-exit addenda
 - [`Propagation Safeguard`](phase_002/addenda/propagation_safeguard.md) — proposed/active/released protective hold or quarantine state for an explicit output/consumption boundary.
-- [`Capability Authorization`](phase_002/addenda/capability_authorization.md) — principal/capability/subject authorization state separating raw-data visibility, analytical visibility, operational control, and safeguard/gate authority.
+- [`Capability Authorization`](phase_002/addenda/capability_authorization.md) — principal/capability/subject authorization state separating raw-data visibility, analytical visibility, operational control, safeguard/gate authority, and later causal-confirmation capability.
 - [`Execution Gate`](phase_002/addenda/execution_gate.md) — optional downstream execution admission/hold/admit/override control based on explicit prerequisite readiness evidence, separate from passive monitoring and output quarantine.
 
 ## Core access boundary
@@ -53,7 +53,7 @@ The concept model explicitly distinguishes:
 
 without making Responsibility Assignment or Policy Context themselves authorization sources.
 
-A restricted-data analyst may be permitted to inspect approved aggregate health metrics, execution timing, Assessments, redacted Lineage, policy/restriction summaries, responsibility context, causal status, Impact, safeguards, gate state, and Annotation while being denied rows, sensitive columns, thresholds, identities, or other restricted evidence. A job operator can separately be authorized to retry/update/control a job without receiving raw-data read permission.
+A restricted-data analyst may be permitted to inspect approved aggregate health metrics, execution timing, Assessments, redacted Lineage, policy/restriction summaries, responsibility context, causal status, Impact, safeguards, gate state, and Annotation while being denied rows, sensitive columns, thresholds, identities, or other restricted evidence. A job operator can separately be authorized to retry/update/control a job without receiving raw-data read permission. Causal-confirmation capability is also independently resolvable and is not granted merely by RCA visibility or organizational title.
 
 Derived evidence is not automatically unrestricted; authorization applies to metadata/metrics/topology/causal/consequence/control detail independently where necessary.
 
@@ -69,11 +69,11 @@ An **Execution Gate** is an explicit opt-in active-control boundary. It can hold
 
 The reasoning chain can distinguish:
 
-**identified subject → monitoring/governance context → Capability Authorization / Authorized Analytical Projection → planned intent / prospective downstream profile → active Deployment → execution/timing/dependency evidence → Observation → time-valid Assessment → optional Execution Gate admission/hold when explicitly enabled → realized execution/Change → Investigation → Causal Claim → downstream Impact candidate → exposure/non-exposure → observed effect → consequence evidence → Propagation Safeguard prevention/operational effect where applicable → Annotation → Explanation**
+**identified subject → monitoring/governance context → Capability Authorization / Authorized Analytical Projection → planned intent / prospective downstream profile → active Deployment → execution/timing/dependency evidence → Observation → time-valid Assessment → optional Execution Gate admission/hold when explicitly enabled → realized execution/Change → Investigation → Causal Claim with explicit epistemic status → downstream Impact candidate → exposure/non-exposure → observed effect → consequence evidence → Propagation Safeguard prevention/operational effect where applicable → Annotation → Explanation**
 
 Causal attribution from an origin, gate, or safeguard to a downstream effect remains explicit **Causal Claim** rather than becoming an Impact or control-state shortcut.
 
-This is a reasoning/synchronization model, not a service topology, IAM architecture, scheduler/orchestration design, persistence schema, or temporal replay implementation.
+This is a reasoning/synchronization model, not a service topology, IAM architecture, scheduler/orchestration design, persistence schema, causal algorithm, or temporal replay implementation.
 
 ## Historical replay boundary
 
@@ -86,60 +86,50 @@ It preserves:
 - later evidence ≠ evidence known then;
 - actual historical state/action/Explanation ≠ replay-derived interpretation/reconstruction;
 - actual gate/safeguard action ≠ counterfactual action now preferred;
-- historical authorization/control state ≠ current disclosure permission.
+- historical authorization/control/confirmation capability ≠ current disclosure permission.
 
-A present-day `as-known-then` computation may be useful, but it cannot be presented as an Assessment, belief, decision, or Explanation that actually existed then unless historical state proves that it did.
+A present-day `as-known-then` computation may be useful, but it cannot be presented as an Assessment, belief, causal status, decision, or Explanation that actually existed then unless historical state proves that it did.
 
 ## Phase 004 refinement boundary
 
-Phase 004 does **not** add a new evidence or temporal-state concept merely to hold evidence-quality/availability metadata. The accepted concepts already own their evidence/state. Phase 004 `REF-###` contracts define standards for how that evidence can support conclusions and historical views.
+Phase 004 does **not** add a new evidence or causal concept merely to hold evidence-quality/epistemic metadata. The accepted concepts already own their evidence/state. Phase 004 `REF-###` contracts define standards for how that evidence can support conclusions.
 
-### Group 01 — accepted
+### Group 01 — accepted REF-001–REF-005
 
-- **REF-001 — Evidence Applicability and Proposition Binding**;
-- **REF-002 — Coverage Profile and Opportunity to Observe**;
-- **REF-003 — Negative, Absence, and Exclusion Evidence**;
-- **REF-004 — Corroboration, Conflict, and Evidence Independence**;
-- **REF-005 — Conclusion-Specific Evidence Sufficiency Evaluation**.
-
-The evidence boundary is:
+The key chain is:
 
 **evidence item → applicability to a defined proposition → bounded coverage/opportunity-to-observe → corroboration/conflict relationship → conclusion-specific sufficiency**
 
 without turning that chain into a universal trust score, new source authority, or new authorization grant.
 
-### Group 02 — accepted
-
-- **REF-006 — Temporal Coordinates and Evidence Availability**;
-- **REF-007 — Historical Knowledge-Cut Eligibility**;
-- **REF-008 — Known By, Learned After, and Not Known By Claims**;
-- **REF-009 — Progressive Evidence Availability and Analytical Maturity**;
-- **REF-010 — Late Evidence, Correction, Conflict, and Reinterpretation**;
-- **REF-011 — Dependent Re-evaluation and Investigation Reopen Materiality**;
-- **REF-012 — Actual Retained State versus Reconstructible Historical State**.
-
-The temporal boundary is:
-
-**event/effective time → source production/availability → framework collection/knowledge → derived evaluation → later correction/reassessment**
-
-without silently treating source availability as framework knowledge or replay-derived conclusions as historical actions/beliefs.
-
-Group 02 also accepts progressive analytical availability as a functional behavior:
-
-**immediate operational validation → enriched health evaluation → investigative/RCA reasoning → retrospective/post-operations review**.
-
-These are not service tiers or fixed SLAs. They allow a narrow trustworthy result such as `job succeeded` to appear promptly while slower Metric View/DQ/RCA/post-ops evidence arrives later. The early result never implies broader health or causality merely because later evidence is pending. Concrete timing targets are deferred to Phases 006, 009, 010, and 011.
-
-Examples across Groups 01–02:
+Examples:
 
 - one observed qualifying run may be sufficient for `a run occurred` while insufficient for `only one run occurred`;
 - zero returned events are not `no run` unless the relevant bounded execution opportunities were actually observable and sufficiently covered;
 - no consumer telemetry is not `not exposed`;
 - three copies of the same Databricks event are not three independent corroborating observations;
-- a source fact that was queryable at 08:00 but not collected until 09:00 was not framework-known at 08:30;
-- a 07:04 `job succeeded` result may be valid even if an 07:08 Metric View later establishes a quality violation;
-- a current reconstruction over an 08:15 evidence cut is not proof an Assessment or Explanation actually existed at 08:15;
 - an Assessment can be internally well-supported while its exact evidence remains restricted from a particular analyst.
+
+### Group 02 — accepted REF-006–REF-012
+
+Group 02 distinguishes event/effective time, source availability, framework knowledge, and derived evaluation time; defines exact historical knowledge-cut eligibility; separates `known by`/`learned after`/`not recorded by`/`not known by`/`not available by`; supports progressive analytical availability; distinguishes late evidence/correction/conflict/reinterpretation; and defines material dependent reevaluation plus actual-retained versus reconstructible historical state.
+
+### Group 03 — accepted REF-013–REF-020
+
+Group 03 defines:
+
+- explicit causal proposition/role binding;
+- status vocabulary `proposed`, `supported`, `weakened`, `unresolved`, `rejected`, `confirmed`;
+- multidimensional causal support/contradiction without a universal score;
+- bounded material alternative evaluation;
+- claim-class confirmation profiles and a common confirmation evidence gate;
+- confirmation evidence sufficiency separate from confirmation authority;
+- multiple compatible contributors without a forced single root cause;
+- qualitative causal roles without percentage attribution;
+- progressive RCA maturity without latency-driven status inflation;
+- challenge/reversal of previously confirmed claims with historical preservation.
+
+`Confirmed` is not merely `strongly supported` or the leading hypothesis. It requires the applicable confirmation profile/standard, sufficient evidence, material contradiction/alternative review, adequate negative-evidence coverage where relied upon, independently resolved confirmation capability/authority, and provenance-bearing confirmation action. Phase 005 determines who/what may confirm by context; Phase 004 does not grant that authority.
 
 ## Domain entities that are not automatically concepts
 
@@ -149,4 +139,4 @@ Logical pipelines, jobs, tasks, runs, execution opportunities, tables, views, Me
 
 **Phase 003 is complete.** Accepted synchronization range: **SYN-001–SYN-035**. E-01–E-22 pass end-to-end consolidation. Current results are documented in [`phase_003/README.md`](phase_003/README.md), with Group 06 in [`phase_003/06_historical_replay_and_consolidation/`](phase_003/06_historical_replay_and_consolidation/).
 
-**Phase 004 is active. Groups 01–02 are accepted with REF-001–REF-012. Group 03 — Causal Epistemics, Confirmation & Multiple Contributors is next and has not started.** See [`phase_004/README.md`](phase_004/README.md).
+**Phase 004 is active. Groups 01–03 are accepted with REF-001–REF-020. Group 04 — Exposure, Consumption, Readiness & Control Evidence is next and has not started.** See [`phase_004/README.md`](phase_004/README.md).

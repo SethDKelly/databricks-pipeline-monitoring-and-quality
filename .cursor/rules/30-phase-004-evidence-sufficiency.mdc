@@ -6,7 +6,7 @@ alwaysApply: true
 
 # Phase 004 evidence sufficiency rules
 
-Status: **Phase 004 Group 01 accepted — REF-001–REF-005. Group 02 temporal refinements are also accepted in the separate Phase 004 temporal rule; Group 03 is next and not started.**
+Status: **Phase 004 Group 01 accepted — REF-001–REF-005. Groups 02–03 refinements are also accepted in their separate Phase 004 rules; Group 04 is next and not started.**
 
 Preserve:
 
@@ -38,4 +38,4 @@ Rules:
 - A safe authorized result may hide restricted basis detail; if the framework itself cannot access required evidence, the basis remains unavailable/insufficient.
 - Later Phase 004 groups must specialize these rules rather than bypass them for historical knowledge, causality, exposure/non-exposure, gate readiness/enforcement, or safeguard prevention.
 
-Do not begin Phase 004 Group 03 without explicit user request.
+Do not begin Phase 004 Group 04 without explicit user request.

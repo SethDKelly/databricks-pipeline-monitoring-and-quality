@@ -1,0 +1,47 @@
+---
+description: Phase 004 causal proposition, epistemic status, confirmation, multiple-contributor, progressive-RCA, and challenge rules.
+globs:
+alwaysApply: true
+---
+
+# Phase 004 causal epistemics rules
+
+Status: **Groups 01–03 accepted — REF-001–REF-020. Group 04 next and not started.**
+
+Preserve:
+
+- causal candidate/proposal ≠ support ≠ confirmation;
+- leading hypothesis ≠ confirmed cause;
+- unresolved ≠ unevaluated/proposed;
+- rejected ≠ unsupported/lower ranked;
+- causal contribution ≠ primary cause ≠ percentage attribution;
+- one supported contributor ≠ exclusion of compatible contributors;
+- Investigation closure ≠ confirmation;
+- confirmation evidence sufficiency ≠ confirmation authority;
+- human title/role ≠ automatic confirmation authority;
+- automated reasoning capability ≠ automatic confirmation authority;
+- current confirmed status ≠ immutable historical truth.
+
+Rules:
+
+- Bind every material Causal Claim to a proposed cause, defined outcome, causal role, subject/context/time, and material mechanism/transmission assumptions.
+- Use the accepted functional status vocabulary: `proposed`, `supported`, `weakened`, `unresolved`, `rejected`, `confirmed`.
+- Treat status transitions as non-linear and historical; preserve every material revision with knowledge/evaluation time.
+- `Supported` requires applicable evidence that materially supports the proposition but does not satisfy confirmation merely by strength/rank.
+- `Unresolved` means substantive evaluation occurred but evidence remains insufficient, conflicting, non-discriminating, unavailable, or restricted.
+- `Rejected` requires sufficient contradiction/exclusion evidence under the applicable claim standard; lack of support alone is insufficient.
+- Evaluate support/contradiction across applicable dimensions: cause/effect occurrence, temporal ordering, historical relationship/mechanism, encounter/transmission, semantic direction, contrasts/interventions, material alternatives, and negative/exclusion coverage.
+- Do not create a universal causal confidence/trust score.
+- Maintain a bounded material alternative set appropriate to Investigation scope; do not require exclusion of every imaginable cause.
+- Compatible contributors may coexist as supported/confirmed claims; never force one root cause.
+- `Primary` is a comparative assertion requiring comparative evidence. Never infer it from first-observed location, upstream depth, severity, recency, or organizational preference.
+- Qualitative causal roles do not imply percentage attribution.
+- `Confirmed` requires an explicit claim-class confirmation profile/standard plus the common evidence gate: bound proposition; sufficient cause/effect evidence; required temporal/mechanism/transmission conditions; material contradiction/alternative review; adequate exclusion coverage; named/versioned standard; resolved confirmation authority/capability; provenance-bearing confirmation action.
+- Phase 004 does not decide which actor/system may confirm. Do not self-authorize confirmation from analyst role, ownership, admin status, service identity, or automation.
+- Automated confirmation is allowed only if later accepted semantics explicitly permit it and all evidence/authorization conditions are satisfied; otherwise automated reasoning stops below `confirmed`.
+- RCA can mature progressively: candidate/proposed → early supported/weakened/unresolved → deeper investigative RCA → retrospective/confirmation review.
+- Speed does not inflate status; elapsed time does not create evidence. Direct deterministic evidence may support a strong result quickly if its actual standard is met.
+- Confirmed claims remain challengeable. Material late/corrected evidence may revise the current status while preserving historical confirmation, actor/process, standard/profile, and evidence cut.
+- Explanations must preserve exact causal epistemic status and never translate supported/unresolved into confirmed root cause.
+
+Do not begin Phase 004 Group 04 without explicit user request.

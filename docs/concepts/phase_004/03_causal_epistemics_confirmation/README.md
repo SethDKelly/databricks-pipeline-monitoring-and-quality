@@ -1,44 +1,107 @@
 # Phase 004 Group 03 — Causal Epistemics, Confirmation & Multiple Contributors
 
-**Status:** Next review group — not yet started
+**Status:** Accepted
 
 ## Goal
 
-Apply REF-001–REF-012 to Causal Claim status, support/contradiction, alternatives, confirmation, multiple contributors, and challenge after confirmation without inventing a universal confidence score or allowing low-latency RCA to overstate what the evidence supports.
+Apply REF-001–REF-012 to Causal Claim status, support/contradiction, alternatives, confirmation, multiple contributors, progressive RCA maturity, and challenge after confirmation without inventing a universal confidence score, causal algorithm, or source-authority workflow.
 
-## Accepted handoff from Groups 01–02
+## Accepted refinements
 
-- evidence sufficiency is conclusion-relative;
-- applicability, coverage, corroboration/conflict, and sufficiency remain separate;
-- negative/exclusion evidence requires adequate opportunity-to-observe and coverage;
-- duplicated/common-source evidence is not independent corroboration;
-- event/effective time, source availability, framework knowledge, and evaluation time remain distinct;
-- `as-known` causal state uses evidence known by the historical cutoff;
-- source availability before a cutoff is not framework knowledge by that cutoff;
-- causal results may mature progressively as evidence arrives, but early results remain narrowly scoped;
-- late/corrected evidence may challenge causal status without rewriting prior historical state;
-- closed Investigations can become review/reopen candidates when materially challenged;
-- actual historical Causal Claim status requires evidence the status existed then; replay-derived status is labeled reconstruction.
+1. [`REF-013 — Causal Proposition and Role Binding`](013_causal_proposition_and_role_binding.md)
+2. [`REF-014 — Causal Epistemic Status Vocabulary and Transition Semantics`](014_causal_epistemic_status_and_transitions.md)
+3. [`REF-015 — Causal Support, Contradiction, and Evidence-Dimension Evaluation`](015_causal_support_contradiction_dimensions.md)
+4. [`REF-016 — Material Alternatives and Causal Discrimination`](016_material_alternatives_and_discrimination.md)
+5. [`REF-017 — Confirmation Evidence Gate and Authority Separation`](017_confirmation_evidence_gate_and_authority_separation.md)
+6. [`REF-018 — Multiple Contributors and Qualitative Causal Roles`](018_multiple_contributors_and_roles.md)
+7. [`REF-019 — Progressive RCA Maturity and Fast-Path Causal Communication`](019_progressive_rca_maturity.md)
+8. [`REF-020 — Challenge, Reversal, and Historical Preservation After Confirmation`](020_confirmation_challenge_and_reversal.md)
 
-## Planned questions
+See [`scenario_checks.md`](scenario_checks.md) for the accepted A+B→C, Deployment, safeguard/gate, fast-RCA, restricted-evidence, multi-contributor, and late-evidence checks.
 
-- What first-class epistemic status vocabulary is required: proposed, supported, weakened, rejected, unresolved, confirmed, or another bounded set?
-- What minimum evidence conditions permit transitions among statuses?
-- How should support and contradiction be represented without a universal numeric confidence score?
-- Which alternative explanations must be considered before stronger statuses are permissible?
-- What evidence/coverage standard is required before temporal ordering or exclusion can materially strengthen/weaken a claim?
-- What does `confirmed` operationally mean, and which evidence conditions are necessary versus merely supportive?
-- What human/system authority is required for confirmation, if any, without preempting Phase 005 authority semantics?
-- Can automated reasoning ever confirm a cause, or only propose/support/weaken under Phase 004?
-- How should multiple contributing/enabling/preventing causes coexist without forcing one root cause?
-- When does evidence justify qualitative contribution roles versus quantitative attribution?
-- How should materially new evidence challenge a previously confirmed claim?
-- How should fast RCA surface an early supported hypothesis while clearly distinguishing it from later, more mature causal review?
+`REF-###` remains a refinement-contract identifier, not a new Concept or Phase 003 synchronization.
 
-## Non-goals
+## Accepted epistemic vocabulary
 
-- selecting causal algorithms or LLMs;
-- choosing source authority/organizational approval workflow (Phase 005);
-- statistical anomaly/confidence models (Phase 006);
-- implementation of investigation workflow;
-- quantitative attribution percentages unless scenarios prove them necessary.
+- **proposed** — explicit claim, not yet sufficiently evaluated for a stronger result;
+- **supported** — applicable evidence materially supports the proposition, below confirmation;
+- **weakened** — material contradiction/limitation reduces support but does not justify rejection;
+- **unresolved** — substantive evaluation occurred but evidence remains insufficient, conflicting, non-discriminating, unavailable, or restricted;
+- **rejected** — evidence is sufficient under the applicable claim/rejection standard to reject the proposition; lack of support alone is not rejection;
+- **confirmed** — an explicit confirmation profile/standard is satisfied and the required confirmation authority/capability has been resolved and exercised with provenance.
+
+Status transitions are non-linear and historical. A previously confirmed claim can later be weakened, unresolved, supported, or rejected after materially new evidence without erasing the earlier confirmation.
+
+## Causal evidence model
+
+Causal evaluation remains multidimensional. Relevant dimensions can include:
+
+- cause occurrence;
+- effect occurrence;
+- temporal ordering;
+- historical relationship/mechanism applicability;
+- encounter/transmission/consumption;
+- directional/semantic compatibility;
+- contrast/intervention evidence;
+- material alternative explanations;
+- coverage sufficient for negative/exclusion evidence.
+
+A claim need not use every dimension. The applicable evidence burden depends on the causal proposition and claim class. The framework does not sum these dimensions into a universal confidence score.
+
+## Confirmation boundary
+
+`Confirmed` is a separate high-consequence gate, not a synonym for `strongly supported` or `leading hypothesis`.
+
+Every confirmation profile must require a bounded proposition, sufficient evidence that the cause/effect occurred, satisfaction of material temporal/mechanism/transmission requirements, review of decisive contradiction, appropriate consideration of material alternatives, sufficient coverage for relied-upon exclusions, explicit standard/profile provenance, independently resolved confirmation authority, and a provenance-bearing confirmation action.
+
+Phase 004 defines those evidence-side semantics but **does not choose who may confirm**. Phase 005 must refine confirmation capability/authority and source/actor precedence. Neither a human title nor an automated system receives confirmation authority by default.
+
+Automated confirmation remains possible only if a later accepted standard/profile explicitly permits it, the process is independently authorized for confirmation, and the full evidence gate is satisfied. Until then, automated reasoning can propose/support/weaken/reject/unresolve claims according to accepted evidence semantics but must not silently self-authorize confirmation.
+
+## Alternative explanations
+
+The project requires consideration of a **bounded material alternative set**, not every imaginable cause.
+
+Material mutually exclusive alternatives can prevent confirmation when the evidence cannot discriminate them. Compatible contributors do not have to be excluded merely because another contributing claim is supported or confirmed.
+
+A leading claim cannot become confirmed merely because it ranks above competitors if material unresolved alternatives remain comparably plausible under the applicable confirmation profile.
+
+## Multiple contributors
+
+The product does not require one root cause. Multiple claims may remain supported or confirmed with qualitative roles such as direct, contributing, enabling, triggering, preventing, primary, or unresolved role where evidence supports the distinction.
+
+`Primary` is a comparative assertion requiring comparative evidence. It is not inferred from first-observed localization, topology depth, recency, severity, or organizational preference.
+
+Qualitative contribution does not imply numerical percentage attribution. Quantitative allocation remains deferred unless later scenarios require a dedicated evidence/model standard.
+
+## Progressive RCA maturity
+
+Group 03 extends the Group 02 progressive availability model into causality:
+
+**candidate/proposed claims → early support/weakened/unresolved evaluation → deeper investigative RCA → retrospective/confirmation review**.
+
+The framework should expose the strongest status justified by currently known evidence without waiting unnecessarily for slower enrichment. But a fast result never inherits a stronger label for latency convenience.
+
+Elapsed analysis time is not causal evidence. Direct deterministic evidence can support a strong result quickly when its standard is met, while a long-running investigation can remain unresolved indefinitely if the evidence never becomes discriminating.
+
+## Challenge after confirmation
+
+Confirmation does not make a claim immune to later evidence. Material late/corrected evidence triggers reevaluation of the confirmation basis. The current status can change while retaining who/what confirmed the claim, under which standard, on which evidence cut, and when.
+
+Historical control actions, incident decisions, or retained Explanations based on the earlier claim are not counterfactually rewritten.
+
+## Group 03 exit gate
+
+**Satisfied.** The framework now has explicit causal proposition, status, evidence-dimension, alternative-discrimination, confirmation-gate, co-causation, progressive-RCA, and post-confirmation challenge semantics without adding a concept, causal algorithm, universal score, or authority implementation.
+
+## Handoff to Group 04
+
+Group 04 — **Exposure, Consumption, Readiness & Control Evidence** must specialize REF-001–REF-020 for:
+
+- evidence proving exposure/consumption and `not exposed`;
+- qualifying upstream readiness for Execution Gate decisions;
+- evidence distinguishing a gate decision/request from actual hold/admission enforcement;
+- evidence proving safeguard activation/enforcement and prevented exposure;
+- unavailable/degraded control integrations;
+- how direct control-mechanism evidence can support causal claims about gate/safeguard-induced delay without conflating control state with cause;
+- historical/late control evidence under the accepted temporal and causal semantics.
