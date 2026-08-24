@@ -1,10 +1,10 @@
 # Group 03 — Runtime Evidence, Health & Realized Change
 
-**Status:** Review complete — synchronizations accepted
+**Status:** Review complete — synchronizations accepted; later Execution Gate extension accepted before Group 06
 
 ## Goal
 
-Define how active Deployment context, actual executions, operational timing/dependency evidence, data Observations, time-valid Expectations/Baselines, Assessments, realized Change, analyst handoff, and protective Propagation Safeguard coordination work together without reducing ecosystem health to table-level data-quality statistics.
+Define how active Deployment context, actual executions, operational timing/dependency evidence, data Observations, time-valid Expectations/Baselines, Assessments, realized Change, analyst handoff, protective Propagation Safeguard coordination, and optional dependency-aware execution gating work together without reducing ecosystem health to table-level data-quality statistics or making passive monitoring a universal production dependency.
 
 ## Accepted synchronizations
 
@@ -15,10 +15,13 @@ Define how active Deployment context, actual executions, operational timing/depe
 - [`SYN-013 — Runtime Evidence → Realized Change`](013_runtime_evidence_realized_change.md)
 - [`SYN-014 — Material Assessment → Investigation Initiation`](014_material_assessment_investigation_initiation.md)
 - [`SYN-015 — Runtime Risk Context → Propagation Safeguard`](015_runtime_risk_propagation_safeguard.md)
+- [`SYN-032 — Dependency Readiness Evidence → Execution Gate Admission`](032_dependency_readiness_execution_gate.md) — accepted later as a Group 03 extension before Phase 003 Group 06.
 
-## Phase 002 boundary reopen
+## Phase 002 boundary reopens
 
-Group 03 exposed one behavior no accepted concept owned: protective hold/quarantine/release of data propagation. Rather than overloading Assessment, Investigation, Impact, or Policy Context, Phase 002 is narrowly reopened through the accepted **Propagation Safeguard** addendum.
+Group 03 originally exposed one behavior no accepted concept owned: protective hold/quarantine/release of data propagation. Rather than overloading Assessment, Investigation, Impact, or Policy Context, Phase 002 was narrowly reopened through the accepted **Propagation Safeguard** addendum.
+
+Later, after Group 05, dependency-readiness control exposed a second runtime-control behavior that neither Execution History, Assessment, nor Propagation Safeguard owns cleanly: whether a downstream execution opportunity itself may start or must wait. Phase 002 was therefore narrowly reopened again through the accepted **Execution Gate** addendum, and Group 03 gained SYN-032 as an explicit active-control extension.
 
 Analyst research does not need another concept: Investigation already owns bounded human/system inquiry. Exact automatic escalation/notification policy remains deferred rather than becoming hidden synchronization logic.
 
@@ -54,6 +57,27 @@ The right protective boundary may be the originating output, an environment/coho
 ### 10. Safeguards can create their own health effects
 Holding suspect data may be correct while causing latency/non-delivery. Those operational consequences remain observable and assessable rather than being hidden because the safeguard was intentional.
 
+### 11. Passive monitoring is non-blocking by default
+SYN-011 remains observational. It can determine that an upstream dependency was not ready when a downstream execution started without blocking that execution. Monitoring or framework degradation must not become a production delay merely because monitoring exists.
+
+### 12. Execution gating is explicit opt-in control
+SYN-032 applies only when an explicit Execution Gate is enabled for the downstream subject/context. Lineage, schedules, and readiness Assessments do not automatically create control state.
+
+### 13. Readiness criteria are stronger than clock ordering
+A gate may require more than `upstream job ran`. Depending on its explicit criterion, a qualifying prerequisite may require current-cycle output availability, freshness, expected version, or another accepted readiness condition. A successful upstream run does not silently prove current usable data.
+
+### 14. Gate hold/admission remains separate from actual execution
+A held execution opportunity has not necessarily failed because it may not have started. Admission does not prove the downstream run actually occurred. Execution History remains the owner of actual run evidence.
+
+### 15. Execution Gate and Propagation Safeguard protect different boundaries
+Execution Gate controls downstream start admission. Propagation Safeguard controls output/consumption propagation. A gate may prevent stale recomputation before execution; a safeguard may protect consumers after output exists or hold publication/consumption when output is missing/suspect.
+
+### 16. Gate-induced delay is itself health evidence
+Waiting on a prerequisite can be correct while separately causing start/completion/client-delivery delay. That delay remains observable/assessable and may participate in Impact/Causal Claim reasoning.
+
+### 17. Unknown gate evidence requires explicit fallback semantics
+Missing readiness or control evidence is not automatically `ready`. The framework does not invent one universal fail-open/fail-closed policy; enabled gates require explicit unavailable/unknown behavior, timeout/escalation, and override semantics in later refinement.
+
 ## Scenario review
 
 ### E-01 — A+B→C unplanned degradation
@@ -86,18 +110,28 @@ Pass. A client-critical table may be materially atypical without a normative vol
 ### E-15 — Safeguard creates delivery delay
 Pass. Quarantine can protect consumers while independently causing a delivery-latency Assessment; both are valid and explainable.
 
+### E-21 — Dependency gate prevents stale downstream run
+Pass after extension. A current upstream prerequisite is not ready at C's schedule time; the enabled gate holds C. When qualifying readiness evidence arrives, C is admitted. The held interval remains distinct from an execution failure.
+
+### E-22 — Gate/control degradation and production continuity
+Pass after extension. Passive/ungated jobs are unaffected by monitoring degradation. Explicitly gated jobs follow their configured unavailable-control behavior rather than inheriting a hidden global fail-open/fail-closed rule.
+
 ## Deferred questions
 
 - first-MVP execution timing dimensions and canonical lifecycle normalization;
 - exact run-duration/latency Baseline comparison methods and statistical uncertainty;
 - explicit response/urgency rules for automatic Investigation initiation;
 - safeguard authority, enforcement evidence, lifecycle vocabulary, and implementation candidates;
-- whether response prioritization later needs a dedicated normative concept after authority/policy refinement;
 - minimum evidence for version-level downstream consumed-state proof;
-- significance rules for promoting raw Observation differences into durable Change records.
+- significance rules for promoting raw Observation differences into durable Change records;
+- minimum Execution Gate readiness criteria and lifecycle vocabulary;
+- explicit gate timeout/fallback/escalation/override policies;
+- evidence required to prove external gate enforcement;
+- gate availability/latency requirements if a gate becomes production-critical;
+- how to realize dependency gating with minimal or zero production-repository changes.
 
 ## Group exit gate
 
-**Satisfied.** Runtime reasoning now covers execution timing, dependency readiness, data health, correct reference context, realized Change, human investigation handoff, and protective propagation control without conflating execution success, DQ, atypicality, causality, or quarantine.
+**Satisfied, including the later SYN-032 extension.** Runtime reasoning now covers execution timing, dependency readiness, data health, correct reference context, realized Change, human investigation handoff, protective propagation control, and optional dependency-aware start admission without conflating execution success, DQ, atypicality, causality, quarantine, or passive monitoring with mandatory control.
 
-The next group is **Group 04 — Lineage, Investigation & Causal Reasoning**.
+Groups 04–05 remain accepted. **Group 06 — Historical Replay & Phase 003 Consolidation is next and has not started.**

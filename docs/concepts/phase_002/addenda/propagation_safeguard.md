@@ -12,6 +12,8 @@ Table C produces an output whose completeness Assessment violates a requirement 
 
 If C fails to produce an output at all, there is no nonexistent object to quarantine. A safeguard may instead hold downstream advancement, prevent a stale prior output from being represented as the current cycle, or protect a specific consumer boundary where the product/environment supports that behavior.
 
+Where dependency-readiness control is enabled, an **Execution Gate** may separately prevent a downstream job from starting before a required current upstream state is ready. That start-admission control can reduce stale-recomputation risk, but it does not replace Propagation Safeguard: safeguards still own output/publication/consumption protection when a suspect state exists, no qualifying output exists, or protection is needed at a consumer boundary.
+
 ## Actors
 
 - Data Engineer / Pipeline Maintainer
@@ -30,7 +32,7 @@ If C fails to produce an output at all, there is no nonexistent object to quaran
 - safeguard kind, such as hold or quarantine, without prescribing implementation;
 - intended downstream protection scope;
 - lifecycle state, including proposed, active, released, cancelled, expired, or unresolved where useful;
-- originating rationale/evidence references, such as Assessment, Investigation, Impact, Change Intent, or operator decision;
+- originating rationale/evidence references, such as Assessment, Investigation, Impact, Change Intent, Execution Gate context, or operator decision;
 - authorizing actor/source/rule and authority context;
 - effective/activation time and recorded/knowledge time;
 - enforcement/confirmation evidence when activation is external to the monitoring product;
@@ -63,18 +65,24 @@ Returns safeguard state for a subject/output/boundary at a relevant time: propos
 - A violated Expectation or atypical Baseline result does not automatically imply quarantine.
 - Proposed safeguard is not active safeguard.
 - Release is not a health conclusion.
-- Safeguard does not mutate Observation, Assessment, Baseline, Expectation, Change, Investigation, Impact, or Causal Claim state.
+- Safeguard does not mutate Observation, Assessment, Baseline, Expectation, Change, Investigation, Impact, Causal Claim, or Execution Gate state.
 - Safeguard placement is explicit and context-specific; source-level quarantine is not always the safest or least disruptive location.
 - A safeguard may protect one output version, execution, environment, cohort, downstream boundary, or consumer set without silently applying everywhere.
 - Missing output is not represented as a quarantined data object; downstream advancement/consumption can instead be held when appropriate.
 - Safeguard activation can itself create operational delay or downstream non-delivery and therefore remains visible to runtime health reasoning.
+- **Execution Gate controls whether a downstream execution starts; Propagation Safeguard controls whether output/current state propagates or is consumed.** Neither concept silently substitutes for the other.
+- A gate-held downstream run does not automatically mean publication/consumption is safely protected; if an older state could still be presented or consumed, a separate safeguard may still be warranted.
+- Conversely, an active safeguard does not determine whether a future downstream execution should be admitted.
 - Monitoring Scope and user authorization do not automatically grant safeguard authority.
+- Safeguard authority and Execution Gate control/override authority are separately resolved through Capability Authorization.
 - Safeguard is not a substitute for source-system access control or policy enforcement.
 - Event/effective time and recorded/knowledge time remain distinguishable.
 
 ## Ambiguity and missing evidence
 
 A system may know that a safeguard was requested while lacking proof that the external runtime actually enforced it. That remains proposed/activation-unknown rather than active. Conflicting control sources remain explicit. Restricted safeguard details may be abstracted while still allowing an authorized audience to know that delivery/consumption is intentionally held.
+
+Execution Gate state may also be unavailable or unknown. The product must not infer that a safeguard exists merely because a gate held a run, or infer that propagation is safe because the gate admitted one.
 
 ## Synchronizations
 
@@ -83,18 +91,22 @@ A system may know that a safeguard was requested while lacking proof that the ex
 - **Investigation** may organize evidence and human review associated with proposing, maintaining, or releasing a safeguard.
 - **Lineage** and **Impact** can help identify candidate placement/protection scope and likely downstream exposure without making the placement decision automatically.
 - **Change Intent** and a prospective Impact profile may motivate a proactive safeguard proposal for high-risk planned transitions.
+- **Execution Gate** may prevent a downstream execution from starting before prerequisites are ready; safeguard logic remains independently applicable to output/publication/consumption boundaries.
 - **Execution History** and **Observation** can establish whether held/released state changed runtime timing or delivery behavior.
 - **Responsibility Assignment** may help route an authorization/review decision without granting universal authority.
 - **Policy Context** may identify relevant handling obligations but does not itself prove that a safeguard should activate.
-- **Explanation** can communicate that data is intentionally held, why, and what remains uncertain subject to authorization.
+- **Capability Authorization** separately resolves safeguard proposal/activation/release authority and Execution Gate control/override authority.
+- **Explanation** can communicate that data is intentionally held, why, how that differs from an execution gate, and what remains uncertain subject to authorization.
 
 ## Security / privacy / governance considerations
 
 Safeguard state can reveal sensitive incidents, client dependencies, protected data flows, or security controls. Visibility and activation authority must therefore be separately governed. Automatic activation, if ever supported, requires an explicit accepted response/authority rule.
 
+A user may be permitted to know that a publication boundary is protected while being denied the restricted prerequisite identities or gate-control details that led to related operational decisions.
+
 ## Evidence / provenance considerations
 
-Proposal, activation, enforcement evidence, scope, authority, expiry, release, and correction history remain provenance-bearing. Historical replay distinguishes when protection was effective from when the monitoring ecosystem learned or corrected that state.
+Proposal, activation, enforcement evidence, scope, authority, expiry, release, and correction history remain provenance-bearing. Historical replay distinguishes when protection was effective from when the monitoring ecosystem learned or corrected that state. Where a related Execution Gate existed, its hold/admission/override history remains separately referenced rather than collapsed into safeguard history.
 
 ## Representative scenarios
 
@@ -110,6 +122,12 @@ A Change Intent on A has a broad prospective blast radius into critical consumer
 ### Boundary-specific hold
 A suspect C output is safe for an internal exploratory consumer but not for a regulated client delivery. The safeguard targets the client publication boundary rather than globally blocking all access.
 
+### Execution Gate plus safeguard
+C is held by an Execution Gate until A's current output is ready. During the wait, the client publication boundary is separately safeguarded so the prior-cycle C output is not misrepresented as current. Gate admission later permits C to run; safeguard release remains a separate decision/evidence state.
+
+### Gate without safeguard
+A gate successfully prevents C from starting with stale A. No suspect C output exists and no consumer boundary needs a separate hold, so no Propagation Safeguard is required merely because gating occurred.
+
 ### False alarm / release
 A corrected Observation removes the original concern. The safeguard is explicitly released; the earlier protected interval remains historical evidence.
 
@@ -121,9 +139,11 @@ Quarantine correctly blocks suspect output but causes a delivery-latency Expecta
 - deciding data health;
 - root-cause determination;
 - performing Investigation;
+- deciding whether a downstream execution should start;
+- replacing Execution Gate;
 - defining organization-wide incident response policy;
 - granting user/data access;
-- selecting a quarantine storage pattern, table design, workflow engine, or enforcement product;
+- selecting a quarantine storage pattern, table design, workflow engine, scheduler, or enforcement product;
 - automatically rolling back code;
 - deleting suspect data.
 
@@ -134,5 +154,6 @@ Quarantine correctly blocks suspect output but causes a delivery-latency Expecta
 - whether any conditions support pre-authorized automatic activation;
 - how enforcement evidence is obtained from representative Databricks/consumer patterns;
 - how to choose the least disruptive effective placement across complex Lineage;
+- when a gate hold should be paired with a publication/consumption safeguard to prevent stale prior-state delivery;
 - whether safeguard expiry/review deadlines need their own normative Expectations;
 - how client-delivery obligations interact with a protective hold.

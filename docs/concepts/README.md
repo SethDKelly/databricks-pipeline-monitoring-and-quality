@@ -2,9 +2,9 @@
 
 ## Status
 
-**22 concepts are Accepted.** Phase 002 originally exited with 20 accepted concepts. Later Phase 003 work exposed two missing independent behaviors: **Propagation Safeguard** and **Capability Authorization**, each accepted through a narrow post-exit addendum.
+**23 concepts are Accepted.** Phase 002 originally exited with 20 accepted concepts. Later Phase 003 work exposed three missing independent behaviors: **Propagation Safeguard**, **Capability Authorization**, and **Execution Gate**, each accepted through a narrow post-exit addendum.
 
-The project uses Concept Design to define independently understandable units of functionality. Concepts remain implementation-neutral and synchronize rather than collapse into vendor, service, storage, schema, IAM, or UI boundaries.
+The project uses Concept Design to define independently understandable units of functionality. Concepts remain implementation-neutral and synchronize rather than collapse into vendor, service, storage, schema, IAM, orchestration, or UI boundaries.
 
 Use [`concept_template.md`](concept_template.md) as the specification checklist. The original review and later addenda are in [`phase_002/README.md`](phase_002/README.md) and [`phase_002/addenda/`](phase_002/addenda/).
 
@@ -43,6 +43,7 @@ Use [`concept_template.md`](concept_template.md) as the specification checklist.
 ### Post-exit addenda
 - [`Propagation Safeguard`](phase_002/addenda/propagation_safeguard.md) — proposed/active/released protective hold or quarantine state for an explicit output/consumption boundary.
 - [`Capability Authorization`](phase_002/addenda/capability_authorization.md) — principal/capability/subject authorization state separating raw-data visibility, analytical visibility, operational control, and safeguard authority.
+- [`Execution Gate`](phase_002/addenda/execution_gate.md) — optional downstream execution admission/hold/admit/override control based on explicit prerequisite readiness evidence, separate from passive monitoring and output quarantine.
 
 ## Core access boundary
 
@@ -56,20 +57,28 @@ A restricted-data analyst may be permitted to inspect approved aggregate health 
 
 Derived evidence is not automatically unrestricted; authorization applies to metadata/metrics/topology/causal/consequence detail independently where necessary.
 
+## Observation versus active control boundary
+
+The default framework mode is observational and should remain out-of-band from production execution. Monitoring evidence collection or framework degradation must not delay production merely because an asset is monitored.
+
+An **Execution Gate** is an explicit opt-in active-control boundary. It can hold a downstream execution until a declared upstream readiness condition is satisfied, admit it when ready, or record an authorized override. It is not implicitly created by Lineage or Assessment and does not replace Execution History.
+
+**Execution Gate ≠ Propagation Safeguard**: a gate controls whether a downstream run starts; a safeguard controls whether output/current state propagates or is consumed. Both can independently create observable latency/delivery consequences.
+
 ## Cross-cutting reasoning model
 
 The reasoning chain can distinguish:
 
-**identified subject → monitoring/governance context → Capability Authorization / Authorized Analytical Projection → planned intent / prospective downstream profile → active Deployment → execution/timing/dependency evidence → Observation → time-valid Assessment → realized Change → Investigation → Causal Claim → downstream Impact candidate → exposure/non-exposure → observed effect → consequence evidence → Propagation Safeguard prevention/operational effect where applicable → Annotation → Explanation**
+**identified subject → monitoring/governance context → Capability Authorization / Authorized Analytical Projection → planned intent / prospective downstream profile → active Deployment → execution/timing/dependency evidence → Observation → time-valid Assessment → optional Execution Gate admission/hold when explicitly enabled → realized execution/Change → Investigation → Causal Claim → downstream Impact candidate → exposure/non-exposure → observed effect → consequence evidence → Propagation Safeguard prevention/operational effect where applicable → Annotation → Explanation**
 
-Causal attribution from an origin to a downstream effect remains explicit **Causal Claim** rather than becoming an Impact layer.
+Causal attribution from an origin, gate, or safeguard to a downstream effect remains explicit **Causal Claim** rather than becoming an Impact or control-state shortcut.
 
-This is a reasoning/synchronization model, not a service topology, IAM architecture, or persistence schema.
+This is a reasoning/synchronization model, not a service topology, IAM architecture, scheduler/orchestration design, or persistence schema.
 
 ## Domain entities that are not automatically concepts
 
-Logical pipelines, jobs, tasks, runs, tables, views, Metric Views, repositories, workflows, columns, business metrics, reports, applications, business processes, teams, people, source revisions, deployment targets, client-delivery endpoints, roles, and groups may participate in concepts without becoming giant concepts themselves.
+Logical pipelines, jobs, tasks, runs, execution opportunities, tables, views, Metric Views, repositories, workflows, columns, business metrics, reports, applications, business processes, teams, people, source revisions, deployment targets, client-delivery endpoints, roles, and groups may participate in concepts without becoming giant concepts themselves.
 
 ## Phase 003 synchronization work
 
-Groups 01–05 are accepted, including Capability Authorization as the pre-Group-05 addendum and SYN-023–SYN-031 for downstream Impact, Annotation, authorized analytical projection, and Explanation. Current synchronization work is documented in [`phase_003/README.md`](phase_003/README.md); **Group 06 — Historical Replay & Phase 003 Consolidation is next.**
+Groups 01–05 are accepted. **SYN-032 — Dependency Readiness Evidence → Execution Gate Admission** is accepted as a later Group 03 extension discovered before Group 06. Current synchronization work is documented in [`phase_003/README.md`](phase_003/README.md); **Group 06 — Historical Replay & Phase 003 Consolidation is next and has not started.**

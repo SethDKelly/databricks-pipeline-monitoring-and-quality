@@ -6,20 +6,27 @@ alwaysApply: true
 
 # Project foundation
 
-- Current accepted concept count: **22** — original 20 plus Propagation Safeguard and Capability Authorization addenda.
-- **Phase 003 is active. Groups 01–05 are accepted; Group 06 — Historical Replay & Phase 003 Consolidation is next.**
-- Accepted synchronization range: **SYN-001–SYN-031**.
+- Current accepted concept count: **23** — original 20 plus Propagation Safeguard, Capability Authorization, and Execution Gate addenda.
+- **Phase 003 is active. Groups 01–05 are accepted; SYN-032 Execution Gate extension is accepted; Group 06 — Historical Replay & Phase 003 Consolidation is next and has not started.**
+- Accepted synchronization range: **SYN-001–SYN-032**.
 - Work remains documentation/design-first unless the user explicitly advances into technical/implementation design.
-- Do not create application code, notebooks, infrastructure, schemas, APIs, IAM implementations, deployment workflows, quarantine implementations, graph/causal engines, LLMs, or prototypes prematurely.
+- Do not create application code, notebooks, infrastructure, schemas, APIs, IAM implementations, deployment workflows, quarantine implementations, Execution Gate/orchestration implementations, graph/causal engines, LLMs, or prototypes prematurely.
 - Treat `docs/` as the product/design system of record.
 - Preserve concept ownership boundaries; synchronization coordinates concepts rather than merging them.
 - Synchronization order is never authority; a trigger is never causation.
 - Monitoring Scope, Responsibility Assignment, Policy Context, Classification, and Capability Authorization remain distinct.
-- Raw-data read, metadata/health visibility, Lineage/RCA participation, job-operation authority, and safeguard authority remain independently resolvable.
+- Raw-data read, metadata/health visibility, Lineage/RCA participation, job-operation authority, safeguard authority, and gate-control authority remain independently resolvable.
+- **Passive monitoring is out-of-band/non-blocking by default**; monitoring-framework degradation must not delay ungated production jobs.
+- Baseline monitoring should prefer independent deployment and no production ETL/GitHub Actions changes where Databricks/platform metadata is sufficient.
+- **Execution Gate is explicit opt-in control**; Lineage, schedule, or readiness Assessment does not automatically block a downstream run.
+- Execution Gate controls downstream start admission; Propagation Safeguard controls output/consumption propagation.
+- Gate hold ≠ execution failure; gate admission ≠ actual run occurrence; gate override ≠ prerequisite ready.
+- Missing readiness/control evidence ≠ ready. Do not invent a universal fail-open/fail-closed rule.
+- Gate-induced delay remains observable/assessable/Impact evidence.
 - Authorized Analytical Projection is a view over independently authorized concept state, not a new truth concept or declassification mechanism.
 - Restricted raw-data access must not automatically block approved monitoring/RCA/Impact analysis over authorized derived evidence.
 - Derived evidence/metadata can itself be sensitive; use explicit authorized projection/redaction/opacity.
-- Historical authorization is evidence about past capability but never overrides current requester disclosure authorization.
+- Historical authorization/control state is evidence about past capability but never overrides current requester disclosure authorization.
 - Investigation starts from outcome/question; Lineage yields candidates, not causes; first-observed localization is not root cause.
 - Impact candidate ≠ exposure ≠ downstream effect ≠ consequence ≠ causal attribution.
 - `Not exposed` requires sufficient negative evidence; missing consumer telemetry is not a reassuring negative.
@@ -27,4 +34,5 @@ alwaysApply: true
 - Prevented exposure requires active/enforced safeguard evidence plus sufficient negative-consumption coverage.
 - Explanation consumes only authorized projected concept state and preserves statement-to-basis traceability.
 - `confirmed` cause requires an explicit accepted evidence/authority standard.
-- Never silently choose graph/event/ledger/quarantine/workflow/service/LLM/IAM architecture.
+- Do not start Group 06 without explicit user request.
+- Never silently choose graph/event/ledger/quarantine/scheduler/orchestration/workflow/service/LLM/IAM architecture.

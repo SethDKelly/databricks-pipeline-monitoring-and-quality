@@ -8,7 +8,7 @@ Let users reconstruct which execution instances actually occurred, how their lif
 
 ## Operational principle
 
-A user asks what happened around Table C's volume shift. Execution History reconstructs the logical pipeline's executions from authoritative run evidence: the last pre-deployment run, the first run after a new Deployment became active, and subsequent runs. It preserves start/completion/outcome and lower-level job/task association where evidence supports it. It does not decide whether output was healthy, whether an expected run should have existed, or whether the deployment caused the data change.
+A user asks what happened around Table C's volume shift. Execution History reconstructs the logical pipeline's executions from authoritative run evidence: the last pre-deployment run, the first run after a new Deployment became active, and subsequent runs. It preserves start/completion/outcome and lower-level job/task association where evidence supports it. It does not decide whether output was healthy, whether an expected run should have existed, whether an Execution Gate should admit a future run, or whether the deployment caused the data change.
 
 ## Actors
 
@@ -49,19 +49,23 @@ A user asks what happened around Table C's volume shift. Execution History recon
 
 ## Invariants / behavioral expectations
 
-- Execution History represents actual execution evidence, not scheduled/expected work.
+- Execution History represents actual execution evidence, not scheduled/expected work or an Execution Gate's prospective admission opportunity.
 - A successful execution does not imply fresh, complete, valid, or otherwise healthy output.
 - Expected-but-never-started work is evaluated through **Expectation + sufficient absence evidence + Assessment**, not by inventing an execution instance.
+- A gate-held execution opportunity is not represented as a failed execution merely because it did not start.
+- Gate admission or override does not create an execution instance; an actual start/run requires separate execution evidence.
 - Missing telemetry is not evidence that no execution occurred.
 - A logical pipeline is not assumed identical to one Databricks job or task.
 - Reconstructed logical execution retains the evidence supporting lower-level associations.
 - Event/effective time and record/knowledge time remain distinguishable where late evidence matters.
 - Duplicate/conflicting source events are not silently flattened when outcome would change.
-- Execution History does not own Deployment, Observation, Assessment, Lineage, or Change Intent state.
+- Execution History does not own Deployment, Observation, Assessment, Lineage, Change Intent, or Execution Gate state.
 
 ## Ambiguity and missing evidence
 
 Run evidence can be late, duplicated, partial, conflicting, unavailable, or unauthorized. The concept reports those conditions. If a source cannot establish whether an execution occurred over a period, the history remains incomplete rather than synthesizing a missing-run fact.
+
+An external gate/control source may say a run was admitted or held while the orchestration source provides incomplete evidence about whether the run actually started. Those states remain separate rather than inferring execution from gate intent.
 
 ## Synchronizations
 
@@ -73,16 +77,17 @@ Run evidence can be late, duplicated, partial, conflicting, unavailable, or unau
 - **Expectation** defines expected execution cadence/conditions where normative requirements exist.
 - **Assessment** can evaluate execution evidence against expectations without mutating the history.
 - **Lineage** can represent execution dependencies separately from execution lifecycle state.
+- **Execution Gate** may hold/admit/override a downstream execution opportunity, but Execution History records the actual run only once execution evidence exists.
 - **Change** can use execution timing as context for realized changes.
 - **Investigation** later uses execution sequence as evidence.
 
 ## Security / privacy / governance considerations
 
-Execution metadata may expose schedules, environment topology, job names, failure details, operational incidents, or restricted dependencies. Authorized abstraction may expose a run outcome without revealing sensitive implementation details.
+Execution metadata may expose schedules, environment topology, job names, failure details, operational incidents, restricted dependencies, or gate decisions. Authorized abstraction may expose a run outcome or held/not-started condition without revealing sensitive implementation details.
 
 ## Evidence / provenance considerations
 
-Every execution state should retain source, source event time, collection/knowledge time where relevant, subject/execution identity, and correction history. Logical execution reconstruction must be explainable from underlying evidence.
+Every execution state should retain source, source event time, collection/knowledge time where relevant, subject/execution identity, and correction history. Logical execution reconstruction must be explainable from underlying evidence. When a gate was involved, the run may reference the relevant gate decision without making that decision the source of execution truth.
 
 ## Representative scenarios
 
@@ -91,6 +96,12 @@ A run succeeds. Separate Observations/Assessments later show its output violated
 
 ### Expected run did not occur
 A freshness/operational Expectation says a run should occur by 06:00. A complete authoritative query establishes no qualifying run occurred. The negative Observation plus Expectation can produce a violation Assessment; Execution History does not create a phantom failed run.
+
+### Gate-held execution opportunity
+C is scheduled for 07:00 but an enabled Execution Gate holds it until A's current output is ready. No C execution instance is created merely because the opportunity existed or was held. If C later starts after admission, that actual start becomes Execution History.
+
+### Gate override without run
+An authorized operator overrides a gate, but the scheduler never starts C because of a separate platform issue. Execution Gate records the override; Execution History does not invent a run.
 
 ### First run after planned change
 A Change Intent is linked to a Deployment activated at 10:00. The first execution after activation is reconstructed and later used to compare observed behavior with planned context.
@@ -104,6 +115,7 @@ Two sources disagree whether a run was cancelled or failed. The conflict remains
 ## Non-goals
 
 - defining schedules or execution Expectations;
+- deciding whether a future execution should be admitted/held;
 - declaring data-health status;
 - recording Deployment intent;
 - root-cause attribution;
@@ -115,4 +127,5 @@ Two sources disagree whether a run was cancelled or failed. The conflict remains
 - minimum logical-execution identity model for MVP;
 - which run lifecycle states need canonical normalization versus source-specific preservation;
 - what evidence is sufficient to associate tasks/jobs into one logical execution;
+- how gate decision references should be associated with later actual execution evidence;
 - how long knowledge-time correction history must be retained/displayed.

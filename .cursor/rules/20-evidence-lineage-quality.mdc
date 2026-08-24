@@ -1,5 +1,5 @@
 ---
-description: Evidence, timing, authorization, planned change, lineage, investigation, health, safeguards, causality, impact, annotation, and explanation invariants.
+description: Evidence, timing, authorization, planned change, lineage, execution gating, investigation, health, safeguards, causality, impact, annotation, and explanation invariants.
 globs:
 alwaysApply: true
 ---
@@ -11,9 +11,17 @@ Preserve:
 - Monitoring Scope ≠ Capability Authorization;
 - Responsibility Assignment ≠ Capability Authorization;
 - Policy Context ≠ Capability Authorization;
-- raw-data read authorization ≠ analytical visibility ≠ job-operation authority ≠ safeguard authority;
+- raw-data read authorization ≠ analytical visibility ≠ job-operation authority ≠ safeguard authority ≠ gate-control authority;
 - authorized derived evidence ≠ unrestricted evidence;
 - Authorized Analytical Projection ≠ new truth/declassification mechanism;
+- passive monitoring ≠ active Execution Gate;
+- monitoring availability ≠ ungated production-job availability;
+- dependency readiness Assessment ≠ Execution Gate admission state;
+- Execution Gate ≠ Execution History ≠ Propagation Safeguard;
+- gate hold ≠ execution failure;
+- gate admission ≠ actual run occurrence;
+- gate override ≠ prerequisite ready;
+- missing readiness/control evidence ≠ ready;
 - permission to act ≠ action succeeded;
 - Change Intent ≠ Deployment ≠ realized Change;
 - prospective Impact ≠ actual Impact ≠ retrospective cause;
@@ -42,20 +50,30 @@ Preserve:
 - release ≠ proof of health;
 - Annotation ≠ structured operational truth;
 - Explanation ≠ independent truth/authorization source;
-- historical authorization ≠ current disclosure permission;
+- historical authorization/control state ≠ current disclosure permission;
 - effective/event time ≠ recorded/knowledge time.
 
 Rules:
 
 - Material conclusions remain traceable to provenance-bearing evidence.
+- Baseline monitoring should remain out-of-band/non-blocking and independently deployable where possible; monitoring degradation must not delay ungated production jobs.
+- Prefer Databricks/platform/source metadata over production-code/repository modifications when equivalent monitoring evidence is available externally.
+- Execution Gate is explicit opt-in active control; never infer an enabled gate from Lineage, schedule timing, or readiness Assessment.
+- A gate can use explicit prerequisite criteria such as qualifying completion/current-cycle output/freshness/version; successful upstream execution alone is not silently sufficient.
+- Gate hold/admission/override state belongs to Execution Gate; actual run state belongs to Execution History.
+- A held opportunity is not a failed run; admission is not proof the run occurred; override is not readiness.
+- Missing gate/readiness evidence is not automatically ready. Do not invent a universal fail-open/fail-closed behavior.
+- Gate timeout/fallback/escalation/override semantics must remain explicit and provenance-bearing.
+- Gate-induced delay remains Observation/Assessment/Impact evidence; causal attribution to the gate uses Causal Claim.
+- Execution Gate protects start/admission; Propagation Safeguard protects output/consumption. Do not merge them.
 - Capability Authorization resolves principal/capability/subject/context/time without choosing IAM implementation.
 - Never infer authorization from policy applicability, responsibility, scope, technical ownership, or synchronization order.
-- An analyst denied raw data may still receive separately authorized aggregate/redacted/opaque health, timing, Lineage, governance, Investigation, causal, Impact, safeguard, and Annotation context.
+- An analyst denied raw data may still receive separately authorized aggregate/redacted/opaque health, timing, Lineage, governance, Investigation, causal, Impact, safeguard, gate, and Annotation context.
 - Metadata/derived evidence can itself be sensitive and must be independently authorized.
 - Restricted evidence is never retrieved merely to summarize it to an unauthorized audience.
-- Permission to operate a job or safeguard does not grant raw-data access; analytical visibility does not grant production-control authority.
+- Permission to operate a job, safeguard, or gate does not grant raw-data access; analytical visibility does not grant production-control authority.
 - Permission to act does not create Deployment/Execution/Observation facts.
-- Historical authorization can be reconstructed as evidence but current requester authorization still governs disclosure.
+- Historical authorization/control state can be reconstructed as evidence but current requester authorization still governs disclosure.
 - Treat execution timing/dependency latency as first-class evidence.
 - Assess runtime/data evidence against the correct time-valid Expectation/Baseline.
 - Ordinary variation must not become alert noise.
@@ -72,12 +90,12 @@ Rules:
 - Downstream Observation/Assessment/Change may establish effect even when exposure is unresolved.
 - Exposure does not automatically imply downstream degradation.
 - Consequence evidence is separate from criticality, exposure, and policy sensitivity.
-- Any origin→downstream-effect/consequence assertion belongs in Causal Claim.
+- Any origin/gate/safeguard→downstream-effect/consequence assertion belongs in Causal Claim.
 - Active/enforced Propagation Safeguard plus sufficient negative-consumption coverage can support prevented exposure.
 - Blocked suspect-version exposure does not prove downstream freshness/health.
 - Safeguard-induced delay remains separate operational effect/consequence; causal attribution to safeguard uses Causal Claim.
 - Human Annotation remains attributed context; structured truths belong to their owning concepts.
 - Explanation composes only from the Authorized Analytical Projection; it cannot query hidden evidence for narrative completion.
-- Explanation preserves statement-to-basis traceability, Impact layers, causal status, redaction, and temporal perspective.
-- Distinguish contemporaneous from retrospective evidence, Impact, Explanation, and authorization when later state changes.
-- Do not select IAM, graph database, event store, quarantine store, persistence architecture, LLM, causal algorithm, or technical architecture from these semantics alone.
+- Explanation preserves statement-to-basis traceability, Impact layers, gate/safeguard state, causal status, redaction, and temporal perspective.
+- Distinguish contemporaneous from retrospective evidence, Impact, Explanation, authorization, and control state when later state changes.
+- Do not select IAM, graph database, event store, quarantine store, scheduler/orchestrator, gate implementation, persistence architecture, LLM, causal algorithm, or technical architecture from these semantics alone.

@@ -5,7 +5,7 @@ This document establishes distinctions that must remain stable. The fuller canon
 ## Ecosystem terms
 
 ### Data ecosystem
-The connected set of repositories, Change Intents, Deployments, executions, data assets, dependencies, Lineage, governance metadata, authorization state, health evidence, Investigations, Causal Claims, Impact context, Propagation Safeguards, Annotations, and downstream consumers relevant to monitoring.
+The connected set of repositories, Change Intents, Deployments, executions, data assets, dependencies, Lineage, governance metadata, authorization state, health evidence, Execution Gates, Investigations, Causal Claims, Impact context, Propagation Safeguards, Annotations, and downstream consumers relevant to monitoring.
 
 ### Logical pipeline
 A named data-processing responsibility that may span multiple Databricks tasks/jobs and must not automatically equal one repository.
@@ -15,6 +15,9 @@ A source-control/provenance boundary, not the product reasoning boundary.
 
 ### Job / Task / Run
 Job is an orchestration definition; Task is a unit within it; Run/execution instance is time-bounded actual work established by execution evidence.
+
+### Execution opportunity
+A prospective downstream start context such as a schedule window or trigger opportunity that may be evaluated by an Execution Gate. It is not itself an actual Run.
 
 ## Monitoring and quality terms
 
@@ -33,13 +36,16 @@ A dimension-scoped interpretation of Observation evidence against explicit Expec
 ### Execution duration / operational latency
 Observed timing properties of executions or dependencies. Duration, queue/wait time, completion latency, and dependency readiness can materially affect ecosystem health even when table-level statistical quality is acceptable.
 
+### Dependency readiness
+Evidence-backed state describing whether an explicitly relevant upstream prerequisite satisfies the criterion required for a downstream context. The criterion may involve completion, current-cycle output availability, freshness, expected version, or another accepted condition. Readiness is not automatically gate admission.
+
 ### Freshness / Staleness
 Freshness is observed currency/timeliness. Staleness is a normative Assessment that freshness violates an applicable Expectation.
 
 ### Degradation
 A meaningful worsening supported by directional/normative interpretation. A realized Change or Baseline deviation alone is insufficient.
 
-## History, planned change, and topology
+## History, planned change, topology, and execution control
 
 ### Change Intent
 A registered intended modification and anticipated effects before realization. Intent is not Observation, Change, Expectation, Baseline, actual Impact, or cause.
@@ -52,6 +58,27 @@ Attempt/activation/active-state/supersession history for source/configuration st
 
 ### Execution History
 Actual execution-instance lifecycle history. Missing telemetry cannot create fictional missing runs.
+
+### Execution Gate
+An accepted optional active-control concept that owns whether a downstream execution opportunity is admitted, held, admitted after readiness, or explicitly overridden based on declared prerequisite readiness. It is separate from passive monitoring, Assessment, Execution History, Capability Authorization, and Propagation Safeguard.
+
+### Passive monitoring
+Observation/analysis mode in which the framework is not a production start-admission dependency. Monitoring degradation should not delay ungated production jobs merely because they are monitored.
+
+### Active execution gating
+Explicit opt-in control in which a downstream execution opportunity can be intentionally held until prerequisite readiness is evidenced or an explicit fallback/override applies.
+
+### Gate hold
+A downstream execution opportunity is intentionally not admitted. A hold is not an execution failure because the execution may not have started.
+
+### Gate admission
+The gate permits the downstream execution to proceed. Admission is not evidence that the run actually occurred or that every upstream health dimension is healthy.
+
+### Gate override
+An authorized bypass of the normal readiness result. Override does not transform `not ready` or `unknown` into `ready`.
+
+### Production-repository independence
+The architectural objective that baseline monitoring be independently deployed/versioned and prefer no required ETL-code/library/GitHub Actions changes when Databricks/platform/source metadata can satisfy evidence requirements.
 
 ### Lineage
 Typed, directed, temporal, provenance-bearing relationships. Planned topology is not active Lineage until evidence establishes it.
@@ -80,10 +107,13 @@ The task-specific Phase 003 synchronization result that assembles only the permi
 Permission to inspect underlying row/record/value data or sensitive columns. This is not a prerequisite for every monitoring/RCA capability.
 
 ### Analytical visibility
-Permission to inspect approved metadata, aggregate health/Assessment state, Lineage/RCA evidence, Impact, safeguards, and Explanation. Analytical visibility does not imply raw-data access or production-control authority.
+Permission to inspect approved metadata, aggregate health/Assessment state, Lineage/RCA evidence, Impact, safeguards, Execution Gate state, and Explanation. Analytical visibility does not imply raw-data access or production-control authority.
 
 ### Operational job authority
 Permission to perform a named job/run operation where later defined, such as retry/update/control. Operational authority does not imply raw-data access, and permission itself does not prove the action succeeded.
+
+### Gate-control authority
+Permission to configure/operate/override an Execution Gate where later defined. Gate-control authority is independent from raw-data read and ordinary analytical visibility.
 
 ## Investigation and reasoning terms
 
@@ -129,7 +159,7 @@ Downstream reasoning that preserves candidate/reachability, exposure, observed e
 Priority/significance context about downstream importance. It may affect urgency but is not evidence that actual Impact occurred.
 
 ### Propagation Safeguard
-A protective proposed/active/released state that holds or quarantines a defined output/consumption boundary. It is not a quality Assessment, Causal Claim, Capability Authorization, or proof that the data is defective or safe.
+A protective proposed/active/released state that holds or quarantines a defined output/consumption boundary. It is not a quality Assessment, Causal Claim, Capability Authorization, Execution Gate, or proof that the data is defective or safe.
 
 ### Annotation
 Attributed human context that cannot silently become Observation, Change Intent, Expectation, Responsibility Assignment, authorization, Impact proof, or causal confirmation.
@@ -155,16 +185,24 @@ Declared policy/handling applicability without access enforcement, legal interpr
 Sensitive-data/legal-organizational categories/context according to applicable definitions. Presence of such metadata does not establish compliance.
 
 ### Provenance
-Where a fact/assertion/definition/intent/relationship/evaluation/claim/impact/safeguard/authorization came from, who/what asserted or derived it, and relevant temporal/version context.
+Where a fact/assertion/definition/intent/relationship/evaluation/gate/claim/impact/safeguard/authorization came from, who/what asserted or derived it, and relevant temporal/version context.
 
 ## Terms to avoid conflating
 
 - ecosystem existence ≠ Monitoring Scope ≠ Capability Authorization;
 - responsibility ≠ authorization;
 - Policy Context ≠ Capability Authorization;
-- raw-data read authorization ≠ metadata/health-analysis authorization ≠ Lineage/RCA authorization ≠ job-operation authorization ≠ safeguard authority;
+- raw-data read authorization ≠ metadata/health-analysis authorization ≠ Lineage/RCA authorization ≠ job-operation authorization ≠ safeguard authority ≠ gate-control authority;
 - authorized derived evidence ≠ unrestricted evidence;
 - Authorized Analytical Projection ≠ new truth/declassification mechanism;
+- passive monitoring ≠ active execution gating;
+- monitoring availability ≠ ungated production-job availability;
+- dependency readiness Assessment ≠ Execution Gate admission state;
+- Execution Gate ≠ Execution History ≠ Propagation Safeguard;
+- gate hold ≠ execution failure;
+- gate admission ≠ actual run occurrence;
+- gate override ≠ prerequisite ready;
+- missing readiness evidence ≠ ready;
 - permission to act ≠ evidence action succeeded;
 - pipeline ≠ repository ≠ Databricks job;
 - Change Intent ≠ Deployment ≠ realized Change;
@@ -190,6 +228,6 @@ Where a fact/assertion/definition/intent/relationship/evaluation/claim/impact/sa
 - safeguard release ≠ proof of health;
 - Annotation ≠ structured operational truth;
 - Explanation ≠ truth/authorization source;
-- historical authorization ≠ current disclosure permission;
+- historical authorization/control state ≠ current disclosure permission;
 - effective/event time ≠ recorded/knowledge time;
 - Classification ≠ Policy Context ≠ authorization ≠ compliance.

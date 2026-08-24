@@ -10,7 +10,7 @@ Let users and the monitoring ecosystem determine whether an identified principal
 
 A business analyst investigates Table C. The analyst is not permitted to read C's underlying rows or restricted columns, but is permitted to view approved aggregate health metrics, runtime/freshness Assessments, a redacted Lineage path, applicable policy/restriction summaries, responsibility contacts, and Causal Claim status. The analyst can therefore perform meaningful root-cause analysis without direct data access.
 
-Separately, the same analyst may or may not be permitted to perform an operational action such as retrying, updating, or otherwise controlling a pipeline job. That operational capability is resolved independently from raw-data read and analytical visibility. Permission to operate a job does not imply permission to inspect its underlying data, and permission to analyze metadata does not imply permission to modify the job.
+Separately, the same analyst may or may not be permitted to perform operational actions such as retrying/updating a pipeline job, activating a Propagation Safeguard, or overriding an Execution Gate. Each operational capability is resolved independently from raw-data read and analytical visibility. Permission to operate a job or gate does not imply permission to inspect its underlying data, and permission to analyze metadata does not imply permission to modify the job, activate quarantine, or bypass readiness controls.
 
 ## Actors
 
@@ -50,9 +50,10 @@ Capability vocabulary remains implementation-neutral and extensible. The functio
 - job/run operational action, such as retry/update/control where later defined;
 - Change Intent or Expectation authoring/revision where separately governed;
 - Propagation Safeguard proposal/activation/release;
+- **Execution Gate registration/configuration/control/override where later defined**;
 - Explanation/report access.
 
-These are capability classes, not a settled role model, UI permission matrix, or vendor ACL scheme.
+These are capability classes, not a settled role model, UI permission matrix, vendor ACL scheme, or orchestration permission model.
 
 ## Actions
 
@@ -72,8 +73,10 @@ Returns an authorized explanation/reference for why the capability resolved as i
 
 - Raw-data read authorization is independent from metadata/health-analysis authorization.
 - Raw-data read authorization is independent from Lineage/RCA authorization.
-- Analytical visibility is independent from job/run operational authority.
+- Analytical visibility is independent from job/run operational authority, safeguard authority, and Execution Gate control/override authority.
 - Job/run operational authority does not imply permission to inspect the data processed by that job.
+- Execution Gate control/override authority does not imply raw-data access or that the prerequisite is ready.
+- Safeguard authority does not imply gate authority, and gate authority does not imply safeguard authority.
 - Responsibility Assignment does not grant Capability Authorization.
 - Policy Context does not itself grant or deny Capability Authorization.
 - Classification does not itself grant or deny Capability Authorization.
@@ -82,7 +85,7 @@ Returns an authorized explanation/reference for why the capability resolved as i
 - Permission to see a derived Assessment does not automatically permit access to every underlying Observation, threshold, Baseline, raw value, or restricted evidence item.
 - Permission to perform Investigation/RCA does not imply complete evidence visibility; restricted evidence may remain opaque while the Investigation records the limitation.
 - Permission to view Lineage does not imply permission to see every node name, path detail, schema, or business consumer.
-- Permission to operate a job does not imply that an attempted action succeeded; the resulting Deployment/Execution History/Observation evidence remains separately owned.
+- Permission to operate a job, safeguard, or gate does not imply that the attempted action succeeded; resulting Execution Gate, Propagation Safeguard, Deployment, Execution History, and Observation evidence remain separately owned.
 - Capability Authorization is a decision/entitlement truth, not enforcement proof. Where enforcement is external, actual enforcement evidence remains separate.
 - Missing authorization evidence is not permission. `unknown` must not be converted into allow merely to keep analysis or workflow moving.
 - Authorization may vary by subject, capability, environment, purpose, consumer, and time.
@@ -92,7 +95,7 @@ Returns an authorized explanation/reference for why the capability resolved as i
 
 Multiple identity/access sources can disagree. Conflicting authorization states remain conflicting until an accepted authority/source-precedence rule resolves them. A source can be unavailable, stale, or unable to decide for the requested context. Restricted authorization details may be abstracted while still returning a usable permitted/denied/conditional result if the authoritative source allows that projection.
 
-A viewer denied direct-data access may still receive approved derived analytical context. Conversely, some metadata can itself be sensitive, so lack of row access is not a blanket grant to every metric, schema, Lineage edge, Classification, Policy Context, or causal detail.
+A viewer denied direct-data access may still receive approved derived analytical context. Conversely, some metadata can itself be sensitive, so lack of row access is not a blanket grant to every metric, schema, Lineage edge, Classification, Policy Context, gate state, or causal detail.
 
 ## Synchronizations
 
@@ -100,21 +103,21 @@ A viewer denied direct-data access may still receive approved derived analytical
 - **Responsibility Assignment** may identify the party expected to act but never grants the capability.
 - **Classification** and **Policy Context** can provide restriction/context evidence to an external or later authorization rule without themselves becoming access decisions.
 - **Monitoring Scope** states monitoring responsibility and remains independent of actor authorization.
-- **Observation**, **Assessment**, **Execution History**, **Lineage**, **Investigation**, **Causal Claim**, **Impact**, and **Propagation Safeguard** can each expose authorized projections appropriate to the resolved capability.
+- **Observation**, **Assessment**, **Execution History**, **Lineage**, **Investigation**, **Causal Claim**, **Impact**, **Propagation Safeguard**, and **Execution Gate** can each expose authorized projections appropriate to the resolved capability.
 - **Investigation** can continue over partial/opaque evidence when the actor has RCA capability but not direct access to every evidence item.
 - **Explanation** uses Capability Authorization to compose an audience-appropriate evidence projection without retrieving hidden raw values merely to summarize them.
-- Operational actions on jobs/runs, future Change Intent authoring, and Propagation Safeguard activation consume their own capability authorization rather than borrowing raw-data or metadata permissions.
+- Operational actions on jobs/runs, Change Intent/Expectation authoring, Propagation Safeguard activation/release, and Execution Gate registration/override consume their own capability authorization rather than borrowing raw-data or metadata permissions.
 - External IAM/access systems may be authoritative sources later; this concept does not choose Databricks ACLs, Immuta, RBAC, ABAC, or another mechanism.
 
 ## Security / privacy / governance considerations
 
-The concept exists to support least privilege and intentional separation of analytical transparency from raw-data exposure and production-control authority. Authorization metadata can itself reveal privileged roles, restricted resources, incident access, or security design and therefore requires appropriate disclosure controls.
+The concept exists to support least privilege and intentional separation of analytical transparency from raw-data exposure and production-control authority. Authorization metadata can itself reveal privileged roles, restricted resources, incident access, control capabilities, or security design and therefore requires appropriate disclosure controls.
 
-Safe analytical access should prefer derived/aggregate/provenance-bearing evidence where it can answer the monitoring question without exposing restricted rows or values. However, aggregation is not automatically safe; sensitive metrics, thresholds, counts, or topology may still require restriction.
+Safe analytical access should prefer derived/aggregate/provenance-bearing evidence where it can answer the monitoring question without exposing restricted rows or values. However, aggregation is not automatically safe; sensitive metrics, thresholds, counts, topology, gate prerequisites, or control state may still require restriction.
 
 ## Evidence / provenance considerations
 
-Every material authorization decision should retain its authoritative source, principal, capability, target/context, effective interval, decision/conditions, record time, and correction/revocation history. Historical Investigation/Explanation must be able to distinguish what an analyst was authorized to know or do at the incident time from permissions granted later.
+Every material authorization decision should retain its authoritative source, principal, capability, target/context, effective interval, decision/conditions, record time, and correction/revocation history. Historical Investigation/Explanation must be able to distinguish what an analyst/operator was authorized to know or do at the incident time from permissions granted later.
 
 ## Representative scenarios
 
@@ -131,10 +134,13 @@ The analyst can see that a restricted upstream dependency materially limits conf
 A user is permitted to retry or update an operational job under an explicit job-operation capability but is denied raw-data read. The action and its resulting execution/deployment evidence remain traceable; no data-read authority is implied.
 
 ### Analysis without operational control
-A business analyst can inspect health metrics, Investigation, Impact, and Explanation but cannot retry, modify, or quarantine the pipeline.
+A business analyst can inspect health metrics, Investigation, Impact, gate state, and Explanation but cannot retry, modify, quarantine, or override the pipeline.
 
 ### Safeguard authority differs
 An incident responder can propose a safeguard but activation requires a separate capability held by a data/platform authority.
+
+### Gate override authority differs
+An analyst can see that C is held waiting for an upstream prerequisite but cannot override the gate. An authorized operator can override it without gaining raw-data read access; the prerequisite remains not-ready/unknown as evidenced.
 
 ### Historical authorization
 An analyst had RCA access during an incident but receives broader raw-data access later. A historical `what could the analyst know then?` view uses the earlier capability state rather than current permissions.
@@ -144,12 +150,13 @@ An analyst had RCA access during an incident but receives broader raw-data acces
 - authentication or identity-provider selection;
 - RBAC/ABAC model selection;
 - defining Databricks/Immuta/Collibra permissions;
+- defining scheduler/orchestrator permissions;
 - enforcing row/column access directly;
 - replacing source-system access controls;
 - legal/policy interpretation;
 - assigning responsibility;
 - proving compliance;
-- defining job-update semantics or workflow implementation;
+- defining job-update, safeguard, or gate implementation semantics;
 - treating monitoring visibility as production-control authority.
 
 ## Deferred questions
@@ -158,7 +165,7 @@ An analyst had RCA access during an incident but receives broader raw-data acces
 - which systems are authoritative for each capability category;
 - how allow/deny precedence and conditional decisions are resolved across sources;
 - whether capability inheritance exists across domains/pipelines/assets and under what explicit rules;
-- safe disclosure levels for health metrics, thresholds, Lineage, policy metadata, and causal evidence;
-- exact operational actions represented by job/run capability categories;
+- safe disclosure levels for health metrics, thresholds, Lineage, policy metadata, gate state, and causal evidence;
+- exact operational actions represented by job/run, safeguard, and gate-control capability categories;
 - how authorization decisions and external enforcement evidence are audited/retained;
 - whether purpose-of-use or just-in-time access requires additional structured semantics.

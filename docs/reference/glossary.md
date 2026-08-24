@@ -5,7 +5,7 @@ This glossary is the canonical vocabulary reference. Terms may evolve during lat
 ## Core ecosystem
 
 ### Data ecosystem
-The connected set of repositories, Change Intents, Deployments, executions, data assets, dependencies, Lineage relationships, governance metadata, Capability Authorization state, health/quality evidence, Investigations, causal reasoning, Impact context, Propagation Safeguards, downstream consumers, Annotations, and Explanations relevant to monitoring. An entity may be known while outside Monitoring Scope.
+The connected set of repositories, Change Intents, Deployments, executions, data assets, dependencies, Lineage relationships, governance metadata, Capability Authorization state, health/quality evidence, Execution Gates, Investigations, causal reasoning, Impact context, Propagation Safeguards, downstream consumers, Annotations, and Explanations relevant to monitoring. An entity may be known while outside Monitoring Scope.
 
 ### Logical pipeline
 A logical data-processing responsibility that transforms or moves data. It may span one or more jobs/tasks and does not automatically equal a repository.
@@ -14,7 +14,10 @@ A logical data-processing responsibility that transforms or moves data. It may s
 A source-control boundary and provenance context, not the product reasoning boundary.
 
 ### Job / Task / Run
-A Job is an orchestration definition; Task is a unit inside it; Run/execution instance is time-bounded actual work established by execution evidence.
+A Job is a Databricks orchestration definition; Task is a unit inside it; Run/execution instance is time-bounded actual work established by execution evidence.
+
+### Execution opportunity
+A prospective downstream start context such as a schedule window, trigger opportunity, or other identifiable admission context that may be subject to an Execution Gate. It is not itself an actual Run and need not become a first-class domain entity in the eventual implementation.
 
 ## Scope, identity, and authorization
 
@@ -27,7 +30,7 @@ Functionality for deciding when source-specific references denote the same logic
 ### Capability Authorization — Accepted post-exit addendum
 Functionality for resolving whether a principal may perform a named capability on a subject/context/time, with provenance, conditions, effective interval, conflict/unknown behavior, and historical revision.
 
-Capability classes are independently resolvable. The model must distinguish direct/raw data read, sensitive-value access, metadata/governance visibility, derived health/metric visibility, Lineage/RCA participation, operational job/run actions, safeguard actions, and Explanation/report access without selecting an IAM implementation.
+Capability classes are independently resolvable. The model must distinguish direct/raw data read, sensitive-value access, metadata/governance visibility, derived health/metric visibility, Lineage/RCA participation, operational job/run actions, safeguard actions, Execution Gate control/override, and Explanation/report access without selecting an IAM implementation.
 
 Responsibility Assignment, Classification, Policy Context, Monitoring Scope, repository ownership, job creator identity, and platform administration do not silently grant Capability Authorization.
 
@@ -35,7 +38,7 @@ Responsibility Assignment, Classification, Policy Context, Monitoring Scope, rep
 The general set of concept/evidence state a principal is permitted to inspect for a specific context/purpose. It can vary by subject, evidence facet, time, and capability.
 
 ### Authorized Analytical Projection
-The Phase 003 Group 05 synchronization result that assembles the **task-specific permitted subset/abstraction** of concept state for a requesting principal. It may expose approved aggregate health metrics, Assessment status, execution timing, redacted/opaque Lineage, policy/restriction summaries, responsibility context, Causal Claim status, Impact, safeguard state, and Annotation while withholding restricted rows, columns, thresholds, entity identities, or evidence details.
+The Phase 003 Group 05 synchronization result that assembles the **task-specific permitted subset/abstraction** of concept state for a requesting principal. It may expose approved aggregate health metrics, Assessment status, execution timing, redacted/opaque Lineage, policy/restriction summaries, responsibility context, Causal Claim status, Impact, safeguard state, Execution Gate state, and Annotation while withholding restricted rows, columns, thresholds, entity identities, or evidence details.
 
 The projection is not a new truth-owning concept, persistence layer, or declassification mechanism. Derived evidence is not automatically unrestricted, and restricted evidence is not retrieved merely to synthesize a more complete summary.
 
@@ -43,10 +46,13 @@ The projection is not a new truth-owning concept, persistence layer, or declassi
 Permission to inspect underlying rows/records/values or sensitive fields. Lack of direct-data access does not automatically prevent independently authorized monitoring, Investigation, RCA, Impact analysis, or Explanation.
 
 ### Analytical visibility
-Permission to inspect approved metadata, aggregate health/Assessment state, Lineage/RCA evidence, Impact, safeguards, and Explanation. Analytical visibility does not imply raw-data access or production-control authority.
+Permission to inspect approved metadata, aggregate health/Assessment state, Lineage/RCA evidence, Impact, safeguards, Execution Gate state, and Explanation. Analytical visibility does not imply raw-data access or production-control authority.
 
 ### Operational job authority
 Permission to perform a named job/run operation where later defined. It is independent from raw-data read and analytical visibility. Authorization to act does not establish that the action succeeded.
+
+### Gate-control authority
+Capability Authorization to configure, enable, hold/release through accepted gate semantics, or override an Execution Gate. It is independent from raw-data read, ordinary analytical visibility, responsibility assignment, and generic job-operation authority unless an explicit capability rule says otherwise.
 
 ## Semantics, responsibility, governance, policy
 
@@ -90,13 +96,16 @@ Elapsed execution time derived from compatible execution start/completion eviden
 ### Operational latency / readiness
 Timing relationship among upstream execution/output availability and downstream execution/delivery needs.
 
+### Dependency readiness
+Evidence-backed state describing whether an explicitly relevant upstream prerequisite satisfies the readiness criterion required for a downstream context. The criterion may involve execution completion, current-cycle output availability, freshness, expected version, or another accepted condition. Dependency readiness is not automatically an Execution Gate decision.
+
 ### Freshness / Staleness
 Freshness is observed currency/timeliness. Staleness is a normative Assessment that observed freshness violates an applicable freshness Expectation.
 
 ### Degradation
 A meaningful worsening supported by explicit directional/normative interpretation. Baseline deviation or realized Change alone is insufficient.
 
-## History, lineage, and change
+## History, lineage, change, and execution control
 
 ### Change Intent — Accepted
 Functionality for registering an intended modification and anticipated effects before realization. Anticipated effects are not automatically Expectations, Observations, Changes, actual Impact, or causes.
@@ -106,6 +115,32 @@ A pre-realization downstream candidate/blast-radius view built from Change Inten
 
 ### Execution History — Accepted
 Functionality for reconstructing actual execution instances/lifecycle states and provenance over time. Missing telemetry does not create a fictional execution or absence.
+
+### Execution Gate — Accepted post-exit addendum
+Functionality for explicit downstream execution admission control based on declared prerequisite readiness. An enabled gate may evaluate readiness, hold an execution opportunity, admit it when criteria are satisfied, record an authorized override, or preserve unknown/conflicting/unavailable gate state.
+
+Execution Gate is **optional active control**. Passive monitoring and readiness Assessment do not automatically create a gate. `held` is not a failed execution, `admitted` is not proof that a run actually occurred, and `override` does not mean the prerequisite became ready.
+
+### Passive monitoring
+The default observational mode in which monitoring collects/interprets evidence without placing the framework in the production execution critical path. Monitoring degradation must not itself delay ungated jobs merely because they are monitored.
+
+### Active execution gating
+An explicitly enabled control mode in which a downstream execution opportunity can be intentionally held until prerequisite readiness is evidenced or an explicit fallback/override applies. Active gating may intentionally create latency and therefore requires traceable authority, readiness criteria, fallback/timeout behavior, and control evidence.
+
+### Gate hold
+An Execution Gate state in which a downstream execution opportunity is not admitted because the applicable gate rule requires waiting. A hold is not an execution failure because the downstream execution may not have started.
+
+### Gate admission
+An Execution Gate state indicating the gate permits the downstream execution to proceed. Admission does not establish that the run actually started or that every upstream health dimension is healthy.
+
+### Gate override
+An authorized bypass of the normal gate readiness outcome. The underlying prerequisite remains not-ready/unknown/conflicting as applicable; override records permission to proceed despite that state.
+
+### Gate fallback behavior
+Explicit configured behavior for unavailable/unknown readiness or control evidence, such as hold, allow, expire, or escalate where later accepted. The project has **no universal fail-open or fail-closed rule**.
+
+### Production-repository independence
+The architectural objective that baseline monitoring be independently deployed/versioned and prefer no required ETL-code/library/GitHub Actions changes when the necessary evidence is available through Databricks/platform/source metadata. It is an objective rather than an absolute guarantee for every future specialized integration.
 
 ### Deployment — Accepted
 Functionality for recording deployment attempts and resolving which source/configuration state was active for a target/time. Attempt/workflow success/activation remain distinct; activation does not prove data effect or health.
@@ -169,14 +204,16 @@ Prevented exposure does not mean the downstream state was fresh/healthy. A safeg
 ### Propagation Safeguard — Accepted post-exit addendum
 Functionality for representing a protective proposed/active/released hold or quarantine at a defined output/consumption boundary. Safeguard action authority is separately resolved through Capability Authorization.
 
+Execution Gate and Propagation Safeguard protect different control boundaries: Execution Gate controls **whether a downstream execution starts**; Propagation Safeguard controls **whether output/current state propagates or is consumed**.
+
 ### Analyst intervention
-Human research through Investigation or an authorized operational/safeguard decision. It is not a separate concept.
+Human research through Investigation or an authorized operational/safeguard/gate decision. It is not a separate concept.
 
 ### Annotation — Accepted
 Attributed human-authored context attached to ecosystem state without mutating source evidence or silently substituting for structured truth or authorization. Human consequence context can inform Impact while retaining its human-source provenance and dispute/withdrawal state.
 
 ### Explanation — Accepted
-Authorization- and time-aware communication composed from concept state/evidence. Group 05 formalizes that Explanation consumes the Authorized Analytical Projection rather than hidden evidence directly. Different audiences may receive different safe detail/abstraction, but epistemic status, Impact layering, human-source status, and material statement-to-basis traceability remain intact.
+Authorization- and time-aware communication composed from concept state/evidence. Group 05 formalizes that Explanation consumes the Authorized Analytical Projection rather than hidden evidence directly. Different audiences may receive different safe detail/abstraction, but epistemic status, Impact layering, human-source status, control state, and material statement-to-basis traceability remain intact.
 
 ### Statement-to-basis traceability
 The requirement that each material Explanation statement be internally traceable to the authorized concept state/evidence, epistemic status, and authorization/redaction context supporting it. Visible citation UI is deferred, but internal traceability is required.
@@ -184,13 +221,13 @@ The requirement that each material Explanation statement be internally traceable
 ## Evidence and provenance
 
 ### Evidence
-A provenance-bearing fact/assertion used to support Assessment, Investigation, Causal Claim, Impact, safeguard decisions, or Explanation.
+A provenance-bearing fact/assertion used to support Assessment, Execution Gate decisions, Investigation, Causal Claim, Impact, safeguard decisions, or Explanation.
 
 ### Observed absence
 A negative fact supported by sufficient source/query coverage. Missing telemetry is not observed absence.
 
 ### Provenance
-Information describing where a fact/assertion/definition/classification/intent/deployment/relationship/Expectation/Baseline/Observation/Assessment/Change/claim/annotation/impact/safeguard/authorization state came from and its temporal/version context.
+Information describing where a fact/assertion/definition/classification/intent/deployment/relationship/Expectation/Baseline/Observation/Assessment/Change/gate/claim/annotation/impact/safeguard/authorization state came from and its temporal/version context.
 
 ### Authority / source precedence
 Rules determining which source/actor is authoritative for a category/capability/subject/context/time. The project has no universal authority rule; unresolved conflicts remain conflicts until accepted category-specific semantics exist.
@@ -200,9 +237,18 @@ Rules determining which source/actor is authoritative for a category/capability/
 - Monitoring Scope ≠ Capability Authorization;
 - Responsibility Assignment ≠ Capability Authorization;
 - Policy Context ≠ Capability Authorization;
-- raw-data access ≠ analytical visibility ≠ job-operation authority ≠ safeguard authority;
+- raw-data access ≠ analytical visibility ≠ job-operation authority ≠ safeguard authority ≠ gate-control authority;
 - authorized derived evidence ≠ unrestricted evidence;
 - Authorized Analytical Projection ≠ new truth/declassification mechanism;
+- passive monitoring ≠ active execution gating;
+- monitoring availability ≠ ungated production-job availability;
+- dependency readiness Assessment ≠ Execution Gate admission state;
+- Execution Gate ≠ Execution History ≠ Propagation Safeguard;
+- gate hold ≠ execution failure;
+- gate admission ≠ actual run occurrence;
+- gate override ≠ prerequisite ready;
+- successful upstream run ≠ current qualifying output unless the gate criterion defines it so;
+- missing readiness evidence ≠ ready;
 - permission to act ≠ action succeeded;
 - successful execution ≠ timely execution ≠ freshness ≠ data quality;
 - raw difference ≠ material Change;
@@ -225,7 +271,7 @@ Rules determining which source/actor is authoritative for a category/capability/
 - release ≠ health proof;
 - Annotation ≠ structured operational truth;
 - Explanation ≠ independent truth/authorization source;
-- historical authorization ≠ current disclosure permission;
+- historical authorization/control state ≠ current disclosure permission;
 - missing telemetry ≠ missing run/output.
 
 ## Concept Design

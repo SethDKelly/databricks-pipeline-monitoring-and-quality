@@ -2,13 +2,13 @@
 
 ## Project status
 
-Phase 002 originally accepted 20 concepts. Two explicit post-exit addenda are accepted: **Propagation Safeguard** and **Capability Authorization**. Current accepted concept count: **22**.
+Phase 002 originally accepted 20 concepts. Three explicit post-exit addenda are accepted: **Propagation Safeguard**, **Capability Authorization**, and **Execution Gate**. Current accepted concept count: **23**.
 
-**Phase 003 is active. Groups 01–05 are accepted. Group 06 — Historical Replay & Phase 003 Consolidation is next.**
+**Phase 003 is active. Groups 01–05 are accepted. SYN-032 — Dependency Readiness Evidence → Execution Gate Admission is accepted as a later Group 03 extension. Group 06 — Historical Replay & Phase 003 Consolidation is next and has not started.**
 
-Accepted synchronization range: **SYN-001–SYN-031**.
+Accepted synchronization range: **SYN-001–SYN-032**.
 
-Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, deployment workflows, quarantine implementations, IAM implementations, graph/causal engines, LLMs, or prototypes unless the user explicitly advances the project into technical design.
+Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, deployment workflows, quarantine implementations, gate/orchestration implementations, IAM implementations, graph/causal engines, LLMs, or prototypes unless the user explicitly advances the project into technical design.
 
 Treat `docs/` as the design system of record.
 
@@ -16,7 +16,7 @@ Treat `docs/` as the design system of record.
 
 - Start from actor/ecosystem outcome, not vendor/tool/storage shape.
 - Preserve accepted concept ownership/state boundaries.
-- Synchronization is not automatically a service call, workflow, transaction, event, database relation, API, or persisted view.
+- Synchronization is not automatically a service call, workflow, transaction, event, database relation, API, persisted view, scheduler, or orchestrator.
 - Synchronization order is never authority; a trigger is never causation.
 - Do not create umbrella state for convenience.
 - Reopen earlier boundaries only explicitly with rationale.
@@ -30,9 +30,17 @@ Preserve:
 - Monitoring Scope ≠ Capability Authorization;
 - Responsibility Assignment ≠ Capability Authorization;
 - Classification ≠ Policy Context ≠ Capability Authorization ≠ compliance;
-- raw-data read authorization ≠ metadata/governance visibility ≠ derived health/metric visibility ≠ Lineage/RCA authorization ≠ job-operation authorization ≠ safeguard authority;
+- raw-data read authorization ≠ metadata/governance visibility ≠ derived health/metric visibility ≠ Lineage/RCA authorization ≠ job-operation authorization ≠ safeguard authority ≠ gate-control authority;
 - authorized derived evidence ≠ unrestricted evidence;
 - Authorized Analytical Projection ≠ new truth/declassification mechanism;
+- passive monitoring ≠ active Execution Gate;
+- monitoring availability ≠ ungated production-job availability;
+- dependency readiness Assessment ≠ Execution Gate admission state;
+- Execution Gate ≠ Execution History ≠ Propagation Safeguard;
+- gate hold ≠ execution failure;
+- gate admission ≠ actual run occurrence;
+- gate override ≠ prerequisite ready;
+- missing readiness evidence ≠ ready;
 - permission to act ≠ action succeeded;
 - Change Intent ≠ Deployment ≠ realized Change;
 - prospective Impact ≠ actual Impact ≠ retrospective cause;
@@ -57,22 +65,45 @@ Preserve:
 - release ≠ health proof;
 - Annotation ≠ structured operational truth;
 - Explanation ≠ independent truth/authorization source;
-- historical authorization ≠ current disclosure permission;
+- historical authorization/control state ≠ current disclosure permission;
 - effective/event time ≠ recorded/knowledge time.
+
+## Passive monitoring / integration-independence rules
+
+- Baseline monitoring is **out-of-band and non-blocking by default**.
+- Monitoring collection, Assessment, Investigation, Impact analysis, or Explanation must not become a production start dependency merely because an asset is monitored.
+- Monitoring-framework degradation must not delay ungated production jobs.
+- Prefer Databricks/platform/source metadata and independently deployed monitoring components over ETL-code changes, injected framework libraries, or monitoring steps in every production GitHub Actions workflow when equivalent evidence is available externally.
+- Production-repository independence is an architectural objective, not an absolute guarantee; any future source-code/workflow integration requirement must be explicit, minimal, and justified.
+
+## Execution Gate rules
+
+- **Execution Gate is optional active control.** Lineage, schedule timing, or readiness Assessment does not silently enable gating.
+- A gate may hold a downstream execution opportunity until explicitly declared prerequisite readiness is evidenced.
+- Readiness may require current qualifying output/freshness/version/completion rather than only `upstream job succeeded`.
+- Gate `hold` does not mean the downstream execution failed; it may never have started.
+- Gate `admit` does not prove the execution actually ran; Execution History owns actual run evidence.
+- Gate `override` does not transform an unmet/unknown prerequisite into `ready`.
+- Missing readiness/control evidence is not automatically ready.
+- Never invent a universal fail-open/fail-closed policy. Gate unavailable/unknown behavior, timeout, escalation, expiry, and override must come from explicit accepted semantics/configuration.
+- Gate configuration/control/override authority is resolved separately through Capability Authorization.
+- Execution Gate controls **start/admission**. Propagation Safeguard controls **output/consumption propagation**. Do not merge them.
+- Gate-induced delay/non-delivery remains Observation/Assessment/Impact evidence. Any proposition that the gate caused a consequence belongs in Causal Claim.
+- Do not choose Databricks Workflows dependencies, external orchestration, sensors, event triggers, or another gate implementation before the technical architecture phase.
 
 ## Capability Authorization / analytical projection rules
 
 - Capability Authorization answers whether a principal may perform a named capability on a subject/context/time; it does not select IAM/enforcement architecture.
 - Never infer authorization from Responsibility Assignment, Policy Context, Classification, Monitoring Scope, repository ownership, commit history, job creator identity, or platform-administrator status.
-- Raw-data read, derived health/metric visibility, governance metadata visibility, Lineage/RCA participation, job/run operational control, safeguard actions, and Explanation access are independently resolvable.
+- Raw-data read, derived health/metric visibility, governance metadata visibility, Lineage/RCA participation, job/run operational control, safeguard actions, gate actions/override, and Explanation access are independently resolvable.
 - A restricted-data analyst may perform approved RCA/Impact analysis over safe aggregate/redacted/opaque evidence without direct row access.
-- A job operator may hold job-operation authority without raw-data read authority.
-- Analytical visibility never implies permission to retry/update/modify a job or activate a safeguard.
-- Derived metrics/thresholds/Lineage/policy/causal/Impact details may themselves be restricted; do not assume metadata is safe.
+- A job/gate operator may hold operational authority without raw-data read authority.
+- Analytical visibility never implies permission to retry/update/modify a job, activate a safeguard, or override a gate.
+- Derived metrics/thresholds/Lineage/policy/causal/Impact/gate details may themselves be restricted; do not assume metadata is safe.
 - Missing authorization evidence is not permission.
 - The Authorized Analytical Projection is a synchronization result/view over permitted concept state; it does not create new truth or declassify by inference.
 - Restricted evidence is never retrieved merely to summarize it to an unauthorized audience.
-- Historical authorization can be evidence about what a past actor could know/do; current requester authorization still governs current disclosure.
+- Historical authorization/control state can be evidence about what a past actor could know/do; current requester authorization still governs current disclosure.
 - Permission to perform an action is not evidence the action succeeded; resulting facts belong to Deployment/Execution History/Observation/etc.
 
 ## Investigation / causality rules
@@ -82,7 +113,7 @@ Preserve:
 - First-observed deviation is localization, not root cause.
 - Preserve supporting and contradicting evidence.
 - Negative/exclusion evidence requires sufficient coverage.
-- Never infer cause from temporal proximity, Lineage, Deployment, realized Change, safeguard state, Prospective Impact, or intent consistency alone.
+- Never infer cause from temporal proximity, Lineage, Deployment, realized Change, safeguard state, gate state, Prospective Impact, or intent consistency alone.
 - Every causal proposition belongs in Causal Claim.
 - Multiple contributors/unresolved outcomes are valid.
 - `confirmed` requires an explicit accepted evidence/authority standard; do not invent it.
@@ -106,30 +137,34 @@ Preserve:
 - Exposure can exist while monitored downstream health remains acceptable.
 - Technical/analytical/business consequence requires separate provenance-bearing consequence evidence.
 - Criticality, client-facing status, Classification, or Policy Context may affect priority/handling but do not manufacture exposure/effect/consequence or compliance harm.
-- Any assertion that an origin caused/contributed to downstream effect/consequence belongs in Causal Claim.
+- Any assertion that an origin, gate, or safeguard caused/contributed to downstream effect/consequence belongs in Causal Claim.
 - Prevented exposure requires active/enforced safeguard evidence plus sufficient negative-consumption coverage.
 - Blocking a suspect version does not prove fresh/healthy downstream delivery.
-- A safeguard may prevent suspect exposure while separately causing lateness/non-delivery.
+- A safeguard or gate may correctly prevent stale/suspect propagation while separately causing lateness/non-delivery.
 
 ## Annotation / Explanation rules
 
 - Annotation remains attributed human context; structured facts/claims/intents/norms/governance assertions route to their owning concepts.
 - Disputed/withdrawn Annotation cannot be presented as uncontested current fact.
 - Explanation composes only from the Authorized Analytical Projection.
-- Explanation preserves statement-to-basis traceability, Impact layers, Causal Claim status, human-source status, policy/authorization limitations, and temporal perspective.
+- Explanation preserves statement-to-basis traceability, Impact layers, Causal Claim status, human-source status, gate/safeguard state, policy/authorization limitations, and temporal perspective.
 - Safe omission/redaction cannot be worded as evidence that hidden entities/evidence do not exist.
-- Explanation may surface an authorized operational capability but never executes the action.
+- Explanation may surface an authorized operational/gate capability but never executes the action.
 
 ## Group 06 preparation rules
 
-- Compose E-01–E-20 end to end using only accepted concepts/SYN-001–SYN-031.
-- Reconstruct separately: what happened, what was known then, what was believed then, what was authorized then, what was explained then, and what is known now.
-- Current topology/reference/governance/authorization must not be silently projected backward.
-- Historical authorization cannot bypass current requester disclosure controls.
+- **Do not start Group 06 unless the user explicitly asks to proceed.**
+- Compose E-01–E-22 end to end using only accepted concepts/SYN-001–SYN-032.
+- Reconstruct separately: what happened, what was known then, what was believed then, what was authorized then, what gate/safeguard control state applied then, what was explained then, and what is known now.
+- Current topology/reference/governance/authorization/gate configuration must not be silently projected backward.
+- Historical authorization/control state cannot bypass current requester disclosure controls.
 - Verify corrections/supersessions preserve prior knowledge and explanation state.
 - Verify restricted/opaque paths remain useful without leakage.
-- Verify no synchronization has become a hidden architecture/persistence/IAM/LLM concept.
+- Verify monitoring outages do not become production outages for ungated pipelines.
+- Verify enabled gates preserve explicit readiness/fallback/override/enforcement state and never manufacture Execution History.
+- Verify Execution Gate and Propagation Safeguard remain distinct.
+- Verify no synchronization has become a hidden architecture/persistence/IAM/LLM/scheduler/orchestration concept.
 
 ## Tooling stance
 
-Databricks Metric Views/DQX are favored later evaluations, not settled architecture. Collibra/Immuta remain optional until explicitly authoritative for required categories. Do not select RBAC/ABAC, IAM provider, graph database, event store, quarantine store, LLM, or causal algorithm prematurely.
+Databricks Metric Views/DQX are favored later evaluations, not settled architecture. Collibra/Immuta remain optional until explicitly authoritative for required categories. Do not select RBAC/ABAC, IAM provider, graph database, event store, quarantine store, scheduler/orchestrator, Execution Gate implementation, LLM, or causal algorithm prematurely.

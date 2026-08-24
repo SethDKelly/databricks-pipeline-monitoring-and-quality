@@ -6,15 +6,15 @@ This roadmap delays implementation until product concepts, synchronizations, tru
 **Status:** Complete.
 
 ## Phase 002 — Concept Specifications
-**Status:** **Complete with two accepted post-exit addenda.**
+**Status:** **Complete with three accepted post-exit addenda.**
 
-The original five groups accepted 20 concepts. Phase 003 Group 03 later added **Propagation Safeguard** after protective-control behavior exposed a missing concept boundary. Before Group 05, **Capability Authorization** was added after restricted-data analysis and separated operational authority exposed another missing boundary. The current catalog contains **22 concepts**.
+The original five groups accepted 20 concepts. Phase 003 Group 03 later added **Propagation Safeguard** after protective-control behavior exposed a missing concept boundary. Before Group 05, **Capability Authorization** was added after restricted-data analysis and separated operational authority exposed another missing boundary. Before Group 06, **Execution Gate** was added after dependency-aware downstream start control exposed a third independent boundary. The current catalog contains **23 concepts**.
 
 See `../concepts/phase_002/README.md`.
 
 ## Phase 003 — Concept Synchronizations and Ecosystem Scenarios
 
-**Status:** **Active — Groups 01–05 accepted; Group 06 next.**
+**Status:** **Active — Groups 01–05 accepted; SYN-032 Execution Gate extension accepted; Group 06 next and not started.**
 
 **Goal:** define how independent accepted concepts synchronize to satisfy end-to-end behavior while preserving each concept's truth boundary.
 
@@ -22,35 +22,37 @@ Formal review groups:
 
 1. **Subject, Scope & Governance Context** — **Accepted**.
 2. **Planned Change & Reference Transition** — **Accepted**.
-3. **Runtime Evidence, Health & Realized Change** — **Accepted**.
+3. **Runtime Evidence, Health & Realized Change** — **Accepted**, with later **SYN-032 — Dependency Readiness Evidence → Execution Gate Admission** extension.
 4. **Lineage, Investigation & Causal Reasoning** — **Accepted**.
 5. **Downstream Impact, Annotation & Explanation** — **Accepted**. Historical downstream Lineage → candidates; consumption evidence → exposure/non-exposure; downstream health → observed effect; separate consequence evidence; Causal Claim for attribution; safeguard-prevented exposure; Annotation; Capability Authorization → Authorized Analytical Projection → Explanation.
-6. **Historical Replay & Phase 003 Consolidation** — **Next**. Compose E-01–E-20 across event/effective time, knowledge time, authorization history, corrections, opacity, and the full Phase 003 exit gate.
+6. **Historical Replay & Phase 003 Consolidation** — **Next**. Compose E-01–E-22 across event/effective time, knowledge time, authorization/control history, corrections, opacity, passive monitoring versus optional active gating, and the full Phase 003 exit gate.
 
-Priority scenarios include stale upstream with successful downstream execution; A+B→C degradation; planned structural change; prospective blast radius; unregistered change; deployment-correlated shifts; cross-repository dependencies; conflicting governance metadata; restricted context; long-running upstream delay; missing output with protective hold; ordinary Baseline variation; client-critical atypicality with analyst research; safeguard-induced delivery delay; restricted-data analyst RCA; job-operation authority without raw-data read; safeguard-prevented exposure; critical-but-unexposed consumer; downstream effect with unknown business consequence; and historical authorization without current access.
+Priority scenarios include stale upstream with successful downstream execution; A+B→C degradation; planned structural change; prospective blast radius; unregistered change; deployment-correlated shifts; cross-repository dependencies; conflicting governance metadata; restricted context; long-running upstream delay; missing output with protective hold; ordinary Baseline variation; client-critical atypicality with analyst research; safeguard-induced delivery delay; restricted-data analyst RCA; job-operation authority without raw-data read; safeguard-prevented exposure; critical-but-unexposed consumer; downstream effect with unknown business consequence; historical authorization without current access; dependency-gated downstream execution; and monitoring/gate degradation with explicit production-continuity behavior.
 
 See `../concepts/phase_003/README.md`.
 
 ## Phase 004 — Evidence, Time, and Causality Refinement
-Refine evidence sufficiency/completeness; event/effective versus knowledge-time query semantics; correction/supersession; Causal Claim status transitions; confirmed-cause evidence/authority standards; attribution/confidence; negative evidence/coverage; exposure proof; and historical Investigation/Impact/Explanation reconstruction.
+Refine evidence sufficiency/completeness; event/effective versus knowledge-time query semantics; correction/supersession; Causal Claim status transitions; confirmed-cause evidence/authority standards; attribution/confidence; negative evidence/coverage; exposure proof; gate-readiness evidence sufficiency; and historical Investigation/Impact/Explanation reconstruction.
 
 ## Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement
-Refine source authority, conflict resolution, stewardship, criticality, Classification, Policy Context, PII/PHI/HIPAA-related transparency, Expectation authority, safeguard authority, **Capability Authorization vocabulary/source precedence/conditional semantics**, safe derived-evidence disclosure, and policy-sensitive explanation. Evaluate what must be native versus sourced from Collibra/Immuta/Unity Catalog/IAM systems.
+Refine source authority, conflict resolution, stewardship, criticality, Classification, Policy Context, PII/PHI/HIPAA-related transparency, Expectation authority, safeguard authority, **Capability Authorization vocabulary/source precedence/conditional semantics**, Execution Gate configuration/override authority, safe derived-evidence disclosure, and policy-sensitive explanation. Evaluate what must be native versus sourced from Collibra/Immuta/Unity Catalog/IAM systems.
 
 ## Phase 006 — Health, Freshness, and Quality Refinement
-Refine Expectation dimensions, Baseline classes/comparability, Assessment vocabularies, observed-absence coverage, execution-duration/latency dimensions, statistical uncertainty/significance, quality checks, downstream-health summarization, and Databricks Metric Views/DQX fit.
+Refine Expectation dimensions, Baseline classes/comparability, Assessment vocabularies, observed-absence coverage, execution-duration/latency dimensions, dependency-readiness criteria, statistical uncertainty/significance, quality checks, downstream-health summarization, and Databricks Metric Views/DQX fit.
 
-## Phase 007 — Lineage, Change, Investigation, Impact, and Safeguard Refinement
-Refine Lineage taxonomy, historical topology evidence, Change Intent realization, execution reconstruction, prospective/actual Impact, Causal Claim discovery/review, multiple contributors, consumer/version exposure evidence, technical/analytical/business consequence evidence, criticality prioritization, and safeguard placement/prevention/effect evidence.
+## Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement
+Refine Lineage taxonomy, historical topology evidence, Change Intent realization, execution reconstruction, prospective/actual Impact, Causal Claim discovery/review, multiple contributors, consumer/version exposure evidence, technical/analytical/business consequence evidence, criticality prioritization, safeguard placement/prevention/effect evidence, and **Execution Gate readiness/hold/admit/override/timeout behavior**.
 
 ## Phase 008 — Business Questioning and Explanation
-Define question types, audience-specific Explanation structures, visible evidence citation rules, **Authorized Analytical Projection/redaction behavior**, layered Impact presentation, contemporaneous/retrospective views, uncertainty communication, retention, and deterministic versus generative behavior.
+Define question types, audience-specific Explanation structures, visible evidence citation rules, **Authorized Analytical Projection/redaction behavior**, layered Impact presentation, execution-gate/control-state explanation, contemporaneous/retrospective views, uncertainty communication, retention, and deterministic versus generative behavior.
 
 ## Phase 009 — Integration Contracts and Source Authority
-Determine required facts and source authority for Databricks, Git repositories, GitHub Actions, DQX, Metric Views, Collibra, Immuta, downstream analytical metadata, consumption/version evidence, planned-change sources, safeguard enforcement evidence, and authorization/entitlement sources.
+Determine required facts and source authority for Databricks, Git repositories, GitHub Actions, DQX, Metric Views, Collibra, Immuta, downstream analytical metadata, consumption/version evidence, planned-change sources, safeguard enforcement evidence, gate configuration/enforcement evidence, and authorization/entitlement sources. Preserve the objective that **baseline monitoring is independently deployed and should not require production repository/GitHub Actions changes where platform metadata is sufficient**.
 
 ## Phase 010 — Technical Architecture
-Only now select implementation architecture. Evaluate historical/evidence storage; graph-compatible Lineage; ledger/temporal history; ingestion/synchronization; identity/authentication/Capability Authorization realization; service/API boundaries; Databricks deployment model; safeguard/quarantine realization; Explanation interface; tenancy/environment strategy; and testing/observability.
+Only now select implementation architecture. Evaluate historical/evidence storage; graph-compatible Lineage; ledger/temporal history; ingestion/synchronization; identity/authentication/Capability Authorization realization; service/API boundaries; Databricks deployment model; **out-of-band passive monitoring architecture; optional dependency-gating control-plane realization; control-plane availability/fallback behavior**; safeguard/quarantine realization; Explanation interface; tenancy/environment strategy; and testing/observability.
+
+A key architecture criterion is that ungated production jobs should not depend on monitoring-framework availability and baseline monitoring should add as little production-path latency as practical.
 
 ## Phase 011 — MVP Implementation Planning
 Convert accepted architecture into implementation phases, interfaces, test strategy, migration/onboarding strategy, and acceptance criteria.

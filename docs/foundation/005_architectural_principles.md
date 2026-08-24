@@ -90,3 +90,18 @@ Future architecture must preserve candidate/reachability, actual exposure/consum
 Explanation derives from authorized concept state, preserves material statement-to-basis traceability and epistemic labels, and supports both contemporaneous knowledge cuts and retrospective views.
 
 Choice of LLM, rules engine, templates, report generator, or conversational UI remains deferred.
+
+## AP-28 — Passive monitoring is non-blocking and out-of-band by default
+Baseline monitoring, evidence collection, Assessment, Investigation, Impact analysis, and Explanation should not become a mandatory runtime dependency for production jobs. A monitoring outage or collection delay must not itself stall production unless an explicitly enabled active-control concept requires that behavior.
+
+Future architecture should prefer asynchronous/platform metadata observation where it can satisfy accepted evidence needs without adding work to the production critical path.
+
+## AP-29 — Baseline onboarding prefers production-repository independence
+The monitoring framework should be independently deployable and versioned from the production Git repositories and GitHub Actions workflows that deploy Databricks jobs. Where Databricks/platform/source metadata can supply the required evidence, baseline onboarding should not require ETL-code changes, framework libraries, or monitoring workflow steps to be added to every production repository.
+
+This is an architectural objective, not a claim that no specialized future integration will ever require source changes. Exceptions must be explicit, minimal, and justified.
+
+## AP-30 — Active execution control is explicit and separable from observation
+Dependency-aware execution gating is an optional control capability, not an automatic consequence of monitoring or Lineage. When an **Execution Gate** is enabled, intentional waiting can become part of the production path; the gate's availability, decision basis, fallback/timeout behavior, authorization, override, and induced delay must therefore be explicit and observable.
+
+No universal fail-open or fail-closed rule is selected at this phase. Execution Gate and Propagation Safeguard remain separate protective boundaries: one controls downstream start admission, the other controls output/consumption propagation.
