@@ -50,7 +50,7 @@ Concrete timing targets remain intentionally deferred:
 
 - **Phase 006** defines which health/schema/quality results need immediate, near-real-time, delayed, or post-ops availability and their evidence/result freshness objectives;
 - **Phase 008** defines communication of progressive health/RCA/control maturity;
-- **Phase 009** evaluates actual evidence-source availability, collection latency, retention, query cost, schema-evidence support, and enforcement observability;
+- **Phase 009** evaluates actual evidence-source availability, collection latency, retention, query cost, schema-evidence support, authorization-source availability, and enforcement observability;
 - **Phase 010** selects fast-path/asynchronous architecture, validation placement, control-path availability strategy, and performance budgets while preserving passive-monitoring non-interference;
 - **Phase 011** converts accepted timing objectives into MVP acceptance criteria.
 
@@ -92,9 +92,9 @@ See `../concepts/phase_005/pre_group_02_schema_ddl_validation_handoff.md`.
 
 ## Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement
 
-**Status:** **ACTIVE — Groups 01–03 accepted; AUTH-001–AUTH-023 accepted; Group 04 next.**
+**Status:** **ACTIVE — Groups 01–05 accepted; AUTH-001–AUTH-043 accepted; Group 06 next.**
 
-Phase 005 uses `AUTH-###` governance/refinement contracts over accepted concept state. Group 01 exposed one genuine missing concept boundary: **Assertion Authority**, accepted as the **24th concept**. Groups 02–03 require no additional concept.
+Phase 005 uses `AUTH-###` governance/refinement contracts over accepted concept state. Group 01 exposed one genuine missing concept boundary: **Assertion Authority**, accepted as the **24th concept**. Groups 02–05 require no additional concept.
 
 ### Group 01 — Authority Vocabulary, Source Assertions & Conflict Resolution
 
@@ -112,28 +112,38 @@ Accepted results include facet-specific semantic/schema authority, responsibilit
 
 **Status:** **Accepted — AUTH-016–AUTH-023; no new concept.**
 
-Accepted results:
+Accepted results include dimension/context/action-scoped Expectation authority; purposeful anti-bloat metric-profile governance; Baseline/Expectation separation; explicit schema-compatibility authority; scoped structural-change review; non-rewriting waivers; explicit normative conflict; and separate high-consequence-use eligibility.
 
-- Expectation authority is dimension/property/context/time scoped and can differ by lifecycle action;
-- metric meaning, profile inclusion, threshold, severity, waiver, and high-consequence-use eligibility are independently governable;
-- metric profiles remain governed selection/applicability structures rather than a new truth concept;
-- metric availability does not justify profile inclusion; profile governance should preserve purpose/applicability/use/authority/lifecycle to resist metric bloat;
-- Baseline-derived ranges remain descriptive unless explicitly adopted through an authoritative Expectation;
-- structural/schema compatibility Expectations require explicit normative authority separate from schema meaning and realized structure;
-- structural Change triggers scoped metric/profile/Baseline review, while authority cannot manufacture empirical Baseline comparability;
-- bounded exceptions/waivers/suspensions do not rewrite Observations, structural state, Baseline deviations, or historical evidence;
-- normative conflicts remain explicit without implicit strictest/business/technical/highest-severity precedence;
-- criticality can influence review/priority but does not automatically tighten thresholds or prove Impact;
-- high-consequence metric/Expectation use requires explicit eligibility, which remains separate from control capability, evidence readiness, and enforcement.
+### Group 04 — Capability Authorization & Restricted Analytical Visibility
+
+**Status:** **Accepted — AUTH-024–AUTH-032; no new concept.**
+
+Accepted results include exact capability/detail authorization; `allowed/denied/conditional/unknown/conflicting/unavailable`; no hidden principal-combination precedence; explicit inheritance rules; least-privilege metric/schema/Lineage/RCA visibility; separate normative action permissions; Authorized Analytical Projection without declassification; framework-processing versus requester visibility separation; inference-leakage constraints; historical authorization; and authorization/enforcement separation.
+
+### Group 05 — High-Consequence Action, Control & Causal-Confirmation Authority
+
+**Status:** **Accepted — AUTH-033–AUTH-043; no new concept.**
+
+Accepted results include:
+
+- exact high-consequence action/lifecycle-stage authorization rather than broad operator/admin capability;
+- claim-class/profile-scoped causal-confirmation authority that cannot waive REF-013–REF-020;
+- granular job/run operational actions independent from raw-data/control authority;
+- separately governable Execution Gate registration/configuration/normal operation/override/fallback/retirement;
+- separately governable Propagation Safeguard proposal/activation/release/recovery;
+- explicit multi-party approval/separation-of-duties conditions without a generic workflow concept;
+- bounded delegation/temporary grants with explicit re-delegation, expiry, and revocation;
+- explicit break-glass emergency authorization without universal superuser semantics;
+- narrowly scoped automated/service-principal high-consequence authority;
+- action-specific authorization-outage fallback and recovery without rewriting unresolved authorization truth;
+- strict request/approval/action/control-plane-acceptance/enforcement/outcome audit separation.
 
 ### Remaining Phase 005 groups
 
-4. **Capability Authorization & Restricted Analytical Visibility — NEXT.** Canonical capability vocabulary, permission to view/propose/edit/approve normative state, conditional/current/historical authorization, and restricted-data analytical projection.
-5. **High-Consequence Action, Control & Causal-Confirmation Authority.** Causal confirmation, job operations, safeguards, Execution Gates, override/delegation/separation-of-duties semantics. Group 03 control-use eligibility is a prerequisite governance layer, not control permission.
-6. **Disclosure, Explanation & Audience Governance.** Authorized technical/business disclosure, opacity, inference leakage, high-consequence communication review.
-7. **Consolidation / Exit Review.** Compose authority/governance semantics without stealing evidence truth or selecting IAM/technical architecture.
+6. **Disclosure, Explanation & Audience Governance — NEXT.** Govern metric/schema/threshold/policy/Lineage/causal/Impact/control disclosure, including high-consequence approval/override/break-glass/delegation/automation detail, opaque references, inference leakage, technical/business projections, and review requirements for high-consequence communication.
+7. **Consolidation / Exit Review.** Compose Groups 01–06 and verify authority remains scoped/historical, permissions stay separate from truth/enforcement, restricted-data RCA remains useful, and no IAM/vendor/control/schema-validation architecture is selected.
 
-Phase 005 may determine who/what is permitted or authoritative to confirm, configure, operate, disclose, define normative metric/schema state, or resolve assertions. It must **not** weaken/redefine Phase 004 evidence meanings, define Phase 006 metric/statistical/schema-health behavior, or select IAM/assertion-authority implementation.
+Phase 005 may determine who/what is permitted or authoritative to confirm, configure, operate, disclose, define normative metric/schema state, or resolve assertions. It must **not** weaken/redefine Phase 004 evidence meanings, define Phase 006 metric/statistical/schema-health behavior, or select IAM/assertion-authority/control/approval implementation.
 
 ## Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement
 
@@ -171,22 +181,10 @@ Define question types, audience-specific Explanation structures, visible evidenc
 
 Determine required facts and actual evidence support for Databricks/Unity Catalog, Git repositories, GitHub Actions, DQX, Metric Views, Collibra, Immuta, downstream consumption/version evidence, Change Intent, **declared/proposed/realized schema evidence**, safeguard/gate enforcement, authorization sources, causal evidence inputs, authority-rule sources, and accepted health/metric profiles.
 
-Map concrete systems/actors to the Assertion Authority targets accepted in Phase 005 rather than treating source availability as authority. Determine what GitHub/GitHub Actions can prove about proposed schema contracts/DDL before deployment versus what Databricks/Unity Catalog can prove about realized schema after activation. Characterize **source production/availability time, collection latency, retention, query cost/availability, metric/schema-check computation cost, authority-rule availability, and control-enforcement observability** needed to satisfy accepted evidence/timing semantics. Preserve the objective that baseline monitoring be independently deployed and avoid production repository/GitHub Actions changes where platform metadata is sufficient.
+Map concrete systems/actors to the Assertion Authority targets accepted in Phase 005 rather than treating source availability as authority. Determine what GitHub/GitHub Actions can prove about proposed schema contracts/DDL before deployment versus what Databricks/Unity Catalog can prove about realized schema after activation. Characterize **source production/availability time, collection latency, retention, query cost/availability, metric/schema-check computation cost, authority/authorization availability, and control-enforcement observability** needed to satisfy accepted evidence/timing semantics. Preserve the objective that baseline monitoring be independently deployed and avoid production repository/GitHub Actions changes where platform metadata is sufficient.
 
 ## Phase 010 — Technical Architecture
 
-Only now select implementation architecture. Evaluate evidence/history storage; graph-compatible Lineage; temporal/ledger history; ingestion/synchronization; Assertion Authority and Capability Authorization realization; Databricks deployment model; out-of-band passive monitoring; **proactive CI schema validation versus runtime Unity Catalog/Databricks validation versus monitoring-app validation and their composition**; optional dependency-gating control-plane realization/availability/fallback; safeguard/quarantine realization; metric precomputation/on-demand evaluation strategy; Explanation interface; testing/observability; causal reasoning implementation; and **fast-path versus asynchronous/deeper analysis architecture and performance budgets**.
+Only now select implementation architecture. Evaluate evidence/history storage; graph-compatible Lineage; temporal/ledger history; ingestion/synchronization; Assertion Authority and Capability Authorization realization; Databricks deployment model; out-of-band passive monitoring; **proactive CI schema validation versus runtime Unity Catalog/Databricks validation versus monitoring-app validation and their composition**; optional dependency-gating control-plane realization/availability/fallback; safeguard/quarantine realization; high-consequence approval/delegation/break-glass realization; metric precomputation/on-demand evaluation strategy; Explanation interface; testing/observability; causal reasoning implementation; and **fast-path versus asynchronous/deeper analysis architecture and performance budgets**.
 
-A key architecture criterion remains that **ungated production jobs must not depend on monitoring-framework availability**. Explicitly gated paths may require deliberate production-critical control availability under accepted policies.
-
-## Phase 011 — MVP Implementation Planning
-
-Convert accepted architecture into implementation phases, interfaces, test strategy, onboarding/migration strategy, acceptance criteria, and concrete availability/latency targets for selected MVP monitoring-result, schema/metric/health, RCA, exposure, authority, and control classes.
-
-## Phase 012 — MVP Implementation
-
-Implement minimum vertical slices required to prove the accepted MVP scenarios.
-
-## Roadmap rule
-
-A later phase may reveal a flaw in an earlier concept, synchronization, or refinement. Reopen/revise it explicitly with rationale rather than preserving a bad boundary merely to maintain sequence.
+A key architecture criterion remains that **ungated production jobs must not depend on monitoring-framework availability**. Explicitly gated paths may require deliberate production-critical control/authorization availability under accepted policies.

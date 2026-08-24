@@ -1,6 +1,6 @@
 # Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement
 
-**Status:** ACTIVE — Groups 01–04 accepted; AUTH-001–AUTH-032 accepted; Group 05 next
+**Status:** ACTIVE — Groups 01–05 accepted; AUTH-001–AUTH-043 accepted; Group 06 next
 
 ## Goal
 
@@ -8,7 +8,7 @@ Refine who/what is authoritative or permitted to establish, resolve, view, confi
 
 Phase 005 is a governance/authority/capability refinement phase. It must not select IAM technology, redefine Phase 004 evidence sufficiency, silently treat vendor/source ownership as authority, or prematurely design the Phase 006 metric/statistical/schema-health model.
 
-Phase 005 authority contracts use `AUTH-###` identifiers. They are refinement/governance contracts over accepted concepts, not new Phase 003 synchronizations and not substitutes for concept ownership. Group 01 exposed one genuine missing concept boundary: **Assertion Authority**, accepted as the 24th concept. Groups 02–04 required no additional concept.
+Phase 005 authority contracts use `AUTH-###` identifiers. They are refinement/governance contracts over accepted concepts, not new Phase 003 synchronizations and not substitutes for concept ownership. Group 01 exposed one genuine missing concept boundary: **Assertion Authority**, accepted as the 24th concept. Groups 02–05 required no additional concept.
 
 ## Accepted handoff from Phase 004
 
@@ -142,15 +142,15 @@ Group 04 refines **permission truth** and least-privilege analytical visibility 
 
 Accepted contracts:
 
-- **AUTH-024** — Capability Target Binding and Canonical Capability Vocabulary;
-- **AUTH-025** — Authorization State, Conditions, and Resolution Semantics;
-- **AUTH-026** — Principal Composition, Membership, Role, and Service Identity;
-- **AUTH-027** — Capability Scope, Inheritance, and Derived Grants;
-- **AUTH-028** — Analytical Visibility Decomposition and Least Privilege;
-- **AUTH-029** — Normative Governance Action Capabilities;
-- **AUTH-030** — Authorized Analytical Projection, Opacity, and Evidence Minimization;
-- **AUTH-031** — Restricted Derived Evidence and Inference-Leakage Constraints;
-- **AUTH-032** — Authorization History, Revocation, and Enforcement Separation.
+- AUTH-024 — Capability Target Binding and Canonical Capability Vocabulary;
+- AUTH-025 — Authorization State, Conditions, and Resolution Semantics;
+- AUTH-026 — Principal Composition, Membership, Role, and Service Identity;
+- AUTH-027 — Capability Scope, Inheritance, and Derived Grants;
+- AUTH-028 — Analytical Visibility Decomposition and Least Privilege;
+- AUTH-029 — Normative Governance Action Capabilities;
+- AUTH-030 — Authorized Analytical Projection, Opacity, and Evidence Minimization;
+- AUTH-031 — Restricted Derived Evidence and Inference-Leakage Constraints;
+- AUTH-032 — Authorization History, Revocation, and Enforcement Separation.
 
 Key results:
 
@@ -171,6 +171,42 @@ Key results:
 
 See [`04_capability_authorization_and_restricted_analysis/README.md`](04_capability_authorization_and_restricted_analysis/README.md).
 
+## Accepted Group 05 — High-Consequence Action, Control & Causal-Confirmation Authority
+
+Group 05 applies Capability Authorization to high-consequence actions without creating a workflow/control concept or weakening evidence/control truth.
+
+Accepted contracts:
+
+- AUTH-033 — High-Consequence Action Target and Lifecycle Decomposition;
+- AUTH-034 — Causal-Confirmation and High-Consequence Causal Status Authority;
+- AUTH-035 — Job and Run Operational Action Authority;
+- AUTH-036 — Execution Gate Configuration, Operation, and Override Authority;
+- AUTH-037 — Propagation Safeguard Proposal, Activation, Release, and Recovery Authority;
+- AUTH-038 — Multi-Party Approval, Separation of Duties, and Conditional Authorization;
+- AUTH-039 — Delegation, Temporary Grant, Expiry, and Revocation of High-Consequence Capability;
+- AUTH-040 — Emergency / Break-Glass High-Consequence Authorization;
+- AUTH-041 — Automated and Service-Principal High-Consequence Authority;
+- AUTH-042 — Authorization Unavailability, Conflict, Fallback, and Control-Path Recovery;
+- AUTH-043 — Action, Approval, Enforcement, Outcome, and Historical Audit Separation.
+
+Key results:
+
+- high-consequence authorization is exact-action and lifecycle-stage scoped: proposal/request, approval, execution/issuance, override/release/cancel, and review may differ;
+- causal confirmation remains jointly evidence- and authority-gated, with human-versus-automation rules scoped by claim profile/class;
+- job operational permissions are granular and independent from raw-data, gate, safeguard, and deployment authority;
+- gate registration/configuration, normal hold/admit operation, override, fallback-policy configuration, enable/disable, and retirement may have different authorized principals;
+- gate override never rewrites readiness or proves enforcement;
+- safeguard proposal, activation, and release are independently governable, and release does not prove health;
+- multi-party approval/separation-of-duties rules are explicit conditions on Capability Authorization rather than a new workflow concept;
+- capability exercise does not imply delegation authority; temporary grants are bounded, expiring, revocable, and non-transitive by default;
+- break-glass is explicit, bounded emergency permission rather than universal superuser state and cannot manufacture evidence/readiness/health/causality;
+- automation/service principals can perform high-consequence actions only through exact explicit grants and cannot bypass required human approval;
+- authorization-outage fallback is action-specific; there is no universal fail-open/fail-closed/always-hold/always-release behavior;
+- existing control state during an authorization outage is separate from authority to change that state;
+- request → authorization/approval → issuance → control-plane acceptance → enforcement/effect → resulting state/outcome remain separate facts.
+
+See [`05_high_consequence_control_confirmation_authority/README.md`](05_high_consequence_control_confirmation_authority/README.md).
+
 ## Delivery-group design
 
 The phase is reviewed in **seven logical groups**. The grouping is a design/review dependency, not an implementation or service boundary.
@@ -185,19 +221,17 @@ The phase is reviewed in **seven logical groups**. The grouping is a design/revi
 **Status:** Accepted — AUTH-016–AUTH-023; no new concept.
 
 ### Group 04 — Capability Authorization & Restricted Analytical Visibility
-**Status:** **Accepted — AUTH-024–AUTH-032; no new concept.**
+**Status:** Accepted — AUTH-024–AUTH-032; no new concept.
 
 ### Group 05 — High-Consequence Action, Control & Causal-Confirmation Authority
-**Status:** **Next — not started.**
-
-Refine causal-confirmation capability, job operations, safeguard/gate configuration/activation/release/override, delegation, multi-party approval, break-glass, expiry/revocation, and separation of duties.
-
-Boundary: Group 03 control-use eligibility does not itself grant these capabilities; Group 04 general permission semantics do not decide high-consequence approval/delegation/control policy; authority never weakens REF-013–REF-030 evidence/control standards or proves action success.
+**Status:** **Accepted — AUTH-033–AUTH-043; no new concept.**
 
 ### Group 06 — Disclosure, Explanation & Audience Governance
-**Status:** Planned.
+**Status:** **Next — not started.**
 
-Govern which metric, schema, threshold, policy, Lineage, causal, Impact, safeguard, gate, Annotation, and consequence details may be disclosed; opaque references; inference leakage; technical versus business projections; and review requirements for high-consequence communication.
+Govern disclosure of metric/schema/threshold/policy/Lineage/causal/Impact/control state, including high-consequence approval/override/break-glass/delegation/automation detail; opacity; inference leakage; technical versus business projections; and review requirements for high-consequence communication.
+
+Boundary: Group 06 governs what authorized audiences may learn, not underlying permission/high-consequence action truth. Phase 008 retains detailed Explanation/question UX.
 
 ### Group 07 — Phase 005 Consolidation / Exit Review
 **Status:** Planned.
@@ -219,14 +253,15 @@ Phase 005 must not:
 - treat metadata/aggregate/derived evidence as automatically safe to disclose;
 - make group/role membership, asset containment, or Lineage imply capability inheritance without explicit rules;
 - treat unresolved authorization as allow or silently rewrite it to explicit deny;
-- treat Capability Authorization as proof of external enforcement or successful action;
+- treat Capability Authorization or approval as proof of external enforcement or successful action;
+- treat break-glass as universal superuser access or automation as self-authorized;
+- turn gate override into readiness, safeguard release into health, retry into successful execution, or confirmation authority into evidence sufficiency;
 - define the detailed Phase 006 metric/schema-health/statistical model or blindly propagate metrics/governance through Lineage;
-- select RBAC/ABAC/IAM/provider architecture;
+- select RBAC/ABAC/IAM/provider architecture, approval/workflow engine, scheduler/orchestrator, quarantine implementation, causal engine, graph, LLM, metric storage, rule engine, or persistence architecture;
 - select Databricks/Collibra/Immuta/GitHub/Unity Catalog as universally authoritative by default;
 - select GitHub Actions, Unity Catalog, or the monitoring application as the universal schema-validation location;
-- select scheduler/orchestrator, quarantine, causal, graph, LLM, metric storage, rule engine, or persistence architecture;
 - begin Phase 006 health/statistical/timing refinement without explicit user direction.
 
 ## Phase direction
 
-**Phase 005 Groups 01–04 are accepted with AUTH-001–AUTH-032. Group 05 — High-Consequence Action, Control & Causal-Confirmation Authority is next and has not started.**
+**Phase 005 Groups 01–05 are accepted with AUTH-001–AUTH-043. Group 06 — Disclosure, Explanation & Audience Governance is next and has not started.**

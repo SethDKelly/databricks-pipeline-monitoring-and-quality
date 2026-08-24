@@ -1,12 +1,12 @@
 ---
-description: Phase 005 authority/governance/capability phase guardrails. Groups 01-04 are accepted; Group 05 is next.
+description: Phase 005 authority/governance/capability phase guardrails. Groups 01-05 are accepted; Group 06 is next.
 globs:
 alwaysApply: true
 ---
 
 # Phase 005 handoff rules
 
-Status: **Phase 005 is active. Groups 01–04 are accepted with AUTH-001–AUTH-032. Group 05 — High-Consequence Action, Control & Causal-Confirmation Authority is next and has not started.**
+Status: **Phase 005 is active. Groups 01–05 are accepted with AUTH-001–AUTH-043. Group 06 — Disclosure, Explanation & Audience Governance is next and has not started.**
 
 Accepted review sequence:
 
@@ -14,39 +14,54 @@ Accepted review sequence:
 2. Semantic, Responsibility, Classification, Policy & Criticality Governance — **accepted**.
 3. Normative Health, Metric & Threshold Governance — **accepted**.
 4. Capability Authorization & Restricted Analytical Visibility — **accepted**.
-5. High-Consequence Action, Control & Causal-Confirmation Authority — **next**.
-6. Disclosure, Explanation & Audience Governance.
+5. High-Consequence Action, Control & Causal-Confirmation Authority — **accepted**.
+6. Disclosure, Explanation & Audience Governance — **next**.
 7. Consolidation / Exit Review.
 
-Preserve Group 01–03 rules already accepted: scoped Assertion Authority without hidden precedence; facet-specific semantic/schema governance; no implicit governance propagation; normative metric/schema authority separated from Baseline/statistical truth; bounded waivers do not rewrite observations; and high-consequence-use eligibility does not grant control authority.
+Preserve Groups 01–03 rules: scoped Assertion Authority without hidden precedence; facet-specific semantic/schema governance; no implicit governance propagation; normative metric/schema authority separated from Baseline/statistical truth; bounded waivers do not rewrite observations; and high-consequence-use eligibility does not grant control authority.
 
 Group 04 accepted rules:
 
-- Capability Authorization is the existing truth owner; no 25th concept is added.
-- Bind permission to exact principal + capability/action + subject + context/time and material detail level.
+- Capability Authorization is the permission truth owner; bind exact principal + capability/action + subject + context/time + material detail level.
 - Preserve `allowed`, `denied`, `conditional`, `unknown`, `conflicting`, and `unavailable` distinctly.
-- Missing/conflicting/unavailable authorization never becomes permission.
-- Runtime fail-safe refusal is separate from authorization truth; do not invent an explicit deny merely because a system refuses without positive allow.
-- Never infer universal `deny wins`, direct-user precedence, role precedence, latest-wins, specificity, source-count, or source-availability combination rules.
-- User/group/role/service-principal entitlements require evidenced applicable membership/assumption and explicit combination semantics.
-- Domain/catalog/schema/table/pipeline/repository/Lineage relationships do not implicitly propagate capabilities.
-- Raw data, sensitive fields, schema, governance metadata, metric values, Assessment summaries, thresholds, Baselines, Lineage identity/path detail, RCA evidence, causal/Impact/control state, authority basis, Annotation, and Explanation may be independently authorized.
-- Permission to view a result does not imply permission to inspect every basis item.
-- Permission to propose/edit/approve/waive/retire a normative rule is separate by action.
-- Capability Authorization to act and Assertion Authority over the resulting assertion/action remain independent requirements.
-- Authorized Analytical Projection is a view/synchronization over existing truth, not declassification or a new concept.
-- Hidden/restricted evidence is represented as restricted/opaque where authorized, never as absent.
-- Requester visibility and framework/service-principal evidence-processing authorization are separate; evidence inaccessible to the framework cannot count as internally present.
-- Aggregates/derived evidence can remain sensitive; counts, thresholds, schemas, topology, causal/Impact/control state, and authority/authorization metadata can leak restricted information.
-- Historical authorization is non-rewriting and not reusable as current permission.
-- Capability Authorization does not prove external enforcement, action occurrence, or action success.
+- Missing/conflicting/unavailable authorization never becomes permission; fail-safe refusal does not invent a deny decision.
+- No universal deny/direct-user/role/latest/specificity precedence.
+- Principal composition and capability inheritance require explicit rules and historical evidence.
+- Raw data, schema, metrics, thresholds, Baselines, Lineage, RCA, causal/Impact/control state, normative actions, and Explanation may be independently authorized.
+- Authorized Analytical Projection is a view over existing truth, not declassification or a new concept.
+- Hidden evidence remains restricted/opaque, never absent.
+- Requester visibility and framework/service-principal processing authorization are separate.
+- Aggregates/derived monitoring evidence may remain sensitive or inference-leaking.
+- Historical authorization is non-rewriting and not reusable current permission.
+- Authorization does not prove action occurrence, enforcement, or success.
 
-For Group 05:
+Group 05 accepted rules:
 
-- Refine high-consequence capabilities using AUTH-024–AUTH-032 rather than inventing a new generic permission model.
-- Keep causal-confirmation capability, job operations, safeguard actions, gate actions/override, delegation, multi-party approval, break-glass, expiry/revocation, and separation of duties independently reviewable.
-- Group 03 control-use eligibility is a prerequisite governance property, not control permission.
-- Never weaken REF-013–REF-030 evidence/confirmation/enforcement standards.
-- Do not begin Group 06+ without explicit user request.
+- High-consequence authorization is exact action/lifecycle-stage scoped: propose/request, approve, execute/issue, override/release/cancel, and review can differ.
+- Causal confirmation requires both REF-013–REF-020 evidence sufficiency and explicitly resolved confirmation capability/authority.
+- Human versus automated causal confirmation is claim-class/profile scoped; no title/model/service identity self-authorizes.
+- Job operational capabilities are granular and independent from raw-data, gate, safeguard, and deployment authority.
+- Gate registration/configuration, normal hold/admit operation, fallback configuration, enable/disable, override, and retirement are independently governable.
+- Gate override never changes readiness truth and never proves enforcement.
+- Safeguard proposal, activation, extension, release, cancellation, and retirement/expiry are independently governable; release does not prove health.
+- Multi-party approval, quorum, independence, ordering, and self-approval are explicit conditional-authorization rules, never universal defaults.
+- Approval completion does not execute an action.
+- Capability exercise does not imply delegation authority; delegated grants are bounded, historical, expiring/revocable, and non-transitive unless explicit.
+- Break-glass is explicit scoped emergency authorization, not universal superuser access; urgency or authorization outage does not create it.
+- Break-glass never manufactures readiness, health, evidence sufficiency, causality, or raw-data access not separately granted.
+- Automated/service-principal action requires exact explicit capability; technical ability/model recommendation is not authority and required human approval cannot be bypassed.
+- Authorization outage behavior is action-specific; there is no universal fail-open/fail-closed/always-hold/always-release rule.
+- Existing protective control state during an authorization outage is separate from authority to activate/release/override that state.
+- Preserve request → authorization/approval → issuance → control-plane acceptance → enforcement/effect → resulting state/outcome as distinct evidence stages.
+- No 25th concept is required for Group 05.
 
-Preserve all Phase 004 evidence burdens. Do not select IAM, assertion-authority engine, GitHub Actions/Unity Catalog as universal validation mechanism, scheduler/orchestrator, quarantine, metric engine/storage, graph store, LLM, causal algorithm, or technical architecture during Phase 005.
+For Group 06:
+
+- Govern what authorized audiences may learn from otherwise valid metric/schema/threshold/policy/Lineage/causal/Impact/control/authority state.
+- Include high-consequence approval/override/break-glass/delegation/automation detail as potentially sensitive.
+- Preserve exact epistemic/control status while allowing authorized abstraction/opacity.
+- Do not create different technical/business truth models or let redaction imply false absence.
+- Group 06 governs disclosure/review policy, not underlying Capability Authorization or high-consequence action authority.
+- Do not begin Group 07 without explicit user request.
+
+Preserve all Phase 004 evidence burdens. Do not select IAM, approval/workflow engine, assertion-authority engine, GitHub Actions/Unity Catalog as universal validation mechanism, scheduler/orchestrator, quarantine, metric engine/storage, graph store, LLM, causal algorithm, or technical architecture during Phase 005.

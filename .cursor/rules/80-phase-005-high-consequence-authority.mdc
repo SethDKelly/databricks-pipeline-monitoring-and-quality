@@ -1,0 +1,44 @@
+---
+description: Accepted Phase 005 Group 05 high-consequence action, control, delegation, break-glass, and causal-confirmation authority rules.
+globs:
+alwaysApply: true
+---
+
+# Phase 005 Group 05 — high-consequence authority
+
+Status: **Accepted — AUTH-033–AUTH-043. AUTH-001–AUTH-043 accepted overall. Group 06 is next and not started.**
+
+Preserve:
+
+- proposal/request ≠ approval/authorization ≠ action issuance ≠ control-plane acceptance ≠ enforcement/effect ≠ outcome;
+- high-consequence-use eligibility ≠ control capability;
+- confirmation authority ≠ confirmation evidence sufficiency;
+- job operation ≠ raw-data access ≠ gate authority ≠ safeguard authority;
+- gate configuration ≠ normal hold/admit operation ≠ override ≠ enforcement;
+- safeguard proposal ≠ activation ≠ release ≠ health;
+- capability exercise ≠ delegation authority;
+- delegated grant ≠ implicit transitive re-delegation;
+- break-glass ≠ universal superuser ≠ evidence/readiness/health/cause truth;
+- service/model technical ability ≠ high-consequence authority;
+- authorization unavailable/conflicting/unknown ≠ invented allow/deny;
+- existing control state ≠ authority to change that state;
+- current revocation ≠ rewritten historical authorization/action.
+
+Rules:
+
+- Bind every high-consequence authorization to exact principal, action stage/class, target, environment/context, time, and applicable profile/rule.
+- Causal `confirmed` requires both REF-013–REF-020 and an explicitly authorized confirmer for the claim class/profile.
+- Human/automated confirmation is profile-specific; automation can confirm only where explicitly permitted.
+- Retry/restart/cancel/trigger and other job actions are granular capabilities and do not imply data access or success.
+- Gate registration/configuration/enable/disable/normal operation/override/retire may have separate principals.
+- Override never converts prerequisite state into ready.
+- Safeguard release is independently high consequence because it restores propagation; release never proves health.
+- Multi-party/quorum/separation/self-approval requirements exist only when explicit; duplicate approval evidence cannot satisfy distinct-approval requirements.
+- Delegation requires explicit grant authority, scope, time, and re-delegation semantics.
+- Break-glass requires explicit governing basis, qualifying emergency condition, bounded action/scope/time, provenance, and any review requirements.
+- Authorization-source failure does not itself trigger break-glass or fallback authority.
+- Service principals need exact action capability; code deployment, API reachability, scheduler ownership, or model recommendation is not permission.
+- Fallback on authorization outage is action-specific; never invent global fail-open/fail-closed/hold/release behavior.
+- Authorization/approval never proves action delivery, enforcement, successful execution, healthy data, prevented exposure, or causal correctness.
+
+Do not select IAM/RBAC/ABAC, approval engine, scheduler/orchestrator, quarantine/control implementation, causal engine, or automated-confirmation mechanism in Phase 005.
