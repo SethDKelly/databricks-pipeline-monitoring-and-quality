@@ -1,6 +1,6 @@
 # Phase 009 — Integration Contracts, Source Authority, and Evidence Availability
 
-**Status:** IN PROGRESS — Group 01 accepted; INTG-001–INTG-022 accepted; Group 02 next
+**Status:** IN PROGRESS — Groups 01–02 accepted; INTG-001–INTG-050 accepted; IC01-01–IC01-40 and GOV02-01–GOV02-48 pass; Group 03 next
 
 ## Goal
 
@@ -27,7 +27,7 @@ Phase 009 uses **`INTG-###`** integration-contract refinements.
 
 `INTG-###` describes the functional contract between accepted product semantics and actual source capabilities. It does not define adapter classes, service boundaries, event schemas, storage tables, polling architecture, credentials, SDK selection, or deployment topology.
 
-Accepted range so far: **INTG-001–INTG-022**.
+Accepted range so far: **INTG-001–INTG-050**.
 
 ## Logical delivery grouping
 
@@ -43,16 +43,18 @@ No new concept is required. Integration support remains proposition/source-set/c
 See [`01_integration_contract_vocabulary_source_roles_capability_matrix/README.md`](01_integration_contract_vocabulary_source_roles_capability_matrix/README.md).
 
 ### Group 02 — Identity, Scope, Semantics, Governance, Authority & Authorization Sources
-**Status:** **Next — not started.**
+**Status:** **Accepted — INTG-023–INTG-050; GOV02-01–GOV02-48 pass.**
 
-Apply INTG-001–INTG-022 to Entity Identity, Monitoring Scope, Semantic Definition, Responsibility Assignment, Classification, Policy Context, Assertion Authority and Capability Authorization. Evaluate identity reconciliation, metadata-category authority, conflicting assertions, current/historical applicability, disclosure rules and source-specific gaps.
+Applies INTG-001–INTG-022 to Entity Identity, Monitoring Scope, Semantic Definition, Responsibility Assignment, Classification, Policy Context, Assertion Authority and Capability Authorization across Unity Catalog/Databricks, Collibra, Immuta, GitHub/repository governance and upstream IAM projections.
 
-Likely source families include Unity Catalog, Collibra, Immuta, repository/configuration metadata and organizational identity/IAM surfaces, but source roles must be established from current evidence rather than assumed from product names.
+It preserves source-local identity versus ecosystem identity; facet/type/scheme-specific governance authority; current versus historical governance; observer-relative metadata; optional-source degradation; and composed authorization across multiple enforcement planes.
 
-See [`02_identity_scope_governance_authority_authorization_sources/README.md`](02_identity_scope_governance_authority_authorization_sources/README.md).
+Accepted gaps include no out-of-box Monitoring Scope registry, no automatic Assertion Authority registry, explicit cross-system Entity Identity crosswalk requirements, retention/configuration limits for long-horizon replay, environment-specific upstream IAM, and population-specific Immuta + Unity Catalog authorization composition.
+
+See [`02_identity_scope_governance_authority_authorization_sources/README.md`](02_identity_scope_governance_authority_authorization_sources/README.md), [`02_identity_scope_governance_authority_authorization_sources/source_capability_matrix.md`](02_identity_scope_governance_authority_authorization_sources/source_capability_matrix.md), and [`02_identity_scope_governance_authority_authorization_sources/external_source_review.md`](02_identity_scope_governance_authority_authorization_sources/external_source_review.md).
 
 ### Group 03 — Change Intent, Deployment, Execution, Version & Runtime Evidence
-**Status:** Not started.
+**Status:** **Next — not started.**
 
 Map evidence for Change Intent, repository revision, workflow/deployment attempt and activation, execution opportunity/run/attempt/lifecycle, run-specific implementation/input/output version, dependency sequencing, retry/rerun/backfill and timing.
 
@@ -133,6 +135,25 @@ Preserve:
 - integration failure ≠ monitored-product negative;
 - `supported`, `partially supported`, `unsupported`, `unknown/not yet verified`, and `not applicable` are feasibility outcomes, not truth/confidence states;
 - no vendor-wide support/completeness score is accepted.
+
+## Accepted Group 02 source-contract discipline
+
+Every later group must preserve:
+
+- Unity Catalog object/principal identity ≠ ecosystem Entity Identity without cross-system mapping;
+- Collibra UUID ≠ Unity Catalog/GitHub/Immuta identity without a governed crosswalk;
+- GitHub repository/path identity ≠ data identity;
+- external-IAM synchronization is a projection whose upstream source remains material;
+- Collibra operating-model scope ≠ framework Monitoring Scope;
+- semantic authority is facet-specific, responsibility authority is responsibility-type specific, and Classification authority is scheme/context specific;
+- Unity Catalog comments, ownership, governed tags, Collibra responsibilities/tags/data classes, Immuta tags/policies and GitHub CODEOWNERS/rulesets retain their documented narrow meanings;
+- no evaluated platform role automatically implements full Assertion Authority;
+- Unity Catalog Information Schema is principal-filtered and does not provide universal absence evidence;
+- current governance/permission state ≠ historical state;
+- Databricks, Collibra, Immuta and GitHub history is retention/configuration bounded;
+- effective Immuta + Unity Catalog authorization can be a composed, user-population-specific proposition;
+- optional Collibra/Immuta absence creates explicit gaps rather than benign defaults;
+- Group 02 source/governance mapping does not prove repository revision → deployment → run → version association.
 
 ## Why this order
 

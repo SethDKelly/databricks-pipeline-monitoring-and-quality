@@ -7,7 +7,8 @@ Applies to work under `docs/concepts/phase_009/` and complements the repository 
 - Phase 008 is complete with EXPL-001–EXPL-160 final.
 - Phase 009 logical grouping is accepted.
 - **Group 01 is complete with INTG-001–INTG-022; IC01-01–IC01-40 pass.**
-- **Group 02 — Identity, Scope, Semantics, Governance, Authority & Authorization Sources is next.**
+- **Group 02 is complete with INTG-023–INTG-050; GOV02-01–GOV02-48 pass.**
+- **Group 03 — Change Intent, Deployment, Execution, Version & Runtime Evidence is next.**
 - Accepted concept count remains 24.
 - Canonical repository status remains in `../../README.md#current-state`.
 
@@ -51,6 +52,34 @@ Preserve:
 - capability rows compose only through explicit product semantics, not matrix adjacency.
 
 See [`01_integration_contract_vocabulary_source_roles_capability_matrix/README.md`](01_integration_contract_vocabulary_source_roles_capability_matrix/README.md).
+
+## Accepted Group 02 rules
+
+Preserve:
+
+- Unity Catalog object/principal identity is platform-local until explicit cross-system mapping proves wider identity;
+- Collibra UUID and GitHub repository/path identity remain source-local;
+- synchronized identity/group/attribute state retains upstream IAM provenance;
+- no evaluated source natively owns DMTZ Monitoring Scope;
+- Collibra operating-model `scope` is not Monitoring Scope;
+- no vendor owner/role/permission surface automatically implements full Assertion Authority;
+- semantic authority is facet-specific; Responsibility Assignment authority is responsibility-type specific; Classification authority is scheme/context specific;
+- Unity Catalog comments are semantic assertions whose origin does not grant business authority;
+- Unity Catalog ownership is platform-operational ownership rather than general business responsibility;
+- Collibra Responsibilities retain direct/inherited role semantics; Collibra permissions authorize Collibra actions only;
+- ordinary Collibra tags are not strictly governed Classification evidence; Data Classes/governed attributes require an accepted scheme-authority rule;
+- Immuta tags/policies retain their policy-metadata/access-control meaning rather than becoming Classification or Policy Context truth by convenience;
+- Unity Catalog privileges/ownership/ABAC/workspace state are authoritative only for exact Unity Catalog access propositions in their documented scope;
+- Immuta is authoritative for Immuta-managed policy decisions in registered scope, with integration/user-registration semantics preserved;
+- effective Immuta + Unity Catalog authorization may require composed evidence and population-specific reasoning;
+- GitHub CODEOWNERS/rulesets/custom properties remain repository-governance facts;
+- Information Schema and other principal-filtered metadata are observer-relative; hidden/non-returned ≠ absent;
+- current governance state ≠ historical governance state;
+- source history/retention/configuration limits remain explicit;
+- optional-source absence creates gaps rather than benign defaults;
+- source conflict/fallback still follows AUTH-001–AUTH-008 rather than source count, recency or product prominence.
+
+See [`02_identity_scope_governance_authority_authorization_sources/README.md`](02_identity_scope_governance_authority_authorization_sources/README.md).
 
 ## Required evaluation dimensions
 
@@ -103,11 +132,29 @@ Do not structure the product around vendor names. Databricks, Unity Catalog, Git
 
 A source may be authoritative for one metadata category and merely supporting/observational for another. Preserve proposition-, subject-, context- and time-specific authority.
 
+## Group 02 gaps carried forward
+
+- a deliberate governed Monitoring Scope source remains required;
+- an explicit governed Assertion Authority rule source remains required;
+- cross-system Entity Identity crosswalks remain required;
+- long-horizon governance replay may require retention beyond vendor defaults;
+- actual organizational IAM/IdP and synchronization mode remain environment-specific unknowns until verified;
+- observer-relative metadata cannot support absence by non-return;
+- effective multi-plane authorization may require composition rather than source precedence.
+
+## Group 03 entry contract
+
+Group 03 may consume source-local identities, explicit crosswalks, principal provenance, bounded authority rules, current authorization/disclosure limits and history constraints from Group 02.
+
+It must independently prove repository revision/change-intent association, CI/CD workflow attempt/outcome, Databricks Deployment attempt/activation, actual execution opportunity/run identity, run-specific implementation/input/output version, dependency sequence/waiting, retry/rerun/backfill identity and any strong no-run/no-output/no-consumption claim.
+
+Group 02 identity, ownership, repository path, responsibility, deployment name and timestamp proximity cannot substitute for these joins.
+
 ## External-fact discipline
 
 Groups 02–08 necessarily evaluate evolving vendor capabilities. Verify current external documentation when executing a group, distinguish product documentation from repository assumptions, record meaningful edition/feature/retention/permission limitations, and avoid treating undocumented behavior as guaranteed.
 
-Group 01 intentionally defines vendor-neutral evaluation semantics and makes no current vendor-capability assertions.
+Group 02 records its verified public sources in [`02_identity_scope_governance_authority_authorization_sources/external_source_review.md`](02_identity_scope_governance_authority_authorization_sources/external_source_review.md).
 
 ## Architecture boundary
 
@@ -116,8 +163,8 @@ Do not select SDK/client libraries, polling versus streaming, event buses, stora
 ## Group sequence
 
 1. integration contract vocabulary/source roles/capability matrix — **accepted**;
-2. identity/scope/governance/authority/authorization sources — **next**;
-3. change/deployment/execution/version/runtime evidence;
+2. identity/scope/governance/authority/authorization sources — **accepted**;
+3. change/deployment/execution/version/runtime evidence — **next**;
 4. health/schema/metrics/Expectations/Baselines/reconciliation evidence;
 5. Lineage/consumer use/exposure/Impact evidence;
 6. Investigation/causality/Safeguard/Gate/control evidence;
