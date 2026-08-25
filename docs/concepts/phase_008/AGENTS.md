@@ -11,7 +11,8 @@ Canonical repository phase status is maintained in [`../../README.md#current-sta
 - **Group 01 is complete with EXPL-001–EXPL-012; BQ01-01–BQ01-24 pass.**
 - **Group 02 is complete with EXPL-013–EXPL-028; AS02-01–AS02-30 pass.**
 - **Group 03 is complete with EXPL-029–EXPL-049; HCE03-01–HCE03-36 pass.**
-- **Group 04 — Investigation, Causality, Impact, Control & Governance Question Semantics is next.**
+- **Group 04 is complete with EXPL-050–EXPL-080; ICG04-01–ICG04-48 pass.**
+- **Group 05 — Uncertainty, Conflict, Negative Claims & Epistemic Language is next.**
 - Accepted concept count remains 24.
 
 ## Accepted Group 01 rules
@@ -26,7 +27,7 @@ Preserve:
 - unresolved identity ambiguity remains ambiguity rather than guessed target selection;
 - event/effective time and recorded/knowledge cut are independent coordinates;
 - a historical question with no explicit knowledge cut is current retrospective interpretation and must be labeled as such rather than implied contemporaneous knowledge;
-- compound questions decompose into independently answerable subquestions when their truth owners/evidence burdens differ;
+- compound questions decompose into independently answerable subquestions when truth owners/evidence burdens differ;
 - one answered subquestion cannot strengthen an unresolved sibling;
 - each requested conclusion routes to the concept(s) that own that proposition; Explanation never becomes the source of health, cause, Impact, control, governance or authorization truth;
 - `why`/causal wording requires Causal Claim semantics when the answer asserts causality;
@@ -104,6 +105,41 @@ Preserve:
 
 See [`03_health_change_execution_question_semantics/README.md`](03_health_change_execution_question_semantics/README.md).
 
+## Accepted Group 04 rules
+
+Preserve:
+
+- inferential/governance shorthand resolves to exact accepted truth-family propositions;
+- Investigation lifecycle/lead/localization do not establish Causal Claim status;
+- first observed/earliest evidenced/first boundary/consumer effect are distinct and do not become root cause;
+- causal answers bind explicit cause→effect proposition, causal role and source status;
+- `confirmed` remains REF-017 + AUTH-034 governed;
+- compatible/competing Causal Claims can remain multiple; no forced winner or causal ranking;
+- singular `root cause` wording does not manufacture a singular cause;
+- lack of causal support does not become rejection;
+- candidate/reachable, encounter opportunity, exposure, downstream effect, consequence and causal attribution remain separate;
+- `affected` must resolve to an explicit Impact layer;
+- strong all/none/only Impact claims require bounded population and coverage;
+- Safeguard proposal/configuration/authorization/request/acceptance and enforcement remain separate;
+- Safeguard active + consumer not exposed does not establish prevented exposure;
+- prevented exposure retains REF-028 + OPS-093 requirements and no-opportunity protection receives no prevention credit;
+- Safeguard release does not prove healthy/fresh/current recovery;
+- exact Gate criterion/evidence suitability/readiness/decision/delivery/enforcement/execution remain separate;
+- HOLD does not mean failed execution and ADMIT does not mean run;
+- override preserves readiness; fallback/override/escalation/degraded-control remain distinct;
+- Execution Gate and Propagation Safeguard remain independent;
+- broader control-effect claims use Causal Claim semantics except accepted narrow prevented-exposure determination;
+- Responsibility Assignment is type/context/time bound and does not establish fault/cause/authority/permission;
+- Semantic Definition answers meaning but not realized state/health/policy/authorization;
+- Classification does not create Policy Context, permission, realized Impact or compliance;
+- Policy Context does not prove enforcement, legal interpretation, breach or compliance;
+- Capability Authorization is principal+capability+subject/context/time permission and does not prove action success;
+- Assertion Authority determines bounded standing, not factual truth/evidence sufficiency/permission/enforcement;
+- recency/source count/synchronization order/specificity/title do not create hidden authority;
+- no universal RCA/Impact/control-effectiveness/governance-confidence score is accepted.
+
+See [`04_investigation_causality_impact_control_governance_question_semantics/README.md`](04_investigation_causality_impact_control_governance_question_semantics/README.md).
+
 ## Permanent Phase 008 boundaries
 
 Preserve throughout the phase:
@@ -121,36 +157,40 @@ Preserve throughout the phase:
 - audience ≠ authority;
 - authorized abstraction ≠ declassification by inference;
 - internal statement basis ≠ visible raw evidence requirement for every audience;
-- Observation ≠ Assessment ≠ Change Intent ≠ Deployment ≠ realized Change ≠ Execution History ≠ Causal Claim ≠ Impact ≠ Annotation;
+- Observation ≠ Assessment ≠ Change Intent ≠ Deployment ≠ realized Change ≠ Execution History ≠ Investigation ≠ Causal Claim ≠ Impact ≠ Annotation;
 - run success ≠ output existence/currentness/health;
 - structural compatibility ≠ statistical comparability ≠ normative health;
 - active Deployment ≠ run-specific version use;
 - timing/Lineage/reconciliation/change proximity ≠ causality;
+- Investigation lead/localization ≠ causal truth;
 - reachability ≠ exposure ≠ effect ≠ consequence ≠ causal attribution;
+- Safeguard enforcement ≠ prevented exposure ≠ recovery;
+- readiness ≠ Gate decision ≠ enforcement ≠ execution;
+- Execution Gate ≠ Propagation Safeguard;
+- responsibility ≠ fault/cause/authority/permission;
+- Classification/Policy Context ≠ compliance;
+- Assertion Authority ≠ Capability Authorization ≠ evidence sufficiency ≠ enforcement;
 - current retrospective Explanation ≠ what was known then;
 - retained Explanation snapshot ≠ current source truth;
 - progressive maturity ≠ automatic status strengthening;
-- no universal Explanation confidence/completeness/quality/operational-status score.
+- no universal Explanation confidence/completeness/quality/operational-status/RCA/Impact/control-effectiveness score.
 
-## Group 04 entry contract
+## Group 05 entry contract
 
-Group 04 consumes EXPL-001–EXPL-049 and applies the accepted question/answer/domain structure to Investigation, causality, Impact, control and governance propositions.
+Group 05 consumes EXPL-001–EXPL-080 and refines how already-bounded statements communicate epistemic limitations without changing their truth.
 
 It should explicitly test:
 
-- `why did this happen?`, `what is the root cause?`, `what contributed?`, and unresolved-cause questions;
-- Investigation lead/localization versus Causal Claim status;
-- supported/rejected/confirmed competing causal claims without narrative winner selection;
-- downstream candidate/reachability versus actual encounter/exposure/effect/consequence;
-- `who was affected?` and strong `nobody was affected` coverage burdens;
-- Safeguard proposal/authorization/request/enforcement/prevented-exposure/release/recovery distinctions;
-- Gate configuration/readiness/decision/delivery/enforcement/execution/control-effect distinctions;
-- `did the control prevent the problem?` versus control overlap;
-- responsibility/ownership versus fault/cause/authorization;
-- Semantic Definition/Policy Context/Classification versus compliance conclusions;
-- Capability Authorization versus responsibility/policy/assertion authority;
-- business consequence versus technical/analytical effect;
-- causal attribution from control/change/exposure facts only through accepted Causal Claim semantics;
-- historical/restricted questions without current-disclosure or retrospective strengthening shortcuts.
+- `unknown` versus `unavailable` versus `insufficient evidence` versus `conflicting`;
+- `restricted`/redacted versus absent;
+- `not applicable` versus not observed/not evaluated;
+- stale evidence/result versus unhealthy result;
+- `not evidenced` versus strong negative conclusions;
+- causal `supported`, `rejected`, `confirmed`, unresolved and competing claims;
+- strong `no run`, `not exposed`, `no effect`, `no consequence`, `not enforced`, `did not cause` and similar negative claims;
+- partial coverage across consumers/paths/dimensions/subquestions;
+- authority conflict versus evidence conflict versus authorization conflict;
+- useful calibrated language without numeric confidence/probability;
+- summaries that expose material uncertainty instead of hiding it.
 
-Do not reopen Phase 005/007 truth semantics, select UI/rendering/LLM architecture, or create a universal RCA/Impact/control/governance score.
+Do not reopen source truth semantics, select UI/rendering/LLM architecture, or create universal confidence/completeness scores.

@@ -10,7 +10,7 @@ The `docs/` tree is the system of record for product and design decisions in thi
 - **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement: COMPLETE.** AUTH-001–AUTH-053 final; G07-01–G07-26 pass.
 - **Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement: COMPLETE.** Groups 01–07 accepted; HLTH-001–HLTH-066 final; H07-01–H07-36 pass.
 - **Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: COMPLETE.** Groups 01–09 accepted; OPS-001–OPS-123 final; L01-01–L01-18, C02-01–C02-24, P03-01–P03-30, X04-01–X04-32, I05-01–I05-34, IM06-01–IM06-36, SG07-01–SG07-36, GT08-01–GT08-36 and HR09-01–HR09-36 pass; Phase 007 exit review accepted.
-- **Phase 008 — Business Questioning and Explanation: IN PROGRESS.** Groups 01–03 accepted; EXPL-001–EXPL-049 accepted; BQ01-01–BQ01-24, AS02-01–AS02-30 and HCE03-01–HCE03-36 pass; Group 04 next.
+- **Phase 008 — Business Questioning and Explanation: IN PROGRESS.** Groups 01–04 accepted; EXPL-001–EXPL-080 accepted; BQ01-01–BQ01-24, AS02-01–AS02-30, HCE03-01–HCE03-36 and ICG04-01–ICG04-48 pass; Group 05 next.
 
 The current catalog contains **24 accepted concepts**: the original 20 plus **Propagation Safeguard**, **Capability Authorization**, **Execution Gate**, and **Assertion Authority**.
 
@@ -67,22 +67,25 @@ The current catalog contains **24 accepted concepts**: the original 20 plus **Pr
 49. [`concepts/phase_008/02_answer_structure_statement_selection_basis_traceability/scenario_review.md`](concepts/phase_008/02_answer_structure_statement_selection_basis_traceability/scenario_review.md) — AS02-01–AS02-30.
 50. [`concepts/phase_008/03_health_change_execution_question_semantics/README.md`](concepts/phase_008/03_health_change_execution_question_semantics/README.md) — accepted Group 03 / EXPL-029–EXPL-049.
 51. [`concepts/phase_008/03_health_change_execution_question_semantics/scenario_review.md`](concepts/phase_008/03_health_change_execution_question_semantics/scenario_review.md) — HCE03-01–HCE03-36.
-52. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
-53. [`reference/authority_vocabulary.md`](reference/authority_vocabulary.md) — authority vocabulary.
-54. [`decisions/README.md`](decisions/README.md) — durable decision history/index.
-55. [`decisions/phase_006_group_07_consolidation_and_exit.md`](decisions/phase_006_group_07_consolidation_and_exit.md) — D-383–D-405.
-56. [`decisions/phase_007_group_01_lineage_topology.md`](decisions/phase_007_group_01_lineage_topology.md) — D-406–D-421.
-57. [`decisions/phase_007_group_02_change_realization.md`](decisions/phase_007_group_02_change_realization.md) — D-422–D-440.
-58. [`decisions/phase_007_group_03_prospective_blast_radius.md`](decisions/phase_007_group_03_prospective_blast_radius.md) — D-441–D-461.
-59. [`decisions/phase_007_group_04_execution_reconstruction.md`](decisions/phase_007_group_04_execution_reconstruction.md) — D-462–D-484.
-60. [`decisions/phase_007_group_05_investigation_localization.md`](decisions/phase_007_group_05_investigation_localization.md) — D-485–D-511.
-61. [`decisions/phase_007_group_06_impact_exposure_consequence.md`](decisions/phase_007_group_06_impact_exposure_consequence.md) — D-512–D-539.
-62. [`decisions/phase_007_group_07_propagation_safeguard.md`](decisions/phase_007_group_07_propagation_safeguard.md) — D-540–D-569.
-63. [`decisions/phase_007_group_08_execution_gate.md`](decisions/phase_007_group_08_execution_gate.md) — D-570–D-599.
-64. [`decisions/phase_007_group_09_historical_replay_exit.md`](decisions/phase_007_group_09_historical_replay_exit.md) — D-600–D-628.
-65. [`decisions/phase_008_group_01_question_semantics.md`](decisions/phase_008_group_01_question_semantics.md) — D-629–D-650.
-66. [`decisions/phase_008_group_02_answer_structure_basis.md`](decisions/phase_008_group_02_answer_structure_basis.md) — D-651–D-676.
-67. [`decisions/phase_008_group_03_health_change_execution.md`](decisions/phase_008_group_03_health_change_execution.md) — D-677–D-707.
+52. [`concepts/phase_008/04_investigation_causality_impact_control_governance_question_semantics/README.md`](concepts/phase_008/04_investigation_causality_impact_control_governance_question_semantics/README.md) — accepted Group 04 / EXPL-050–EXPL-080.
+53. [`concepts/phase_008/04_investigation_causality_impact_control_governance_question_semantics/scenario_review.md`](concepts/phase_008/04_investigation_causality_impact_control_governance_question_semantics/scenario_review.md) — ICG04-01–ICG04-48.
+54. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
+55. [`reference/authority_vocabulary.md`](reference/authority_vocabulary.md) — authority vocabulary.
+56. [`decisions/README.md`](decisions/README.md) — durable decision history/index.
+57. [`decisions/phase_006_group_07_consolidation_and_exit.md`](decisions/phase_006_group_07_consolidation_and_exit.md) — D-383–D-405.
+58. [`decisions/phase_007_group_01_lineage_topology.md`](decisions/phase_007_group_01_lineage_topology.md) — D-406–D-421.
+59. [`decisions/phase_007_group_02_change_realization.md`](decisions/phase_007_group_02_change_realization.md) — D-422–D-440.
+60. [`decisions/phase_007_group_03_prospective_blast_radius.md`](decisions/phase_007_group_03_prospective_blast_radius.md) — D-441–D-461.
+61. [`decisions/phase_007_group_04_execution_reconstruction.md`](decisions/phase_007_group_04_execution_reconstruction.md) — D-462–D-484.
+62. [`decisions/phase_007_group_05_investigation_localization.md`](decisions/phase_007_group_05_investigation_localization.md) — D-485–D-511.
+63. [`decisions/phase_007_group_06_impact_exposure_consequence.md`](decisions/phase_007_group_06_impact_exposure_consequence.md) — D-512–D-539.
+64. [`decisions/phase_007_group_07_propagation_safeguard.md`](decisions/phase_007_group_07_propagation_safeguard.md) — D-540–D-569.
+65. [`decisions/phase_007_group_08_execution_gate.md`](decisions/phase_007_group_08_execution_gate.md) — D-570–D-599.
+66. [`decisions/phase_007_group_09_historical_replay_exit.md`](decisions/phase_007_group_09_historical_replay_exit.md) — D-600–D-628.
+67. [`decisions/phase_008_group_01_question_semantics.md`](decisions/phase_008_group_01_question_semantics.md) — D-629–D-650.
+68. [`decisions/phase_008_group_02_answer_structure_basis.md`](decisions/phase_008_group_02_answer_structure_basis.md) — D-651–D-676.
+69. [`decisions/phase_008_group_03_health_change_execution.md`](decisions/phase_008_group_03_health_change_execution.md) — D-677–D-707.
+70. [`decisions/phase_008_group_04_investigation_causality_impact_control_governance.md`](decisions/phase_008_group_04_investigation_causality_impact_control_governance.md) — D-708–D-749.
 
 ## Phase 006 exit summary
 
@@ -226,6 +229,16 @@ It preserves run occurrence ≠ lifecycle outcome ≠ output/currentness/health;
 
 Accepted range: **EXPL-029–EXPL-049**; HCE03-01–HCE03-36 pass. No new concept was required.
 
+### Group 04 — Investigation / causality / Impact / control / governance question semantics
+
+Group 04 establishes:
+
+**inferential/governance shorthand → exact Investigation/Causal Claim/Impact/control/governance proposition → source-owned or accepted derived state → statement-level basis/limitations → sibling-safe cross-family answer → explicit uncertainty/negative/authority boundaries → Group 05 language handoff**.
+
+It preserves Investigation lead/localization ≠ Causal Claim; singular `root cause` wording ≠ singular truth; cause/contributor/enabler/prevention roles and causal status without narrative promotion; candidate/reachable ≠ opportunity ≠ exposure ≠ effect ≠ consequence ≠ attribution; `affected` as an explicit layer rather than universal state; Safeguard lifecycle/enforcement ≠ REF-028 prevention ≠ recovery; readiness ≠ Gate decision ≠ enforcement ≠ execution; HOLD ≠ failed execution; ADMIT ≠ run; Gate ≠ Safeguard; control overlap/timing ≠ control-effect cause; Responsibility Assignment ≠ blame/authority/permission; Semantic Definition ≠ realized state; Classification ≠ policy/authorization/Impact/compliance; Policy Context ≠ enforcement/legal interpretation/compliance; Capability Authorization ≠ action success; and Assertion Authority ≠ factual truth/evidence sufficiency/permission.
+
+Accepted range: **EXPL-050–EXPL-080**; ICG04-01–ICG04-48 pass. No new concept was required.
+
 ## Documentation discipline
 
 - Concepts/synchronizations/refinements remain implementation-neutral.
@@ -285,6 +298,13 @@ Accepted range: **EXPL-029–EXPL-049**; HCE03-01–HCE03-36 pass. No new concep
 - Intent/deployment/activation/realized Change remain independently answerable.
 - Run-specific version use cannot be inferred from active Deployment/latest output by convenience.
 - Timing, sequence, Lineage, reconciliation and change proximity do not create causal truth.
+- Investigation lead/localization and responsibility/control proximity do not create causal truth.
+- `root cause`, `affected`, `protected`, `owner`, `compliant`, `authorized` and `authoritative` shorthand do not create umbrella states.
+- Safeguard enforcement does not become prevention/recovery by wording convenience.
+- Gate decision/control state does not become execution or causal effect by wording convenience.
+- Responsibility Assignment does not become blame, assertion authority or permission.
+- Classification and Policy Context do not become compliance determinations.
+- Assertion Authority and Capability Authorization remain independent from evidence sufficiency and enforcement.
 - Audience simplification cannot strengthen underlying status.
 - Passive monitoring remains non-blocking/out-of-band by default; Execution Gate remains explicit opt-in active control.
 - Keep examples synthetic; no real PII/PHI/secrets/production values.

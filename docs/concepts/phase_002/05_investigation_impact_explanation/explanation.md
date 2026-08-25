@@ -179,3 +179,17 @@ Change answers preserve realized Change versus Change Intent versus Deployment a
 Historical health/change/execution answers retain event/effective time plus knowledge perspective. Direct state evidence can support an inquiry but cannot become Causal Claim truth through wording, sequence or temporal proximity.
 
 Group 03 accepts EXPL-029–EXPL-049 and HCE03-01–HCE03-36 without changing the 24-concept catalog.
+
+## Later refinement — Phase 008 Group 04
+
+Phase 008 Group 04 refines how inferential, Impact, control and governance wording maps to accepted truth without adding an RCA, affected-state, control-effectiveness, blame, compliance or authority-summary concept. See [`../../phase_008/04_investigation_causality_impact_control_governance_question_semantics/README.md`](../../phase_008/04_investigation_causality_impact_control_governance_question_semantics/README.md).
+
+Investigation lifecycle, leads and localization remain distinct from Causal Claim. Causal answers preserve explicit cause→effect identity, causal role and accepted claim status; `root cause` wording does not force a singular winner and `confirmed` remains REF-017 + AUTH-034 governed.
+
+Impact answers preserve candidate/reachability, encounter opportunity, exposure, downstream effect, consequence and causal attribution. `Affected` must resolve to the intended layer and strong `all`/`none` summaries retain population/path coverage burdens.
+
+Safeguard and Gate questions preserve lifecycle/authorization/decision/enforcement/outcome boundaries. Safeguard enforcement does not itself prove REF-028 prevented exposure or recovery; Gate HOLD does not mean failed execution, ADMIT does not mean run, and broader control-effect attribution remains Causal Claim work except the accepted narrow prevented-exposure determination.
+
+Governance answers preserve Responsibility Assignment versus fault/cause/authority/permission; Semantic Definition versus realized state/health; Classification versus Policy Context/authorization/Impact/compliance; Policy Context versus enforcement/legal interpretation/compliance; Capability Authorization versus responsibility/authority/action success; and Assertion Authority versus factual truth/evidence sufficiency/permission/enforcement.
+
+Group 04 accepts EXPL-050–EXPL-080 and ICG04-01–ICG04-48 without changing the 24-concept catalog.

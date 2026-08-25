@@ -1,6 +1,6 @@
 # Phase 008 — Business Questioning and Explanation
 
-**Status:** IN PROGRESS — Groups 01–03 accepted; EXPL-001–EXPL-049 accepted; Group 04 next
+**Status:** IN PROGRESS — Groups 01–04 accepted; EXPL-001–EXPL-080 accepted; Group 05 next
 
 ## Goal
 
@@ -12,9 +12,9 @@ Phase 008 consumes the completed functional truth model from Phases 002–007. I
 
 Phase 008 uses **`EXPL-###`** refinement contracts.
 
-`EXPL-###` means business-question and Explanation refinement over accepted concepts. It does **not** create a new `Question`, `Answer`, or answer-statement truth concept by default, does not extend SYN/REF/AUTH/HLTH/OPS ranges, and must not become an umbrella state that absorbs the truth owned by other concepts.
+`EXPL-###` means business-question and Explanation refinement over accepted concepts. It does **not** create a new `Question`, `Answer`, answer-statement, RCA, Impact-summary, control-effectiveness or governance truth concept by default, does not extend SYN/REF/AUTH/HLTH/OPS ranges, and must not become an umbrella state that absorbs truth owned by other concepts.
 
-Accepted range so far: **EXPL-001–EXPL-049**.
+Accepted range so far: **EXPL-001–EXPL-080**.
 
 ## Logical delivery grouping
 
@@ -48,14 +48,16 @@ No new concept is required. Explanation translates question wording; Assessment,
 See [`03_health_change_execution_question_semantics/README.md`](03_health_change_execution_question_semantics/README.md).
 
 ### Group 04 — Investigation, Causality, Impact, Control & Governance Question Semantics
-**Status:** **Next — not started.**
+**Status:** **Accepted — EXPL-050–EXPL-080; ICG04-01–ICG04-48 pass.**
 
-Will refine `why`, root-cause, downstream Impact, consumer exposure, Safeguard, Gate, responsibility, policy/meaning and capability-oriented questions while preserving Investigation/Causal Claim/Impact/control/governance ownership boundaries.
+Defines inferential/governance shorthand decomposition; Investigation lifecycle/leads/localization; causal proposition/role/status/competition/root-cause/negative semantics; Impact candidate/exposure/effect/consequence/aggregation; Safeguard/Gate enforcement/prevention/release/overlap/control-effect questions; and responsibility/meaning/Classification/Policy Context/Capability Authorization/Assertion Authority questions.
+
+No new concept is required. The existing concepts retain truth ownership; Explanation composes their bounded projections without inventing RCA, affected, control-effectiveness, blame, compliance or authority shortcuts.
 
 See [`04_investigation_causality_impact_control_governance_question_semantics/README.md`](04_investigation_causality_impact_control_governance_question_semantics/README.md).
 
 ### Group 05 — Uncertainty, Conflict, Negative Claims & Epistemic Language
-**Status:** Not started.
+**Status:** **Next — not started.**
 
 Will refine answer language for unknown, conflicting, unavailable, restricted, insufficient, not-applicable, negative-evidence and competing-claim states; calibrate uncertainty without inventing universal confidence scores; and prevent narrative wording from strengthening evidence.
 
@@ -117,7 +119,7 @@ For answer composition specifically:
 
 ## Accepted Group 03 domain-question discipline
 
-Health/change/execution questions now preserve:
+Health/change/execution questions preserve:
 
 - `ran` ≠ lifecycle success/failure/cancellation;
 - execution success ≠ output existence/qualification;
@@ -140,6 +142,29 @@ Health/change/execution questions now preserve:
 - duration/start delay/wait/lateness/currentness are distinct timing propositions;
 - timing or deployment proximity ≠ causal attribution;
 - current retrospective operational answer ≠ what was known then.
+
+## Accepted Group 04 inferential/governance discipline
+
+Investigation/causality/Impact/control/governance questions now preserve:
+
+- Investigation lifecycle/lead/localization ≠ Causal Claim;
+- first observed/earliest evidenced/boundary/consumer effect ≠ root cause;
+- causal role and status remain explicit; `confirmed` retains REF-017 + AUTH-034 requirements;
+- multiple causal claims can remain competing or compatible without one narrative winner;
+- `root cause` singular wording does not force singular causal truth;
+- candidate/reachable ≠ opportunity ≠ exposure ≠ effect ≠ consequence ≠ causal attribution;
+- `affected` resolves to a specific Impact layer and strong all/none claims retain population/coverage burden;
+- Safeguard lifecycle/admin facts ≠ enforcement ≠ REF-028 prevention ≠ post-release recovery;
+- readiness ≠ Gate decision ≠ Gate enforcement ≠ execution;
+- HOLD ≠ failed execution; ADMIT ≠ run; override/fallback/escalation/degraded control remain distinct;
+- Gate and Safeguard remain independent controls;
+- broader control-effect statements remain Causal Claims except the accepted narrow prevented-exposure determination;
+- Responsibility Assignment ≠ fault/cause/Assertion Authority/Capability Authorization;
+- Semantic Definition ≠ realized state/health/policy/authorization;
+- Classification ≠ Policy Context/authorization/Impact/compliance;
+- Policy Context ≠ enforcement/legal interpretation/compliance;
+- Capability Authorization ≠ responsibility/authority/action success;
+- Assertion Authority ≠ factual truth/evidence sufficiency/permission/enforcement.
 
 ## Accepted Phase 007 handoff
 
@@ -176,4 +201,4 @@ Phase 009 will map accepted question/Explanation requirements to real source ava
 
 ## Phase direction
 
-**Groups 01–03 are accepted with EXPL-001–EXPL-049. BQ01-01–BQ01-24, AS02-01–AS02-30 and HCE03-01–HCE03-36 pass. Group 04 — Investigation, Causality, Impact, Control & Governance Question Semantics is next.**
+**Groups 01–04 are accepted with EXPL-001–EXPL-080. BQ01-01–BQ01-24, AS02-01–AS02-30, HCE03-01–HCE03-36 and ICG04-01–ICG04-48 pass. Group 05 — Uncertainty, Conflict, Negative Claims & Epistemic Language is next.**

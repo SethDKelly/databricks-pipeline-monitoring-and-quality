@@ -119,3 +119,15 @@ Phase 008 Group 03 applies SYN-031 to direct health/change/execution questions w
 Composition preserves execution occurrence versus lifecycle outcome versus output existence/qualification versus freshness/currentness versus health; profile-bound health versus structure/comparability/quality; Baseline versus Expectation; warning/waiver/severity; realized Change versus Change Intent/Deployment/activation; intent-realization comparison; and run-specific version use versus active Deployment/latest output.
 
 Repeated execution, dependency/precedence/waiting/consumption, missing-work negatives and timing/lateness remain separately answerable. Historical domain answers retain event/effective time and knowledge cut. Causal `why` wording may consume these statements as basis but cannot strengthen them into Causal Claim truth through composition.
+
+## Later refinement — Phase 008 Group 04
+
+Phase 008 Group 04 applies SYN-031 to Investigation, causality, Impact, control and governance questions. See [`../../phase_008/04_investigation_causality_impact_control_governance_question_semantics/README.md`](../../phase_008/04_investigation_causality_impact_control_governance_question_semantics/README.md).
+
+Composition preserves Investigation lifecycle/lead/localization versus Causal Claim and retains exact causal role/status. Singular `root cause` wording cannot collapse multiple/competing claims or create confirmation. Impact layering remains candidate/reachability → opportunity → exposure → effect → consequence → optional causal attribution, and broad `affected`/`nobody affected` language retains the exact layer/population/coverage burden.
+
+Safeguard and Gate statements preserve proposal/authorization/request/decision/enforcement/outcome boundaries, REF-028 prevented-exposure requirements, release-versus-recovery, readiness-versus-Gate-decision/enforcement/execution, HOLD-versus-failure, ADMIT-versus-run, and Gate/Safeguard independence. Broader control-effect attribution is Causal Claim work except the accepted narrow prevention determination.
+
+Governance projection preserves responsibility versus blame/cause/authority/permission; semantic meaning versus realized state; Classification versus Policy Context/authorization/Impact/compliance; Policy Context versus enforcement/legal interpretation/compliance; capability permission versus action success; and assertion standing versus truth/evidence sufficiency/permission.
+
+These refinements keep inferential/governance statements independent and traceable rather than manufacturing a universal RCA, Impact, control-effectiveness, blame, compliance or governance-confidence result.
