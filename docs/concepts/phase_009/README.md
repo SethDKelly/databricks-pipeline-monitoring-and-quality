@@ -1,6 +1,6 @@
 # Phase 009 — Integration Contracts, Source Authority, and Evidence Availability
 
-**Status:** IN PROGRESS — Groups 01–06 accepted; INTG-001–INTG-200 accepted; IC01-01–IC01-40, GOV02-01–GOV02-48, RTE03-01–RTE03-54, HME04-01–HME04-56, LIE05-01–LIE05-60 and ICE06-01–ICE06-72 pass; Group 07 next
+**Status:** IN PROGRESS — Groups 01–07 accepted; INTG-001–INTG-238 accepted; IC01-01–IC01-40, GOV02-01–GOV02-48, RTE03-01–RTE03-54, HME04-01–HME04-56, LIE05-01–LIE05-60, ICE06-01–ICE06-72 and EBR07-01–EBR07-64 pass; Group 08 next
 
 ## Goal
 
@@ -27,7 +27,7 @@ Phase 009 uses **`INTG-###`** integration-contract refinements.
 
 `INTG-###` describes the functional contract between accepted product semantics and actual source capabilities. It does not define adapter classes, service boundaries, event schemas, storage tables, polling architecture, credentials, SDK selection, or deployment topology.
 
-Accepted range so far: **INTG-001–INTG-200**.
+Accepted range so far: **INTG-001–INTG-238**.
 
 ## Logical delivery grouping
 
@@ -96,20 +96,22 @@ Accepted gaps include no automatic causal-confirmation source, environment-speci
 See [`06_investigation_causality_safeguard_gate_control_evidence/README.md`](06_investigation_causality_safeguard_gate_control_evidence/README.md), [`06_investigation_causality_safeguard_gate_control_evidence/source_capability_matrix.md`](06_investigation_causality_safeguard_gate_control_evidence/source_capability_matrix.md), and [`06_investigation_causality_safeguard_gate_control_evidence/external_source_review.md`](06_investigation_causality_safeguard_gate_control_evidence/external_source_review.md).
 
 ### Group 07 — Explanation, Historical Replay, Basis Inspection & Disclosure Source Contracts
-**Status:** **Next — not started.**
+**Status:** **Accepted — INTG-201–INTG-238; EBR07-01–EBR07-64 pass.**
 
-Map what is required to compose current/as-known/retrospective Explanation, retain or reconstruct historical views, inspect statement basis, preserve source provenance, apply current disclosure authorization and distinguish actual retained communication from present reconstruction.
+Maps Databricks/GitHub/Collibra/Immuta and accumulated Phase 009 source history to Phase 008 statement-to-basis traceability, as-known-at-cut replay, retained communication, current retrospective Explanation, `inspectBasis`, safe abstraction and current disclosure authorization.
 
-This group evaluates source/history/disclosure capability only. It does not select an LLM, retrieval engine, snapshot store, citation UI or Explanation-delivery architecture.
+It preserves source history ≠ as-known-at-cut Explanation ≠ actual retained communication ≠ current retrospective Explanation; event time ≠ availability by knowledge cut; notification delivery ≠ exact communication content; visible citation ≠ source access/disclosure permission; current requester authorization ≠ historical actor authorization; and more visible basis ≠ stronger truth.
 
-See [`07_explanation_historical_replay_basis_disclosure_source_contracts/README.md`](07_explanation_historical_replay_basis_disclosure_source_contracts/README.md).
+Accepted gaps include heterogeneous/short vendor retention, incomplete availability-by-K evidence, no universal native retained-Explanation store, Databricks query-content blanking/truncation, mutable GitHub discussion history, configurable Collibra history, short Immuta SaaS audit retention, incomplete historical-authorization replay, sensitive basis metadata and exact prior `inspectBasis` presentation requiring independent retention.
+
+See [`07_explanation_historical_replay_basis_disclosure_source_contracts/README.md`](07_explanation_historical_replay_basis_disclosure_source_contracts/README.md), [`07_explanation_historical_replay_basis_disclosure_source_contracts/source_capability_matrix.md`](07_explanation_historical_replay_basis_disclosure_source_contracts/source_capability_matrix.md), and [`07_explanation_historical_replay_basis_disclosure_source_contracts/external_source_review.md`](07_explanation_historical_replay_basis_disclosure_source_contracts/external_source_review.md).
 
 ### Group 08 — Cross-Source Coverage, Latency, Retention, Cost & Phase Consolidation / Exit
-**Status:** Not started.
+**Status:** **Next — not started.**
 
-Compose the source contracts across all prior groups. Identify evidence gaps, conflicting/overlapping source roles, cross-source join risks, clock/time-cut limitations, coverage boundaries, latency/freshness envelopes, retention/replay feasibility, quotas/cost, integration observability and graceful degradation.
+Compose the source contracts across all prior groups. Identify evidence gaps, conflicting/overlapping source roles, cross-source join risks, clock/time-cut limitations, coverage boundaries, latency/freshness envelopes, retention/replay/communication-retention feasibility, quotas/cost, integration observability and graceful degradation.
 
-The exit review must state which accepted product requirements are fully supportable, partially supportable, unsupported or still unknown with the evaluated integrations, without weakening source semantics. It then hands concrete integration facts to Phase 010 technical architecture.
+The exit review must state which accepted product requirements are fully supportable, partially supportable, unsupported or still unknown with the evaluated integrations, without weakening source semantics. It must separately distinguish source reconstruction, as-known replay, authentic retained communication and current basis-disclosure support before handing concrete facts to Phase 010 technical architecture.
 
 See [`08_cross_source_coverage_latency_retention_cost_consolidation_exit/README.md`](08_cross_source_coverage_latency_retention_cost_consolidation_exit/README.md).
 
@@ -275,6 +277,45 @@ Every later group must preserve:
 - missing/conflicting control telemetry ≠ fail-open/fail-closed/success/failure;
 - broader control-effect attribution remains Causal Claim work except the bounded REF-028 prevention determination.
 
+## Accepted Group 07 Explanation/replay/basis-source discipline
+
+Every later group must preserve:
+
+- material statement identity retains exact source proposition/basis identity independently of rendered wording;
+- source-local names/URLs/display labels are not stable historical identity where rename/recreate/mutation matters;
+- event/effective time, source availability/recorded time, knowledge cut, retrieval time and communication time remain distinct;
+- event-before-K ≠ known-by-K;
+- late evidence/corrections do not enter an earlier knowledge cut;
+- source correction may change current retrospective Explanation without invalidating historically correct unknown/partial states;
+- current source state/latest surviving record ≠ complete historical source state;
+- retention expiry, deletion, truncation, CMK blanking or disabled history remain explicit limitations;
+- historical source state ≠ as-known-at-cut Explanation ≠ actual retained communication ≠ current retrospective Explanation;
+- delivery status ≠ exact retained message content ≠ reading/reliance;
+- reconstruction ≠ authentic prior communication even when wording would match;
+- missing retained communication remains missing;
+- statement identity can persist across refresh only while proposition-defining scope/time is materially stable;
+- basis enrichment ≠ confidence/status strengthening;
+- source outages/lag/permission failures are basis-availability limitations rather than domain negatives;
+- partial answerability remains proposition/subquestion bound;
+- internal basis inspectability remains mandatory even where requester-visible basis is restricted;
+- visible reference/citation ≠ source accessibility ≠ basis-disclosure permission;
+- current requester authorization governs present disclosure of historical basis;
+- historical actor authorization and current disclosure are independent;
+- conclusion/context/limitation/basis/provenance/detail may have separate disclosure rules;
+- safe abstraction/redaction remains epistemically monotone;
+- basis existence/count/type/source class/timestamps/redaction markers may themselves be sensitive;
+- query text/parameters/errors and actor/consumer identities are sensitive basis facets;
+- filtered/permission-scoped history is observer-relative and cannot support absence by non-return;
+- Databricks `system` tables have heterogeneous retention and no universal indefinite replay promise;
+- Databricks query text/error/parameter inspectability is conditional on encryption/truncation behavior;
+- Databricks alert evaluation/delivery history does not retain exact Explanation content by implication;
+- GitHub audit history is retention-bound and streamed duplicates are not independent evidence;
+- GitHub comment edit history is mutable/edit-capped and revision content can be deleted;
+- Collibra history is facet/configuration/permission specific;
+- Immuta audit requires verified long-term export for replay beyond native SaaS retention;
+- exact prior `inspectBasis` presentation requires independently retained prior projection/communication evidence;
+- comparative Explanation sides independently bind source coverage/retention before a delta is asserted.
+
 ## Why this order
 
 1. **Contract vocabulary first** — every source must be evaluated using the same proposition/authority/time/coverage vocabulary before vendor facts can be compared.
@@ -298,6 +339,7 @@ Preserve throughout the phase:
 - source-local identifier ≠ Entity Identity without reconciliation evidence;
 - timestamp proximity ≠ association or causality;
 - source event time ≠ recorded/knowledge time unless the source semantics establish both;
+- event timestamp ≠ historical knowledge availability;
 - current source state ≠ historical state;
 - late/corrected evidence must not be backfilled into earlier knowledge cuts;
 - missing telemetry ≠ negative fact;
@@ -315,11 +357,16 @@ Preserve throughout the phase:
 - control configuration/request/decision ≠ enforcement/effect;
 - Safeguard enforcement ≠ prevented exposure without exact opportunity/path evidence;
 - Gate HOLD/ADMIT ≠ execution outcome;
+- retained source history ≠ as-known Explanation ≠ actual retained communication;
+- delivery evidence ≠ exact communication content;
+- reconstructed historical Explanation ≠ actual historical communication;
+- current requester disclosure ≠ historical actor authorization;
+- citation/reference ≠ inspectBasis permission;
+- more visible basis ≠ more true/more supported;
 - restricted ≠ unavailable/absent;
-- retained source history ≠ exact retained Explanation communication;
 - unsupported integration capability is an explicit result, not a reason to weaken product semantics;
-- no integration adapter, service, storage, event, polling, streaming, agent, LLM or deployment architecture is selected in Phase 009.
+- no integration adapter, service, storage, event, polling, streaming, agent, LLM, snapshot-store or deployment architecture is selected in Phase 009.
 
 ## Phase 010 handoff target
 
-Phase 010 should receive a concrete, evidence-backed matrix of source capabilities and gaps, including identity/join contracts, authority applicability, temporal semantics, coverage, latency, retention, disclosure constraints, cost/quota and observability. Architecture may then choose how to ingest, persist, reconcile and serve those capabilities without rediscovering or changing the functional contracts.
+Phase 010 should receive a concrete, evidence-backed matrix of source capabilities and gaps, including identity/join contracts, authority applicability, temporal semantics, coverage, latency, retention, historical availability timing, retained-communication requirements, basis inspectability, disclosure constraints, cost/quota and observability. Architecture may then choose how to ingest, persist, archive, reconcile and serve those capabilities without rediscovering or changing the functional contracts.

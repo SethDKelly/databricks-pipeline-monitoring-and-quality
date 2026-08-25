@@ -12,7 +12,8 @@ Applies to work under `docs/concepts/phase_009/` and complements the repository 
 - **Group 04 is complete with INTG-084–INTG-119; HME04-01–HME04-56 pass.**
 - **Group 05 is complete with INTG-120–INTG-153; LIE05-01–LIE05-60 pass.**
 - **Group 06 is complete with INTG-154–INTG-200; ICE06-01–ICE06-72 pass.**
-- **Group 07 — Explanation, Historical Replay, Basis Inspection & Disclosure Source Contracts is next.**
+- **Group 07 is complete with INTG-201–INTG-238; EBR07-01–EBR07-64 pass.**
+- **Group 08 — Cross-Source Coverage, Latency, Retention, Cost & Consolidation / Exit Review is next.**
 - Accepted concept count remains 24.
 - Canonical repository status remains in `../../README.md#current-state`.
 
@@ -233,6 +234,51 @@ Preserve:
 
 See [`06_investigation_causality_safeguard_gate_control_evidence/README.md`](06_investigation_causality_safeguard_gate_control_evidence/README.md).
 
+## Accepted Group 07 rules
+
+Preserve:
+
+- material Explanation statements retain exact internal statement→source-basis identity;
+- rendered wording, display label, URL or citation does not replace stable source/event/object identity;
+- supporting/contradicting/limiting evidence roles are statement-relative;
+- basis/source count does not create confidence and common-derived evidence remains common-derived;
+- event/effective time `T`, source-recorded/availability time, knowledge cut `K`, retrieval time and communication time remain distinct;
+- an event timestamp before `K` does not prove the source fact was available by `K`;
+- current retrieval of an old event cannot backfill historical knowledge;
+- late evidence/corrections can change current retrospective Explanation without rewriting earlier as-known state;
+- current source state/latest record ≠ historical source state;
+- expired/deleted/truncated/blank/encrypted/disabled history remains missing or limited rather than reconstructed;
+- reconstructed as-known-at-cut Explanation ≠ actual retained communication;
+- actual retained communication requires authentic content/context evidence;
+- delivery evidence ≠ exact rendered content ≠ reading/comprehension/reliance;
+- mutable GitHub/ticket/comment history is communication evidence only to the extent revisions survive;
+- missing retained communication remains missing; reconstruction must be labeled reconstruction;
+- statement identity can persist across wording/detail/basis changes only when proposition-defining scope/time remains materially stable;
+- basis enrichment does not automatically strengthen status/confidence;
+- source outage/lag/permission failure is a basis limitation, not proposition-level negative truth;
+- partial Explanation remains valid and no global completeness percentage is accepted;
+- internal `inspectBasis` traceability is required independently of requester-visible disclosure;
+- visible citation/reference ≠ source retrievability ≠ disclosure authorization;
+- current requester authorization governs current disclosure of historical basis;
+- historical actor authorization and current requester disclosure do not rewrite each other;
+- result/context/limitation/basis/provenance/detail visibility can be separately authorized;
+- safe coarse/redacted/opaque basis projection cannot strengthen/reverse/broaden the source proposition;
+- source existence/count/type/timestamps/redaction state can themselves be sensitive;
+- query text/parameters/errors and actor/consumer identities are independently disclosure-governed;
+- permission/workspace/region-filtered source views are observer-relative; hidden/non-returned ≠ absent;
+- Databricks system-table history has per-surface retention and no generic indefinite `system` ledger;
+- Databricks query-content basis is conditional because CMK and truncation can remove detail;
+- Databricks alert history can establish definition/evaluation/delivery status without proving exact message content;
+- GitHub enterprise audit history is retention-bound and streamed duplicates remain common-derived;
+- GitHub comment history is mutable, edit-capped and revision content can be removed;
+- Collibra history is facet/configuration specific and visibility permission-filtered;
+- Immuta audit is rich but short-lived by default; long-horizon basis inspection requires verified export/retention;
+- exact prior `inspectBasis` presentation cannot be reconstructed from current source access alone;
+- comparative Explanation evaluates source retention/coverage independently on each side;
+- asymmetric basis availability is not automatically a source-truth difference.
+
+See [`07_explanation_historical_replay_basis_disclosure_source_contracts/README.md`](07_explanation_historical_replay_basis_disclosure_source_contracts/README.md).
+
 ## Required evaluation dimensions
 
 For every material source surface, evaluate as applicable:
@@ -251,6 +297,8 @@ For every material source surface, evaluate as applicable:
 - latency and freshness characteristics;
 - retention/history/replay behavior;
 - correction, mutation, supersession and late-arrival behavior;
+- retained-communication versus reconstruction capability where Explanation history is in scope;
+- basis inspectability after native source retention expiry;
 - rate/quota/cost characteristics where material;
 - observability of the integration itself;
 - duplicate/common-derivation relationships to other sources;
@@ -265,6 +313,12 @@ Never convert:
 - accessible → authorized for disclosure;
 - missing → false/zero/no-event/no-path/no-exposure/no-effect/no-control;
 - current state → historical state;
+- event timestamp → knowledge availability;
+- reconstructed historical answer → actual retained communication;
+- notification delivery → exact message content/read/reliance;
+- citation/reference → source access or basis-display permission;
+- more visible basis → more true/more supported;
+- hidden/expired basis → absent proposition;
 - Lineage → encounter/exposure;
 - lineage/read event → exact affected-version exposure absent state/version evidence;
 - dashboard/report access → dataset execution/result receipt/business reliance;
@@ -288,7 +342,7 @@ Never convert:
 
 ## Source-family discipline
 
-Do not structure the product around vendor names. Databricks, Unity Catalog, GitHub, DQX, Metric Views, Collibra, Immuta and downstream/control instrumentation may each support multiple accepted concepts, and one accepted proposition may require multiple source families.
+Do not structure the product around vendor names. Databricks, Unity Catalog, GitHub, DQX, Metric Views, Collibra, Immuta and downstream/control/communication instrumentation may each support multiple accepted concepts, and one accepted proposition may require multiple source families.
 
 A source may be authoritative for one metadata/control category and merely supporting/observational for another. Preserve proposition-, subject-, context- and time-specific authority.
 
@@ -352,21 +406,38 @@ A source may be authoritative for one metadata/control category and merely suppo
 - control historical replay spans different audit/deployment/custom-control retention windows;
 - missing/conflicting control telemetry cannot determine fail-open/fail-closed or effect attribution.
 
-## Group 07 entry contract
+## Group 07 gaps carried forward
 
-Group 07 may consume all accepted source facts from Groups 02–06 only with exact proposition/source identity, evidence roles, authority, event/effective and knowledge times, retention, coverage, authorization and disclosure limitations.
+- exact retained communication is not provided by telemetry/source reconstruction and requires an explicit retention strategy where prior wording/context matters;
+- exact availability-by-knowledge-cut is not uniformly exposed across sources;
+- vendor-native history is heterogeneous and often shorter than enterprise replay goals;
+- Databricks exact query basis can be blank/truncated under security/storage behavior;
+- delivery evidence does not retain exact rendered Explanation content by default;
+- GitHub discussion history is mutable/edit-capped and selected revision content can be removed;
+- Collibra resource history is facet/configuration specific and can omit selected/inherited changes;
+- Immuta native SaaS audit retention is short for long-horizon `inspectBasis` unless exported;
+- historical authorization replay remains partial where old IAM/policy/grant state expires;
+- current requester disclosure must be evaluated independently of historical access;
+- sensitive basis metadata includes existence/count/type/provenance/query text/parameters/errors/actors/timestamps/redaction state;
+- exact prior `inspectBasis` presentation is unavailable unless independently retained;
+- observer-relative source views remain unsafe for strong negatives;
+- comparative Explanation can differ because basis retention differs without implying a truth delta.
 
-It must determine whether those facts are sufficient for Phase 008 statement-to-basis traceability, current/as-known/retrospective Explanation, `composeAt`, `inspectBasis`, safe abstraction, retained-communication distinction and current authorized projection. It may not narratively fill missing causal/control stages, convert unavailable history into negative truth, or treat source retrievability as disclosure permission.
+## Group 08 entry contract
+
+Group 08 must consolidate all accepted Phase 009 source capabilities and residual gaps without weakening the underlying REF/AUTH/HLTH/OPS/EXPL contracts.
+
+It must separately assess source-truth feasibility, as-known-at-cut replay, actual retained communication, current basis inspectability/disclosure, cross-system joins, latency, coverage, retention, cost/quota and integration observability. Planned Phase 010 retention/instrumentation cannot be counted as a capability that already exists, but explicit architecture prerequisites must be recorded.
 
 ## External-fact discipline
 
 Groups 02–08 necessarily evaluate evolving vendor capabilities. Verify current external documentation when executing a group, distinguish product documentation from repository assumptions, record meaningful edition/feature/retention/permission limitations, and avoid treating undocumented behavior as guaranteed.
 
-Group 02 records sources in [`02_identity_scope_governance_authority_authorization_sources/external_source_review.md`](02_identity_scope_governance_authority_authorization_sources/external_source_review.md); Group 03 records sources in [`03_change_deployment_execution_version_runtime_evidence/external_source_review.md`](03_change_deployment_execution_version_runtime_evidence/external_source_review.md); Group 04 records sources in [`04_health_schema_metrics_expectations_baselines_reconciliation_evidence/external_source_review.md`](04_health_schema_metrics_expectations_baselines_reconciliation_evidence/external_source_review.md); Group 05 records sources in [`05_lineage_consumer_use_exposure_impact_evidence/external_source_review.md`](05_lineage_consumer_use_exposure_impact_evidence/external_source_review.md); Group 06 records sources in [`06_investigation_causality_safeguard_gate_control_evidence/external_source_review.md`](06_investigation_causality_safeguard_gate_control_evidence/external_source_review.md).
+Group 02 records sources in [`02_identity_scope_governance_authority_authorization_sources/external_source_review.md`](02_identity_scope_governance_authority_authorization_sources/external_source_review.md); Group 03 records sources in [`03_change_deployment_execution_version_runtime_evidence/external_source_review.md`](03_change_deployment_execution_version_runtime_evidence/external_source_review.md); Group 04 records sources in [`04_health_schema_metrics_expectations_baselines_reconciliation_evidence/external_source_review.md`](04_health_schema_metrics_expectations_baselines_reconciliation_evidence/external_source_review.md); Group 05 records sources in [`05_lineage_consumer_use_exposure_impact_evidence/external_source_review.md`](05_lineage_consumer_use_exposure_impact_evidence/external_source_review.md); Group 06 records sources in [`06_investigation_causality_safeguard_gate_control_evidence/external_source_review.md`](06_investigation_causality_safeguard_gate_control_evidence/external_source_review.md); Group 07 records sources in [`07_explanation_historical_replay_basis_disclosure_source_contracts/external_source_review.md`](07_explanation_historical_replay_basis_disclosure_source_contracts/external_source_review.md).
 
 ## Architecture boundary
 
-Do not select SDK/client libraries, polling versus streaming, event buses, storage schemas, graph databases, caches, credential mechanisms, deployment topology, retry infrastructure, orchestration, attestation implementation, metric/rule stores, anomaly models, consumer/BI instrumentation, incident/case tooling, causal engine, Safeguard/Gate implementation, control-state persistence, LLM/retrieval architecture or UI. Phase 010 owns technical architecture.
+Do not select SDK/client libraries, polling versus streaming, event buses, storage schemas, graph databases, caches, credential mechanisms, deployment topology, retry infrastructure, orchestration, attestation implementation, metric/rule stores, anomaly models, consumer/BI instrumentation, incident/case tooling, causal engine, Safeguard/Gate implementation, control-state persistence, Explanation snapshot store, source archive, redaction engine, LLM/retrieval architecture or UI. Phase 010 owns technical architecture.
 
 ## Group sequence
 
@@ -376,5 +447,5 @@ Do not select SDK/client libraries, polling versus streaming, event buses, stora
 4. health/schema/metrics/Expectations/Baselines/reconciliation evidence — **accepted**;
 5. Lineage/consumer use/exposure/Impact evidence — **accepted**;
 6. Investigation/causality/Safeguard/Gate/control evidence — **accepted**;
-7. Explanation/historical replay/basis/disclosure source contracts — **next**;
-8. cross-source coverage/latency/retention/cost consolidation and exit.
+7. Explanation/historical replay/basis/disclosure source contracts — **accepted**;
+8. cross-source coverage/latency/retention/cost consolidation and exit — **next**.
