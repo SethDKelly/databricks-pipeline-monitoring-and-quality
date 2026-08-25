@@ -131,3 +131,13 @@ Safeguard and Gate statements preserve proposal/authorization/request/decision/e
 Governance projection preserves responsibility versus blame/cause/authority/permission; semantic meaning versus realized state; Classification versus Policy Context/authorization/Impact/compliance; Policy Context versus enforcement/legal interpretation/compliance; capability permission versus action success; and assertion standing versus truth/evidence sufficiency/permission.
 
 These refinements keep inferential/governance statements independent and traceable rather than manufacturing a universal RCA, Impact, control-effectiveness, blame, compliance or governance-confidence result.
+
+## Later refinement — Phase 008 Group 05
+
+Phase 008 Group 05 makes SYN-031's `missing/conflicting/restricted/stale/insufficient evidence remains visible` rule proposition-specific. See [`../../phase_008/05_uncertainty_conflict_negative_claims_epistemic_language/README.md`](../../phase_008/05_uncertainty_conflict_negative_claims_epistemic_language/README.md).
+
+Composition now distinguishes unknown/unresolved, unavailable, insufficient/indeterminate, conflict, restricted/redacted, stale-for-use, non-comparable, not-applicable, not-evidenced/not-known and evidence-backed negative results. Missing or inaccessible basis does not become an absence claim, and unresolved conflict does not license winner selection.
+
+Strong negatives preserve their conclusion-specific opportunity/coverage/authority burdens. Causal claim statuses, Impact exposure/effect/consequence states, control telemetry limitations, and governance unknown/conflict states retain their accepted vocabulary. Positive statements are not decorated with unsupported probability/confidence language.
+
+Multiple material statements retain independent epistemic states, so one answer can simultaneously contain confirmed, supported, conflicting, unavailable and bounded-negative conclusions without an overall confidence/completeness score. Historical as-known state may differ from current retrospective resolution without rewriting either view.

@@ -193,3 +193,15 @@ Safeguard and Gate questions preserve lifecycle/authorization/decision/enforceme
 Governance answers preserve Responsibility Assignment versus fault/cause/authority/permission; Semantic Definition versus realized state/health; Classification versus Policy Context/authorization/Impact/compliance; Policy Context versus enforcement/legal interpretation/compliance; Capability Authorization versus responsibility/authority/action success; and Assertion Authority versus factual truth/evidence sufficiency/permission/enforcement.
 
 Group 04 accepts EXPL-050–EXPL-080 and ICG04-01–ICG04-48 without changing the 24-concept catalog.
+
+## Later refinement — Phase 008 Group 05
+
+Phase 008 Group 05 refines how Explanation communicates epistemic limitation without adding an uncertainty/confidence concept. See [`../../phase_008/05_uncertainty_conflict_negative_claims_epistemic_language/README.md`](../../phase_008/05_uncertainty_conflict_negative_claims_epistemic_language/README.md).
+
+Material statements now preserve proposition-specific distinctions among unknown/unresolved, unavailable source/evidence, insufficient/indeterminate evidence, unresolved conflict, restricted/redacted context, stale-for-use evidence/result, non-comparable context, not-applicable criteria, not-evidenced/not-recorded/not-known-by-cutoff state, and evidence-backed negative conclusions.
+
+Absence of evidence cannot be rendered as evidence of absence. Strong negatives retain their REF/HLTH/OPS/AUTH opportunity, coverage and authority burdens; negative-form questions do not lower those burdens. Positive conclusions use the owning concept's status rather than invented probability/confidence language.
+
+Causal proposed/supported/weakened/unresolved/rejected/confirmed states, Impact candidate/exposure/effect/consequence states, degraded control evidence, and governance unknown/conflict states retain their exact semantics. Multiple sibling statements keep independent epistemic states rather than producing an overall confidence/completeness score.
+
+Historical Explanation may therefore state `unknown at the incident-time knowledge cut; retrospectively established from later evidence` without rewriting the earlier unknown state. Group 05 accepts EXPL-081–EXPL-100 and UNC05-01–UNC05-40 without changing the 24-concept catalog.

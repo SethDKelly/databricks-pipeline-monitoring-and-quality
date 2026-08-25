@@ -1,6 +1,6 @@
 # Phase 008 — Business Questioning and Explanation
 
-**Status:** IN PROGRESS — Groups 01–04 accepted; EXPL-001–EXPL-080 accepted; Group 05 next
+**Status:** IN PROGRESS — Groups 01–05 accepted; EXPL-001–EXPL-100 accepted; Group 06 next
 
 ## Goal
 
@@ -12,9 +12,9 @@ Phase 008 consumes the completed functional truth model from Phases 002–007. I
 
 Phase 008 uses **`EXPL-###`** refinement contracts.
 
-`EXPL-###` means business-question and Explanation refinement over accepted concepts. It does **not** create a new `Question`, `Answer`, answer-statement, RCA, Impact-summary, control-effectiveness or governance truth concept by default, does not extend SYN/REF/AUTH/HLTH/OPS ranges, and must not become an umbrella state that absorbs truth owned by other concepts.
+`EXPL-###` means business-question and Explanation refinement over accepted concepts. It does **not** create a new `Question`, `Answer`, answer-statement, RCA, Impact-summary, control-effectiveness, uncertainty/confidence or governance truth concept by default, does not extend SYN/REF/AUTH/HLTH/OPS ranges, and must not become an umbrella state that absorbs truth owned by other concepts.
 
-Accepted range so far: **EXPL-001–EXPL-080**.
+Accepted range so far: **EXPL-001–EXPL-100**.
 
 ## Logical delivery grouping
 
@@ -57,14 +57,16 @@ No new concept is required. The existing concepts retain truth ownership; Explan
 See [`04_investigation_causality_impact_control_governance_question_semantics/README.md`](04_investigation_causality_impact_control_governance_question_semantics/README.md).
 
 ### Group 05 — Uncertainty, Conflict, Negative Claims & Epistemic Language
-**Status:** **Next — not started.**
+**Status:** **Accepted — EXPL-081–EXPL-100; UNC05-01–UNC05-40 pass.**
 
-Will refine answer language for unknown, conflicting, unavailable, restricted, insufficient, not-applicable, negative-evidence and competing-claim states; calibrate uncertainty without inventing universal confidence scores; and prevent narrative wording from strengthening evidence.
+Defines proposition-faithful language for unknown/unresolved, unavailable, insufficient/indeterminate, conflicting, restricted/redacted, stale-for-use, non-comparable, not-applicable, not-evidenced/not-known and evidence-backed negative states; preserves causal/Impact/control/governance-specific vocabulary; and rejects confidence/probability/completeness arithmetic.
+
+No new concept is required. Source concepts retain their result/evidence states; Explanation communicates them without reassuring narrative completion.
 
 See [`05_uncertainty_conflict_negative_claims_epistemic_language/README.md`](05_uncertainty_conflict_negative_claims_epistemic_language/README.md).
 
 ### Group 06 — Audience, Authorization, Safe Abstraction & Basis Inspection
-**Status:** Not started.
+**Status:** **Next — not started.**
 
 Will refine role/purpose-specific analytical projection, safe abstraction, redaction/omission semantics, cross-audience consistency, authorized basis inspection and inference-risk boundaries without treating audience or presentation as authority.
 
@@ -145,7 +147,7 @@ Health/change/execution questions preserve:
 
 ## Accepted Group 04 inferential/governance discipline
 
-Investigation/causality/Impact/control/governance questions now preserve:
+Investigation/causality/Impact/control/governance questions preserve:
 
 - Investigation lifecycle/lead/localization ≠ Causal Claim;
 - first observed/earliest evidenced/boundary/consumer effect ≠ root cause;
@@ -165,6 +167,31 @@ Investigation/causality/Impact/control/governance questions now preserve:
 - Policy Context ≠ enforcement/legal interpretation/compliance;
 - Capability Authorization ≠ responsibility/authority/action success;
 - Assertion Authority ≠ factual truth/evidence sufficiency/permission/enforcement.
+
+## Accepted Group 05 epistemic-language discipline
+
+Explanation now preserves:
+
+- unknown/unresolved ≠ false/absent/safe;
+- unavailable source/evidence condition ≠ proposition-level negative truth;
+- insufficient evidence/indeterminate ≠ weak positive or weak negative;
+- evidence conflict, authoritative assertion conflict, authority-rule conflict, authorization conflict and competing causal claims remain distinct;
+- restricted/redacted/opaque ≠ unavailable/absent;
+- stale-for-use ≠ violation by default;
+- non-comparable ≠ not applicable;
+- `not evidenced`, `not recorded`, `not known by cutoff` and evidence-backed absence remain distinct;
+- absence of evidence ≠ evidence of absence;
+- strong negative conclusions retain conclusion-specific REF/HLTH/OPS/AUTH opportunity/coverage burdens;
+- positive conclusions use source status rather than invented confidence/probability adjectives;
+- causal statuses remain proposed/supported/weakened/unresolved/rejected/confirmed without promotion;
+- Impact unknown/non-exposure/no-effect/no-consequence remain distinct;
+- degraded control telemetry does not prove fail-open/fail-closed;
+- missing responsibility/classification/policy/authorization/authority context does not silently become a benign/default state;
+- competing claims remain multiple absent accepted resolution;
+- material limitations constrain headlines as well as detail;
+- sibling statements retain independent epistemic states;
+- no universal confidence/probability/completeness/RCA/answer-quality score is accepted;
+- historical epistemic state remains separate from current retrospective resolution.
 
 ## Accepted Phase 007 handoff
 
@@ -201,4 +228,4 @@ Phase 009 will map accepted question/Explanation requirements to real source ava
 
 ## Phase direction
 
-**Groups 01–04 are accepted with EXPL-001–EXPL-080. BQ01-01–BQ01-24, AS02-01–AS02-30, HCE03-01–HCE03-36 and ICG04-01–ICG04-48 pass. Group 05 — Uncertainty, Conflict, Negative Claims & Epistemic Language is next.**
+**Groups 01–05 are accepted with EXPL-001–EXPL-100. BQ01-01–BQ01-24, AS02-01–AS02-30, HCE03-01–HCE03-36, ICG04-01–ICG04-48 and UNC05-01–UNC05-40 pass. Group 06 — Audience, Authorization, Safe Abstraction & Basis Inspection is next.**

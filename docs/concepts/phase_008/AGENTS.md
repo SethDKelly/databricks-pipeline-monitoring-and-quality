@@ -12,7 +12,8 @@ Canonical repository phase status is maintained in [`../../README.md#current-sta
 - **Group 02 is complete with EXPL-013–EXPL-028; AS02-01–AS02-30 pass.**
 - **Group 03 is complete with EXPL-029–EXPL-049; HCE03-01–HCE03-36 pass.**
 - **Group 04 is complete with EXPL-050–EXPL-080; ICG04-01–ICG04-48 pass.**
-- **Group 05 — Uncertainty, Conflict, Negative Claims & Epistemic Language is next.**
+- **Group 05 is complete with EXPL-081–EXPL-100; UNC05-01–UNC05-40 pass.**
+- **Group 06 — Audience, Authorization, Safe Abstraction & Basis Inspection is next.**
 - Accepted concept count remains 24.
 
 ## Accepted Group 01 rules
@@ -27,7 +28,7 @@ Preserve:
 - unresolved identity ambiguity remains ambiguity rather than guessed target selection;
 - event/effective time and recorded/knowledge cut are independent coordinates;
 - a historical question with no explicit knowledge cut is current retrospective interpretation and must be labeled as such rather than implied contemporaneous knowledge;
-- compound questions decompose into independently answerable subquestions when truth owners/evidence burdens differ;
+- compound questions decompose into independently answerable subquestions when their truth owners/evidence burdens differ;
 - one answered subquestion cannot strengthen an unresolved sibling;
 - each requested conclusion routes to the concept(s) that own that proposition; Explanation never becomes the source of health, cause, Impact, control, governance or authorization truth;
 - `why`/causal wording requires Causal Claim semantics when the answer asserts causality;
@@ -140,6 +141,38 @@ Preserve:
 
 See [`04_investigation_causality_impact_control_governance_question_semantics/README.md`](04_investigation_causality_impact_control_governance_question_semantics/README.md).
 
+## Accepted Group 05 rules
+
+Preserve:
+
+- source epistemic/result vocabulary rather than a generic uncertainty state;
+- unknown/unresolved does not mean false, absent, safe or unaffected;
+- unavailable source/evidence condition remains separate from the proposition result;
+- insufficient evidence/indeterminate is not a weak positive or weak negative;
+- evidence conflict, assertion conflict, authority-rule conflict, authorization conflict and competing claims remain distinct;
+- restricted/redacted/opaque does not mean unavailable or absent;
+- stale-for-use does not rewrite an underlying result or automatically mean violation;
+- non-comparable does not mean not applicable;
+- not evidenced, not recorded, not known by cutoff and evidence-backed absence remain distinct;
+- strong negatives require conclusion-specific opportunity/coverage/authority burdens;
+- negative-form wording never lowers those burdens;
+- positive statements use source status rather than invented `likely`, `certain`, probability or confidence numbers;
+- Causal Claim proposed/supported/weakened/unresolved/rejected/confirmed states remain exact; rejected requires discriminating evidence and confirmed remains REF-017 + AUTH-034 gated;
+- Impact candidate/opportunity/exposure/effect/consequence negative and unknown states remain separate;
+- missing/degraded control telemetry does not prove fail-open/fail-closed;
+- missing Responsibility Assignment is unknown, not unassigned;
+- missing Classification is unknown, not non-sensitive;
+- missing Policy Context is unknown/incomplete, not unrestricted/compliant;
+- unknown Capability Authorization is not permission;
+- unknown Assertion Authority does not promote an available source;
+- competing claims remain multiple absent accepted resolution;
+- material scope/coverage limitations constrain headlines and detail;
+- sibling statements retain independent epistemic states;
+- no universal Explanation confidence/probability/completeness/RCA/answer-quality score is accepted;
+- historical as-known epistemic state remains separate from current retrospective resolution.
+
+See [`05_uncertainty_conflict_negative_claims_epistemic_language/README.md`](05_uncertainty_conflict_negative_claims_epistemic_language/README.md).
+
 ## Permanent Phase 008 boundaries
 
 Preserve throughout the phase:
@@ -170,27 +203,28 @@ Preserve throughout the phase:
 - responsibility ≠ fault/cause/authority/permission;
 - Classification/Policy Context ≠ compliance;
 - Assertion Authority ≠ Capability Authorization ≠ evidence sufficiency ≠ enforcement;
+- unknown/unavailable/insufficient/conflicting/restricted/stale/non-comparable/not-applicable remain distinguishable;
+- absence of evidence ≠ evidence of absence;
 - current retrospective Explanation ≠ what was known then;
 - retained Explanation snapshot ≠ current source truth;
 - progressive maturity ≠ automatic status strengthening;
 - no universal Explanation confidence/completeness/quality/operational-status/RCA/Impact/control-effectiveness score.
 
-## Group 05 entry contract
+## Group 06 entry contract
 
-Group 05 consumes EXPL-001–EXPL-080 and refines how already-bounded statements communicate epistemic limitations without changing their truth.
+Group 06 consumes EXPL-001–EXPL-100 and applies current Capability Authorization/disclosure rules to an internally valid, proposition-faithful Explanation.
 
 It should explicitly test:
 
-- `unknown` versus `unavailable` versus `insufficient evidence` versus `conflicting`;
-- `restricted`/redacted versus absent;
-- `not applicable` versus not observed/not evaluated;
-- stale evidence/result versus unhealthy result;
-- `not evidenced` versus strong negative conclusions;
-- causal `supported`, `rejected`, `confirmed`, unresolved and competing claims;
-- strong `no run`, `not exposed`, `no effect`, `no consequence`, `not enforced`, `did not cause` and similar negative claims;
-- partial coverage across consumers/paths/dimensions/subquestions;
-- authority conflict versus evidence conflict versus authorization conflict;
-- useful calibrated language without numeric confidence/probability;
-- summaries that expose material uncertainty instead of hiding it.
+- coarse authorized conclusion with restricted detailed evidence;
+- restricted identity/path/threshold/policy/Annotation content without inference leakage;
+- mixed authorization across sibling statements and along one causal/Impact path;
+- current disclosure authorization versus historical actor authorization;
+- safe abstraction that preserves unknown/insufficient/conflicting/restricted/negative distinctions;
+- omission/redaction that does not imply absence;
+- `inspectBasis` behavior when exact evidence is restricted but a provenance/status class is authorized;
+- cross-audience consistency over one underlying truth despite different visible detail;
+- authorization changes without retrospective rewriting of prior retained Explanation snapshots;
+- no use of hidden evidence to strengthen a coarse conclusion beyond what the audience is permitted to know.
 
-Do not reopen source truth semantics, select UI/rendering/LLM architecture, or create universal confidence/completeness scores.
+Do not reopen AUTH truth semantics, select UI/rendering/LLM architecture, or treat safe summarization as declassification.
