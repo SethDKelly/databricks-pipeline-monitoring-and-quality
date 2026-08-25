@@ -56,7 +56,7 @@ Use [`concept_template.md`](concept_template.md) as the specification checklist.
 - [`phase_004/README.md`](phase_004/README.md) — evidence, time, causality, exposure, readiness, and control-evidence refinement.
 - [`phase_005/README.md`](phase_005/README.md) — governance, authority, capability, and disclosure refinement.
 - [`phase_006/README.md`](phase_006/README.md) — health, metrics, schema, statistical, reconciliation, composite-health, and timing refinement.
-- [`phase_007/README.md`](phase_007/README.md) — Lineage, change, Investigation, Impact, safeguard, and execution-control refinement planning/current work as governed by canonical phase status.
+- [`phase_007/README.md`](phase_007/README.md) — Lineage, change, Investigation, Impact, safeguard, execution-control, and historical operational replay refinement; consult canonical status above for phase progression.
 
 ## Durable boundaries
 

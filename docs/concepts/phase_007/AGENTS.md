@@ -7,7 +7,7 @@ Applies to work under `docs/concepts/phase_007/` and complements the repository 
 Canonical repository phase status is maintained in [`../../README.md#current-state`](../../README.md#current-state).
 
 - Phase 006 is complete with HLTH-001–HLTH-066 final.
-- Phase 007 grouping is accepted.
+- **Phase 007 is complete.**
 - **Group 01 is complete with OPS-001–OPS-009; L01-01–L01-18 pass.**
 - **Group 02 is complete with OPS-010–OPS-020; C02-01–C02-24 pass.**
 - **Group 03 is complete with OPS-021–OPS-033; P03-01–P03-30 pass.**
@@ -16,8 +16,10 @@ Canonical repository phase status is maintained in [`../../README.md#current-sta
 - **Group 06 is complete with OPS-067–OPS-085; IM06-01–IM06-36 pass.**
 - **Group 07 is complete with OPS-086–OPS-104; SG07-01–SG07-36 pass.**
 - **Group 08 is complete with OPS-105–OPS-123; GT08-01–GT08-36 pass.**
-- **Group 09 — Historical Operational Replay & Consolidation / Exit Review is next.**
+- **Group 09 replay/consolidation is complete; HR09-01–HR09-36 pass; no OPS-124 is required.**
+- **OPS-001–OPS-123 is final.**
 - Accepted concept count remains 24; SYN-001–SYN-035, REF-001–REF-030, AUTH-001–AUTH-053 and HLTH-001–HLTH-066 remain unchanged.
+- Phase 008 — Business Questioning and Explanation is next per canonical status.
 
 ## Accepted Group 01 Lineage rules
 
@@ -277,6 +279,39 @@ Preserve:
 
 See [`08_execution_gate_fallback_override_control_effects/README.md`](08_execution_gate_fallback_override_control_effects/README.md).
 
+## Accepted Group 09 Historical Replay / Consolidation rules
+
+Preserve:
+
+- Group 09 adds no new concept and no OPS-124; OPS-001–OPS-123 is final;
+- historical replay is a view over source-owned concept histories, not a new `Historical Operational State` concept;
+- event/effective time and recorded/knowledge cutoff are independent coordinates;
+- **actual retained historical state ≠ as-known-at-cut reconstruction ≠ current retrospective interpretation**;
+- current authorized projection is a disclosure layer over those views, not another truth state;
+- source-owned facts resolve before derived/cross-concept conclusions for replay reasoning;
+- current topology/configuration/policy/reference state is never projected backward by convenience;
+- planned topology/change/prospective Impact is never backfilled with later realized facts;
+- `not known/recorded by cutoff` ≠ underlying real-world negative absent sufficient REF coverage;
+- late/corrected evidence can revise present retrospective Lineage/change/execution/localization/Impact/control conclusions while preserving earlier unknown/partial state;
+- Investigation closure does not immunize leads/localization/Causal Claims from later evidence;
+- Causal Claim status at each knowledge cut remains historically addressable; later support does not backfill an earlier status;
+- Impact exposure/non-exposure replay retains exact opportunity/path/version coverage burdens;
+- late consumer/path evidence may change retrospective non-exposure or Safeguard prevention without rewriting actual control actions;
+- Safeguard release remains distinct from later recovered state at every knowledge cut;
+- Gate decision, delivery, enforcement and execution remain independently replayable;
+- late run evidence may contradict full HOLD enforcement while leaving the historical HOLD decision intact;
+- valid ADMIT may coexist historically with no run and later independent scheduler/compute explanation;
+- override/fallback admission never rewrites historical readiness;
+- control telemetry outage does not retrospectively create universal fail-open/fail-closed behavior;
+- multiple Gate/Safeguard controls retain independent historical materiality; no first/last/most-restrictive hidden precedence;
+- control-induced delay/staleness/non-delivery remains source-owned historical evidence; broader attribution uses Causal Claim;
+- historical authority/authorization state does not grant current requester disclosure;
+- restricted evidence can contribute internally when authorized while current safe projection remains redacted/opaque;
+- no universal historical operational/replay/RCA/Impact/control-effectiveness score is accepted;
+- historical replay does not select graph/event/temporal storage or control architecture.
+
+See [`09_historical_operational_replay_consolidation_exit/README.md`](09_historical_operational_replay_consolidation_exit/README.md), [`scenario_replay_matrix.md`](09_historical_operational_replay_consolidation_exit/scenario_replay_matrix.md), and [`phase_007_exit_review.md`](09_historical_operational_replay_consolidation_exit/phase_007_exit_review.md).
+
 ## Permanent Phase 007 boundaries
 
 Preserve:
@@ -322,31 +357,29 @@ Preserve:
 - multiple Gates have no hidden universal precedence;
 - Execution Gate ≠ Propagation Safeguard;
 - control-induced delay/staleness/non-delivery remains observable/assessable and is not automatically defect/cause;
-- historical operational replay uses event/effective time plus knowledge cut and remains non-rewriting.
+- historical operational replay uses event/effective time plus knowledge cut and remains non-rewriting;
+- actual retained historical state ≠ as-known-at-cut reconstruction ≠ current retrospective interpretation;
+- current authorized projection ≠ historical truth or historical actor authorization.
 
-## Group 09 entry contract
+## Phase 008 handoff
 
-Group 09 consumes the complete accepted Phase 007 range **OPS-001–OPS-123** and must replay the operational model under event/effective time plus a selected recorded/knowledge cut before deciding whether Phase 007 can exit without another concept or refinement contract.
+Phase 008 — Business Questioning and Explanation should consume the completed OPS-001–OPS-123 operational substrate without reopening Phase 007 truth boundaries.
 
-It should explicitly test:
+It should explicitly preserve:
 
-- then-effective Lineage/topology versus current topology and what relationships were known at the historical cut;
-- exact Change Intent/Deployment/realized Change state known then versus current retrospective realization;
-- executions, input/output versions and actual dependency sequence known then versus discovered later;
-- Investigation scope/leads/localization and Causal Claim status at the historical cut;
-- prospective Impact candidates versus actual consumer encounter/exposure/effect/consequence established then and retrospectively;
-- Safeguard proposal/authorization/request/enforcement/prevention/release state, including alternate paths and post-release recovery evidence;
-- Gate configuration/criterion/readiness basis/HOLD/ADMIT/override/fallback decisions versus decision delivery/enforcement and actual execution;
-- HOLD thought enforced then but contradicted or confirmed by late run/control telemetry;
-- ADMIT with no run and later scheduler/compute evidence explaining non-execution;
-- override/fallback admission while underlying readiness remains not ready/unknown;
-- control telemetry outages without retrospective invention of universal fail-open/fail-closed behavior;
-- multiple Gate/Safeguard controls whose materiality changes with later evidence;
-- control-induced delay/staleness/non-delivery with competing causal explanations;
-- restricted evidence and current authorized projection without rewriting internal historical truth;
-- actual historical retained state versus as-known-then reconstruction versus current retrospective interpretation.
+- question identity, subject/use/window and event/effective-time binding;
+- explicit knowledge-cut choice for as-known-then versus current retrospective questions;
+- statement-to-source/Assessment/claim/Impact/control basis traceability;
+- progressive results without waiting for the slowest evidence horizon;
+- `unknown`, `conflicting`, `unavailable`, `restricted`, `not evidenced` and bounded negatives rather than narrative completion;
+- Investigation lead/localization ≠ Causal Claim status;
+- candidate/reachable ≠ exposed ≠ effect ≠ consequence;
+- Safeguard/Gate decision/enforcement/outcome distinctions;
+- current authorized projection and safe opaque/redacted statements;
+- actual historical retained state versus replay-derived explanation;
+- narrative text as projection, never a new truth/authority/causal/control source.
 
-Group 09 should validate composition and produce the Phase 007 exit review. **Do not add another OPS contract merely for summary convenience.** Add one only if replay exposes a genuine unresolved semantic requirement that OPS-001–OPS-123 cannot represent.
+Phase 008 should not select integration sources or technical architecture. Phase 009 owns integration/source capability and Phase 010 owns technical architecture.
 
 ## Architecture boundary
 

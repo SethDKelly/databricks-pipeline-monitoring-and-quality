@@ -1,20 +1,20 @@
 # Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement
 
-**Status:** IN PROGRESS — Groups 01–08 accepted; OPS-001–OPS-123 accepted; Group 09 next
+**Status:** COMPLETE — Groups 01–09 accepted; OPS-001–OPS-123 final; Phase 007 exit review accepted
 
 ## Goal
 
 Refine how accepted Lineage, Change Intent, Deployment, Change, Investigation, Causal Claim, Impact, Propagation Safeguard, Execution Gate and Execution History semantics coordinate operationally now that Phase 006 has completed health/metric/schema/statistical/reconciliation/composite/timing semantics.
 
-Phase 007 must consume rather than reopen Phase 006.
+Phase 007 consumes rather than reopens Phase 006.
 
 ## Refinement namespace
 
 Phase 007 uses **`OPS-###`** refinement contracts.
 
-`OPS-###` means operational/topology/change/impact/control refinement over accepted concepts. It does **not** create an `Operations` concept, does not extend SYN/REF/AUTH/HLTH ranges, and must not become an umbrella state that absorbs Lineage, Change, Investigation, Impact, Execution Gate, Propagation Safeguard or Execution History truth.
+`OPS-###` means operational/topology/change/impact/control refinement over accepted concepts. It does **not** create an `Operations` concept, does not extend SYN/REF/AUTH/HLTH ranges, and does not become an umbrella state that absorbs Lineage, Change, Investigation, Impact, Execution Gate, Propagation Safeguard or Execution History truth.
 
-Accepted range so far: **OPS-001–OPS-123**.
+Final accepted range: **OPS-001–OPS-123**. Group 09 replay/consolidation required **no OPS-124**.
 
 ## Accepted handoff from Phase 006
 
@@ -36,7 +36,7 @@ Preserve:
 
 ## Logical delivery grouping
 
-The phase is reviewed in **nine functional design groups**. This sequence is a dependency/review strategy, not an implementation-service decomposition.
+The phase was reviewed in **nine functional design groups**. This sequence is a dependency/review strategy, not an implementation-service decomposition.
 
 ### Group 01 — Lineage Relationship Taxonomy, Historical Topology & Operational Relevance
 **Status:** **Accepted — OPS-001–OPS-009; L01-01–L01-18 pass.**
@@ -111,11 +111,15 @@ No new concept is required. Execution Gate remains the start/admission-control t
 See [`08_execution_gate_fallback_override_control_effects/README.md`](08_execution_gate_fallback_override_control_effects/README.md).
 
 ### Group 09 — Historical Operational Replay & Consolidation / Exit Review
-**Status:** **Next — not started.**
+**Status:** **Accepted — HR09-01–HR09-36 pass; no OPS-124.**
 
-Replay Groups 01–08 under event/effective time plus knowledge cut. Verify then-effective topology/change/execution/Investigation/Impact/safeguard/gate state, late/corrected evidence, actual versus reconstructed historical conclusions, and end-to-end phase composition. Add no new OPS contract unless consolidation exposes a genuine semantic gap.
+Replays Groups 01–08 under event/effective time plus knowledge cut, verifies then-effective topology/change/execution/Investigation/Impact/safeguard/gate state, late/corrected evidence, actual retained historical state versus reconstructed historical conclusions, and end-to-end phase composition.
 
-See [`09_historical_operational_replay_consolidation_exit/README.md`](09_historical_operational_replay_consolidation_exit/README.md).
+No new concept or operational refinement is required. Historical operational replay remains a view over the existing concept histories. The final distinction is:
+
+**actual retained historical state ≠ as-known-at-cut reconstruction ≠ current retrospective interpretation**, with current authorized projection applied independently for disclosure.
+
+See [`09_historical_operational_replay_consolidation_exit/README.md`](09_historical_operational_replay_consolidation_exit/README.md), [`scenario_replay_matrix.md`](09_historical_operational_replay_consolidation_exit/scenario_replay_matrix.md), and [`phase_007_exit_review.md`](09_historical_operational_replay_consolidation_exit/phase_007_exit_review.md).
 
 ## Why this order
 
@@ -130,13 +134,13 @@ The order is dependency-driven:
 7. **Safeguard and Gate separately** — they protect different boundaries and have different state/evidence semantics.
 8. **Historical replay last** — cross-group time/version correctness is the final composition test.
 
-## Accepted operational chain through Group 08
+## Final accepted operational chains
 
-The Phase 007 operational foundation now preserves:
+The Phase 007 operational foundation preserves:
 
 **bounded Lineage proposition → question-bound topology relevance → exact Change Intent revision/component → evidence-backed Deployment association → attempt/outcome → target/facet activation → evidence-established realized Change → derived intent-to-realization comparison**.
 
-For prospective review it additionally preserves:
+For prospective review it preserves:
 
 **exact proposal + review knowledge cut → then-effective Lineage + explicit planned topology delta scenario → downstream/path-loss candidates → field/key/population/interface/consumer/version relevance → proposal-bound structural/metric/reference/reconciliation/readiness/control review → authority/coverage limitations**.
 
@@ -156,9 +160,13 @@ For Propagation Safeguard it preserves:
 
 **bound protected state/surface → proposal/authorization context → activation request/issuance → evidence-established enforcement → path/opportunity-specific protection → REF-028 prevented-exposure determination → extension/expiry/release → independently evidenced post-protection state/recovery**.
 
-For Execution Gate it now preserves:
+For Execution Gate it preserves:
 
 **exact Gate/profile + downstream execution opportunity → exact criterion/evidence suitability → readiness result → normal/override/fallback decision basis → decision issuance/delivery/acceptance → evidence-established Gate enforcement → actual execution/non-execution → independently evidenced operational/Impact effects**.
+
+For historical replay it preserves:
+
+**historical event/effective question + selected knowledge cut → source-owned facts available by that cut → derived reasoning valid at that cut → separately labeled current retrospective re-evaluation → current authorized projection**.
 
 No link in these chains automatically creates the next.
 
@@ -287,9 +295,23 @@ For Execution Gate specifically:
 - Gate-induced delay/skipped cycle/staleness/non-delivery remain source-owned facts; broader control-effect attribution uses Causal Claim;
 - historical Gate configuration/readiness/decision/enforcement/execution is bitemporal and non-rewriting.
 
+For historical replay specifically:
+
+- event/effective time and recorded/knowledge cutoff are independent coordinates;
+- current topology/configuration/policy/reference state is never projected backward merely because it is easier to query;
+- actual retained historical state is distinct from replay-derived state;
+- replay-derived state at cutoff K uses only evidence available by K;
+- `not known by K` does not prove the underlying real-world condition was false/absent;
+- late/corrected evidence may alter current retrospective interpretation while preserving earlier uncertainty and actions;
+- prospective knowledge is not backfilled with later realized evidence;
+- actual Safeguard/Gate actions are never counterfactually rewritten;
+- Investigation closure and Causal Claim status remain historically addressable when later evidence changes the current view;
+- current authorized projection is separate from historical authority/authorization and cannot strengthen internal truth;
+- no universal historical operational state or replay score is accepted.
+
 ## Cross-group invariants
 
-Preserve throughout Phase 007:
+Preserve throughout the completed Phase 007 model:
 
 - Lineage ≠ causality;
 - Lineage edge ≠ metric/status propagation;
@@ -344,13 +366,15 @@ Preserve throughout Phase 007:
 - control restoration ≠ automatic Gate decision;
 - control-induced delay/non-delivery is evidence/Impact, not automatically a defect or cause;
 - current topology/change/control/review/execution/Investigation/Impact reconstruction ≠ historical state;
+- actual retained historical state ≠ as-known-at-cut reconstruction ≠ current retrospective interpretation;
 - later evidence/correction ≠ what was known then;
+- current disclosure authorization ≠ historical actor authorization;
 - authority/authorization/disclosure boundaries from Phase 005 remain intact;
 - health semantics from Phase 006 remain intact.
 
 ## Architecture boundary
 
-Phase 007 must remain implementation-neutral. Do not select:
+Phase 007 remains implementation-neutral. It does not select:
 
 - graph database or Lineage store;
 - graph traversal/static-analysis engine;
@@ -375,7 +399,7 @@ Phase 007 must remain implementation-neutral. Do not select:
 
 ## Later-phase handoff
 
-Phase 008 owns business questioning/Explanation and audience-facing presentation of progressive health/RCA/control state.
+Phase 008 owns **Business Questioning and Explanation**: question types, evidence-grounded explanation structures, audience-specific authorized projections, uncertainty/status communication, progressive result maturity, and historical/retrospective explanation behavior.
 
 Phase 009 owns concrete integration contracts, source support, latency, retention, cost and authority/evidence availability.
 
@@ -383,4 +407,4 @@ Phase 010 owns technical architecture and implementation placement.
 
 ## Phase direction
 
-**Phase 007 Groups 01–08 are accepted with OPS-001–OPS-123. Group 09 — Historical Operational Replay & Consolidation / Exit Review is next and has not started.**
+**Phase 007 is complete. Groups 01–09 are accepted; OPS-001–OPS-123 is final; no OPS-124 is required; the accepted concept count remains 24. Phase 008 — Business Questioning and Explanation is next.**
