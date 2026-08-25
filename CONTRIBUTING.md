@@ -1,37 +1,34 @@
 # Contributing
 
-This repository is currently in **Phase 002 — Concept Specifications**.
+## Current phase and contribution scope
 
-## Allowed contributions in the current phase
+The canonical repository phase status is declared in [`docs/README.md#current-state`](docs/README.md#current-state).
 
-- refine Concept Design specifications group-by-group;
-- challenge concept purpose, boundaries, operational principles, state, actions, invariants, ambiguity behavior, and synchronizations;
-- document real or synthetic pipeline scenarios;
-- identify authoritative metadata sources and conflicts;
-- refine governance/security/policy transparency requirements;
-- define health, freshness, quality, change, lineage, and RCA semantics;
-- refine the MVP boundary and roadmap when concept discoveries require it;
-- record open questions, rejected/split concepts, and accepted decisions.
+This file intentionally does **not** duplicate the current or next phase number. Before contributing, read the canonical current-state section and the corresponding phase README under `docs/concepts/`.
 
-## Out of scope until the project explicitly advances phase
+Contributions must stay within the boundary of the currently active/planned phase. Do not advance architecture or implementation earlier than the canonical phase documents permit.
 
-Do not introduce:
+## Durable contribution rules
 
-- application source code;
-- notebooks;
-- infrastructure-as-code;
-- service/API scaffolding;
-- database schemas;
-- package manifests chosen only to start coding;
-- GitHub Actions for this repository's application deployment;
-- Databricks jobs for the monitoring framework;
-- architecture diagrams that present unselected implementation technology as settled fact.
+- preserve accepted Concept Design ownership and boundaries unless a concrete scenario requires an explicit reopening;
+- refine documentation, scenarios, terminology, governance, evidence, health, Lineage, change, Investigation, Impact, safeguard, gate, or other semantics only within the current phase's declared scope;
+- preserve historical rationale and use explicit supersession rather than silently rewriting accepted decisions;
+- keep implementation choices out of functional-design phases unless the current phase explicitly authorizes technical selection;
+- do not treat synchronization order, repository ownership, source availability, platform identity, or implementation convenience as authority or causation;
+- record unresolved questions, rejected alternatives, and accepted decisions in the appropriate documentation/decision artifacts;
+- run `python3 scripts/check_docs_consistency.py` when changing phase-status, roadmap, contributor, agent, or living index documentation.
 
 ## Design method
 
 All functional design follows Daniel Jackson's Concept Design approach described in `docs/foundation/004_concept_design_method.md`.
 
 Before proposing a concept, make sure it has a clear purpose and operational principle and is not merely a vendor feature or implementation component.
+
+## Documentation authority
+
+`docs/README.md#current-state` is the sole living declaration of repository phase progression. Phase-specific README files may describe their own internal group status. Historical documents may retain status-at-time-of-writing language when clearly labeled as historical.
+
+Living indexes, contributor instructions, and current-state guidance should reference canonical phase status rather than maintain independent phase declarations.
 
 ## Security and examples
 
