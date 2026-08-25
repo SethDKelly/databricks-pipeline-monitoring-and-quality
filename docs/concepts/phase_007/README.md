@@ -1,6 +1,6 @@
 # Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement
 
-**Status:** IN PROGRESS — Groups 01–02 accepted; OPS-001–OPS-020 accepted; Group 03 next
+**Status:** IN PROGRESS — Groups 01–03 accepted; OPS-001–OPS-033 accepted; Group 04 next
 
 ## Goal
 
@@ -14,7 +14,7 @@ Phase 007 uses **`OPS-###`** refinement contracts.
 
 `OPS-###` means operational/topology/change/impact/control refinement over accepted concepts. It does **not** create an `Operations` concept, does not extend SYN/REF/AUTH/HLTH ranges, and must not become an umbrella state that absorbs Lineage, Change, Investigation, Impact, Execution Gate, Propagation Safeguard or Execution History truth.
 
-Accepted range so far: **OPS-001–OPS-020**.
+Accepted range so far: **OPS-001–OPS-033**.
 
 ## Accepted handoff from Phase 006
 
@@ -57,16 +57,18 @@ No new concept is required. Change Intent, Deployment and Change remain independ
 See [`02_change_intent_deployment_realized_change/README.md`](02_change_intent_deployment_realized_change/README.md).
 
 ### Group 03 — Prospective Blast Radius & Change-Aware Review
-**Status:** **Next — not started.**
+**Status:** **Accepted — OPS-021–OPS-033; P03-01–P03-30 pass.**
 
-Use proposed Change plus then-relevant Lineage to identify prospective downstream candidates and required review surfaces before activation. Refine consumer-specific schema/metric/profile/Baseline/reconciliation/readiness/control review triggers while preserving **prospective reachability/risk ≠ actual exposure/Impact/cause**.
+Refines exact proposal/review-cut binding, derived effective+planned scenario topology, effective/planned-added/path-loss candidate bases, field/key/population/interface/consumer/version relevance, proposal-bound structural compatibility, scoped metric/profile/Expectation/Baseline/reconciliation/readiness/control review, review-versus-policy/control separation, criticality/risk-language discipline, bounded candidate completeness and mixed/historical rollout review.
+
+No new concept is required. Impact retains candidate/reachability ownership; prospective scenario topology/change-aware review remain derived views and do not create actual exposure/effect/consequence/cause.
 
 See [`03_prospective_blast_radius_change_aware_review/README.md`](03_prospective_blast_radius_change_aware_review/README.md).
 
 ### Group 04 — Execution Reconstruction, Dependency Sequence & Version Use
-**Status:** Planned.
+**Status:** **Next — not started.**
 
-Refine reconstruction of actual run/dependency sequence, qualifying outputs, input/output versions, expected versus actual dependency ordering, late/duplicate/missing telemetry, retries/restarts, schedule opportunities, and bounded absence claims. Produce an execution history suitable for Investigation without turning intended schedule or Lineage into proof of actual execution/consumption.
+Refine reconstruction of actual run/dependency sequence, qualifying outputs, input/output versions, expected versus actual dependency ordering, late/duplicate/missing telemetry, retries/restarts, schedule opportunities, and bounded absence claims. Produce an execution history suitable for Investigation without turning intended schedule, Lineage, proposed versions or prospective review into proof of actual execution/consumption.
 
 See [`04_execution_reconstruction_dependency_sequence/README.md`](04_execution_reconstruction_dependency_sequence/README.md).
 
@@ -118,13 +120,17 @@ The order is dependency-driven:
 7. **Safeguard and Gate separately** — they protect different boundaries and have different state/evidence semantics.
 8. **Historical replay last** — cross-group time/version correctness is the final composition test.
 
-## Accepted operational chain through Group 02
+## Accepted operational chain through Group 03
 
 The Phase 007 operational foundation now preserves:
 
 **bounded Lineage proposition → question-bound topology relevance → exact Change Intent revision/component → evidence-backed Deployment association → attempt/outcome → target/facet activation → evidence-established realized Change → derived intent-to-realization comparison**.
 
-No link in this chain automatically creates the next.
+For prospective review it additionally preserves:
+
+**exact proposal + review knowledge cut → then-effective Lineage + explicit planned topology delta scenario → downstream/path-loss candidates → field/key/population/interface/consumer/version relevance → proposal-bound structural/metric/reference/reconciliation/readiness/control review → authority/coverage limitations**.
+
+No link in either chain automatically creates the next.
 
 For deployment/change reasoning specifically:
 
@@ -135,6 +141,20 @@ For deployment/change reasoning specifically:
 - partial rollout remains target/slice specific;
 - missing registered intent does not prove humanly unplanned or unauthorized change;
 - rollback/reversion is non-rewriting and does not automatically restore downstream state.
+
+For prospective review specifically:
+
+- scenario topology is derived and does not mutate effective Lineage;
+- planned addition, removal and modification are distinct review inputs;
+- planned removal creates a path-loss/change candidate;
+- candidate/relevance remains below exposure/effect/consequence;
+- proposal-bound compatibility remains below realized compatibility;
+- review relevance remains separate from obligation, approval, control decision and enforcement;
+- planned Baseline/reconciliation/readiness/control review does not create their realized states;
+- Criticality/priority does not become probability/Impact;
+- no universal risk score is accepted;
+- incomplete/restricted/conflicting topology can make candidate sets non-exhaustive;
+- mixed rollout and historical review remain slice/time/knowledge-cut specific.
 
 ## Cross-group invariants
 
@@ -152,19 +172,23 @@ Preserve throughout Phase 007:
 - partial rollout ≠ global activation;
 - rollback ≠ historical erasure/downstream restoration;
 - prospective blast radius ≠ actual Impact;
+- prospective scenario topology ≠ effective Lineage;
+- review relevance ≠ obligation/approval/control;
+- proposed compatibility ≠ realized compatibility;
 - intended schedule/dependency ≠ actual execution sequence;
+- proposed/reviewed version ≠ executed version;
 - execution occurrence ≠ consumed-version proof unless evidenced;
 - first-observed deviation ≠ root cause;
 - Investigation ≠ Causal Claim truth;
-- reachable ≠ exposed ≠ downstream effect ≠ consequence ≠ causal attribution;
-- `not exposed` requires adequate encounter/path coverage;
+- reachable/candidate ≠ exposed ≠ downstream effect ≠ consequence ≠ causal attribution;
+- `not exposed` and `not candidate` require adequate bounded coverage;
 - safeguard configured/requested/active ≠ materially enforced/preventive;
 - safeguard release ≠ healthy/fresh output;
 - readiness ≠ gate decision ≠ enforcement ≠ execution;
 - override ≠ prerequisite ready;
 - configured fallback ≠ fallback actually applied;
 - control-induced delay/non-delivery is evidence/Impact, not automatically a defect or cause;
-- current topology/change/control state ≠ historical state;
+- current topology/change/control/review state ≠ historical state;
 - later evidence/correction ≠ what was known then;
 - authority/authorization/disclosure boundaries from Phase 005 remain intact;
 - health semantics from Phase 006 remain intact.
@@ -174,9 +198,11 @@ Preserve throughout Phase 007:
 Phase 007 must remain implementation-neutral. Do not select:
 
 - graph database or Lineage store;
+- graph traversal/static-analysis engine;
 - event/history persistence mechanism;
 - CDC/change-capture architecture;
 - deployment fingerprint/attestation mechanism;
+- change-risk scoring algorithm;
 - scheduler/orchestrator;
 - Databricks Workflows dependency mechanism;
 - queue/event bus;
@@ -199,4 +225,4 @@ Phase 010 owns technical architecture and implementation placement.
 
 ## Phase direction
 
-**Phase 007 Groups 01–02 are accepted with OPS-001–OPS-020. Group 03 — Prospective Blast Radius & Change-Aware Review is next and has not started.**
+**Phase 007 Groups 01–03 are accepted with OPS-001–OPS-033. Group 04 — Execution Reconstruction, Dependency Sequence & Version Use is next and has not started.**

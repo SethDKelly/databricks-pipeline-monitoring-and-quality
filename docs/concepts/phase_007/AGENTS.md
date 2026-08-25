@@ -10,7 +10,8 @@ Canonical repository phase status is maintained in [`../../README.md#current-sta
 - Phase 007 grouping is accepted.
 - **Group 01 is complete with OPS-001–OPS-009; L01-01–L01-18 pass.**
 - **Group 02 is complete with OPS-010–OPS-020; C02-01–C02-24 pass.**
-- **Group 03 — Prospective Blast Radius & Change-Aware Review is next.**
+- **Group 03 is complete with OPS-021–OPS-033; P03-01–P03-30 pass.**
+- **Group 04 — Execution Reconstruction, Dependency Sequence & Version Use is next.**
 - Accepted concept count remains 24; SYN-001–SYN-035, REF-001–REF-030, AUTH-001–AUTH-053 and HLTH-001–HLTH-066 remain unchanged.
 
 ## Accepted Group 01 Lineage rules
@@ -70,6 +71,35 @@ Preserve:
 
 See [`02_change_intent_deployment_realized_change/README.md`](02_change_intent_deployment_realized_change/README.md).
 
+## Accepted Group 03 Prospective Review rules
+
+Preserve:
+
+- prospective review binds exact Change Intent revision/component, target/slice, evaluation time and knowledge cut;
+- effective Lineage plus explicit planned topology additions/removals/modifications form a derived scenario topology only;
+- planned topology never becomes effective Lineage from analysis;
+- planned relationship removal creates a path-loss/change candidate; it does not make the still-effective dependent disappear;
+- Impact owns candidate/reachability state; candidate ≠ exposure/effect/consequence/cause;
+- candidate basis can be effective-path, planned-added-path, path-loss/change or indeterminate;
+- field/key/population/interface/consumer/version scope narrows candidate relevance;
+- asset reachability ≠ narrower semantic relevance;
+- proposal-bound structural compatibility consumes HLTH-009–HLTH-018 and is not realized compatibility;
+- metric/profile/Expectation/Baseline/composite review is scoped rather than global;
+- prospective Baseline break/review ≠ empirical non-comparability/new Baseline;
+- transformation changes trigger exact HLTH-041–HLTH-054 reconciliation review, not generic status propagation;
+- readiness/AUTH-023/Gate/Safeguard assumptions may require review without creating readiness/control state;
+- analytical review relevance ≠ governed review obligation ≠ review/approval action ≠ deployment/control decision ≠ enforcement;
+- AUTH-020/other authority can govern review/use decisions but cannot manufacture topology/compatibility/comparability evidence;
+- Criticality/priority ≠ probability/Impact/evidence strength;
+- no universal numeric/qualitative risk score, path-count probability or shortest-path importance rule;
+- incomplete/conflicting/restricted topology remains explicit and candidate sets may be non-exhaustive;
+- `not relevant`, `not candidate`, `no alternate path` and `no blast radius` require sufficient bounded negative coverage;
+- active canary evidence may inform remaining-slice review but is not future-slice realized fact;
+- overlapping intents remain separate unless a material interaction is explicitly composed;
+- retained historical review ≠ reconstructed as-known-then review ≠ current retrospective recomputation.
+
+See [`03_prospective_blast_radius_change_aware_review/README.md`](03_prospective_blast_radius_change_aware_review/README.md).
+
 ## Permanent Phase 007 boundaries
 
 Preserve:
@@ -80,6 +110,7 @@ Preserve:
 - Change Intent ≠ Deployment ≠ realized Change;
 - prospective blast radius ≠ actual Impact;
 - intended schedule/dependency ≠ actual execution sequence;
+- proposed/reviewed version ≠ executed version;
 - execution occurrence ≠ specific consumed-version proof unless evidenced;
 - missing telemetry ≠ no event;
 - first-deviation localization ≠ root cause;
@@ -97,26 +128,27 @@ Preserve:
 - control-induced delay/staleness/non-delivery remains observable/assessable and is not automatically defect/cause;
 - historical operational replay uses event/effective time plus knowledge cut and remains non-rewriting.
 
-## Group 03 entry contract
+## Group 04 entry contract
 
-Group 03 consumes OPS-001–OPS-020 and must refine prospective blast-radius/change-aware review before activation without turning candidate reachability into Impact.
+Group 04 consumes OPS-001–OPS-033 and must reconstruct actual execution/dependency/version state independently of prospective assumptions.
 
 It should explicitly test:
 
-- field/key/population/consumer-scoped candidate reachability;
-- proposed new/removal/change relationships that remain planned-only topology;
-- consumer-specific schema/interface compatibility review;
-- metric/profile/Baseline/reconciliation review triggered by proposed structural/semantic changes;
-- readiness/control-use review triggers without automatically enabling control;
-- incomplete/conflicting/restricted topology limiting candidate conclusions;
-- phased rollout where some slices are active and others remain prospective;
-- overlapping intents and competing proposed scopes;
-- registered intent with missing anticipated-effect detail;
-- no matching registered intent not becoming zero prospective risk;
-- criticality/priority context remaining separate from actual Impact/evidence strength.
+- execution opportunity versus actual execution instance;
+- start/completion/cancel/failure/retry/restart and execution-attempt identity;
+- intended schedule/dependency ordering versus actual observed sequence;
+- qualifying outputs/publication evidence and output/run association;
+- Deployment active-at-time versus run-specific implementation-state proof;
+- specific input/output version consumption evidence;
+- long-running execution spanning activation/rollback boundaries;
+- duplicate/common-derived telemetry versus independent corroboration;
+- late/out-of-order evidence and knowledge-time reconstruction;
+- ambiguous run/output identity and unknown version use;
+- `no run`/`no output` negative claims requiring opportunity/coverage;
+- planned scenario paths, proposed versions and prospective compatibility/review results not substituting for runtime evidence.
 
-Do not let Group 03 create a universal risk score, predicted-defect truth, automatic CI gate, actual exposure or causal claim from proposed topology/change.
+Do not let Group 04 turn Lineage, schedule, Deployment timing, reviewed/proposed state or temporal proximity into proof of actual consumption or cause.
 
 ## Architecture boundary
 
-Do not select graph database, graph query language, Lineage ingestion source, event store, CI/CD event integration, deployment fingerprinting mechanism, static-analysis engine, change-risk scoring algorithm, scheduler/orchestrator, safeguard/quarantine mechanism, gate implementation, queue/event bus, cache/streaming topology, RCA algorithm, persistence schema, source integration or concrete latency/timeout SLA in Phase 007 functional refinement.
+Do not select graph database, graph query language, Lineage ingestion source, event store, event schema, CI/CD/runtime telemetry source integration, deployment fingerprinting mechanism, static-analysis/change-risk algorithm, scheduler/orchestrator, safeguard/quarantine mechanism, gate implementation, queue/event bus, cache/streaming topology, RCA algorithm, persistence schema, source integration or concrete latency/timeout SLA in Phase 007 functional refinement.
