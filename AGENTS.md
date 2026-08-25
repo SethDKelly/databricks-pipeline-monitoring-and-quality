@@ -10,7 +10,9 @@ Phase 002 originally accepted 20 concepts. Four post-exit addenda are accepted: 
 
 **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is complete.** Groups 01–07 accepted; AUTH-001–AUTH-053 final; G07-01–G07-26 pass; D-251–D-265 close the phase.
 
-**Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement is active. Groups 01–03 are accepted with HLTH-001–HLTH-029. H01-01–H01-20, H02-01–H02-30 and H03-01–H03-32 pass. Group 04 — Expectations, Thresholds, Margins, Waivers & Assessment Semantics is next and has not started.**
+**Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement is complete. Groups 01–07 are accepted; HLTH-001–HLTH-066 are final; H07-01–H07-36 pass; D-383–D-405 close the phase.**
+
+**Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement is next and has not started.**
 
 Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, IAM implementations, assertion-authority engines, approval/workflow engines, deployment workflows, quarantine implementations, gate/orchestration implementations, metric engines, graph/causal engines, redaction systems, LLMs, or prototypes unless the user explicitly advances the project into technical design.
 
@@ -23,7 +25,7 @@ Treat `docs/` as the product/design system of record.
 - Synchronization is not automatically a service call, workflow, transaction, event, database relation, API, persisted view, scheduler, orchestrator, temporal snapshot, or replay store.
 - Phase 004 `REF-###` artifacts refine evidence/time/causal/control standards over accepted concepts/synchronizations.
 - Phase 005 `AUTH-###` artifacts refine authority/governance/capability/disclosure standards over accepted concepts.
-- Phase 006 `HLTH-###` artifacts refine health/metric/schema/statistical semantics over accepted concepts.
+- Phase 006 `HLTH-###` artifacts refine health/metric/schema/statistical/reconciliation/composite/timing semantics over accepted concepts.
 - REF, AUTH, and HLTH identifiers do not create hidden truth owners or extend the Phase 003 SYN range.
 - Synchronization/refinement order is never authority; a trigger is never causation.
 - Do not create umbrella state for implementation convenience.
@@ -72,9 +74,16 @@ Preserve:
 - within Baseline ≠ healthy/meets Expectation;
 - outside Baseline ≠ failed/degraded/unacceptable;
 - Baseline-derived range ≠ normative Expectation unless explicitly adopted;
+- criterion outcome ≠ warning/proximity ≠ Baseline typicality ≠ severity/priority ≠ waiver/disposition;
 - criticality ≠ threshold severity ≠ actual Impact;
 - waiver/exception ≠ rewritten Observation/Baseline/Assessment ≠ false `pass`;
-- control-use eligibility ≠ control capability ≠ evidence readiness ≠ enforcement;
+- Lineage relation ≠ metric/status propagation;
+- local Observation ≠ downstream-relevant context ≠ reconciliation Observation ≠ reconciliation Assessment ≠ Causal Claim;
+- reconciliation localization ≠ root cause;
+- component Assessment ≠ composite health Assessment;
+- composite health ≠ result freshness/maturity/suitability ≠ readiness result;
+- evaluation recency ≠ evidence freshness/current-cycle validity;
+- AUTH-023 control-use eligibility ≠ evidence suitability ≠ readiness ≠ control capability ≠ enforcement;
 - proposal/request ≠ approval/authorization ≠ action issuance ≠ control-plane acceptance ≠ enforcement/effect ≠ outcome;
 - confirmation authority ≠ causal evidence sufficiency;
 - job operation ≠ raw-data access ≠ gate authority ≠ safeguard authority;
@@ -317,76 +326,110 @@ Preserve:
 - **AUTH-001–AUTH-053 is final for Phase 005.**
 - Authority standing, semantic/normative governance, permission, high-consequence authority, and disclosure remain separate layers over domain truth.
 - No Phase 005 layer can manufacture Phase 004 evidence truth.
-- Phase 006 remains free to define actual metric/statistical/schema-health/timing semantics without reopening authority ownership.
 
-## Phase 006 health/metric rules — ACTIVE
+## Phase 006 health/metric rules — COMPLETE
 
-### Group 01 — accepted HLTH-001–HLTH-008
+### Group 01 — HLTH-001–HLTH-008
 
 - Every material measurement binds exact subject, metric/check definition/version, grain/population, window, relevant output/data/schema/current-cycle context, and material temporal context.
 - Metric definition ≠ measured Observation ≠ normative/comparative Assessment.
 - Calculation/extraction success is not health pass.
 - Canonical metric families are operational/output; temporal/freshness; structural/schema; volume/population; completeness/missingness; uniqueness/key integrity; validity/domain; distribution/shape; relational/transformation integrity; business-semantic measurement.
-- Readiness, composite health, Impact, causality, authorization, control enforcement, and compliance are not metric families.
-- Material changes to formula, denominator, filters/population, unit, grain/window, missing-value handling, approximation/sampling, or equivalent semantics require explicit metric-definition revision/version handling.
 - Metric profile roles are core operational/table, critical-field/business, transformation-specific reconciliation, and diagnostic/on-demand.
-- AUTH-023 high-consequence/control eligibility is not a profile role; audience is not a profile role.
 - Semantic applicability, governed profile selection, source support/computability, current evidence availability, and Assessment outcome are independent.
-- Preserve `not applicable`, `not selected`, `unsupported`, `unavailable`, `pending/not evaluated`, and unknown/conflicting applicability distinctly; none becomes zero/pass/no issue.
-- Technical availability does not justify routine metric inclusion; prefer a small stable routine core plus targeted critical/business/transformation checks and explicit diagnostic/on-demand expansion.
-- Investigation-time diagnostic use does not automatically create permanent profile membership.
-- Material metric/check Observations retain definition/version, source/input evidence, subject/window/grain/population, temporal provenance, approximation/sampling/coverage limitations and restriction state.
-- Mirrored/copy-derived metric surfaces do not create independent corroboration.
-- Local metric existence does not imply downstream propagation; Group 05 owns transformation-aware reconciliation.
-- H01-01–H01-20 pass; no 25th concept is required.
+- Technical availability does not justify routine metric inclusion.
+- Material Observations retain definition/source/scope/time/coverage/approximation/restriction provenance.
+- Local metric existence does not imply downstream propagation.
 
-### Group 02 — accepted HLTH-009–HLTH-018
+### Group 02 — HLTH-009–HLTH-018
 
 - Structural observations and compatibility bind the consumer-visible interface/contract surface, not only producer physical schema.
-- Preserve **declared/governed schema meaning ≠ normative structural Expectation/contract ≠ proposed/planned structural state ≠ realized structural Observation/Change ≠ compatibility Assessment**.
-- Add, remove, rename, reorder, nested-path movement, type, precision/scale, nullability, default/generated-value, key/grain and nested-shape transitions remain independently representable.
-- Rename identity requires evidence; drop/add coincidence is insufficient and same name does not prove unchanged semantic identity.
-- Additive is not universally safe; removal is not universally breaking; reorder matters only for order-sensitive contracts.
-- Engine cast/parse capability does not prove governed consumer compatibility.
-- Type compatibility is directional and consumer-specific; precision/scale and nested shape can be independently material.
-- Current zero nulls do not preserve a non-null structural guarantee after a nullable transition.
-- Defaults/generated values can preserve physical presence while violating business completeness/validity semantics.
-- Key/grain changes are structurally material even with unchanged columns/types and may invalidate volume, uniqueness, distribution and join assumptions without automatically constituting a defect.
+- Preserve governed schema meaning ≠ structural Expectation ≠ planned state ≠ realized structural state ≠ compatibility Assessment.
+- Add/drop/rename/reorder/type/precision/nullability/default/generated/key/grain/nested changes remain independently representable.
+- Rename identity requires evidence; engine cast/parse capability does not prove compatibility.
+- Key/grain changes may invalidate selected volume/uniqueness/distribution/join assumptions without automatically being defects.
 - Compatibility is consumer/interface/version/time scoped and not automatically transitive.
-- Stable views/projections may preserve consumer compatibility despite backing-table change; unchanged producer schema may become incompatible when consumer contract changes.
-- Prospective/pre-deployment validation is separate from realized production validation; proposal validation does not prove deployment or realized schema.
-- Structural change triggers scoped metric/profile/Baseline review rather than global reset.
-- `Compatible` is a positive conclusion requiring sufficient coverage of all applicable required predicates in scope.
-- Preserve unknown/unresolved, conflicting, unavailable and not-applicable structural states; missing/partial coverage is not compatible.
-- Structural incompatibility does not prove downstream execution failure, exposure, Impact, consequence or causality.
-- Physical layout/clustering/optimization is not logical schema incompatibility unless the relevant contract depends on it.
-- Validation placement remains architecture-neutral; GitHub Actions, Databricks/Unity Catalog, DQX, Metric Views and independent monitoring remain later candidates.
-- H02-01–H02-30 pass; no new concept is required.
+- Prospective validation is separate from realized production validation.
+- Structural change triggers scoped metric/profile/Baseline review, not global reset.
+- `Compatible` requires positive evidence coverage.
+- Structural incompatibility does not prove execution failure, exposure, Impact or causality.
+- Validation placement remains architecture-neutral.
 
-### Group 03 — accepted HLTH-019–HLTH-029
+### Group 03 — HLTH-019–HLTH-029
 
-- Preserve **Observation ≠ reference-set membership ≠ Baseline summary/version ≠ comparative Assessment ≠ normative Expectation/health**.
-- Baseline membership binds subject, metric definition/version, grain/population, structural/interface regime, context/window, calendar/cohort, evidence coverage and inclusion/exclusion semantics.
+- Observation ≠ reference-set membership ≠ Baseline summary/version ≠ comparative Assessment ≠ normative Expectation/health.
 - Available history is not automatically eligible reference history.
-- Comparability is multidimensional and conclusion-relative; do not create a universal numeric comparability/confidence score.
-- Supported states include directly comparable, comparable under explicit normalization, non-comparable, insufficient reference, ambiguous, conflicting, unavailable, unknown/unresolved and not applicable.
-- Fixed/reference-period, rolling/adaptive, seasonal/cadence, cohort and post-change/new-regime Baselines are functional classes, not algorithms.
+- Comparability is multidimensional and conclusion-relative; no universal comparability/confidence score.
+- Fixed, rolling, seasonal/cadence, cohort and post-change Baselines are functional classes, not algorithms.
 - Recency does not override business-calendar/cadence/cohort context.
-- Realized metric-definition/grain/population/key/denominator/semantic/interface/method changes can segment affected references while unrelated dimensions retain continuity.
-- Change Intent can predict a break but cannot activate it or populate post-change history; new regimes derive from realized post-change Observations.
+- Realized semantic/structural/method breaks segment affected references only.
+- New post-change Baselines derive from realized evidence, never planned targets.
 - Reference sufficiency is conclusion-relative; no universal sample minimum exists.
-- Preserve denominator/population size, temporal/missing-period coverage, cohort coverage and operating variability; sparse evidence limits comparative strength.
-- Approximate/sampled metrics can be valid evidence when method identity and material uncertainty remain explicit.
-- Do not assert precise differences smaller than material measurement uncertainty.
-- Distribution references remain purpose-driven; quantiles require semantically ordered dimensions; no universal drift/anomaly score.
-- Explicit normalization can support a derived comparison while raw values remain non-comparable; normalization requires stable versioned numerator/denominator semantics and provenance.
-- Rolling/adaptive Baselines require explicit refresh/window progression, lag/holdout, inclusion/exclusion and version semantics.
-- A current Observation must not silently redefine the reference used to assess itself.
-- `Looks anomalous` alone cannot justify exclusion; exclusions require an independent provenance-bearing reference-population basis.
-- Repeated abnormal behavior can become descriptively typical without becoming normatively acceptable.
-- Multiple plausible Baselines do not receive hidden newest/largest/narrowest/broadest/closest precedence.
-- Baseline refresh/new-regime replacement preserves historical Observations, Baselines and Assessments.
-- H03-01–H03-32 pass; no new concept is required.
+- Low-volume, approximation/sampling and material uncertainty remain visible limitations.
+- Distribution references remain purpose-driven; no universal drift score.
+- Explicit normalization can support a derived comparison while raw values remain non-comparable.
+- Adaptive Baselines require explicit lag/holdout/inclusion/exclusion/version semantics and cannot silently normalize incidents.
+- Repeated abnormal behavior can become descriptively typical without becoming acceptable.
+- Historical Baselines/Assessments remain non-rewriting.
+
+### Group 04 — HLTH-030–HLTH-040
+
+- Criteria bind exact subject/dimension, metric/check/structural definition, grain/population/window/context, operator/direction, boundary, unit/denominator and required reference basis.
+- Warning/proximity is separate from criterion outcome and can coexist with `meets`.
+- Relative criteria explicitly bind their reference; Baseline remains descriptive generally.
+- Authoritative criterion + unsuitable/sparse/approximate/unavailable evidence does not create pass/fail.
+- Preserve at least `meets`, `violates`, `indeterminate/insufficient evidence`, `conflicting`, `unavailable`, and `not applicable` for one bound criterion.
+- Baseline typicality and normative outcome coexist independently.
+- Distinct context/dimension rules can coexist; same-proposition incompatible rules remain conflict absent explicit resolver.
+- `violates + waived response` differs from bounded non-applicability.
+- Waiver does not mutate evidence or automatically propagate to another consequence class.
+- Severity/priority does not decide criterion outcome; Criticality does not prove Impact.
+- Historical rule/reference/waiver versions and corrected-evidence reassessments are non-rewriting.
+
+### Group 05 — HLTH-041–HLTH-054
+
+- Local Observation ≠ downstream-relevant context ≠ reconciliation Observation ≠ reconciliation Assessment ≠ Causal Claim.
+- Every reconciliation binds exact transformation/version, input/output roles, fields/keys/measures, grain/population/window and cycle/version context.
+- Lineage supplies relationship context but never a formula or status copy.
+- Joins use directional eligible/matched/unmatched/fan-out/cardinality semantics; A+B→C never means generic row arithmetic.
+- Filters, aggregation, dedupe, union/merge/upsert and null/default/cast/value logic have transformation-specific reconciliation semantics.
+- Aggregation conservation is measure-specific; averages/ratios/quantiles/distinct counts are not generically composable.
+- Output completion does not prove all required inputs current.
+- Distribution/quantile/normalization relationships require semantics that preserve meaning.
+- Derived reconciliation retains availability, coverage, approximation/uncertainty, restriction and temporal limitations; derivation is not declassification.
+- Multi-hop reconciliation requires explicit valid composition.
+- Upstream warning/violation/Baseline/severity/waiver never recursively propagates downstream.
+- Upstream violation can coexist with downstream meets; upstream meets can coexist with downstream violation.
+- Reconciliation/localization is Investigation evidence, not causal confirmation.
+- Historical reconciliation uses then-effective Lineage/transformation/reconciliation/input/output versions.
+
+### Group 06 — HLTH-055–HLTH-066
+
+- Component Assessment ≠ composite health Assessment ≠ result freshness/suitability ≠ readiness result ≠ gate decision ≠ enforcement ≠ execution.
+- Composite health binds subject, consumer/use/context, profile/version, component roles/logic, cycle/window and evaluation/knowledge time.
+- No universal majority, weighted average, health score, severity weighting or post-hoc convenient composition.
+- A positive conjunctive `healthy` requires all applicable required components to meet and no required unresolved state.
+- A required violation can establish degraded while unresolved/unavailable qualifiers remain visible.
+- `violates + waived response` remains violation/degraded.
+- Severity/criticality/priority guide governance/escalation/presentation but do not manufacture health/Impact truth.
+- Technical/business/executive/audit/consumer views remain authorized projections over one underlying proposition.
+- Recent evaluation does not make old evidence fresh; no universal result TTL.
+- Analytical horizons are evidence/maturity semantics: immediate operational → fast core/schema/current-cycle → enriched DQ/reconciliation/distribution → diagnostic/RCA → retrospective/post-ops.
+- Elapsed time never upgrades maturity; narrow trustworthy results do not wait for slower broader evidence.
+- Readiness suitability is exact-opportunity bound and outcome-neutral: suitable violation can support not-ready, stale meets can be unsuitable.
+- AUTH-023 high-consequence eligibility ≠ evidence suitability ≠ readiness ≠ control authority.
+- Unavailable/unsuitable evidence does not invent fail-open/fail-closed/hold/release behavior.
+- Passive monitoring remains non-blocking for ungated production.
+- Late/corrected evidence revises broader summaries through reassessment without rewriting earlier narrow/historical results.
+- Historical composite/suitability replay uses then-effective profiles/rules/evidence and knowledge cut.
+
+### Group 07 — Phase 006 consolidation / exit
+
+- H07-01–H07-36 pass across execution-vs-health, availability/applicability, consumer schema compatibility, Baseline breaks, seasonal/normative behavior, low-volume/approximate evidence, waivers/conflict, A+B→C reconciliation, transformation repair/introduction, composite disagreement, progressive timing, stale/suitable readiness evidence, AUTH-023 eligibility, passive monitoring outage, active-control uncertainty and history.
+- No 25th concept and no HLTH-067 are required.
+- **HLTH-001–HLTH-066 is final for Phase 006.**
+- The final chain is definition/applicability → Observation → structural/comparability context → component Assessment → transformation reconciliation → composite Assessment → freshness/maturity → exact-use suitability → readiness, with gate/control decision/enforcement/execution remaining separate.
+- Phase 006 selects no implementation architecture.
 
 ## Passive monitoring / integration-independence rules
 
@@ -472,20 +515,25 @@ Preserve:
 - Historical Assertion Authority/Capability Authorization/disclosure is evidence about past standing/permission/disclosure; current authority/requester authorization governs present resolution/disclosure.
 - Partial/unknown/conflicting/restricted replay remains valid rather than being completed by guesswork.
 - Historical Baseline replay uses the exact Baseline/reference version and context available/used at the historical knowledge cut; current refreshed Baselines are not substituted backward.
+- Historical metric/schema/reconciliation/composite/suitability replay uses then-effective definitions/profiles/rules and does not project current Phase 006 state backward.
 
-## Phase 006 metric-health direction
+## Phase 007 entry contract
 
-The accepted logical sequence is:
+Phase 007 is next and must consume the completed Phase 006 health model while refining:
 
-1. **Measurement Vocabulary, Metric Families, Profiles & Applicability — accepted, HLTH-001–HLTH-008.**
-2. **Structural / Schema / DDL Compatibility — accepted, HLTH-009–HLTH-018.**
-3. **Baselines, Comparability, Distribution & Statistical Context — accepted, HLTH-019–HLTH-029.**
-4. **Expectations, Thresholds, Margins, Waivers & Assessment Semantics — next.**
-5. Transformation Reconciliation & Metric Propagation.
-6. Composite Health, Readiness Suitability & Progressive Result Timing.
-7. Consolidation / Exit Review.
+- Lineage taxonomy and historical topology evidence;
+- Change Intent realization, Deployment and realized Change;
+- prospective blast radius/change-aware downstream review;
+- execution/dependency reconstruction;
+- Investigation lifecycle and first-deviation localization;
+- prospective versus actual Impact and consumer/version encounter patterns;
+- Lineage-aware operational relevance under accepted reconciliation rules;
+- Propagation Safeguard placement/release/recovery;
+- Execution Gate classes, timeout/fallback/escalation/override/recovery;
+- control-induced delay/freshness/availability effects;
+- historical operational replay.
 
-Phase 006 must not reopen Phase 005 authority ownership or select technical architecture.
+Do not let Phase 007 turn Lineage/reconciliation/localization into causality, prospective reachability into actual Impact, health/readiness into enforcement, or implementation convenience into a reason to reopen HLTH-001–HLTH-066.
 
 ## GitHub repository mutation guardrail
 
@@ -507,18 +555,17 @@ Remote GitHub `main` is authoritative; local/ZIP copies are archival or working 
 - Phase 003 complete: SYN-001–SYN-035.
 - Phase 004 complete: REF-001–REF-030; D-140–D-152 close the phase.
 - Pre-Phase-005 metric-health planning accepted: D-153–D-160.
-- Phase 005 Group 01: AUTH-001–AUTH-008; D-161–D-172.
-- Phase 005 Group 02: AUTH-009–AUTH-015; D-173–D-188.
-- Phase 005 Group 03: AUTH-016–AUTH-023; D-189–D-202.
-- Phase 005 Group 04: AUTH-024–AUTH-032; D-203–D-217.
-- Phase 005 Group 05: AUTH-033–AUTH-043; D-218–D-234.
-- Phase 005 Group 06: AUTH-044–AUTH-053; D-235–D-250.
-- Phase 005 Group 07: consolidation/exit; D-251–D-265.
-- Phase 005 complete.
-- Phase 006 Group 01 accepted: HLTH-001–HLTH-008; D-266–D-278.
-- Phase 006 Group 02 accepted: HLTH-009–HLTH-018; D-279–D-295.
-- **Phase 006 Group 03 accepted: HLTH-019–HLTH-029; D-296–D-314. Group 04 — Expectations, Thresholds, Margins, Waivers & Assessment Semantics is next and has not started. Do not begin Group 04 without explicit user request.**
+- Phase 005 complete: AUTH-001–AUTH-053; D-161–D-265 across Groups 01–07.
+- Phase 006 Group 01: HLTH-001–HLTH-008; D-266–D-278.
+- Phase 006 Group 02: HLTH-009–HLTH-018; D-279–D-295.
+- Phase 006 Group 03: HLTH-019–HLTH-029; D-296–D-314.
+- Phase 006 Group 04: HLTH-030–HLTH-040; D-315–D-334.
+- Phase 006 Group 05: HLTH-041–HLTH-054; D-335–D-357.
+- Phase 006 Group 06: HLTH-055–HLTH-066; D-358–D-382.
+- Phase 006 Group 07: consolidation/exit; D-383–D-405; H07-01–H07-36 pass.
+- **Phase 006 complete: HLTH-001–HLTH-066 final.**
+- **Phase 007 is next and has not started. Do not begin Phase 007 without explicit user request.**
 
 ## Tooling stance
 
-Databricks Metric Views/DQX are favored later evaluations, not settled architecture. Collibra/Immuta remain optional until mapped to explicit authority/integration roles. Do not select RBAC/ABAC, IAM provider, Assertion Authority implementation, approval workflow, graph database, temporal store, quarantine store, scheduler/orchestrator, Execution Gate implementation, metric engine/storage, redaction technology, LLM, causal algorithm, anomaly algorithm, statistical library, or technical architecture prematurely.
+Databricks Metric Views/DQX are favored later evaluations, not settled architecture. Collibra/Immuta remain optional until mapped to explicit authority/integration roles. Do not select RBAC/ABAC, IAM provider, Assertion Authority implementation, approval workflow, graph database, temporal store, quarantine store, scheduler/orchestrator, Execution Gate implementation, metric engine/storage, redaction technology, LLM, causal algorithm, anomaly algorithm, statistical library, concrete latency/TTL architecture, or technical architecture prematurely.

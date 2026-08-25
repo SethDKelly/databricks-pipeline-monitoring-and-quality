@@ -6,7 +6,7 @@ alwaysApply: true
 
 # Phase 006 Group 06 — composite health and result-suitability guardrails
 
-Status: **Accepted — HLTH-055–HLTH-066; H06-01–H06-44 pass. Group 07 — Consolidation / Exit Review is next and has not started.**
+Status: **Accepted — HLTH-055–HLTH-066; H06-01–H06-44 pass. Phase 006 Group 07 has consumed these rules and Phase 006 is complete.**
 
 Preserve permanently:
 
@@ -41,6 +41,8 @@ Preserve permanently:
 - historical composite/suitability replay uses then-effective profiles, component/rule/reference/reconciliation versions, evidence state, freshness semantics and knowledge cut;
 - historical suitability/readiness does not prove historical gate decision, enforcement or execution.
 
-Group 07 must consolidate HLTH-001–HLTH-066 end-to-end. Do not add a new concept or HLTH contract unless consolidation exposes a genuine independent semantic ownership gap.
+Phase 006 exit confirms these rules compose with HLTH-001–HLTH-054 without a new concept, HLTH-067, universal score, false pass, blind propagation, causal shortcut, stale-evidence shortcut, control conflation or architecture choice.
+
+Phase 007 must consume these semantics rather than redefine them while refining Lineage/change/Investigation/Impact/safeguard/gate operational behavior.
 
 Do not select concrete TTLs/latency SLAs, streaming/cache design, DQX/Metric View placement, scheduler/gate mechanism, Spark/SQL implementation, storage, graph or service architecture from these rules.

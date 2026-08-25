@@ -1,6 +1,6 @@
 # Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement
 
-**Status:** ACTIVE — Groups 01–06 accepted; HLTH-001–HLTH-066 accepted; Group 07 next
+**Status:** COMPLETE — Groups 01–07 accepted; HLTH-001–HLTH-066 final; H07-01–H07-36 consolidation pass
 
 ## Goal
 
@@ -72,11 +72,11 @@ Defines bounded composite-health profiles and explicit component composition, di
 See [`06_composite_health_readiness_timing/README.md`](06_composite_health_readiness_timing/README.md).
 
 ### Group 07 — Consolidation / Exit Review
-**Status:** **Next — not started.**
+**Status:** **Accepted — Phase 006 exit; H07-01–H07-36 pass.**
 
-Replay Groups 01–06 across representative ecosystem scenarios and verify that the health model composes without a universal score, hidden authority, false passes, blind propagation, causal shortcuts, latency shortcuts, control conflation, or selected architecture.
+Replays Groups 01–06 across representative ecosystem scenarios and confirms that the health model composes without a universal score, hidden authority, false passes, blind propagation, causal shortcuts, latency shortcuts, control conflation, or selected architecture.
 
-See [`07_consolidation_and_exit/README.md`](07_consolidation_and_exit/README.md).
+See [`07_consolidation_and_exit/README.md`](07_consolidation_and_exit/README.md), [`07_consolidation_and_exit/consolidation_scenario_matrix.md`](07_consolidation_and_exit/consolidation_scenario_matrix.md), and [`07_consolidation_and_exit/phase_006_exit_review.md`](07_consolidation_and_exit/phase_006_exit_review.md).
 
 ## Accepted Group 01 — HLTH-001–HLTH-008
 
@@ -306,15 +306,15 @@ Key results:
 - late/corrected evidence can revise broader composites through reassessment without rewriting earlier narrow/historical truths;
 - historical replay uses then-effective component/profile/reference/reconciliation/freshness semantics and knowledge cut.
 
-## Group 07 handoff — Consolidation / Exit Review
+## Accepted Group 07 — Consolidation / Exit Review
 
-Group 07 now replays HLTH-001–HLTH-066 as one health model.
+Group 07 replays HLTH-001–HLTH-066 as one health model.
 
-It must verify:
+Consolidation confirms:
 
-- all accepted distinction chains still compose without a new truth owner;
+- all accepted distinction chains compose without a new truth owner;
 - profile anti-bloat, structural compatibility, Baseline comparability, normative criteria, reconciliation, composite health and result suitability remain independently meaningful;
-- composite summary logic never reintroduces blind upstream propagation or hidden score semantics;
+- composite summary logic does not reintroduce blind upstream propagation or hidden score semantics;
 - consumer/use-specific health remains bounded rather than becoming contradictory global truth;
 - warnings, waivers, severity, conflict, unavailability and pending state remain visible through composition;
 - freshness/current-cycle/maturity requirements do not become a universal TTL or fixed wait;
@@ -322,6 +322,19 @@ It must verify:
 - AUTH-023 eligibility plus suitable evidence still does not create readiness/gate/enforcement/execution truth;
 - historical metric/schema/Baseline/transformation/composite/suitability replay remains non-rewriting;
 - no implementation architecture is chosen merely to exit Phase 006.
+
+**H07-01–H07-36 pass.** Representative replay includes successful run with unhealthy output, metric availability/applicability distinctions, consumer schema compatibility, selective Baseline invalidation, typical-but-violating behavior, low-volume/approximate evidence, waivers/conflicts, A+B→C join localization, transformation repair/introduction, multi-input current-cycle alignment, restricted reconciliation, degraded+unavailable composite state, consumer-specific health, progressive health maturity, stale `meets`, suitable `violates`, AUTH-023 eligibility, passive-monitoring outage, active-gate evidence unavailability, safe-but-stale version use, and historical rule/profile changes.
+
+Exit result:
+
+- no new concept;
+- no HLTH-067;
+- **HLTH-001–HLTH-066 final**;
+- concept count remains 24;
+- SYN-001–SYN-035, REF-001–REF-030 and AUTH-001–AUTH-053 remain unchanged;
+- no universal score, false pass, blind propagation, causal shortcut, stale-evidence shortcut, control conflation or architecture choice.
+
+See [`07_consolidation_and_exit/phase_006_exit_review.md`](07_consolidation_and_exit/phase_006_exit_review.md).
 
 ## Metric-health principles retained for later phases
 
@@ -372,6 +385,22 @@ Phase 006 must not:
 - create separate technical/business health truths;
 - select GitHub Actions, Unity Catalog, Metric Views/DQX, Spark/SQL reconciliation implementation, anomaly/statistical algorithms, latency SLAs, storage, streaming, caching, graph, orchestration, IAM, redaction, gate mechanism, or service architecture.
 
+## Phase 007 handoff
+
+**Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement is next and has not started.**
+
+Phase 007 receives HLTH-001–HLTH-066 as completed health semantics and should refine historical topology, Change Intent realization and realized Change, prospective blast radius, execution reconstruction, Investigation/localization, actual Impact/consumer encounter, safeguard placement/release/recovery, Execution Gate classes/fallback/escalation/override/recovery, control-induced operational effects, and historical operational replay.
+
+It must consume rather than reopen Phase 006. In particular:
+
+- Lineage/reconciliation/localization remains below causality;
+- prospective blast radius remains below actual exposure/Impact;
+- health/readiness suitability remains below gate decision/enforcement/execution;
+- safeguard activation remains below prevented-exposure proof;
+- no graph/store/scheduler/control architecture is selected merely to refine operational semantics.
+
+See [`../phase_007/README.md`](../phase_007/README.md).
+
 ## Phase direction
 
-**Phase 006 is ACTIVE. Groups 01–06 are accepted with HLTH-001–HLTH-066. Group 07 — Consolidation / Exit Review is next and has not started.**
+**Phase 006 is COMPLETE. Groups 01–07 are accepted with HLTH-001–HLTH-066 final. H07-01–H07-36 pass. Phase 007 is next and has not started.**

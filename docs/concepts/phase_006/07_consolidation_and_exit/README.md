@@ -1,14 +1,14 @@
 # Phase 006 Group 07 — Consolidation / Exit Review
 
-**Status:** Next — not yet started
+**Status:** Accepted — Phase 006 complete
 
 ## Goal
 
 Replay Phase 006 Groups 01–06 across representative ecosystem scenarios and determine whether the health/metric/schema/statistical/reconciliation/composite/timing model composes without a new concept, universal score, false pass, blind propagation, hidden authority, latency shortcut, control conflation or technical architecture.
 
-## Accepted handoff
+## Accepted input
 
-Phase 006 currently accepts **HLTH-001–HLTH-066** across:
+Phase 006 accepts **HLTH-001–HLTH-066** across:
 
 1. measurement vocabulary, metric families, profiles and applicability;
 2. structural/schema/DDL compatibility;
@@ -17,15 +17,24 @@ Phase 006 currently accepts **HLTH-001–HLTH-066** across:
 5. transformation reconciliation and non-propagation;
 6. composite health, result freshness/maturity and readiness/control-use suitability.
 
-## Exit checks
+## Consolidation result
 
-Verify end-to-end that:
+All exit checks pass.
+
+The final model preserves:
+
+**definition/applicability → Observation → structural/comparability context → component Assessment → transformation reconciliation → composite Assessment → freshness/maturity → exact-use suitability → readiness result → separate control behavior**.
+
+Each layer remains separately evidenced. No successful or favorable result at one layer automatically upgrades the next.
+
+## Exit checks — PASS
 
 - metric definitions, Observations, component Assessments and composite Assessments remain distinct;
 - semantic applicability, profile selection, source support, availability and health outcome remain distinct;
 - structural/schema compatibility remains consumer/context specific;
 - Baseline comparability remains evidence-driven and non-normative by itself;
 - threshold/margin/waiver semantics preserve underlying evidence and normative conflict;
+- uncertainty, approximation and low-volume limitations remain visible;
 - transformation reconciliation is explicit and does not recursively propagate metrics/statuses;
 - upstream health does not become downstream health or causality by Lineage alone;
 - composite profile/use/context and explicit composition logic remain bound;
@@ -43,30 +52,31 @@ Verify end-to-end that:
 - historical composite/suitability replay preserves then-applicable rules and knowledge cuts;
 - no Databricks/DQX/Metric View/GitHub Actions/Unity Catalog/storage/streaming/cache/scheduler architecture is selected merely to close the phase.
 
-## Representative replay areas
+## Scenario replay
 
-- A+B→C row-count/join-key degradation and first-deviation localization;
-- transformation repair versus transformation-introduced defect;
-- schema rename/drop/type/grain changes and selective Baseline invalidation;
-- seasonal population changes versus explicit thresholds;
-- bounded waivers during migrations;
-- low-volume and approximate metrics near thresholds;
-- profile anti-bloat and diagnostic escalation;
-- multiple upstream contributors without causal shortcut;
-- technical versus business health projections;
-- required violation plus pending/unavailable component in composite health;
-- consumer-specific health profiles;
-- immediate operational result while enriched DQ is pending;
-- late enriched DQ changing a broader composite without rewriting run success;
-- AUTH-023 control-eligible condition with stale/unavailable/non-comparable evidence;
-- suitable violation supporting not-ready;
-- stale `meets` result unsuitable for current readiness;
-- current-cycle alignment across multiple inputs;
-- passive monitoring outage versus an explicit active gate;
-- historical replay after metric-definition/schema/Baseline/transformation/composite/freshness-rule changes.
+See [`consolidation_scenario_matrix.md`](consolidation_scenario_matrix.md). **H07-01–H07-36 pass.**
 
-## Exit target
+The replay covers successful execution with unhealthy output, metric availability/applicability distinctions, consumer-specific schema compatibility, grain/Baseline breaks, seasonal versus normative behavior, low-volume and approximate evidence, waivers/conflicts, A+B→C join localization, transformation repair/introduction, multi-input freshness, restricted reconciliation, composite disagreement, consumer profiles, progressive health timing, stale versus suitable readiness evidence, AUTH-023 eligibility, passive monitoring outage, active-control uncertainty and historical replay.
 
-If the scenarios compose without a semantic gap, Phase 006 should exit with **HLTH-001–HLTH-066 final**, 24 concepts unchanged, and a precise handoff to later Lineage/change/integration/architecture phases.
+## Exit artifacts
 
-**Group 07 has not started.**
+- [`phase_006_exit_review.md`](phase_006_exit_review.md) — canonical phase exit review;
+- [`consolidation_scenario_matrix.md`](consolidation_scenario_matrix.md) — H07-01–H07-36;
+- `docs/decisions/phase_006_group_07_consolidation_and_exit.md` — D-383–D-405.
+
+## Phase 006 exit
+
+- **Groups 01–07 complete**;
+- **HLTH-001–HLTH-066 final**;
+- **no HLTH-067**;
+- **24 concepts unchanged**;
+- SYN-001–SYN-035 unchanged;
+- REF-001–REF-030 unchanged;
+- AUTH-001–AUTH-053 unchanged;
+- no technical architecture selected.
+
+## Next phase
+
+**Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement is next and has not started.**
+
+Phase 007 receives the completed Phase 006 health model and must consume rather than reopen it.

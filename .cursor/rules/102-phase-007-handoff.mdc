@@ -1,0 +1,40 @@
+---
+description: Phase 007 entry handoff. Consume completed Phase 006 health semantics while refining Lineage, Change, Investigation, Impact, safeguards, and execution control.
+globs:
+alwaysApply: true
+---
+
+# Phase 007 — entry handoff
+
+Status: **NEXT — not started. Phase 006 is complete with HLTH-001–HLTH-066 final.**
+
+When Phase 007 begins, preserve:
+
+- Lineage relationship ≠ metric/status propagation ≠ causality;
+- prospective blast radius/reachability ≠ actual exposure/Impact;
+- Change Intent ≠ Deployment ≠ realized Change;
+- first-deviation localization ≠ root cause;
+- reconciliation/localization remains Investigation evidence below Causal Claim;
+- health Assessment ≠ result suitability ≠ readiness ≠ gate decision ≠ enforcement ≠ execution;
+- safeguard activation ≠ prevented exposure ≠ healthy/fresh downstream output;
+- gate hold/admit/override ≠ enforcement/execution outcome;
+- passive monitoring remains non-blocking for ungated production;
+- historical topology/change/control reasoning uses event/effective time plus knowledge cut and does not project current state backward;
+- HLTH-001–HLTH-066 metric/schema/Baseline/threshold/reconciliation/composite/freshness semantics are consumed, not redefined by operational convenience.
+
+Primary Phase 007 scope:
+
+- Lineage taxonomy and historical topology evidence;
+- Change Intent realization and realized Change/Deployment coordination;
+- prospective downstream blast radius and change-aware review;
+- execution/dependency reconstruction;
+- Investigation lifecycle and localization;
+- prospective versus actual Impact and consumer/version encounter;
+- Propagation Safeguard placement/release/recovery;
+- Execution Gate classes, timeout/fallback/escalation/override/recovery;
+- control-induced delay/freshness/availability effects;
+- historical operational replay.
+
+Do not choose graph storage, event store, scheduler/orchestrator, safeguard/quarantine mechanism, gate implementation, streaming/cache topology, or other technical architecture in Phase 007 merely to refine functional semantics.
+
+Do not begin Phase 007 without explicit user direction.

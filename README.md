@@ -21,7 +21,9 @@ The current catalog contains **24 accepted concepts**.
 
 **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement: COMPLETE.** Groups 01–07 accepted; AUTH-001–AUTH-053 final; G07-01–G07-26 pass consolidation.
 
-**Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement: NEXT — not started.**
+**Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement: COMPLETE.** Groups 01–07 accepted; HLTH-001–HLTH-066 final; H07-01–H07-36 pass consolidation.
+
+**Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: NEXT — not started.**
 
 ## Product thesis
 
@@ -60,11 +62,17 @@ Phase 004 distinguishes:
 
 **immediate operational validation → enriched health evaluation → investigative/RCA reasoning → retrospective/post-operations review**.
 
+Phase 006 refines the health side into functional evidence horizons:
+
+**immediate operational facts → fast core/schema/current-cycle health → enriched DQ/reconciliation/distribution health → diagnostic/Investigation support → retrospective/post-operations review**.
+
+These are not fixed time tiers. A result matures when its required evidence becomes sufficient; elapsed time alone never upgrades maturity.
+
 Source event time, source availability time, framework collection/knowledge time, and derived evaluation time remain distinct where material. A Databricks completion record can support a fast execution-status result before schema/Metric View/DQ evidence is available, while RCA deepens later as historical Lineage, Change, consumption, governance, and analyst evidence become usable.
 
 An early narrow answer remains scoped to its knowledge cut. `Job succeeded` never silently becomes `pipeline healthy` while quality/freshness/schema evidence is pending. An early leading hypothesis never becomes `confirmed root cause` merely because it is useful or fast.
 
-Concrete latency objectives are intentionally deferred: Phase 006 defines functional health-result timing/freshness, Phase 009 characterizes actual source availability/collection behavior, Phase 010 selects fast-path/asynchronous architecture and performance budgets, and Phase 011 later converts accepted timing objectives into MVP acceptance criteria.
+Phase 006 also establishes that **recent recomputation does not make old evidence fresh** and that result freshness is exact-use specific rather than governed by one universal TTL. Phase 009 characterizes actual source availability/collection behavior, Phase 010 selects fast-path/asynchronous architecture and performance budgets, and Phase 011 may later convert accepted timing objectives into MVP acceptance criteria.
 
 ## Causal epistemics are explicit
 
@@ -95,9 +103,11 @@ For downstream exposure, the framework binds the **affected state/version/window
 
 Readiness is criterion-relative. `Upstream job succeeded` is not global readiness unless completion is the entire declared criterion. A gate can require qualifying current-cycle output, freshness, version, completion, publication availability, schema compatibility, or named quality conditions. Unknown required evidence remains unknown; fallback may govern action but cannot turn the prerequisite into `ready`.
 
+Phase 006 adds another explicit step before a health result participates in readiness: **exact-use result suitability**. A fresh, sufficiently evidenced violation may be perfectly suitable and support `not ready`, while a stale `meets` result can be unsuitable and therefore cannot support `ready`.
+
 Control evidence remains layered:
 
-**readiness result ≠ gate decision ≠ gate enforcement ≠ actual downstream execution**
+**health Assessment ≠ evidence suitability ≠ readiness result ≠ gate decision ≠ gate enforcement ≠ actual downstream execution**
 
 and:
 
@@ -139,6 +149,8 @@ Preserve:
 
 A runtime schema observation does not become authoritative business meaning merely because Databricks/Unity Catalog exposes it. A declared business key does not prove uniqueness/nullability health. Local/context governance does not automatically override broader governance, and governance assertions do not recursively propagate through Lineage or containment without explicit provenance and standing.
 
+Phase 006 refines structural compatibility further: compatibility is bound to the **consumer-visible interface/contract and version**, not merely producer physical DDL. Additive changes are not universally safe, engine cast ability does not establish compatibility, and key/grain changes can be structurally material without a conventional column diff.
+
 ## Normative health governance is layered
 
 Phase 005 Group 03 accepts **AUTH-016–AUTH-023**.
@@ -157,7 +169,82 @@ Normative conflict remains explicit. `Strictest wins`, `business wins`, `technic
 
 High-consequence use is separately governed. An authoritative/business-critical metric does not automatically become a gate/safeguard predicate. Explicit eligibility is required, and even then:
 
-**control-use eligibility ≠ control capability ≠ evidence readiness ≠ enforcement**.
+**control-use eligibility ≠ current evidence suitability ≠ readiness ≠ control capability ≠ enforcement**.
+
+## Phase 006 completes the health model
+
+Phase 006 accepts **HLTH-001–HLTH-066** and no new concept.
+
+The final health chain is:
+
+**metric/check definition and applicability → Observation/evidence → structural/interface and empirical-comparability context → Baseline-relative and/or normative component Assessment → transformation-specific reconciliation → profile-bound composite health Assessment → result freshness/maturity → exact-use readiness/control-evidence suitability → readiness**, with gate decision/enforcement/execution remaining separate.
+
+### Measurement and metric profiles
+
+Metric definition, metric Observation, and Assessment remain distinct. Semantic applicability, governed profile selection, technical support/computability, current evidence availability, and outcome are also distinct.
+
+Routine monitoring follows a purposeful anti-bloat structure: a small stable core plus targeted critical/business/transformation checks and diagnostic/on-demand expansion. Technical availability alone does not justify computing every null rate, cardinality, percentile, distribution statistic, or schema check.
+
+Canonical metric families are operational/output, temporal/freshness, structural/schema, volume/population, completeness/missingness, uniqueness/key integrity, validity/domain, distribution/shape, relational/transformation integrity, and business-semantic measurement.
+
+### Baselines and statistical context
+
+Baseline is a provenance-bearing descriptive reference over eligible comparable history, not all available history.
+
+Comparability is multidimensional and conclusion-relative; Phase 006 rejects a universal comparability/confidence score. Fixed, rolling, seasonal/cadence, cohort, and post-change references are functional classes rather than selected algorithms.
+
+Low volume, sparse references, approximation/sampling, measurement uncertainty, missing periods, and structural/method breaks remain visible. Adaptive Baselines cannot silently absorb an incident or make a chronic defect acceptable simply because it became historically typical.
+
+### Normative Assessment
+
+For one bound criterion preserve at least `meets`, `violates`, `indeterminate/insufficient evidence`, `conflicting`, `unavailable`, and `not applicable`.
+
+Warning/proximity, Baseline typicality, severity/priority, and waiver/disposition remain separate axes. All of these are valid combinations where evidenced:
+
+**typical + meets**  
+**atypical + meets**  
+**typical + violates**  
+**atypical + violates**.
+
+`Violates + waived response` remains a violation. A bounded exception that makes a criterion genuinely non-applicable is different.
+
+### Transformation reconciliation
+
+Lineage does not recursively propagate local metrics or health statuses.
+
+For A+B→C, reconciliation is based on the exact transformation/version. Joins use eligible populations, directional match/unmatched behavior, cardinality/fan-out and key integrity; filters use explicit selection/exclusion semantics; aggregation conservation is measure-specific; dedupe, union/merge/upsert, null/default/cast/value derivation, distributions and multi-input freshness each have their own semantics.
+
+A local upstream violation can coexist with healthy downstream criteria after isolation/repair, and healthy upstream criteria can coexist with downstream failure introduced by transformation logic.
+
+Reconciliation can materially localize a discrepancy while remaining below causal confirmation.
+
+### Composite health
+
+Composite health is a bounded Assessment over an explicit subject, consumer/use/context, profile/version, component set/roles/logic and time—not a universal scalar property of an asset.
+
+Phase 006 rejects canonical majority voting, weighted averages, severity-weighted scores, and universal numeric health scores.
+
+For a conjunctive profile, a positive `healthy` requires all applicable required components to meet and no required unresolved state. A known violation can establish `degraded` while unresolved/unavailable qualifiers remain visible. `Healthy with warning` can represent required criteria meeting while a warning/proximity condition is active.
+
+Consumer-specific profiles can legitimately differ because they ask different bounded propositions. Technical/business/executive/audit views remain authorized projections over the same underlying proposition and cannot strengthen its status.
+
+### Freshness, maturity and readiness suitability
+
+Assessment evaluation time is not underlying evidence time. A recalculation performed now over yesterday's evidence can remain stale for a current-cycle use.
+
+There is no universal result TTL. Freshness is evaluated relative to the exact use, allowed age, evidence window and current-cycle/version requirement.
+
+Analytical maturity follows evidence sufficiency, not elapsed time. Narrow trustworthy results should be available as soon as supportable while broader composite health remains pending if slower evidence is required.
+
+Suitability is outcome-neutral. A fresh, well-evidenced violation can be suitable and support `not ready`; a stale `meets` result can be unsuitable and cannot support `ready`.
+
+AUTH-023 high-consequence-use eligibility and current evidence suitability are independent prerequisites. Neither creates gate authority, a gate decision, enforcement, or execution.
+
+### Phase 006 exit
+
+H07-01–H07-36 replay the complete chain across execution-versus-health, metric availability, schema contracts, Baseline regime breaks, seasonal/normative behavior, low-volume/approximate evidence, waivers/conflicts, A+B→C reconciliation, transformation repair/introduction, composite disagreement, progressive result timing, stale/suitable readiness evidence, AUTH-023 eligibility, passive monitoring outage, active-control uncertainty, and historical replay.
+
+All pass without HLTH-067, a new concept, universal score, false pass, blind propagation, causal shortcut, stale-evidence shortcut, control conflation, or architecture selection.
 
 ## Capability Authorization is exact and least-privilege
 
@@ -264,7 +351,7 @@ A readiness criterion may require more than `upstream job ran`: current output, 
 
 **Execution Gate ≠ Propagation Safeguard.** Gate protects downstream start/admission; Safeguard protects output/consumption propagation. Both may intentionally create delay that remains observable and assessable.
 
-AUTH-023 control-use eligibility is necessary governance for a high-consequence metric/schema rule but does not enable/configure a gate, grant override authority, prove evidence availability, or prove enforcement.
+AUTH-023 control-use eligibility is necessary governance for a high-consequence metric/schema rule but does not enable/configure a gate, grant override authority, prove evidence available/suitable, or prove enforcement.
 
 ## Restricted-data analysis is a core capability
 
@@ -325,7 +412,8 @@ The same event window can support:
 - what happened;
 - what was known then;
 - what source was considered authoritative then;
-- what threshold/waiver/profile applied then;
+- what metric/schema/profile/Baseline/threshold/waiver applied then;
+- what transformation/reconciliation/composite/freshness rule applied then;
 - what was assessed/believed then;
 - what was authorized then;
 - what approval/delegation/break-glass state existed then;
@@ -335,7 +423,7 @@ The same event window can support:
 
 Late/corrected evidence or authority/normative/authorization rules can change the current retrospective conclusion without rewriting contemporaneous record. Evidence/rules discovered tomorrow but effective yesterday do not belong in yesterday's `as-known-then` view unless they were known then.
 
-A historical gate hold/admission/override, safeguard activation/release, causal confirmation, authority resolution, threshold, waiver, delegated grant, break-glass action, or retained Explanation remains actual historical state even if later evidence shows another choice would now be preferred.
+A historical gate hold/admission/override, safeguard activation/release, causal confirmation, authority resolution, threshold, waiver, delegated grant, break-glass action, composite health result, readiness suitability result, or retained Explanation remains actual historical state even if later evidence shows another choice would now be preferred.
 
 A current system may generate an `as-known-then` explanation from the historical state cut. That answer is explicitly **reconstructed** unless an actual retained Explanation/report proves what was communicated at the time.
 
@@ -347,18 +435,30 @@ The system should make questions like these straightforward:
 
 - Did this pipeline run, and how long did it take?
 - What evidence coverage supports saying it ran—or did not run?
-- Was the required upstream state actually ready before the downstream run started?
-- Which readiness predicates are satisfied, failed, unknown, conflicting, or unavailable?
-- Is a gate configured, did it issue a decision, and was that decision actually enforced?
-- Is the job merely monitored, or is an explicit dependency gate active?
-- What monitoring/health result is available now and what evidence is pending?
+- Which metrics/checks are applicable, selected, supported, unavailable, pending, or not applicable?
+- Is this metric Observation definition-compatible with the historical series being compared?
 - Is current behavior normal Baseline variation, materially atypical, or normatively unacceptable?
-- Which metrics/checks are actually in the governed profile and why?
+- Which Baseline/reference regime is applicable, and is there enough comparable evidence for the intended claim?
 - Is a threshold an explicit Expectation or merely a Baseline range?
+- Is evidence near a threshold precise enough for a decisive result?
 - Is a violation waived/suspended, and what underlying condition remains?
 - Is this schema change compatible for this specific consumer?
 - Did a schema/grain/key change invalidate a Baseline or only certain metrics?
+- For A+B→C, did source population, join match, fan-out, filtering, dedupe, aggregation, merge behavior, null/default logic, or input-cycle alignment explain the output difference?
+- Is a reconciliation mismatch localizing a deviation, or is there enough evidence for an actual causal claim?
+- Which component Assessments make up this health profile, and what composition logic applies?
+- Is overall health degraded with unresolved dimensions, or merely unresolved with no known failure?
+- Can two consumers legitimately have different health results because their profiles/contracts differ?
+- Is the latest health result based on fresh evidence for this exact use, or merely recalculated recently?
+- What health result is available now and what broader evidence is still pending?
+- Is a result mature/suitable enough for this readiness opportunity?
+- Is a fresh violation suitable evidence for `not ready`?
+- Is a stale `meets` result unsuitable for `ready`?
 - Is this metric merely monitored or explicitly control-use eligible?
+- Was the required upstream state actually ready before the downstream run started?
+- Which readiness predicates are satisfied, failed, unknown, conflicting, unavailable, or supported only by stale/unsuitable evidence?
+- Is a gate configured, did it issue a decision, and was that decision actually enforced?
+- Is the job merely monitored, or is an explicit dependency gate active?
 - Which source/actor is authoritative for the relevant semantic, responsibility, Classification, Policy Context, metric, threshold, schema compatibility, or disclosure rule?
 - Is disagreement advisory, an authoritative assertion conflict, a normative conflict, an authorization conflict, or a disclosure conflict?
 - Was the currently preferred source also authoritative at incident time?
@@ -411,43 +511,50 @@ These are environmental facts, not architecture. Availability of Databricks/Unit
 10. **Authoritative standing does not imply factual infallibility, evidence sufficiency, compliance, or enforcement.**
 11. **Expectation is normative; Baseline is descriptive.**
 12. **Metric meaning/profile/threshold/severity/waiver/control-use eligibility remain distinct.**
-13. **Observation is not Assessment.**
-14. **Successful execution is not timely execution, schema compatibility, freshness, or data quality.**
-15. **Passive monitoring is non-blocking by default.**
-16. **Baseline monitoring prefers production-repository independence.**
-17. **Execution gating is explicit opt-in control, not an automatic effect of monitoring, Lineage, authority, or control-use eligibility.**
-18. **Execution Gate is separate from Execution History and Propagation Safeguard.**
-19. **Readiness is criterion-relative; successful execution is not global readiness.**
-20. **Gate decision is not gate enforcement or actual execution.**
-21. **Safeguard proposal/request is not enforced active protection.**
-22. **Prevented exposure requires material enforced control plus negative/path coverage.**
-23. **Lineage discovers relationships/candidates, not cause.**
-24. **First-observed localization is not root cause.**
-25. **Causal propositions and epistemic status remain explicit.**
-26. **Leading/supported hypothesis is not confirmed cause.**
-27. **Multiple contributors/unresolved outcomes are valid; one root cause is not required.**
-28. **Causal contribution does not imply percentage attribution; primary requires comparative evidence.**
-29. **Confirmed causes require evidence profile/standard plus separately resolved confirmation authority.**
-30. **Confirmed claims remain challengeable without rewriting historical confirmation.**
-31. **Prospective Impact is not actual Impact or retrospective cause.**
-32. **Impact is layered: candidate ≠ exposure ≠ effect ≠ consequence ≠ causal attribution.**
-33. **Non-exposure requires negative consumption/path evidence; missing telemetry is not reassurance.**
-34. **Criticality influences priority, not evidence strength or threshold truth.**
-35. **Propagation Safeguard is protective state, not defect proof.**
-36. **Capability Authorization is separate from assertion authority, policy, responsibility, scope, normative authority, and enforcement.**
-37. **Raw-data access is separate from analytical visibility, operational control, causal confirmation, and disclosure authority.**
-38. **High-consequence proposal, approval, execution, override/release, delegation, break-glass, and automation are separately governed.**
-39. **Authorization/approval does not prove action issuance, enforcement, or safe outcome.**
-40. **Analyst Investigation remains first-class even with restricted evidence.**
-41. **Annotation is attributed context, not a shadow truth store.**
-42. **Explanation consumes the authorized projection; it is not a truth or authorization source.**
-43. **Audience simplification cannot strengthen underlying status.**
-44. **View permission is separate from export/publish/client disclosure.**
-45. **Actual historical state remains distinct from replay-derived reconstruction.**
-46. **Late evidence or authority/normative/authorization correction can revise retrospective knowledge without rewriting what was known then.**
-47. **Historical authority/authorization/disclosure is not current authority/disclosure permission.**
-48. **Monitoring must not broaden raw-data or production-control authority.**
-49. **Databricks-native first where it fits; integrate before duplicate.**
+13. **Metric definition is not Observation; Observation is not Assessment.**
+14. **Structural compatibility is not statistical/Baseline comparability.**
+15. **Successful execution is not timely execution, schema compatibility, freshness, or data quality.**
+16. **Passive monitoring is non-blocking by default.**
+17. **Baseline monitoring prefers production-repository independence.**
+18. **Lineage does not recursively propagate metrics or health statuses.**
+19. **A+B→C reconciliation is transformation-specific; generic row-count conservation is invalid.**
+20. **Composite health is profile/use/context bound and dimension preserving, not a universal score.**
+21. **Evaluation recency is not evidence freshness; no universal result TTL exists.**
+22. **Analytical maturity follows evidence sufficiency, not elapsed time.**
+23. **Readiness suitability is exact-use and outcome-neutral.**
+24. **Execution gating is explicit opt-in control, not an automatic effect of monitoring, Lineage, authority, or control-use eligibility.**
+25. **Execution Gate is separate from Execution History and Propagation Safeguard.**
+26. **Readiness is criterion-relative; successful execution is not global readiness.**
+27. **Gate decision is not gate enforcement or actual execution.**
+28. **Safeguard proposal/request is not enforced active protection.**
+29. **Prevented exposure requires material enforced control plus negative/path coverage.**
+30. **Lineage discovers relationships/candidates, not cause.**
+31. **First-observed localization is not root cause.**
+32. **Causal propositions and epistemic status remain explicit.**
+33. **Leading/supported hypothesis is not confirmed cause.**
+34. **Multiple contributors/unresolved outcomes are valid; one root cause is not required.**
+35. **Causal contribution does not imply percentage attribution; primary requires comparative evidence.**
+36. **Confirmed causes require evidence profile/standard plus separately resolved confirmation authority.**
+37. **Confirmed claims remain challengeable without rewriting historical confirmation.**
+38. **Prospective Impact is not actual Impact or retrospective cause.**
+39. **Impact is layered: candidate ≠ exposure ≠ effect ≠ consequence ≠ causal attribution.**
+40. **Non-exposure requires negative consumption/path evidence; missing telemetry is not reassurance.**
+41. **Criticality influences priority, not evidence strength or threshold truth.**
+42. **Propagation Safeguard is protective state, not defect proof.**
+43. **Capability Authorization is separate from assertion authority, policy, responsibility, scope, normative authority, and enforcement.**
+44. **Raw-data access is separate from analytical visibility, operational control, causal confirmation, and disclosure authority.**
+45. **High-consequence proposal, approval, execution, override/release, delegation, break-glass, and automation are separately governed.**
+46. **Authorization/approval does not prove action issuance, enforcement, or safe outcome.**
+47. **Analyst Investigation remains first-class even with restricted evidence.**
+48. **Annotation is attributed context, not a shadow truth store.**
+49. **Explanation consumes the authorized projection; it is not a truth or authorization source.**
+50. **Audience simplification cannot strengthen underlying status.**
+51. **View permission is separate from export/publish/client disclosure.**
+52. **Actual historical state remains distinct from replay-derived reconstruction.**
+53. **Late evidence or authority/normative/authorization correction can revise retrospective knowledge without rewriting what was known then.**
+54. **Historical authority/authorization/disclosure is not current authority/disclosure permission.**
+55. **Monitoring must not broaden raw-data or production-control authority.**
+56. **Databricks-native first where it fits; integrate before duplicate.**
 
 ## Canonical A+B→C scenario
 
@@ -457,17 +564,25 @@ Phase 004 requires each evidence item to match relevant output/window/grain befo
 
 Phase 005 adds separate governance questions: which source/actor has authoritative standing for **business definition, technical schema/key/grain, responsibility, Classification, Policy Context, criticality, metric profile, threshold/schema compatibility Expectation, waiver, and control-use eligibility**? Different layers can legitimately have different authorities.
 
-A technical profile may include B key-null rate because it validates a known join failure mode while excluding meaningless identifier quantiles. A business authority may own C's acceptable population range while a platform team owns a technical warning band. Baseline regularity does not create either rule automatically.
+Phase 006 makes the measurement path explicit. A technical profile may include B key-null rate because it validates a known join failure mode while excluding meaningless identifier quantiles. A business authority may own C's acceptable population range while a platform team owns a technical warning band. Baseline regularity does not create either rule automatically.
 
-If B's schema/key/grain changes, scoped governance review can suspend affected metric/profile/Baseline use while preserving that empirical comparability is evidence-driven. A migration waiver can suspend a normative rule for a bounded interval without rewriting actual observed state.
+If B's schema/key/grain changes, scoped review can suspend affected metric/profile/Baseline use while preserving that empirical comparability is evidence-driven. A migration waiver can suspend a response or bounded applicability without rewriting actual observed state.
 
-Causal claims remain explicit. `B population decline contributed to C row loss` and `join-key nulls contributed to C row loss` can both become supported. A recent Deployment can remain a competing claim; if sufficient evidence shows C degradation began before activation, that claim may be weakened or rejected. No one root cause is forced and no contributor is called primary without comparative evidence.
+For the exact A+B→C join, the framework can evaluate eligible populations, directional match/unmatched rates, matched pairs, zero/one/many-match populations and fan-out. A large C row-count drop may be localized to a collapsing B match rate even if B's raw row count is stable. Conversely, an intentional filter or dedupe can reduce output without being a defect. Generic `rows(A)+rows(B)=rows(C)` is not assumed.
+
+Local upstream health still does not propagate. B can violate an upstream criterion while C meets its own required profile because the transformation isolates/repairs the condition; A and B can both meet while C's transformation introduces a defect.
+
+A composite C health result is profile/use/context bound. One required violation can make a conjunctive profile degraded while an unavailable schema component remains visible as unresolved. Consumer A and Consumer B may have different bounded health results when their contracts/profiles differ.
+
+Causal claims remain explicit. `B match degradation contributed to C row loss` and `join-key nulls contributed to C row loss` can both become supported. A recent Deployment can remain a competing claim; if sufficient evidence shows C degradation began before activation, that claim may be weakened or rejected. No one root cause is forced and no contributor is called primary without comparative evidence.
 
 A supported claim can be useful before confirmation. `Confirmed` requires applicable profile plus separately resolved confirmation authority. A human title, model output, or service-principal identity alone cannot confirm it.
 
 A business analyst may investigate without A/B/C row access using authorized aggregate health metrics, runtime timing, safe Lineage, policy/restriction context, responsibility, authority/normative standing, causal status, Impact, safeguard/gate state, and Annotation. Restricted nodes/evidence/authority details remain opaque rather than being summarized behind the user's permission boundary.
 
-Before C runs, an optional Execution Gate could require current A/B outputs. If B is late, C may be held instead of joining A-current + B-stale. If the criterion requires B current output, freshness, or an eligible schema/quality condition, successful B execution alone does not satisfy the gate. AUTH-023 eligibility does not itself enable the gate or prove evidence ready. Hold decision remains separate from proof the external control suppressed C.
+Before C runs, an optional Execution Gate could require current A/B outputs. If B is late, C may be held instead of joining A-current + B-stale. If the criterion requires B current output, freshness, or an eligible schema/quality condition, successful B execution alone does not satisfy the gate.
+
+Phase 006 adds that even a `meets` health Assessment cannot be used if it is stale or otherwise unsuitable for this exact opportunity. A fresh, sufficient `violates` result can be suitable evidence for `not ready`. AUTH-023 eligibility does not itself enable the gate or make stale evidence suitable.
 
 If override is requested, Phase 005 keeps request, approvals, authorization, action issuance, scheduler/control acceptance, enforcement, C execution, and downstream outcome separate. Break-glass can bypass only governed ordinary conditions; it does not make B ready, grant unrelated raw-data access, or prove C healthy.
 
@@ -477,18 +592,21 @@ If an enforced safeguard blocks suspect V before client refresh, prevented expos
 
 Technical and business audiences can receive different authorized views of this same incident. Engineering may see exact row counts, null rate, threshold, join behavior, schema diff, and causal basis. A business user may see `completeness degraded; current delivery at risk; two supported contributors; one restricted upstream basis`. Neither view may strengthen `supported` to `confirmed`, `reachable` to `affected`, `waived` to clean pass, or `hold decided` to `hold enforced`.
 
-If downstream consumption, enforcement, corrected timing, authority, normative-rule, authorization, approval/delegation, break-glass, or disclosure evidence arrives late, historical incident-time view remains what was known/authoritative/applicable/authorized/disclosed then while current causal/readiness/exposure/authority resolution may change. Actual historical approvals, gate/safeguard decisions, executions, rules/waivers, and retained Explanations are never rewritten.
+If downstream consumption, enforcement, corrected timing, metric-definition/schema/Baseline/transformation/composite/freshness rules, authority, normative-rule, authorization, approval/delegation, break-glass, or disclosure evidence arrives late, the historical incident-time view remains what was known/authoritative/applicable/authorized/disclosed then while current causal/readiness/exposure/authority resolution may change. Actual historical approvals, gate/safeguard decisions, executions, rules/waivers, health Assessments and retained Explanations are never rewritten.
 
 ## Repository map
 
 - [`docs/README.md`](docs/README.md) — documentation navigation/system of record.
 - [`docs/foundation/`](docs/foundation/) — accepted foundation and roadmap.
+- [`docs/foundation/011_phase_006_exit_phase_007_handoff.md`](docs/foundation/011_phase_006_exit_phase_007_handoff.md) — current Phase 006 exit / Phase 007 handoff.
 - [`docs/concepts/phase_002/`](docs/concepts/phase_002/) — concept specifications and four post-exit addenda.
 - [`docs/concepts/phase_003/`](docs/concepts/phase_003/) — completed synchronization contracts/scenarios and exit review.
 - [`docs/concepts/phase_004/`](docs/concepts/phase_004/) — completed evidence/time/causality refinement contracts and exit review.
 - [`docs/concepts/phase_005/README.md`](docs/concepts/phase_005/README.md) — completed authority/governance/capability/disclosure phase.
 - [`docs/concepts/phase_005/07_consolidation_and_exit/phase_005_exit_review.md`](docs/concepts/phase_005/07_consolidation_and_exit/phase_005_exit_review.md) — accepted Phase 005 exit review.
-- [`docs/concepts/phase_006/README.md`](docs/concepts/phase_006/README.md) — next health/metrics/schema/timing phase handoff.
+- [`docs/concepts/phase_006/README.md`](docs/concepts/phase_006/README.md) — completed health/metrics/schema/statistical/reconciliation/composite/timing phase.
+- [`docs/concepts/phase_006/07_consolidation_and_exit/phase_006_exit_review.md`](docs/concepts/phase_006/07_consolidation_and_exit/phase_006_exit_review.md) — accepted Phase 006 exit review.
+- [`docs/concepts/phase_007/README.md`](docs/concepts/phase_007/README.md) — next Lineage/change/Investigation/Impact/control phase handoff.
 - [`docs/reference/glossary.md`](docs/reference/glossary.md) — canonical vocabulary.
 - [`docs/reference/authority_vocabulary.md`](docs/reference/authority_vocabulary.md) — authority vocabulary.
 - [`docs/decisions/`](docs/decisions/) — durable decision history.
@@ -496,4 +614,4 @@ If downstream consumption, enforcement, corrected timing, authority, normative-r
 
 ## Phase direction
 
-**Phase 005 is complete with AUTH-001–AUTH-053. Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement is next and has not started.**
+**Phase 006 is complete with HLTH-001–HLTH-066 final. Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement is next and has not started.**
