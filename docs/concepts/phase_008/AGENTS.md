@@ -14,7 +14,8 @@ Canonical repository phase status is maintained in [`../../README.md#current-sta
 - **Group 04 is complete with EXPL-050–EXPL-080; ICG04-01–ICG04-48 pass.**
 - **Group 05 is complete with EXPL-081–EXPL-100; UNC05-01–UNC05-40 pass.**
 - **Group 06 is complete with EXPL-101–EXPL-120; AUD06-01–AUD06-44 pass.**
-- **Group 07 — Progressive Maturity, Partial Answers, Refresh & Retention is next.**
+- **Group 07 is complete with EXPL-121–EXPL-140; PMR07-01–PMR07-44 pass.**
+- **Group 08 — Historical/Comparative Explanation & Consolidation / Exit Review is next.**
 - Accepted concept count remains 24.
 
 ## Accepted Group 01 rules
@@ -207,6 +208,37 @@ Preserve:
 
 See [`06_audience_authorization_safe_abstraction_basis_inspection/README.md`](06_audience_authorization_safe_abstraction_basis_inspection/README.md).
 
+## Accepted Group 07 rules
+
+Preserve:
+
+- a bounded trustworthy partial answer may be delivered before all sibling subquestions resolve;
+- partial coverage remains proposition/subquestion bound rather than a global completeness score;
+- progressive maturity requires material source/evidence/authorization/context change;
+- elapsed time, polling and repeated recomposition do not strengthen truth;
+- statement proposition identity persists across refresh while defining subject/scope/time identity remains unchanged;
+- wording/detail/citation/basis-visibility changes can be presentation/projection deltas without a new proposition;
+- materially changed subject, scope, event window or knowledge cut is a different proposition, not a silent refresh;
+- basis can enrich without changing source status or confidence;
+- duplicate/common-derived basis remains non-independent;
+- new contradiction/conflict/correction/supersession changes Explanation only through source-owned re-evaluation;
+- derived statements re-evaluate exact dependencies and accepted join logic rather than transitively flipping;
+- statement delta classes distinguish presentation-only, basis-only, status, scope, materiality and authorization changes;
+- removal from the current composition does not automatically mean false, retracted, resolved or nonexistent;
+- authorization broadening/narrowing changes visible projection without changing internal truth;
+- materially different question/request scope creates distinct Explanation lineage or explicit comparison;
+- retained Explanation snapshot is evidence of actual prior communication for its bound context, not timeless source truth;
+- refreshed current projections link to predecessors/superseded snapshots rather than silently overwriting them;
+- Explanation supersession and source-state supersession remain separate;
+- an authentic old snapshot may be unsuitable as the current answer without becoming fictitious;
+- current access expansion/revocation does not backfill/erase retained earlier communication;
+- missing retained snapshots remain missing; reconstruction cannot be labeled exact prior communication;
+- partial answer coverage can broaden or narrow without a scalar maturity/completeness score;
+- change summaries preserve exact source transition semantics and cannot invent `confidence improved` from time alone;
+- notification/event/persistence architecture remains deferred.
+
+See [`07_progressive_maturity_partial_answers_refresh_retention/README.md`](07_progressive_maturity_partial_answers_refresh_retention/README.md).
+
 ## Permanent Phase 008 boundaries
 
 Preserve throughout the phase:
@@ -246,26 +278,31 @@ Preserve throughout the phase:
 - absence of evidence ≠ evidence of absence;
 - current retrospective Explanation ≠ what was known then;
 - retained Explanation snapshot ≠ current source truth;
+- retained actual communication ≠ reconstructed historical Explanation;
+- Explanation supersession ≠ source-truth supersession;
+- removed from current projection ≠ false/absent by default;
+- authorization-driven projection change ≠ truth change;
 - progressive maturity ≠ automatic status strengthening;
-- no universal Explanation confidence/completeness/quality/operational-status/RCA/Impact/control-effectiveness score.
+- elapsed time/recomposition ≠ evidence maturity;
+- no universal Explanation confidence/completeness/quality/operational-status/RCA/Impact/control-effectiveness/maturity score.
 
-## Group 07 entry contract
+## Group 08 entry contract
 
-Group 07 consumes EXPL-001–EXPL-120 and refines evolution of the already-valid internal answer and already-authorized visible projection over time.
+Group 08 consumes EXPL-001–EXPL-140 and performs the historical/comparative consolidation of Phase 008.
 
 It should explicitly test:
 
-- immediate narrow trustworthy answer versus later enriched answer;
-- partial subquestion coverage without global completeness score;
-- newly arrived supporting, contradicting, limiting or negative evidence;
-- source correction/supersession and derived-statement re-evaluation;
-- statement identity stable while wording/detail changes;
-- statement addition/removal when materiality or authorization changes;
-- current projection broadening/narrowing as Capability Authorization changes;
-- retained snapshot of what was actually communicated versus current source truth;
-- refresh linking/supersession without silent overwrite;
-- historical reconstruction of prior generated/retained Explanation;
-- elapsed time/repeated recomposition not strengthening epistemic status;
-- notification/change semantics without choosing event/UI architecture.
+- comparison of two or more event/effective windows without collapsing scope;
+- comparison of two or more knowledge cuts without later-evidence backfill;
+- actual retained source state versus as-known-at-cut reconstruction versus current retrospective interpretation;
+- actual retained Explanation communication versus reconstructed `what would have been explainable then`;
+- current requester authorization over historical material versus historical actor authorization;
+- explanation deltas that distinguish source/status/basis changes from materiality/authorization/presentation changes;
+- current correction/supersession while prior retained communication remains intact;
+- question/statement identity across rename/version/scope/time changes;
+- negative claims at historical cuts with exact opportunity/coverage burdens;
+- full Phase 008 end-to-end scenario replay and exit review;
+- no new Question/Answer/Explanation-truth concept;
+- no presentation/LLM/retrieval/persistence architecture selection.
 
-Do not reopen source truth, disclosure rules or select persistence/event/notification architecture.
+Do not let historical comparison become another truth owner, current authorization become historical permission, or current retrospective knowledge rewrite earlier cuts.

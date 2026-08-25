@@ -1,6 +1,6 @@
 # Phase 008 — Business Questioning and Explanation
 
-**Status:** IN PROGRESS — Groups 01–06 accepted; EXPL-001–EXPL-120 accepted; Group 07 next
+**Status:** IN PROGRESS — Groups 01–07 accepted; EXPL-001–EXPL-140 accepted; Group 08 next
 
 ## Goal
 
@@ -12,9 +12,9 @@ Phase 008 consumes the completed functional truth model from Phases 002–007. I
 
 Phase 008 uses **`EXPL-###`** refinement contracts.
 
-`EXPL-###` means business-question and Explanation refinement over accepted concepts. It does **not** create a new `Question`, `Answer`, answer-statement, RCA, Impact-summary, control-effectiveness, uncertainty/confidence, audience-projection or governance truth concept by default, does not extend SYN/REF/AUTH/HLTH/OPS ranges, and must not become an umbrella state that absorbs truth owned by other concepts.
+`EXPL-###` means business-question and Explanation refinement over accepted concepts. It does **not** create a new `Question`, `Answer`, answer-statement, RCA, Impact-summary, control-effectiveness, uncertainty/confidence, audience-projection, maturity/snapshot or governance truth concept by default, does not extend SYN/REF/AUTH/HLTH/OPS ranges, and must not become an umbrella state that absorbs truth owned by other concepts.
 
-Accepted range so far: **EXPL-001–EXPL-120**.
+Accepted range so far: **EXPL-001–EXPL-140**.
 
 ## Logical delivery grouping
 
@@ -75,16 +75,18 @@ No new concept is required. Capability Authorization and AUTH-044–AUTH-053 own
 See [`06_audience_authorization_safe_abstraction_basis_inspection/README.md`](06_audience_authorization_safe_abstraction_basis_inspection/README.md).
 
 ### Group 07 — Progressive Maturity, Partial Answers, Refresh & Retention
-**Status:** **Next — not started.**
+**Status:** **Accepted — EXPL-121–EXPL-140; PMR07-01–PMR07-44 pass.**
 
-Will refine narrow early answers versus broader later answers, partial answer completeness, maturity/change notifications, Explanation refresh, retained snapshots, supersession/linkage and stable facts versus revised derived conclusions.
+Defines trustworthy partial-answer eligibility, evidence maturity versus elapsed time, stable statement identity across refresh, material/no-op refresh, basis enrichment, conflict/correction/derived-statement re-evaluation, statement delta classes, materiality/authorization-driven additions and removals, question-lineage boundaries, retained actual communication, non-overwriting supersession linkage, partial-coverage evolution, change-summary semantics and retained-versus-reconstructible history.
+
+No new concept is required. Explanation owns current/retained communication projections; source concepts own truth and Capability Authorization owns visible disclosure permission.
 
 See [`07_progressive_maturity_partial_answers_refresh_retention/README.md`](07_progressive_maturity_partial_answers_refresh_retention/README.md).
 
 ### Group 08 — Historical/Comparative Explanation & Consolidation / Exit Review
-**Status:** Not started.
+**Status:** **Next — not started.**
 
-Will refine comparative and historical Explanation over event/effective time and knowledge cuts, incident-time versus retrospective accounts, explanation-diff semantics, current authorized projection, and end-to-end Phase 008 composition/exit.
+Will refine comparative and historical Explanation over event/effective time and knowledge cuts, retained actual communication versus reconstruction, incident-time versus retrospective accounts, explanation-diff semantics, current authorized projection, and end-to-end Phase 008 composition/exit.
 
 See [`08_historical_comparative_explanation_consolidation_exit/README.md`](08_historical_comparative_explanation_consolidation_exit/README.md).
 
@@ -220,6 +222,28 @@ Explanation projection now preserves:
 - communication review/release ≠ truth/evidence authority;
 - historical actor authorization, retained prior communication and current requester disclosure as separate.
 
+## Accepted Group 07 progressive-maturity/retention discipline
+
+Explanation evolution now preserves:
+
+- earliest trustworthy bounded partial answer rather than waiting for global completion;
+- proposition/subquestion coverage rather than a universal completeness score;
+- evidence/source/authorization/context change as the basis for material maturity, never elapsed time alone;
+- repeated recomposition/wording changes over unchanged semantics as no-op/presentation deltas;
+- stable proposition identity across wording/detail/basis-visibility changes when subject/scope/time identity is unchanged;
+- changed subject/scope/event window/knowledge cut as a different proposition, not a silent refresh;
+- basis enrichment without automatic status strengthening;
+- conflict/correction/supersession only through source-owned re-evaluation;
+- exact dependency/join re-evaluation for derived statements rather than transitive status flipping;
+- descriptive statement deltas separating presentation, basis, status, scope, materiality and authorization changes;
+- removal from current composition as distinct from false/retracted/nonexistent;
+- authorization-driven visible change as separate from internal truth change;
+- retained Explanation snapshot as evidence of actual prior communication rather than timeless truth;
+- refreshed current projection with predecessor/supersession linkage rather than invisible overwrite;
+- historical authenticity of a prior snapshot as separate from present suitability;
+- missing retained snapshot as missing, with reconstruction explicitly labeled rather than passed off as exact prior communication;
+- change summaries preserving exact source transitions rather than inventing confidence/maturity language.
+
 ## Accepted Phase 007 handoff
 
 Preserve at minimum:
@@ -255,4 +279,4 @@ Phase 009 will map accepted question/Explanation requirements to real source ava
 
 ## Phase direction
 
-**Groups 01–06 are accepted with EXPL-001–EXPL-120. BQ01-01–BQ01-24, AS02-01–AS02-30, HCE03-01–HCE03-36, ICG04-01–ICG04-48, UNC05-01–UNC05-40 and AUD06-01–AUD06-44 pass. Group 07 — Progressive Maturity, Partial Answers, Refresh & Retention is next.**
+**Groups 01–07 are accepted with EXPL-001–EXPL-140. BQ01-01–BQ01-24, AS02-01–AS02-30, HCE03-01–HCE03-36, ICG04-01–ICG04-48, UNC05-01–UNC05-40, AUD06-01–AUD06-44 and PMR07-01–PMR07-44 pass. Group 08 — Historical/Comparative Explanation & Consolidation / Exit Review is next.**

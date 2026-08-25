@@ -155,3 +155,15 @@ Safe abstraction is epistemically monotone and not automatic declassification. R
 Cross-audience views may differ in detail and scope but remain projections over one truth. Mosaic/repeated-query leakage, high-consequence communication release and historical/current authorization separation remain governed by AUTH-044–AUTH-053.
 
 EXPL-101–EXPL-120 and AUD06-01–AUD06-44 are accepted without a new concept.
+
+## Later refinement — Phase 008 Group 07
+
+Phase 008 Group 07 makes refresh evolution and retained communication semantics explicit. See [`../../phase_008/07_progressive_maturity_partial_answers_refresh_retention/README.md`](../../phase_008/07_progressive_maturity_partial_answers_refresh_retention/README.md).
+
+SYN-031 may emit a bounded partial authorized Explanation when supported subquestions are answerable while other siblings remain unresolved. A later composition is materially newer only when source truth/evidence, accepted derivation, authorization, or material question context changes; elapsed time and repeated prose generation are no-op for epistemic maturity.
+
+Material statement identity survives wording/detail changes within the same proposition. Basis enrichment can occur without status change. Conflict, correction, supersession and derived-statement changes are projected only after source-owned re-evaluation. Current statement deltas distinguish presentation, basis, status, scope, materiality and authorization changes rather than flattening all refresh into one maturity state.
+
+When retained, a refreshed Explanation links to its predecessor and may supersede it for present use without overwriting actual prior communication. A retained snapshot is evidence of what was communicated then, while a reconstruction is a present derivation and cannot substitute for missing retained history. Current authorization changes current projection without rewriting earlier communication.
+
+EXPL-121–EXPL-140 and PMR07-01–PMR07-44 are accepted without a new concept.

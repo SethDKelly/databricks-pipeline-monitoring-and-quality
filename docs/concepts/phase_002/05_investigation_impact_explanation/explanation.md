@@ -219,3 +219,15 @@ Authorized abstraction is epistemically monotone: it may reduce detail or narrow
 Cross-audience views remain projections over one truth and need not have identical detail, while mosaic/differencing/repeated-query leakage remains a compositional disclosure concern. Historical actor authorization, retained historical communication and current requester disclosure remain separate.
 
 Group 06 accepts EXPL-101–EXPL-120 and AUD06-01–AUD06-44 without changing the 24-concept catalog.
+
+## Later refinement — Phase 008 Group 07
+
+Phase 008 Group 07 makes `refresh`, partial delivery and retained Explanation history operationally precise without adding a maturity/snapshot truth concept. See [`../../phase_008/07_progressive_maturity_partial_answers_refresh_retention/README.md`](../../phase_008/07_progressive_maturity_partial_answers_refresh_retention/README.md).
+
+A narrow trustworthy authorized answer may be emitted before all sibling subquestions are resolved. Progressive maturity requires material source/evidence/authorization/context change; elapsed time, repeated recomposition and wording changes do not strengthen truth.
+
+Material statement proposition identity persists across refresh while its defining subject/scope/event-time/knowledge perspective remains the same. Basis may enrich without changing status; conflict/correction/supersession and derived statements change only through source-owned proposition re-evaluation. Statement deltas distinguish presentation-only, basis-only, status, scope, materiality and authorization changes, so removal from the current projection does not automatically mean false/retracted/nonexistent.
+
+A retained Explanation snapshot is evidence of actual prior communication for its bound context, not timeless source truth. Refreshed current projections link to predecessors/superseded snapshots rather than overwriting them. Current access changes affect current projection without backfilling or erasing retained communication; missing retained snapshots remain missing and reconstruction cannot be labeled exact prior communication.
+
+Group 07 accepts EXPL-121–EXPL-140 and PMR07-01–PMR07-44 without changing the 24-concept catalog.
