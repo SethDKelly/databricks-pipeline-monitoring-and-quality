@@ -157,3 +157,27 @@ Quarantine correctly blocks suspect output but causes a delivery-latency Expecta
 - when a gate hold should be paired with a publication/consumption safeguard to prevent stale prior-state delivery;
 - whether safeguard expiry/review deadlines need their own normative Expectations;
 - how client-delivery obligations interact with a protective hold.
+
+## Later refinement — Phase 007 Group 07
+
+Phase 007 Group 07 accepts [`OPS-086–OPS-104`](../../phase_007/07_propagation_safeguard_scope_enforcement_recovery/README.md) as the operational refinement of Propagation Safeguard.
+
+The refinement establishes:
+
+- exact suspect/protected state, missing-output/current-cycle context, protection surface, path/cohort/environment scope and effective interval;
+- proposal/authorization/request/enforcement/extension/expiry/release facts as separate provenance-bearing propositions rather than one scalar lifecycle;
+- `active` only when REF-027 evidence establishes effective protection for the bounded scope/time;
+- partial enforcement across consumers, paths, regions and cohorts without global success/failure collapse;
+- explicit alternate-path/bypass coverage before broad protection/prevention claims;
+- `prevented exposure` as a derived REF-028 + Group 06 determination rather than a Propagation Safeguard lifecycle state;
+- active/no-opportunity cases that do not receive prevention credit merely from coincident non-exposure;
+- safe-prior-state serving, staleness, held advancement and non-delivery as separate Impact/health facts;
+- missing-output protection through downstream advancement/current-state presentation rather than quarantine of a nonexistent object;
+- extension, scheduled/effective expiry and release as independently authorized/evidenced, non-rewriting actions;
+- post-release recovery as source-owned Observation/Assessment/Impact truth rather than Safeguard state;
+- REF-029 discipline for conflicting/unavailable control telemetry and configured versus actual fallback;
+- overlapping safeguards with independent materiality/release history;
+- broader safeguard-induced delay/business-effect attribution through Causal Claim while REF-028 retains the narrowly scoped prevention determination;
+- bitemporal historical enforcement/prevention/release reconstruction.
+
+Accordingly, the earlier convenience lifecycle labels remain valid only as summaries of the accepted evidence-backed action facts. `Released` never means `recovered`, and `not exposed` never means `prevented by this safeguard` unless the applicable REF-028/OPS-093 burden is satisfied.

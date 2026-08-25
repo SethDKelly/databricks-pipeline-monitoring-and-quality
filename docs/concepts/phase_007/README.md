@@ -1,6 +1,6 @@
 # Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement
 
-**Status:** IN PROGRESS — Groups 01–06 accepted; OPS-001–OPS-085 accepted; Group 07 next
+**Status:** IN PROGRESS — Groups 01–07 accepted; OPS-001–OPS-104 accepted; Group 08 next
 
 ## Goal
 
@@ -14,7 +14,7 @@ Phase 007 uses **`OPS-###`** refinement contracts.
 
 `OPS-###` means operational/topology/change/impact/control refinement over accepted concepts. It does **not** create an `Operations` concept, does not extend SYN/REF/AUTH/HLTH ranges, and must not become an umbrella state that absorbs Lineage, Change, Investigation, Impact, Execution Gate, Propagation Safeguard or Execution History truth.
 
-Accepted range so far: **OPS-001–OPS-085**.
+Accepted range so far: **OPS-001–OPS-104**.
 
 ## Accepted handoff from Phase 006
 
@@ -93,16 +93,18 @@ No new concept is required. Impact remains the downstream candidate/exposure/eff
 See [`06_impact_consumer_encounter_exposure_consequence/README.md`](06_impact_consumer_encounter_exposure_consequence/README.md).
 
 ### Group 07 — Propagation Safeguard Scope, Enforcement, Release & Recovery
-**Status:** **Next — not started.**
+**Status:** **Accepted — OPS-086–OPS-104; SG07-01–SG07-36 pass.**
 
-Refine safeguard placement, protected/suspect state binding, coverage paths, activation/effectiveness evidence, partial/failed enforcement, expiry/extension, release/recovery, alternate paths, and downstream freshness/delivery consequences. Preserve **active safeguard ≠ prevented exposure ≠ healthy output** and consume Group 06's exact encounter opportunities/path results rather than generic `safe consumer` state.
+Refines exact protected state/surface/path/cohort binding, lifecycle/action-fact decomposition, protection placement/applicability, evidence-established path-specific enforcement, partial enforcement, alternate-path/bypass coverage, REF-028 prevented exposure using Group 06 opportunity/non-exposure evidence, no-opportunity discipline, safe-stale/missing-output protection, extension/expiry/release semantics, independent post-release recovery, degraded telemetry/fallback discipline, overlapping safeguards, control-effect causality handoff and bitemporal replay.
+
+No new concept is required. Propagation Safeguard remains the protection-control truth owner; prevented exposure is a derived cross-concept determination and post-release recovery remains owned by its source concepts.
 
 See [`07_propagation_safeguard_scope_enforcement_recovery/README.md`](07_propagation_safeguard_scope_enforcement_recovery/README.md).
 
 ### Group 08 — Execution Gate, Fallback/Override & Control-Induced Operational Effects
-**Status:** Planned.
+**Status:** **Next — not started.**
 
-Refine gate classes/prerequisite structure, consumption of Phase 006 readiness-suitable evidence, opportunity binding, HOLD/ADMIT/override behavior, timeout/fallback/escalation/recovery, control acceptance/enforcement evidence, interaction with safeguards, and control-induced delay/staleness/non-delivery effects. Preserve decision/enforcement/execution separation.
+Refine gate classes/prerequisite structure, consumption of Phase 006 readiness-suitable evidence, opportunity binding, HOLD/ADMIT/override behavior, timeout/fallback/escalation/recovery, control acceptance/enforcement evidence, interaction with safeguards, and control-induced delay/staleness/non-delivery effects. Preserve decision/enforcement/execution separation and consume Group 07 safeguard evidence without merging start/admission control with output/consumption protection.
 
 See [`08_execution_gate_fallback_override_control_effects/README.md`](08_execution_gate_fallback_override_control_effects/README.md).
 
@@ -126,7 +128,7 @@ The order is dependency-driven:
 7. **Safeguard and Gate separately** — they protect different boundaries and have different state/evidence semantics.
 8. **Historical replay last** — cross-group time/version correctness is the final composition test.
 
-## Accepted operational chain through Group 06
+## Accepted operational chain through Group 07
 
 The Phase 007 operational foundation now preserves:
 
@@ -144,9 +146,13 @@ For Investigation it preserves:
 
 **exact question/outcome/scope/cut → evidence-backed leads → source-owned evidence assembly → bounded localization → narrowing/exclusion under negative-evidence burden → explicit causal proposition handoff → independent Causal Claim evaluation → operational closure/reopen history**.
 
-For realized downstream Impact it now preserves:
+For realized downstream Impact it preserves:
 
 **exact originating state + consumer/use context → encounter opportunity/availability/publication context → consumer-mode actual encounter/exposure → downstream effect evidence → technical/analytical/business consequence evidence → optional explicit Causal Claim attribution**.
+
+For Propagation Safeguard it now preserves:
+
+**bound protected state/surface → proposal/authorization context → activation request/issuance → evidence-established enforcement → path/opportunity-specific protection → REF-028 prevented-exposure determination → extension/expiry/release → independently evidenced post-protection state/recovery**.
 
 No link in these chains automatically creates the next.
 
@@ -228,6 +234,28 @@ For Impact specifically:
 - no universal Impact/exposure/severity score;
 - restricted ≠ absent and historical Impact is bitemporal/non-rewriting.
 
+For Propagation Safeguard specifically:
+
+- protected/suspect state and protection surface/path/cohort/interval are exact propositions rather than generic asset quarantine;
+- proposal, authorization, activation request, control acceptance and effective enforcement remain separate;
+- active Safeguard means REF-027 evidence-backed enforcement for its bounded scope/time;
+- partial enforcement across consumers/paths/regions/cohorts is first-class and no universal enforcement percentage is accepted;
+- alternate material paths and actual bypass evidence remain explicit before broad protection/prevention claims;
+- `not exposed` ≠ `prevented by Safeguard`; prevented exposure is a REF-028 + Group 06 derived result;
+- no encounter opportunity can coexist with valid protection but does not create prevention attribution;
+- blocked suspect state can coexist with stale safe serving, delay or non-delivery;
+- missing output is not a quarantined object; current-cycle advancement/presentation may instead be protected;
+- extension/renewal/scope revision is separately authorized/evidenced and non-rewriting;
+- scheduled expiry ≠ effective expiry by convenience;
+- release request/authorization ≠ effective release;
+- release can be partial and does not imply health/currentness/recovery;
+- post-release recovered state belongs to Observation/Assessment/Execution History/Impact rather than Safeguard;
+- missing/conflicting control telemetry does not establish fail-open/fail-closed or fallback behavior;
+- overlapping safeguards keep independent materiality/release histories;
+- broader safeguard-induced operational/business effects require Causal Claim attribution;
+- historical safeguard enforcement/prevention/release is bitemporal and non-rewriting;
+- Propagation Safeguard ≠ Execution Gate.
+
 ## Cross-group invariants
 
 Preserve throughout Phase 007:
@@ -254,7 +282,7 @@ Preserve throughout Phase 007:
 - execution occurrence ≠ consumed-version proof unless evidenced;
 - run success ≠ qualifying output/health;
 - actual precedence ≠ waiting ≠ consumption;
-- missing telemetry ≠ no run/output/consumption/encounter/effect;
+- missing telemetry ≠ no run/output/consumption/encounter/effect/control action;
 - duplicate/common-derived telemetry ≠ independent corroboration;
 - Investigation lead/localization ≠ Causal Claim;
 - first-observed/earliest-evidenced/boundary localization ≠ root cause;
@@ -267,8 +295,12 @@ Preserve throughout Phase 007:
 - stale safe state ≠ current/healthy;
 - multi-hop exposure is not transitive;
 - confirmed upstream cause ≠ every reachable consumer exposed;
-- safeguard configured/requested/active ≠ materially enforced/preventive;
-- safeguard release ≠ healthy/fresh output;
+- safeguard proposal/configuration/authorization/request ≠ effective enforcement;
+- safeguard active/enforced ≠ prevented exposure;
+- one protected path ≠ global protection;
+- `not exposed` ≠ `prevented by Safeguard`;
+- safeguard release/expiry ≠ healthy/fresh/recovered output;
+- Propagation Safeguard ≠ Execution Gate;
 - readiness ≠ gate decision ≠ enforcement ≠ execution;
 - override ≠ prerequisite ready;
 - configured fallback ≠ fallback actually applied;
@@ -313,4 +345,4 @@ Phase 010 owns technical architecture and implementation placement.
 
 ## Phase direction
 
-**Phase 007 Groups 01–06 are accepted with OPS-001–OPS-085. Group 07 — Propagation Safeguard Scope, Enforcement, Release & Recovery is next and has not started.**
+**Phase 007 Groups 01–07 are accepted with OPS-001–OPS-104. Group 08 — Execution Gate, Fallback/Override & Control-Induced Operational Effects is next and has not started.**

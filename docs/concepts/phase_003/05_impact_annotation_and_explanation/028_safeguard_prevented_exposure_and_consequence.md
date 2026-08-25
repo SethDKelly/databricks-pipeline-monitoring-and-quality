@@ -78,3 +78,18 @@ Safeguard authority definition, enforcement implementation, causal confirmation,
 ## Deferred questions
 
 Minimum enforcement evidence needed to claim prevented exposure across representative consumer/publication patterns.
+
+## Later refinement — Phase 007 Group 07
+
+OPS-086–OPS-104 specialize this synchronization without changing its concept ownership:
+
+- the safeguard is bound to an exact protected state/surface/path/cohort/interval;
+- proposal, authorization, request, control acceptance and effective enforcement remain separate;
+- path/cohort enforcement may be partial;
+- alternate paths/bypasses must be resolved before broad prevention;
+- `prevented exposure` uses REF-028 plus Group 06 encounter-opportunity, path and negative suspect-state evidence and is not a Safeguard lifecycle state;
+- `no relevant encounter opportunity` does not by itself support prevention attribution;
+- safe stale serving/non-delivery remain independent downstream effect/consequence evidence;
+- extension, expiry and release have separate effective-control facts;
+- effective release does not prove post-release recovery;
+- late enforcement/encounter evidence may revise retrospective prevention without rewriting the original control interval or then-known result.

@@ -14,7 +14,8 @@ Canonical repository phase status is maintained in [`../../README.md#current-sta
 - **Group 04 is complete with OPS-034–OPS-049; X04-01–X04-32 pass.**
 - **Group 05 is complete with OPS-050–OPS-066; I05-01–I05-34 pass.**
 - **Group 06 is complete with OPS-067–OPS-085; IM06-01–IM06-36 pass.**
-- **Group 07 — Propagation Safeguard Scope, Enforcement, Release & Recovery is next.**
+- **Group 07 is complete with OPS-086–OPS-104; SG07-01–SG07-36 pass.**
+- **Group 08 — Execution Gate, Fallback/Override & Control-Induced Operational Effects is next.**
 - Accepted concept count remains 24; SYN-001–SYN-035, REF-001–REF-030, AUTH-001–AUTH-053 and HLTH-001–HLTH-066 remain unchanged.
 
 ## Accepted Group 01 Lineage rules
@@ -202,6 +203,40 @@ Preserve:
 
 See [`06_impact_consumer_encounter_exposure_consequence/README.md`](06_impact_consumer_encounter_exposure_consequence/README.md).
 
+## Accepted Group 07 Propagation Safeguard rules
+
+Preserve:
+
+- Propagation Safeguard remains the protection-control truth owner; Impact owns encounter/exposure/effect/consequence and Capability Authorization owns permission;
+- every safeguard binds exact suspect/protected state or missing-output/current-cycle context, protection surface, path/cohort/environment scope and effective interval;
+- generic asset-wide `quarantined` state is insufficient when protected versions/paths differ;
+- protection surface/placement is explicit and implementation-neutral; no universal upstream-most/downstream-most placement rule;
+- proposal ≠ authorization ≠ activation request ≠ control acceptance ≠ effective enforcement;
+- `active` requires REF-027 evidence-backed enforcement for the bounded scope/time;
+- enforcement may be partial across consumer/path/region/cohort/version/interval; no universal protection percentage is accepted;
+- active interval overlap ≠ safeguard materiality to an encounter opportunity;
+- one protected path ≠ all alternate paths protected;
+- bypass possibility ≠ actual bypass occurrence;
+- `prevented exposure` is a derived REF-028 + Group 06 result, not a Safeguard lifecycle state;
+- `active + not exposed` ≠ prevented exposure without operative opportunity/materiality/path coverage;
+- no relevant encounter opportunity can coexist with valid active protection but does not create prevention credit;
+- blocked suspect state can coexist with safe stale serving, delivery delay or non-delivery;
+- missing output is not a quarantined object; current-cycle advancement/presentation can be protected instead;
+- extension/renewal/scope revision is separately authorized/evidenced and preserves prior history;
+- scheduled expiry ≠ effective expiry unless applicable semantics/evidence establish it;
+- release rationale/authorization/request/control acceptance/effective release remain separate;
+- release can be partial and release ≠ health/currentness/causal resolution/recovery;
+- post-release recovered state is independently evidenced through Execution/Observation/Assessment/Impact; Safeguard does not own recovery truth;
+- missing/conflicting control telemetry does not prove success/failure/fail-open/fail-closed;
+- configured fallback ≠ actual fallback application;
+- overlapping safeguards keep independent scope/materiality/release history; first activated is not automatically primary protector;
+- safeguard-induced delay/staleness/non-delivery remains separate domain evidence;
+- broader control-effect causal attribution uses Causal Claim; REF-028 retains the narrowly bounded prevented-exposure result;
+- historical safeguard enforcement/prevention/release is bitemporal and non-rewriting;
+- Propagation Safeguard ≠ Execution Gate; safeguard release ≠ Gate ADMIT and safeguard hold ≠ Gate HOLD.
+
+See [`07_propagation_safeguard_scope_enforcement_recovery/README.md`](07_propagation_safeguard_scope_enforcement_recovery/README.md).
+
 ## Permanent Phase 007 boundaries
 
 Preserve:
@@ -218,7 +253,7 @@ Preserve:
 - execution occurrence ≠ specific consumed-version proof unless evidenced;
 - actual precedence ≠ waiting ≠ consumption;
 - run success ≠ output existence/health;
-- missing telemetry ≠ no event/run/output/consumption/encounter/effect;
+- missing telemetry ≠ no event/run/output/consumption/encounter/effect/control action;
 - duplicate/common-derived telemetry ≠ independent corroboration;
 - Investigation lead/localization ≠ Causal Claim;
 - first-deviation localization ≠ root cause;
@@ -229,8 +264,11 @@ Preserve:
 - available/published/served ≠ downstream actual use;
 - stale safe state ≠ current/healthy;
 - multi-hop exposure is not transitive;
-- Safeguard proposal/configuration/active state ≠ enforcement ≠ prevented exposure;
-- safeguard release ≠ healthy/fresh output;
+- Safeguard proposal/configuration/authorization/request ≠ effective enforcement;
+- active/enforced Safeguard ≠ prevented exposure;
+- one protected path ≠ global protection;
+- `not exposed` ≠ `prevented by Safeguard`;
+- safeguard release/expiry ≠ healthy/fresh/recovered output;
 - Phase 006 health suitability ≠ readiness ≠ gate decision ≠ enforcement ≠ execution;
 - gate HOLD ≠ execution failure;
 - gate ADMIT ≠ execution occurrence;
@@ -240,28 +278,30 @@ Preserve:
 - control-induced delay/staleness/non-delivery remains observable/assessable and is not automatically defect/cause;
 - historical operational replay uses event/effective time plus knowledge cut and remains non-rewriting.
 
-## Group 07 entry contract
+## Group 08 entry contract
 
-Group 07 consumes OPS-001–OPS-085 and must evaluate exact Safeguard protection/enforcement/prevention against Group 06 encounter opportunities and path state.
+Group 08 consumes OPS-001–OPS-104 and must refine Gate start/admission control without importing Safeguard output/consumption semantics.
 
 It should explicitly test:
 
-- exact suspect state/version/window and protected publication/consumption surface;
-- proposed/configured/requested versus active safeguard;
-- opportunity-specific enforcement versus generic enabled state;
-- primary path protected while alternate path/bypass remains open;
-- safe prior-state serving under protection and resulting staleness;
-- hold/non-publication with and without real consumer encounter opportunity;
-- partial enforcement across consumers/regions/cohorts;
-- conflicting/unavailable enforcement telemetry;
-- expiry/extension while suspect state persists;
-- release followed by recovered/suspect/unknown consumer encounter;
-- release without proof of health/currentness;
-- prevented exposure requiring operative enforcement + applicable opportunity + negative alternate-path coverage;
-- restricted enforcement/path evidence;
-- safeguard-induced delivery delay/non-delivery as separate health/Impact evidence and Causal Claim attribution when asserted.
+- exact downstream execution opportunity and then-applicable readiness criterion/profile;
+- no Gate opportunity despite a not-ready prerequisite;
+- HOLD/ADMIT decision versus delivery to scheduler/control plane versus actual enforcement;
+- HOLD enforcement with no execution start during the opportunity;
+- ADMIT with no actual run;
+- override while underlying prerequisite remains not ready/unknown;
+- configured timeout/fallback versus actual timeout/fallback application;
+- fallback outcomes such as hold/admit/escalate only when explicitly configured and evidenced;
+- control telemetry conflict/unavailability without universal fail-open/fail-closed assumptions;
+- skipped/cancelled opportunity versus execution failure;
+- Gate-held execution while older state remains consumable unless a separate Safeguard protects publication/consumption;
+- Gate admission while Safeguard remains active;
+- Safeguard release while Gate remains HOLD;
+- gate-induced delay/skipped execution/older-version use/missed delivery as separate runtime/Impact evidence;
+- causal attribution of gate effects under REF-013–REF-020 rather than decision proximity;
+- late gate/enforcement/execution evidence changing retrospective interpretation without rewriting historical actions.
 
-Do not let Group 07 convert `Safeguard active + no observed exposure`, `not exposed`, authority to protect, or a safe stale consumer into proof that the Safeguard prevented exposure.
+Do not let Group 08 convert readiness into a Gate decision, a decision into enforcement, HOLD into failure, ADMIT into execution, override into readiness, Safeguard state into Gate state, or configured fallback into actual fallback behavior.
 
 ## Architecture boundary
 

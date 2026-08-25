@@ -10,5 +10,5 @@ Do not edit the phase lines below directly.
 - **Phase 004 — Evidence, Time, and Causality Refinement: COMPLETE.** REF-001–REF-030 accepted.
 - **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement: COMPLETE.** AUTH-001–AUTH-053 final; G07-01–G07-26 pass.
 - **Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement: COMPLETE.** Groups 01–07 accepted; HLTH-001–HLTH-066 final; H07-01–H07-36 pass.
-- **Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: IN PROGRESS.** Groups 01–06 accepted; OPS-001–OPS-085 accepted; L01-01–L01-18, C02-01–C02-24, P03-01–P03-30, X04-01–X04-32, I05-01–I05-34 and IM06-01–IM06-36 pass; Group 07 next.
+- **Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: IN PROGRESS.** Groups 01–07 accepted; OPS-001–OPS-104 accepted; L01-01–L01-18, C02-01–C02-24, P03-01–P03-30, X04-01–X04-32, I05-01–I05-34, IM06-01–IM06-36 and SG07-01–SG07-36 pass; Group 08 next.
 <!-- PHASE_STATUS:END -->
