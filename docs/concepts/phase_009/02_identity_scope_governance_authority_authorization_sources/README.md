@@ -1,10 +1,16 @@
 # Phase 009 Group 02 — Identity, Scope, Semantics, Governance, Authority & Authorization Sources
 
-**Status:** Not started
+**Status:** Next — not started
 
 ## Goal
 
-Apply the Group 01 integration contract to source capabilities for Entity Identity, Monitoring Scope, Semantic Definition, Responsibility Assignment, Classification, Policy Context, Assertion Authority and Capability Authorization.
+Apply the accepted Group 01 integration contract (**INTG-001–INTG-022**) to source capabilities for Entity Identity, Monitoring Scope, Semantic Definition, Responsibility Assignment, Classification, Policy Context, Assertion Authority and Capability Authorization.
+
+## Group 01 entry contract
+
+For each material source surface, Group 02 must record exact surface/version identity, proposition mapping, evidence role, authority applicability, identity/join semantics, temporal coordinates, grain/context, positive/negative capability, coverage, availability/latency, retention/replay, correction behavior, disclosure, derivation/independence, quota/cost, integration observability and support classification/residual gaps.
+
+Source availability does not establish authority; authority does not establish sufficiency; retrievability does not establish disclosure permission.
 
 ## Primary questions
 
@@ -16,6 +22,10 @@ Apply the Group 01 integration contract to source capabilities for Entity Identi
 - Which sources establish action/disclosure permission, and how do current versus historical authorization differ?
 - What restricted metadata may be used internally versus disclosed through Explanation/`inspectBasis`?
 - What happens when optional systems such as Collibra or Immuta are absent?
+
+## External-fact requirement
+
+Group 02 must verify current vendor/platform documentation for evaluated surfaces and record meaningful edition/feature/permission/history limitations. Undocumented behavior cannot be treated as a guaranteed capability.
 
 ## Boundary
 

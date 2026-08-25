@@ -8,7 +8,7 @@ The accepted concept count is **24**. Phase 002 originally exited with 20 accept
 
 For the detailed cross-cutting boundary narrative that previously lived in this index, see [`history/concept_catalog_snapshot_pre_phase_006_exit.md`](history/concept_catalog_snapshot_pre_phase_006_exit.md). That file is retained as a **historical snapshot**; any phase-status wording in it reflects status at the time of writing and is superseded by the canonical documentation index.
 
-The project uses Concept Design to define independently understandable units of functionality. Concepts remain implementation-neutral and synchronize rather than collapse into vendor, service, storage, schema, IAM, authority-rule engine, approval-workflow, orchestration, temporal-replay, metric-governance, disclosure, questioning, answer-composition, Explanation-rendering, or UI boundaries.
+The project uses Concept Design to define independently understandable units of functionality. Concepts remain implementation-neutral and synchronize rather than collapse into vendor, service, storage, schema, IAM, authority-rule engine, approval-workflow, orchestration, temporal-replay, metric-governance, disclosure, questioning, answer-composition, Explanation-rendering, integration-source, or UI boundaries.
 
 Use [`concept_template.md`](concept_template.md) as the specification checklist. The original Phase 002 review and later addenda are in [`phase_002/README.md`](phase_002/README.md) and [`phase_002/addenda/`](phase_002/addenda/).
 
@@ -57,7 +57,8 @@ Use [`concept_template.md`](concept_template.md) as the specification checklist.
 - [`phase_005/README.md`](phase_005/README.md) — governance, authority, capability, and disclosure refinement.
 - [`phase_006/README.md`](phase_006/README.md) — health, metrics, schema, statistical, reconciliation, composite-health, and timing refinement.
 - [`phase_007/README.md`](phase_007/README.md) — Lineage, change, Investigation, Impact, safeguard, execution-control, and historical operational replay refinement.
-- [`phase_008/README.md`](phase_008/README.md) — business-question, material answer-statement, basis-traceability, and evidence-grounded Explanation refinement; consult canonical status above for phase progression.
+- [`phase_008/README.md`](phase_008/README.md) — business-question, material answer-statement, basis-traceability, and evidence-grounded Explanation refinement.
+- [`phase_009/README.md`](phase_009/README.md) — integration-contract, source-role, authority-applicability, evidence-availability, coverage, retention, disclosure and feasibility refinement; consult canonical status above for phase progression.
 
 ## Durable boundaries
 
@@ -76,6 +77,11 @@ Across phases, preserve the accepted distinctions recorded in the phase contract
 - historical retained state ≠ replay-derived reconstruction;
 - question/request context ≠ truth/authority/authorization;
 - answer statement ≠ independent truth state;
-- Explanation ≠ independent truth source.
+- Explanation ≠ independent truth source;
+- source availability ≠ Assertion Authority ≠ evidence sufficiency ≠ disclosure authorization;
+- source-local identity ≠ Entity Identity without reconciliation;
+- positive source evidence capability ≠ strong-negative evidence capability;
+- current source availability ≠ historical replay capability;
+- integration support classification ≠ proposition truth or confidence.
 
 Detailed definitions remain in the concept, refinement, decision, and reference documents; this README is a navigation/catalog surface rather than an independent phase-status authority.

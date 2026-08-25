@@ -1,6 +1,6 @@
 # Phase 009 — Integration Contracts, Source Authority, and Evidence Availability
 
-**Status:** PLANNED — logical grouping accepted; Group 01 next. Canonical repository status remains `Phase 009 — NEXT — not started` until semantic contract work begins.
+**Status:** IN PROGRESS — Group 01 accepted; INTG-001–INTG-022 accepted; Group 02 next
 
 ## Goal
 
@@ -23,31 +23,31 @@ An integration gap is a product/integration finding. It is **not** permission to
 
 ## Refinement namespace
 
-Phase 009 will use **`INTG-###`** integration-contract refinements.
+Phase 009 uses **`INTG-###`** integration-contract refinements.
 
 `INTG-###` describes the functional contract between accepted product semantics and actual source capabilities. It does not define adapter classes, service boundaries, event schemas, storage tables, polling architecture, credentials, SDK selection, or deployment topology.
 
-No `INTG-###` contracts are accepted yet.
+Accepted range so far: **INTG-001–INTG-022**.
 
 ## Logical delivery grouping
 
 Phase 009 is reviewed in eight dependency-ordered groups. The groups are organized around **evidence responsibilities and reasoning dependencies**, not vendor ownership.
 
 ### Group 01 — Integration Contract Vocabulary, Source Roles & Capability Matrix
-**Status:** Next — not started.
+**Status:** **Accepted — INTG-001–INTG-022; IC01-01–IC01-40 pass.**
 
-Define the reusable contract for describing a source surface: supported proposition, evidence role, authority applicability, subject/join identity, temporal semantics, granularity, positive/negative evidence capability, coverage, availability, latency, retention, mutability/corrections, disclosure, cost/quota, integration observability and explicit unsupported states.
+Defines exact source-surface identity/version context; proposition binding; evidence roles; authority/relevance/sufficiency/authorization separation; identity and association joins; temporal coordinates; grain/context; positive and negative evidence; coverage; availability/latency; retention/replay; correction/backfill/mutation; duplicate/common derivation; conflict/fallback; support-gap taxonomy; quota/cost; and integration observability.
 
-This group establishes the matrix that every later source-family review must populate.
+No new concept is required. Integration support remains proposition/source-set/context bound rather than a vendor-wide score.
 
 See [`01_integration_contract_vocabulary_source_roles_capability_matrix/README.md`](01_integration_contract_vocabulary_source_roles_capability_matrix/README.md).
 
 ### Group 02 — Identity, Scope, Semantics, Governance, Authority & Authorization Sources
-**Status:** Not started.
+**Status:** **Next — not started.**
 
-Map source support for Entity Identity, Monitoring Scope, Semantic Definition, Responsibility Assignment, Classification, Policy Context, Assertion Authority and Capability Authorization. Evaluate identity reconciliation, metadata category authority, conflicting assertions, current/historical applicability, disclosure rules and source-specific gaps.
+Apply INTG-001–INTG-022 to Entity Identity, Monitoring Scope, Semantic Definition, Responsibility Assignment, Classification, Policy Context, Assertion Authority and Capability Authorization. Evaluate identity reconciliation, metadata-category authority, conflicting assertions, current/historical applicability, disclosure rules and source-specific gaps.
 
-Likely source families include Unity Catalog, Collibra, Immuta, repository/configuration metadata and organizational identity/IAM surfaces, but source roles must be established from evidence rather than assumed from product names.
+Likely source families include Unity Catalog, Collibra, Immuta, repository/configuration metadata and organizational identity/IAM surfaces, but source roles must be established from current evidence rather than assumed from product names.
 
 See [`02_identity_scope_governance_authority_authorization_sources/README.md`](02_identity_scope_governance_authority_authorization_sources/README.md).
 
@@ -104,6 +104,35 @@ Compose the source contracts across all prior groups. Identify evidence gaps, co
 The exit review must state which accepted product requirements are fully supportable, partially supportable, unsupported or still unknown with the evaluated integrations, without weakening source semantics. It then hands concrete integration facts to Phase 010 technical architecture.
 
 See [`08_cross_source_coverage_latency_retention_cost_consolidation_exit/README.md`](08_cross_source_coverage_latency_retention_cost_consolidation_exit/README.md).
+
+## Accepted Group 01 integration-contract discipline
+
+Every later source review uses the common matrix:
+
+**source-surface identity/version → bounded proposition → evidence role → authority applicability → subject/join contract → temporal coordinates → grain/context → positive capability → negative/opportunity/coverage capability → availability/latency → retention/replay → mutation/correction → disclosure → derivation/independence → quota/cost → integration observability → support classification + residual gaps**.
+
+Preserve:
+
+- product/vendor name ≠ exact source surface;
+- source availability ≠ relevance ≠ authority ≠ sufficiency ≠ authorization;
+- source role ≠ standing;
+- source-local identifier/name ≠ Entity Identity;
+- timestamp proximity ≠ exact cross-system association;
+- event/effective time ≠ recorded/knowledge/availability/retrieval time;
+- aggregate/asset grain ≠ narrower proposition grain;
+- positive-event support ≠ negative-evidence capability;
+- no returned record ≠ absence without opportunity + sufficient coverage + source health;
+- coverage for one mode/path/cohort ≠ global completeness;
+- current-state availability ≠ historical replay capability;
+- backfill/correction now ≠ knowledge available then;
+- destructive mutation can make historical requirements unsupported;
+- multiple endpoints ≠ independent corroboration when commonly derived;
+- fallback availability ≠ inherited authority;
+- source conflict ≠ hidden winner;
+- quota/cost may constrain feasible coverage but cannot rewrite truth;
+- integration failure ≠ monitored-product negative;
+- `supported`, `partially supported`, `unsupported`, `unknown/not yet verified`, and `not applicable` are feasibility outcomes, not truth/confidence states;
+- no vendor-wide support/completeness score is accepted.
 
 ## Why this order
 

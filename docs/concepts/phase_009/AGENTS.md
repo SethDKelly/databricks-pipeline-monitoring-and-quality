@@ -6,23 +6,61 @@ Applies to work under `docs/concepts/phase_009/` and complements the repository 
 
 - Phase 008 is complete with EXPL-001–EXPL-160 final.
 - Phase 009 logical grouping is accepted.
-- No INTG contracts are accepted yet.
-- **Group 01 — Integration Contract Vocabulary, Source Roles & Capability Matrix is next.**
+- **Group 01 is complete with INTG-001–INTG-022; IC01-01–IC01-40 pass.**
+- **Group 02 — Identity, Scope, Semantics, Governance, Authority & Authorization Sources is next.**
+- Accepted concept count remains 24.
 - Canonical repository status remains in `../../README.md#current-state`.
 
 ## Phase purpose
 
 Phase 009 maps accepted functional semantics to actual source/integration capabilities. It discovers feasibility and limitations; it does not redesign the accepted truth model around vendor convenience.
 
+## Accepted Group 01 rules
+
+Preserve:
+
+- integration contracts are capability mappings, not new product truth concepts;
+- capability identity binds exact source surface/API/table/event/query/export/object class plus material semantic/version/edition context;
+- vendor/system name alone is too coarse;
+- every capability row binds an accepted proposition and bounded subject/context;
+- evidence role is descriptive and does not create Assertion Authority;
+- source availability ≠ relevance ≠ eligibility ≠ authority ≠ sufficiency ≠ authorization;
+- internal retrievability ≠ requester-visible disclosure;
+- source-local IDs require reconciliation before becoming Entity Identity or another ecosystem identity;
+- name equality and timestamp proximity do not prove identity/association;
+- exact cross-system associations require explicit join/reconciliation evidence;
+- event/effective, recorded/knowledge/availability and retrieval times remain distinct;
+- old event timestamp returned today does not prove historical availability;
+- grain/cardinality/context constrain the conclusion grain;
+- positive-evidence capability does not imply corresponding negative-evidence capability;
+- strong negatives require the exact opportunity/population/path/window plus sufficient source/query coverage and source health;
+- no record returned during outage/partial pagination/permission failure/throttling/unknown coverage is not evidence of absence;
+- coverage is bounded and non-transitive;
+- current-state availability does not imply historical replay;
+- retention, mutation, correction, backfill, deletion and tombstone behavior are material to replay;
+- late evidence does not enter an earlier knowledge cut without evidence it was available then;
+- duplicate/common-derived surfaces are not independent corroboration;
+- source conflicts remain conflicts absent accepted authority/evidence rules;
+- fallback accessibility does not inherit authority;
+- support classification is proposition + source set + context bound;
+- accepted feasibility outcomes are supported, partially supported, unsupported, unknown/not yet verified and not applicable;
+- unsupported is allowed and never weakens REF/AUTH/HLTH/OPS/EXPL semantics;
+- quotas/rates/cost may reduce feasible coverage/latency but cannot change truth;
+- integration observability is separate from monitored-product state;
+- no universal vendor support/confidence/completeness score is accepted;
+- capability rows compose only through explicit product semantics, not matrix adjacency.
+
+See [`01_integration_contract_vocabulary_source_roles_capability_matrix/README.md`](01_integration_contract_vocabulary_source_roles_capability_matrix/README.md).
+
 ## Required evaluation dimensions
 
 For every material source surface, evaluate as applicable:
 
-- source/system and exact surface/object/event/query/API class;
+- exact source surface and semantic/version/edition context;
 - accepted proposition(s) it may inform;
 - evidence role and proposition-specific authority applicability;
 - source-local identity plus join/reconciliation keys;
-- event/effective time, recorded/knowledge time and clock semantics;
+- event/effective, recorded/knowledge/availability and retrieval-time semantics;
 - granularity/cardinality and version/context binding;
 - positive evidence support;
 - strong-negative opportunity/coverage support;
@@ -67,7 +105,9 @@ A source may be authoritative for one metadata category and merely supporting/ob
 
 ## External-fact discipline
 
-Phase 009 necessarily evaluates evolving vendor capabilities. Verify current external documentation when executing a group, distinguish product documentation from repository assumptions, record meaningful edition/feature/retention/permission limitations, and avoid treating undocumented behavior as guaranteed.
+Groups 02–08 necessarily evaluate evolving vendor capabilities. Verify current external documentation when executing a group, distinguish product documentation from repository assumptions, record meaningful edition/feature/retention/permission limitations, and avoid treating undocumented behavior as guaranteed.
+
+Group 01 intentionally defines vendor-neutral evaluation semantics and makes no current vendor-capability assertions.
 
 ## Architecture boundary
 
@@ -75,8 +115,8 @@ Do not select SDK/client libraries, polling versus streaming, event buses, stora
 
 ## Group sequence
 
-1. integration contract vocabulary/source roles/capability matrix;
-2. identity/scope/governance/authority/authorization sources;
+1. integration contract vocabulary/source roles/capability matrix — **accepted**;
+2. identity/scope/governance/authority/authorization sources — **next**;
 3. change/deployment/execution/version/runtime evidence;
 4. health/schema/metrics/Expectations/Baselines/reconciliation evidence;
 5. Lineage/consumer use/exposure/Impact evidence;
