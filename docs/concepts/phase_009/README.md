@@ -1,6 +1,6 @@
 # Phase 009 — Integration Contracts, Source Authority, and Evidence Availability
 
-**Status:** IN PROGRESS — Groups 01–02 accepted; INTG-001–INTG-050 accepted; IC01-01–IC01-40 and GOV02-01–GOV02-48 pass; Group 03 next
+**Status:** IN PROGRESS — Groups 01–03 accepted; INTG-001–INTG-083 accepted; IC01-01–IC01-40, GOV02-01–GOV02-48 and RTE03-01–RTE03-54 pass; Group 04 next
 
 ## Goal
 
@@ -27,7 +27,7 @@ Phase 009 uses **`INTG-###`** integration-contract refinements.
 
 `INTG-###` describes the functional contract between accepted product semantics and actual source capabilities. It does not define adapter classes, service boundaries, event schemas, storage tables, polling architecture, credentials, SDK selection, or deployment topology.
 
-Accepted range so far: **INTG-001–INTG-050**.
+Accepted range so far: **INTG-001–INTG-083**.
 
 ## Logical delivery grouping
 
@@ -54,16 +54,16 @@ Accepted gaps include no out-of-box Monitoring Scope registry, no automatic Asse
 See [`02_identity_scope_governance_authority_authorization_sources/README.md`](02_identity_scope_governance_authority_authorization_sources/README.md), [`02_identity_scope_governance_authority_authorization_sources/source_capability_matrix.md`](02_identity_scope_governance_authority_authorization_sources/source_capability_matrix.md), and [`02_identity_scope_governance_authority_authorization_sources/external_source_review.md`](02_identity_scope_governance_authority_authorization_sources/external_source_review.md).
 
 ### Group 03 — Change Intent, Deployment, Execution, Version & Runtime Evidence
-**Status:** **Next — not started.**
+**Status:** **Accepted — INTG-051–INTG-083; RTE03-01–RTE03-54 pass.**
 
-Map evidence for Change Intent, repository revision, workflow/deployment attempt and activation, execution opportunity/run/attempt/lifecycle, run-specific implementation/input/output version, dependency sequencing, retry/rerun/backfill and timing.
+Applies the accepted source contract to Git/GitHub revision/change records, GitHub Actions workflow/attempt/deployment evidence, Databricks job/task/pipeline configuration and runtime history, bundle/direct-Git provenance, retries/repairs, actual sequence and Delta/input/output version evidence.
 
-Likely source families include Git/GitHub, GitHub Actions, Databricks Jobs/Workflows and runtime/system telemetry. The group must prove cross-system associations instead of inferring them from names or timestamps.
+It establishes strong local evidence for Git revisions, workflow/run identity, Databricks execution lifecycle and direct remote-Git `used_commit`; explicit correlation requirements for CI→Databricks joins; an out-of-box run-commit gap for bundle/workspace-source execution; conditional per-output Delta version binding; and an explicit unsupported-out-of-box generic multi-input version-consumption gap.
 
-See [`03_change_deployment_execution_version_runtime_evidence/README.md`](03_change_deployment_execution_version_runtime_evidence/README.md).
+See [`03_change_deployment_execution_version_runtime_evidence/README.md`](03_change_deployment_execution_version_runtime_evidence/README.md), [`03_change_deployment_execution_version_runtime_evidence/source_capability_matrix.md`](03_change_deployment_execution_version_runtime_evidence/source_capability_matrix.md), and [`03_change_deployment_execution_version_runtime_evidence/external_source_review.md`](03_change_deployment_execution_version_runtime_evidence/external_source_review.md).
 
 ### Group 04 — Health, Schema, Metrics, Expectations, Baselines & Reconciliation Evidence
-**Status:** Not started.
+**Status:** **Next — not started.**
 
 Map source support for structural observations, schema compatibility evidence, metric observations, DQ results, Expectation outcomes, Baseline/comparability evidence, transformation reconciliation, composite health inputs, freshness/currentness and exact-use evidence suitability.
 
@@ -154,6 +154,29 @@ Every later group must preserve:
 - effective Immuta + Unity Catalog authorization can be a composed, user-population-specific proposition;
 - optional Collibra/Immuta absence creates explicit gaps rather than benign defaults;
 - Group 02 source/governance mapping does not prove repository revision → deployment → run → version association.
+
+## Accepted Group 03 runtime-source discipline
+
+Every later group must preserve:
+
+- Git commit SHA ≠ governed Change Intent unless an explicit Change Intent rule binds the change record;
+- event-triggering SHA ≠ workflow-definition SHA;
+- workflow run ≠ workflow attempt;
+- GitHub Actions success ≠ Databricks activation;
+- GitHub Deployment request/status ≠ target activation by default;
+- CI→Databricks association requires explicit correlation/attestation evidence;
+- current/active Databricks job config ≠ run-specific implementation state;
+- direct remote-Git `git_snapshot.used_commit` can bind the code revision of the exact run when present;
+- bundle/workspace-source run revision remains unsupported/conditional without immutable attestation;
+- code commit ≠ entire composite implementation state;
+- configured dependency ≠ actual precedence ≠ waiting ≠ consumption;
+- retry ≠ repair ≠ rerun ≠ backfill;
+- execution success ≠ output existence/version/currentness/health;
+- Delta output-version association is per-output and conditional on explicit correlation;
+- Delta `readVersion` ≠ a generic upstream input-version manifest;
+- generic exact multi-input version consumption is unsupported out of the box and requires explicit evidence where needed;
+- recent Jobs API detail ≠ longer Lakeflow system-table replay capability;
+- no-run/no-output/no-consumption remain opportunity/coverage/source-health bound.
 
 ## Why this order
 

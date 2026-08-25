@@ -8,7 +8,8 @@ Applies to work under `docs/concepts/phase_009/` and complements the repository 
 - Phase 009 logical grouping is accepted.
 - **Group 01 is complete with INTG-001–INTG-022; IC01-01–IC01-40 pass.**
 - **Group 02 is complete with INTG-023–INTG-050; GOV02-01–GOV02-48 pass.**
-- **Group 03 — Change Intent, Deployment, Execution, Version & Runtime Evidence is next.**
+- **Group 03 is complete with INTG-051–INTG-083; RTE03-01–RTE03-54 pass.**
+- **Group 04 — Health, Schema, Metrics, Expectations, Baselines & Reconciliation Evidence is next.**
 - Accepted concept count remains 24.
 - Canonical repository status remains in `../../README.md#current-state`.
 
@@ -81,6 +82,40 @@ Preserve:
 
 See [`02_identity_scope_governance_authority_authorization_sources/README.md`](02_identity_scope_governance_authority_authorization_sources/README.md).
 
+## Accepted Group 03 rules
+
+Preserve:
+
+- Git commit SHA is repository revision identity; PR/merge/commit metadata becomes Change Intent only under explicit governance;
+- `github.sha` is event-semantic triggering revision and can differ in meaning from `github.workflow_sha`;
+- GitHub `run_id` identifies a workflow run while `run_attempt` identifies a re-run attempt;
+- a GitHub re-run retains the original triggering SHA/ref and does not become a new source revision by default;
+- CI job/step/workflow success does not prove Databricks target activation;
+- GitHub Deployment SHA/ref/environment records identify GitHub deployment requests/status, not target activation by default;
+- GitHub→Databricks association requires explicit shared identifiers/manifests/fingerprints/target-recorded provenance;
+- names, actors, branch labels and timestamp proximity cannot establish cross-system operational joins;
+- Databricks job/task SCD2 configuration history constrains effective config but does not prove run-specific state;
+- bundle/external-deployment metadata identifies management/provenance context but does not itself attest a commit;
+- bundle/workspace-source run Git revision is unsupported out of the box unless explicit immutable attestation is retained;
+- direct remote-Git Jobs can expose `git_snapshot.used_commit` as strong run-specific Git code evidence;
+- implementation state remains composite across code, job/task configuration, params, runtime/libraries and target facets;
+- trigger/schedule/opportunity ≠ actual run;
+- run occurrence ≠ complete lifecycle;
+- retry/repair/rerun/backfill retain distinct source semantics;
+- task/root/source run associations use explicit IDs where available; missing older fields remain missing;
+- configured dependency ≠ actual precedence ≠ waiting ≠ consumption;
+- timeline rows must be assembled before deriving run/task duration/order;
+- Lakeflow pipeline update identity remains distinct from Jobs execution identity;
+- recent Jobs API detail and longer system-table history are different replay surfaces;
+- audit events can support operational reconstruction but common derivation prevents automatic independent-corroboration credit;
+- Delta output version binding is conditional and per output;
+- run success ≠ output existence/version/currentness/health;
+- Delta `readVersion` is not a generic upstream input manifest;
+- exact generic multi-input version consumption is unsupported out of the box and requires explicit workload/query/source evidence when needed;
+- no-run/no-output/no-consumption retain opportunity/coverage/source-health burdens.
+
+See [`03_change_deployment_execution_version_runtime_evidence/README.md`](03_change_deployment_execution_version_runtime_evidence/README.md).
+
 ## Required evaluation dimensions
 
 For every material source surface, evaluate as applicable:
@@ -142,30 +177,38 @@ A source may be authoritative for one metadata category and merely supporting/ob
 - observer-relative metadata cannot support absence by non-return;
 - effective multi-plane authorization may require composition rather than source precedence.
 
-## Group 03 entry contract
+## Group 03 gaps carried forward
 
-Group 03 may consume source-local identities, explicit crosswalks, principal provenance, bounded authority rules, current authorization/disclosure limits and history constraints from Group 02.
+- generic CI→Databricks association requires explicit correlation where platform-native evidence is absent;
+- bundle/workspace-source runs need explicit commit/content attestation when exact Git revision matters;
+- composite run-specific implementation state requires multiple evidence facets;
+- exact generic multi-input consumption requires explicit workload/query/source instrumentation or manifests;
+- output version binding remains conditional and per output;
+- recent Jobs API versus longer system-table history creates replay-detail boundaries;
+- operational negative claims remain source-coverage bound.
 
-It must independently prove repository revision/change-intent association, CI/CD workflow attempt/outcome, Databricks Deployment attempt/activation, actual execution opportunity/run identity, run-specific implementation/input/output version, dependency sequence/waiting, retry/rerun/backfill identity and any strong no-run/no-output/no-consumption claim.
+## Group 04 entry contract
 
-Group 02 identity, ownership, repository path, responsibility, deployment name and timestamp proximity cannot substitute for these joins.
+Group 04 may consume exact run/task identity, timing, implementation facets and input/output versions only where INTG-051–INTG-083 establish them.
+
+It must independently evaluate realized schema, structural compatibility evidence, metric/DQ Observations, governed Expectations, Baseline membership/comparability, reconciliation, freshness/current-cycle state and exact-use suitability. Execution success, CI success, active job configuration or output existence cannot substitute for those health propositions.
 
 ## External-fact discipline
 
 Groups 02–08 necessarily evaluate evolving vendor capabilities. Verify current external documentation when executing a group, distinguish product documentation from repository assumptions, record meaningful edition/feature/retention/permission limitations, and avoid treating undocumented behavior as guaranteed.
 
-Group 02 records its verified public sources in [`02_identity_scope_governance_authority_authorization_sources/external_source_review.md`](02_identity_scope_governance_authority_authorization_sources/external_source_review.md).
+Group 02 records sources in [`02_identity_scope_governance_authority_authorization_sources/external_source_review.md`](02_identity_scope_governance_authority_authorization_sources/external_source_review.md); Group 03 records sources in [`03_change_deployment_execution_version_runtime_evidence/external_source_review.md`](03_change_deployment_execution_version_runtime_evidence/external_source_review.md).
 
 ## Architecture boundary
 
-Do not select SDK/client libraries, polling versus streaming, event buses, storage schemas, graph databases, caches, credential mechanisms, deployment topology, retry infrastructure, orchestration, LLM/retrieval architecture or UI. Phase 010 owns technical architecture.
+Do not select SDK/client libraries, polling versus streaming, event buses, storage schemas, graph databases, caches, credential mechanisms, deployment topology, retry infrastructure, orchestration, attestation implementation, LLM/retrieval architecture or UI. Phase 010 owns technical architecture.
 
 ## Group sequence
 
 1. integration contract vocabulary/source roles/capability matrix — **accepted**;
 2. identity/scope/governance/authority/authorization sources — **accepted**;
-3. change/deployment/execution/version/runtime evidence — **next**;
-4. health/schema/metrics/Expectations/Baselines/reconciliation evidence;
+3. change/deployment/execution/version/runtime evidence — **accepted**;
+4. health/schema/metrics/Expectations/Baselines/reconciliation evidence — **next**;
 5. Lineage/consumer use/exposure/Impact evidence;
 6. Investigation/causality/Safeguard/Gate/control evidence;
 7. Explanation/historical replay/basis/disclosure source contracts;
