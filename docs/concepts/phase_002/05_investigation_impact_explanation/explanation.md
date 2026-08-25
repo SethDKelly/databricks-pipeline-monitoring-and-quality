@@ -153,3 +153,17 @@ The initiating request is now treated as a bounded question proposition that pre
 Question-family labels are routing metadata only. They do not establish evidence sufficiency, authority or truth. Asking `why` does not relax Causal Claim requirements; asking `was nobody affected?` does not relax Impact coverage; asking for restricted information does not grant disclosure.
 
 Group 01 accepts EXPL-001–EXPL-012 and BQ01-01–BQ01-24 without changing the 24-concept catalog.
+
+## Later refinement — Phase 008 Group 02
+
+Phase 008 Group 02 refines the existing `material statements`, `references to source concept state/evidence`, and `inspectBasis` requirements without adding an Answer/Statement truth-owning concept. See [`../../phase_008/02_answer_structure_statement_selection_basis_traceability/README.md`](../../phase_008/02_answer_structure_statement_selection_basis_traceability/README.md).
+
+A material answer statement is now treated as a bounded proposition independent of wording. It preserves source truth owner/epistemic type and is classified as either a direct projection of source-owned truth or an explicit derived cross-concept statement using an accepted semantic join rule.
+
+Statement selection is question-relative. Answer-bearing conclusions, contextual statements and limitations can have different presentation roles while retaining their source proposition types. Supporting, contradicting and limiting basis are statement-relative roles; basis sufficiency remains conclusion-relative, and duplicate/common-derived basis cannot be counted as independent corroboration.
+
+Headline/summary/detail views may compress detail but cannot change scope, polarity or epistemic strength, and cannot omit a qualification when doing so would materially overstate causality, exposure, health, control effectiveness or another conclusion. Multi-statement answers preserve sibling independence rather than creating a synthetic global answer truth.
+
+Every material statement retains internal statement-to-basis identity/provenance even if Group 06 later restricts what basis may be visibly disclosed. Answer coverage is tracked by bounded subquestion/proposition rather than a universal confidence/completeness score.
+
+Group 02 accepts EXPL-013–EXPL-028 and AS02-01–AS02-30 without changing the 24-concept catalog.

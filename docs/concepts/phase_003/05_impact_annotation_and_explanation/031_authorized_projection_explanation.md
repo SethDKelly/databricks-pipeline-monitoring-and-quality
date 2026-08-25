@@ -101,3 +101,13 @@ Question-family labels are descriptive routing metadata only. Explanation routes
 Answerability is also separated from semantic applicability, evidence availability/sufficiency, integration support and current disclosure authorization. A partial question can therefore produce supported subanswers while other subquestions remain ambiguous, unresolved, unavailable or restricted without being flattened into one confidence score.
 
 These refinements do not change SYN-031's rule that composition occurs only from an authorized analytical projection and does not make the question itself a truth or authorization source.
+
+## Later refinement — Phase 008 Group 02
+
+Phase 008 Group 02 makes `material statement`, `statement-to-basis`, and summary/detail composition explicit. See [`../../phase_008/02_answer_structure_statement_selection_basis_traceability/README.md`](../../phase_008/02_answer_structure_statement_selection_basis_traceability/README.md).
+
+Each material statement has proposition identity independent of wording and retains its source truth owner/epistemic type. Direct projections remain distinct from derived cross-concept statements; derived statements require an accepted join rule rather than narrative adjacency.
+
+Supporting, contradicting and limiting basis are statement-relative roles and preserve common-derivation/independence semantics. Basis count never becomes confidence. Headline/summary/detail views may differ in verbosity but cannot strengthen scope, polarity or epistemic status, and material limitations cannot be compressed away.
+
+Multiple statements remain independent rather than forming one synthetic global answer truth. Internal basis traceability is required for every material statement, while authorized visible basis inspection remains governed later by Phase 008 Group 06.

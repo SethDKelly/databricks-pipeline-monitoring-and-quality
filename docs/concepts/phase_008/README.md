@@ -1,6 +1,6 @@
 # Phase 008 — Business Questioning and Explanation
 
-**Status:** IN PROGRESS — Group 01 accepted; EXPL-001–EXPL-012 accepted; Group 02 next
+**Status:** IN PROGRESS — Groups 01–02 accepted; EXPL-001–EXPL-028 accepted; Group 03 next
 
 ## Goal
 
@@ -12,9 +12,9 @@ Phase 008 consumes the completed functional truth model from Phases 002–007. I
 
 Phase 008 uses **`EXPL-###`** refinement contracts.
 
-`EXPL-###` means business-question and Explanation refinement over accepted concepts. It does **not** create a new `Question` or `Answer` concept by default, does not extend SYN/REF/AUTH/HLTH/OPS ranges, and must not become an umbrella state that absorbs the truth owned by other concepts.
+`EXPL-###` means business-question and Explanation refinement over accepted concepts. It does **not** create a new `Question`, `Answer`, or answer-statement truth concept by default, does not extend SYN/REF/AUTH/HLTH/OPS ranges, and must not become an umbrella state that absorbs the truth owned by other concepts.
 
-Accepted range so far: **EXPL-001–EXPL-012**.
+Accepted range so far: **EXPL-001–EXPL-028**.
 
 ## Logical delivery grouping
 
@@ -30,14 +30,16 @@ No new concept is required. The question remains initiating request context for 
 See [`01_question_proposition_intent_scope_temporal_perspective/README.md`](01_question_proposition_intent_scope_temporal_perspective/README.md).
 
 ### Group 02 — Answer Structure, Statement Selection & Basis Traceability
-**Status:** **Next — not started.**
+**Status:** **Accepted — EXPL-013–EXPL-028; AS02-01–AS02-30 pass.**
 
-Will refine answer proposition selection, materiality, statement types, statement-to-basis linkage, summary-versus-detail structure, citation/basis inspection semantics, and how multiple independent source truths compose without becoming one synthesized truth state.
+Defines material answer-statement proposition identity, source/epistemic preservation, direct projection versus cross-concept derivation, question-relative statement materiality, answer/context/limitation roles, statement-relative support/contradiction/limitation basis, conclusion-relative sufficiency, duplicate/common-derived evidence discipline, explicit semantic join logic, summary/detail equivalence, safe omission/compression, sibling independence, primary-answer ordering, internal basis inspection, and bounded answer coverage.
+
+No new concept is required. Explanation owns the composed communication only; answer statements remain projections of source-owned or explicitly derived propositions.
 
 See [`02_answer_structure_statement_selection_basis_traceability/README.md`](02_answer_structure_statement_selection_basis_traceability/README.md).
 
 ### Group 03 — Health, Change & Execution Question Semantics
-**Status:** Not started.
+**Status:** **Next — not started.**
 
 Will refine how status/health, freshness, schema/quality, change, deployment, execution, version-use and operational-timing questions map to accepted Phase 006/007 truth without hidden composite-health, causal, or execution assumptions.
 
@@ -88,6 +90,29 @@ See [`08_historical_comparative_explanation_consolidation_exit/README.md`](08_hi
 6. **Progressive maturity after basis/audience semantics** — refresh behavior needs stable statement identity, epistemic state and disclosure rules.
 7. **Historical/comparative replay last** — time-cut composition is the final test that Explanation remains non-rewriting.
 
+## Accepted answer foundation through Group 02
+
+Phase 008 now preserves:
+
+**bounded question/subquestion → candidate source-owned propositions → question-relevant/material statement selection → direct projection or explicit cross-concept derivation → statement-level source/epistemic identity → supporting/contradicting/limiting basis → headline/summary/detail composition → internal basis inspection → bounded answer coverage**.
+
+No arrow creates stronger truth automatically.
+
+For answer composition specifically:
+
+- rendered wording ≠ material statement proposition identity;
+- statement role/context ≠ truth ownership;
+- direct projection ≠ cross-concept derivation;
+- juxtaposition ≠ semantic join;
+- materiality/ordering ≠ evidence strength/authority;
+- supporting/contradicting/limiting basis is statement-relative;
+- basis count ≠ confidence and common-derived basis ≠ independent corroboration;
+- headline/summary/detail may vary in detail but not epistemic strength;
+- omission cannot remove a material qualification when doing so would overstate the answer;
+- sibling statements remain independent and do not create one synthetic global answer truth;
+- internal statement-to-basis traceability is mandatory even when visible basis disclosure is later restricted;
+- answer coverage is subquestion/proposition bound, not a universal completeness/confidence score.
+
 ## Accepted Phase 007 handoff
 
 Preserve at minimum:
@@ -123,4 +148,4 @@ Phase 009 will map accepted question/Explanation requirements to real source ava
 
 ## Phase direction
 
-**Group 01 is accepted with EXPL-001–EXPL-012 and BQ01-01–BQ01-24. Group 02 — Answer Structure, Statement Selection & Basis Traceability is next.**
+**Groups 01–02 are accepted with EXPL-001–EXPL-028. BQ01-01–BQ01-24 and AS02-01–AS02-30 pass. Group 03 — Health, Change & Execution Question Semantics is next.**

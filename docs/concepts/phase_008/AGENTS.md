@@ -9,7 +9,8 @@ Canonical repository phase status is maintained in [`../../README.md#current-sta
 - Phase 007 is complete with OPS-001–OPS-123 final.
 - Phase 008 grouping is accepted.
 - **Group 01 is complete with EXPL-001–EXPL-012; BQ01-01–BQ01-24 pass.**
-- **Group 02 — Answer Structure, Statement Selection & Basis Traceability is next.**
+- **Group 02 is complete with EXPL-013–EXPL-028; AS02-01–AS02-30 pass.**
+- **Group 03 — Health, Change & Execution Question Semantics is next.**
 - Accepted concept count remains 24.
 
 ## Accepted Group 01 rules
@@ -38,6 +39,37 @@ Preserve:
 
 See [`01_question_proposition_intent_scope_temporal_perspective/README.md`](01_question_proposition_intent_scope_temporal_perspective/README.md).
 
+## Accepted Group 02 rules
+
+Preserve:
+
+- no new Answer/Statement truth concept is required; material answer statements remain Explanation projections;
+- rendered sentence wording ≠ material statement proposition identity;
+- statement proposition identity preserves source conclusion, subject, material scope and temporal/knowledge perspective;
+- source truth owner and epistemic type survive composition;
+- direct source projection and derived cross-concept statement are distinct;
+- a derived statement requires explicit accepted join logic and sufficient basis for the derived proposition;
+- juxtaposition/prose adjacency does not create causality, exposure, prevention, health or control truth;
+- statement materiality is question relative and does not become evidence strength;
+- answer-bearing/context/limitation are presentation roles, not new epistemic categories;
+- material limitations cannot be omitted when omission would overstate the conclusion;
+- supporting, contradicting and limiting basis roles are statement relative;
+- evidence sufficiency is conclusion relative;
+- duplicate/common-derived basis ≠ independent corroboration;
+- basis count ≠ confidence and no arithmetic confidence rule is accepted;
+- cross-concept answer composition is not generally transitive;
+- headline/summary/detail may differ in detail but not proposition scope, polarity or epistemic strength;
+- a summary may say less but cannot imply more;
+- omission ≠ evidence of absence;
+- sibling answer statements remain independently traceable and one cannot strengthen another;
+- no synthetic overall answer/incident/root-cause/Impact/control truth is created for narrative convenience;
+- answer ordering/primary-answer selection is question/context specific and creates no hidden authority/score;
+- internal statement-to-basis traceability is mandatory;
+- visible basis disclosure is separate and belongs to Group 06;
+- answer coverage is proposition/subquestion bound rather than a universal completeness/confidence score.
+
+See [`02_answer_structure_statement_selection_basis_traceability/README.md`](02_answer_structure_statement_selection_basis_traceability/README.md).
+
 ## Permanent Phase 008 boundaries
 
 Preserve throughout the phase:
@@ -46,36 +78,39 @@ Preserve throughout the phase:
 - question intent ≠ evidence;
 - question family ≠ source authority;
 - wording ≠ proposition identity;
-- audience ≠ authority;
-- requested conclusion ≠ supported conclusion;
+- answer statement ≠ independent truth state;
+- direct projection ≠ derived cross-concept proposition;
+- answer materiality/ordering ≠ evidence strength/authority;
+- basis count ≠ confidence;
 - summary ≠ stronger epistemic status;
 - omission/redaction ≠ absence;
+- audience ≠ authority;
 - authorized abstraction ≠ declassification by inference;
-- statement basis ≠ visible raw evidence requirement for every audience;
+- internal statement basis ≠ visible raw evidence requirement for every audience;
 - Observation ≠ Assessment ≠ Change Intent ≠ realized Change ≠ Causal Claim ≠ Impact ≠ Annotation;
 - reachability ≠ exposure ≠ effect ≠ consequence ≠ causal attribution;
 - current retrospective Explanation ≠ what was known then;
 - retained Explanation snapshot ≠ current source truth;
 - progressive maturity ≠ automatic status strengthening;
-- no universal Explanation confidence/completeness/quality score unless a later contract explicitly establishes a bounded non-truth-owned presentation metric without violating accepted score prohibitions.
+- no universal Explanation confidence/completeness/quality score.
 
-## Group 02 entry contract
+## Group 03 entry contract
 
-Group 02 consumes EXPL-001–EXPL-012 and should refine how an answer is composed once the bounded question is known.
+Group 03 consumes EXPL-001–EXPL-028 and applies the accepted question/answer structure to health/change/execution propositions.
 
-It should explicitly test:
+It should explicitly test questions such as:
 
-- material statement identity and type;
-- direct source-owned statement versus derived cross-concept statement;
-- statement-to-basis linkage and basis multiplicity;
-- supporting versus contradicting basis where applicable;
-- answer headline/summary versus detail/drill-down without status strengthening;
-- what belongs in a minimal answer versus optional context;
-- basis inspection when underlying evidence is unavailable/restricted to the requester;
-- multiple independent statements in one answer without hidden composite status;
-- conflicting or partially answerable statements remaining separate;
-- causal/Impact/control statements retaining their source epistemic state;
-- machine-generated or human-authored prose origin not becoming authority;
-- stable internal proposition identity despite different presentation wording.
+- `Did it run?` versus `Did it succeed?` versus `Did it produce the expected/current output?`;
+- `Is it healthy?` across explicit dimensions/profiles without inventing a universal asset health state;
+- freshness/currentness versus latest successful execution;
+- schema compatibility versus observed realized schema versus statistical comparability;
+- `What changed?` versus `What was intended?` versus `What was deployed/activated?`;
+- intent-to-realization comparison without turning match/divergence into health or cause;
+- `Which version/configuration was used?` from run-specific execution evidence rather than active Deployment by convenience;
+- retry/restart/rerun/backfill distinctions;
+- actual dependency sequence/waiting/consumption versus expected schedule/dependency;
+- current versus historical execution/health questions under event/effective time + knowledge cut;
+- partial/missing telemetry producing partial answers rather than negative facts;
+- direct health/execution statements versus cross-concept derived answers preserving EXPL-015/021.
 
-Do not choose rendering/UI/citation widgets, LLM/template architecture, prompt format, retrieval store or persistence architecture.
+Do not reopen HLTH/OPS semantics, select UI/rendering/LLM architecture, or turn domain shorthand into universal scalar status.
