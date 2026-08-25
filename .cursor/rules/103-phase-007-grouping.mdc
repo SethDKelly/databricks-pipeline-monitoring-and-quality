@@ -1,0 +1,34 @@
+---
+description: Phase 007 logical grouping and OPS refinement-order guardrails.
+globs:
+alwaysApply: true
+---
+
+# Phase 007 grouping guardrails
+
+Phase 007 is planned as nine functional design groups. The order is dependency-driven and must not be interpreted as service, repository, deployment, storage or workflow decomposition.
+
+1. **Lineage Relationship Taxonomy, Historical Topology & Operational Relevance** — establish relationship classes, relevance and historical applicability first.
+2. **Change Intent, Deployment Realization & Realized Change** — establish intent/attempt/activation/realization boundaries.
+3. **Prospective Blast Radius & Change-Aware Review** — use proposed Change + relevant topology prospectively without claiming actual Impact.
+4. **Execution Reconstruction, Dependency Sequence & Version Use** — reconstruct runtime sequence before Investigation.
+5. **Investigation Lifecycle, First-Deviation Localization & Causal Handoff** — organize inquiry/localization below Causal Claim.
+6. **Impact, Consumer Encounter, Exposure & Consequence** — establish actual encounter/effect/consequence layers.
+7. **Propagation Safeguard Scope, Enforcement, Release & Recovery** — refine output/consumption protection independently.
+8. **Execution Gate, Fallback/Override & Control-Induced Operational Effects** — refine start/admission control and cross-control effects independently.
+9. **Historical Operational Replay & Consolidation / Exit Review** — replay then-effective state and close only if the model composes.
+
+Use `OPS-###` for Phase 007 refinement contracts. Do not create OPS-001 until Group 01 starts.
+
+Permanent ordering rationale:
+
+- topology before change/Impact/control reasoning;
+- change realization before prospective/retrospective use;
+- prospective blast radius before actual Impact but never confused with it;
+- execution reconstruction before Investigation localization;
+- localization before causal promotion;
+- encounter/effect semantics before safeguard-prevention claims;
+- Safeguard and Gate remain separate concepts and review groups;
+- historical replay is the final composition test.
+
+Do not move implementation decisions into the grouping. Graph databases, event stores, scheduler/orchestrators, Databricks control mechanisms, source connectors, queues, streaming/cache design, concrete timeout/latency values and RCA algorithms remain later work.

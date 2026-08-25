@@ -6,35 +6,38 @@ alwaysApply: true
 
 # Phase 007 — entry handoff
 
-Status: **NEXT — not started. Phase 006 is complete with HLTH-001–HLTH-066 final.**
+Status: **PLANNED — nine-group design accepted; OPS-### namespace accepted; no OPS contracts accepted yet; Group 01 next.**
 
-When Phase 007 begins, preserve:
+Preserve:
 
 - Lineage relationship ≠ metric/status propagation ≠ causality;
 - prospective blast radius/reachability ≠ actual exposure/Impact;
 - Change Intent ≠ Deployment ≠ realized Change;
+- intended dependency/schedule ≠ actual execution sequence;
 - first-deviation localization ≠ root cause;
 - reconciliation/localization remains Investigation evidence below Causal Claim;
-- health Assessment ≠ result suitability ≠ readiness ≠ gate decision ≠ enforcement ≠ execution;
+- candidate/reachable ≠ exposed ≠ downstream effect ≠ consequence ≠ causal attribution;
 - safeguard activation ≠ prevented exposure ≠ healthy/fresh downstream output;
+- health Assessment ≠ result suitability ≠ readiness ≠ gate decision ≠ enforcement ≠ execution;
 - gate hold/admit/override ≠ enforcement/execution outcome;
 - passive monitoring remains non-blocking for ungated production;
 - historical topology/change/control reasoning uses event/effective time plus knowledge cut and does not project current state backward;
 - HLTH-001–HLTH-066 metric/schema/Baseline/threshold/reconciliation/composite/freshness semantics are consumed, not redefined by operational convenience.
 
-Primary Phase 007 scope:
+Accepted Phase 007 group order:
 
-- Lineage taxonomy and historical topology evidence;
-- Change Intent realization and realized Change/Deployment coordination;
-- prospective downstream blast radius and change-aware review;
-- execution/dependency reconstruction;
-- Investigation lifecycle and localization;
-- prospective versus actual Impact and consumer/version encounter;
-- Propagation Safeguard placement/release/recovery;
-- Execution Gate classes, timeout/fallback/escalation/override/recovery;
-- control-induced delay/freshness/availability effects;
-- historical operational replay.
+1. Lineage Relationship Taxonomy, Historical Topology & Operational Relevance.
+2. Change Intent, Deployment Realization & Realized Change.
+3. Prospective Blast Radius & Change-Aware Review.
+4. Execution Reconstruction, Dependency Sequence & Version Use.
+5. Investigation Lifecycle, First-Deviation Localization & Causal Handoff.
+6. Impact, Consumer Encounter, Exposure & Consequence.
+7. Propagation Safeguard Scope, Enforcement, Release & Recovery.
+8. Execution Gate, Fallback/Override & Control-Induced Operational Effects.
+9. Historical Operational Replay & Consolidation / Exit Review.
 
-Do not choose graph storage, event store, scheduler/orchestrator, safeguard/quarantine mechanism, gate implementation, streaming/cache topology, or other technical architecture in Phase 007 merely to refine functional semantics.
+`OPS-###` begins at OPS-001 only when Group 01 starts. OPS identifiers are refinement contracts, not a new Operations truth owner.
 
-Do not begin Phase 007 without explicit user direction.
+Do not choose graph storage, event store, scheduler/orchestrator, safeguard/quarantine mechanism, gate implementation, streaming/cache topology, source integration, RCA algorithm, concrete timeout/latency SLA or other technical architecture in Phase 007 merely to refine functional semantics.
+
+Do not begin Group 01 without explicit user direction.

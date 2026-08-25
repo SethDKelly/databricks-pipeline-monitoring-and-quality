@@ -11,11 +11,12 @@ Use this file when older broad rules contain stale `next group` wording. Do **no
 - Phase 003 complete: SYN-001–SYN-035.
 - Phase 004 complete: REF-001–REF-030.
 - Phase 005 complete: AUTH-001–AUTH-053.
-- Phase 006 complete: **Groups 01–07 accepted; HLTH-001–HLTH-066 final; H07-01–H07-36 consolidation pass.**
-- No HLTH-067 and no new concept were required for Phase 006 exit.
+- Phase 006 complete: Groups 01–07 accepted; HLTH-001–HLTH-066 final; H07-01–H07-36 consolidation pass.
 - Accepted concept count remains **24**.
-- **Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement is next and has not started.**
+- Phase 007 logical grouping is **PLANNED / ACCEPTED**.
+- Phase 007 uses **OPS-###** operational refinement contracts; no OPS contracts have been accepted yet.
+- Phase 007 has nine groups; **Group 01 — Lineage Relationship Taxonomy, Historical Topology & Operational Relevance is next and has not started.**
 
-Do not begin Phase 007 or a later phase without explicit user direction.
+Do not begin Group 01 or a later phase without explicit user direction.
 
-No implementation architecture has been selected by Phase 006. Preserve documentation/design-first discipline and consume HLTH-001–HLTH-066 rather than reopening them by convenience.
+No implementation architecture has been selected. Preserve documentation/design-first discipline and consume SYN/REF/AUTH/HLTH accepted semantics rather than reopening them by convenience.

@@ -1,12 +1,20 @@
 # Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement
 
-**Status:** Next — not yet started
+**Status:** PLANNED — logical delivery grouping accepted; no OPS contracts accepted yet; Group 01 next
 
 ## Goal
 
 Refine how accepted Lineage, Change Intent, Deployment, Change, Investigation, Causal Claim, Impact, Propagation Safeguard, Execution Gate and Execution History semantics coordinate operationally now that Phase 006 has completed health/metric/schema/statistical/reconciliation/composite/timing semantics.
 
 Phase 007 must consume rather than reopen Phase 006.
+
+## Refinement namespace
+
+Phase 007 will use **`OPS-###`** refinement contracts.
+
+`OPS-###` means operational/topology/change/impact/control refinement over accepted concepts. It does **not** create an `Operations` concept, does not extend SYN/REF/AUTH/HLTH ranges, and must not become an umbrella state that absorbs Lineage, Change, Investigation, Impact, Execution Gate, Propagation Safeguard or Execution History truth.
+
+The first contract will begin at **OPS-001** when Group 01 is explicitly started.
 
 ## Accepted handoff from Phase 006
 
@@ -26,94 +34,130 @@ Preserve:
 - passive monitoring remains non-blocking for ungated production;
 - historical health/reconciliation/composite/suitability state is bitemporal and non-rewriting.
 
-## Primary Phase 007 scope
+## Logical delivery grouping
 
-Refine:
+The phase will be reviewed in **nine functional design groups**. This sequence is a dependency/review strategy, not an implementation-service decomposition.
 
-1. **Lineage taxonomy and historical topology evidence**
-   - logical versus physical/runtime relationships;
-   - field/key/population/consumer relevance;
-   - relationship confidence/evidence without creating a universal score;
-   - effective-time topology and unknown/missing-edge limitations.
+### Group 01 — Lineage Relationship Taxonomy, Historical Topology & Operational Relevance
+**Status:** **Next — not started.**
 
-2. **Change Intent, Deployment and realized Change coordination**
-   - intended change scope;
-   - realization/mismatch between proposal and deployed state;
-   - current versus historical active versions;
-   - planned versus unplanned realized Change.
+Define the relationship vocabulary and evidence needed to know what depends on what, at which layer, for which fields/populations/versions/consumers, and during which effective interval. Establish historical topology, relationship applicability/relevance, unknown/missing-edge limitations, and source disagreement without turning Lineage into causality or metric propagation.
 
-3. **Prospective blast radius and change-aware compatibility**
-   - candidate downstream reachability from proposed changes;
-   - consumer-specific schema/metric/profile/Baseline/reconciliation review triggers;
-   - planned blast radius ≠ actual Impact.
+See [`01_lineage_relationship_taxonomy_historical_topology/README.md`](01_lineage_relationship_taxonomy_historical_topology/README.md).
 
-4. **Execution reconstruction and operational sequence**
-   - relevant job/run/dependency events;
-   - actual consumed versions where evidenced;
-   - late/duplicate/missing execution telemetry;
-   - run history versus intended schedule/dependency model.
+### Group 02 — Change Intent, Deployment Realization & Realized Change
+**Status:** Planned.
 
-5. **Investigation lifecycle and localization**
-   - question/outcome binding;
-   - candidate generation from Lineage and Change;
-   - first-deviation localization;
-   - evidence collection and competing hypotheses;
-   - escalation from reconciliation/localization into explicit Causal Claims only where appropriate.
+Refine how intended modifications, deployment attempts/activation, and realized Change coordinate. Distinguish intended scope, deployed artifact/config/schema/transformation version, activation/effective state, partial/mismatched realization, unplanned Change, rollback/reversion, and what evidence establishes that an intent actually became realized state.
 
-6. **Impact and consumer/version encounter patterns**
-   - prospective candidate/reachability;
-   - actual encounter/exposure;
-   - observed downstream effect;
-   - technical/analytical/business consequence;
-   - causal attribution kept separate.
+See [`02_change_intent_deployment_realized_change/README.md`](02_change_intent_deployment_realized_change/README.md).
 
-7. **Propagation Safeguard operational refinement**
-   - placement/coverage scope;
-   - activation/release/expiry/recovery semantics;
-   - relationship to affected versions and consumer encounter paths;
-   - protection effectiveness versus downstream freshness/delivery consequences.
+### Group 03 — Prospective Blast Radius & Change-Aware Review
+**Status:** Planned.
 
-8. **Execution Gate operational refinement**
-   - gate classes and prerequisite structure;
-   - readiness evidence consumption from Phase 006;
-   - timeout/fallback/escalation/override/recovery semantics;
-   - gate-induced delay and freshness consequences;
-   - decision/enforcement/execution separation retained.
+Use proposed Change plus then-relevant Lineage to identify prospective downstream candidates and required review surfaces before activation. Refine consumer-specific schema/metric/profile/Baseline/reconciliation/readiness/control review triggers while preserving **prospective reachability/risk ≠ actual exposure/Impact/cause**.
 
-9. **Control-induced operational effects**
-   - held/skipped/delayed/older-version execution outcomes;
-   - interaction between safeguard/gate state and delivery readiness;
-   - control action ≠ successful prevention or healthy output.
+See [`03_prospective_blast_radius_change_aware_review/README.md`](03_prospective_blast_radius_change_aware_review/README.md).
 
-10. **Historical operational replay**
-    - then-effective Lineage/change/control/readiness state;
-    - as-known-then versus retrospective reconstruction;
-    - corrected topology/change/execution evidence without historical rewriting.
+### Group 04 — Execution Reconstruction, Dependency Sequence & Version Use
+**Status:** Planned.
 
-## Key design questions
+Refine reconstruction of actual run/dependency sequence, qualifying outputs, input/output versions, expected versus actual dependency ordering, late/duplicate/missing telemetry, retries/restarts, schedule opportunities, and bounded absence claims. Produce an execution history suitable for Investigation without turning intended schedule or Lineage into proof of actual execution/consumption.
 
-- Which Lineage relationship classes are necessary to support reliable change/RCA/Impact reasoning without turning Lineage into causality?
-- How should prospective blast radius differ from actual downstream exposure/Impact?
-- What evidence establishes that a Change Intent actually became realized Change?
-- How should the framework reconstruct execution dependency sequences when telemetry is partial or late?
-- What is the exact boundary between first-deviation localization and a supported Causal Claim?
-- How should safeguards be related to specific suspect states/versions and actual consumer paths?
-- Which gate classes/fallback states are functionally distinct before implementation is chosen?
-- How should gate/safeguard-induced delay become observable health/Impact evidence without treating the control itself as a defect?
-- What historical evidence is necessary to replay what topology/change/control state existed and was known at incident time?
+See [`04_execution_reconstruction_dependency_sequence/README.md`](04_execution_reconstruction_dependency_sequence/README.md).
 
-## Boundaries
+### Group 05 — Investigation Lifecycle, First-Deviation Localization & Causal Handoff
+**Status:** Planned.
 
-Phase 007 must not:
+Refine Investigation question/outcome binding, candidate generation, evidence collection, first-deviation localization, competing hypotheses, narrowing/escalation, and closure. Define the exact handoff from useful operational localization/reconciliation into explicit Causal Claim semantics without promoting proximity, first observation, or Investigation closure into cause.
 
-- redefine HLTH-001–HLTH-066 metric/schema/Baseline/threshold/reconciliation/composite/freshness semantics;
-- infer causality from Lineage, timing, first deviation or reconciliation alone;
-- treat prospective reachability as actual exposure or Impact;
-- treat gate/readiness state as enforcement or execution evidence;
-- treat safeguard activation as proof of prevented exposure;
-- select scheduler/orchestrator, graph database, event store, quarantine mechanism, control-plane topology or persistence architecture;
-- require passive monitoring to block ungated production;
-- broaden Capability Authorization or disclosure access to make operational reasoning easier.
+See [`05_investigation_localization_causal_handoff/README.md`](05_investigation_localization_causal_handoff/README.md).
+
+### Group 06 — Impact, Consumer Encounter, Exposure & Consequence
+**Status:** Planned.
+
+Refine prospective candidate/reachability versus actual encounter/exposure, consumer/version/path evidence, safe-versus-stale version use, observed downstream effect, technical/analytical/business consequence, unknown/non-exposure evidence, and causal attribution separation.
+
+See [`06_impact_consumer_encounter_exposure_consequence/README.md`](06_impact_consumer_encounter_exposure_consequence/README.md).
+
+### Group 07 — Propagation Safeguard Scope, Enforcement, Release & Recovery
+**Status:** Planned.
+
+Refine safeguard placement, protected/suspect state binding, coverage paths, activation/effectiveness evidence, partial/failed enforcement, expiry/extension, release/recovery, alternate paths, and downstream freshness/delivery consequences. Preserve **active safeguard ≠ prevented exposure ≠ healthy output**.
+
+See [`07_propagation_safeguard_scope_enforcement_recovery/README.md`](07_propagation_safeguard_scope_enforcement_recovery/README.md).
+
+### Group 08 — Execution Gate, Fallback/Override & Control-Induced Operational Effects
+**Status:** Planned.
+
+Refine gate classes/prerequisite structure, consumption of Phase 006 readiness-suitable evidence, opportunity binding, HOLD/ADMIT/override behavior, timeout/fallback/escalation/recovery, control acceptance/enforcement evidence, interaction with safeguards, and control-induced delay/staleness/non-delivery effects. Preserve decision/enforcement/execution separation.
+
+See [`08_execution_gate_fallback_override_control_effects/README.md`](08_execution_gate_fallback_override_control_effects/README.md).
+
+### Group 09 — Historical Operational Replay & Consolidation / Exit Review
+**Status:** Planned.
+
+Replay Groups 01–08 under event/effective time plus knowledge cut. Verify then-effective topology/change/execution/Investigation/Impact/safeguard/gate state, late/corrected evidence, actual versus reconstructed historical conclusions, and end-to-end phase composition. Add no new OPS contract unless consolidation exposes a genuine semantic gap.
+
+See [`09_historical_operational_replay_consolidation_exit/README.md`](09_historical_operational_replay_consolidation_exit/README.md).
+
+## Why this order
+
+The order is dependency-driven:
+
+1. **Topology first** — downstream reasoning cannot be reliable until relationship identity, relevance and historical applicability are clear.
+2. **Change realization second** — prospective and retrospective reasoning need explicit intent/deployment/realization boundaries.
+3. **Prospective analysis before actual Incident analysis** — blast radius can use proposed state but must not be confused with realized exposure.
+4. **Execution reconstruction before Investigation** — Investigation should reason over evidenced runtime sequence rather than guesses about schedule/dependencies.
+5. **Investigation before Impact/control refinement** — localization and competing hypotheses need stable operational evidence before downstream consequence/control effectiveness is judged.
+6. **Impact before protection/control claims** — safeguard effectiveness and gate/control consequences rely on explicit consumer encounter/effect semantics.
+7. **Safeguard and Gate separately** — they protect different boundaries and have different state/evidence semantics.
+8. **Historical replay last** — cross-group time/version correctness is the final composition test.
+
+## Cross-group invariants
+
+Preserve throughout Phase 007:
+
+- Lineage ≠ causality;
+- Lineage edge ≠ metric/status propagation;
+- planned topology ≠ active topology;
+- Change Intent ≠ Deployment ≠ realized Change;
+- prospective blast radius ≠ actual Impact;
+- intended schedule/dependency ≠ actual execution sequence;
+- execution occurrence ≠ consumed-version proof unless evidenced;
+- first-observed deviation ≠ root cause;
+- Investigation ≠ Causal Claim truth;
+- reachable ≠ exposed ≠ downstream effect ≠ consequence ≠ causal attribution;
+- `not exposed` requires adequate encounter/path coverage;
+- safeguard configured/requested/active ≠ materially enforced/preventive;
+- safeguard release ≠ healthy/fresh output;
+- readiness ≠ gate decision ≠ enforcement ≠ execution;
+- override ≠ prerequisite ready;
+- configured fallback ≠ fallback actually applied;
+- control-induced delay/non-delivery is evidence/Impact, not automatically a defect or cause;
+- current topology/change/control state ≠ historical state;
+- later evidence/correction ≠ what was known then;
+- authority/authorization/disclosure boundaries from Phase 005 remain intact;
+- health semantics from Phase 006 remain intact.
+
+## Architecture boundary
+
+Phase 007 must remain implementation-neutral. Do not select:
+
+- graph database or Lineage store;
+- event/history persistence mechanism;
+- CDC/change-capture architecture;
+- scheduler/orchestrator;
+- Databricks Workflows dependency mechanism;
+- queue/event bus;
+- safeguard/quarantine implementation;
+- gate service/control-plane topology;
+- polling versus event-driven mechanism;
+- cache/streaming strategy;
+- concrete timeout/latency SLA;
+- RCA/causal algorithm;
+- integration source mapping that belongs to Phase 009;
+- technical architecture that belongs to Phase 010.
 
 ## Later-phase handoff
 
@@ -123,4 +167,6 @@ Phase 009 owns concrete integration contracts, source support, latency, retentio
 
 Phase 010 owns technical architecture and implementation placement.
 
-**Phase 007 has not started.**
+## Phase direction
+
+**Phase 007 grouping is accepted. No OPS contracts have been accepted yet. Group 01 — Lineage Relationship Taxonomy, Historical Topology & Operational Relevance is next and has not started.**
