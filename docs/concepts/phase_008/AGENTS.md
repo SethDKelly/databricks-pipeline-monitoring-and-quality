@@ -13,7 +13,8 @@ Canonical repository phase status is maintained in [`../../README.md#current-sta
 - **Group 03 is complete with EXPL-029–EXPL-049; HCE03-01–HCE03-36 pass.**
 - **Group 04 is complete with EXPL-050–EXPL-080; ICG04-01–ICG04-48 pass.**
 - **Group 05 is complete with EXPL-081–EXPL-100; UNC05-01–UNC05-40 pass.**
-- **Group 06 — Audience, Authorization, Safe Abstraction & Basis Inspection is next.**
+- **Group 06 is complete with EXPL-101–EXPL-120; AUD06-01–AUD06-44 pass.**
+- **Group 07 — Progressive Maturity, Partial Answers, Refresh & Retention is next.**
 - Accepted concept count remains 24.
 
 ## Accepted Group 01 rules
@@ -173,6 +174,39 @@ Preserve:
 
 See [`05_uncertainty_conflict_negative_claims_epistemic_language/README.md`](05_uncertainty_conflict_negative_claims_epistemic_language/README.md).
 
+## Accepted Group 06 rules
+
+Preserve:
+
+- current projection binds requester, target audience, purpose, subject/context, temporal perspective, delivery and material information/detail class;
+- audience labels are context, not permission sources;
+- requester visibility does not grant disclosure to another audience;
+- private inspect, export, forward and publication may resolve differently;
+- conclusion, context, limitation, basis, provenance and exact-detail visibility remain independently governable;
+- visible conclusion does not require visible raw evidence, while internal statement-to-basis traceability remains complete;
+- safe abstraction may expose exact/coarse/redacted/generalized/opaque/withheld information only when independently authorized and semantically valid;
+- safe abstraction is epistemically monotone and cannot strengthen scope, polarity, causal role, status, negative coverage or authority standing;
+- aggregation/redaction/generalization is not automatic declassification;
+- aliases/generalizations cannot merge materially distinct subjects or change coverage/Impact/causal scope;
+- hidden values/thresholds/schema detail cannot be converted into invented severity or health;
+- opaque Lineage cannot imply directness, path completeness, exposure or causality;
+- causal/Impact/control/governance abstraction retains its exact layer/status and cannot manufacture blame/compliance/prevention/recovery;
+- restricted/redacted/omitted does not mean absent;
+- acknowledging opaque existence, counts, source class or redaction marker is itself disclosure-governed;
+- material hidden limitations constrain/narrow/withhold the visible conclusion;
+- Explanation cannot combine otherwise hidden facts into a new coarse inference merely for summarization;
+- a separately authorized existing conclusion may remain visible when detailed basis is restricted;
+- `inspectBasis` is a requester-specific projection and can expose exact basis, coarse provenance/status, redaction/opaque limitation or safe non-disclosure;
+- visible citation/reference does not grant permission to inspect source evidence;
+- mosaic/differencing/repeated-query risk remains compositional;
+- cross-audience views may differ in detail and visible scope but cannot intentionally contradict the same bounded visible proposition;
+- high-consequence communication review/release is separate from fact visibility and cannot strengthen truth;
+- historical actor authorization, retained actual prior communication and current requester disclosure remain separate;
+- current access expansion/revocation can change current projection without rewriting prior retained Explanation snapshots;
+- no universal safe-summary level or separate audience truth model is accepted.
+
+See [`06_audience_authorization_safe_abstraction_basis_inspection/README.md`](06_audience_authorization_safe_abstraction_basis_inspection/README.md).
+
 ## Permanent Phase 008 boundaries
 
 Preserve throughout the phase:
@@ -190,6 +224,11 @@ Preserve throughout the phase:
 - audience ≠ authority;
 - authorized abstraction ≠ declassification by inference;
 - internal statement basis ≠ visible raw evidence requirement for every audience;
+- result visibility ≠ basis/provenance/detail visibility;
+- requester visibility ≠ onward-disclosure permission;
+- safe abstraction can reduce detail but cannot strengthen truth;
+- opaque existence itself can be sensitive;
+- internal traceability survives visible redaction;
 - Observation ≠ Assessment ≠ Change Intent ≠ Deployment ≠ realized Change ≠ Execution History ≠ Investigation ≠ Causal Claim ≠ Impact ≠ Annotation;
 - run success ≠ output existence/currentness/health;
 - structural compatibility ≠ statistical comparability ≠ normative health;
@@ -210,21 +249,23 @@ Preserve throughout the phase:
 - progressive maturity ≠ automatic status strengthening;
 - no universal Explanation confidence/completeness/quality/operational-status/RCA/Impact/control-effectiveness score.
 
-## Group 06 entry contract
+## Group 07 entry contract
 
-Group 06 consumes EXPL-001–EXPL-100 and applies current Capability Authorization/disclosure rules to an internally valid, proposition-faithful Explanation.
+Group 07 consumes EXPL-001–EXPL-120 and refines evolution of the already-valid internal answer and already-authorized visible projection over time.
 
 It should explicitly test:
 
-- coarse authorized conclusion with restricted detailed evidence;
-- restricted identity/path/threshold/policy/Annotation content without inference leakage;
-- mixed authorization across sibling statements and along one causal/Impact path;
-- current disclosure authorization versus historical actor authorization;
-- safe abstraction that preserves unknown/insufficient/conflicting/restricted/negative distinctions;
-- omission/redaction that does not imply absence;
-- `inspectBasis` behavior when exact evidence is restricted but a provenance/status class is authorized;
-- cross-audience consistency over one underlying truth despite different visible detail;
-- authorization changes without retrospective rewriting of prior retained Explanation snapshots;
-- no use of hidden evidence to strengthen a coarse conclusion beyond what the audience is permitted to know.
+- immediate narrow trustworthy answer versus later enriched answer;
+- partial subquestion coverage without global completeness score;
+- newly arrived supporting, contradicting, limiting or negative evidence;
+- source correction/supersession and derived-statement re-evaluation;
+- statement identity stable while wording/detail changes;
+- statement addition/removal when materiality or authorization changes;
+- current projection broadening/narrowing as Capability Authorization changes;
+- retained snapshot of what was actually communicated versus current source truth;
+- refresh linking/supersession without silent overwrite;
+- historical reconstruction of prior generated/retained Explanation;
+- elapsed time/repeated recomposition not strengthening epistemic status;
+- notification/change semantics without choosing event/UI architecture.
 
-Do not reopen AUTH truth semantics, select UI/rendering/LLM architecture, or treat safe summarization as declassification.
+Do not reopen source truth, disclosure rules or select persistence/event/notification architecture.

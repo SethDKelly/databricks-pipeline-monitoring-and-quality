@@ -1,6 +1,6 @@
 # Phase 008 — Business Questioning and Explanation
 
-**Status:** IN PROGRESS — Groups 01–05 accepted; EXPL-001–EXPL-100 accepted; Group 06 next
+**Status:** IN PROGRESS — Groups 01–06 accepted; EXPL-001–EXPL-120 accepted; Group 07 next
 
 ## Goal
 
@@ -12,9 +12,9 @@ Phase 008 consumes the completed functional truth model from Phases 002–007. I
 
 Phase 008 uses **`EXPL-###`** refinement contracts.
 
-`EXPL-###` means business-question and Explanation refinement over accepted concepts. It does **not** create a new `Question`, `Answer`, answer-statement, RCA, Impact-summary, control-effectiveness, uncertainty/confidence or governance truth concept by default, does not extend SYN/REF/AUTH/HLTH/OPS ranges, and must not become an umbrella state that absorbs truth owned by other concepts.
+`EXPL-###` means business-question and Explanation refinement over accepted concepts. It does **not** create a new `Question`, `Answer`, answer-statement, RCA, Impact-summary, control-effectiveness, uncertainty/confidence, audience-projection or governance truth concept by default, does not extend SYN/REF/AUTH/HLTH/OPS ranges, and must not become an umbrella state that absorbs truth owned by other concepts.
 
-Accepted range so far: **EXPL-001–EXPL-100**.
+Accepted range so far: **EXPL-001–EXPL-120**.
 
 ## Logical delivery grouping
 
@@ -66,14 +66,16 @@ No new concept is required. Source concepts retain their result/evidence states;
 See [`05_uncertainty_conflict_negative_claims_epistemic_language/README.md`](05_uncertainty_conflict_negative_claims_epistemic_language/README.md).
 
 ### Group 06 — Audience, Authorization, Safe Abstraction & Basis Inspection
-**Status:** **Next — not started.**
+**Status:** **Accepted — EXPL-101–EXPL-120; AUD06-01–AUD06-44 pass.**
 
-Will refine role/purpose-specific analytical projection, safe abstraction, redaction/omission semantics, cross-audience consistency, authorized basis inspection and inference-risk boundaries without treating audience or presentation as authority.
+Defines requester/target-audience/purpose/delivery binding; separate conclusion/context/limitation/basis/provenance/detail visibility; epistemically monotone safe abstraction; identity/value/Lineage/inferential/governance abstraction; opaque-existence and material-limitation rules; mixed-authorization derived statements; requester-specific `inspectBasis`; mosaic/repeated-query inference risk; cross-audience consistency; high-consequence communication release; and historical/current authorization separation.
+
+No new concept is required. Capability Authorization and AUTH-044–AUTH-053 own permission/disclosure truth; Explanation owns the composed projection and retained communication only.
 
 See [`06_audience_authorization_safe_abstraction_basis_inspection/README.md`](06_audience_authorization_safe_abstraction_basis_inspection/README.md).
 
 ### Group 07 — Progressive Maturity, Partial Answers, Refresh & Retention
-**Status:** Not started.
+**Status:** **Next — not started.**
 
 Will refine narrow early answers versus broader later answers, partial answer completeness, maturity/change notifications, Explanation refresh, retained snapshots, supersession/linkage and stable facts versus revised derived conclusions.
 
@@ -116,7 +118,7 @@ For answer composition specifically:
 - headline/summary/detail may vary in detail but not epistemic strength;
 - omission cannot remove a material qualification when doing so would overstate the answer;
 - sibling statements remain independent and do not create one synthetic global answer truth;
-- internal statement-to-basis traceability is mandatory even when visible basis disclosure is later restricted;
+- internal statement-to-basis traceability is mandatory even when visible basis disclosure is restricted;
 - answer coverage is subquestion/proposition bound, not a universal completeness/confidence score.
 
 ## Accepted Group 03 domain-question discipline
@@ -170,7 +172,7 @@ Investigation/causality/Impact/control/governance questions preserve:
 
 ## Accepted Group 05 epistemic-language discipline
 
-Explanation now preserves:
+Explanation preserves:
 
 - unknown/unresolved ≠ false/absent/safe;
 - unavailable source/evidence condition ≠ proposition-level negative truth;
@@ -192,6 +194,31 @@ Explanation now preserves:
 - sibling statements retain independent epistemic states;
 - no universal confidence/probability/completeness/RCA/answer-quality score is accepted;
 - historical epistemic state remains separate from current retrospective resolution.
+
+## Accepted Group 06 audience/authorization discipline
+
+Explanation projection now preserves:
+
+- audience/purpose/delivery labels as context rather than permission;
+- requester visibility ≠ permission to disclose to another target audience;
+- private inspection ≠ export/forward/publish/client disclosure;
+- conclusion visibility ≠ context/limitation/basis/provenance/exact-detail visibility;
+- internal statement-to-basis traceability even when visible basis is restricted;
+- safe abstraction as epistemically monotone rather than declassification;
+- exact/coarse/redacted/generalized/opaque/withheld projection only when independently authorized and semantically valid;
+- alias/generalization without merging materially distinct subject scope;
+- value/threshold/schema abstraction without inventing severity/health;
+- Lineage abstraction without inventing directness/completeness/exposure;
+- causal/Impact/control/governance abstraction without blame/compliance/prevention shortcuts;
+- restricted/omitted ≠ absent, with opaque existence itself separately governed;
+- material hidden limitations constraining or withholding the visible conclusion;
+- no new coarse inference synthesized from otherwise hidden evidence;
+- `inspectBasis` as a separately authorized projection whose metadata can itself be sensitive;
+- visible citation/reference ≠ permission to inspect source;
+- mosaic/differencing/repeated-query risk as compositional;
+- cross-audience consistency over one truth without identical detail;
+- communication review/release ≠ truth/evidence authority;
+- historical actor authorization, retained prior communication and current requester disclosure as separate.
 
 ## Accepted Phase 007 handoff
 
@@ -228,4 +255,4 @@ Phase 009 will map accepted question/Explanation requirements to real source ava
 
 ## Phase direction
 
-**Groups 01–05 are accepted with EXPL-001–EXPL-100. BQ01-01–BQ01-24, AS02-01–AS02-30, HCE03-01–HCE03-36, ICG04-01–ICG04-48 and UNC05-01–UNC05-40 pass. Group 06 — Audience, Authorization, Safe Abstraction & Basis Inspection is next.**
+**Groups 01–06 are accepted with EXPL-001–EXPL-120. BQ01-01–BQ01-24, AS02-01–AS02-30, HCE03-01–HCE03-36, ICG04-01–ICG04-48, UNC05-01–UNC05-40 and AUD06-01–AUD06-44 pass. Group 07 — Progressive Maturity, Partial Answers, Refresh & Retention is next.**

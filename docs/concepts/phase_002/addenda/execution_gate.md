@@ -171,4 +171,4 @@ Phase 007 Group 08 accepts OPS-105–OPS-123 and sharpens this concept without c
 - Gate-induced delay, skipped cycle, stale prior-state use and non-delivery remain source-owned Execution/Observation/Assessment/Impact evidence. Broader control-effect attribution remains Causal Claim under REF-013–REF-020/REF-030.
 - Historical Gate configuration/readiness/decision/enforcement/execution replay is bitemporal and non-rewriting.
 
-See [`../phase_007/08_execution_gate_fallback_override_control_effects/README.md`](../phase_007/08_execution_gate_fallback_override_control_effects/README.md) for the accepted refinement.
+See [`../../phase_007/08_execution_gate_fallback_override_control_effects/README.md`](../../phase_007/08_execution_gate_fallback_override_control_effects/README.md) for the accepted refinement.

@@ -10,7 +10,7 @@ The `docs/` tree is the system of record for product and design decisions in thi
 - **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement: COMPLETE.** AUTH-001–AUTH-053 final; G07-01–G07-26 pass.
 - **Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement: COMPLETE.** Groups 01–07 accepted; HLTH-001–HLTH-066 final; H07-01–H07-36 pass.
 - **Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: COMPLETE.** Groups 01–09 accepted; OPS-001–OPS-123 final; L01-01–L01-18, C02-01–C02-24, P03-01–P03-30, X04-01–X04-32, I05-01–I05-34, IM06-01–IM06-36, SG07-01–SG07-36, GT08-01–GT08-36 and HR09-01–HR09-36 pass; Phase 007 exit review accepted.
-- **Phase 008 — Business Questioning and Explanation: IN PROGRESS.** Groups 01–05 accepted; EXPL-001–EXPL-100 accepted; BQ01-01–BQ01-24, AS02-01–AS02-30, HCE03-01–HCE03-36, ICG04-01–ICG04-48 and UNC05-01–UNC05-40 pass; Group 06 next.
+- **Phase 008 — Business Questioning and Explanation: IN PROGRESS.** Groups 01–06 accepted; EXPL-001–EXPL-120 accepted; BQ01-01–BQ01-24, AS02-01–AS02-30, HCE03-01–HCE03-36, ICG04-01–ICG04-48, UNC05-01–UNC05-40 and AUD06-01–AUD06-44 pass; Group 07 next.
 
 The current catalog contains **24 accepted concepts**: the original 20 plus **Propagation Safeguard**, **Capability Authorization**, **Execution Gate**, and **Assertion Authority**.
 
@@ -71,24 +71,27 @@ The current catalog contains **24 accepted concepts**: the original 20 plus **Pr
 53. [`concepts/phase_008/04_investigation_causality_impact_control_governance_question_semantics/scenario_review.md`](concepts/phase_008/04_investigation_causality_impact_control_governance_question_semantics/scenario_review.md) — ICG04-01–ICG04-48.
 54. [`concepts/phase_008/05_uncertainty_conflict_negative_claims_epistemic_language/README.md`](concepts/phase_008/05_uncertainty_conflict_negative_claims_epistemic_language/README.md) — accepted Group 05 / EXPL-081–EXPL-100.
 55. [`concepts/phase_008/05_uncertainty_conflict_negative_claims_epistemic_language/scenario_review.md`](concepts/phase_008/05_uncertainty_conflict_negative_claims_epistemic_language/scenario_review.md) — UNC05-01–UNC05-40.
-56. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
-57. [`reference/authority_vocabulary.md`](reference/authority_vocabulary.md) — authority vocabulary.
-58. [`decisions/README.md`](decisions/README.md) — durable decision history/index.
-59. [`decisions/phase_006_group_07_consolidation_and_exit.md`](decisions/phase_006_group_07_consolidation_and_exit.md) — D-383–D-405.
-60. [`decisions/phase_007_group_01_lineage_topology.md`](decisions/phase_007_group_01_lineage_topology.md) — D-406–D-421.
-61. [`decisions/phase_007_group_02_change_realization.md`](decisions/phase_007_group_02_change_realization.md) — D-422–D-440.
-62. [`decisions/phase_007_group_03_prospective_blast_radius.md`](decisions/phase_007_group_03_prospective_blast_radius.md) — D-441–D-461.
-63. [`decisions/phase_007_group_04_execution_reconstruction.md`](decisions/phase_007_group_04_execution_reconstruction.md) — D-462–D-484.
-64. [`decisions/phase_007_group_05_investigation_localization.md`](decisions/phase_007_group_05_investigation_localization.md) — D-485–D-511.
-65. [`decisions/phase_007_group_06_impact_exposure_consequence.md`](decisions/phase_007_group_06_impact_exposure_consequence.md) — D-512–D-539.
-66. [`decisions/phase_007_group_07_propagation_safeguard.md`](decisions/phase_007_group_07_propagation_safeguard.md) — D-540–D-569.
-67. [`decisions/phase_007_group_08_execution_gate.md`](decisions/phase_007_group_08_execution_gate.md) — D-570–D-599.
-68. [`decisions/phase_007_group_09_historical_replay_exit.md`](decisions/phase_007_group_09_historical_replay_exit.md) — D-600–D-628.
-69. [`decisions/phase_008_group_01_question_semantics.md`](decisions/phase_008_group_01_question_semantics.md) — D-629–D-650.
-70. [`decisions/phase_008_group_02_answer_structure_basis.md`](decisions/phase_008_group_02_answer_structure_basis.md) — D-651–D-676.
-71. [`decisions/phase_008_group_03_health_change_execution.md`](decisions/phase_008_group_03_health_change_execution.md) — D-677–D-707.
-72. [`decisions/phase_008_group_04_investigation_causality_impact_control_governance.md`](decisions/phase_008_group_04_investigation_causality_impact_control_governance.md) — D-708–D-749.
-73. [`decisions/phase_008_group_05_uncertainty_epistemic_language.md`](decisions/phase_008_group_05_uncertainty_epistemic_language.md) — D-750–D-783.
+56. [`concepts/phase_008/06_audience_authorization_safe_abstraction_basis_inspection/README.md`](concepts/phase_008/06_audience_authorization_safe_abstraction_basis_inspection/README.md) — accepted Group 06 / EXPL-101–EXPL-120.
+57. [`concepts/phase_008/06_audience_authorization_safe_abstraction_basis_inspection/scenario_review.md`](concepts/phase_008/06_audience_authorization_safe_abstraction_basis_inspection/scenario_review.md) — AUD06-01–AUD06-44.
+58. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
+59. [`reference/authority_vocabulary.md`](reference/authority_vocabulary.md) — authority vocabulary.
+60. [`decisions/README.md`](decisions/README.md) — durable decision history/index.
+61. [`decisions/phase_006_group_07_consolidation_and_exit.md`](decisions/phase_006_group_07_consolidation_and_exit.md) — D-383–D-405.
+62. [`decisions/phase_007_group_01_lineage_topology.md`](decisions/phase_007_group_01_lineage_topology.md) — D-406–D-421.
+63. [`decisions/phase_007_group_02_change_realization.md`](decisions/phase_007_group_02_change_realization.md) — D-422–D-440.
+64. [`decisions/phase_007_group_03_prospective_blast_radius.md`](decisions/phase_007_group_03_prospective_blast_radius.md) — D-441–D-461.
+65. [`decisions/phase_007_group_04_execution_reconstruction.md`](decisions/phase_007_group_04_execution_reconstruction.md) — D-462–D-484.
+66. [`decisions/phase_007_group_05_investigation_localization.md`](decisions/phase_007_group_05_investigation_localization.md) — D-485–D-511.
+67. [`decisions/phase_007_group_06_impact_exposure_consequence.md`](decisions/phase_007_group_06_impact_exposure_consequence.md) — D-512–D-539.
+68. [`decisions/phase_007_group_07_propagation_safeguard.md`](decisions/phase_007_group_07_propagation_safeguard.md) — D-540–D-569.
+69. [`decisions/phase_007_group_08_execution_gate.md`](decisions/phase_007_group_08_execution_gate.md) — D-570–D-599.
+70. [`decisions/phase_007_group_09_historical_replay_exit.md`](decisions/phase_007_group_09_historical_replay_exit.md) — D-600–D-628.
+71. [`decisions/phase_008_group_01_question_semantics.md`](decisions/phase_008_group_01_question_semantics.md) — D-629–D-650.
+72. [`decisions/phase_008_group_02_answer_structure_basis.md`](decisions/phase_008_group_02_answer_structure_basis.md) — D-651–D-676.
+73. [`decisions/phase_008_group_03_health_change_execution.md`](decisions/phase_008_group_03_health_change_execution.md) — D-677–D-707.
+74. [`decisions/phase_008_group_04_investigation_causality_impact_control_governance.md`](decisions/phase_008_group_04_investigation_causality_impact_control_governance.md) — D-708–D-749.
+75. [`decisions/phase_008_group_05_uncertainty_epistemic_language.md`](decisions/phase_008_group_05_uncertainty_epistemic_language.md) — D-750–D-783.
+76. [`decisions/phase_008_group_06_audience_authorization_safe_abstraction.md`](decisions/phase_008_group_06_audience_authorization_safe_abstraction.md) — D-784–D-817.
 
 ## Phase 006 exit summary
 
@@ -252,6 +255,16 @@ It preserves unknown ≠ false/absent; unavailable ≠ negative evidence; insuff
 
 Accepted range: **EXPL-081–EXPL-100**; UNC05-01–UNC05-40 pass. No new concept was required.
 
+### Group 06 — audience / authorization / safe abstraction / basis inspection
+
+Group 06 establishes:
+
+**internally valid material statement + complete internal basis → requester/target-audience/purpose/delivery binding → conclusion/context/limitation/basis/detail authorization → semantically valid abstraction/minimization → mosaic/inference-leakage review → visible statement/basis projection → optional governed communication release → retained Explanation context**.
+
+It preserves audience label ≠ permission; requester visibility ≠ onward disclosure; result visibility ≠ basis/provenance/detail visibility; internal traceability despite redaction; safe abstraction as epistemically monotone; aggregation/redaction ≠ automatic declassification; opaque existence as disclosure-governed; material hidden limitations as constraints on visible conclusions; no coarse inference manufactured from hidden evidence; `inspectBasis` as independently authorized; cross-audience consistency without identical detail; communication approval ≠ truth; and historical actor authorization/retained communication/current requester disclosure as separate.
+
+Accepted range: **EXPL-101–EXPL-120**; AUD06-01–AUD06-44 pass. No new concept was required.
+
 ## Documentation discipline
 
 - Concepts/synchronizations/refinements remain implementation-neutral.
@@ -324,6 +337,14 @@ Accepted range: **EXPL-081–EXPL-100**; UNC05-01–UNC05-40 pass. No new concep
 - Positive/negative statements retain source vocabulary and evidence burdens rather than invented probability/confidence.
 - Material epistemic limitations constrain summaries/headlines and cannot be buried to strengthen the answer.
 - Sibling statements do not create one Explanation confidence/completeness state.
-- Audience simplification cannot strengthen underlying status.
+- Audience/purpose/delivery does not create permission; requester access does not imply onward disclosure.
+- Result visibility does not imply basis/provenance/detail visibility.
+- Safe abstraction is not automatic declassification and cannot strengthen the source proposition.
+- Opaque existence and basis-inspection metadata can themselves be sensitive.
+- Hidden evidence cannot be recombined by Explanation to manufacture a new coarse conclusion.
+- Internal traceability remains complete even when visible basis is redacted or withheld.
+- Mosaic/differencing/repeated-query risk remains compositional.
+- Communication approval/release does not strengthen evidence, causal, health, compliance or control status.
+- Current authorization changes current projection without rewriting retained prior communication.
 - Passive monitoring remains non-blocking/out-of-band by default; Execution Gate remains explicit opt-in active control.
 - Keep examples synthetic; no real PII/PHI/secrets/production values.

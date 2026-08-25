@@ -205,3 +205,17 @@ Absence of evidence cannot be rendered as evidence of absence. Strong negatives 
 Causal proposed/supported/weakened/unresolved/rejected/confirmed states, Impact candidate/exposure/effect/consequence states, degraded control evidence, and governance unknown/conflict states retain their exact semantics. Multiple sibling statements keep independent epistemic states rather than producing an overall confidence/completeness score.
 
 Historical Explanation may therefore state `unknown at the incident-time knowledge cut; retrospectively established from later evidence` without rewriting the earlier unknown state. Group 05 accepts EXPL-081–EXPL-100 and UNC05-01–UNC05-40 without changing the 24-concept catalog.
+
+## Later refinement — Phase 008 Group 06
+
+Phase 008 Group 06 refines audience/purpose/delivery-specific projection and `inspectBasis` over the internally valid Explanation without adding a new audience/projection truth concept. See [`../../phase_008/06_audience_authorization_safe_abstraction_basis_inspection/README.md`](../../phase_008/06_audience_authorization_safe_abstraction_basis_inspection/README.md).
+
+The visible projection now separately binds requester, target audience, purpose, delivery and information/detail class. Conclusion visibility remains separate from context, limitation, basis, provenance and exact-detail visibility. Safe abstraction can expose exact, coarse, redacted, generalized, opaque or withheld information only when independently authorized and semantically valid.
+
+Authorized abstraction is epistemically monotone: it may reduce detail or narrow a conclusion but cannot strengthen scope, polarity, causal role, epistemic status, negative coverage or authority standing. Material hidden limitations must constrain the visible answer; if even an abstract limitation cannot be disclosed, the affected conclusion is narrowed or withheld rather than overstated.
+
+`inspectBasis` is itself requester-specific. Exact evidence, provenance class, basis role/status, redacted reference, opaque limitation or safe non-disclosure can each be valid; internal statement-to-basis traceability remains complete regardless. Explanation cannot use otherwise hidden evidence to invent a new coarse conclusion merely because the final wording appears less sensitive.
+
+Cross-audience views remain projections over one truth and need not have identical detail, while mosaic/differencing/repeated-query leakage remains a compositional disclosure concern. Historical actor authorization, retained historical communication and current requester disclosure remain separate.
+
+Group 06 accepts EXPL-101–EXPL-120 and AUD06-01–AUD06-44 without changing the 24-concept catalog.

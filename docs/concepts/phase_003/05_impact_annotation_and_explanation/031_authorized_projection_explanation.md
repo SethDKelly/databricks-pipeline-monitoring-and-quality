@@ -141,3 +141,17 @@ Composition now distinguishes unknown/unresolved, unavailable, insufficient/inde
 Strong negatives preserve their conclusion-specific opportunity/coverage/authority burdens. Causal claim statuses, Impact exposure/effect/consequence states, control telemetry limitations, and governance unknown/conflict states retain their accepted vocabulary. Positive statements are not decorated with unsupported probability/confidence language.
 
 Multiple material statements retain independent epistemic states, so one answer can simultaneously contain confirmed, supported, conflicting, unavailable and bounded-negative conclusions without an overall confidence/completeness score. Historical as-known state may differ from current retrospective resolution without rewriting either view.
+
+## Later refinement — Phase 008 Group 06
+
+Phase 008 Group 06 makes the authorized analytical projection operationally precise for Explanation. See [`../../phase_008/06_audience_authorization_safe_abstraction_basis_inspection/README.md`](../../phase_008/06_audience_authorization_safe_abstraction_basis_inspection/README.md).
+
+Current visible projection binds requester, target audience, purpose, subject/context, temporal perspective, delivery and material information/detail class. Result, context, limitation, basis, provenance and exact-detail visibility can differ without changing internal source truth.
+
+Safe abstraction is epistemically monotone and not automatic declassification. Restricted detail may be represented only through an independently authorized exact/coarse/redacted/generalized/opaque/withheld projection. A material hidden limitation constrains or withholds the visible conclusion rather than allowing an unqualified stronger statement.
+
+`inspectBasis` is separately authorized and may return exact evidence, coarse provenance/status, redaction/opaque limitation or safe non-disclosure while internal traceability remains intact. Explanation cannot combine otherwise hidden evidence into a new coarse conclusion merely because its wording appears safe.
+
+Cross-audience views may differ in detail and scope but remain projections over one truth. Mosaic/repeated-query leakage, high-consequence communication release and historical/current authorization separation remain governed by AUTH-044–AUTH-053.
+
+EXPL-101–EXPL-120 and AUD06-01–AUD06-44 are accepted without a new concept.
