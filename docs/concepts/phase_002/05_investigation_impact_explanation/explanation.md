@@ -133,3 +133,23 @@ A report reachable through Lineage but not refreshed is described as a potential
 - retention policy for generated Explanation snapshots versus dynamically composed views;
 - safe-answer behavior when authorization differs across portions of a causal path;
 - deterministic versus generative composition requirements for high-consequence claims.
+
+## Later refinement — Phase 008 Group 01
+
+Phase 008 Group 01 refines the existing `initiating question/request/reporting intent` state rather than adding a Question concept. See [`../../phase_008/01_question_proposition_intent_scope_temporal_perspective/README.md`](../../phase_008/01_question_proposition_intent_scope_temporal_perspective/README.md).
+
+The initiating request is now treated as a bounded question proposition that preserves:
+
+- requested conclusion type rather than relying on natural-language wording alone;
+- Entity Identity-resolved subject plus material scope such as environment/version/run/consumer/profile/path/control instance;
+- event/effective-time target and, where applicable, recorded/knowledge cut;
+- current-state versus as-known-at-cut versus current-retrospective perspective;
+- compound-question subquestions where truth owners/evidence burdens differ;
+- truth-owner routing without transferring substantive truth into Explanation;
+- material ambiguity/underspecification;
+- answerability limitations separated from evidence availability/sufficiency, integration support and authorization;
+- source-specific negative-evidence burden even when the user asks a negative-form question.
+
+Question-family labels are routing metadata only. They do not establish evidence sufficiency, authority or truth. Asking `why` does not relax Causal Claim requirements; asking `was nobody affected?` does not relax Impact coverage; asking for restricted information does not grant disclosure.
+
+Group 01 accepts EXPL-001–EXPL-012 and BQ01-01–BQ01-24 without changing the 24-concept catalog.

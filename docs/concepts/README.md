@@ -8,7 +8,7 @@ The accepted concept count is **24**. Phase 002 originally exited with 20 accept
 
 For the detailed cross-cutting boundary narrative that previously lived in this index, see [`history/concept_catalog_snapshot_pre_phase_006_exit.md`](history/concept_catalog_snapshot_pre_phase_006_exit.md). That file is retained as a **historical snapshot**; any phase-status wording in it reflects status at the time of writing and is superseded by the canonical documentation index.
 
-The project uses Concept Design to define independently understandable units of functionality. Concepts remain implementation-neutral and synchronize rather than collapse into vendor, service, storage, schema, IAM, authority-rule engine, approval-workflow, orchestration, temporal-replay, metric-governance, disclosure, or UI boundaries.
+The project uses Concept Design to define independently understandable units of functionality. Concepts remain implementation-neutral and synchronize rather than collapse into vendor, service, storage, schema, IAM, authority-rule engine, approval-workflow, orchestration, temporal-replay, metric-governance, disclosure, questioning, Explanation-rendering, or UI boundaries.
 
 Use [`concept_template.md`](concept_template.md) as the specification checklist. The original Phase 002 review and later addenda are in [`phase_002/README.md`](phase_002/README.md) and [`phase_002/addenda/`](phase_002/addenda/).
 
@@ -56,7 +56,8 @@ Use [`concept_template.md`](concept_template.md) as the specification checklist.
 - [`phase_004/README.md`](phase_004/README.md) — evidence, time, causality, exposure, readiness, and control-evidence refinement.
 - [`phase_005/README.md`](phase_005/README.md) — governance, authority, capability, and disclosure refinement.
 - [`phase_006/README.md`](phase_006/README.md) — health, metrics, schema, statistical, reconciliation, composite-health, and timing refinement.
-- [`phase_007/README.md`](phase_007/README.md) — Lineage, change, Investigation, Impact, safeguard, execution-control, and historical operational replay refinement; consult canonical status above for phase progression.
+- [`phase_007/README.md`](phase_007/README.md) — Lineage, change, Investigation, Impact, safeguard, execution-control, and historical operational replay refinement.
+- [`phase_008/README.md`](phase_008/README.md) — business-question semantics and evidence-grounded Explanation refinement; consult canonical status above for phase progression.
 
 ## Durable boundaries
 
@@ -72,6 +73,8 @@ Across phases, preserve the accepted distinctions recorded in the phase contract
 - candidate/reachable ≠ exposed ≠ downstream effect ≠ consequence ≠ causal attribution;
 - readiness ≠ gate decision ≠ gate enforcement ≠ actual execution;
 - Execution Gate ≠ Propagation Safeguard;
-- historical retained state ≠ replay-derived reconstruction.
+- historical retained state ≠ replay-derived reconstruction;
+- question/request context ≠ truth/authority/authorization;
+- Explanation ≠ independent truth source.
 
 Detailed definitions remain in the concept, refinement, decision, and reference documents; this README is a navigation/catalog surface rather than an independent phase-status authority.

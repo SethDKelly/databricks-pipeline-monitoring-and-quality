@@ -10,7 +10,7 @@ The `docs/` tree is the system of record for product and design decisions in thi
 - **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement: COMPLETE.** AUTH-001–AUTH-053 final; G07-01–G07-26 pass.
 - **Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement: COMPLETE.** Groups 01–07 accepted; HLTH-001–HLTH-066 final; H07-01–H07-36 pass.
 - **Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: COMPLETE.** Groups 01–09 accepted; OPS-001–OPS-123 final; L01-01–L01-18, C02-01–C02-24, P03-01–P03-30, X04-01–X04-32, I05-01–I05-34, IM06-01–IM06-36, SG07-01–SG07-36, GT08-01–GT08-36 and HR09-01–HR09-36 pass; Phase 007 exit review accepted.
-- **Phase 008 — Business Questioning and Explanation: NEXT — not started.**
+- **Phase 008 — Business Questioning and Explanation: IN PROGRESS.** Group 01 accepted; EXPL-001–EXPL-012 accepted; BQ01-01–BQ01-24 pass; Group 02 next.
 
 The current catalog contains **24 accepted concepts**: the original 20 plus **Propagation Safeguard**, **Capability Authorization**, **Execution Gate**, and **Assertion Authority**.
 
@@ -60,19 +60,23 @@ The current catalog contains **24 accepted concepts**: the original 20 plus **Pr
 42. [`concepts/phase_007/09_historical_operational_replay_consolidation_exit/README.md`](concepts/phase_007/09_historical_operational_replay_consolidation_exit/README.md) — accepted Group 09 replay/consolidation.
 43. [`concepts/phase_007/09_historical_operational_replay_consolidation_exit/scenario_replay_matrix.md`](concepts/phase_007/09_historical_operational_replay_consolidation_exit/scenario_replay_matrix.md) — HR09-01–HR09-36.
 44. [`concepts/phase_007/09_historical_operational_replay_consolidation_exit/phase_007_exit_review.md`](concepts/phase_007/09_historical_operational_replay_consolidation_exit/phase_007_exit_review.md) — canonical Phase 007 exit review.
-45. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
-46. [`reference/authority_vocabulary.md`](reference/authority_vocabulary.md) — authority vocabulary.
-47. [`decisions/README.md`](decisions/README.md) — durable decision history/index.
-48. [`decisions/phase_006_group_07_consolidation_and_exit.md`](decisions/phase_006_group_07_consolidation_and_exit.md) — D-383–D-405.
-49. [`decisions/phase_007_group_01_lineage_topology.md`](decisions/phase_007_group_01_lineage_topology.md) — D-406–D-421.
-50. [`decisions/phase_007_group_02_change_realization.md`](decisions/phase_007_group_02_change_realization.md) — D-422–D-440.
-51. [`decisions/phase_007_group_03_prospective_blast_radius.md`](decisions/phase_007_group_03_prospective_blast_radius.md) — D-441–D-461.
-52. [`decisions/phase_007_group_04_execution_reconstruction.md`](decisions/phase_007_group_04_execution_reconstruction.md) — D-462–D-484.
-53. [`decisions/phase_007_group_05_investigation_localization.md`](decisions/phase_007_group_05_investigation_localization.md) — D-485–D-511.
-54. [`decisions/phase_007_group_06_impact_exposure_consequence.md`](decisions/phase_007_group_06_impact_exposure_consequence.md) — D-512–D-539.
-55. [`decisions/phase_007_group_07_propagation_safeguard.md`](decisions/phase_007_group_07_propagation_safeguard.md) — D-540–D-569.
-56. [`decisions/phase_007_group_08_execution_gate.md`](decisions/phase_007_group_08_execution_gate.md) — D-570–D-599.
-57. [`decisions/phase_007_group_09_historical_replay_exit.md`](decisions/phase_007_group_09_historical_replay_exit.md) — D-600–D-628.
+45. [`concepts/phase_008/README.md`](concepts/phase_008/README.md) — current Phase 008 plan and progress.
+46. [`concepts/phase_008/01_question_proposition_intent_scope_temporal_perspective/README.md`](concepts/phase_008/01_question_proposition_intent_scope_temporal_perspective/README.md) — accepted Group 01 / EXPL-001–EXPL-012.
+47. [`concepts/phase_008/01_question_proposition_intent_scope_temporal_perspective/scenario_review.md`](concepts/phase_008/01_question_proposition_intent_scope_temporal_perspective/scenario_review.md) — BQ01-01–BQ01-24.
+48. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
+49. [`reference/authority_vocabulary.md`](reference/authority_vocabulary.md) — authority vocabulary.
+50. [`decisions/README.md`](decisions/README.md) — durable decision history/index.
+51. [`decisions/phase_006_group_07_consolidation_and_exit.md`](decisions/phase_006_group_07_consolidation_and_exit.md) — D-383–D-405.
+52. [`decisions/phase_007_group_01_lineage_topology.md`](decisions/phase_007_group_01_lineage_topology.md) — D-406–D-421.
+53. [`decisions/phase_007_group_02_change_realization.md`](decisions/phase_007_group_02_change_realization.md) — D-422–D-440.
+54. [`decisions/phase_007_group_03_prospective_blast_radius.md`](decisions/phase_007_group_03_prospective_blast_radius.md) — D-441–D-461.
+55. [`decisions/phase_007_group_04_execution_reconstruction.md`](decisions/phase_007_group_04_execution_reconstruction.md) — D-462–D-484.
+56. [`decisions/phase_007_group_05_investigation_localization.md`](decisions/phase_007_group_05_investigation_localization.md) — D-485–D-511.
+57. [`decisions/phase_007_group_06_impact_exposure_consequence.md`](decisions/phase_007_group_06_impact_exposure_consequence.md) — D-512–D-539.
+58. [`decisions/phase_007_group_07_propagation_safeguard.md`](decisions/phase_007_group_07_propagation_safeguard.md) — D-540–D-569.
+59. [`decisions/phase_007_group_08_execution_gate.md`](decisions/phase_007_group_08_execution_gate.md) — D-570–D-599.
+60. [`decisions/phase_007_group_09_historical_replay_exit.md`](decisions/phase_007_group_09_historical_replay_exit.md) — D-600–D-628.
+61. [`decisions/phase_008_group_01_question_semantics.md`](decisions/phase_008_group_01_question_semantics.md) — D-629–D-650.
 
 ## Phase 006 exit summary
 
@@ -184,10 +188,22 @@ It preserves actual retained historical state ≠ as-known-at-cut reconstruction
 
 HR09-01–HR09-36 pass. No new concept and no OPS-124 are required. **OPS-001–OPS-123 is final and Phase 007 exits complete.**
 
+## Phase 008 accepted progress
+
+### Group 01 — question proposition / intent / scope / temporal perspective
+
+Group 01 establishes:
+
+**request/purpose context → requested conclusion type → Entity Identity-resolved subject → proposition-specific scope → event/effective-time + knowledge perspective → compound subquestion decomposition → accepted truth-owner routing → ambiguity/answerability/negative-evidence constraints → answer-composition handoff**.
+
+It preserves question wording ≠ proposition identity; question family ≠ truth/authority/evidence sufficiency; current retrospective ≠ what was known then; broad wording ≠ broad evidence coverage; compound presentation ≠ composite truth; question intent ≠ authorization; answerability ≠ evidence availability/sufficiency/integration support/authorization; and negative-form questions as subject to the same REF/HLTH/OPS coverage burdens as any other negative conclusion.
+
+Accepted range: **EXPL-001–EXPL-012**; BQ01-01–BQ01-24 pass. No new concept was required.
+
 ## Documentation discipline
 
 - Concepts/synchronizations/refinements remain implementation-neutral.
-- `REF-###` defines evidence/time/causal/control standards; `AUTH-###` defines authority/governance/capability/disclosure standards; `HLTH-###` defines health/metric/schema/statistical/reconciliation/composite/timing standards; `OPS-###` defines Phase 007 operational/topology/change/impact/control refinements.
+- `REF-###` defines evidence/time/causal/control standards; `AUTH-###` defines authority/governance/capability/disclosure standards; `HLTH-###` defines health/metric/schema/statistical/reconciliation/composite/timing standards; `OPS-###` defines Phase 007 operational/topology/change/impact/control refinements; `EXPL-###` defines Phase 008 business-question/Explanation refinements.
 - Preserve historical rationale; add/supersede rather than silently rewrite.
 - Synchronization/refinement order never becomes source authority or causation.
 - Evidence sufficiency is conclusion-relative; missing/restricted/unavailable evidence is not a negative fact.
@@ -230,7 +246,8 @@ HR09-01–HR09-36 pass. No new concept and no OPS-124 are required. **OPS-001–
 - Propagation Safeguard remains separate from Execution Gate.
 - Actual retained historical state, as-known-at-cut reconstruction and current retrospective interpretation remain distinct.
 - Current authorized projection cannot rewrite or strengthen internal historical/replay truth.
+- Question/request context does not create truth, authority, authorization or evidence.
+- Question family/routing does not change source ownership or evidence burden.
 - Audience simplification cannot strengthen underlying status.
 - Passive monitoring remains non-blocking/out-of-band by default; Execution Gate remains explicit opt-in active control.
-- Phase 007 consumes HLTH-001–HLTH-066 rather than reopening health semantics by convenience.
 - Keep examples synthetic; no real PII/PHI/secrets/production values.

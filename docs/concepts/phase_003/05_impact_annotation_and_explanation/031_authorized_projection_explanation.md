@@ -89,3 +89,15 @@ UI/chat/dashboard implementation, LLM/template selection, granting authorization
 ## Deferred questions
 
 Audience-specific minimum explanation schemas, visible evidence citation requirements, deterministic versus generative rules for high-consequence statements, retained snapshot policy, and safe-answer behavior for deeply mixed authorization paths.
+
+## Later refinement — Phase 008 Group 01
+
+Phase 008 Group 01 makes the SYN-031 precondition `question/audience/time context is defined` operationally precise. See [`../../phase_008/01_question_proposition_intent_scope_temporal_perspective/README.md`](../../phase_008/01_question_proposition_intent_scope_temporal_perspective/README.md).
+
+Before composition, a material question now binds the requested conclusion, Entity Identity-resolved subject, proposition-specific scope, event/effective-time perspective and knowledge cut where applicable. Compound requests can decompose into independent subquestions when truth owners or evidence burdens differ.
+
+Question-family labels are descriptive routing metadata only. Explanation routes each requested conclusion to the accepted truth owner and must preserve cross-concept join boundaries. In particular, causal `why` wording cannot promote Lineage/timing/Deployment/intent evidence into a Causal Claim, and broad Impact/control negatives retain their REF/OPS coverage burdens.
+
+Answerability is also separated from semantic applicability, evidence availability/sufficiency, integration support and current disclosure authorization. A partial question can therefore produce supported subanswers while other subquestions remain ambiguous, unresolved, unavailable or restricted without being flattened into one confidence score.
+
+These refinements do not change SYN-031's rule that composition occurs only from an authorized analytical projection and does not make the question itself a truth or authorization source.
