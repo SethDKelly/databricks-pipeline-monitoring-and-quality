@@ -6,7 +6,7 @@ alwaysApply: true
 
 # Metric health and propagation foundation
 
-Status: **Phase 006 is active. Group 01 is accepted with HLTH-001–HLTH-008.**
+Status: **Phase 006 is active. Groups 01–02 are accepted with HLTH-001–HLTH-018. Group 03 is next.**
 
 Preserve permanently:
 
@@ -23,7 +23,9 @@ Preserve permanently:
 - richer/expensive metric ≠ synchronous production-path requirement;
 - semantic applicability ≠ profile selection ≠ source support ≠ current availability ≠ health outcome;
 - `not applicable`, `not selected`, `unsupported`, `unavailable`, `pending`, and `pass` are distinct;
-- same metric display name ≠ same definition/version when formula/denominator/grain/population semantics materially change.
+- same metric display name ≠ same definition/version when formula/denominator/grain/population semantics materially change;
+- producer physical schema ≠ consumer-visible interface schema;
+- structural compatibility ≠ Baseline/statistical comparability.
 
 Accepted Phase 006 Group 01 foundation:
 
@@ -35,10 +37,24 @@ Accepted Phase 006 Group 01 foundation:
 - Material metric/check Observations retain definition/version, subject/window/grain/population, source/input evidence, temporal provenance, approximation/sampling/coverage limitations and restriction status.
 - Diagnostic/on-demand evaluation does not automatically promote a metric to routine profile membership.
 
+Accepted Phase 006 Group 02 structural foundation:
+
+- Bind compatibility to the consumer-visible interface/contract and version, not merely producer physical DDL.
+- Preserve declared/governed schema meaning, structural Expectation, proposed/planned state, realized Observation/Change, and compatibility Assessment as distinct.
+- Add/drop/rename/reorder/type/precision/nullability/default/generated/key/grain/nested changes remain independently representable.
+- Rename identity requires evidence; drop/add coincidence is insufficient.
+- Additive/removal/type compatibility is consumer-specific and directional where applicable.
+- Engine cast ability is not proof of compatibility.
+- Key/grain changes can invalidate selected metric/Baseline/join assumptions without automatically constituting a defect.
+- Pre-deployment validation success is not proof of realized production state.
+- Structural change triggers scoped metric/Baseline review rather than global reset.
+- `Compatible` requires sufficient evidence coverage of the bound contract; missing evidence is not compatibility.
+- Structural incompatibility does not prove execution failure, exposure, Impact or causality.
+- Validation placement remains deferred.
+
 Later Phase 006 rules still to be refined:
 
-- Group 02 — structural/schema/DDL compatibility;
-- Group 03 — Baseline comparability, distributions, seasonality/cohorts, low-volume/sample-size behavior;
+- Group 03 — Baseline comparability, distributions, seasonality/cohorts, low-volume/sample-size behavior — **next**;
 - Group 04 — thresholds/margins/warning/failure/waiver Assessment semantics;
 - Group 05 — selective transformation-aware propagation/reconciliation;
 - Group 06 — composite health and progressive result timing/control-suitability;

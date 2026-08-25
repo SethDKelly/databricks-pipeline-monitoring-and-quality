@@ -10,7 +10,7 @@ Phase 002 originally accepted 20 concepts. Four post-exit addenda are accepted: 
 
 **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is complete.** Groups 01–07 accepted; AUTH-001–AUTH-053 final; G07-01–G07-26 pass; D-251–D-265 close the phase.
 
-**Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement is active. Group 01 is accepted with HLTH-001–HLTH-008 and H01-01–H01-20 passing. Group 02 — Structural / Schema / DDL Compatibility is next and has not started.**
+**Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement is active. Groups 01–02 are accepted with HLTH-001–HLTH-018. H01-01–H01-20 and H02-01–H02-30 pass. Group 03 — Baselines, Comparability, Distribution & Statistical Context is next and has not started.**
 
 Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, IAM implementations, assertion-authority engines, approval/workflow engines, deployment workflows, quarantine implementations, gate/orchestration implementations, metric engines, graph/causal engines, redaction systems, LLMs, or prototypes unless the user explicitly advances the project into technical design.
 
@@ -61,6 +61,11 @@ Preserve:
 - same metric display name ≠ same definition/version when material calculation semantics change;
 - available statistic ≠ useful routine metric;
 - local metric ≠ downstream propagated/reconciliation metric;
+- producer physical schema ≠ consumer-visible interface schema;
+- declared/governed schema meaning ≠ structural Expectation ≠ proposed/planned state ≠ realized structural Observation/Change ≠ compatibility Assessment;
+- add/drop coincidence ≠ rename identity;
+- engine cast capability ≠ consumer compatibility;
+- structural compatibility ≠ statistical/Baseline comparability;
 - Baseline-derived range ≠ normative Expectation unless explicitly adopted;
 - criticality ≠ threshold severity ≠ actual Impact;
 - waiver/exception ≠ rewritten Observation/Baseline/Assessment ≠ false `pass`;
@@ -330,13 +335,43 @@ Preserve:
 - Local metric existence does not imply downstream propagation; Group 05 owns transformation-aware reconciliation.
 - H01-01–H01-20 pass; no 25th concept is required.
 
-### Group 02 — next
+### Group 02 — accepted HLTH-009–HLTH-018
 
-Structural / Schema / DDL Compatibility is next and has not started. Preserve:
+- Structural observations and compatibility bind the consumer-visible interface/contract surface, not only producer physical schema.
+- Preserve **declared/governed schema meaning ≠ normative structural Expectation/contract ≠ proposed/planned structural state ≠ realized structural Observation/Change ≠ compatibility Assessment**.
+- Add, remove, rename, reorder, nested-path movement, type, precision/scale, nullability, default/generated-value, key/grain and nested-shape transitions remain independently representable.
+- Rename identity requires evidence; drop/add coincidence is insufficient and same name does not prove unchanged semantic identity.
+- Additive is not universally safe; removal is not universally breaking; reorder matters only for order-sensitive contracts.
+- Engine cast/parse capability does not prove governed consumer compatibility.
+- Type compatibility is directional and consumer-specific; precision/scale and nested shape can be independently material.
+- Current zero nulls do not preserve a non-null structural guarantee after a nullable transition.
+- Defaults/generated values can preserve physical presence while violating business completeness/validity semantics.
+- Key/grain changes are structurally material even with unchanged columns/types and may invalidate volume, uniqueness, distribution and join assumptions without automatically constituting a defect.
+- Compatibility is consumer/interface/version/time scoped and not automatically transitive.
+- Stable views/projections may preserve consumer compatibility despite backing-table change; unchanged producer schema may become incompatible when consumer contract changes.
+- Prospective/pre-deployment validation is separate from realized production validation; proposal validation does not prove deployment or realized schema.
+- Structural change triggers scoped metric/profile/Baseline review rather than global reset.
+- `Compatible` is a positive conclusion requiring sufficient coverage of all applicable required predicates in scope.
+- Preserve unknown/unresolved, conflicting, unavailable and not-applicable structural states; missing/partial coverage is not compatible.
+- Structural incompatibility does not prove downstream execution failure, exposure, Impact, consequence or causality.
+- Physical layout/clustering/optimization is not logical schema incompatibility unless the relevant contract depends on it.
+- Validation placement remains architecture-neutral; GitHub Actions, Databricks/Unity Catalog, DQX, Metric Views and independent monitoring remain later candidates.
+- H02-01–H02-30 pass; no new concept is required.
 
-**governed schema meaning ≠ normative schema contract/Expectation ≠ realized structural Observation/Change ≠ compatibility Assessment**.
+### Group 03 — next
 
-Group 02 must address required/optional fields, add/drop/rename, type/precision/scale, nullability/default/generated fields, nested structure, key/grain changes, schema-contract versions, consumer-specific compatibility, and scoped metric/Baseline consequences without choosing validation architecture.
+Baselines, Comparability, Distribution & Statistical Context is next and has not started.
+
+Preserve:
+
+- Baseline remains descriptive, not normative;
+- AUTH-020 intended-use approval does not manufacture empirical comparability;
+- same display name does not prove metric-definition continuity;
+- same column/type shape does not prove same grain/meaning;
+- structural compatibility does not automatically establish statistical comparability;
+- structural change can segment or invalidate selected dimensions while unrelated dimensions remain valid;
+- Group 03 owns low-volume/sample-size, seasonality/cohort, approximate/sampled uncertainty and distribution/quantile comparison semantics;
+- Group 03 must not define threshold/waiver semantics or A+B→C propagation.
 
 ## Passive monitoring / integration-independence rules
 
@@ -427,8 +462,8 @@ Group 02 must address required/optional fields, add/drop/rename, type/precision/
 The accepted logical sequence is:
 
 1. **Measurement Vocabulary, Metric Families, Profiles & Applicability — accepted, HLTH-001–HLTH-008.**
-2. **Structural / Schema / DDL Compatibility — next.**
-3. Baselines, Comparability, Distribution & Statistical Context.
+2. **Structural / Schema / DDL Compatibility — accepted, HLTH-009–HLTH-018.**
+3. **Baselines, Comparability, Distribution & Statistical Context — next.**
 4. Expectations, Thresholds, Margins, Waivers & Assessment Semantics.
 5. Transformation Reconciliation & Metric Propagation.
 6. Composite Health, Readiness Suitability & Progressive Result Timing.
@@ -464,7 +499,8 @@ Remote GitHub `main` is authoritative; local/ZIP copies are archival or working 
 - Phase 005 Group 06: AUTH-044–AUTH-053; D-235–D-250.
 - Phase 005 Group 07: consolidation/exit; D-251–D-265.
 - Phase 005 complete.
-- **Phase 006 Group 01 accepted: HLTH-001–HLTH-008; D-266–D-278. Group 02 — Structural / Schema / DDL Compatibility is next and has not started. Do not begin Group 02 without explicit user request.**
+- Phase 006 Group 01 accepted: HLTH-001–HLTH-008; D-266–D-278.
+- **Phase 006 Group 02 accepted: HLTH-009–HLTH-018; D-279–D-295. Group 03 — Baselines, Comparability, Distribution & Statistical Context is next and has not started. Do not begin Group 03 without explicit user request.**
 
 ## Tooling stance
 

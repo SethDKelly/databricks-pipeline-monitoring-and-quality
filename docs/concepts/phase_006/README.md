@@ -1,6 +1,6 @@
 # Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement
 
-**Status:** ACTIVE — Group 01 accepted; HLTH-001–HLTH-008 accepted; Group 02 next
+**Status:** ACTIVE — Groups 01–02 accepted; HLTH-001–HLTH-018 accepted; Group 03 next
 
 ## Goal
 
@@ -37,14 +37,16 @@ Defines metric/check/result vocabulary, exact measurement target binding, canoni
 See [`01_measurement_vocabulary_metric_profiles/README.md`](01_measurement_vocabulary_metric_profiles/README.md).
 
 ### Group 02 — Structural / Schema / DDL Compatibility
-**Status:** **Next — not started.**
+**Status:** **Accepted — HLTH-009–HLTH-018.**
 
-Define structural-change and compatibility semantics for required/optional fields, add/drop/rename, types/precision/scale, nullability/default/generated fields, nested schemas, key/grain changes, contract versions, consumer-specific compatibility, and the structural triggers that affect metric/Baseline applicability.
+Defines structural observation and contract-surface binding, add/drop/rename/reorder identity, required/optional/additive/removal behavior, type/precision/nested compatibility, nullability/default/generated-value semantics, key/grain transitions, consumer/interface/version-specific compatibility, proposed-versus-realized validation horizons, structural effects on metrics/Baselines, and evidence-backed compatibility outcomes.
+
+See [`02_structural_schema_ddl_compatibility/README.md`](02_structural_schema_ddl_compatibility/README.md).
 
 ### Group 03 — Baselines, Comparability, Distribution & Statistical Context
-**Status:** Planned — not started.
+**Status:** **Next — not started.**
 
-Define reference-population/window/cohort semantics, Baseline classes, comparability, seasonality, low-volume/sample-size behavior, approximate/statistical observations, distribution/quantile drift, and how structural/semantic change affects historical comparison.
+Define reference-population/window/cohort semantics, Baseline classes, empirical comparability, seasonality, low-volume/sample-size behavior, approximate/statistical observations, distribution/quantile drift, and how structural/semantic change affects historical comparison.
 
 ### Group 04 — Expectations, Thresholds, Margins, Waivers & Assessment Semantics
 **Status:** Planned — not started.
@@ -84,52 +86,90 @@ Accepted contracts:
 Key results:
 
 - no new concept is required; metric definitions/meaning synchronize with Semantic Definition and Entity Identity, measured results are Observation, normative/comparative interpretation is Assessment, and governed profile selection remains the non-concept structure accepted in AUTH-017;
-- a metric/check result must bind subject, definition/version, grain, evaluation window, relevant output/version/partition/consumer context, and evaluation/knowledge time where material;
-- a metric value or observed structural fact is not itself a health pass/fail;
-- `check passed` is reserved for an Assessment against an applicable Expectation or explicitly defined comparative criterion rather than a generic data-extraction success message;
+- a metric/check result binds subject, definition/version, grain, evaluation window, relevant output/version/partition/consumer context, and evaluation/knowledge time where material;
+- metric values and observed structural facts are not themselves health pass/fail;
+- `check passed` is reserved for an Assessment against an applicable Expectation or explicitly defined comparative criterion rather than a generic extraction success message;
 - canonical families are operational/output, temporal/freshness, structural/schema, volume/population, completeness, uniqueness/key integrity, validity/domain, distribution/shape, relational/transformation integrity, and business-semantic measurement;
 - readiness, Impact, causality, control enforcement, and compliance are not metric families and remain owned by their accepted concepts/refinements;
 - metric semantic applicability, governed profile selection, technical computability/support, current evidence availability, and eventual Assessment result are independent dimensions;
 - `not applicable`, `not selected`, `unsupported`, `unavailable`, `pending/not yet evaluated`, and `unknown/conflicting applicability` must not collapse into `pass`, `zero`, or `no issue`;
 - profile roles include core operational/table, critical-field/business, transformation-specific reconciliation, and diagnostic/on-demand; `control eligible` is not a profile role and remains AUTH-023 governance;
-- technical availability never creates automatic profile membership; routine profiles should remain purposeful and small while diagnostics can be evaluated on demand;
-- metric-definition changes in formula, denominator, filters, unit, grain, window, missing-value handling, approximation, or other material semantics create a new definition/version or explicit revision and trigger later comparability review rather than silent historical continuity;
-- Observations retain provenance to the metric/check definition, source/input evidence, scope/window/grain, event/effective time where relevant, framework knowledge/evaluation time, coverage/sampling/approximation limitations where material, and restricted-evidence status;
+- technical availability never creates automatic profile membership; routine profiles remain purposeful and small while diagnostics can be evaluated on demand;
+- material metric-definition changes trigger explicit definition/version handling and later comparability review rather than silent historical continuity;
+- Observations retain provenance to definition/version, source/input evidence, scope/window/grain, relevant times, limitations and restricted-evidence state;
 - local metric existence never implies downstream propagation; Group 05 owns transformation-aware propagation/reconciliation.
 
-## Structural / schema / DDL health scope — Group 02 handoff
+## Accepted Group 02 — HLTH-009–HLTH-018
 
-Phase 006 treats schema compatibility as a first-class health dimension rather than assuming that successful execution proves a usable table.
+Group 02 treats structural/schema compatibility as a first-class health dimension while preserving the accepted ownership split:
 
-Group 02 will evaluate, where semantically applicable:
+**declared/governed schema meaning ≠ normative structural Expectation/contract ≠ proposed/planned structural state ≠ realized structural Observation/Change ≠ compatibility Assessment**.
 
-- required/optional column existence;
-- unexpected column removal/addition;
-- declared rename versus uncorrelated drop/add;
-- accepted data-type compatibility including precision/scale and nested types;
-- nullability/default/generated-value requirements;
-- grain changes;
-- declared primary/business-key or identifier-role requirements;
-- uniqueness/key integrity as observed health distinct from declared key meaning;
-- nested-field evolution;
-- schema-contract version compatibility;
-- consumer-specific compatibility for transformations, exports, reports, Metric Views, applications, or downstream pipelines.
+Accepted contracts:
+
+- **HLTH-009 — Structural Observation, Schema Snapshot & Contract-Surface Binding**;
+- **HLTH-010 — Structural Change Taxonomy, Field Identity, Add/Drop/Rename & Reordering**;
+- **HLTH-011 — Required/Optional Fields, Additive/Removal Compatibility & Consumer Sensitivity**;
+- **HLTH-012 — Type, Precision, Scale, Casting & Nested-Shape Compatibility**;
+- **HLTH-013 — Nullability, Defaults, Generated Values & Population-Presence Compatibility**;
+- **HLTH-014 — Key, Identifier, Grain & Cardinality-Shape Compatibility**;
+- **HLTH-015 — Consumer-Specific Contract, Interface Version & Compatibility Scope**;
+- **HLTH-016 — Planned, Declared, Proposed & Realized Structural State**;
+- **HLTH-017 — Structural Change Impact on Metric/Profile/Baseline Applicability**;
+- **HLTH-018 — Structural Compatibility Proposition, Evidence & Result Semantics**.
+
+Key results:
+
+- no new Schema, Schema Contract, Schema Version or Compatibility concept is required;
+- compatibility binds the actual consumer-visible interface/contract, not merely the producer physical table;
+- add/drop/rename/reorder/type/precision/nullability/default/generated/key/grain/nested changes remain independently representable;
+- rename identity requires evidence; drop/add coincidence is not enough and identical names do not guarantee unchanged semantics;
+- additive/removal compatibility is consumer-specific; tolerant name-based and strict positional/closed consumers can legitimately reach different conclusions for the same producer change;
+- platform cast/parse capability is not proof of type compatibility;
+- zero observed nulls do not preserve a non-null structural guarantee after a nullable transition; defaults can preserve physical presence while violating business semantics;
+- key/grain changes are structurally material even when columns/types remain unchanged and can invalidate volume, uniqueness, distribution and join assumptions without automatically constituting a defect;
+- compatibility is consumer/interface/version scoped and not automatically transitive through Lineage/interfaces;
+- prospective/pre-deployment validation is distinct from realized production validation; a successful check of a proposal does not prove deployment or realized state;
+- structural changes trigger scoped metric/Profile/Baseline review rather than global reset;
+- `compatible` is a positive evidence-backed conclusion requiring sufficient coverage of all applicable required predicates in scope;
+- `unknown/unresolved`, `conflicting`, `unavailable`, and `not applicable` remain distinct from compatible/incompatible;
+- structural incompatibility does not prove downstream execution failure, exposure, Impact, consequence, or causality;
+- clustering/storage-layout/optimization changes are not logical schema incompatibility unless the relevant consumer/interface contract depends on them;
+- validation placement remains deferred: GitHub Actions, Databricks/Unity Catalog, DQX, Metric Views and an independent monitoring application remain candidate later realizations.
+
+## Group 03 handoff — Baselines, Comparability, Distribution & Statistical Context
+
+Group 03 must now define **empirical comparison validity** over Group 01 measurement identity and Group 02 structural state.
+
+It should address:
+
+- Baseline classes and reference populations/windows/cohorts;
+- exact metric-definition/version continuity requirements;
+- same-grain/same-population versus transformed/comparable contexts;
+- structural and semantic change as comparability boundaries;
+- seasonality and cohort segmentation;
+- low-volume/sample-size behavior;
+- approximate/sampled metric uncertainty;
+- quantile/distribution comparability and drift;
+- sparse/new metrics with insufficient history;
+- partial continuity after structural change rather than all-or-nothing Baseline reset;
+- whether and how known transformations/normalizations can make two observations comparable without rewriting their original meaning.
 
 Preserve:
 
-**declared/governed schema meaning ≠ normative schema contract/Expectation ≠ realized schema Observation/Change ≠ Assessment of compatibility**.
+**governed permission to keep using a Baseline ≠ empirical comparability**.
 
-A change can be additive and safe for one consumer but breaking for another.
+AUTH-020 can govern review/use decisions, but Group 03 must determine whether the observations actually support a valid comparison.
 
 ## Metric-health principles retained for later groups
 
 ### Metric profiles and anti-bloat
 
-A metric/check should have an identifiable purpose, applicable asset/context, expected consumer/use, cost/latency profile, and governance/retirement path. Availability of a statistic or schema attribute is not enough reason to persist, alert on, display, or propagate it.
+A metric/check needs identifiable purpose, applicable asset/context, expected consumer/use, cost/latency profile, and governance/retirement path. Availability of a statistic or schema attribute is not enough reason to persist, alert on, display, or propagate it.
 
 ### Baseline and threshold separation
 
-Baseline remains descriptive. Phase 006 must later define reference/comparability semantics without allowing historical regularity to become normative by itself. Group 04 will separately define threshold/margin/waiver Assessment behavior under Phase 005 authority.
+Baseline remains descriptive. Group 03 defines reference/comparability semantics without allowing historical regularity to become normative by itself. Group 04 separately defines threshold/margin/waiver Assessment behavior under Phase 005 authority.
 
 ### Transformation-aware propagation
 
@@ -141,7 +181,7 @@ Technical and business audiences may receive different authorized projections wi
 
 ### Progressive result timing
 
-Phase 006 must eventually distinguish immediate operational facts, fast schema/core health, enriched DQ/distribution results, deeper diagnostic/RCA metrics, and retrospective/post-ops health. Group 06 owns the functional timing/maturity semantics. Phase 009 characterizes actual source latency/support; Phase 010 selects architecture/performance budgets.
+Phase 006 must eventually distinguish immediate operational facts, fast schema/core health, enriched DQ/distribution results, deeper diagnostic/RCA metrics, and retrospective/post-ops health. Group 06 owns functional timing/maturity semantics. Phase 009 characterizes actual source latency/support; Phase 010 selects architecture/performance budgets.
 
 ## Phase boundaries
 
@@ -149,14 +189,17 @@ Phase 006 must not:
 
 - redefine Phase 004 evidence sufficiency;
 - override Phase 005 metric/Expectation/schema authority, authorization, control-use eligibility, or disclosure governance;
-- create a new Metric, Metric Profile, Check, Health Result, or Composite Health concept merely for convenience unless a later scenario proves independently owned behavior;
+- create a new Metric, Metric Profile, Check, Schema, Schema Contract, Health Result, or Composite Health concept merely for convenience unless a later scenario proves independently owned behavior;
 - turn metric existence or extraction success into health success;
 - turn Baseline regularity into normative failure automatically;
 - allow authority to manufacture Baseline comparability;
 - present waived/suspended violations as fictional clean underlying passes;
 - hide conflicting/unknown/unavailable dimensions behind a clean composite state;
 - treat every schema change as breaking without semantic/consumer context;
+- infer rename identity from drop/add coincidence;
+- use engine cast capability as universal type compatibility;
 - globally reset metrics/Baselines merely because any DDL changed;
+- treat pre-deployment validation success as proof of realized production state;
 - propagate every upstream metric blindly through Lineage;
 - require production-path computation merely because a metric/schema check is useful for monitoring;
 - weaken evidence standards merely to meet a latency objective;
@@ -166,4 +209,4 @@ Phase 006 must not:
 
 ## Phase direction
 
-**Phase 006 is ACTIVE. Group 01 is accepted with HLTH-001–HLTH-008. Group 02 — Structural / Schema / DDL Compatibility is next and has not started.**
+**Phase 006 is ACTIVE. Groups 01–02 are accepted with HLTH-001–HLTH-018. Group 03 — Baselines, Comparability, Distribution & Statistical Context is next and has not started.**

@@ -10,7 +10,7 @@ alwaysApply: true
 - **Phase 003 is complete. Groups 01–06 are accepted; SYN-001–SYN-035 are accepted; E-01–E-22 pass end-to-end consolidation.**
 - **Phase 004 — Evidence, Time, and Causality Refinement is complete. Groups 01–05 are accepted; REF-001–REF-030 are accepted.**
 - **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is complete. Groups 01–07 are accepted; AUTH-001–AUTH-053 are final; G07-01–G07-26 pass.**
-- **Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement is active. Group 01 is accepted with HLTH-001–HLTH-008; H01-01–H01-20 pass; Group 02 — Structural / Schema / DDL Compatibility is next and has not started.**
+- **Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement is active. Groups 01–02 are accepted with HLTH-001–HLTH-018; H01-01–H01-20 and H02-01–H02-30 pass; Group 03 — Baselines, Comparability, Distribution & Statistical Context is next and has not started.**
 - Work remains documentation/design-first unless the user explicitly advances into technical/implementation design.
 - Do not create application code, notebooks, infrastructure, schemas, APIs, IAM/Assertion Authority implementations, approval/workflow engines, deployment workflows, quarantine implementations, Execution Gate/orchestration implementations, metric engines, redaction systems, graph/causal engines, LLMs, or prototypes prematurely.
 - Treat `docs/` as the product/design system of record.
@@ -158,15 +158,28 @@ Phase 006 Group 01 measurement rules — accepted HLTH-001–HLTH-008:
 - Local metric existence does not imply downstream propagation; Group 05 owns transformation-aware reconciliation.
 - H01-01–H01-20 pass and no 25th concept is required.
 
-Schema / DDL validation handoff — Group 02 next:
+Phase 006 Group 02 structural/schema rules — accepted HLTH-009–HLTH-018:
 
-- Structural/schema compatibility is a first-class health concern even when a job/load succeeds.
-- Semantic Definition owns governed schema/grain/key meaning; Expectation owns normative structural compatibility; Observation/Change own realized state/change; Assessment owns conformance.
-- Change Intent owns planned schema evolution; Lineage/Impact/Investigation/Causal Claim provide downstream/planned/consequence reasoning where applicable.
-- Column add/drop/rename/type/nullability/grain/key/nested-schema changes can invalidate downstream assumptions, metric definitions, joins, and Baseline comparability.
-- Structural Change triggers **scoped** metric/Baseline/key/join applicability review rather than automatic global reset.
-- GitHub Actions, Databricks/Unity Catalog, and independent monitoring are candidate future validation locations with different temporal roles; Phase 006 Group 02 must not select one universal mechanism.
-- Schema/metric conditions used by an Execution Gate remain subject to evidence, normative eligibility, high-consequence capability, and enforcement separation.
+- Structural observations and compatibility bind the relevant consumer-visible interface/contract surface, not only the producer physical table.
+- Preserve **declared/governed schema meaning ≠ normative structural Expectation/contract ≠ proposed/planned structural state ≠ realized structural Observation/Change ≠ compatibility Assessment**.
+- Add, remove, rename, reorder, nested-path movement, type, precision/scale, nullability, default/generated-value, key/grain and nested-shape changes remain separately representable.
+- Rename identity requires supported identity/mapping evidence; drop+add coincidence does not establish rename, and same name does not guarantee same meaning.
+- Additive changes are not universally safe; removals are not universally breaking; field order matters only for order-sensitive contracts.
+- Engine cast/parse ability does not prove type compatibility; widening/narrowing/precision/nested compatibility is directional and consumer-specific.
+- Current zero-null data does not preserve a non-null structural guarantee after a nullable transition.
+- Defaults/generated values can satisfy physical presence while violating business completeness/validity semantics.
+- Key/grain change is structurally material even with unchanged column names/types and can invalidate volume/uniqueness/distribution/join assumptions without automatically constituting a defect.
+- Compatibility is consumer/interface/version/time scoped and not automatically transitive.
+- Stable intermediate views/projections can preserve consumer compatibility despite backing-table DDL change.
+- Unchanged producer schema can become incompatible when a consumer contract changes.
+- Prospective/pre-deployment validation is separate from realized production validation; validation success for a proposal does not prove deployment or realized state.
+- Structural change triggers scoped metric/profile/Baseline review, not global reset.
+- `Compatible` is a positive evidence-backed conclusion requiring sufficient coverage of all applicable required predicates in scope.
+- Preserve unknown/unresolved, conflicting, unavailable and not-applicable structural states rather than inventing pass/failure.
+- Structural incompatibility does not imply downstream execution failure, exposure, Impact or causality.
+- Physical layout/clustering/optimization changes are not logical schema incompatibility unless the relevant interface/consumer contract depends on them.
+- GitHub Actions, Databricks/Unity Catalog, DQX, Metric Views and independent monitoring remain candidate later validation locations; Phase 006 does not select one.
+- H02-01–H02-30 pass and no new concept is required.
 
 Causal/control/Impact rules:
 
@@ -210,12 +223,12 @@ Historical rules:
 
 Metric-health phase direction:
 
-- Phase 006 Group 01 accepted: measurement vocabulary, metric families, profiles/applicability/provenance — HLTH-001–HLTH-008.
-- Group 02 Structural / Schema / DDL Compatibility is next and has not started.
-- Group 03 Baselines, Comparability, Distribution & Statistical Context is planned.
+- Phase 006 Group 01 accepted: HLTH-001–HLTH-008; measurement vocabulary, metric families, profiles/applicability/provenance.
+- Phase 006 Group 02 accepted: HLTH-009–HLTH-018; structural/schema/DDL compatibility and scoped downstream metric/Baseline review.
+- Group 03 Baselines, Comparability, Distribution & Statistical Context is next and has not started.
 - Group 04 Expectations, Thresholds, Margins, Waivers & Assessment Semantics is planned.
 - Group 05 Transformation Reconciliation & Metric Propagation is planned.
 - Group 06 Composite Health, Readiness Suitability & Progressive Result Timing is planned.
 - Group 07 Consolidation / Exit Review is planned.
-- Do not begin Group 02 or later groups without explicit user request.
+- Do not begin Group 03 or later groups without explicit user request.
 - Never silently choose IAM/approval workflow/Assertion Authority engine, graph/event/temporal/ledger/quarantine/scheduler/orchestration/service/metric/redaction/LLM/causal-algorithm architecture.
