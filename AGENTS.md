@@ -10,7 +10,7 @@ Phase 002 originally accepted 20 concepts. Four post-exit addenda are accepted: 
 
 **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is complete.** Groups 01–07 accepted; AUTH-001–AUTH-053 final; G07-01–G07-26 pass; D-251–D-265 close the phase.
 
-**Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement is active. Groups 01–02 are accepted with HLTH-001–HLTH-018. H01-01–H01-20 and H02-01–H02-30 pass. Group 03 — Baselines, Comparability, Distribution & Statistical Context is next and has not started.**
+**Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement is active. Groups 01–03 are accepted with HLTH-001–HLTH-029. H01-01–H01-20, H02-01–H02-30 and H03-01–H03-32 pass. Group 04 — Expectations, Thresholds, Margins, Waivers & Assessment Semantics is next and has not started.**
 
 Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, IAM implementations, assertion-authority engines, approval/workflow engines, deployment workflows, quarantine implementations, gate/orchestration implementations, metric engines, graph/causal engines, redaction systems, LLMs, or prototypes unless the user explicitly advances the project into technical design.
 
@@ -66,6 +66,11 @@ Preserve:
 - add/drop coincidence ≠ rename identity;
 - engine cast capability ≠ consumer compatibility;
 - structural compatibility ≠ statistical/Baseline comparability;
+- Observation ≠ reference-set membership ≠ Baseline summary/version ≠ comparative Assessment ≠ normative Expectation;
+- available history ≠ eligible reference history;
+- directly comparable ≠ comparable only under explicit normalization ≠ non-comparable;
+- within Baseline ≠ healthy/meets Expectation;
+- outside Baseline ≠ failed/degraded/unacceptable;
 - Baseline-derived range ≠ normative Expectation unless explicitly adopted;
 - criticality ≠ threshold severity ≠ actual Impact;
 - waiver/exception ≠ rewritten Observation/Baseline/Assessment ≠ false `pass`;
@@ -358,20 +363,30 @@ Preserve:
 - Validation placement remains architecture-neutral; GitHub Actions, Databricks/Unity Catalog, DQX, Metric Views and independent monitoring remain later candidates.
 - H02-01–H02-30 pass; no new concept is required.
 
-### Group 03 — next
+### Group 03 — accepted HLTH-019–HLTH-029
 
-Baselines, Comparability, Distribution & Statistical Context is next and has not started.
-
-Preserve:
-
-- Baseline remains descriptive, not normative;
-- AUTH-020 intended-use approval does not manufacture empirical comparability;
-- same display name does not prove metric-definition continuity;
-- same column/type shape does not prove same grain/meaning;
-- structural compatibility does not automatically establish statistical comparability;
-- structural change can segment or invalidate selected dimensions while unrelated dimensions remain valid;
-- Group 03 owns low-volume/sample-size, seasonality/cohort, approximate/sampled uncertainty and distribution/quantile comparison semantics;
-- Group 03 must not define threshold/waiver semantics or A+B→C propagation.
+- Preserve **Observation ≠ reference-set membership ≠ Baseline summary/version ≠ comparative Assessment ≠ normative Expectation/health**.
+- Baseline membership binds subject, metric definition/version, grain/population, structural/interface regime, context/window, calendar/cohort, evidence coverage and inclusion/exclusion semantics.
+- Available history is not automatically eligible reference history.
+- Comparability is multidimensional and conclusion-relative; do not create a universal numeric comparability/confidence score.
+- Supported states include directly comparable, comparable under explicit normalization, non-comparable, insufficient reference, ambiguous, conflicting, unavailable, unknown/unresolved and not applicable.
+- Fixed/reference-period, rolling/adaptive, seasonal/cadence, cohort and post-change/new-regime Baselines are functional classes, not algorithms.
+- Recency does not override business-calendar/cadence/cohort context.
+- Realized metric-definition/grain/population/key/denominator/semantic/interface/method changes can segment affected references while unrelated dimensions retain continuity.
+- Change Intent can predict a break but cannot activate it or populate post-change history; new regimes derive from realized post-change Observations.
+- Reference sufficiency is conclusion-relative; no universal sample minimum exists.
+- Preserve denominator/population size, temporal/missing-period coverage, cohort coverage and operating variability; sparse evidence limits comparative strength.
+- Approximate/sampled metrics can be valid evidence when method identity and material uncertainty remain explicit.
+- Do not assert precise differences smaller than material measurement uncertainty.
+- Distribution references remain purpose-driven; quantiles require semantically ordered dimensions; no universal drift/anomaly score.
+- Explicit normalization can support a derived comparison while raw values remain non-comparable; normalization requires stable versioned numerator/denominator semantics and provenance.
+- Rolling/adaptive Baselines require explicit refresh/window progression, lag/holdout, inclusion/exclusion and version semantics.
+- A current Observation must not silently redefine the reference used to assess itself.
+- `Looks anomalous` alone cannot justify exclusion; exclusions require an independent provenance-bearing reference-population basis.
+- Repeated abnormal behavior can become descriptively typical without becoming normatively acceptable.
+- Multiple plausible Baselines do not receive hidden newest/largest/narrowest/broadest/closest precedence.
+- Baseline refresh/new-regime replacement preserves historical Observations, Baselines and Assessments.
+- H03-01–H03-32 pass; no new concept is required.
 
 ## Passive monitoring / integration-independence rules
 
@@ -456,6 +471,7 @@ Preserve:
 - Historical gate/safeguard approvals/actions/enforcement/executions are never rewritten.
 - Historical Assertion Authority/Capability Authorization/disclosure is evidence about past standing/permission/disclosure; current authority/requester authorization governs present resolution/disclosure.
 - Partial/unknown/conflicting/restricted replay remains valid rather than being completed by guesswork.
+- Historical Baseline replay uses the exact Baseline/reference version and context available/used at the historical knowledge cut; current refreshed Baselines are not substituted backward.
 
 ## Phase 006 metric-health direction
 
@@ -463,8 +479,8 @@ The accepted logical sequence is:
 
 1. **Measurement Vocabulary, Metric Families, Profiles & Applicability — accepted, HLTH-001–HLTH-008.**
 2. **Structural / Schema / DDL Compatibility — accepted, HLTH-009–HLTH-018.**
-3. **Baselines, Comparability, Distribution & Statistical Context — next.**
-4. Expectations, Thresholds, Margins, Waivers & Assessment Semantics.
+3. **Baselines, Comparability, Distribution & Statistical Context — accepted, HLTH-019–HLTH-029.**
+4. **Expectations, Thresholds, Margins, Waivers & Assessment Semantics — next.**
 5. Transformation Reconciliation & Metric Propagation.
 6. Composite Health, Readiness Suitability & Progressive Result Timing.
 7. Consolidation / Exit Review.
@@ -500,8 +516,9 @@ Remote GitHub `main` is authoritative; local/ZIP copies are archival or working 
 - Phase 005 Group 07: consolidation/exit; D-251–D-265.
 - Phase 005 complete.
 - Phase 006 Group 01 accepted: HLTH-001–HLTH-008; D-266–D-278.
-- **Phase 006 Group 02 accepted: HLTH-009–HLTH-018; D-279–D-295. Group 03 — Baselines, Comparability, Distribution & Statistical Context is next and has not started. Do not begin Group 03 without explicit user request.**
+- Phase 006 Group 02 accepted: HLTH-009–HLTH-018; D-279–D-295.
+- **Phase 006 Group 03 accepted: HLTH-019–HLTH-029; D-296–D-314. Group 04 — Expectations, Thresholds, Margins, Waivers & Assessment Semantics is next and has not started. Do not begin Group 04 without explicit user request.**
 
 ## Tooling stance
 
-Databricks Metric Views/DQX are favored later evaluations, not settled architecture. Collibra/Immuta remain optional until mapped to explicit authority/integration roles. Do not select RBAC/ABAC, IAM provider, Assertion Authority implementation, approval workflow, graph database, temporal store, quarantine store, scheduler/orchestrator, Execution Gate implementation, metric engine/storage, redaction technology, LLM, causal algorithm, or technical architecture prematurely.
+Databricks Metric Views/DQX are favored later evaluations, not settled architecture. Collibra/Immuta remain optional until mapped to explicit authority/integration roles. Do not select RBAC/ABAC, IAM provider, Assertion Authority implementation, approval workflow, graph database, temporal store, quarantine store, scheduler/orchestrator, Execution Gate implementation, metric engine/storage, redaction technology, LLM, causal algorithm, anomaly algorithm, statistical library, or technical architecture prematurely.

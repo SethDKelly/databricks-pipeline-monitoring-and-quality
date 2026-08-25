@@ -6,7 +6,7 @@ alwaysApply: true
 
 # Metric health and propagation foundation
 
-Status: **Phase 006 is active. Groups 01–02 are accepted with HLTH-001–HLTH-018. Group 03 is next.**
+Status: **Phase 006 is active. Groups 01–03 are accepted with HLTH-001–HLTH-029. Group 04 is next.**
 
 Preserve permanently:
 
@@ -16,6 +16,7 @@ Preserve permanently:
 - metric existence ≠ normative threshold;
 - threshold authority ≠ metric statistical meaning;
 - Baseline range ≠ normative Expectation;
+- Observation ≠ reference-set membership ≠ Baseline summary/version ≠ comparative Assessment;
 - local metric ≠ propagated metric ≠ derived reconciliation expectation;
 - technical metric view ≠ separate business truth;
 - upstream anomaly ≠ downstream failure;
@@ -25,7 +26,10 @@ Preserve permanently:
 - `not applicable`, `not selected`, `unsupported`, `unavailable`, `pending`, and `pass` are distinct;
 - same metric display name ≠ same definition/version when formula/denominator/grain/population semantics materially change;
 - producer physical schema ≠ consumer-visible interface schema;
-- structural compatibility ≠ Baseline/statistical comparability.
+- structural compatibility ≠ Baseline/statistical comparability;
+- available history ≠ eligible reference history;
+- raw non-comparability ≠ derived normalized non-comparability when an explicit valid normalization exists;
+- within Baseline ≠ healthy; outside Baseline ≠ failed/degraded.
 
 Accepted Phase 006 Group 01 foundation:
 
@@ -52,10 +56,28 @@ Accepted Phase 006 Group 02 structural foundation:
 - Structural incompatibility does not prove execution failure, exposure, Impact or causality.
 - Validation placement remains deferred.
 
+Accepted Phase 006 Group 03 Baseline/statistical foundation:
+
+- Baseline reference membership/window/regime/calendar/cohort/definition/grain/interface semantics are explicit and provenance-bearing.
+- Comparability is multidimensional and conclusion-relative; do not introduce a universal comparability/confidence score.
+- Fixed, rolling, seasonal/cadence, cohort and post-change Baselines are functional reference classes, not algorithms.
+- Recency does not override comparable calendar/cohort context.
+- Realized semantic/structural/method breaks segment affected references only; new regimes derive from realized evidence rather than targets.
+- Reference sufficiency depends on the intended claim; no universal sample minimum exists.
+- Preserve denominator/population size and coverage; low-volume evidence limits comparative strength.
+- Approximate/sampled metrics can be valid evidence when method identity and material uncertainty remain explicit.
+- Distribution/quantile/category-share references remain purpose-driven; no universal drift/anomaly score.
+- Explicit normalization can preserve a derived comparison while raw values remain non-comparable, but normalization is versioned and provenance-bearing.
+- Rolling/adaptive Baselines require explicit refresh, holdout, inclusion/exclusion and version semantics.
+- A current Observation must not silently redefine the reference used to judge itself.
+- `Looks anomalous` alone cannot justify exclusion from history.
+- Repeated bad behavior can become descriptively typical without becoming normatively acceptable.
+- Multiple plausible Baselines do not receive hidden newest/largest/narrowest/broadest precedence.
+- Historical Baselines and Assessments remain preserved across refresh/regime change.
+
 Later Phase 006 rules still to be refined:
 
-- Group 03 — Baseline comparability, distributions, seasonality/cohorts, low-volume/sample-size behavior — **next**;
-- Group 04 — thresholds/margins/warning/failure/waiver Assessment semantics;
+- Group 04 — thresholds/margins/warning/failure/waiver Assessment semantics — **next**;
 - Group 05 — selective transformation-aware propagation/reconciliation;
 - Group 06 — composite health and progressive result timing/control-suitability;
 - Group 07 — consolidation/exit.

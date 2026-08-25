@@ -10,7 +10,7 @@ alwaysApply: true
 - **Phase 003 is complete. Groups 01–06 are accepted; SYN-001–SYN-035 are accepted; E-01–E-22 pass end-to-end consolidation.**
 - **Phase 004 — Evidence, Time, and Causality Refinement is complete. Groups 01–05 are accepted; REF-001–REF-030 are accepted.**
 - **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is complete. Groups 01–07 are accepted; AUTH-001–AUTH-053 are final; G07-01–G07-26 pass.**
-- **Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement is active. Groups 01–02 are accepted with HLTH-001–HLTH-018; H01-01–H01-20 and H02-01–H02-30 pass; Group 03 — Baselines, Comparability, Distribution & Statistical Context is next and has not started.**
+- **Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement is active. Groups 01–03 are accepted with HLTH-001–HLTH-029; H01-01–H01-20, H02-01–H02-30 and H03-01–H03-32 pass; Group 04 — Expectations, Thresholds, Margins, Waivers & Assessment Semantics is next and has not started.**
 - Work remains documentation/design-first unless the user explicitly advances into technical/implementation design.
 - Do not create application code, notebooks, infrastructure, schemas, APIs, IAM/Assertion Authority implementations, approval/workflow engines, deployment workflows, quarantine implementations, Execution Gate/orchestration implementations, metric engines, redaction systems, graph/causal engines, LLMs, or prototypes prematurely.
 - Treat `docs/` as the product/design system of record.
@@ -181,6 +181,31 @@ Phase 006 Group 02 structural/schema rules — accepted HLTH-009–HLTH-018:
 - GitHub Actions, Databricks/Unity Catalog, DQX, Metric Views and independent monitoring remain candidate later validation locations; Phase 006 does not select one.
 - H02-01–H02-30 pass and no new concept is required.
 
+Phase 006 Group 03 Baseline/comparability rules — accepted HLTH-019–HLTH-029:
+
+- Preserve **Observation ≠ reference-set membership ≠ Baseline summary/version ≠ comparative Assessment ≠ normative Expectation/health**.
+- Baseline membership binds subject, metric definition/version, grain/population, structural/interface regime, context/window, calendar/cohort, evidence coverage and inclusion/exclusion semantics.
+- Available history is not automatically eligible reference history.
+- Comparability is multidimensional and conclusion-relative; no universal numeric comparability/confidence score.
+- Supported states include directly comparable, comparable under explicit normalization, non-comparable, insufficient reference, ambiguous, conflicting, unavailable, unknown/unresolved and not applicable.
+- Fixed/reference-period, rolling/adaptive, seasonal/cadence, cohort and post-change/new-regime Baselines are functional classes, not algorithms.
+- Recency does not override business-calendar/cadence/cohort context.
+- Realized metric-definition/grain/population/key/denominator/semantic/interface/method changes can segment affected Baselines while unrelated dimensions retain continuity.
+- Change Intent can predict a break but cannot activate it or populate post-change history; new regimes derive from realized post-change Observations.
+- Reference sufficiency is conclusion-relative; no universal sample minimum exists.
+- Preserve denominator/population size, temporal/missing-period coverage, cohort coverage and operating variability; sparse evidence limits comparative strength.
+- Approximate/sampled metrics can be valid evidence when method identity and material uncertainty remain explicit.
+- Do not assert precise differences smaller than material measurement uncertainty.
+- Distribution references remain purpose-driven; quantiles require semantically ordered dimensions and no universal drift/anomaly score is accepted.
+- Explicit normalization can support a derived comparison while raw values remain non-comparable; normalization requires stable versioned numerator/denominator semantics and provenance.
+- Rolling/adaptive Baselines require explicit refresh/window progression, lag/holdout, inclusion/exclusion and version semantics.
+- A current Observation must not silently redefine the reference used to assess itself.
+- `Looks anomalous` alone cannot justify exclusion; exclusions require an independent provenance-bearing reference-population basis.
+- Repeated abnormal behavior can become descriptively typical without becoming normatively acceptable.
+- Multiple plausible Baselines do not receive hidden newest/largest/narrowest/broadest/closest precedence.
+- Baseline refresh/new-regime replacement preserves historical Observations, Baselines and Assessments.
+- H03-01–H03-32 pass and no new concept is required.
+
 Causal/control/Impact rules:
 
 - Causal status vocabulary is `proposed`, `supported`, `weakened`, `unresolved`, `rejected`, `confirmed`.
@@ -225,10 +250,10 @@ Metric-health phase direction:
 
 - Phase 006 Group 01 accepted: HLTH-001–HLTH-008; measurement vocabulary, metric families, profiles/applicability/provenance.
 - Phase 006 Group 02 accepted: HLTH-009–HLTH-018; structural/schema/DDL compatibility and scoped downstream metric/Baseline review.
-- Group 03 Baselines, Comparability, Distribution & Statistical Context is next and has not started.
-- Group 04 Expectations, Thresholds, Margins, Waivers & Assessment Semantics is planned.
+- Phase 006 Group 03 accepted: HLTH-019–HLTH-029; Baseline reference membership, comparability, seasonal/cohort context, reference sufficiency, approximation, distributions, normalization and adaptation.
+- Group 04 Expectations, Thresholds, Margins, Waivers & Assessment Semantics is next and has not started.
 - Group 05 Transformation Reconciliation & Metric Propagation is planned.
 - Group 06 Composite Health, Readiness Suitability & Progressive Result Timing is planned.
 - Group 07 Consolidation / Exit Review is planned.
-- Do not begin Group 03 or later groups without explicit user request.
+- Do not begin Group 04 or later groups without explicit user request.
 - Never silently choose IAM/approval workflow/Assertion Authority engine, graph/event/temporal/ledger/quarantine/scheduler/orchestration/service/metric/redaction/LLM/causal-algorithm architecture.
