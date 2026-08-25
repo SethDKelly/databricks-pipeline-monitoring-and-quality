@@ -231,3 +231,17 @@ Material statement proposition identity persists across refresh while its defini
 A retained Explanation snapshot is evidence of actual prior communication for its bound context, not timeless source truth. Refreshed current projections link to predecessors/superseded snapshots rather than overwriting them. Current access changes affect current projection without backfilling or erasing retained communication; missing retained snapshots remain missing and reconstruction cannot be labeled exact prior communication.
 
 Group 07 accepts EXPL-121–EXPL-140 and PMR07-01–PMR07-44 without changing the 24-concept catalog.
+
+## Later refinement — Phase 008 Group 08
+
+Phase 008 Group 08 completes historical/comparative Explanation and Phase 008 consolidation without adding a historical-answer or Explanation-history truth concept. See [`../../phase_008/08_historical_comparative_explanation_consolidation_exit/README.md`](../../phase_008/08_historical_comparative_explanation_consolidation_exit/README.md).
+
+Historical/comparative Explanation now distinguishes **historical source state**, **as-known-at-cut Explanation**, **actual retained communication**, and **current retrospective Explanation**. Current authorized projection applies separately to whichever view is requested and is not another truth state.
+
+Each comparison side independently binds proposition/scope/event-time/knowledge perspective. Same-proposition diffs distinguish source/status change, basis/knowledge change, derivation re-evaluation, authorization/detail change, materiality/scope change and presentation-only change. Evidence arriving later can change what is known without pretending the historical event began when it became known.
+
+Retained communication remains evidence of what was actually said then; a current reconstruction cannot substitute for missing retained history. Corrections and supersessions can change the current preferred Explanation without rewriting what was known or communicated earlier. Historical unknowns remain historically valid when later evidence resolves the retrospective proposition.
+
+Comparative health/change/execution, causality/Impact, Safeguard/Gate and governance statements preserve the exact source-domain boundaries accepted in Groups 03–06. `Why did the Explanation change?` may describe a knowledge/basis/authorization/scope delta, but any domain causal proposition still belongs to Causal Claim.
+
+Group 08 accepts EXPL-141–EXPL-160 and HCX08-01–HCX08-48. **EXPL-001–EXPL-160 is final; no EXPL-161 is required; Phase 008 exits complete with 24 concepts unchanged.**

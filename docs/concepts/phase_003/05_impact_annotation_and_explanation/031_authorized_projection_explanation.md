@@ -167,3 +167,17 @@ Material statement identity survives wording/detail changes within the same prop
 When retained, a refreshed Explanation links to its predecessor and may supersede it for present use without overwriting actual prior communication. A retained snapshot is evidence of what was communicated then, while a reconstruction is a present derivation and cannot substitute for missing retained history. Current authorization changes current projection without rewriting earlier communication.
 
 EXPL-121–EXPL-140 and PMR07-01–PMR07-44 are accepted without a new concept.
+
+## Later refinement — Phase 008 Group 08
+
+Phase 008 Group 08 completes historical/comparative composition and Phase 008 exit. See [`../../phase_008/08_historical_comparative_explanation_consolidation_exit/README.md`](../../phase_008/08_historical_comparative_explanation_consolidation_exit/README.md).
+
+SYN-031 now preserves four independently meaningful explanatory views: source-owned historical state, as-known-at-cut Explanation, retained actual prior communication where available, and current retrospective Explanation. Present disclosure applies current requester authorization separately and does not become another truth state.
+
+Historical/comparative statements retain stable proposition identity only when material subject/predicate/scope/event target match. Differences are typed as source/status, evidence/basis/knowledge, derivation, scope/materiality, authorization/detail, presentation, or retained-versus-reconstructed changes. A newly available basis can change what is known without implying the historical source state changed at the same moment.
+
+Corrections/supersessions change current preferred interpretation non-rewritingly. A retained historical message can remain authentic while becoming unsuitable for current use, and missing retained communication cannot be recreated as exact communication by `composeAt`.
+
+Comparative domain statements preserve all accepted health/change/execution, Causal Claim, Impact, Safeguard/Gate and governance boundaries. Explanation-delta reasons do not substitute for domain Causal Claims.
+
+EXPL-141–EXPL-160 and HCX08-01–HCX08-48 are accepted. **EXPL-001–EXPL-160 is final; no EXPL-161 is required; Phase 008 exits complete with no new truth concept.**

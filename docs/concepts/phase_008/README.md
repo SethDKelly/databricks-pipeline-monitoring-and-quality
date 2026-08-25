@@ -1,6 +1,6 @@
 # Phase 008 — Business Questioning and Explanation
 
-**Status:** IN PROGRESS — Groups 01–07 accepted; EXPL-001–EXPL-140 accepted; Group 08 next
+**Status:** COMPLETE — Groups 01–08 accepted; EXPL-001–EXPL-160 final; Phase 008 exit review accepted
 
 ## Goal
 
@@ -12,13 +12,13 @@ Phase 008 consumes the completed functional truth model from Phases 002–007. I
 
 Phase 008 uses **`EXPL-###`** refinement contracts.
 
-`EXPL-###` means business-question and Explanation refinement over accepted concepts. It does **not** create a new `Question`, `Answer`, answer-statement, RCA, Impact-summary, control-effectiveness, uncertainty/confidence, audience-projection, maturity/snapshot or governance truth concept by default, does not extend SYN/REF/AUTH/HLTH/OPS ranges, and must not become an umbrella state that absorbs truth owned by other concepts.
+`EXPL-###` means business-question and Explanation refinement over accepted concepts. It does **not** create a new `Question`, `Answer`, answer-statement, RCA, Impact-summary, control-effectiveness, uncertainty/confidence, audience-projection, maturity/snapshot, historical-answer or governance truth concept, does not extend SYN/REF/AUTH/HLTH/OPS ranges, and must not become an umbrella state that absorbs truth owned by other concepts.
 
-Accepted range so far: **EXPL-001–EXPL-140**.
+Final accepted range: **EXPL-001–EXPL-160**. **No EXPL-161 is required.**
 
 ## Logical delivery grouping
 
-Phase 008 is reviewed in eight dependency-ordered functional groups. The sequence is a reasoning/review strategy, not an implementation decomposition.
+Phase 008 was reviewed in eight dependency-ordered functional groups. The sequence is a reasoning/review strategy, not an implementation decomposition.
 
 ### Group 01 — Question Proposition, Intent, Scope & Temporal Perspective
 **Status:** **Accepted — EXPL-001–EXPL-012; BQ01-01–BQ01-24 pass.**
@@ -84,11 +84,13 @@ No new concept is required. Explanation owns current/retained communication proj
 See [`07_progressive_maturity_partial_answers_refresh_retention/README.md`](07_progressive_maturity_partial_answers_refresh_retention/README.md).
 
 ### Group 08 — Historical/Comparative Explanation & Consolidation / Exit Review
-**Status:** **Next — not started.**
+**Status:** **Accepted — EXPL-141–EXPL-160; HCX08-01–HCX08-48 pass; Phase 008 exit accepted.**
 
-Will refine comparative and historical Explanation over event/effective time and knowledge cuts, retained actual communication versus reconstruction, incident-time versus retrospective accounts, explanation-diff semantics, current authorized projection, and end-to-end Phase 008 composition/exit.
+Defines independently bound comparison views; event/effective-time, knowledge-cut and communication-time separation; historical source state versus as-known reconstruction versus retained actual communication versus current retrospective interpretation; current authorization over historical views; proposition-stable comparison; typed Explanation diffs; historical negative/unknown discipline; comparative domain semantics; correction/supersession; multi-cut progression; and final Phase 008 consolidation.
 
-See [`08_historical_comparative_explanation_consolidation_exit/README.md`](08_historical_comparative_explanation_consolidation_exit/README.md).
+No new concept is required. Historical/comparative Explanation remains a projection over existing source histories and retained Explanation communication.
+
+See [`08_historical_comparative_explanation_consolidation_exit/README.md`](08_historical_comparative_explanation_consolidation_exit/README.md), [`08_historical_comparative_explanation_consolidation_exit/scenario_replay_matrix.md`](08_historical_comparative_explanation_consolidation_exit/scenario_replay_matrix.md), and [`08_historical_comparative_explanation_consolidation_exit/phase_008_exit_review.md`](08_historical_comparative_explanation_consolidation_exit/phase_008_exit_review.md).
 
 ## Why this order
 
@@ -244,6 +246,27 @@ Explanation evolution now preserves:
 - missing retained snapshot as missing, with reconstruction explicitly labeled rather than passed off as exact prior communication;
 - change summaries preserving exact source transitions rather than inventing confidence/maturity language.
 
+## Accepted Group 08 historical/comparative discipline
+
+Explanation comparison now preserves:
+
+- independently bound comparison sides rather than implicit `then`/`now` scope;
+- event/effective time, knowledge cut and communication time as separate coordinates;
+- historical source state ≠ as-known-at-cut Explanation ≠ actual retained communication ≠ current retrospective Explanation;
+- current authorized projection as disclosure over a selected view, not a fifth truth state;
+- same-proposition identity only when material subject/predicate/scope/event target remain equivalent;
+- typed deltas for source/status, basis/knowledge, derivation, scope, materiality, authorization/detail, presentation and retained-versus-reconstructed differences;
+- evidence arrival as distinct from historical source-state transition;
+- authorization/detail changes as distinct from truth/epistemic changes;
+- historical unknown/not-evidenced/not-recorded/unavailable/restricted as distinct from evidence-backed negative;
+- comparative health/change/execution semantics without universal health/change status;
+- comparative Investigation/localization without RCA promotion;
+- comparative causal/Impact/control/governance semantics with exact source-owned layers/status;
+- correction/supersession as non-rewriting;
+- historical authenticity as separate from current suitability;
+- multi-cut progression without universal maturity/confidence/completeness score;
+- descriptive reason-for-Explanation-difference as separate from domain Causal Claim truth.
+
 ## Accepted Phase 007 handoff
 
 Preserve at minimum:
@@ -273,10 +296,12 @@ Phase 008 defines functional questioning and Explanation semantics only. It does
 - source integrations owned by Phase 009;
 - technical architecture owned by Phase 010.
 
-## Later-phase handoff
+## Phase 009 handoff
 
-Phase 009 will map accepted question/Explanation requirements to real source availability, authority, latency, retention, cost and observability. Phase 010 will select implementation architecture only after those integration facts are known.
+Phase 009 — **Integration Contracts, Source Authority, and Evidence Availability** is next. It receives **EXPL-001–EXPL-160 final** plus the completed SYN/REF/AUTH/HLTH/OPS substrate and must map accepted requirements to concrete source availability, authority, timestamps, identity/join keys, evidence coverage/quality, latency, retention/replay, authorization/disclosure, basis inspectability, cost and observability.
+
+Integration convenience or missing source support must not silently weaken accepted functional semantics. Source availability remains separate from authority and conclusion-specific evidence sufficiency.
 
 ## Phase direction
 
-**Groups 01–07 are accepted with EXPL-001–EXPL-140. BQ01-01–BQ01-24, AS02-01–AS02-30, HCE03-01–HCE03-36, ICG04-01–ICG04-48, UNC05-01–UNC05-40, AUD06-01–AUD06-44 and PMR07-01–PMR07-44 pass. Group 08 — Historical/Comparative Explanation & Consolidation / Exit Review is next.**
+**Phase 008 is complete. Groups 01–08 are accepted; EXPL-001–EXPL-160 is final; BQ01-01–BQ01-24, AS02-01–AS02-30, HCE03-01–HCE03-36, ICG04-01–ICG04-48, UNC05-01–UNC05-40, AUD06-01–AUD06-44, PMR07-01–PMR07-44 and HCX08-01–HCX08-48 pass; Phase 008 exit review is accepted. Phase 009 — Integration Contracts, Source Authority, and Evidence Availability is next.**

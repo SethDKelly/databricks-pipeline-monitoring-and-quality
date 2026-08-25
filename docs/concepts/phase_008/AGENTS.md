@@ -7,7 +7,7 @@ Applies to work under `docs/concepts/phase_008/` and complements the repository 
 Canonical repository phase status is maintained in [`../../README.md#current-state`](../../README.md#current-state).
 
 - Phase 007 is complete with OPS-001–OPS-123 final.
-- Phase 008 grouping is accepted.
+- **Phase 008 is complete with EXPL-001–EXPL-160 final.**
 - **Group 01 is complete with EXPL-001–EXPL-012; BQ01-01–BQ01-24 pass.**
 - **Group 02 is complete with EXPL-013–EXPL-028; AS02-01–AS02-30 pass.**
 - **Group 03 is complete with EXPL-029–EXPL-049; HCE03-01–HCE03-36 pass.**
@@ -15,8 +15,10 @@ Canonical repository phase status is maintained in [`../../README.md#current-sta
 - **Group 05 is complete with EXPL-081–EXPL-100; UNC05-01–UNC05-40 pass.**
 - **Group 06 is complete with EXPL-101–EXPL-120; AUD06-01–AUD06-44 pass.**
 - **Group 07 is complete with EXPL-121–EXPL-140; PMR07-01–PMR07-44 pass.**
-- **Group 08 — Historical/Comparative Explanation & Consolidation / Exit Review is next.**
+- **Group 08 is complete with EXPL-141–EXPL-160; HCX08-01–HCX08-48 pass; Phase 008 exit review accepted.**
+- **No EXPL-161 is required.**
 - Accepted concept count remains 24.
+- **Phase 009 — Integration Contracts, Source Authority, and Evidence Availability is next.**
 
 ## Accepted Group 01 rules
 
@@ -70,7 +72,7 @@ Preserve:
 - no synthetic overall answer/incident/root-cause/Impact/control truth is created for narrative convenience;
 - answer ordering/primary-answer selection is question/context specific and creates no hidden authority/score;
 - internal statement-to-basis traceability is mandatory;
-- visible basis disclosure is separate and belongs to Group 06;
+- visible basis disclosure is separate and governed by Groups 06/08;
 - answer coverage is proposition/subquestion bound rather than a universal completeness/confidence score.
 
 See [`02_answer_structure_statement_selection_basis_traceability/README.md`](02_answer_structure_statement_selection_basis_traceability/README.md).
@@ -104,7 +106,7 @@ Preserve:
 - duration, start delay, wait interval, delivery lateness and freshness/currentness are distinct;
 - timing/overlap does not establish causality;
 - historical health/change/execution answers preserve event/effective time and knowledge cut;
-- direct domain statements can support Group 04 but cannot become causality/Impact/control/governance truth by composition.
+- direct domain statements can support inferential reasoning but cannot become causality/Impact/control/governance truth by composition.
 
 See [`03_health_change_execution_question_semantics/README.md`](03_health_change_execution_question_semantics/README.md).
 
@@ -239,9 +241,43 @@ Preserve:
 
 See [`07_progressive_maturity_partial_answers_refresh_retention/README.md`](07_progressive_maturity_partial_answers_refresh_retention/README.md).
 
+## Accepted Group 08 rules
+
+Preserve:
+
+- each comparative side independently binds proposition identity, subject/scope, event/effective window and knowledge perspective;
+- event/effective time, knowledge cut and actual communication time remain independent coordinates;
+- historical source state ≠ as-known-at-cut Explanation ≠ actual retained communication ≠ current retrospective Explanation;
+- current authorized projection is disclosure over a selected internal view, not a fifth truth state;
+- historical source facts can exist while being unknown/not evidenced at an earlier cut;
+- retained actual communication is not interchangeable with a current historical reconstruction;
+- missing retained communication remains missing;
+- same-proposition comparison requires equivalent material subject/predicate/scope/event target;
+- changed proposition scope is not represented as a status change for one proposition;
+- Explanation deltas distinguish source/status, evidence/basis, knowledge-cut, derivation, scope, materiality, authorization/detail, presentation and retained-versus-reconstructed differences;
+- evidence arrival can change what is known without changing the historical real-world/source state;
+- more detail/newly visible evidence does not mean more truth or stronger status;
+- removed from one view does not imply false/retracted/resolved/nonexistent;
+- historical unknown, unavailable, not-evidenced, not-recorded, restricted and strong negative remain separate;
+- later resolution of historical unknown does not rewrite the earlier epistemic state;
+- comparative health/change/execution preserves all Group 03 source boundaries;
+- comparative Investigation/localization does not become RCA;
+- comparative Causal Claim preserves exact proposition/role/status and REF-017 + AUTH-034 confirmation burden;
+- comparative Impact preserves candidate/opportunity/exposure/effect/consequence/attribution layers;
+- comparative Safeguard preserves enforcement/prevention/recovery separation;
+- comparative Gate preserves readiness/decision/enforcement/execution separation;
+- comparative governance uses historically effective assignments/rules rather than current-state back-projection;
+- correction/supersession is non-rewriting across source state, knowledge and retained communication;
+- historical authenticity and current suitability remain separate;
+- multi-cut progression creates no universal maturity/confidence/completeness score;
+- `why did the Explanation change?` can describe basis/knowledge/authorization/scope deltas, while domain causality still requires Causal Claim semantics;
+- EXPL-001–EXPL-160 are final and no EXPL-161 is required.
+
+See [`08_historical_comparative_explanation_consolidation_exit/README.md`](08_historical_comparative_explanation_consolidation_exit/README.md) and [`08_historical_comparative_explanation_consolidation_exit/phase_008_exit_review.md`](08_historical_comparative_explanation_consolidation_exit/phase_008_exit_review.md).
+
 ## Permanent Phase 008 boundaries
 
-Preserve throughout the phase:
+Preserve after phase exit:
 
 - Explanation ≠ independent truth source;
 - question intent ≠ evidence;
@@ -284,25 +320,28 @@ Preserve throughout the phase:
 - authorization-driven projection change ≠ truth change;
 - progressive maturity ≠ automatic status strengthening;
 - elapsed time/recomposition ≠ evidence maturity;
-- no universal Explanation confidence/completeness/quality/operational-status/RCA/Impact/control-effectiveness/maturity score.
+- historical source state ≠ as-known Explanation ≠ retained communication ≠ current retrospective Explanation;
+- current authorized projection ≠ historical truth/permission;
+- Explanation diff classification ≠ causality;
+- no universal Explanation confidence/completeness/quality/operational-status/RCA/Impact/control-effectiveness/maturity/replay score.
 
-## Group 08 entry contract
+## Phase 009 handoff
 
-Group 08 consumes EXPL-001–EXPL-140 and performs the historical/comparative consolidation of Phase 008.
+Phase 009 consumes the completed functional substrate. It should map each accepted requirement to concrete integrations while preserving the distinctions above.
 
-It should explicitly test:
+It should explicitly characterize:
 
-- comparison of two or more event/effective windows without collapsing scope;
-- comparison of two or more knowledge cuts without later-evidence backfill;
-- actual retained source state versus as-known-at-cut reconstruction versus current retrospective interpretation;
-- actual retained Explanation communication versus reconstructed `what would have been explainable then`;
-- current requester authorization over historical material versus historical actor authorization;
-- explanation deltas that distinguish source/status/basis changes from materiality/authorization/presentation changes;
-- current correction/supersession while prior retained communication remains intact;
-- question/statement identity across rename/version/scope/time changes;
-- negative claims at historical cuts with exact opportunity/coverage burdens;
-- full Phase 008 end-to-end scenario replay and exit review;
-- no new Question/Answer/Explanation-truth concept;
-- no presentation/LLM/retrieval/persistence architecture selection.
+- source/integration candidates for each needed assertion/evidence category;
+- source availability versus Assertion Authority;
+- principal/detail disclosure and Capability Authorization support;
+- stable identity/join keys and ambiguity;
+- event/effective and recorded/knowledge timestamps;
+- evidence applicability, coverage, duplication/common derivation and conflict;
+- historical retention/replay and late-arrival/correction behavior;
+- latency/freshness and operational availability;
+- basis/provenance inspectability;
+- downstream consumer/exposure/control evidence support;
+- cost/rate/operational constraints;
+- unsupported or partially supported EXPL/OPS/HLTH/AUTH/REF/SYN requirements.
 
-Do not let historical comparison become another truth owner, current authorization become historical permission, or current retrospective knowledge rewrite earlier cuts.
+Do not weaken accepted semantics because a preferred integration lacks evidence. `Unavailable from selected source` is a support finding, not a negative domain fact. Do not select Phase 010 technical architecture prematurely.
