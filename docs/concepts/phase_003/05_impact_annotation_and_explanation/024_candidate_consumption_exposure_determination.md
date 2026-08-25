@@ -78,3 +78,9 @@ Health Assessment, causal inference, business consequence, consumer-technology i
 ## Deferred questions
 
 Evidence sufficiency standards for each consumer class and minimum first-MVP version/consumption evidence.
+
+## Later refinement — Phase 007 Group 06
+
+OPS-067–OPS-077 preserve this synchronization and add exact origin/consumer/use/time binding; opportunity/availability/publication/encounter separation; consumer-mode-specific evidence; bounded `exposed`/`not exposed`/safe-state/unknown-state/no-opportunity/indeterminate/conflicting/unavailable semantics; cache/replica state; non-transitive multi-hop exposure; alternate-path coverage; and repeated encounter intervals.
+
+The earlier `reliable refresh history` scenario establishes `not exposed` only when REF-023/OPS-076 also provide sufficient opportunity and material alternate-path coverage for the exact proposition. Missing telemetry remains unresolved rather than a negative.

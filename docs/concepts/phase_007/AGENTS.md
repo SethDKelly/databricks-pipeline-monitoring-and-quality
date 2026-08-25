@@ -13,7 +13,8 @@ Canonical repository phase status is maintained in [`../../README.md#current-sta
 - **Group 03 is complete with OPS-021–OPS-033; P03-01–P03-30 pass.**
 - **Group 04 is complete with OPS-034–OPS-049; X04-01–X04-32 pass.**
 - **Group 05 is complete with OPS-050–OPS-066; I05-01–I05-34 pass.**
-- **Group 06 — Impact, Consumer Encounter, Exposure & Consequence is next.**
+- **Group 06 is complete with OPS-067–OPS-085; IM06-01–IM06-36 pass.**
+- **Group 07 — Propagation Safeguard Scope, Enforcement, Release & Recovery is next.**
 - Accepted concept count remains 24; SYN-001–SYN-035, REF-001–REF-030, AUTH-001–AUTH-053 and HLTH-001–HLTH-066 remain unchanged.
 
 ## Accepted Group 01 Lineage rules
@@ -167,6 +168,40 @@ Preserve:
 
 See [`05_investigation_localization_causal_handoff/README.md`](05_investigation_localization_causal_handoff/README.md).
 
+## Accepted Group 06 Impact / Encounter / Exposure / Consequence rules
+
+Preserve:
+
+- Impact remains candidate/exposure/effect/consequence association owner; source facts and causal attribution retain their existing owners;
+- realized Impact binds exact origin condition/state/version/window, consumer/use/interface/population, historical path, encounter mode, event/effective time and knowledge cut;
+- candidate/reachable ≠ encounter opportunity ≠ state available ≠ published/served ≠ actual encounter;
+- encounter evidence is mode-specific across execution input, refresh/materialization, publication, query/read, cache/replica/snapshot, application/report and human/business-process use;
+- accepted bounded exposure vocabulary is `exposed`, `not exposed`, `safe/other-state encounter`, `encountered-state unknown`, `no relevant encounter opportunity`, `indeterminate`, `conflicting`, `unavailable`;
+- authorization/redaction is separate from epistemic exposure state;
+- Group 04 run/input/output/version evidence establishes exposure only when encounter binding is sufficient;
+- latest upstream output, prior completion, active Deployment or timing do not prove consumer version;
+- stale safe prior-state use can mean `not exposed to suspect V` while freshness/currentness fails separately;
+- cache/replica/snapshot state can lag and later transition to suspect exposure without rewriting the safe interval;
+- exposure is not transitively propagated through multi-hop Lineage; indirect exposure needs intermediary transmission/state and downstream encounter evidence appropriate to the proposition;
+- alternate paths are path-specific; one safe path ≠ global non-exposure;
+- `not exposed` requires REF-023 opportunity/path/version coverage;
+- no opportunity, no encounter and safe-state encounter remain distinct;
+- exposure is event/interval specific and first exposure can change retrospectively with late evidence;
+- exposure ≠ downstream effect; effect remains source-owned dimension/scope/time-bound Observation/Assessment/Change evidence;
+- `no effect` requires bounded downstream coverage and one satisfied dimension is not a global negative;
+- consequence categories may be technical/operational, analytical or business/process without creating universal severity;
+- publication ≠ view ≠ decision reliance ≠ adverse consequence;
+- no complaint/report ≠ no business consequence;
+- consequence ≠ causal attribution; origin→effect/consequence causal language requires Causal Claim;
+- confirmed upstream cause ≠ every reachable consumer exposed/affected;
+- multiple origins/contributors remain first-class;
+- Criticality/Classification/priority ≠ realized Impact/probability/evidence strength;
+- no universal Impact/exposure/severity score is accepted;
+- restricted ≠ absent and safe projection cannot strengthen state;
+- historical Impact is bitemporal and non-rewriting.
+
+See [`06_impact_consumer_encounter_exposure_consequence/README.md`](06_impact_consumer_encounter_exposure_consequence/README.md).
+
 ## Permanent Phase 007 boundaries
 
 Preserve:
@@ -183,14 +218,17 @@ Preserve:
 - execution occurrence ≠ specific consumed-version proof unless evidenced;
 - actual precedence ≠ waiting ≠ consumption;
 - run success ≠ output existence/health;
-- missing telemetry ≠ no event/run/output/consumption;
+- missing telemetry ≠ no event/run/output/consumption/encounter/effect;
 - duplicate/common-derived telemetry ≠ independent corroboration;
 - Investigation lead/localization ≠ Causal Claim;
 - first-deviation localization ≠ root cause;
 - Investigation closure/operational resolution ≠ Causal Claim confirmation;
 - confirmed upstream cause ≠ consumer exposure;
-- candidate/reachable ≠ exposed ≠ effect ≠ consequence ≠ causal attribution;
-- `not exposed` requires adequate opportunity/path coverage;
+- candidate/reachable ≠ encounter opportunity ≠ exposed ≠ effect ≠ consequence ≠ causal attribution;
+- `not exposed`, `no effect`, `no consequence` require adequate bounded coverage for their exact propositions;
+- available/published/served ≠ downstream actual use;
+- stale safe state ≠ current/healthy;
+- multi-hop exposure is not transitive;
 - Safeguard proposal/configuration/active state ≠ enforcement ≠ prevented exposure;
 - safeguard release ≠ healthy/fresh output;
 - Phase 006 health suitability ≠ readiness ≠ gate decision ≠ enforcement ≠ execution;
@@ -202,29 +240,29 @@ Preserve:
 - control-induced delay/staleness/non-delivery remains observable/assessable and is not automatically defect/cause;
 - historical operational replay uses event/effective time plus knowledge cut and remains non-rewriting.
 
-## Group 06 entry contract
+## Group 07 entry contract
 
-Group 06 consumes OPS-001–OPS-066 and must establish actual downstream encounter/exposure/effect/consequence independently of Investigation localization or causal context.
+Group 07 consumes OPS-001–OPS-085 and must evaluate exact Safeguard protection/enforcement/prevention against Group 06 encounter opportunities and path state.
 
 It should explicitly test:
 
-- reachable candidate with no consumer opportunity/refresh/query after suspect state;
-- safe-prior-version encounter versus suspect-version encounter;
-- unknown consumed version despite consumer activity;
-- direct query/read evidence for suspect version;
-- cache behavior serving stale but safe prior state;
-- consumer effect observed without sufficient encounter evidence;
-- exposure established with no observed downstream degradation;
-- technical effect versus analytical/business consequence;
-- business-use/decision consequence evidence;
-- supported/confirmed upstream cause with an unexposed reachable consumer;
-- `not exposed` requiring complete bounded version/path/opportunity coverage;
-- alternate publication/consumption paths;
-- restricted consumer/path evidence;
-- first consumer effect differing from first actual encounter.
+- exact suspect state/version/window and protected publication/consumption surface;
+- proposed/configured/requested versus active safeguard;
+- opportunity-specific enforcement versus generic enabled state;
+- primary path protected while alternate path/bypass remains open;
+- safe prior-state serving under protection and resulting staleness;
+- hold/non-publication with and without real consumer encounter opportunity;
+- partial enforcement across consumers/regions/cohorts;
+- conflicting/unavailable enforcement telemetry;
+- expiry/extension while suspect state persists;
+- release followed by recovered/suspect/unknown consumer encounter;
+- release without proof of health/currentness;
+- prevented exposure requiring operative enforcement + applicable opportunity + negative alternate-path coverage;
+- restricted enforcement/path evidence;
+- safeguard-induced delivery delay/non-delivery as separate health/Impact evidence and Causal Claim attribution when asserted.
 
-Do not let Group 06 turn Investigation localization, Causal Claim status, refresh timing, Lineage reachability, criticality or prospective candidate membership into proof of actual exposure/consequence.
+Do not let Group 07 convert `Safeguard active + no observed exposure`, `not exposed`, authority to protect, or a safe stale consumer into proof that the Safeguard prevented exposure.
 
 ## Architecture boundary
 
-Do not select graph database, graph query language, Lineage ingestion source, event store, event schema, CI/CD/runtime telemetry source integration, deployment fingerprinting mechanism, static-analysis/change-risk/RCA algorithm, LLM/agent workflow, scheduler/orchestrator, safeguard/quarantine mechanism, gate implementation, queue/event bus, cache/streaming topology, persistence schema, source integration or concrete latency/timeout SLA in Phase 007 functional refinement.
+Do not select graph database, graph query language, Lineage ingestion source, event store, event schema, CI/CD/runtime/consumer telemetry source integration, deployment fingerprinting mechanism, static-analysis/change-risk/RCA/Impact algorithm, LLM/agent workflow, scheduler/orchestrator, safeguard/quarantine mechanism, gate implementation, queue/event bus, cache/streaming topology, persistence schema, source integration or concrete latency/timeout SLA in Phase 007 functional refinement.

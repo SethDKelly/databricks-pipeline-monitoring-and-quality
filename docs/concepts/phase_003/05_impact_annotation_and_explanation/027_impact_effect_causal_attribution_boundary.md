@@ -76,3 +76,7 @@ New causal algorithm, numerical confidence, automatic confirmation, or modifying
 ## Deferred questions
 
 Later evidence/authority standard for confirmed downstream attribution and whether claim-to-claim causal chains need additional structured relationships.
+
+## Later refinement — Phase 007 Groups 05–06
+
+OPS-060/061 and OPS-082 make the handoff exact: Investigation/localization never substitutes for the causal proposition; causation/contribution/enabling/triggering/prevention/material-influence language requires a Causal Claim; Impact layers remain evidence/context; sufficient non-exposure can contradict encounter-dependent mechanisms while unknown exposure remains a gap; confirmed upstream causality does not automatically confirm downstream consumer exposure or origin→effect/consequence attribution; multiple origins/contributors remain valid; and `confirmed` remains REF-017 + AUTH-034 gated.

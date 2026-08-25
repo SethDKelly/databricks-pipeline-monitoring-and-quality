@@ -1,6 +1,6 @@
 # Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement
 
-**Status:** IN PROGRESS — Groups 01–05 accepted; OPS-001–OPS-066 accepted; Group 06 next
+**Status:** IN PROGRESS — Groups 01–06 accepted; OPS-001–OPS-085 accepted; Group 07 next
 
 ## Goal
 
@@ -14,7 +14,7 @@ Phase 007 uses **`OPS-###`** refinement contracts.
 
 `OPS-###` means operational/topology/change/impact/control refinement over accepted concepts. It does **not** create an `Operations` concept, does not extend SYN/REF/AUTH/HLTH ranges, and must not become an umbrella state that absorbs Lineage, Change, Investigation, Impact, Execution Gate, Propagation Safeguard or Execution History truth.
 
-Accepted range so far: **OPS-001–OPS-066**.
+Accepted range so far: **OPS-001–OPS-085**.
 
 ## Accepted handoff from Phase 006
 
@@ -84,16 +84,18 @@ No new concept is required. Investigation remains the bounded-inquiry owner; Cau
 See [`05_investigation_localization_causal_handoff/README.md`](05_investigation_localization_causal_handoff/README.md).
 
 ### Group 06 — Impact, Consumer Encounter, Exposure & Consequence
-**Status:** **Next — not started.**
+**Status:** **Accepted — OPS-067–OPS-085; IM06-01–IM06-36 pass.**
 
-Refine prospective candidate/reachability versus actual encounter/exposure, consumer/version/path evidence, safe-versus-stale version use, observed downstream effect, technical/analytical/business consequence, unknown/non-exposure evidence, and causal attribution separation. Consume Investigation/localization/Causal Claim context without letting any of them manufacture encounter truth.
+Refines exact realized Impact proposition binding, encounter opportunity/availability/publication/use separation, consumer-mode-specific encounter evidence, bounded exposure vocabulary, execution/refresh/materialization version binding, publication→query→application→business-use chain, cache/replica safe-stale semantics, non-transitive multi-hop exposure, alternate-path coverage, repeated exposure intervals, bounded downstream effect/no-effect evidence, technical/analytical/business consequence evidence, causal attribution separation, criticality/aggregation discipline and historical/restricted projection.
+
+No new concept is required. Impact remains the downstream candidate/exposure/effect/consequence association owner; source facts retain their owners and Causal Claim owns attribution.
 
 See [`06_impact_consumer_encounter_exposure_consequence/README.md`](06_impact_consumer_encounter_exposure_consequence/README.md).
 
 ### Group 07 — Propagation Safeguard Scope, Enforcement, Release & Recovery
-**Status:** Planned.
+**Status:** **Next — not started.**
 
-Refine safeguard placement, protected/suspect state binding, coverage paths, activation/effectiveness evidence, partial/failed enforcement, expiry/extension, release/recovery, alternate paths, and downstream freshness/delivery consequences. Preserve **active safeguard ≠ prevented exposure ≠ healthy output**.
+Refine safeguard placement, protected/suspect state binding, coverage paths, activation/effectiveness evidence, partial/failed enforcement, expiry/extension, release/recovery, alternate paths, and downstream freshness/delivery consequences. Preserve **active safeguard ≠ prevented exposure ≠ healthy output** and consume Group 06's exact encounter opportunities/path results rather than generic `safe consumer` state.
 
 See [`07_propagation_safeguard_scope_enforcement_recovery/README.md`](07_propagation_safeguard_scope_enforcement_recovery/README.md).
 
@@ -124,7 +126,7 @@ The order is dependency-driven:
 7. **Safeguard and Gate separately** — they protect different boundaries and have different state/evidence semantics.
 8. **Historical replay last** — cross-group time/version correctness is the final composition test.
 
-## Accepted operational chain through Group 05
+## Accepted operational chain through Group 06
 
 The Phase 007 operational foundation now preserves:
 
@@ -138,9 +140,13 @@ For actual runtime reconstruction it preserves:
 
 **expected/opportunity/control context → actual execution identity → partial lifecycle/attempt assembly → actual sequence/waiting evidence → run-specific implementation/input version binding → produced output/version binding → multi-input version set → historical as-known/retrospective reconstruction**.
 
-For Investigation it now preserves:
+For Investigation it preserves:
 
 **exact question/outcome/scope/cut → evidence-backed leads → source-owned evidence assembly → bounded localization → narrowing/exclusion under negative-evidence burden → explicit causal proposition handoff → independent Causal Claim evaluation → operational closure/reopen history**.
+
+For realized downstream Impact it now preserves:
+
+**exact originating state + consumer/use context → encounter opportunity/availability/publication context → consumer-mode actual encounter/exposure → downstream effect evidence → technical/analytical/business consequence evidence → optional explicit Causal Claim attribution**.
 
 No link in these chains automatically creates the next.
 
@@ -201,6 +207,27 @@ For Investigation specifically:
 - analyst and automated assistance use the same provenance/evidence semantics;
 - historical Investigation/localization/reopen is bitemporal and non-rewriting.
 
+For Impact specifically:
+
+- realized Impact binds exact origin condition/state/version/window, consumer/use/interface/population, historical path, encounter mode, event/effective time and knowledge cut;
+- candidate/reachable ≠ encounter opportunity ≠ state available ≠ published/served ≠ actual encounter;
+- execution input, refresh/materialization, publication, query/read, cache/replica, application/report and human/business use may require different evidence;
+- accepted exposure vocabulary is `exposed`, `not exposed`, `safe/other-state encounter`, `encountered-state unknown`, `no relevant encounter opportunity`, `indeterminate`, `conflicting`, `unavailable`;
+- Group 04 run/version evidence establishes exposure only when encounter binding is sufficient;
+- stale safe prior-state use can mean `not exposed to suspect V` while freshness/currentness fails separately;
+- exposure is not transitively propagated through multi-hop Lineage;
+- alternate paths must be evaluated before consumer-wide non-exposure;
+- exposure is event/interval specific and repeated/first exposure remains historical;
+- exposure ≠ downstream effect; effect remains dimension/scope/time-bound source evidence;
+- `no effect` requires bounded downstream evidence coverage;
+- consequence categories can be technical/operational, analytical or business/process without creating universal severity;
+- publication ≠ view ≠ decision reliance ≠ adverse consequence;
+- consequence ≠ causal attribution; causal language belongs to Causal Claim;
+- confirmed upstream cause ≠ every consumer exposed/affected;
+- Criticality/Classification/priority ≠ realized Impact/probability;
+- no universal Impact/exposure/severity score;
+- restricted ≠ absent and historical Impact is bitemporal/non-rewriting.
+
 ## Cross-group invariants
 
 Preserve throughout Phase 007:
@@ -227,15 +254,18 @@ Preserve throughout Phase 007:
 - execution occurrence ≠ consumed-version proof unless evidenced;
 - run success ≠ qualifying output/health;
 - actual precedence ≠ waiting ≠ consumption;
-- missing telemetry ≠ no run/output/consumption;
+- missing telemetry ≠ no run/output/consumption/encounter/effect;
 - duplicate/common-derived telemetry ≠ independent corroboration;
 - Investigation lead/localization ≠ Causal Claim;
 - first-observed/earliest-evidenced/boundary localization ≠ root cause;
 - Investigation closure/operational resolution ≠ causal confirmation;
 - lack of lead support ≠ exclusion/rejection;
 - Causal Claim `confirmed` remains evidence + authority gated;
-- reachable/candidate ≠ exposed ≠ downstream effect ≠ consequence ≠ causal attribution;
-- `not exposed` and `not candidate` require adequate bounded coverage;
+- candidate/reachable ≠ encounter opportunity ≠ exposed ≠ downstream effect ≠ consequence ≠ causal attribution;
+- `not exposed`, `no effect`, `no consequence` and `not candidate` require adequate bounded coverage for their exact propositions;
+- available/published/served ≠ downstream actual use;
+- stale safe state ≠ current/healthy;
+- multi-hop exposure is not transitive;
 - confirmed upstream cause ≠ every reachable consumer exposed;
 - safeguard configured/requested/active ≠ materially enforced/preventive;
 - safeguard release ≠ healthy/fresh output;
@@ -243,7 +273,7 @@ Preserve throughout Phase 007:
 - override ≠ prerequisite ready;
 - configured fallback ≠ fallback actually applied;
 - control-induced delay/non-delivery is evidence/Impact, not automatically a defect or cause;
-- current topology/change/control/review/execution/Investigation reconstruction ≠ historical state;
+- current topology/change/control/review/execution/Investigation/Impact reconstruction ≠ historical state;
 - later evidence/correction ≠ what was known then;
 - authority/authorization/disclosure boundaries from Phase 005 remain intact;
 - health semantics from Phase 006 remain intact.
@@ -257,10 +287,11 @@ Phase 007 must remain implementation-neutral. Do not select:
 - event/history persistence mechanism or event schema;
 - CDC/change-capture architecture;
 - deployment fingerprint/attestation mechanism;
-- run/version-attestation source integration;
-- change-risk or RCA/hypothesis scoring algorithm;
+- run/version/consumer exposure attestation source integration;
+- change-risk, RCA/hypothesis or Impact/exposure scoring algorithm;
 - LLM/agent investigation workflow;
 - ticket/case-management system;
+- consumer/query/cache instrumentation mechanism;
 - scheduler/orchestrator;
 - Databricks Workflows dependency mechanism;
 - queue/event bus;
@@ -282,4 +313,4 @@ Phase 010 owns technical architecture and implementation placement.
 
 ## Phase direction
 
-**Phase 007 Groups 01–05 are accepted with OPS-001–OPS-066. Group 06 — Impact, Consumer Encounter, Exposure & Consequence is next and has not started.**
+**Phase 007 Groups 01–06 are accepted with OPS-001–OPS-085. Group 07 — Propagation Safeguard Scope, Enforcement, Release & Recovery is next and has not started.**

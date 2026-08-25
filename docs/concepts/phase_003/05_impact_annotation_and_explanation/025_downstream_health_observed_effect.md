@@ -76,3 +76,7 @@ Causal attribution, business harm determination, alerting policy, or redefining 
 ## Deferred questions
 
 Minimum downstream-health dimensions required for first-MVP Impact and how to summarize multi-dimensional effects without inventing composite health.
+
+## Later refinement — Phase 007 Group 06
+
+OPS-078–OPS-079 bind effect to exact consumer/use/population/interface, dimension, source evidence, event/effective time and knowledge cut; preserve first encounter versus first observed effect; and make `no downstream effect`/`unchanged` strong bounded negative conclusions requiring dimension/population/time coverage. One satisfied criterion or missing monitoring is never a global no-effect result.

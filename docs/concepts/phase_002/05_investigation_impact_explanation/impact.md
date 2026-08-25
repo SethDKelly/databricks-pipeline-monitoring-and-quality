@@ -160,3 +160,31 @@ A viewer is told that an additional restricted business process may be exposed b
 - whether formal business-consequence categories are needed beyond provenance-bearing assertions;
 - how impact prioritization combines criticality, exposure, and consequence without hiding uncertainty;
 - concrete source/coverage support belongs to Phase 009 and technical graph architecture to Phase 010.
+
+## Later refinement — Phase 007 Group 06
+
+Phase 007 Group 06 accepts [`OPS-067–OPS-085`](../../phase_007/06_impact_consumer_encounter_exposure_consequence/README.md) and resolves the earlier realized-exposure questions without adding a concept.
+
+The accepted realized downstream model is:
+
+**exact originating state + consumer/use context → encounter opportunity/availability/publication context → consumer-mode actual encounter/exposure → downstream effect evidence → technical/analytical/business consequence evidence → optional explicit Causal Claim attribution**.
+
+Additional accepted rules:
+
+- opportunity, availability, publication/serving, and actual encounter are separate propositions;
+- consumer-mode evidence may differ for execution input, refresh/materialization, query/read, cache/replica/snapshot, application/report, and human/business-process use;
+- bounded exposure results are `exposed`, `not exposed`, `safe/other-state encounter`, `encountered-state unknown`, `no relevant encounter opportunity`, `indeterminate`, `conflicting`, `unavailable`, with authorization/redaction handled separately;
+- Group 04 run/version evidence establishes exposure only where the exact encounter binding is supported;
+- a safe prior-state encounter can establish non-exposure to suspect V while freshness/currentness is separately degraded;
+- exposure is not transitively propagated through multi-hop Lineage, and alternate paths must be considered before consumer-wide non-exposure;
+- `not exposed` requires REF-023/OPS-076 bounded opportunity/path/version coverage; the original `Report 2 has not refreshed` example is therefore only a strong non-exposure result when those conditions are satisfied;
+- exposure is event/interval specific and can change with later encounters without rewriting history;
+- `no downstream effect` and `no consequence` are also bounded negative claims with their own evidence burdens;
+- consequence evidence may be organized descriptively as technical/operational, analytical, or business/process without creating universal severity or harm scores;
+- publication ≠ view ≠ decision reliance ≠ adverse consequence;
+- causal attribution remains Causal Claim truth under OPS-060/061/082 and REF-013–REF-020;
+- confirmed upstream cause does not manufacture consumer-specific exposure/effect/consequence;
+- Criticality/Classification/priority do not establish realized Impact, and no universal Impact/exposure/severity score is accepted;
+- historical/restricted Impact remains bitemporal, non-rewriting and authorization-safe.
+
+Concrete consumer-class source support remains Phase 009; instrumentation and technical architecture remain Phase 010.

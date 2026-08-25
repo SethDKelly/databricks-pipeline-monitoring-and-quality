@@ -81,3 +81,7 @@ Criticality taxonomy, financial-loss calculation, legal/compliance determination
 ## Deferred questions
 
 Whether consequence categories need stronger first-class taxonomy in later refinement and what evidence is sufficient for specific client/business-process consequence classes.
+
+## Later refinement — Phase 007 Group 06
+
+OPS-080–OPS-081 retain technical/operational, analytical and business/process as descriptive consequence categories without a universal severity model. Publication, report view, decision reliance and resulting consequence are separately evidenced; human reports retain attributed provenance; `no consequence` requires domain-appropriate coverage; and Criticality/Classification/priority never manufactures consequence occurrence.

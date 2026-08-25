@@ -9,7 +9,7 @@ The `docs/` tree is the system of record for product and design decisions in thi
 - **Phase 004 — Evidence, Time, and Causality Refinement: COMPLETE.** REF-001–REF-030 accepted.
 - **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement: COMPLETE.** AUTH-001–AUTH-053 final; G07-01–G07-26 pass.
 - **Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement: COMPLETE.** Groups 01–07 accepted; HLTH-001–HLTH-066 final; H07-01–H07-36 pass.
-- **Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: IN PROGRESS.** Groups 01–05 accepted; OPS-001–OPS-066 accepted; L01-01–L01-18, C02-01–C02-24, P03-01–P03-30, X04-01–X04-32 and I05-01–I05-34 pass; Group 06 next.
+- **Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: IN PROGRESS.** Groups 01–06 accepted; OPS-001–OPS-085 accepted; L01-01–L01-18, C02-01–C02-24, P03-01–P03-30, X04-01–X04-32, I05-01–I05-34 and IM06-01–IM06-36 pass; Group 07 next.
 
 The current catalog contains **24 accepted concepts**: the original 20 plus **Propagation Safeguard**, **Capability Authorization**, **Execution Gate**, and **Assertion Authority**.
 
@@ -50,16 +50,19 @@ The current catalog contains **24 accepted concepts**: the original 20 plus **Pr
 33. [`concepts/phase_007/04_execution_reconstruction_dependency_sequence/scenario_review.md`](concepts/phase_007/04_execution_reconstruction_dependency_sequence/scenario_review.md) — X04-01–X04-32.
 34. [`concepts/phase_007/05_investigation_localization_causal_handoff/README.md`](concepts/phase_007/05_investigation_localization_causal_handoff/README.md) — accepted Group 05 / OPS-050–OPS-066.
 35. [`concepts/phase_007/05_investigation_localization_causal_handoff/scenario_review.md`](concepts/phase_007/05_investigation_localization_causal_handoff/scenario_review.md) — I05-01–I05-34.
-36. [`concepts/phase_007/06_impact_consumer_encounter_exposure_consequence/README.md`](concepts/phase_007/06_impact_consumer_encounter_exposure_consequence/README.md) — next Phase 007 group.
-37. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
-38. [`reference/authority_vocabulary.md`](reference/authority_vocabulary.md) — authority vocabulary.
-39. [`decisions/README.md`](decisions/README.md) — durable decision history/index.
-40. [`decisions/phase_006_group_07_consolidation_and_exit.md`](decisions/phase_006_group_07_consolidation_and_exit.md) — D-383–D-405.
-41. [`decisions/phase_007_group_01_lineage_topology.md`](decisions/phase_007_group_01_lineage_topology.md) — D-406–D-421.
-42. [`decisions/phase_007_group_02_change_realization.md`](decisions/phase_007_group_02_change_realization.md) — D-422–D-440.
-43. [`decisions/phase_007_group_03_prospective_blast_radius.md`](decisions/phase_007_group_03_prospective_blast_radius.md) — D-441–D-461.
-44. [`decisions/phase_007_group_04_execution_reconstruction.md`](decisions/phase_007_group_04_execution_reconstruction.md) — D-462–D-484.
-45. [`decisions/phase_007_group_05_investigation_localization.md`](decisions/phase_007_group_05_investigation_localization.md) — D-485–D-511.
+36. [`concepts/phase_007/06_impact_consumer_encounter_exposure_consequence/README.md`](concepts/phase_007/06_impact_consumer_encounter_exposure_consequence/README.md) — accepted Group 06 / OPS-067–OPS-085.
+37. [`concepts/phase_007/06_impact_consumer_encounter_exposure_consequence/scenario_review.md`](concepts/phase_007/06_impact_consumer_encounter_exposure_consequence/scenario_review.md) — IM06-01–IM06-36.
+38. [`concepts/phase_007/07_propagation_safeguard_scope_enforcement_recovery/README.md`](concepts/phase_007/07_propagation_safeguard_scope_enforcement_recovery/README.md) — next Phase 007 group.
+39. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
+40. [`reference/authority_vocabulary.md`](reference/authority_vocabulary.md) — authority vocabulary.
+41. [`decisions/README.md`](decisions/README.md) — durable decision history/index.
+42. [`decisions/phase_006_group_07_consolidation_and_exit.md`](decisions/phase_006_group_07_consolidation_and_exit.md) — D-383–D-405.
+43. [`decisions/phase_007_group_01_lineage_topology.md`](decisions/phase_007_group_01_lineage_topology.md) — D-406–D-421.
+44. [`decisions/phase_007_group_02_change_realization.md`](decisions/phase_007_group_02_change_realization.md) — D-422–D-440.
+45. [`decisions/phase_007_group_03_prospective_blast_radius.md`](decisions/phase_007_group_03_prospective_blast_radius.md) — D-441–D-461.
+46. [`decisions/phase_007_group_04_execution_reconstruction.md`](decisions/phase_007_group_04_execution_reconstruction.md) — D-462–D-484.
+47. [`decisions/phase_007_group_05_investigation_localization.md`](decisions/phase_007_group_05_investigation_localization.md) — D-485–D-511.
+48. [`decisions/phase_007_group_06_impact_exposure_consequence.md`](decisions/phase_007_group_06_impact_exposure_consequence.md) — D-512–D-539.
 
 ## Phase 006 exit summary
 
@@ -131,6 +134,16 @@ It preserves lead/localization ≠ Causal Claim; first observed/earliest evidenc
 
 Accepted range: **OPS-050–OPS-066**. No new concept was required.
 
+### Group 06 — Impact / encounter / exposure / consequence
+
+Group 06 establishes:
+
+**exact originating state + consumer/use context → opportunity/availability/publication context → consumer-mode actual encounter/exposure → downstream effect evidence → technical/analytical/business consequence evidence → optional explicit Causal Claim attribution**.
+
+It preserves candidate ≠ opportunity ≠ exposure; published/served ≠ downstream use; safe prior-state use ≠ fresh/current; multi-hop exposure as non-transitive; alternate paths before global non-exposure; `not exposed`/`no effect` as bounded negative conclusions; consequence categories without universal severity; Criticality ≠ realized Impact; confirmed upstream cause ≠ consumer exposure/effect/consequence; and historical/restricted Impact as bitemporal/non-rewriting.
+
+Accepted range: **OPS-067–OPS-085**. No new concept was required.
+
 ## Documentation discipline
 
 - Concepts/synchronizations/refinements remain implementation-neutral.
@@ -157,6 +170,13 @@ Accepted range: **OPS-050–OPS-066**. No new concept was required.
 - Investigation closure/remediation does not strengthen causal status.
 - `confirmed` remains independently evidence- and authority-gated.
 - Confirmed upstream causality does not manufacture downstream exposure.
+- Available/published/served state does not automatically prove downstream actual use.
+- Safe prior-state use does not imply fresh/current/healthy.
+- Multi-hop Lineage does not transitively propagate exposure.
+- `not exposed`, `no effect`, and `no consequence` require their own bounded evidence.
+- Exposure/effect/consequence do not manufacture causal attribution.
+- Criticality/Classification/priority do not manufacture realized Impact.
+- No universal Impact/exposure/severity score is accepted.
 - Audience simplification cannot strengthen underlying status.
 - Passive monitoring remains non-blocking/out-of-band by default; Execution Gate remains explicit opt-in active control.
 - Phase 007 must consume HLTH-001–HLTH-066 rather than reopen health semantics by convenience.
