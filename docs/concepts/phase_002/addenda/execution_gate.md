@@ -147,3 +147,28 @@ Holding C prevents stale recomputation but causes a client delivery deadline to 
 - how gate control can be realized with minimal or zero production-repository changes;
 - whether Databricks-native task/job dependencies, external orchestration, or another mechanism best realizes accepted semantics later;
 - audit and recovery behavior when a control integration itself is degraded.
+
+## Later refinement — Phase 007 Group 08
+
+Phase 007 Group 08 accepts OPS-105–OPS-123 and sharpens this concept without changing its ownership.
+
+- Every Gate proposition binds exact configuration/profile revision, downstream target/environment, execution opportunity/cycle/window, criterion profile, decision/evaluation time and knowledge cut.
+- Gate configuration/enabled state is distinct from opportunity-specific decision state.
+- Descriptive Gate-family labels never replace exact criterion logic. Multi-prerequisite membership/composition is explicit rather than inferred from Lineage fan-in.
+- Phase 006 health/result evidence participates only through exact-use suitability and explicit criterion membership: **health outcome ≠ evidence suitability ≠ readiness ≠ Gate decision ≠ enforcement ≠ execution**.
+- Normal `hold`/`admit` decisions remain distinct from `override`, timeout/fallback and escalation bases.
+- `override` is an AUTH-036-governed opportunity-specific exception; it preserves the underlying `not ready`/`unknown`/`conflicting`/`unavailable` result.
+- Fallback is pre-authorized policy behavior for a declared trigger and remains separate from override. `configured fallback ≠ trigger occurred ≠ fallback applied ≠ action enforced`.
+- Decision issuance, delivery, acknowledgement/acceptance and effective Gate enforcement are separately evidenced under REF-025/026.
+- HOLD enforcement is contradicted by reliable downstream start during an applicable unsuperseded hold. Conversely, no run proves HOLD only with sufficient opportunity/Execution History coverage.
+- ADMIT means this Gate barrier was removed; it does not prove a run occurred or that the Gate caused execution.
+- A prerequisite becoming ready does not automatically ADMIT a held opportunity unless explicit control semantics establish automatic reevaluation/action.
+- Timeout, opportunity expiry, SLA deadline and cancellation remain different facts. An expired/cancelled opportunity with no started run is not an execution failure.
+- Escalation does not itself HOLD/ADMIT unless a separate explicit Gate action follows.
+- Missing/conflicting control telemetry does not prove fail-open/fail-closed or fallback behavior, and control restoration does not automatically reevaluate/admit.
+- Multiple Gates applying to one opportunity keep independent barriers; no universal `most restrictive wins`, source precedence or Gate-effectiveness score is accepted.
+- Execution Gate and Propagation Safeguard remain independent: Gate HOLD does not protect published state, ADMIT does not release a Safeguard, and Safeguard release does not ADMIT a held execution.
+- Gate-induced delay, skipped cycle, stale prior-state use and non-delivery remain source-owned Execution/Observation/Assessment/Impact evidence. Broader control-effect attribution remains Causal Claim under REF-013–REF-020/REF-030.
+- Historical Gate configuration/readiness/decision/enforcement/execution replay is bitemporal and non-rewriting.
+
+See [`../phase_007/08_execution_gate_fallback_override_control_effects/README.md`](../phase_007/08_execution_gate_fallback_override_control_effects/README.md) for the accepted refinement.

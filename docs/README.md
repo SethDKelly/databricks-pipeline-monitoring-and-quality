@@ -9,7 +9,7 @@ The `docs/` tree is the system of record for product and design decisions in thi
 - **Phase 004 — Evidence, Time, and Causality Refinement: COMPLETE.** REF-001–REF-030 accepted.
 - **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement: COMPLETE.** AUTH-001–AUTH-053 final; G07-01–G07-26 pass.
 - **Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement: COMPLETE.** Groups 01–07 accepted; HLTH-001–HLTH-066 final; H07-01–H07-36 pass.
-- **Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: IN PROGRESS.** Groups 01–07 accepted; OPS-001–OPS-104 accepted; L01-01–L01-18, C02-01–C02-24, P03-01–P03-30, X04-01–X04-32, I05-01–I05-34, IM06-01–IM06-36 and SG07-01–SG07-36 pass; Group 08 next.
+- **Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: IN PROGRESS.** Groups 01–08 accepted; OPS-001–OPS-123 accepted; L01-01–L01-18, C02-01–C02-24, P03-01–P03-30, X04-01–X04-32, I05-01–I05-34, IM06-01–IM06-36, SG07-01–SG07-36 and GT08-01–GT08-36 pass; Group 09 next.
 
 The current catalog contains **24 accepted concepts**: the original 20 plus **Propagation Safeguard**, **Capability Authorization**, **Execution Gate**, and **Assertion Authority**.
 
@@ -54,18 +54,21 @@ The current catalog contains **24 accepted concepts**: the original 20 plus **Pr
 37. [`concepts/phase_007/06_impact_consumer_encounter_exposure_consequence/scenario_review.md`](concepts/phase_007/06_impact_consumer_encounter_exposure_consequence/scenario_review.md) — IM06-01–IM06-36.
 38. [`concepts/phase_007/07_propagation_safeguard_scope_enforcement_recovery/README.md`](concepts/phase_007/07_propagation_safeguard_scope_enforcement_recovery/README.md) — accepted Group 07 / OPS-086–OPS-104.
 39. [`concepts/phase_007/07_propagation_safeguard_scope_enforcement_recovery/scenario_review.md`](concepts/phase_007/07_propagation_safeguard_scope_enforcement_recovery/scenario_review.md) — SG07-01–SG07-36.
-40. [`concepts/phase_007/08_execution_gate_fallback_override_control_effects/README.md`](concepts/phase_007/08_execution_gate_fallback_override_control_effects/README.md) — next Phase 007 group.
-41. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
-42. [`reference/authority_vocabulary.md`](reference/authority_vocabulary.md) — authority vocabulary.
-43. [`decisions/README.md`](decisions/README.md) — durable decision history/index.
-44. [`decisions/phase_006_group_07_consolidation_and_exit.md`](decisions/phase_006_group_07_consolidation_and_exit.md) — D-383–D-405.
-45. [`decisions/phase_007_group_01_lineage_topology.md`](decisions/phase_007_group_01_lineage_topology.md) — D-406–D-421.
-46. [`decisions/phase_007_group_02_change_realization.md`](decisions/phase_007_group_02_change_realization.md) — D-422–D-440.
-47. [`decisions/phase_007_group_03_prospective_blast_radius.md`](decisions/phase_007_group_03_prospective_blast_radius.md) — D-441–D-461.
-48. [`decisions/phase_007_group_04_execution_reconstruction.md`](decisions/phase_007_group_04_execution_reconstruction.md) — D-462–D-484.
-49. [`decisions/phase_007_group_05_investigation_localization.md`](decisions/phase_007_group_05_investigation_localization.md) — D-485–D-511.
-50. [`decisions/phase_007_group_06_impact_exposure_consequence.md`](decisions/phase_007_group_06_impact_exposure_consequence.md) — D-512–D-539.
-51. [`decisions/phase_007_group_07_propagation_safeguard.md`](decisions/phase_007_group_07_propagation_safeguard.md) — D-540–D-569.
+40. [`concepts/phase_007/08_execution_gate_fallback_override_control_effects/README.md`](concepts/phase_007/08_execution_gate_fallback_override_control_effects/README.md) — accepted Group 08 / OPS-105–OPS-123.
+41. [`concepts/phase_007/08_execution_gate_fallback_override_control_effects/scenario_review.md`](concepts/phase_007/08_execution_gate_fallback_override_control_effects/scenario_review.md) — GT08-01–GT08-36.
+42. [`concepts/phase_007/09_historical_operational_replay_consolidation_exit/README.md`](concepts/phase_007/09_historical_operational_replay_consolidation_exit/README.md) — next Phase 007 group.
+43. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
+44. [`reference/authority_vocabulary.md`](reference/authority_vocabulary.md) — authority vocabulary.
+45. [`decisions/README.md`](decisions/README.md) — durable decision history/index.
+46. [`decisions/phase_006_group_07_consolidation_and_exit.md`](decisions/phase_006_group_07_consolidation_and_exit.md) — D-383–D-405.
+47. [`decisions/phase_007_group_01_lineage_topology.md`](decisions/phase_007_group_01_lineage_topology.md) — D-406–D-421.
+48. [`decisions/phase_007_group_02_change_realization.md`](decisions/phase_007_group_02_change_realization.md) — D-422–D-440.
+49. [`decisions/phase_007_group_03_prospective_blast_radius.md`](decisions/phase_007_group_03_prospective_blast_radius.md) — D-441–D-461.
+50. [`decisions/phase_007_group_04_execution_reconstruction.md`](decisions/phase_007_group_04_execution_reconstruction.md) — D-462–D-484.
+51. [`decisions/phase_007_group_05_investigation_localization.md`](decisions/phase_007_group_05_investigation_localization.md) — D-485–D-511.
+52. [`decisions/phase_007_group_06_impact_exposure_consequence.md`](decisions/phase_007_group_06_impact_exposure_consequence.md) — D-512–D-539.
+53. [`decisions/phase_007_group_07_propagation_safeguard.md`](decisions/phase_007_group_07_propagation_safeguard.md) — D-540–D-569.
+54. [`decisions/phase_007_group_08_execution_gate.md`](decisions/phase_007_group_08_execution_gate.md) — D-570–D-599.
 
 ## Phase 006 exit summary
 
@@ -157,6 +160,16 @@ It preserves protected/suspect ≠ defective; proposal/authorization/request ≠
 
 Accepted range: **OPS-086–OPS-104**. No new concept was required.
 
+### Group 08 — Execution Gate / fallback / override / control effects
+
+Group 08 establishes:
+
+**exact Gate/profile + downstream execution opportunity → exact criterion/evidence suitability → readiness result → normal/override/fallback decision basis → decision issuance/delivery/acceptance → evidence-established Gate enforcement → actual execution/non-execution → independently evidenced operational/Impact effects**.
+
+It preserves enabled configuration ≠ opportunity decision; criterion label ≠ exact criterion logic; suitability ≠ readiness ≠ decision; decision issuance ≠ enforcement; HOLD ≠ failed run; no run ≠ enforced HOLD without coverage; ADMIT ≠ run; override/fallback admission ≠ readiness; timeout ≠ fallback action; escalation ≠ admission decision; readiness transition/control restoration ≠ automatic Gate transition; explicit multi-prerequisite/multi-Gate composition without hidden precedence; Gate ≠ Safeguard; and broader Gate-effect attribution as Causal Claim.
+
+Accepted range: **OPS-105–OPS-123**. No new concept was required.
+
 ## Documentation discipline
 
 - Concepts/synchronizations/refinements remain implementation-neutral.
@@ -194,7 +207,12 @@ Accepted range: **OPS-086–OPS-104**. No new concept was required.
 - Safeguard enforcement does not itself prove prevented exposure; REF-028 + Group 06 evidence is required.
 - One protected path does not prove global protection or no bypass.
 - Safeguard release/expiry does not prove health, currentness or recovery.
-- Configured control fallback does not prove fallback was actually applied.
+- Gate configuration/enablement/readiness does not manufacture opportunity-specific HOLD/ADMIT/override.
+- Gate decision issuance does not prove delivery/acceptance/effective enforcement.
+- HOLD does not mean failed execution; ADMIT/override/fallback admission does not mean execution occurred or readiness was satisfied.
+- Configured timeout/fallback does not prove the trigger/action/enforcement actually occurred.
+- Multiple Gates have no hidden universal precedence or effectiveness score.
+- Control restoration does not automatically produce a Gate decision.
 - Propagation Safeguard remains separate from Execution Gate.
 - Audience simplification cannot strengthen underlying status.
 - Passive monitoring remains non-blocking/out-of-band by default; Execution Gate remains explicit opt-in active control.

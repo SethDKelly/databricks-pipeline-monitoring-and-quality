@@ -118,3 +118,24 @@ The passive monitoring service is degraded. Ungated production jobs continue una
 - how to realize gates with minimal or zero production-code/repository changes;
 - gate availability/latency SLOs if gating becomes production-critical;
 - whether gate policy itself needs additional structured authority semantics later.
+
+## Later refinement — Phase 007 Group 08
+
+OPS-105–OPS-123 refine this synchronization without changing SYN-032 ownership or Phase 003 history.
+
+- The Gate is bound to an exact configuration/profile revision and execution opportunity; enabled configuration alone does not create an opportunity decision.
+- Criterion membership/composition is explicit. Lineage fan-in and descriptive Gate-family labels do not manufacture criterion logic.
+- HLTH-063 suitability, REF-024 readiness, Gate decision, external enforcement and actual execution remain separate stages.
+- Normal HOLD/ADMIT decisions, authorized override, timeout/fallback and escalation retain distinct bases/provenance.
+- Override never rewrites readiness. Fallback admission likewise permits proceeding under its declared policy without converting unknown/not-ready evidence into ready.
+- Decision issue/delivery/acceptance/effective enforcement follow REF-025/026 and may remain partially evidenced.
+- HOLD is contradicted by a reliable start during its effective unsuperseded interval; no run establishes HOLD only with bounded opportunity/execution coverage.
+- ADMIT removes this Gate barrier but does not create an execution.
+- A readiness transition does not automatically change Gate decision/enforcement; re-evaluation and supersession remain explicit unless the Gate profile defines automatic behavior.
+- Timeout, opportunity expiry, cancellation and business deadlines are independent facts; timeout is a trigger, not an action.
+- Configured fallback, actual trigger, fallback application and enforcement remain separate under REF-029.
+- Multiple Gate barriers have no hidden universal precedence or `most restrictive wins` rule.
+- Gate HOLD/ADMIT/override remain independent from Propagation Safeguard hold/release state.
+- Gate-induced delay/staleness/non-delivery remains source-owned operational/Impact evidence; broader causal attribution uses REF-030/Causal Claim.
+
+See [`../../phase_007/08_execution_gate_fallback_override_control_effects/README.md`](../../phase_007/08_execution_gate_fallback_override_control_effects/README.md).

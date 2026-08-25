@@ -1,6 +1,6 @@
 # Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement
 
-**Status:** IN PROGRESS — Groups 01–07 accepted; OPS-001–OPS-104 accepted; Group 08 next
+**Status:** IN PROGRESS — Groups 01–08 accepted; OPS-001–OPS-123 accepted; Group 09 next
 
 ## Goal
 
@@ -14,7 +14,7 @@ Phase 007 uses **`OPS-###`** refinement contracts.
 
 `OPS-###` means operational/topology/change/impact/control refinement over accepted concepts. It does **not** create an `Operations` concept, does not extend SYN/REF/AUTH/HLTH ranges, and must not become an umbrella state that absorbs Lineage, Change, Investigation, Impact, Execution Gate, Propagation Safeguard or Execution History truth.
 
-Accepted range so far: **OPS-001–OPS-104**.
+Accepted range so far: **OPS-001–OPS-123**.
 
 ## Accepted handoff from Phase 006
 
@@ -102,14 +102,16 @@ No new concept is required. Propagation Safeguard remains the protection-control
 See [`07_propagation_safeguard_scope_enforcement_recovery/README.md`](07_propagation_safeguard_scope_enforcement_recovery/README.md).
 
 ### Group 08 — Execution Gate, Fallback/Override & Control-Induced Operational Effects
-**Status:** **Next — not started.**
+**Status:** **Accepted — OPS-105–OPS-123; GT08-01–GT08-36 pass.**
 
-Refine gate classes/prerequisite structure, consumption of Phase 006 readiness-suitable evidence, opportunity binding, HOLD/ADMIT/override behavior, timeout/fallback/escalation/recovery, control acceptance/enforcement evidence, interaction with safeguards, and control-induced delay/staleness/non-delivery effects. Preserve decision/enforcement/execution separation and consume Group 07 safeguard evidence without merging start/admission control with output/consumption protection.
+Refines exact Gate/configuration/opportunity identity, criterion/profile semantics, HLTH-063 suitability versus REF-024 readiness versus decision basis, HOLD/ADMIT/override vocabulary, decision issuance/delivery/acceptance/enforcement, HOLD/ADMIT evidence asymmetry, re-evaluation/supersession/revalidation, timeout/expiry/cancellation, fallback versus override, escalation, degraded-control restoration, multi-prerequisite composition, multiple Gate barriers without hidden precedence, Gate/Safeguard coordination, control-induced Impact and causal handoff, and bitemporal replay.
+
+No new concept is required. Execution Gate remains the start/admission-control truth owner; readiness/suitability, actual execution, Safeguard protection, Impact and causality retain their accepted owners.
 
 See [`08_execution_gate_fallback_override_control_effects/README.md`](08_execution_gate_fallback_override_control_effects/README.md).
 
 ### Group 09 — Historical Operational Replay & Consolidation / Exit Review
-**Status:** Planned.
+**Status:** **Next — not started.**
 
 Replay Groups 01–08 under event/effective time plus knowledge cut. Verify then-effective topology/change/execution/Investigation/Impact/safeguard/gate state, late/corrected evidence, actual versus reconstructed historical conclusions, and end-to-end phase composition. Add no new OPS contract unless consolidation exposes a genuine semantic gap.
 
@@ -128,7 +130,7 @@ The order is dependency-driven:
 7. **Safeguard and Gate separately** — they protect different boundaries and have different state/evidence semantics.
 8. **Historical replay last** — cross-group time/version correctness is the final composition test.
 
-## Accepted operational chain through Group 07
+## Accepted operational chain through Group 08
 
 The Phase 007 operational foundation now preserves:
 
@@ -150,9 +152,13 @@ For realized downstream Impact it preserves:
 
 **exact originating state + consumer/use context → encounter opportunity/availability/publication context → consumer-mode actual encounter/exposure → downstream effect evidence → technical/analytical/business consequence evidence → optional explicit Causal Claim attribution**.
 
-For Propagation Safeguard it now preserves:
+For Propagation Safeguard it preserves:
 
 **bound protected state/surface → proposal/authorization context → activation request/issuance → evidence-established enforcement → path/opportunity-specific protection → REF-028 prevented-exposure determination → extension/expiry/release → independently evidenced post-protection state/recovery**.
+
+For Execution Gate it now preserves:
+
+**exact Gate/profile + downstream execution opportunity → exact criterion/evidence suitability → readiness result → normal/override/fallback decision basis → decision issuance/delivery/acceptance → evidence-established Gate enforcement → actual execution/non-execution → independently evidenced operational/Impact effects**.
 
 No link in these chains automatically creates the next.
 
@@ -256,6 +262,31 @@ For Propagation Safeguard specifically:
 - historical safeguard enforcement/prevention/release is bitemporal and non-rewriting;
 - Propagation Safeguard ≠ Execution Gate.
 
+For Execution Gate specifically:
+
+- Gate proposition binds exact configuration/profile revision, downstream target/environment, execution opportunity/cycle/window, criterion profile, evaluation/decision time and knowledge cut;
+- enabled/configured Gate ≠ opportunity-specific HOLD/ADMIT/override;
+- exact criterion logic is authoritative; Gate class/label and Lineage fan-in do not manufacture prerequisite composition;
+- HLTH-063 evidence suitability ≠ REF-024 readiness ≠ Gate decision ≠ enforcement ≠ execution;
+- normal HOLD/ADMIT, override, fallback and escalation keep distinct bases/provenance;
+- override is AUTH-036 opportunity-specific and never rewrites underlying readiness;
+- fallback is pre-authorized policy application: configured fallback ≠ trigger ≠ selected/applied action ≠ enforcement;
+- decision issued ≠ delivered ≠ accepted/acknowledged ≠ effective enforcement;
+- reliable start during applicable unsuperseded HOLD contradicts full hold enforcement;
+- no run supports HOLD only under sufficient opportunity/Execution History coverage;
+- ADMIT removes this Gate barrier but does not create a run;
+- run after ADMIT does not prove Gate caused execution;
+- readiness transition does not automatically alter Gate decision/enforcement unless explicit automatic semantics apply;
+- repeated decisions preserve intervals and supersede prospectively rather than rewriting history;
+- timeout, opportunity expiry, cancellation and business deadline remain separate;
+- escalation is not an admission action by itself;
+- control telemetry unavailable/conflicting does not prove fail-open/fail-closed; restoration does not automatically reevaluate/admit;
+- multi-prerequisite composition is explicit and no universal percentage-ready state is accepted;
+- multiple Gate barriers have no hidden universal precedence or effectiveness score;
+- Gate HOLD/ADMIT/override remain independent from Safeguard hold/release;
+- Gate-induced delay/skipped cycle/staleness/non-delivery remain source-owned facts; broader control-effect attribution uses Causal Claim;
+- historical Gate configuration/readiness/decision/enforcement/execution is bitemporal and non-rewriting.
+
 ## Cross-group invariants
 
 Preserve throughout Phase 007:
@@ -301,9 +332,16 @@ Preserve throughout Phase 007:
 - `not exposed` ≠ `prevented by Safeguard`;
 - safeguard release/expiry ≠ healthy/fresh/recovered output;
 - Propagation Safeguard ≠ Execution Gate;
-- readiness ≠ gate decision ≠ enforcement ≠ execution;
-- override ≠ prerequisite ready;
+- health/result outcome ≠ exact-use evidence suitability ≠ readiness ≠ Gate decision ≠ enforcement ≠ execution;
+- Gate configuration/enabled state ≠ opportunity decision;
+- Gate decision issued ≠ delivered/accepted/enforced;
+- HOLD ≠ execution failure;
+- ADMIT/override/fallback admission ≠ execution occurrence;
+- override/fallback admission ≠ prerequisite ready;
 - configured fallback ≠ fallback actually applied;
+- timeout/escalation ≠ admission action by convenience;
+- multiple Gates have no hidden precedence;
+- control restoration ≠ automatic Gate decision;
 - control-induced delay/non-delivery is evidence/Impact, not automatically a defect or cause;
 - current topology/change/control/review/execution/Investigation/Impact reconstruction ≠ historical state;
 - later evidence/correction ≠ what was known then;
@@ -345,4 +383,4 @@ Phase 010 owns technical architecture and implementation placement.
 
 ## Phase direction
 
-**Phase 007 Groups 01–07 are accepted with OPS-001–OPS-104. Group 08 — Execution Gate, Fallback/Override & Control-Induced Operational Effects is next and has not started.**
+**Phase 007 Groups 01–08 are accepted with OPS-001–OPS-123. Group 09 — Historical Operational Replay & Consolidation / Exit Review is next and has not started.**

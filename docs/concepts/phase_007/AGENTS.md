@@ -15,7 +15,8 @@ Canonical repository phase status is maintained in [`../../README.md#current-sta
 - **Group 05 is complete with OPS-050–OPS-066; I05-01–I05-34 pass.**
 - **Group 06 is complete with OPS-067–OPS-085; IM06-01–IM06-36 pass.**
 - **Group 07 is complete with OPS-086–OPS-104; SG07-01–SG07-36 pass.**
-- **Group 08 — Execution Gate, Fallback/Override & Control-Induced Operational Effects is next.**
+- **Group 08 is complete with OPS-105–OPS-123; GT08-01–GT08-36 pass.**
+- **Group 09 — Historical Operational Replay & Consolidation / Exit Review is next.**
 - Accepted concept count remains 24; SYN-001–SYN-035, REF-001–REF-030, AUTH-001–AUTH-053 and HLTH-001–HLTH-066 remain unchanged.
 
 ## Accepted Group 01 Lineage rules
@@ -237,6 +238,45 @@ Preserve:
 
 See [`07_propagation_safeguard_scope_enforcement_recovery/README.md`](07_propagation_safeguard_scope_enforcement_recovery/README.md).
 
+## Accepted Group 08 Execution Gate / Fallback / Override / Control-Effect rules
+
+Preserve:
+
+- Execution Gate remains the start/admission-control truth owner; readiness/suitability, actual execution, Safeguard protection, Impact and causal attribution retain their accepted owners;
+- every Gate proposition binds exact configuration/profile revision, downstream target/environment, execution opportunity/cycle/window, criterion/profile revision, decision/evaluation time and knowledge cut;
+- configured/enabled Gate ≠ opportunity-specific HOLD/ADMIT/override/fallback action;
+- exact criterion logic is authoritative; descriptive Gate class and Lineage fan-in do not manufacture prerequisite membership/composition;
+- Phase 006 health/result evidence participates only through HLTH-063 exact-use suitability and explicit criterion membership;
+- **health/result outcome ≠ exact-use evidence suitability ≠ REF-024 readiness result ≠ Gate decision ≠ enforcement ≠ execution**;
+- normal HOLD/ADMIT decisions, override, fallback and escalation retain distinct bases/provenance;
+- override is AUTH-036-governed and opportunity specific; it never rewrites `not ready`, `unknown`, `conflicting` or `unavailable` into ready;
+- fallback is pre-authorized policy application rather than an opportunity-specific override;
+- `configured fallback ≠ trigger occurred ≠ fallback selected/applied ≠ action delivered ≠ action enforced`;
+- timeout occurrence is a trigger, not an admission action by itself;
+- escalation/notification does not itself HOLD/ADMIT/override/cancel unless a separate explicit Gate action follows;
+- decision issuance ≠ delivery ≠ acknowledgement/acceptance ≠ effective Gate constraint/removal;
+- reliable downstream start during an applicable unsuperseded HOLD materially contradicts full HOLD enforcement;
+- absence of a run supports HOLD only with sufficient execution-opportunity and Execution History coverage;
+- HOLD does not stop a run that already started before effective enforcement;
+- ADMIT means this Gate barrier was removed/permissive; ADMIT does not create an execution;
+- a run after ADMIT is sequence evidence and does not automatically prove Gate-caused execution;
+- readiness transition does not automatically transition Gate decision/enforcement unless explicit automatic reevaluation/action semantics apply;
+- repeated Gate decisions preserve prior intervals and supersede prospectively;
+- whether ADMIT is single-shot or requires pre-start revalidation is explicit profile semantics rather than a universal rule;
+- timeout, opportunity expiry, business deadline and cancellation remain separate facts;
+- opportunity expiry/cancellation with no started run ≠ execution failure;
+- missing/conflicting control telemetry does not establish success/failure/fail-open/fail-closed/fallback behavior;
+- a downstream run during control degradation proves execution, not fallback admission or fail-open behavior; no run similarly does not prove fail-closed/HOLD;
+- restoration of control availability does not automatically reevaluate, HOLD or ADMIT an opportunity;
+- multi-prerequisite Gate membership/composition is explicit; no universal percentage-ready state is accepted;
+- multiple Gates retain independent barriers; one ADMIT does not globally unblock and no universal `most restrictive wins`, source precedence or Gate-effectiveness score is accepted;
+- Gate HOLD does not protect published/served state; Gate ADMIT/override does not release Safeguard protection; Safeguard release does not ADMIT a Gate-held opportunity;
+- Gate-induced delay, skipped cycle, no-current-output, stale prior-state use and non-delivery remain source-owned Execution/Observation/Assessment/Impact evidence;
+- the narrow fact that an enforced Gate constrained a specific start opportunity belongs to Gate; broader claims that Gate caused delay/staleness/prevention/business effects use Causal Claim under REF-013–REF-020/REF-030;
+- historical Gate configuration/readiness/decision/delivery/enforcement/execution is bitemporal and non-rewriting.
+
+See [`08_execution_gate_fallback_override_control_effects/README.md`](08_execution_gate_fallback_override_control_effects/README.md).
+
 ## Permanent Phase 007 boundaries
 
 Preserve:
@@ -270,38 +310,43 @@ Preserve:
 - `not exposed` ≠ `prevented by Safeguard`;
 - safeguard release/expiry ≠ healthy/fresh/recovered output;
 - Phase 006 health suitability ≠ readiness ≠ gate decision ≠ enforcement ≠ execution;
-- gate HOLD ≠ execution failure;
-- gate ADMIT ≠ execution occurrence;
-- override ≠ prerequisite ready;
-- configured fallback ≠ actual fallback application;
+- Gate configuration/enabled state ≠ opportunity-specific decision;
+- Gate decision issued ≠ delivered/accepted/enforced;
+- Gate HOLD ≠ execution failure;
+- no run ≠ successful HOLD without bounded coverage;
+- Gate ADMIT ≠ execution occurrence;
+- override/fallback admission ≠ prerequisite ready;
+- fallback configuration ≠ trigger ≠ actual fallback application ≠ enforcement;
+- timeout/escalation ≠ admission action by convenience;
+- control restoration ≠ automatic Gate decision;
+- multiple Gates have no hidden universal precedence;
 - Execution Gate ≠ Propagation Safeguard;
 - control-induced delay/staleness/non-delivery remains observable/assessable and is not automatically defect/cause;
 - historical operational replay uses event/effective time plus knowledge cut and remains non-rewriting.
 
-## Group 08 entry contract
+## Group 09 entry contract
 
-Group 08 consumes OPS-001–OPS-104 and must refine Gate start/admission control without importing Safeguard output/consumption semantics.
+Group 09 consumes the complete accepted Phase 007 range **OPS-001–OPS-123** and must replay the operational model under event/effective time plus a selected recorded/knowledge cut before deciding whether Phase 007 can exit without another concept or refinement contract.
 
 It should explicitly test:
 
-- exact downstream execution opportunity and then-applicable readiness criterion/profile;
-- no Gate opportunity despite a not-ready prerequisite;
-- HOLD/ADMIT decision versus delivery to scheduler/control plane versus actual enforcement;
-- HOLD enforcement with no execution start during the opportunity;
-- ADMIT with no actual run;
-- override while underlying prerequisite remains not ready/unknown;
-- configured timeout/fallback versus actual timeout/fallback application;
-- fallback outcomes such as hold/admit/escalate only when explicitly configured and evidenced;
-- control telemetry conflict/unavailability without universal fail-open/fail-closed assumptions;
-- skipped/cancelled opportunity versus execution failure;
-- Gate-held execution while older state remains consumable unless a separate Safeguard protects publication/consumption;
-- Gate admission while Safeguard remains active;
-- Safeguard release while Gate remains HOLD;
-- gate-induced delay/skipped execution/older-version use/missed delivery as separate runtime/Impact evidence;
-- causal attribution of gate effects under REF-013–REF-020 rather than decision proximity;
-- late gate/enforcement/execution evidence changing retrospective interpretation without rewriting historical actions.
+- then-effective Lineage/topology versus current topology and what relationships were known at the historical cut;
+- exact Change Intent/Deployment/realized Change state known then versus current retrospective realization;
+- executions, input/output versions and actual dependency sequence known then versus discovered later;
+- Investigation scope/leads/localization and Causal Claim status at the historical cut;
+- prospective Impact candidates versus actual consumer encounter/exposure/effect/consequence established then and retrospectively;
+- Safeguard proposal/authorization/request/enforcement/prevention/release state, including alternate paths and post-release recovery evidence;
+- Gate configuration/criterion/readiness basis/HOLD/ADMIT/override/fallback decisions versus decision delivery/enforcement and actual execution;
+- HOLD thought enforced then but contradicted or confirmed by late run/control telemetry;
+- ADMIT with no run and later scheduler/compute evidence explaining non-execution;
+- override/fallback admission while underlying readiness remains not ready/unknown;
+- control telemetry outages without retrospective invention of universal fail-open/fail-closed behavior;
+- multiple Gate/Safeguard controls whose materiality changes with later evidence;
+- control-induced delay/staleness/non-delivery with competing causal explanations;
+- restricted evidence and current authorized projection without rewriting internal historical truth;
+- actual historical retained state versus as-known-then reconstruction versus current retrospective interpretation.
 
-Do not let Group 08 convert readiness into a Gate decision, a decision into enforcement, HOLD into failure, ADMIT into execution, override into readiness, Safeguard state into Gate state, or configured fallback into actual fallback behavior.
+Group 09 should validate composition and produce the Phase 007 exit review. **Do not add another OPS contract merely for summary convenience.** Add one only if replay exposes a genuine unresolved semantic requirement that OPS-001–OPS-123 cannot represent.
 
 ## Architecture boundary
 
