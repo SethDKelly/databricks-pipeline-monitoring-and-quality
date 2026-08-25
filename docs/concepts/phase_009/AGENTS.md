@@ -9,7 +9,8 @@ Applies to work under `docs/concepts/phase_009/` and complements the repository 
 - **Group 01 is complete with INTG-001–INTG-022; IC01-01–IC01-40 pass.**
 - **Group 02 is complete with INTG-023–INTG-050; GOV02-01–GOV02-48 pass.**
 - **Group 03 is complete with INTG-051–INTG-083; RTE03-01–RTE03-54 pass.**
-- **Group 04 — Health, Schema, Metrics, Expectations, Baselines & Reconciliation Evidence is next.**
+- **Group 04 is complete with INTG-084–INTG-119; HME04-01–HME04-56 pass.**
+- **Group 05 — Lineage, Consumer Use, Exposure, Effect & Impact Evidence is next.**
 - Accepted concept count remains 24.
 - Canonical repository status remains in `../../README.md#current-state`.
 
@@ -116,6 +117,42 @@ Preserve:
 
 See [`03_change_deployment_execution_version_runtime_evidence/README.md`](03_change_deployment_execution_version_runtime_evidence/README.md).
 
+## Accepted Group 04 rules
+
+Preserve:
+
+- current Unity Catalog structure is current/observer-relative evidence, not historical structure or consumer compatibility;
+- schema/column name equality or change does not prove field continuity across rename/recreate without explicit mapping;
+- declared PK/FK/key constraints do not prove empirical uniqueness/referential integrity when the platform treats them as informational;
+- engine schema-evolution/cast support is not a consumer-specific compatibility Assessment;
+- DQX is optional/version-specific and exact production behavior binds the deployed/pinned version;
+- DQX rule availability, profiling or AI generation does not create governed Expectation authority;
+- DQX detailed/summary results are Observations of the exact checked execution and require run/input/rule-set provenance for replay;
+- DQX criticality/actions are not framework severity, waiver, Gate or other control semantics by default;
+- Lakeflow expectation action and expectation result remain distinct;
+- Lakeflow fail-update expectation violations can have incomplete tracking metrics; missing counts are unavailable, not zero;
+- Metric Views can be semantic metric-definition sources when governed, but YAML spec version is not organization metric-definition revision;
+- Metric View query values retain fields/filters/parameters/window/definition/source context;
+- Metric View materialization is query optimization rather than an implicit freshness SLA;
+- Metric View cardinality/rely declarations do not replace empirical key/cardinality evidence;
+- data-profiling profile/drift/custom metrics are descriptive Observations/derived comparisons until governed otherwise;
+- a configured profiling baseline table does not automatically become framework Baseline membership/authority;
+- anomaly-detection freshness/completeness are learned vendor-model Assessments, not explicit normative criteria by default;
+- Databricks anomaly table-level health is a source-owned composite assertion rather than universal HLTH-055 truth;
+- vendor root-cause/downstream-impact fields are supporting/contextual and do not satisfy Causal Claim/Impact requirements;
+- current anomaly detection supports commit freshness, not event-time/ingestion-latency freshness;
+- Baseline membership, regime, comparability and version remain explicit;
+- measurement window/slice/cohort is part of proposition identity and coverage;
+- run-specific health requires exact measurement→run/output binding rather than latest/current table inference;
+- reconciliation requires exact transformation/version/populations/keys/measures/window/current-cycle semantics;
+- exact current-cycle alignment remains conditional where Group 03 exact consumed-version evidence is unavailable;
+- result production/evaluation/scan/refresh/availability/retrieval clocks remain distinct;
+- historical health replay requires retained definitions/Baselines/profile semantics as well as result values;
+- skipped/disabled/failed checks/scans or expired history do not support clean health negatives;
+- health sources can disagree without a global precedence when they evaluate different propositions.
+
+See [`04_health_schema_metrics_expectations_baselines_reconciliation_evidence/README.md`](04_health_schema_metrics_expectations_baselines_reconciliation_evidence/README.md).
+
 ## Required evaluation dimensions
 
 For every material source surface, evaluate as applicable:
@@ -153,6 +190,7 @@ Never convert:
 - active Deployment → actual run version;
 - latest upstream output → consumed input;
 - metric/check availability → governed Expectation/Baseline/Assessment;
+- vendor health/root-cause/impact label → DMTZ composite health/Causal Claim/Impact truth;
 - control configuration/decision → enforcement;
 - Safeguard active + non-exposure → prevented exposure without REF-028 evidence;
 - Gate HOLD → failed execution;
@@ -187,29 +225,42 @@ A source may be authoritative for one metadata category and merely supporting/ob
 - recent Jobs API versus longer system-table history creates replay-detail boundaries;
 - operational negative claims remain source-coverage bound.
 
-## Group 04 entry contract
+## Group 04 gaps carried forward
 
-Group 04 may consume exact run/task identity, timing, implementation facets and input/output versions only where INTG-051–INTG-083 establish them.
+- consumer-specific structural compatibility requires an explicit governed interface/contract beyond platform schema metadata;
+- empirical key/relationship integrity needs observed checks where declared constraints are informational;
+- DQX rule authority, exact version and result/check retention remain environment/governance specific;
+- Metric View business-definition revision history must be explicitly retained/versioned where material;
+- profiling/anomaly historical models and baseline tables do not self-authorize framework Baseline membership;
+- event-time freshness requires a separate evidence source from current anomaly-detection commit freshness;
+- exact measurement→run/output attribution requires explicit association where current/latest state is insufficient;
+- exact multi-input current-cycle alignment inherits the Group 03 consumption-version gap;
+- vendor health/root-cause/impact labels remain bounded source assertions, not truth shortcuts;
+- health history and clean negative conclusions remain source/evaluation/retention-coverage bound.
 
-It must independently evaluate realized schema, structural compatibility evidence, metric/DQ Observations, governed Expectations, Baseline membership/comparability, reconciliation, freshness/current-cycle state and exact-use suitability. Execution success, CI success, active job configuration or output existence cannot substitute for those health propositions.
+## Group 05 entry contract
+
+Group 05 may consume Group 04 Observations/Assessments only with exact subject/version/window/population/provenance/coverage and authorization limitations.
+
+It must independently establish Lineage relation/effective interval, publication/availability, consumer encounter/use, version/state consumption, exposure, downstream effect and consequence. Health/quality state, schema incompatibility, DQ violation, drift or anomaly can define the originating condition but cannot prove consumer exposure or Impact.
 
 ## External-fact discipline
 
 Groups 02–08 necessarily evaluate evolving vendor capabilities. Verify current external documentation when executing a group, distinguish product documentation from repository assumptions, record meaningful edition/feature/retention/permission limitations, and avoid treating undocumented behavior as guaranteed.
 
-Group 02 records sources in [`02_identity_scope_governance_authority_authorization_sources/external_source_review.md`](02_identity_scope_governance_authority_authorization_sources/external_source_review.md); Group 03 records sources in [`03_change_deployment_execution_version_runtime_evidence/external_source_review.md`](03_change_deployment_execution_version_runtime_evidence/external_source_review.md).
+Group 02 records sources in [`02_identity_scope_governance_authority_authorization_sources/external_source_review.md`](02_identity_scope_governance_authority_authorization_sources/external_source_review.md); Group 03 records sources in [`03_change_deployment_execution_version_runtime_evidence/external_source_review.md`](03_change_deployment_execution_version_runtime_evidence/external_source_review.md); Group 04 records sources in [`04_health_schema_metrics_expectations_baselines_reconciliation_evidence/external_source_review.md`](04_health_schema_metrics_expectations_baselines_reconciliation_evidence/external_source_review.md).
 
 ## Architecture boundary
 
-Do not select SDK/client libraries, polling versus streaming, event buses, storage schemas, graph databases, caches, credential mechanisms, deployment topology, retry infrastructure, orchestration, attestation implementation, LLM/retrieval architecture or UI. Phase 010 owns technical architecture.
+Do not select SDK/client libraries, polling versus streaming, event buses, storage schemas, graph databases, caches, credential mechanisms, deployment topology, retry infrastructure, orchestration, attestation implementation, metric/rule stores, anomaly models, LLM/retrieval architecture or UI. Phase 010 owns technical architecture.
 
 ## Group sequence
 
 1. integration contract vocabulary/source roles/capability matrix — **accepted**;
 2. identity/scope/governance/authority/authorization sources — **accepted**;
 3. change/deployment/execution/version/runtime evidence — **accepted**;
-4. health/schema/metrics/Expectations/Baselines/reconciliation evidence — **next**;
-5. Lineage/consumer use/exposure/Impact evidence;
+4. health/schema/metrics/Expectations/Baselines/reconciliation evidence — **accepted**;
+5. Lineage/consumer use/exposure/Impact evidence — **next**;
 6. Investigation/causality/Safeguard/Gate/control evidence;
 7. Explanation/historical replay/basis/disclosure source contracts;
 8. cross-source coverage/latency/retention/cost consolidation and exit.
