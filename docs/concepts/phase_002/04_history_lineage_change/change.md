@@ -1,6 +1,6 @@
 # Concept: Change
 
-**Status:** Accepted — Phase 002 Group 04
+**Status:** Accepted — Phase 002 Group 04; refined by Phase 007 Group 02 (OPS-014–OPS-019)
 
 ## Purpose
 
@@ -77,6 +77,24 @@ Candidate change families include, without prescribing implementation taxonomy:
 
 A later design may refine which are first-class for MVP.
 
+## Phase 007 Group 02 refinement
+
+OPS-014 makes a realized Change a bounded proposition over subject/relationship, facet, before/after state, semantic grain/population/interface/version, transition time/interval, comparison semantics, provenance and limitations.
+
+An activated code/configuration transition can itself be a Change of implementation state. It still does not create downstream Change automatically. `F2 became active`, `C volume decreased`, `C null rate rose`, and `D→C Lineage became effective` are distinct realized propositions with different evidence owners.
+
+OPS-015 keeps intent conformance outside Change truth. `Matched`, `partially matched`, `diverged`, `not realized`, `not evidenced`, `indeterminate`, `conflicting`, and `unavailable` are derived comparisons against an exact Change Intent component; they are not Change states.
+
+OPS-016 keeps realized Change target/slice specific during phased rollout and preserves overlapping intents without using compatibility as causal attribution.
+
+OPS-017 distinguishes realized Change with no matching registered intent from the stronger claim that a change was actually unplanned under a governing process. Change remains valid even when intent/deployment context is missing.
+
+OPS-018 makes rollback/reversion non-rewriting. Reversion of one implementation facet does not imply every data/schema/topology/downstream facet reverted. A restored/equivalent state requires bounded evidence.
+
+OPS-019 preserves event/effective and knowledge time independently. Later evidence can revise retrospective Change timing/comparison while preserving prior recorded knowledge/results.
+
+For topology, **Lineage remains relationship truth owner**. Change may describe a realized topology transition from OPS-001–OPS-009 Lineage history; it does not own or manufacture the edge.
+
 ## Ambiguity and missing evidence
 
 If states are non-comparable, incomplete, time-misaligned, conflicting, or unauthorized, Change may be partial/unknown/non-comparable. A change can also be established at a coarse level while sensitive details remain restricted.
@@ -123,7 +141,7 @@ C switches from B1 to B2. Change uses historical Lineage evidence to describe th
 
 - planned-change registration;
 - health/quality assessment;
-- intent-conformance judgment;
+- intent-conformance truth ownership;
 - root-cause attribution;
 - anomaly-detection implementation;
 - requiring full raw snapshots.
@@ -132,5 +150,5 @@ C switches from B1 to B2. Change uses historical Lineage evidence to describe th
 
 - first-class Change kinds for MVP;
 - threshold for promoting raw Observation differences into meaningful Change records;
-- whether intent-to-realization conformance needs a dedicated later concept;
-- handling gradual changes whose transition interval is uncertain.
+- concrete source support for gradual/partial transition intervals;
+- implementation/source mechanisms for change capture remain Phase 009/010 work.

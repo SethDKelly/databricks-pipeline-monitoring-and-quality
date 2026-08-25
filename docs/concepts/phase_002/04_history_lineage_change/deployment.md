@@ -1,6 +1,6 @@
 # Concept: Deployment
 
-**Status:** Accepted — Phase 002 Group 04
+**Status:** Accepted — Phase 002 Group 04; refined by Phase 007 Group 02 (OPS-011–OPS-013, OPS-016, OPS-018–OPS-019)
 
 ## Purpose
 
@@ -64,6 +64,28 @@ A registered Change Intent is implemented in a repository revision and a deploym
 - Repository is provenance context, not the logical pipeline boundary.
 - Event/effective time and knowledge/record time remain distinguishable where evidence arrives late.
 
+## Phase 007 Group 02 refinement
+
+OPS-011 rejects a universal deployment/version token. A deployment may reference source revision, build/package, job/transformation definition, configuration, schema/interface version and other source-defined implementation facets. These retain their own identity/provenance rather than being collapsed into the current repository commit.
+
+The active state may be composite, for example **code R2 + configuration K7 + schema S3 + transformation T5**. Facets can activate independently and several Deployments can collectively establish the then-active operating state.
+
+OPS-012 sharpens Deployment into separate propositions:
+
+**attempt → attempt outcome → target/facet activation → active-state interval → supersession/deactivation**.
+
+A successful deployment mechanism outcome is not activation unless the evidence standard for that exact target pattern establishes it. Active-state resolution preserves `established`, sufficiently evidenced `not established`, `unknown`, `conflicting`, and `unavailable` as applicable; missing telemetry is not a negative fact.
+
+OPS-013 binds intent association to an exact intent revision/component, target and implementation facet with provenance-bearing linkage. Association is many-to-many and can concern an attempt even when activation later fails.
+
+OPS-016 keeps canary/region/cohort/target activation slice-specific. One successful slice does not globally activate every target and no percent-complete value is inferred merely from target counts.
+
+OPS-018 separates supersession/deactivation, rollback action/intent, realized reversion, bounded restoration/equivalence and roll-forward. Reactivating a prior revision creates a new activation interval and does not erase the superseded interval. Code/configuration rollback does not itself restore data, topology, schema migrations, exposure or health.
+
+OPS-019 requires event/effective time plus framework knowledge time. Late evidence may correct active-state intervals retrospectively while preserving what was known at an earlier cutoff.
+
+Specific implementation/version use by an actual execution remains separate and is refined in Phase 007 Group 04.
+
 ## Ambiguity and missing evidence
 
 A workflow may report completion while runtime activation remains unknown. Different sources may disagree about the active revision/configuration. The product preserves ambiguity rather than guessing activation from commit/merge/workflow timestamps alone.
@@ -114,7 +136,7 @@ A deployment occurs without Change Intent. The deployment is still recorded; lac
 
 ## Deferred questions
 
-- authoritative activation evidence for representative Databricks deployment patterns;
-- configuration identity when code revision is unchanged;
-- how one deployment maps to multiple jobs/pipelines/targets;
-- minimal linkage to pull requests/releases/change tickets for MVP.
+- authoritative/sufficient activation evidence for representative Databricks deployment patterns belongs to Phase 009 source mapping;
+- concrete configuration/build/runtime identity extraction belongs to Phase 009/010;
+- how one deployment maps to multiple jobs/pipelines/targets is functionally supported by OPS-011/OPS-016, while source realization remains later work;
+- minimal linkage to pull requests/releases/change tickets for MVP remains Phase 009 integration design.

@@ -9,7 +9,7 @@ The `docs/` tree is the system of record for product and design decisions in thi
 - **Phase 004 — Evidence, Time, and Causality Refinement: COMPLETE.** REF-001–REF-030 accepted.
 - **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement: COMPLETE.** AUTH-001–AUTH-053 final; G07-01–G07-26 pass.
 - **Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement: COMPLETE.** Groups 01–07 accepted; HLTH-001–HLTH-066 final; H07-01–H07-36 pass.
-- **Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: IN PROGRESS.** Group 01 accepted; OPS-001–OPS-009 accepted; L01-01–L01-18 pass; Group 02 next.
+- **Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: IN PROGRESS.** Groups 01–02 accepted; OPS-001–OPS-020 accepted; L01-01–L01-18 and C02-01–C02-24 pass; Group 03 next.
 
 The current catalog contains **24 accepted concepts**: the original 20 plus **Propagation Safeguard**, **Capability Authorization**, **Execution Gate**, and **Assertion Authority**.
 
@@ -42,12 +42,15 @@ The current catalog contains **24 accepted concepts**: the original 20 plus **Pr
 25. [`concepts/phase_007/README.md`](concepts/phase_007/README.md) — current Phase 007 plan and progress.
 26. [`concepts/phase_007/01_lineage_relationship_taxonomy_historical_topology/README.md`](concepts/phase_007/01_lineage_relationship_taxonomy_historical_topology/README.md) — accepted Group 01 / OPS-001–OPS-009.
 27. [`concepts/phase_007/01_lineage_relationship_taxonomy_historical_topology/scenario_review.md`](concepts/phase_007/01_lineage_relationship_taxonomy_historical_topology/scenario_review.md) — L01-01–L01-18.
-28. [`concepts/phase_007/02_change_intent_deployment_realized_change/README.md`](concepts/phase_007/02_change_intent_deployment_realized_change/README.md) — next Phase 007 group.
-29. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
-30. [`reference/authority_vocabulary.md`](reference/authority_vocabulary.md) — authority vocabulary.
-31. [`decisions/README.md`](decisions/README.md) — durable decision history/index.
-32. [`decisions/phase_006_group_07_consolidation_and_exit.md`](decisions/phase_006_group_07_consolidation_and_exit.md) — D-383–D-405.
-33. [`decisions/phase_007_group_01_lineage_topology.md`](decisions/phase_007_group_01_lineage_topology.md) — D-406–D-421.
+28. [`concepts/phase_007/02_change_intent_deployment_realized_change/README.md`](concepts/phase_007/02_change_intent_deployment_realized_change/README.md) — accepted Group 02 / OPS-010–OPS-020.
+29. [`concepts/phase_007/02_change_intent_deployment_realized_change/scenario_review.md`](concepts/phase_007/02_change_intent_deployment_realized_change/scenario_review.md) — C02-01–C02-24.
+30. [`concepts/phase_007/03_prospective_blast_radius_change_aware_review/README.md`](concepts/phase_007/03_prospective_blast_radius_change_aware_review/README.md) — next Phase 007 group.
+31. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
+32. [`reference/authority_vocabulary.md`](reference/authority_vocabulary.md) — authority vocabulary.
+33. [`decisions/README.md`](decisions/README.md) — durable decision history/index.
+34. [`decisions/phase_006_group_07_consolidation_and_exit.md`](decisions/phase_006_group_07_consolidation_and_exit.md) — D-383–D-405.
+35. [`decisions/phase_007_group_01_lineage_topology.md`](decisions/phase_007_group_01_lineage_topology.md) — D-406–D-421.
+36. [`decisions/phase_007_group_02_change_realization.md`](decisions/phase_007_group_02_change_realization.md) — D-422–D-440.
 
 ## Phase 006 exit summary
 
@@ -55,27 +58,29 @@ Phase 006 establishes the final functional health chain:
 
 **definition/applicability → Observation → structural/comparability context → component Assessment → transformation reconciliation → composite Assessment → freshness/maturity → exact-use suitability → readiness**, with gate decision/enforcement/execution remaining separate.
 
-It preserves:
-
-- structural compatibility ≠ statistical comparability;
-- Baseline typicality ≠ normative health;
-- warning/severity/waiver ≠ criterion truth;
-- Lineage ≠ metric/status propagation or causality;
-- composite health as profile/use/context bound rather than a universal score;
-- evaluation recency ≠ evidence freshness;
-- evidence maturity by sufficiency, not elapsed time;
-- suitability as exact-use and outcome-neutral;
-- AUTH-023 eligibility ≠ evidence suitability;
-- passive monitoring as non-blocking for ungated production;
-- non-rewriting historical health/readiness replay.
+It preserves structural compatibility ≠ statistical comparability; Baseline typicality ≠ normative health; warning/severity/waiver ≠ criterion truth; Lineage ≠ metric/status propagation or causality; composite health as profile/use/context bound rather than a universal score; evaluation recency ≠ evidence freshness; evidence maturity by sufficiency, not elapsed time; exact-use suitability; AUTH-023 eligibility ≠ evidence suitability; passive monitoring as non-blocking for ungated production; and non-rewriting historical health/readiness replay.
 
 ## Phase 007 accepted progress
 
-Group 01 establishes the operational Lineage foundation for the rest of Phase 007:
+### Group 01 — operational Lineage
 
-**bounded relationship proposition → minimum semantic family → field/key/population/consumer/version scope → effective/historical interval → REF-based relationship evidence → authority-aware resolution → question-bound traversal relevance → bounded completeness**, while actual execution/encounter/Impact/control/cause remain separate.
+Group 01 establishes:
 
-Accepted Group 01 range: **OPS-001–OPS-009**. No new concept was required.
+**bounded relationship proposition → minimum semantic family → field/key/population/consumer/version scope → effective/historical interval → REF-based relationship evidence → authority-aware resolution → question-bound traversal relevance → bounded completeness**,
+
+while actual execution/encounter/Impact/control/cause remain separate.
+
+Accepted range: **OPS-001–OPS-009**.
+
+### Group 02 — Change Intent / Deployment / realized Change
+
+Group 02 establishes:
+
+**exact intent revision/component → evidence-backed Deployment association → attempt/outcome → target/facet activation → active-state interval → evidence-established realized Change → derived intent-to-realization comparison**.
+
+It explicitly rejects a universal deployment/version identity or realization score; keeps partial rollout slice-specific; separates `not evidenced` from strong `not realized`; distinguishes missing registration from proven unplanned change; and makes rollback/reversion non-rewriting and non-transitive to downstream state.
+
+Accepted range: **OPS-010–OPS-020**. No new concept was required.
 
 ## Documentation discipline
 
@@ -87,6 +92,8 @@ Accepted Group 01 range: **OPS-001–OPS-009**. No new concept was required.
 - Baseline remains descriptive; Expectation remains normative.
 - Metric/reconciliation/composite semantics do not blindly propagate through Lineage.
 - Lineage reachability does not imply relevance, encounter, Impact or causality.
+- Deployment activation does not imply intended/downstream effect or execution version use.
+- Intent conformance does not imply health/cause.
 - Audience simplification cannot strengthen underlying status.
 - Passive monitoring remains non-blocking/out-of-band by default; Execution Gate remains explicit opt-in active control.
 - Phase 007 must consume HLTH-001–HLTH-066 rather than reopen health semantics by convenience.

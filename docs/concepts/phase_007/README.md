@@ -1,6 +1,6 @@
 # Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement
 
-**Status:** IN PROGRESS — Group 01 accepted; OPS-001–OPS-009 accepted; Group 02 next
+**Status:** IN PROGRESS — Groups 01–02 accepted; OPS-001–OPS-020 accepted; Group 03 next
 
 ## Goal
 
@@ -14,7 +14,7 @@ Phase 007 uses **`OPS-###`** refinement contracts.
 
 `OPS-###` means operational/topology/change/impact/control refinement over accepted concepts. It does **not** create an `Operations` concept, does not extend SYN/REF/AUTH/HLTH ranges, and must not become an umbrella state that absorbs Lineage, Change, Investigation, Impact, Execution Gate, Propagation Safeguard or Execution History truth.
 
-Accepted range so far: **OPS-001–OPS-009**.
+Accepted range so far: **OPS-001–OPS-020**.
 
 ## Accepted handoff from Phase 006
 
@@ -48,14 +48,16 @@ No new concept is required. The accepted Lineage concept remains the relationshi
 See [`01_lineage_relationship_taxonomy_historical_topology/README.md`](01_lineage_relationship_taxonomy_historical_topology/README.md).
 
 ### Group 02 — Change Intent, Deployment Realization & Realized Change
-**Status:** **Next — not started.**
+**Status:** **Accepted — OPS-010–OPS-020; C02-01–C02-24 pass.**
 
-Refine how intended modifications, deployment attempts/activation, and realized Change coordinate. Distinguish intended scope, deployed artifact/config/schema/transformation version, activation/effective state, partial/mismatched realization, unplanned Change, rollback/reversion, and what evidence establishes that an intent actually became realized state.
+Refines exact Change Intent revision/component/target identity, implementation-state references, deployment attempt versus activation, many-to-many intent/deployment association, bounded realized Change, derived intent-to-realization comparison, phased/partial/overlapping rollout, unregistered-versus-unplanned language, rollback/reversion/restoration and bitemporal realization replay.
+
+No new concept is required. Change Intent, Deployment and Change remain independent truth owners; realization/conformance is a derived comparison over them.
 
 See [`02_change_intent_deployment_realized_change/README.md`](02_change_intent_deployment_realized_change/README.md).
 
 ### Group 03 — Prospective Blast Radius & Change-Aware Review
-**Status:** Planned.
+**Status:** **Next — not started.**
 
 Use proposed Change plus then-relevant Lineage to identify prospective downstream candidates and required review surfaces before activation. Refine consumer-specific schema/metric/profile/Baseline/reconciliation/readiness/control review triggers while preserving **prospective reachability/risk ≠ actual exposure/Impact/cause**.
 
@@ -116,14 +118,39 @@ The order is dependency-driven:
 7. **Safeguard and Gate separately** — they protect different boundaries and have different state/evidence semantics.
 8. **Historical replay last** — cross-group time/version correctness is the final composition test.
 
+## Accepted operational chain through Group 02
+
+The Phase 007 operational foundation now preserves:
+
+**bounded Lineage proposition → question-bound topology relevance → exact Change Intent revision/component → evidence-backed Deployment association → attempt/outcome → target/facet activation → evidence-established realized Change → derived intent-to-realization comparison**.
+
+No link in this chain automatically creates the next.
+
+For deployment/change reasoning specifically:
+
+- there is no universal deployment/version identifier;
+- repository revision is not runtime identity absent evidence;
+- active implementation state can be composite across code/config/schema/transformation facets;
+- intent realization can be matched/partial/diverged/not-realized/not-evidenced/indeterminate/conflicting/unavailable for a bounded component without creating one scalar lifecycle status;
+- partial rollout remains target/slice specific;
+- missing registered intent does not prove humanly unplanned or unauthorized change;
+- rollback/reversion is non-rewriting and does not automatically restore downstream state.
+
 ## Cross-group invariants
 
 Preserve throughout Phase 007:
 
 - Lineage ≠ causality;
 - Lineage edge ≠ metric/status propagation;
-- planned topology ≠ active topology;
+- planned topology ≠ active/effective topology;
 - Change Intent ≠ Deployment ≠ realized Change;
+- deployment attempt ≠ attempt outcome ≠ activation ≠ realized effect;
+- repository revision ≠ deployed runtime identity absent evidence;
+- intent association ≠ activation ≠ conformance;
+- `not evidenced` ≠ `not realized`;
+- matched intent ≠ health/cause;
+- partial rollout ≠ global activation;
+- rollback ≠ historical erasure/downstream restoration;
 - prospective blast radius ≠ actual Impact;
 - intended schedule/dependency ≠ actual execution sequence;
 - execution occurrence ≠ consumed-version proof unless evidenced;
@@ -149,6 +176,7 @@ Phase 007 must remain implementation-neutral. Do not select:
 - graph database or Lineage store;
 - event/history persistence mechanism;
 - CDC/change-capture architecture;
+- deployment fingerprint/attestation mechanism;
 - scheduler/orchestrator;
 - Databricks Workflows dependency mechanism;
 - queue/event bus;
@@ -171,4 +199,4 @@ Phase 010 owns technical architecture and implementation placement.
 
 ## Phase direction
 
-**Phase 007 Group 01 is accepted with OPS-001–OPS-009. Group 02 — Change Intent, Deployment Realization & Realized Change is next and has not started.**
+**Phase 007 Groups 01–02 are accepted with OPS-001–OPS-020. Group 03 — Prospective Blast Radius & Change-Aware Review is next and has not started.**

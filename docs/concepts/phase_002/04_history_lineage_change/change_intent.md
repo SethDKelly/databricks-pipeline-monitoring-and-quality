@@ -1,6 +1,6 @@
 # Concept: Change Intent
 
-**Status:** Accepted — Phase 002 Group 04
+**Status:** Accepted — Phase 002 Group 04; refined by Phase 007 Group 02 (OPS-010, OPS-013, OPS-015–OPS-017)
 
 ## Purpose
 
@@ -68,6 +68,20 @@ Anticipated effects are descriptive intent by default. A statement becomes a nor
 - Registration/revision/withdrawal history is preserved; current intent does not erase what was known before a historical incident.
 - Change Intent does not assert health, defect, causation, or compliance.
 
+## Phase 007 Group 02 refinement
+
+OPS-010 makes intent revision/component identity material to realization reasoning. Where one registered intent contains independently realizable target/facet propositions, those components remain separately comparable rather than being flattened into one lifecycle status.
+
+OPS-013 preserves many-to-many association between exact intent components and Deployment attempts/activations. Association requires provenance-bearing linkage and does not imply activation or conformance.
+
+OPS-015 resolves the prior deferred question about intent-to-realization conformance: **no new concept is introduced**. Realization/conformance is a derived synchronization result over the exact intent revision/component plus Deployment activation and Change evidence. Change Intent itself does not acquire a `realized` field that would absorb those concepts.
+
+For one bounded comparison, `matched`, `partially matched`, `diverged`, `not realized`, `not evidenced`, `indeterminate`, `conflicting`, and `unavailable` are comparison results, not intrinsic Change Intent states. `Not realized` requires sufficient negative evidence; lack of realization evidence is only `not evidenced`/unknown as applicable.
+
+OPS-016 keeps phased/multi-target realization slice-specific. OPS-017 further distinguishes `no matching registered intent known`, `unregistered`, `outside declared intent scope`, and the stronger process proposition `unplanned`. Absence of a registered intent never proves lack of human intent, authorization, or proper process by itself.
+
+Anticipated effects remain declarations. An observed effect omitted from intent is only `not declared/anticipated in the registered intent` unless separate evidence establishes the actor's actual intent.
+
 ## Ambiguity and missing evidence
 
 Absence of a registered Change Intent does not prove that no human intended a change; it means the product has no registered intent evidence. Conflicting intended effects remain explicit. If a Change Intent is restricted, an authorized user may learn that planned-change context exists without receiving sensitive code/business details.
@@ -134,6 +148,6 @@ A deployment/configuration transition occurs without a Change Intent. Monitoring
 ## Deferred questions
 
 - Which anticipated-effect dimensions are required for the first MVP?
-- What minimum linkage is needed between Change Intent and source revision, pull request, ticket, or configuration reference?
+- What minimum concrete linkage is needed between Change Intent and source revision, pull request, ticket, or configuration reference? Phase 009 owns source mapping.
 - Which Change Intents are authoritative enough to drive prospective Baseline comparability constraints or Expectation-review prompts?
-- Should intent-to-realization conformance become an explicit later concept or remain an Investigation/Assessment synchronization?
+- Concrete source support for phased realization and plan-registration coverage remains later integration work.
