@@ -1,6 +1,6 @@
 # Phase 009 — Integration Contracts, Source Authority, and Evidence Availability
 
-**Status:** IN PROGRESS — Groups 01–04 accepted; INTG-001–INTG-119 accepted; IC01-01–IC01-40, GOV02-01–GOV02-48, RTE03-01–RTE03-54 and HME04-01–HME04-56 pass; Group 05 next
+**Status:** IN PROGRESS — Groups 01–05 accepted; INTG-001–INTG-153 accepted; IC01-01–IC01-40, GOV02-01–GOV02-48, RTE03-01–RTE03-54, HME04-01–HME04-56 and LIE05-01–LIE05-60 pass; Group 06 next
 
 ## Goal
 
@@ -27,7 +27,7 @@ Phase 009 uses **`INTG-###`** integration-contract refinements.
 
 `INTG-###` describes the functional contract between accepted product semantics and actual source capabilities. It does not define adapter classes, service boundaries, event schemas, storage tables, polling architecture, credentials, SDK selection, or deployment topology.
 
-Accepted range so far: **INTG-001–INTG-119**.
+Accepted range so far: **INTG-001–INTG-153**.
 
 ## Logical delivery grouping
 
@@ -74,16 +74,18 @@ Accepted gaps include consumer-specific compatibility contracts, explicit DQX/me
 See [`04_health_schema_metrics_expectations_baselines_reconciliation_evidence/README.md`](04_health_schema_metrics_expectations_baselines_reconciliation_evidence/README.md), [`04_health_schema_metrics_expectations_baselines_reconciliation_evidence/source_capability_matrix.md`](04_health_schema_metrics_expectations_baselines_reconciliation_evidence/source_capability_matrix.md), and [`04_health_schema_metrics_expectations_baselines_reconciliation_evidence/external_source_review.md`](04_health_schema_metrics_expectations_baselines_reconciliation_evidence/external_source_review.md).
 
 ### Group 05 — Lineage, Consumer Use, Exposure, Effect & Impact Evidence
-**Status:** **Next — not started.**
+**Status:** **Accepted — INTG-120–INTG-153; LIE05-01–LIE05-60 pass.**
 
-Map effective Lineage/topology, prospective path evidence, actual publication/availability, consumer encounter/use, run/query/version consumption, exposure, downstream effect and technical/analytical/business consequence evidence.
+Maps Unity Catalog table/column lineage, SQL/query-history reads, dashboard/audit/query-result activity, caching, refresh/snapshot delivery, external-client context and bounded effect/consequence evidence to the accepted Lineage/Impact ladder.
 
-The group must characterize path/population coverage explicitly. Lineage reachability alone cannot satisfy encounter/exposure/Impact requirements, and missing downstream telemetry cannot become non-exposure.
+It preserves captured lineage event ≠ permanent relationship; topology ≠ actual encounter; dashboard access ≠ dataset execution/result receipt; cached-state encounter ≠ fresh source read; platform query ≠ external report view/business reliance; object read ≠ exact affected-version exposure; and exposure ≠ downstream effect ≠ consequence ≠ causal attribution.
 
-See [`05_lineage_consumer_use_exposure_impact_evidence/README.md`](05_lineage_consumer_use_exposure_impact_evidence/README.md).
+Accepted gaps include incomplete lineage capture, rename/path identity reconciliation, generic exact table-version consumption, exact dashboard-cache state, external BI/application view/use telemetry, business consequence evidence, heterogeneous historical retention and coverage-intensive non-exposure/no-effect/no-consequence negatives.
+
+See [`05_lineage_consumer_use_exposure_impact_evidence/README.md`](05_lineage_consumer_use_exposure_impact_evidence/README.md), [`05_lineage_consumer_use_exposure_impact_evidence/source_capability_matrix.md`](05_lineage_consumer_use_exposure_impact_evidence/source_capability_matrix.md), and [`05_lineage_consumer_use_exposure_impact_evidence/external_source_review.md`](05_lineage_consumer_use_exposure_impact_evidence/external_source_review.md).
 
 ### Group 06 — Investigation, Causality, Safeguard, Gate & Control Evidence
-**Status:** Not started.
+**Status:** **Next — not started.**
 
 Map source support for Investigation leads/localization, discriminating evidence, Causal Claim support/contradiction, Propagation Safeguard proposal/authorization/request/enforcement/release, Execution Gate readiness/decision/delivery/enforcement and actual control effects.
 
@@ -207,6 +209,35 @@ Every later group must preserve:
 - skipped/disabled/failed evaluation ≠ clean result;
 - same-proposition health conflicts have no universal vendor precedence, while different health propositions may coexist.
 
+## Accepted Group 05 lineage/consumer/Impact-source discipline
+
+Every later group must preserve:
+
+- captured lineage event ≠ permanent/effective relationship interval;
+- lineage capture is incomplete and missing lineage cannot support global no-dependency/no-use conclusions;
+- source-local lineage entity/path/name ≠ reconciled ecosystem consumer/table identity;
+- `direct_access` ≠ relevance/exposure/causal strength;
+- topology/availability/publication ≠ actual encounter;
+- query execution ≠ source read unless the source association is established;
+- lineage `statement_id` ↔ query history is strong association evidence where present;
+- client application/query source ≠ external report view/business user identity;
+- query-result-cache encounter ≠ fresh source read;
+- dashboard access ≠ dataset query execution ≠ result receipt;
+- dashboard cache can represent safe, affected or unresolved prior state and can be served without a new warehouse query;
+- schedule configuration ≠ refresh execution; refresh execution ≠ human view;
+- snapshot/subscription delivery ≠ reading/reliance;
+- external BI/application platform read ≠ external report/application display/use;
+- generic object-level read ≠ exact table/data-version consumption;
+- exact suspect-state exposure requires state/version binding where the proposition is version-specific;
+- query time/proximity ≠ consumed version;
+- cache/copy/export/snapshot state can persist after source correction;
+- multi-hop exposure is non-transitive;
+- one safe path ≠ global non-exposure;
+- exposure ≠ downstream effect ≠ consequence ≠ Causal Claim;
+- dashboard/report view/delivery ≠ decision reliance;
+- popularity/vendor downstream-impact context ≠ realized Impact/severity;
+- historical Impact replay and strong non-exposure/no-effect/no-consequence remain source-set/coverage bound.
+
 ## Why this order
 
 1. **Contract vocabulary first** — every source must be evaluated using the same proposition/authority/time/coverage vocabulary before vendor facts can be compared.
@@ -236,6 +267,10 @@ Preserve throughout the phase:
 - negative conclusions retain proposition-specific opportunity/coverage burdens;
 - duplicate/common-derived integrations ≠ independent corroboration;
 - Lineage ≠ actual consumer use/exposure;
+- observed read ≠ exact affected-version exposure absent state/version evidence;
+- dashboard/report access ≠ dataset execution/result receipt/business reliance;
+- safe cache/copy path ≠ global non-exposure;
+- exposure ≠ effect ≠ consequence ≠ cause;
 - deployment/workflow success ≠ activation/realized Change/run-specific version by convenience;
 - run success ≠ output existence/currentness/health;
 - check/metric availability ≠ governed Expectation/Baseline/Assessment authority;

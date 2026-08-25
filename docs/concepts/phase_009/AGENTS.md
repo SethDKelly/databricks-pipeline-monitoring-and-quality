@@ -10,7 +10,8 @@ Applies to work under `docs/concepts/phase_009/` and complements the repository 
 - **Group 02 is complete with INTG-023–INTG-050; GOV02-01–GOV02-48 pass.**
 - **Group 03 is complete with INTG-051–INTG-083; RTE03-01–RTE03-54 pass.**
 - **Group 04 is complete with INTG-084–INTG-119; HME04-01–HME04-56 pass.**
-- **Group 05 — Lineage, Consumer Use, Exposure, Effect & Impact Evidence is next.**
+- **Group 05 is complete with INTG-120–INTG-153; LIE05-01–LIE05-60 pass.**
+- **Group 06 — Investigation, Causality, Safeguard, Gate & Control Evidence is next.**
 - Accepted concept count remains 24.
 - Canonical repository status remains in `../../README.md#current-state`.
 
@@ -153,6 +154,43 @@ Preserve:
 
 See [`04_health_schema_metrics_expectations_baselines_reconciliation_evidence/README.md`](04_health_schema_metrics_expectations_baselines_reconciliation_evidence/README.md).
 
+## Accepted Group 05 rules
+
+Preserve:
+
+- lineage system tables expose captured events, not a complete universal read/write ledger;
+- captured lineage event ≠ permanent/effective relationship interval;
+- missing table/column lineage ≠ no relationship/read/use;
+- `direct_access` is source traversal semantics, not relevance/exposure/causal strength;
+- lineage source-local table/path/entity identity requires reconciliation where ecosystem identity matters;
+- native rename continuity is not assumed;
+- availability/publication ≠ actual encounter;
+- query execution ≠ table read absent source association;
+- lineage `statement_id` ↔ query history is accepted explicit association evidence when present;
+- query actor/client/query-source context ≠ external report/human/business identity;
+- cached query-result receipt ≠ fresh source read;
+- dashboard access ≠ dashboard query execution ≠ query-result receipt;
+- dashboard cache can serve results without a new warehouse query and may carry safe/affected/unknown prior state;
+- dashboard schedule configuration ≠ refresh execution; refresh ≠ later human view;
+- snapshot/email/Slack/Teams delivery ≠ reading or decision reliance;
+- external BI query and JDBC/application read establish only the covered platform boundary by default;
+- generic lineage/query history does not universally expose the exact table/data version consumed;
+- object-level encounter with unresolved state/version is a valid intermediate result;
+- query time/proximity ≠ consumed version;
+- explicit time-travel/version evidence is conditional on retained/resolvable statement/parameter/history evidence;
+- refresh/materialization, copy, cache, export and snapshot are distinct encounter paths;
+- safe stale state ≠ affected-state exposure;
+- multi-hop exposure is non-transitive;
+- one safe path ≠ global non-exposure;
+- positive exposure is consumer/path/state/version bound;
+- `not exposed` retains opportunity/path/version/source-health coverage burden;
+- exposure ≠ downstream effect ≠ consequence ≠ Causal Claim;
+- dashboard/report access/delivery ≠ decision reliance;
+- table popularity/insights and vendor downstream-impact labels are context, not realized Impact/severity;
+- historical Impact replay composes heterogeneous source windows and remains non-rewriting.
+
+See [`05_lineage_consumer_use_exposure_impact_evidence/README.md`](05_lineage_consumer_use_exposure_impact_evidence/README.md).
+
 ## Required evaluation dimensions
 
 For every material source surface, evaluate as applicable:
@@ -186,6 +224,10 @@ Never convert:
 - missing → false/zero/no-event/no-path/no-exposure/no-effect/no-control;
 - current state → historical state;
 - Lineage → encounter/exposure;
+- lineage/read event → exact affected-version exposure absent state/version evidence;
+- dashboard/report access → dataset execution/result receipt/business reliance;
+- one safe cache/copy path → global non-exposure;
+- exposure → effect/consequence/cause;
 - workflow success → deployment activation or run-specific version;
 - active Deployment → actual run version;
 - latest upstream output → consumed input;
@@ -238,21 +280,34 @@ A source may be authoritative for one metadata category and merely supporting/ob
 - vendor health/root-cause/impact labels remain bounded source assertions, not truth shortcuts;
 - health history and clean negative conclusions remain source/evaluation/retention-coverage bound.
 
-## Group 05 entry contract
+## Group 05 gaps carried forward
 
-Group 05 may consume Group 04 Observations/Assessments only with exact subject/version/window/population/provenance/coverage and authorization limitations.
+- lineage capture is incomplete and cannot support universal negative topology/use claims;
+- renamed/path-addressed objects require explicit identity reconciliation where continuity matters;
+- generic exact table-version consumption is unsupported by the evaluated lineage/query-history pair without added state evidence;
+- exact dashboard-cache state may require explicit cache/state attestation;
+- external BI report views/interactions require external-BI telemetry where material;
+- application fetch/display/business-use layers require application/business telemetry;
+- multi-hop exposure requires per-hop affected-state propagation and encounter evidence;
+- business/customer/financial consequence remains environment-specific rather than Databricks-native truth;
+- historical Impact replay spans heterogeneous lineage/query/audit/external retention windows;
+- strong non-exposure/no-effect/no-consequence conclusions remain path/population/version/dimension coverage intensive.
 
-It must independently establish Lineage relation/effective interval, publication/availability, consumer encounter/use, version/state consumption, exposure, downstream effect and consequence. Health/quality state, schema incompatibility, DQ violation, drift or anomaly can define the originating condition but cannot prove consumer exposure or Impact.
+## Group 06 entry contract
+
+Group 06 may consume Group 05 Lineage/encounter/exposure/effect/consequence evidence only with exact path/state/version/population/time/coverage/provenance and authorization limitations.
+
+It must independently establish Investigation lead/localization semantics, causal proposition evidence and authority, Safeguard/Gate lifecycle/authorization/decision/enforcement, and control effects. Topology, query timing, exposure, effect, consequence, popularity/priority or vendor root-cause/impact labels cannot substitute for Causal Claim or control-effect evidence. REF-028 prevented-exposure determinations also require an actual relevant encounter opportunity plus sufficient control/path evidence.
 
 ## External-fact discipline
 
 Groups 02–08 necessarily evaluate evolving vendor capabilities. Verify current external documentation when executing a group, distinguish product documentation from repository assumptions, record meaningful edition/feature/retention/permission limitations, and avoid treating undocumented behavior as guaranteed.
 
-Group 02 records sources in [`02_identity_scope_governance_authority_authorization_sources/external_source_review.md`](02_identity_scope_governance_authority_authorization_sources/external_source_review.md); Group 03 records sources in [`03_change_deployment_execution_version_runtime_evidence/external_source_review.md`](03_change_deployment_execution_version_runtime_evidence/external_source_review.md); Group 04 records sources in [`04_health_schema_metrics_expectations_baselines_reconciliation_evidence/external_source_review.md`](04_health_schema_metrics_expectations_baselines_reconciliation_evidence/external_source_review.md).
+Group 02 records sources in [`02_identity_scope_governance_authority_authorization_sources/external_source_review.md`](02_identity_scope_governance_authority_authorization_sources/external_source_review.md); Group 03 records sources in [`03_change_deployment_execution_version_runtime_evidence/external_source_review.md`](03_change_deployment_execution_version_runtime_evidence/external_source_review.md); Group 04 records sources in [`04_health_schema_metrics_expectations_baselines_reconciliation_evidence/external_source_review.md`](04_health_schema_metrics_expectations_baselines_reconciliation_evidence/external_source_review.md); Group 05 records sources in [`05_lineage_consumer_use_exposure_impact_evidence/external_source_review.md`](05_lineage_consumer_use_exposure_impact_evidence/external_source_review.md).
 
 ## Architecture boundary
 
-Do not select SDK/client libraries, polling versus streaming, event buses, storage schemas, graph databases, caches, credential mechanisms, deployment topology, retry infrastructure, orchestration, attestation implementation, metric/rule stores, anomaly models, LLM/retrieval architecture or UI. Phase 010 owns technical architecture.
+Do not select SDK/client libraries, polling versus streaming, event buses, storage schemas, graph databases, caches, credential mechanisms, deployment topology, retry infrastructure, orchestration, attestation implementation, metric/rule stores, anomaly models, consumer/BI instrumentation, Impact scoring, LLM/retrieval architecture or UI. Phase 010 owns technical architecture.
 
 ## Group sequence
 
@@ -260,7 +315,7 @@ Do not select SDK/client libraries, polling versus streaming, event buses, stora
 2. identity/scope/governance/authority/authorization sources — **accepted**;
 3. change/deployment/execution/version/runtime evidence — **accepted**;
 4. health/schema/metrics/Expectations/Baselines/reconciliation evidence — **accepted**;
-5. Lineage/consumer use/exposure/Impact evidence — **next**;
-6. Investigation/causality/Safeguard/Gate/control evidence;
+5. Lineage/consumer use/exposure/Impact evidence — **accepted**;
+6. Investigation/causality/Safeguard/Gate/control evidence — **next**;
 7. Explanation/historical replay/basis/disclosure source contracts;
 8. cross-source coverage/latency/retention/cost consolidation and exit.
