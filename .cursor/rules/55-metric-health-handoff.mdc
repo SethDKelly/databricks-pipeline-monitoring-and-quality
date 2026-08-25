@@ -6,7 +6,7 @@ alwaysApply: true
 
 # Metric health and propagation foundation
 
-Status: **Phase 006 is active. Groups 01–04 are accepted with HLTH-001–HLTH-040. Group 05 is next.**
+Status: **Phase 006 is active. Groups 01–05 are accepted with HLTH-001–HLTH-054. Group 06 is next.**
 
 Preserve permanently:
 
@@ -32,7 +32,10 @@ Preserve permanently:
 - within Baseline ≠ healthy; outside Baseline ≠ failed/degraded;
 - criterion outcome ≠ warning/proximity ≠ severity/priority ≠ waiver/disposition;
 - `violates + waived` ≠ `meets`;
-- Lineage relation ≠ metric/status propagation.
+- Lineage relation ≠ metric/status propagation;
+- local Observation ≠ downstream-relevant upstream context ≠ derived reconciliation Observation ≠ reconciliation Assessment;
+- A+B→C ≠ generic row-count conservation;
+- reconciliation localization ≠ root cause.
 
 Accepted Phase 006 Group 01 foundation:
 
@@ -92,18 +95,38 @@ Accepted Phase 006 Group 04 normative Assessment foundation:
 - Severity/priority does not decide criterion outcome and Criticality does not prove Impact.
 - Historical rule/reference/waiver versions and corrected-evidence reassessments remain non-rewriting.
 
+Accepted Phase 006 Group 05 transformation/reconciliation foundation:
+
+- Reconciliation binds exact transformation/version, input/output identities and roles, fields/keys/measures, grain/population/window and material current-cycle/version context.
+- Lineage supplies relationship context but never a formula, value copy or inherited status.
+- Join reconciliation uses eligible populations, directional matches/unmatched populations, matched-pair counts and explicit fan-out/cardinality/key integrity.
+- Many-to-many joins can legitimately amplify output and duplicate keys can contribute to fan-out.
+- Filter reconciliation applies conservation only under exact pure-filter semantics; selection can change downstream distributions and DQ metrics.
+- Aggregation conservation is measure-specific; row counts, averages, ratios, percentages, quantiles and distinct counts are not generically composable.
+- Dedup reconciliation binds duplicate-equivalence and survivor-selection semantics; output uniqueness does not rewrite source uniqueness.
+- Bag/append union can be additive only under explicit aligned semantics; distinct union and merge/upsert require overlap/action-state handling.
+- Join/filter/default/cast/derived-value logic can introduce/remove/replace null/value states; downstream completeness/validity is not inherited.
+- Output completion/success does not prove all required inputs current; bind actual consumed versions and permitted cadence/lag.
+- Distribution/quantile/value/normalization relationships require transformation semantics that preserve the intended meaning.
+- Derived reconciliation evidence retains source provenance, availability, coverage, approximation/uncertainty, restriction and temporal limitations; derivation is not declassification.
+- Multi-hop reconciliation requires explicit valid composition; A↔B plus B↔C does not automatically imply direct A↔C conservation.
+- Asset-level Lineage does not make unused fields/partitions/populations materially relevant.
+- Upstream warning/violation/Baseline atypicality/severity/waiver never recursively propagates downstream.
+- Upstream violation can coexist with downstream meets; upstream meets can coexist with downstream violation introduced by transformation logic.
+- Reconciliation mismatch/localization is Investigation evidence, not Causal Claim confirmation.
+- Historical reconciliation binds then-effective Lineage/transformation/reconciliation/input/output versions and knowledge cut.
+
 Later Phase 006 rules still to be refined:
 
-- Group 05 — selective transformation-aware propagation/reconciliation — **next**;
-- Group 06 — composite health and progressive result timing/control-suitability;
+- Group 06 — composite health and progressive result timing/control-suitability — **next**;
 - Group 07 — consolidation/exit.
 
 Cross-phase boundaries:
 
 - Phase 005 decides metric/Expectation/threshold authority and disclosure governance.
-- Phase 006 defines metric and health semantics.
-- Phase 007 refines Lineage-aware propagation/operational use.
+- Phase 006 defines metric, reconciliation and health semantics.
+- Phase 007 refines Lineage-aware operational/change propagation.
 - Phase 009 evaluates actual source support, cost, latency and retention.
 - Phase 010 selects computation/storage/fast-path architecture.
 
-Do not recursively cascade every upstream statistic, Baseline result, warning, violation, severity or waiver through Lineage. Do not force monitoring metrics onto the production critical path unless an explicitly accepted high-consequence control requires them and the later evidence/timing criteria are satisfied.
+Do not recursively cascade every upstream statistic, Baseline result, warning, violation, severity or waiver through Lineage. Do not force monitoring/reconciliation metrics onto the production critical path unless an explicitly accepted high-consequence control requires them and later evidence/timing criteria are satisfied.

@@ -1,0 +1,38 @@
+---
+description: Phase 006 Group 05 accepted transformation reconciliation and no-blind-propagation guardrails.
+globs:
+alwaysApply: true
+---
+
+# Phase 006 Group 05 — transformation reconciliation guardrails
+
+Status: **Accepted — HLTH-041–HLTH-054; H05-01–H05-44 pass. Group 06 is next.**
+
+Preserve permanently:
+
+- local Observation ≠ downstream-relevant upstream context ≠ derived reconciliation Observation ≠ reconciliation Assessment;
+- Lineage relationship ≠ reconciliation formula ≠ status propagation ≠ causality;
+- every reconciliation binds exact transformation/version, input/output identities and roles, fields/keys/measures, grain/population/window and material cycle/version context;
+- A+B→C never implies generic row-count arithmetic;
+- joins use eligible populations, directional match/unmatched rates, key/cardinality and fan-out semantics;
+- many-to-many amplification can be legitimate; duplicate keys can amplify without missing input rows;
+- filter conservation applies only under exact pure-filter semantics; selection can change downstream distributions/DQ measures;
+- aggregation conservation is measure-specific; averages, ratios, percentages, quantiles and distinct counts are not generically composable;
+- dedupe binds duplicate equivalence and survivor selection; output uniqueness does not rewrite source uniqueness;
+- bag union is additive only under explicit conditions; DISTINCT union/merge/upsert require overlap/action semantics;
+- downstream null/completeness is not inherited; joins, filters, defaults, casts and derivations can introduce/remove/replace value states;
+- output success/completion does not prove all required inputs current; bind consumed versions and permitted cadence/lag;
+- distribution/quantile/normalization relationships require semantics that preserve meaning;
+- derived reconciliation retains source provenance, availability, coverage, approximation/uncertainty, restriction and temporal limitations;
+- derivation/aggregation is not declassification;
+- multi-hop reconciliation requires explicit valid composition; do not infer A↔C conservation from A↔B and B↔C alone;
+- asset-level Lineage does not make unused fields/partitions/populations relevant;
+- upstream `warning`, `violates`, Baseline atypicality, severity or waiver never recursively propagates downstream;
+- upstream violation can coexist with downstream meets; upstream meets can coexist with downstream violation;
+- reconciliation mismatch or first localization is not root cause;
+- causal propositions remain Causal Claim under REF-013–REF-020;
+- historical reconciliation uses then-effective Lineage/transformation/reconciliation/input/output versions and preserves reassessment history.
+
+Group 06 must compose these reconciliation Assessments alongside local dimensions without hiding indeterminate/conflicting/unavailable/waived state and must separately define result freshness/maturity and readiness suitability.
+
+Do not select Spark/SQL implementation, DQX/Metric Views realization, graph/storage design, scheduler/control topology, or streaming/caching architecture from these semantics.

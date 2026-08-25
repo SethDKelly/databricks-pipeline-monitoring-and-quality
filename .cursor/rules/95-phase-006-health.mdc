@@ -1,12 +1,12 @@
 ---
-description: Phase 006 health/metric design guardrails with Groups 01–04 accepted measurement, structural, Baseline, and normative Assessment semantics.
+description: Phase 006 health/metric design guardrails with Groups 01–05 accepted measurement, structural, Baseline, normative Assessment, and reconciliation semantics.
 globs:
 alwaysApply: true
 ---
 
 # Phase 006 — health and metric semantics
 
-Status: **Phase 006 is ACTIVE. Groups 01–04 are accepted with HLTH-001–HLTH-040. Group 05 — Transformation Reconciliation & Metric Propagation is next and has not started.**
+Status: **Phase 006 is ACTIVE. Groups 01–05 are accepted with HLTH-001–HLTH-054. Group 06 — Composite Health, Readiness Suitability & Progressive Result Timing is next and has not started.**
 
 Phase 006 uses `HLTH-###` refinement identifiers. They refine existing concepts and do not extend SYN/REF/AUTH ranges or create hidden truth owners.
 
@@ -16,8 +16,8 @@ Accepted delivery order:
 2. Structural / Schema / DDL Compatibility — **accepted**.
 3. Baselines, Comparability, Distribution & Statistical Context — **accepted**.
 4. Expectations, Thresholds, Margins, Waivers & Assessment Semantics — **accepted**.
-5. Transformation Reconciliation & Metric Propagation — **next**.
-6. Composite Health, Readiness Suitability & Progressive Result Timing — planned.
+5. Transformation Reconciliation & Metric Propagation — **accepted**.
+6. Composite Health, Readiness Suitability & Progressive Result Timing — **next**.
 7. Consolidation / Exit Review — planned.
 
 ## Group 01 accepted rules — HLTH-001–HLTH-008
@@ -109,22 +109,48 @@ Preserve:
 - historical criterion/reference/waiver versions remain bound to historical Assessment;
 - corrected evidence creates reassessment rather than silent historical mutation.
 
-## Group 05 boundary
-
-Next define transformation-aware reconciliation over the accepted local measurement/reference/normative semantics.
+## Group 05 accepted rules — HLTH-041–HLTH-054
 
 Preserve:
 
-- Lineage relation ≠ metric propagation ≠ status propagation ≠ causality;
-- local upstream metric/Observation ≠ downstream-relevant context ≠ derived reconciliation measurement;
-- local `warning`, `violates`, severity, waiver or Baseline atypicality does not propagate automatically to downstream assets;
-- A+B→C never implies generic row-count arithmetic;
-- join/filter/aggregation/dedupe/union semantics determine valid relationships;
-- current-cycle/freshness alignment and grain/key compatibility matter to reconciliation;
-- uncertainty, non-comparability, unavailability and restriction limitations remain attached to derived evidence;
-- multiple abnormal upstream contributors can remain relevant without becoming causal attribution;
-- Group 05 may create reconciliation Observations/Assessments through existing concepts, not a hidden propagation truth owner;
-- do not define overall/composite health until Group 06.
+**local Observation ≠ downstream-relevant upstream context ≠ reconciliation definition/check ≠ derived reconciliation Observation ≠ reconciliation Assessment ≠ Causal Claim**.
+
+- every reconciliation binds exact transformation/version, input/output identities/roles, fields/keys/measures, grain/population/window and current-cycle/version context;
+- Lineage supplies typed relationship context but never a formula or status copy;
+- join reconciliation uses eligible populations, directional match/unmatched measures, matched-pair counts, key integrity and fan-out/cardinality;
+- many-to-many amplification can be legitimate; duplicate keys can increase matched pairs/output;
+- filter conservation applies only where exact pure-filter semantics justify input/output/excluded relationships; selection can change distributions/DQ measures;
+- aggregation conservation is measure-specific; row counts, averages, ratios, percentages, quantiles and distinct counts are not generically composable;
+- dedupe binds duplicate equivalence and survivor selection; healthy output uniqueness does not rewrite upstream uniqueness;
+- bag union can be additive only under explicit aligned semantics; DISTINCT union and merge/upsert require overlap/action-state reasoning;
+- joins/filters/defaults/casts/derived-value logic can introduce/remove/replace null/value quality states;
+- output completion/success does not prove all required inputs current; actual consumed versions and allowed cadence/lag matter;
+- distribution/quantile/value/normalization relationships require semantics that preserve the intended meaning;
+- derived reconciliation retains source provenance, availability, coverage, approximation/uncertainty, restriction and temporal limitations and cannot upgrade evidence quality;
+- derived aggregate/reconciliation is not declassification;
+- multi-hop reconciliation requires explicit valid composition; A↔B plus B↔C does not automatically create A↔C conservation;
+- asset-level Lineage does not make unused fields/partitions/populations relevant;
+- local warning/violation/Baseline atypicality/severity/waiver does not recursively propagate downstream;
+- upstream violation can coexist with downstream meets; upstream meets can coexist with downstream violation introduced by transformation logic;
+- reconciliation mismatch/localization is Investigation evidence, not causal confirmation;
+- historical reconciliation binds then-effective Lineage/transformation/reconciliation/input/output versions and supports non-rewriting reassessment.
+
+## Group 06 boundary
+
+Next define composite health, readiness suitability and progressive result timing over the accepted local and reconciliation semantics.
+
+Preserve:
+
+- dimension/component Assessments remain inspectable; do not create a universal numeric score that hides child truth;
+- criterion outcome, warning/proximity, severity/priority, waiver/disposition and Baseline typicality remain separate during composition;
+- `violates + waived` never becomes clean `meets` in summary health;
+- conflicting/indeterminate/unavailable component state cannot be silently averaged away;
+- technical/business/executive/audit views remain authorized projections over one health truth;
+- readiness suitability is use/time-specific and requires current applicable evidence;
+- AUTH-023 control-use eligibility ≠ current evidence freshness/comparability/availability/maturity;
+- health Assessment ≠ readiness Assessment ≠ gate decision ≠ enforcement ≠ actual execution;
+- fast narrow operational facts can be available before slower schema/DQ/reconciliation/distribution evidence without claiming broader health completeness;
+- passive monitoring remains non-blocking for ungated production.
 
 ## Permanent phase boundaries
 
@@ -141,6 +167,6 @@ Preserve:
 - Upstream anomaly/violation does not automatically become downstream failure or cause.
 - High-consequence eligibility does not make stale/unavailable/immature evidence usable.
 - Passive monitoring remains out-of-band/non-blocking for ungated production.
-- Do not select Metric Views/DQX, GitHub Actions, Unity Catalog, anomaly/statistical algorithms, storage, streaming, caching, scheduler/orchestrator or service topology during Phase 006.
+- Do not select Metric Views/DQX, GitHub Actions, Unity Catalog, Spark/SQL reconciliation implementation, anomaly/statistical algorithms, storage, streaming, caching, scheduler/orchestrator or service topology during Phase 006.
 
-Do not begin Group 05 or a later group without explicit user direction.
+Do not begin Group 06 or a later group without explicit user direction.

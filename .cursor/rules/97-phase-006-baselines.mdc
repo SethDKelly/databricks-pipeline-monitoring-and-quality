@@ -6,7 +6,7 @@ alwaysApply: true
 
 # Phase 006 Group 03 — Baseline and comparability guardrails
 
-Status: **Accepted — HLTH-019–HLTH-029; H03-01–H03-32 pass. Group 04 has consumed these semantics; Group 05 is next.**
+Status: **Accepted — HLTH-019–HLTH-029; H03-01–H03-32 pass. Groups 04–05 have consumed these semantics; Group 06 is next.**
 
 Preserve permanently:
 
@@ -42,6 +42,8 @@ Preserve permanently:
 
 Group 04 accepted HLTH-030–HLTH-040 and consumes these limits: an authoritative threshold is not enough for `meets`/`violates` if current evidence is too sparse, approximate, unavailable or otherwise insufficient; a relative rule may explicitly reference a Baseline without making Baseline normative generally.
 
-Group 05 must preserve Baseline identity/comparability/uncertainty when deriving transformation reconciliation. Lineage alone never propagates Baseline typicality or anomaly status downstream.
+Group 05 accepted HLTH-041–HLTH-054 and preserves Baseline identity/comparability/uncertainty in transformation reconciliation. Lineage never propagates Baseline typicality/anomaly status downstream; any reconciliation Baseline is independently bound to the derived measurement definition.
+
+Group 06 must preserve descriptive Baseline state separately from normative/component/composite health and result freshness.
 
 Do not select statistical/anomaly algorithms, Metric Views/DQX realization, storage or compute architecture from these semantic rules.

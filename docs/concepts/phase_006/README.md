@@ -1,12 +1,12 @@
 # Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement
 
-**Status:** ACTIVE — Groups 01–04 accepted; HLTH-001–HLTH-040 accepted; Group 05 next
+**Status:** ACTIVE — Groups 01–05 accepted; HLTH-001–HLTH-054 accepted; Group 06 next
 
 ## Goal
 
-Refine how the framework determines whether a pipeline/table state is operationally, structurally, statistically, and semantically healthy now that Phase 005 has completed the authority/governance/capability/disclosure model.
+Refine how the framework determines whether a pipeline/table state is operationally, structurally, statistically, semantically, and transformation-consistently healthy now that Phase 005 has completed the authority/governance/capability/disclosure model.
 
-Phase 006 uses `HLTH-###` refinement contracts. These contracts define health/metric/schema/statistical semantics over the accepted concepts; they are not new truth-owning concepts, do not extend the Phase 003 SYN range, and do not reopen Phase 004 evidence standards or Phase 005 authority decisions.
+Phase 006 uses `HLTH-###` refinement contracts. These contracts define health/metric/schema/statistical/reconciliation semantics over accepted concepts; they are not new truth-owning concepts, do not extend the Phase 003 SYN range, and do not reopen Phase 004 evidence standards or Phase 005 authority decisions.
 
 ## Accepted handoff from Phase 005
 
@@ -58,19 +58,23 @@ Defines exact normative criterion binding, threshold boundary/unit/denominator s
 See [`04_expectations_thresholds_margins_waivers_assessment/README.md`](04_expectations_thresholds_margins_waivers_assessment/README.md).
 
 ### Group 05 — Transformation Reconciliation & Metric Propagation
-**Status:** **Next — not started.**
+**Status:** **Accepted — HLTH-041–HLTH-054.**
 
-Define transformation-aware metric relationships for joins, filters, aggregations, deduplication, unions and other patterns; distinguish local upstream evidence, downstream-relevant context and derived reconciliation measurements; prohibit recursive metric/status copying merely because Lineage exists.
+Defines local versus downstream-relevant evidence, derived reconciliation Observations, transformation/version binding, joins and fan-out, filters, aggregation conservation, dedupe, union/merge/upsert, null/default/value derivation, multi-input current-cycle alignment, distribution/normalization preservation, evidence-limitation propagation, multi-hop composition, historical reconciliation and causal separation.
+
+See [`05_transformation_reconciliation_metric_propagation/README.md`](05_transformation_reconciliation_metric_propagation/README.md).
 
 ### Group 06 — Composite Health, Readiness Suitability & Progressive Result Timing
-**Status:** Planned — not started.
+**Status:** **Next — not started.**
 
-Define whether/how dimension-level Assessments compose into overall health without hiding conflict/unknown state; define technical/business health projection requirements, evidence maturity and freshness for AUTH-023 control-eligible conditions, and progressive result availability from operational facts through enriched/diagnostic/post-ops health.
+Define whether/how dimension-level and reconciliation Assessments compose into broader health without hiding conflict/unknown state; define technical/business projection requirements, result freshness/maturity, readiness suitability and AUTH-023 control-use evidence requirements while preserving the distinction among health, readiness, gate decision, enforcement and execution.
+
+See [`06_composite_health_readiness_timing/README.md`](06_composite_health_readiness_timing/README.md).
 
 ### Group 07 — Consolidation / Exit Review
 **Status:** Planned — not started.
 
-Replay Groups 01–06 across representative ecosystem scenarios and verify that the health model composes without a universal score, hidden authority, false passes, blind propagation, or selected architecture.
+Replay Groups 01–06 across representative ecosystem scenarios and verify that the health model composes without a universal score, hidden authority, false passes, blind propagation, causal shortcuts, or selected architecture.
 
 ## Accepted Group 01 — HLTH-001–HLTH-008
 
@@ -209,48 +213,91 @@ Key results:
 - missing telemetry is not a violation without sufficient opportunity/coverage establishing absence;
 - historical rule/reference/waiver versions and corrected-evidence reassessments remain non-rewriting.
 
-## Group 05 handoff — Transformation Reconciliation & Metric Propagation
-
-Group 05 now defines cross-transformation relationships over fully qualified local measurement/reference/normative semantics.
-
-It must address:
-
-- local metric versus upstream/downstream relevant evidence versus a derived reconciliation measurement;
-- joins: eligible populations, matches/unmatched records, fan-out, key completeness and duplicate effects;
-- filters: intentional included/excluded populations and reconciliation;
-- aggregations: conservation only where semantics support it;
-- deduplication and selected-record/uniqueness behavior;
-- unions/merges and source contribution/overlap;
-- null introduction/removal/defaulting through transformations;
-- current-cycle/freshness alignment across multiple inputs;
-- distribution/quantile relationships only when meaning is preserved;
-- normalization/denominator/grain alignment;
-- evidence uncertainty/restriction/provenance across derived reconciliation;
-- multiple upstream abnormal contributors without forced causal attribution;
-- independent downstream Expectations/Assessments over reconciliation measures.
+## Accepted Group 05 — HLTH-041–HLTH-054
 
 Preserve:
 
-**Lineage relation ≠ metric propagation ≠ status propagation ≠ causality**.
+**local Observation ≠ downstream-relevant upstream context ≠ reconciliation definition/check ≠ derived reconciliation Observation ≠ reconciliation Assessment ≠ Causal Claim**.
 
-A local upstream `violates`, `warning`, `atypical`, severity or waiver state does not automatically become a downstream state. Reconciliation must derive a new proposition/measurement whose semantics follow the transformation.
+Accepted contracts:
+
+- **HLTH-041 — Reconciliation Vocabulary, Transformation Binding & Derived Measurement Identity**;
+- **HLTH-042 — Join Eligibility, Match/Unmatched Population & Directionality**;
+- **HLTH-043 — Join Cardinality, Fan-Out, Key Integrity & Duplicate Effects**;
+- **HLTH-044 — Filter Selection, Inclusion/Exclusion & Population Reconciliation**;
+- **HLTH-045 — Aggregation, Conservation & Non-Composable Measure Semantics**;
+- **HLTH-046 — Deduplication, Survivor Selection & Uniqueness Reconciliation**;
+- **HLTH-047 — Union, Merge/Upsert, Source Contribution & Overlap Semantics**;
+- **HLTH-048 — Null, Default, Cast & Derived-Value Transformation Semantics**;
+- **HLTH-049 — Freshness, Current-Cycle & Multi-Input Version Alignment**;
+- **HLTH-050 — Distribution, Quantile, Unit & Normalization Preservation Boundaries**;
+- **HLTH-051 — Reconciliation Evidence, Provenance, Uncertainty & Restriction Propagation**;
+- **HLTH-052 — Multi-Hop Composition, Path-Specific Relevance & No Blind Status Propagation**;
+- **HLTH-053 — Historical Transformation Version, Rule Binding & Reassessment**;
+- **HLTH-054 — Reconciliation Relevance, Localization, Downstream Assessment & Causal Separation**.
+
+Key results:
+
+- Lineage identifies transformation/dependency relationships but never creates generic metric equations or status propagation;
+- every reconciliation binds exact transformation/version, inputs/roles/output, fields/keys/measures, grain/population/window and material current-cycle context;
+- joins use eligible populations, directional match/unmatched measures and explicit cardinality/fan-out rather than A+B=C row arithmetic;
+- duplicate/key effects can amplify joins and remain separately observable;
+- pure-filter population reconciliation applies only when the exact predicate/transformation semantics support it;
+- aggregation conservation is measure-specific; averages/ratios/quantiles/distinct counts are not generically composable;
+- dedupe binds duplicate equivalence and survivor selection; healthy output uniqueness does not rewrite upstream uniqueness;
+- bag union can be additive only under explicit conditions; distinct union and merge/upsert require overlap/action semantics;
+- nulls/defaults/casts/value derivation can introduce/remove/replace quality state and therefore prevent metric inheritance;
+- multi-input freshness binds versions actually consumed; output completion does not prove all inputs current;
+- distribution/quantile behavior propagates only through explicitly valid transformation/value/normalization semantics;
+- derived reconciliation retains availability, coverage, approximation/uncertainty, restriction and temporal limitations and cannot upgrade evidence quality;
+- derived aggregates are not automatically declassified;
+- multi-hop paths require explicit valid composition; A↔B plus B↔C does not automatically establish A↔C conservation;
+- path/consumer relevance depends on actual consumed fields/populations/versions, not asset-level reachability alone;
+- upstream violation can coexist with downstream meets and upstream meets can coexist with downstream violation;
+- reconciliation can localize mismatch but never establishes root cause by itself;
+- historical reconciliation uses then-effective Lineage/transformation/reconciliation versions and preserves reassessment history.
+
+## Group 06 handoff — Composite Health, Readiness Suitability & Progressive Result Timing
+
+Group 06 now composes fully qualified local and reconciliation Assessments while preserving every evidence/reference/waiver/status distinction.
+
+It must address:
+
+- whether/when an overall health representation is useful;
+- preservation/drill-down of component/dimension Assessments;
+- composition of meets/violates/warning/indeterminate/conflicting/unavailable/not-applicable plus Baseline typicality;
+- waived violations and bounded exceptions in summary health;
+- severity/criticality/priority versus health truth;
+- technical/business projections over one health truth;
+- readiness-suitability of specific health/reconciliation conditions;
+- evidence/result freshness, age and window alignment;
+- progressive result availability from operational facts through schema/core, enriched DQ/reconciliation/distribution, diagnostics/RCA and retrospective results;
+- pending slower evidence and later broader reassessment;
+- AUTH-023 control-use eligibility plus actual freshness/comparability/availability/maturity requirements;
+- passive monitoring remaining non-blocking absent explicit gate/control semantics.
+
+Preserve:
+
+**health Assessment ≠ readiness Assessment ≠ gate decision ≠ enforcement ≠ actual execution**.
+
+A component can be control-eligible yet currently unsuitable because evidence is stale, unavailable, indeterminate or not aligned to the target execution opportunity.
 
 ## Metric-health principles retained for later groups
 
 ### Metric profiles and anti-bloat
-A metric/check needs identifiable purpose and a governed profile role. Availability is not enough reason to compute/store/display/propagate it.
+A metric/check needs identifiable purpose and governed profile role. Availability is not enough reason to compute/store/display/propagate it.
 
 ### Baseline and threshold separation
 Baseline remains descriptive; typicality never creates a normative criterion. Relative Expectations can explicitly reference Baselines without converting the Baseline concept into normative truth.
 
 ### Transformation-aware propagation
-For A+B→C, row counts, null rates, quantiles, violations or waivers do not automatically propagate or combine. Group 05 owns transformation-aware relationships.
+For A+B→C, only explicit transformation-aware reconciliation relationships compose local evidence. Lineage never carries local metric/status truth downstream by itself.
 
 ### Technical versus business health
 Technical/business/executive/audit views remain authorized projections over one truth. Group 06 defines health-composition requirements; Phase 008 later defines Explanation/UX.
 
 ### Progressive result timing
-Group 06 will distinguish immediate operational facts, fast schema/core health, enriched DQ/distribution, deeper diagnostics/RCA and retrospective/post-ops health. Phase 009 characterizes actual source latency/support; Phase 010 selects architecture/performance budgets.
+Group 06 defines functional freshness/maturity semantics; Phase 009 characterizes actual source latency/support; Phase 010 selects architecture/performance budgets.
 
 ## Phase boundaries
 
@@ -258,8 +305,8 @@ Phase 006 must not:
 
 - redefine Phase 004 evidence sufficiency;
 - override Phase 005 authority, authorization, control-use eligibility, or disclosure governance;
-- create convenience concepts for Metric, Metric Profile, Check, Schema, Baseline Reference Set, Threshold, Waiver, Severity, Drift/Anomaly Result, Health Result or Composite Health absent a proven ownership gap;
-- turn extraction, structural compatibility or Baseline typicality into normative health automatically;
+- create convenience concepts for Metric, Metric Profile, Check, Schema, Baseline Reference Set, Threshold, Waiver, Severity, Reconciliation, Metric Propagation, Drift/Anomaly Result, Health Result or Composite Health absent a proven ownership gap;
+- turn extraction, structural compatibility, Baseline typicality or upstream health into downstream normative health automatically;
 - allow authority to manufacture empirical comparability or evidence sufficiency;
 - collapse warning, violation, severity and waiver into one status;
 - use hidden threshold tolerances/boundaries/vendor defaults;
@@ -270,12 +317,13 @@ Phase 006 must not:
 - hide approximation/sampling/low-volume limitations behind false precision;
 - introduce a universal comparability/confidence/drift/anomaly/health score;
 - globally reset metrics/Baselines merely because any DDL changed;
-- propagate upstream metrics or statuses blindly through Lineage;
+- propagate upstream metrics, Baseline status, warning, violation, severity or waiver blindly through Lineage;
+- infer causal attribution from reconciliation/localization;
 - require production-path computation merely because a metric is useful for monitoring;
 - weaken evidence standards for latency;
 - create separate technical/business health truths;
-- select GitHub Actions, Unity Catalog, Metric Views/DQX, anomaly/statistical algorithms, storage, streaming, caching, graph, orchestration, IAM, redaction, or service architecture.
+- select GitHub Actions, Unity Catalog, Metric Views/DQX, Spark/SQL reconciliation implementation, anomaly/statistical algorithms, storage, streaming, caching, graph, orchestration, IAM, redaction, or service architecture.
 
 ## Phase direction
 
-**Phase 006 is ACTIVE. Groups 01–04 are accepted with HLTH-001–HLTH-040. Group 05 — Transformation Reconciliation & Metric Propagation is next and has not started.**
+**Phase 006 is ACTIVE. Groups 01–05 are accepted with HLTH-001–HLTH-054. Group 06 — Composite Health, Readiness Suitability & Progressive Result Timing is next and has not started.**
