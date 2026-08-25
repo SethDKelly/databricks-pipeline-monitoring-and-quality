@@ -129,10 +129,27 @@ The audience can be told that a supported upstream cause exists but cannot see t
 - legal/audit-grade causality guarantees by default;
 - quantitative percentage attribution as a required capability.
 
+## Later refinement — Phases 004, 005 and 007 Group 05
+
+Phase 004 REF-013–REF-020 finalizes the epistemic vocabulary as `proposed`, `supported`, `weakened`, `unresolved`, `rejected`, `confirmed` and defines multidimensional causal evidence, material alternatives, confirmation evidence gates, multiple contributors and challenge after confirmation.
+
+Phase 005 AUTH-034 establishes that `confirmed` is independently authority/capability gated in addition to the REF-017 evidence standard. No title, model, service principal or incident role self-authorizes confirmation.
+
+Phase 007 Group 05 [`OPS-060–OPS-066`](../../phase_007/05_investigation_localization_causal_handoff/README.md) further fixes the Investigation handoff boundary:
+
+- Investigation leads/localization are not causal claim states;
+- the moment cause/contribution/enabling/triggering/preventing/material-influence is asserted, the proposition belongs here;
+- first observed deviation, earliest evidenced change, reconciliation boundary, first post-change run, shared consumed version, rollback/retry contrast, Lineage distance and prospective blast-radius membership are evidence/context rather than causal status;
+- Investigation priority or closure never transfers into claim status;
+- confirmation remains REF-017 + AUTH-034 gated;
+- operational resolution can coexist with non-confirmed causal state;
+- historical claim state remains challengeable/non-rewriting when Investigation later reopens.
+
+The earlier generic `uncertainty/confidence rationale` wording is qualitative rationale only and must not be interpreted as a universal numeric confidence score.
+
 ## Deferred questions
 
-- exact operational evidence/authority standard for `confirmed`;
-- first-MVP epistemic status vocabulary;
-- whether automated systems may ever confirm claims without human review;
-- how quantitative contribution/attribution should be modeled if future scenarios require it;
-- whether causal chains among several claims require additional structured relationship semantics beyond claim references.
+- concrete confirmation profiles for particular operational claim classes;
+- whether quantitative contribution/attribution should be modeled if future scenarios require it;
+- whether causal chains among several claims require additional structured relationship semantics beyond claim references;
+- concrete automated causal-analysis mechanisms, which remain later implementation work.

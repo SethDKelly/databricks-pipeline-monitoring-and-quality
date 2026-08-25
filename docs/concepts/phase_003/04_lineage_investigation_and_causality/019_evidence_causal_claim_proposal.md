@@ -65,3 +65,11 @@ Propose `B population reduction contributed to C row loss`; propose `join-key nu
 ## Non-goals
 
 Hypothesis-generation algorithm selection, automatic confirmation, numeric probability assignment, or single-root enforcement.
+
+## Later refinement — Phase 007 Group 05
+
+OPS-060 sharpens this synchronization into an explicit semantic handoff. Investigation may retain leads/localization without creating a Causal Claim. A claim is required when the asserted proposition says a condition **caused, contributed to, enabled, triggered, prevented or materially influenced** a defined outcome.
+
+The handoff must bind cause, effect, role where asserted, context/time, material mechanism/transmission assumptions and motivating evidence. Investigation priority, first-deviation position, graph proximity, first post-change run, shared version or remediation outcome never transfers as epistemic status.
+
+After creation, REF-013–REF-020 alone govern causal epistemic evaluation; `confirmed` additionally requires REF-017 plus AUTH-034/Capability Authorization. OPS-061/062 explicitly prohibit Investigation closure, analyst consensus or operational resolution from upgrading a claim.

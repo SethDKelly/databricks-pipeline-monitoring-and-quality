@@ -63,3 +63,18 @@ B volume decline and join-key null increase remain two supported contributing cl
 ## Non-goals
 
 Incident SLA policy, automatic confirmation authority, numeric confidence scoring, or quantitative percent attribution.
+
+## Later refinement — Phase 007 Group 05
+
+OPS-051/058/061–063 refine the synchronization without changing ownership:
+
+- Investigation lead branches may exist before any Causal Claim is proposed;
+- multiple simultaneous deviations do not automatically mean multiple causes;
+- compatible contributors and mutually exclusive alternatives remain distinct;
+- causal claim statuses remain Causal Claim truth and use the final REF-014 vocabulary `proposed`, `supported`, `weakened`, `unresolved`, `rejected`, `confirmed`;
+- Investigation closure uses operational inquiry dispositions and merely references linked claim states;
+- the earlier `multi-causal` Investigation wording is a summary over independently established linked causal claims, not Investigation-owned causal truth;
+- operational resolution/remediation can close an Investigation while causal state remains non-confirmed;
+- material late evidence can reopen the Investigation and challenge claims without rewriting the earlier closure/status knowledge cut.
+
+No ranking, vote, duration or closure rule may promote a claim. `confirmed` remains REF-017 + AUTH-034 gated.

@@ -1,6 +1,6 @@
 # Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement
 
-**Status:** IN PROGRESS — Groups 01–04 accepted; OPS-001–OPS-049 accepted; Group 05 next
+**Status:** IN PROGRESS — Groups 01–05 accepted; OPS-001–OPS-066 accepted; Group 06 next
 
 ## Goal
 
@@ -14,7 +14,7 @@ Phase 007 uses **`OPS-###`** refinement contracts.
 
 `OPS-###` means operational/topology/change/impact/control refinement over accepted concepts. It does **not** create an `Operations` concept, does not extend SYN/REF/AUTH/HLTH ranges, and must not become an umbrella state that absorbs Lineage, Change, Investigation, Impact, Execution Gate, Propagation Safeguard or Execution History truth.
 
-Accepted range so far: **OPS-001–OPS-049**.
+Accepted range so far: **OPS-001–OPS-066**.
 
 ## Accepted handoff from Phase 006
 
@@ -75,16 +75,18 @@ No new concept is required. Execution History remains the truth owner for actual
 See [`04_execution_reconstruction_dependency_sequence/README.md`](04_execution_reconstruction_dependency_sequence/README.md).
 
 ### Group 05 — Investigation Lifecycle, First-Deviation Localization & Causal Handoff
-**Status:** **Next — not started.**
+**Status:** **Accepted — OPS-050–OPS-066; I05-01–I05-34 pass.**
 
-Refine Investigation question/outcome binding, candidate generation, evidence collection, first-deviation localization, competing hypotheses, narrowing/escalation, and closure. Define the exact handoff from useful operational localization/reconciliation into explicit Causal Claim semantics without promoting proximity, first observation, first post-change run, shared version or Investigation closure into cause.
+Refines exact Investigation question/outcome/scope/time/knowledge-cut binding, inquiry lifecycle/scope revision/reopen, provenance-bearing candidate leads and evidence roles, precise first-observed/earliest-evidenced/transformation-boundary/consumer-effect localization, Lineage/health/reconciliation/execution/version localization, multiple branches, evidence-bearing lead exclusion, explicit lead→Causal Claim handoff, REF/AUTH confirmation separation, operational closure versus causal status, restricted evidence and analyst/automation parity.
+
+No new concept is required. Investigation remains the bounded-inquiry owner; Causal Claim remains the cause→effect proposition and epistemic-state owner.
 
 See [`05_investigation_localization_causal_handoff/README.md`](05_investigation_localization_causal_handoff/README.md).
 
 ### Group 06 — Impact, Consumer Encounter, Exposure & Consequence
-**Status:** Planned.
+**Status:** **Next — not started.**
 
-Refine prospective candidate/reachability versus actual encounter/exposure, consumer/version/path evidence, safe-versus-stale version use, observed downstream effect, technical/analytical/business consequence, unknown/non-exposure evidence, and causal attribution separation.
+Refine prospective candidate/reachability versus actual encounter/exposure, consumer/version/path evidence, safe-versus-stale version use, observed downstream effect, technical/analytical/business consequence, unknown/non-exposure evidence, and causal attribution separation. Consume Investigation/localization/Causal Claim context without letting any of them manufacture encounter truth.
 
 See [`06_impact_consumer_encounter_exposure_consequence/README.md`](06_impact_consumer_encounter_exposure_consequence/README.md).
 
@@ -122,7 +124,7 @@ The order is dependency-driven:
 7. **Safeguard and Gate separately** — they protect different boundaries and have different state/evidence semantics.
 8. **Historical replay last** — cross-group time/version correctness is the final composition test.
 
-## Accepted operational chain through Group 04
+## Accepted operational chain through Group 05
 
 The Phase 007 operational foundation now preserves:
 
@@ -132,9 +134,13 @@ For prospective review it additionally preserves:
 
 **exact proposal + review knowledge cut → then-effective Lineage + explicit planned topology delta scenario → downstream/path-loss candidates → field/key/population/interface/consumer/version relevance → proposal-bound structural/metric/reference/reconciliation/readiness/control review → authority/coverage limitations**.
 
-For actual runtime reconstruction it now preserves:
+For actual runtime reconstruction it preserves:
 
 **expected/opportunity/control context → actual execution identity → partial lifecycle/attempt assembly → actual sequence/waiting evidence → run-specific implementation/input version binding → produced output/version binding → multi-input version set → historical as-known/retrospective reconstruction**.
+
+For Investigation it now preserves:
+
+**exact question/outcome/scope/cut → evidence-backed leads → source-owned evidence assembly → bounded localization → narrowing/exclusion under negative-evidence burden → explicit causal proposition handoff → independent Causal Claim evaluation → operational closure/reopen history**.
 
 No link in these chains automatically creates the next.
 
@@ -178,6 +184,23 @@ For execution reconstruction specifically:
 - current/fresh/ready input is an Assessment/readiness question over the reconstructed version set;
 - historical reconstruction is bitemporal and non-rewriting.
 
+For Investigation specifically:
+
+- Investigation question/trigger does not presume a cause;
+- lead/candidate state is not Causal Claim state;
+- first observed deviation, earliest evidenced change, first reconciliation boundary and first consumer effect are distinct propositions;
+- localization/search stop point is not a root cause;
+- reconciliation mismatch, first post-change run, shared version and rollback/retry contrast remain evidence rather than cause;
+- multiple deviations/branches remain first-class;
+- exclusion requires REF-sufficient negative/discriminating evidence;
+- causal language triggers explicit Causal Claim creation;
+- Investigation priority/closure/remediation cannot transfer into claim status;
+- `confirmed` remains REF-017 + AUTH-034 gated;
+- operational resolution can coexist with unresolved/non-confirmed causality;
+- restricted evidence can limit localization without becoming absence;
+- analyst and automated assistance use the same provenance/evidence semantics;
+- historical Investigation/localization/reopen is bitemporal and non-rewriting.
+
 ## Cross-group invariants
 
 Preserve throughout Phase 007:
@@ -206,17 +229,21 @@ Preserve throughout Phase 007:
 - actual precedence ≠ waiting ≠ consumption;
 - missing telemetry ≠ no run/output/consumption;
 - duplicate/common-derived telemetry ≠ independent corroboration;
-- first-observed deviation ≠ root cause;
-- Investigation ≠ Causal Claim truth;
+- Investigation lead/localization ≠ Causal Claim;
+- first-observed/earliest-evidenced/boundary localization ≠ root cause;
+- Investigation closure/operational resolution ≠ causal confirmation;
+- lack of lead support ≠ exclusion/rejection;
+- Causal Claim `confirmed` remains evidence + authority gated;
 - reachable/candidate ≠ exposed ≠ downstream effect ≠ consequence ≠ causal attribution;
 - `not exposed` and `not candidate` require adequate bounded coverage;
+- confirmed upstream cause ≠ every reachable consumer exposed;
 - safeguard configured/requested/active ≠ materially enforced/preventive;
 - safeguard release ≠ healthy/fresh output;
 - readiness ≠ gate decision ≠ enforcement ≠ execution;
 - override ≠ prerequisite ready;
 - configured fallback ≠ fallback actually applied;
 - control-induced delay/non-delivery is evidence/Impact, not automatically a defect or cause;
-- current topology/change/control/review/execution reconstruction ≠ historical state;
+- current topology/change/control/review/execution/Investigation reconstruction ≠ historical state;
 - later evidence/correction ≠ what was known then;
 - authority/authorization/disclosure boundaries from Phase 005 remain intact;
 - health semantics from Phase 006 remain intact.
@@ -231,7 +258,9 @@ Phase 007 must remain implementation-neutral. Do not select:
 - CDC/change-capture architecture;
 - deployment fingerprint/attestation mechanism;
 - run/version-attestation source integration;
-- change-risk scoring algorithm;
+- change-risk or RCA/hypothesis scoring algorithm;
+- LLM/agent investigation workflow;
+- ticket/case-management system;
 - scheduler/orchestrator;
 - Databricks Workflows dependency mechanism;
 - queue/event bus;
@@ -240,7 +269,6 @@ Phase 007 must remain implementation-neutral. Do not select:
 - polling versus event-driven mechanism;
 - cache/streaming strategy;
 - concrete timeout/latency SLA;
-- RCA/causal algorithm;
 - integration source mapping that belongs to Phase 009;
 - technical architecture that belongs to Phase 010.
 
@@ -254,4 +282,4 @@ Phase 010 owns technical architecture and implementation placement.
 
 ## Phase direction
 
-**Phase 007 Groups 01–04 are accepted with OPS-001–OPS-049. Group 05 — Investigation Lifecycle, First-Deviation Localization & Causal Handoff is next and has not started.**
+**Phase 007 Groups 01–05 are accepted with OPS-001–OPS-066. Group 06 — Impact, Consumer Encounter, Exposure & Consequence is next and has not started.**

@@ -12,7 +12,8 @@ Canonical repository phase status is maintained in [`../../README.md#current-sta
 - **Group 02 is complete with OPS-010–OPS-020; C02-01–C02-24 pass.**
 - **Group 03 is complete with OPS-021–OPS-033; P03-01–P03-30 pass.**
 - **Group 04 is complete with OPS-034–OPS-049; X04-01–X04-32 pass.**
-- **Group 05 — Investigation Lifecycle, First-Deviation Localization & Causal Handoff is next.**
+- **Group 05 is complete with OPS-050–OPS-066; I05-01–I05-34 pass.**
+- **Group 06 — Impact, Consumer Encounter, Exposure & Consequence is next.**
 - Accepted concept count remains 24; SYN-001–SYN-035, REF-001–REF-030, AUTH-001–AUTH-053 and HLTH-001–HLTH-066 remain unchanged.
 
 ## Accepted Group 01 Lineage rules
@@ -130,6 +131,42 @@ Preserve:
 
 See [`04_execution_reconstruction_dependency_sequence/README.md`](04_execution_reconstruction_dependency_sequence/README.md).
 
+## Accepted Group 05 Investigation / Localization / Causal Handoff rules
+
+Preserve:
+
+- Investigation remains the bounded-inquiry truth owner; Causal Claim remains the causal proposition/epistemic owner;
+- exact Investigation question/outcome, subject/population/use scope, event/effective window and knowledge cut are first-class;
+- scope revision is versioned/non-rewriting;
+- Investigation lifecycle `open`/`active`/`paused`/`closed`/reopen is independent of causal status;
+- candidate/lead state belongs to Investigation and does not use Causal Claim epistemic labels;
+- lead generation basis/provenance/limitations remain explicit;
+- linked evidence remains source-owned; Investigation may assign inquiry-specific evidence roles only;
+- contradiction, gaps, restrictions and common derivation remain first-class;
+- first observed deviation ≠ earliest evidenced state change ≠ first reconciliation/transformation boundary ≠ first downstream consumer effect;
+- every `first` localization claim is bounded to searched semantic/topology/time/version/coverage scope;
+- first observed/earliest evidenced/localized boundary ≠ root cause;
+- Lineage reachability/path length/directness ≠ causal ranking;
+- reconciliation/structural/health boundary localization ≠ causality;
+- first post-change run/shared version/rollback/retry contrast/temporal precedence are evidence, not cause;
+- mixed/unknown version or ordering evidence limits localization instead of being guessed;
+- multiple simultaneous/competing/compatible branches remain valid;
+- lead exclusion/narrowing requires REF-sufficient negative/discriminating evidence;
+- lack of lead support ≠ exclusion/rejection;
+- causal language (`caused`, `contributed`, `enabled`, `triggered`, `prevented`, `materially influenced`) requires an explicit Causal Claim;
+- Investigation priority/localization does not transfer as Causal Claim status;
+- Causal Claim statuses remain REF-014 `proposed`, `supported`, `weakened`, `unresolved`, `rejected`, `confirmed`;
+- `confirmed` requires REF-017 evidence plus AUTH-034/Capability Authorization; closure/consensus/remediation/model output cannot substitute;
+- operational resolution/actionability ≠ causal confirmation;
+- unresolved/no-actionable-conclusion closure is valid;
+- historical Investigation/localization is bitemporal and late evidence can justify reopen without rewriting prior closure;
+- restricted/opaque evidence limits localization without becoming absence or an authorization bypass;
+- analyst and automated assistance follow identical provenance/evidence discipline; origin does not create truth or authority;
+- no universal RCA/hypothesis/confidence score is accepted;
+- prospective blast-radius membership does not become retrospective causal support by itself.
+
+See [`05_investigation_localization_causal_handoff/README.md`](05_investigation_localization_causal_handoff/README.md).
+
 ## Permanent Phase 007 boundaries
 
 Preserve:
@@ -148,8 +185,10 @@ Preserve:
 - run success ≠ output existence/health;
 - missing telemetry ≠ no event/run/output/consumption;
 - duplicate/common-derived telemetry ≠ independent corroboration;
+- Investigation lead/localization ≠ Causal Claim;
 - first-deviation localization ≠ root cause;
-- Investigation ≠ Causal Claim truth;
+- Investigation closure/operational resolution ≠ Causal Claim confirmation;
+- confirmed upstream cause ≠ consumer exposure;
 - candidate/reachable ≠ exposed ≠ effect ≠ consequence ≠ causal attribution;
 - `not exposed` requires adequate opportunity/path coverage;
 - Safeguard proposal/configuration/active state ≠ enforcement ≠ prevented exposure;
@@ -163,26 +202,29 @@ Preserve:
 - control-induced delay/staleness/non-delivery remains observable/assessable and is not automatically defect/cause;
 - historical operational replay uses event/effective time plus knowledge cut and remains non-rewriting.
 
-## Group 05 entry contract
+## Group 06 entry contract
 
-Group 05 consumes OPS-001–OPS-049 and must turn topology/change/health/execution evidence into a structured Investigation without causal promotion.
+Group 06 consumes OPS-001–OPS-066 and must establish actual downstream encounter/exposure/effect/consequence independently of Investigation localization or causal context.
 
 It should explicitly test:
 
-- investigation question/outcome/scope/time binding;
-- candidate generation from Lineage, Change, execution and reconciliation evidence;
-- first-observed deviation versus earliest evidenced state change versus transformation-boundary mismatch versus first downstream effect;
-- multiple simultaneous/compatible upstream deviations;
-- first post-change run with insufficient discriminatory causal evidence;
-- retries/reruns/backfills altering apparent sequence;
-- stale/mixed input versions relevant to localization;
-- incomplete/ambiguous run/version evidence limiting localization;
-- late evidence changing retrospective first-deviation localization without rewriting what investigators knew then;
-- handoff from operational hypothesis/lead into explicit Causal Claim REF-013–REF-020 state;
-- Investigation closure with causal status still unresolved/weakened/rejected/supported rather than confirmed.
+- reachable candidate with no consumer opportunity/refresh/query after suspect state;
+- safe-prior-version encounter versus suspect-version encounter;
+- unknown consumed version despite consumer activity;
+- direct query/read evidence for suspect version;
+- cache behavior serving stale but safe prior state;
+- consumer effect observed without sufficient encounter evidence;
+- exposure established with no observed downstream degradation;
+- technical effect versus analytical/business consequence;
+- business-use/decision consequence evidence;
+- supported/confirmed upstream cause with an unexposed reachable consumer;
+- `not exposed` requiring complete bounded version/path/opportunity coverage;
+- alternate publication/consumption paths;
+- restricted consumer/path evidence;
+- first consumer effect differing from first actual encounter.
 
-Do not let Group 05 promote first deviation, temporal precedence, shared version, dependency path, deployment proximity, reconciliation mismatch or analyst closure into root cause/confirmation.
+Do not let Group 06 turn Investigation localization, Causal Claim status, refresh timing, Lineage reachability, criticality or prospective candidate membership into proof of actual exposure/consequence.
 
 ## Architecture boundary
 
-Do not select graph database, graph query language, Lineage ingestion source, event store, event schema, CI/CD/runtime telemetry source integration, deployment fingerprinting mechanism, static-analysis/change-risk algorithm, scheduler/orchestrator, safeguard/quarantine mechanism, gate implementation, queue/event bus, cache/streaming topology, RCA algorithm, persistence schema, source integration or concrete latency/timeout SLA in Phase 007 functional refinement.
+Do not select graph database, graph query language, Lineage ingestion source, event store, event schema, CI/CD/runtime telemetry source integration, deployment fingerprinting mechanism, static-analysis/change-risk/RCA algorithm, LLM/agent workflow, scheduler/orchestrator, safeguard/quarantine mechanism, gate implementation, queue/event bus, cache/streaming topology, persistence schema, source integration or concrete latency/timeout SLA in Phase 007 functional refinement.

@@ -135,9 +135,33 @@ A restricted upstream dependency is known to be material but cannot be disclosed
 - broadening authorization;
 - selecting an AI/agent investigation implementation.
 
+## Later refinement — Phase 007 Group 05
+
+Phase 007 Group 05 accepts [`OPS-050–OPS-066`](../../phase_007/05_investigation_localization_causal_handoff/README.md) as the operational refinement of Investigation.
+
+The refinement establishes:
+
+- exact question/outcome/scope/time/knowledge-cut binding and non-rewriting scope revision;
+- a minimal lifecycle of `open`, `active`, `paused`, `closed`, with reopen preserving prior closure;
+- candidate/lead state as Investigation-owned inquiry organization rather than Causal Claim epistemic status;
+- evidence-role, contradiction, gap, restriction and common-derivation tracking without copying source truth;
+- distinct localization propositions for first observed deviation, earliest evidenced state change, first reconciliation/transformation boundary and first downstream consumer effect;
+- Lineage/health/reconciliation/execution/version localization without causal promotion;
+- multiple simultaneous/competing/compatible lead branches without one forced root cause;
+- bounded lead exclusion only with REF-sufficient negative/discriminating evidence;
+- explicit handoff to Causal Claim once cause/contribution/enabling/triggering/preventing/material-influence language is asserted;
+- operational-resolution/closure semantics independent from Causal Claim status;
+- bitemporal late-evidence/reopen behavior and restricted-evidence handling;
+- equal provenance/evidence discipline for analyst and automated investigation assistance.
+
+Accordingly, terms such as `root`, `culprit`, `responsible`, `first cause`, or equivalent must not be represented merely as Investigation lead/localization labels when they assert causality. They require Causal Claim semantics.
+
+The earlier `multi-causal` closure wording is understood as an Investigation summary over linked causal claims; Investigation itself never owns the causal truth that multiple causes are established.
+
 ## Deferred questions
 
-- minimum lifecycle/status vocabulary for the first MVP;
+- exact first-MVP UI/display vocabulary for Investigation lifecycle and lead dispositions;
 - whether related/nested Investigations are needed beyond explicit cross-references;
 - rules for automatically opening Investigations from Assessments or Change-Intent realization mismatches;
-- retention/closure policies for low-value or duplicate investigations.
+- retention/closure policies for low-value or duplicate investigations;
+- concrete automated/analyst investigation mechanisms, which remain implementation work rather than concept semantics.
