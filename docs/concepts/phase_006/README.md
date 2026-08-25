@@ -1,6 +1,6 @@
 # Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement
 
-**Status:** ACTIVE — Groups 01–03 accepted; HLTH-001–HLTH-029 accepted; Group 04 next
+**Status:** ACTIVE — Groups 01–04 accepted; HLTH-001–HLTH-040 accepted; Group 05 next
 
 ## Goal
 
@@ -51,14 +51,16 @@ Defines bounded Baseline reference membership, multidimensional comparability, f
 See [`03_baselines_comparability_distribution_statistical_context/README.md`](03_baselines_comparability_distribution_statistical_context/README.md).
 
 ### Group 04 — Expectations, Thresholds, Margins, Waivers & Assessment Semantics
-**Status:** **Next — not started.**
+**Status:** **Accepted — HLTH-030–HLTH-040.**
 
-Define functional evaluation against normative Expectations versus descriptive Baselines, absolute/relative/asymmetric tolerance bands, warning/failure semantics, bounded exception/waiver representation, normative conflict, evidence-limited boundary evaluation, and dimension-specific Assessment vocabulary.
+Defines exact normative criterion binding, threshold boundary/unit/denominator semantics, warning/tolerance/proximity bands, relative/reference-based rules, evidence-suitability constraints near boundaries, basis-specific criterion result vocabulary, Baseline/Expectation coexistence, multiple-rule conflict, waiver/exception disposition, severity separation, and historical reassessment.
+
+See [`04_expectations_thresholds_margins_waivers_assessment/README.md`](04_expectations_thresholds_margins_waivers_assessment/README.md).
 
 ### Group 05 — Transformation Reconciliation & Metric Propagation
-**Status:** Planned — not started.
+**Status:** **Next — not started.**
 
-Define transformation-aware metric relationships for joins, filters, aggregations, deduplication, unions and other patterns; distinguish local upstream evidence, propagated/relevant context, and derived reconciliation expectations; prohibit recursive metric copying merely because Lineage exists.
+Define transformation-aware metric relationships for joins, filters, aggregations, deduplication, unions and other patterns; distinguish local upstream evidence, downstream-relevant context and derived reconciliation measurements; prohibit recursive metric/status copying merely because Lineage exists.
 
 ### Group 06 — Composite Health, Readiness Suitability & Progressive Result Timing
 **Status:** Planned — not started.
@@ -87,20 +89,19 @@ Accepted contracts:
 
 Key results:
 
-- no new concept is required; metric definitions/meaning synchronize with Semantic Definition/Entity Identity, measured results are Observation, comparative/normative interpretation is Assessment, and profile selection remains the governed non-concept structure accepted in AUTH-017;
+- metric definitions/meaning synchronize with Semantic Definition/Entity Identity, measured results are Observation, comparative/normative interpretation is Assessment, and profile selection remains the governed non-concept structure accepted in AUTH-017;
 - a measurement binds subject, definition/version, grain/population, evaluation window, relevant output/data/schema/current-cycle context, and material temporal provenance;
 - metric values and observed structural facts are not themselves health pass/fail;
 - canonical families are operational/output, temporal/freshness, structural/schema, volume/population, completeness, uniqueness/key integrity, validity/domain, distribution/shape, relational/transformation integrity, and business-semantic measurement;
-- semantic applicability, governed profile selection, technical support/computability, current evidence availability, and Assessment outcome remain independent;
-- profile roles are core operational/table, critical-field/business, transformation-specific reconciliation, and diagnostic/on-demand; control eligibility and audience are not profile roles;
-- technical availability never creates automatic profile membership; routine profiles remain purposeful and bounded;
+- semantic applicability, profile selection, technical support/computability, current availability and Assessment outcome remain independent;
+- profile roles are core operational/table, critical-field/business, transformation-specific reconciliation and diagnostic/on-demand;
+- technical availability never creates automatic profile membership;
 - material metric-definition changes require explicit version/revision handling and later comparability review;
-- Observations retain definition/source/scope/time/coverage/approximation/restriction provenance;
 - local metric existence never implies downstream propagation.
 
 ## Accepted Group 02 — HLTH-009–HLTH-018
 
-Group 02 preserves:
+Preserve:
 
 **declared/governed schema meaning ≠ normative structural Expectation/contract ≠ proposed/planned structural state ≠ realized structural Observation/Change ≠ compatibility Assessment**.
 
@@ -119,7 +120,6 @@ Accepted contracts:
 
 Key results:
 
-- no new Schema/Contract/Version/Compatibility concept is required;
 - compatibility binds the consumer-visible interface/contract and can differ by consumer/version;
 - add/drop/rename/reorder/type/precision/nullability/default/generated/key/grain/nested changes remain independently representable;
 - rename identity requires evidence and same names do not guarantee same meaning;
@@ -133,7 +133,7 @@ Key results:
 
 ## Accepted Group 03 — HLTH-019–HLTH-029
 
-Group 03 preserves:
+Preserve:
 
 **Observation ≠ reference-set membership ≠ Baseline summary/version ≠ comparative Assessment ≠ normative Expectation/health**.
 
@@ -153,65 +153,104 @@ Accepted contracts:
 
 Key results:
 
-- no new Reference Set, Statistical Profile, Drift Result or Anomaly concept is required;
-- available history is not automatically eligible reference history; membership/window/cohort/regime rules are explicit and provenance-bearing;
+- available history is not automatically eligible reference history;
 - comparability is multidimensional, conclusion-relative and never one universal numeric score;
 - bounded states include directly comparable, comparable under explicit normalization, non-comparable, insufficient reference, ambiguous, conflicting, unavailable, unknown/unresolved and not applicable;
 - fixed, rolling, seasonal/cadence, cohort and post-change/new-regime references are functional classes, not algorithms;
 - recency does not override calendar/cadence/cohort context;
-- realized semantic/structural breaks segment affected references only, while unaffected dimensions can retain continuity;
+- realized semantic/structural breaks segment affected references only;
 - new post-change Baselines derive from realized evidence rather than planned/target values;
-- reference sufficiency considers eligible observation count, temporal/cohort coverage, population/denominator size, operating variability and measurement limitations; no universal minimum count exists;
-- approximate/sampled metrics can be valid evidence, but material method uncertainty remains visible and method changes can create comparability breaks;
-- distribution references remain purpose-driven; quantiles require semantic ordering and no universal drift/divergence score is introduced;
-- explicit normalization can support a derived comparison while raw values remain non-comparable; the normalization itself is versioned/provenance-bearing;
-- rolling/adaptive Baselines require explicit membership, lag/holdout, exclusion and version semantics;
-- an Observation cannot silently redefine the reference used to assess itself;
-- `looks anomalous` alone cannot justify reference exclusion;
+- no universal minimum reference count exists;
+- approximate/sampled evidence retains method uncertainty;
+- distribution references remain purpose-driven and non-normative;
+- explicit normalization can support a derived comparison while raw values remain non-comparable;
+- adaptive Baselines require explicit membership, lag/holdout, exclusions and version semantics;
+- anomalous appearance alone cannot justify reference exclusion;
 - repeated abnormal behavior can become descriptively typical without becoming acceptable;
-- multiple Baselines can coexist; newest/largest/narrowest/broadest/closest never silently wins;
-- historical Baseline versions and Assessments remain preserved across refresh and regime replacement.
+- multiple Baselines can coexist without hidden newest/largest/narrowest/broadest precedence;
+- historical Baseline versions and Assessments remain preserved.
 
-## Group 04 handoff — Expectations, Thresholds, Margins, Waivers & Assessment Semantics
-
-Group 04 now defines normative evaluation over the evidence/reference semantics stabilized by Groups 01–03.
-
-It must address:
-
-- hard criteria versus warning/failure bands;
-- absolute, relative and asymmetric thresholds/margins;
-- exact boundary semantics and units/denominators;
-- normative Expectation versus descriptive Baseline results;
-- low-volume/approximate/uncertain evidence near normative boundaries;
-- no-Baseline/non-comparable/ambiguous-Baseline cases;
-- multiple normative rules versus genuine conflict;
-- bounded waiver/exception/suspension without false pass;
-- dimension-level normative Assessment vocabulary;
-- severity/priority versus health-state separation;
-- historical rule/waiver/evidence binding and reassessment.
+## Accepted Group 04 — HLTH-030–HLTH-040
 
 Preserve:
 
-**authoritative Expectation ≠ sufficient current evidence ≠ descriptive typicality**.
+**Expectation/criterion ≠ Observation evidence ≠ Baseline comparison ≠ normative Assessment outcome ≠ warning/proximity ≠ severity/priority ≠ waiver/response disposition ≠ composite health**.
 
-A perfectly authoritative threshold can remain unresolved when current measurement uncertainty/coverage is insufficient. Conversely, a new post-change regime can have no Baseline yet while a current Observation is still sufficient to evaluate an explicit normative requirement.
+Accepted contracts:
+
+- **HLTH-030 — Normative Criterion Binding & Evaluation Basis**;
+- **HLTH-031 — Threshold Direction, Boundary, Unit & Denominator Semantics**;
+- **HLTH-032 — Warning Bands, Tolerance Margins & Proximity Semantics**;
+- **HLTH-033 — Relative / Reference-Based Criterion Semantics**;
+- **HLTH-034 — Evidence Suitability, Uncertainty & Boundary Evaluation**;
+- **HLTH-035 — Normative Assessment Result Vocabulary & Basis Separation**;
+- **HLTH-036 — Baseline and Expectation Coexistence in Assessment**;
+- **HLTH-037 — Multiple Expectations, Composition & Normative Conflict**;
+- **HLTH-038 — Waiver, Exception, Suspension & Response-Disposition Semantics**;
+- **HLTH-039 — Severity, Priority & Escalation Separation from Criterion Outcome**;
+- **HLTH-040 — Historical Criterion/Rule Binding, Correction & Reassessment**.
+
+Key results:
+
+- criteria bind exact subject/dimension, measurement/structural definition, grain/population/window/context, operator/direction, inclusive/exclusive boundaries, unit/denominator and required reference basis;
+- display labels/vendor defaults never invent comparison semantics;
+- warning/proximity can coexist with `meets`; warning is not a synonym for violation or severity;
+- relative criteria explicitly bind their reference, and a required non-comparable/unavailable Baseline can make that specific normative evaluation indeterminate;
+- authoritative criteria do not overcome insufficient/approximate/misaligned evidence;
+- when material measurement uncertainty spans a boundary, preserve indeterminate/insufficient evidence absent an explicit valid uncertainty treatment;
+- normative criterion outcomes use at least `meets`, `violates`, `indeterminate/insufficient evidence`, `conflicting`, `unavailable`, and `not applicable`;
+- Baseline typicality and normative outcome coexist independently;
+- no Baseline is required for an independently evaluable explicit Expectation;
+- distinct-dimension/context rules can coexist while same-proposition conflicting rules remain unresolved absent accepted authority/composition semantics;
+- no strictest/loosest/newest/business/technical/highest-severity hidden precedence;
+- `violates + waived response` is distinct from an exception that makes the criterion non-applicable;
+- waiver does not mutate evidence or automatically propagate to other consequences such as gate control;
+- severity/priority/escalation is separate from criterion outcome and Criticality does not manufacture severity/Impact;
+- missing telemetry is not a violation without sufficient opportunity/coverage establishing absence;
+- historical rule/reference/waiver versions and corrected-evidence reassessments remain non-rewriting.
+
+## Group 05 handoff — Transformation Reconciliation & Metric Propagation
+
+Group 05 now defines cross-transformation relationships over fully qualified local measurement/reference/normative semantics.
+
+It must address:
+
+- local metric versus upstream/downstream relevant evidence versus a derived reconciliation measurement;
+- joins: eligible populations, matches/unmatched records, fan-out, key completeness and duplicate effects;
+- filters: intentional included/excluded populations and reconciliation;
+- aggregations: conservation only where semantics support it;
+- deduplication and selected-record/uniqueness behavior;
+- unions/merges and source contribution/overlap;
+- null introduction/removal/defaulting through transformations;
+- current-cycle/freshness alignment across multiple inputs;
+- distribution/quantile relationships only when meaning is preserved;
+- normalization/denominator/grain alignment;
+- evidence uncertainty/restriction/provenance across derived reconciliation;
+- multiple upstream abnormal contributors without forced causal attribution;
+- independent downstream Expectations/Assessments over reconciliation measures.
+
+Preserve:
+
+**Lineage relation ≠ metric propagation ≠ status propagation ≠ causality**.
+
+A local upstream `violates`, `warning`, `atypical`, severity or waiver state does not automatically become a downstream state. Reconciliation must derive a new proposition/measurement whose semantics follow the transformation.
 
 ## Metric-health principles retained for later groups
 
 ### Metric profiles and anti-bloat
-A metric/check needs an identifiable purpose and governed profile role. Availability is not enough reason to compute/store/display/propagate it.
+A metric/check needs identifiable purpose and a governed profile role. Availability is not enough reason to compute/store/display/propagate it.
 
 ### Baseline and threshold separation
-Baseline remains descriptive. Typicality never creates a normative requirement and adaptive reference behavior never approves repeated defects.
+Baseline remains descriptive; typicality never creates a normative criterion. Relative Expectations can explicitly reference Baselines without converting the Baseline concept into normative truth.
 
 ### Transformation-aware propagation
-For A+B→C, row counts, null rates, quantiles or other metrics do not automatically propagate or combine. Group 05 owns transformation-aware relationships.
+For A+B→C, row counts, null rates, quantiles, violations or waivers do not automatically propagate or combine. Group 05 owns transformation-aware relationships.
 
 ### Technical versus business health
 Technical/business/executive/audit views remain authorized projections over one truth. Group 06 defines health-composition requirements; Phase 008 later defines Explanation/UX.
 
 ### Progressive result timing
-Group 06 will distinguish immediate operational facts, fast schema/core health, enriched DQ/distribution results, deeper diagnostic/RCA metrics and retrospective/post-ops health. Phase 009 characterizes actual source latency/support; Phase 010 selects architecture/performance budgets.
+Group 06 will distinguish immediate operational facts, fast schema/core health, enriched DQ/distribution, deeper diagnostics/RCA and retrospective/post-ops health. Phase 009 characterizes actual source latency/support; Phase 010 selects architecture/performance budgets.
 
 ## Phase boundaries
 
@@ -219,17 +258,19 @@ Phase 006 must not:
 
 - redefine Phase 004 evidence sufficiency;
 - override Phase 005 authority, authorization, control-use eligibility, or disclosure governance;
-- create convenience concepts for Metric, Metric Profile, Check, Schema, Baseline Reference Set, Drift Result, Anomaly Result, Health Result or Composite Health absent a later proven ownership gap;
-- turn metric extraction, structural compatibility or Baseline typicality into normative health automatically;
-- allow authority to manufacture empirical comparability/evidence sufficiency;
+- create convenience concepts for Metric, Metric Profile, Check, Schema, Baseline Reference Set, Threshold, Waiver, Severity, Drift/Anomaly Result, Health Result or Composite Health absent a proven ownership gap;
+- turn extraction, structural compatibility or Baseline typicality into normative health automatically;
+- allow authority to manufacture empirical comparability or evidence sufficiency;
+- collapse warning, violation, severity and waiver into one status;
+- use hidden threshold tolerances/boundaries/vendor defaults;
+- present waived violations as fictional clean passes;
 - silently absorb incidents into adaptive Baselines or exclude history merely because it appears anomalous;
-- use planned values as empirical post-change Baseline evidence;
+- use planned values as empirical Baseline evidence;
 - force non-comparable raw observations into one series through ad-hoc normalization;
 - hide approximation/sampling/low-volume limitations behind false precision;
-- introduce a universal comparability/confidence/drift/anomaly score;
-- present waived/suspended violations as fictional clean passes;
+- introduce a universal comparability/confidence/drift/anomaly/health score;
 - globally reset metrics/Baselines merely because any DDL changed;
-- propagate upstream metrics blindly through Lineage;
+- propagate upstream metrics or statuses blindly through Lineage;
 - require production-path computation merely because a metric is useful for monitoring;
 - weaken evidence standards for latency;
 - create separate technical/business health truths;
@@ -237,4 +278,4 @@ Phase 006 must not:
 
 ## Phase direction
 
-**Phase 006 is ACTIVE. Groups 01–03 are accepted with HLTH-001–HLTH-029. Group 04 — Expectations, Thresholds, Margins, Waivers & Assessment Semantics is next and has not started.**
+**Phase 006 is ACTIVE. Groups 01–04 are accepted with HLTH-001–HLTH-040. Group 05 — Transformation Reconciliation & Metric Propagation is next and has not started.**

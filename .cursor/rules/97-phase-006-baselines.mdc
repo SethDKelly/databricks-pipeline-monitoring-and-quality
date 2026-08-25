@@ -6,7 +6,7 @@ alwaysApply: true
 
 # Phase 006 Group 03 — Baseline and comparability guardrails
 
-Status: **Accepted — HLTH-019–HLTH-029; H03-01–H03-32 pass. Group 04 is next.**
+Status: **Accepted — HLTH-019–HLTH-029; H03-01–H03-32 pass. Group 04 has consumed these semantics; Group 05 is next.**
 
 Preserve permanently:
 
@@ -40,6 +40,8 @@ Preserve permanently:
 - Within Baseline ≠ healthy. Outside Baseline ≠ failed/degraded.
 - Authority may govern whether a Baseline should be used but cannot manufacture empirical comparability.
 
-Group 04 must consume these limits when defining threshold/margin/waiver Assessment behavior. An authoritative threshold is not enough for pass/fail if current evidence is too sparse, approximate, unavailable or otherwise insufficient.
+Group 04 accepted HLTH-030–HLTH-040 and consumes these limits: an authoritative threshold is not enough for `meets`/`violates` if current evidence is too sparse, approximate, unavailable or otherwise insufficient; a relative rule may explicitly reference a Baseline without making Baseline normative generally.
+
+Group 05 must preserve Baseline identity/comparability/uncertainty when deriving transformation reconciliation. Lineage alone never propagates Baseline typicality or anomaly status downstream.
 
 Do not select statistical/anomaly algorithms, Metric Views/DQX realization, storage or compute architecture from these semantic rules.

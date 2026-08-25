@@ -1,12 +1,12 @@
 ---
-description: Phase 006 health/metric design guardrails with Groups 01–03 accepted measurement, structural, and Baseline semantics.
+description: Phase 006 health/metric design guardrails with Groups 01–04 accepted measurement, structural, Baseline, and normative Assessment semantics.
 globs:
 alwaysApply: true
 ---
 
 # Phase 006 — health and metric semantics
 
-Status: **Phase 006 is ACTIVE. Groups 01–03 are accepted with HLTH-001–HLTH-029. Group 04 — Expectations, Thresholds, Margins, Waivers & Assessment Semantics is next and has not started.**
+Status: **Phase 006 is ACTIVE. Groups 01–04 are accepted with HLTH-001–HLTH-040. Group 05 — Transformation Reconciliation & Metric Propagation is next and has not started.**
 
 Phase 006 uses `HLTH-###` refinement identifiers. They refine existing concepts and do not extend SYN/REF/AUTH ranges or create hidden truth owners.
 
@@ -15,8 +15,8 @@ Accepted delivery order:
 1. Measurement Vocabulary, Metric Families, Profiles & Applicability — **accepted**.
 2. Structural / Schema / DDL Compatibility — **accepted**.
 3. Baselines, Comparability, Distribution & Statistical Context — **accepted**.
-4. Expectations, Thresholds, Margins, Waivers & Assessment Semantics — **next**.
-5. Transformation Reconciliation & Metric Propagation — planned.
+4. Expectations, Thresholds, Margins, Waivers & Assessment Semantics — **accepted**.
+5. Transformation Reconciliation & Metric Propagation — **next**.
 6. Composite Health, Readiness Suitability & Progressive Result Timing — planned.
 7. Consolidation / Exit Review — planned.
 
@@ -84,21 +84,46 @@ Preserve:
 - Multiple plausible Baselines do not receive newest/largest/narrowest/broadest/closest hidden precedence.
 - Historical Baseline versions and Assessments remain preserved across refresh/regime replacement.
 
-## Group 04 boundary
-
-Next define normative evaluation over Groups 01–03 semantics.
+## Group 04 accepted rules — HLTH-030–HLTH-040
 
 Preserve:
 
-- authoritative Expectation ≠ sufficient current evidence ≠ descriptive typicality;
-- Baseline regularity never becomes an Expectation by itself;
-- within Baseline ≠ healthy/meets Expectation;
-- outside Baseline ≠ failed/degraded/unacceptable;
-- a new regime can have insufficient Baseline history while an explicit normative criterion remains evaluable;
-- low-volume/approximate/uncertain evidence can leave a threshold result unresolved near a boundary;
-- waiver/suspension does not rewrite a real violation as pass;
-- normative conflicts remain explicit; do not choose strictest/latest/business/technical/highest-severity by convenience;
-- severity/priority must remain separate from whether a criterion is met;
+**Expectation/criterion ≠ Observation evidence ≠ Baseline comparison ≠ normative Assessment outcome ≠ warning/proximity ≠ severity/priority ≠ waiver/response disposition ≠ composite health**.
+
+- criteria bind subject/dimension, metric/check/structural definition, grain/population/window/context, operator/direction, inclusive/exclusive boundary, unit/denominator and required reference basis;
+- display/vendor shorthand does not invent comparison semantics;
+- warning/proximity can coexist with `meets` and is not a substitute for `violates` or severity;
+- relative criteria explicitly bind the reference and formula; Baseline remains descriptive generally;
+- if a required reference is non-comparable/ambiguous/insufficient/unavailable, that relative normative evaluation can become indeterminate;
+- authoritative criterion + unsuitable evidence does not create pass/fail;
+- approximate evidence can support a result only when material uncertainty cannot change the boundary side or an explicit valid treatment applies;
+- preserve `meets`, `violates`, `indeterminate/insufficient evidence`, `conflicting`, `unavailable`, and `not applicable` for a bound criterion;
+- Baseline typicality and normative outcome coexist independently;
+- a new regime can lack a Baseline while an independent explicit Expectation remains evaluable;
+- distinct context/dimension rules can coexist; same-proposition incompatible rules remain conflict absent explicit resolution/composition;
+- no strictest/loosest/newest/business/technical/highest-severity hidden precedence;
+- `violates + waived response` differs from a bounded exception that makes a criterion non-applicable;
+- waiver does not mutate evidence or automatically propagate across alert/gate/control consequence classes;
+- severity/priority does not decide criterion outcome; Criticality does not automatically tighten thresholds or prove Impact;
+- missing telemetry does not prove violation absent sufficient opportunity/coverage;
+- historical criterion/reference/waiver versions remain bound to historical Assessment;
+- corrected evidence creates reassessment rather than silent historical mutation.
+
+## Group 05 boundary
+
+Next define transformation-aware reconciliation over the accepted local measurement/reference/normative semantics.
+
+Preserve:
+
+- Lineage relation ≠ metric propagation ≠ status propagation ≠ causality;
+- local upstream metric/Observation ≠ downstream-relevant context ≠ derived reconciliation measurement;
+- local `warning`, `violates`, severity, waiver or Baseline atypicality does not propagate automatically to downstream assets;
+- A+B→C never implies generic row-count arithmetic;
+- join/filter/aggregation/dedupe/union semantics determine valid relationships;
+- current-cycle/freshness alignment and grain/key compatibility matter to reconciliation;
+- uncertainty, non-comparability, unavailability and restriction limitations remain attached to derived evidence;
+- multiple abnormal upstream contributors can remain relevant without becoming causal attribution;
+- Group 05 may create reconciliation Observations/Assessments through existing concepts, not a hidden propagation truth owner;
 - do not define overall/composite health until Group 06.
 
 ## Permanent phase boundaries
@@ -110,10 +135,12 @@ Preserve:
 - Do not silently absorb incidents into adaptive Baselines or exclude history merely because it appears anomalous.
 - Do not use planned/target values as empirical Baseline evidence.
 - Do not hide sampling/approximation/low-volume limitations behind false precision.
-- Lineage does not recursively propagate metrics.
-- Upstream anomaly does not automatically become downstream failure or cause.
+- Do not collapse warning, violation, severity and waiver into one status.
+- Do not invent hidden threshold tolerance/boundary semantics.
+- Lineage does not recursively propagate metrics or statuses.
+- Upstream anomaly/violation does not automatically become downstream failure or cause.
 - High-consequence eligibility does not make stale/unavailable/immature evidence usable.
 - Passive monitoring remains out-of-band/non-blocking for ungated production.
 - Do not select Metric Views/DQX, GitHub Actions, Unity Catalog, anomaly/statistical algorithms, storage, streaming, caching, scheduler/orchestrator or service topology during Phase 006.
 
-Do not begin Group 04 or a later group without explicit user direction.
+Do not begin Group 05 or a later group without explicit user direction.

@@ -1,0 +1,41 @@
+---
+description: Phase 006 Group 04 accepted Expectation, threshold, waiver, severity, and normative Assessment guardrails.
+globs:
+alwaysApply: true
+---
+
+# Phase 006 Group 04 — normative Assessment guardrails
+
+Status: **Accepted — HLTH-030–HLTH-040; H04-01–H04-40 pass. Group 05 — Transformation Reconciliation & Metric Propagation is next and has not started.**
+
+Preserve permanently:
+
+- Expectation/criterion ≠ Observation evidence ≠ Baseline comparison ≠ normative Assessment outcome ≠ warning/proximity ≠ severity/priority ≠ waiver/response disposition ≠ composite health.
+- Bind every criterion to exact subject/dimension, metric/check/structural definition, grain/population/window/context, operator/direction, inclusive/exclusive boundary, unit/denominator and required reference basis.
+- Vendor/display shorthand never invents units, denominator, inclusivity, tolerance or hysteresis.
+- `<=2%` and `<2%` are different normative criteria.
+- Warning/proximity can coexist with `meets`; warning is not violation or low severity.
+- A violated criterion stays `violates` regardless of low severity or alert treatment.
+- Relative criteria must bind their reference identity/version and formula explicitly.
+- Baseline remains descriptive even when an Expectation explicitly adopts `within X% of Baseline B`.
+- Non-comparable/ambiguous/insufficient/unavailable required reference can make that relative criterion indeterminate; do not substitute another Baseline silently.
+- Authoritative criterion + unsuitable evidence ≠ pass/fail.
+- Missing telemetry ≠ violation; sufficient absence/opportunity coverage can support violation when occurrence is required.
+- Approximate evidence can support `meets`/`violates` only when material uncertainty cannot change the boundary side or an explicit valid uncertainty treatment applies.
+- Preserve at least `meets`, `violates`, `indeterminate/insufficient evidence`, `conflicting`, `unavailable`, and `not applicable` for one bound normative criterion.
+- `Atypical` is Baseline-relative; it is not a normative result.
+- Typical + violates, atypical + meets, typical + meets, and atypical + violates are all valid evidence-supported combinations.
+- A new/post-change regime may have no Baseline yet while an independent explicit Expectation is immediately evaluable.
+- Distinct-dimension/context/consumer Expectations can coexist; same-proposition incompatible co-authoritative rules remain conflict absent explicit resolution/composition.
+- Never use strictest, loosest, newest, business, technical, highest-severity or numerically closest hidden precedence.
+- `violates + waived response` ≠ `meets`.
+- A bounded exception that makes a criterion non-applicable is distinct from a waiver that changes only response/consequence.
+- Waiver scope does not propagate automatically from alerting to gate/control or another consequence class.
+- Severity/priority/escalation does not decide criterion outcome; criticality does not automatically tighten thresholds or prove Impact.
+- Historical Assessments retain exact criterion, warning/tolerance, waiver, evidence and referenced Baseline versions.
+- Later corrected evidence creates reassessment; do not silently mutate historical Assessment.
+- Group 05 must not propagate local warning/violation/severity/waiver statuses through Lineage; derive transformation-specific reconciliation propositions instead.
+
+Do not select DQX/Metric Views expression syntax, alert engines, statistical libraries, storage, compute or service architecture from these rules.
+
+Do not begin Group 05 or a later Phase 006 group without explicit user direction.

@@ -6,7 +6,7 @@ alwaysApply: true
 
 # Metric health and propagation foundation
 
-Status: **Phase 006 is active. Groups 01–03 are accepted with HLTH-001–HLTH-029. Group 04 is next.**
+Status: **Phase 006 is active. Groups 01–04 are accepted with HLTH-001–HLTH-040. Group 05 is next.**
 
 Preserve permanently:
 
@@ -29,7 +29,10 @@ Preserve permanently:
 - structural compatibility ≠ Baseline/statistical comparability;
 - available history ≠ eligible reference history;
 - raw non-comparability ≠ derived normalized non-comparability when an explicit valid normalization exists;
-- within Baseline ≠ healthy; outside Baseline ≠ failed/degraded.
+- within Baseline ≠ healthy; outside Baseline ≠ failed/degraded;
+- criterion outcome ≠ warning/proximity ≠ severity/priority ≠ waiver/disposition;
+- `violates + waived` ≠ `meets`;
+- Lineage relation ≠ metric/status propagation.
 
 Accepted Phase 006 Group 01 foundation:
 
@@ -75,10 +78,23 @@ Accepted Phase 006 Group 03 Baseline/statistical foundation:
 - Multiple plausible Baselines do not receive hidden newest/largest/narrowest/broadest precedence.
 - Historical Baselines and Assessments remain preserved across refresh/regime change.
 
+Accepted Phase 006 Group 04 normative Assessment foundation:
+
+- Bind criteria to exact subject/dimension, metric/check/structural definition, grain/population/window/context, comparison direction, inclusive/exclusive boundary, unit/denominator and explicit reference basis.
+- Warning/proximity is secondary to criterion outcome and can coexist with `meets`.
+- Relative criteria explicitly bind their reference; Baseline remains descriptive generally.
+- Authoritative criterion + unsuitable/sparse/approximate/unavailable evidence does not produce a fabricated result.
+- Preserve `meets`, `violates`, `indeterminate/insufficient evidence`, `conflicting`, `unavailable`, and `not applicable` for one bound criterion.
+- Baseline typicality and normative outcome coexist independently.
+- Distinct context/dimension rules can coexist; same-proposition conflicting rules receive no hidden strictest/latest/business/technical precedence.
+- `violates + waived response` differs from a bounded exception that makes a criterion non-applicable.
+- Waiver does not mutate evidence or automatically propagate across alert/gate/control consequence classes.
+- Severity/priority does not decide criterion outcome and Criticality does not prove Impact.
+- Historical rule/reference/waiver versions and corrected-evidence reassessments remain non-rewriting.
+
 Later Phase 006 rules still to be refined:
 
-- Group 04 — thresholds/margins/warning/failure/waiver Assessment semantics — **next**;
-- Group 05 — selective transformation-aware propagation/reconciliation;
+- Group 05 — selective transformation-aware propagation/reconciliation — **next**;
 - Group 06 — composite health and progressive result timing/control-suitability;
 - Group 07 — consolidation/exit.
 
@@ -90,4 +106,4 @@ Cross-phase boundaries:
 - Phase 009 evaluates actual source support, cost, latency and retention.
 - Phase 010 selects computation/storage/fast-path architecture.
 
-Do not recursively cascade every upstream statistic through Lineage. Do not force monitoring metrics onto the production critical path unless an explicitly accepted high-consequence control requires them and the later evidence/timing criteria are satisfied.
+Do not recursively cascade every upstream statistic, Baseline result, warning, violation, severity or waiver through Lineage. Do not force monitoring metrics onto the production critical path unless an explicitly accepted high-consequence control requires them and the later evidence/timing criteria are satisfied.
