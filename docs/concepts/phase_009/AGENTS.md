@@ -11,7 +11,8 @@ Applies to work under `docs/concepts/phase_009/` and complements the repository 
 - **Group 03 is complete with INTG-051–INTG-083; RTE03-01–RTE03-54 pass.**
 - **Group 04 is complete with INTG-084–INTG-119; HME04-01–HME04-56 pass.**
 - **Group 05 is complete with INTG-120–INTG-153; LIE05-01–LIE05-60 pass.**
-- **Group 06 — Investigation, Causality, Safeguard, Gate & Control Evidence is next.**
+- **Group 06 is complete with INTG-154–INTG-200; ICE06-01–ICE06-72 pass.**
+- **Group 07 — Explanation, Historical Replay, Basis Inspection & Disclosure Source Contracts is next.**
 - Accepted concept count remains 24.
 - Canonical repository status remains in `../../README.md#current-state`.
 
@@ -191,6 +192,47 @@ Preserve:
 
 See [`05_lineage_consumer_use_exposure_impact_evidence/README.md`](05_lineage_consumer_use_exposure_impact_evidence/README.md).
 
+## Accepted Group 06 rules
+
+Preserve:
+
+- Investigation trigger/lead/localization does not create Causal Claim status;
+- first observed, earliest evidenced state change, first reconciliation boundary and first consumer effect are different localizations;
+- lead exclusion/rejection requires sufficient discriminating negative evidence;
+- human approval, analyst seniority, GitHub review, vendor RCA and model output do not create causal authority by origin;
+- explicit cause/effect/role/scope/mechanism/time proposition identity precedes causal evaluation;
+- no evaluated Databricks/GitHub/Immuta surface automatically confirms causality;
+- `confirmed` remains REF-017 + AUTH-034 gated;
+- rollback/rerun/remediation contrasts are evidence and can remain confounded;
+- `system.access.audit` is action/request/response history, not universal effective enforcement;
+- asynchronous control API success requires later effective-state evidence;
+- UC grant/revoke applies only to its exact privilege/control plane and current privilege state is not historical enforcement;
+- Immuta policy configuration/change ≠ query-time policy application;
+- Immuta applied-policy/denial audit is strong only in verified registered/instrumented scope;
+- missing Immuta/control audit ≠ allow/deny/control outcome;
+- Safeguard proposal/authorization/request ≠ effective enforcement;
+- Safeguard enforcement binds exact state/path/cohort/interval and can be partial;
+- one protected/denied path ≠ global protection;
+- no encounter opportunity means no REF-028 prevention credit;
+- REF-028 prevention needs Group 05 opportunity/path/state + enforcement + non-exposure + alternate-path coverage;
+- Safeguard release/regrant ≠ recovery/currentness;
+- Databricks Jobs cancellation is asynchronous post-start interruption, not pre-start Gate HOLD;
+- no universal native DMTZ output quarantine/hold source is assumed;
+- GitHub environment protection is strong pre-start evidence for its exact Actions job/deployment opportunity;
+- required review approval/rejection/bypass/wait/custom protection rule events retain distinct GitHub semantics;
+- GitHub Gate evidence applies to Databricks only with explicit Group 03 correlation;
+- Databricks `Run if`/`If/else` are conditional-control candidates and require explicit DMTZ Gate criterion/opportunity mapping;
+- Gate criterion/evidence suitability/readiness/decision/delivery/acceptance/enforcement/execution stay distinct;
+- actual start during an applicable unsuperseded HOLD contradicts full HOLD enforcement;
+- no start alone does not prove HOLD;
+- ADMIT does not prove execution;
+- override/fallback/timeout/escalation are separate source facts and preserve readiness truth;
+- multiple Gates/Safeguards have no hidden universal precedence;
+- missing/conflicting control telemetry ≠ fail-open/fail-closed/success/failure;
+- broader delay/staleness/harm/prevention attribution remains Causal Claim work except REF-028.
+
+See [`06_investigation_causality_safeguard_gate_control_evidence/README.md`](06_investigation_causality_safeguard_gate_control_evidence/README.md).
+
 ## Required evaluation dimensions
 
 For every material source surface, evaluate as applicable:
@@ -233,19 +275,22 @@ Never convert:
 - latest upstream output → consumed input;
 - metric/check availability → governed Expectation/Baseline/Assessment;
 - vendor health/root-cause/impact label → DMTZ composite health/Causal Claim/Impact truth;
-- control configuration/decision → enforcement;
+- Investigation lead/localization → Causal Claim status;
+- remediation success → causal confirmation;
+- control request/response → effective enforcement without source semantics/evidence;
 - Safeguard active + non-exposure → prevented exposure without REF-028 evidence;
 - Gate HOLD → failed execution;
 - Gate ADMIT → run;
+- GitHub environment approval → uncorrelated Databricks Gate result;
 - restricted/redacted → absent;
 - source count → confidence;
 - synchronization order → authority or causality.
 
 ## Source-family discipline
 
-Do not structure the product around vendor names. Databricks, Unity Catalog, GitHub, DQX, Metric Views, Collibra, Immuta and downstream instrumentation may each support multiple accepted concepts, and one accepted proposition may require multiple source families.
+Do not structure the product around vendor names. Databricks, Unity Catalog, GitHub, DQX, Metric Views, Collibra, Immuta and downstream/control instrumentation may each support multiple accepted concepts, and one accepted proposition may require multiple source families.
 
-A source may be authoritative for one metadata category and merely supporting/observational for another. Preserve proposition-, subject-, context- and time-specific authority.
+A source may be authoritative for one metadata/control category and merely supporting/observational for another. Preserve proposition-, subject-, context- and time-specific authority.
 
 ## Group 02 gaps carried forward
 
@@ -293,21 +338,35 @@ A source may be authoritative for one metadata category and merely supporting/ob
 - historical Impact replay spans heterogeneous lineage/query/audit/external retention windows;
 - strong non-exposure/no-effect/no-consequence conclusions remain path/population/version/dimension coverage intensive.
 
-## Group 06 entry contract
+## Group 06 gaps carried forward
 
-Group 06 may consume Group 05 Lineage/encounter/exposure/effect/consequence evidence only with exact path/state/version/population/time/coverage/provenance and authorization limitations.
+- no evaluated vendor automatically owns Causal Claim confirmation; organizational Assertion Authority remains required;
+- a durable Investigation/Annotation/claim-status source remains environment-specific;
+- Databricks audit request/response does not universally prove effective distributed control state;
+- no single native Propagation Safeguard covers every output/cache/export/application path;
+- Immuta enforcement/audit support depends on deployed version, integration mode, registered population and retained audit;
+- REF-028 prevention remains opportunity/path/state/alternate-path coverage intensive;
+- GitHub environment Gates only protect their exact GitHub job/deployment unless Group 03 correlation proves target execution linkage;
+- Databricks conditional tasks require explicit Gate criterion/profile mapping;
+- override/fallback/multiple-Gate composition remains organization/control-contract specific;
+- control historical replay spans different audit/deployment/custom-control retention windows;
+- missing/conflicting control telemetry cannot determine fail-open/fail-closed or effect attribution.
 
-It must independently establish Investigation lead/localization semantics, causal proposition evidence and authority, Safeguard/Gate lifecycle/authorization/decision/enforcement, and control effects. Topology, query timing, exposure, effect, consequence, popularity/priority or vendor root-cause/impact labels cannot substitute for Causal Claim or control-effect evidence. REF-028 prevented-exposure determinations also require an actual relevant encounter opportunity plus sufficient control/path evidence.
+## Group 07 entry contract
+
+Group 07 may consume all accepted source facts from Groups 02–06 only with exact proposition/source identity, evidence roles, authority, event/effective and knowledge times, retention, coverage, authorization and disclosure limitations.
+
+It must determine whether those facts are sufficient for Phase 008 statement-to-basis traceability, current/as-known/retrospective Explanation, `composeAt`, `inspectBasis`, safe abstraction, retained-communication distinction and current authorized projection. It may not narratively fill missing causal/control stages, convert unavailable history into negative truth, or treat source retrievability as disclosure permission.
 
 ## External-fact discipline
 
 Groups 02–08 necessarily evaluate evolving vendor capabilities. Verify current external documentation when executing a group, distinguish product documentation from repository assumptions, record meaningful edition/feature/retention/permission limitations, and avoid treating undocumented behavior as guaranteed.
 
-Group 02 records sources in [`02_identity_scope_governance_authority_authorization_sources/external_source_review.md`](02_identity_scope_governance_authority_authorization_sources/external_source_review.md); Group 03 records sources in [`03_change_deployment_execution_version_runtime_evidence/external_source_review.md`](03_change_deployment_execution_version_runtime_evidence/external_source_review.md); Group 04 records sources in [`04_health_schema_metrics_expectations_baselines_reconciliation_evidence/external_source_review.md`](04_health_schema_metrics_expectations_baselines_reconciliation_evidence/external_source_review.md); Group 05 records sources in [`05_lineage_consumer_use_exposure_impact_evidence/external_source_review.md`](05_lineage_consumer_use_exposure_impact_evidence/external_source_review.md).
+Group 02 records sources in [`02_identity_scope_governance_authority_authorization_sources/external_source_review.md`](02_identity_scope_governance_authority_authorization_sources/external_source_review.md); Group 03 records sources in [`03_change_deployment_execution_version_runtime_evidence/external_source_review.md`](03_change_deployment_execution_version_runtime_evidence/external_source_review.md); Group 04 records sources in [`04_health_schema_metrics_expectations_baselines_reconciliation_evidence/external_source_review.md`](04_health_schema_metrics_expectations_baselines_reconciliation_evidence/external_source_review.md); Group 05 records sources in [`05_lineage_consumer_use_exposure_impact_evidence/external_source_review.md`](05_lineage_consumer_use_exposure_impact_evidence/external_source_review.md); Group 06 records sources in [`06_investigation_causality_safeguard_gate_control_evidence/external_source_review.md`](06_investigation_causality_safeguard_gate_control_evidence/external_source_review.md).
 
 ## Architecture boundary
 
-Do not select SDK/client libraries, polling versus streaming, event buses, storage schemas, graph databases, caches, credential mechanisms, deployment topology, retry infrastructure, orchestration, attestation implementation, metric/rule stores, anomaly models, consumer/BI instrumentation, Impact scoring, LLM/retrieval architecture or UI. Phase 010 owns technical architecture.
+Do not select SDK/client libraries, polling versus streaming, event buses, storage schemas, graph databases, caches, credential mechanisms, deployment topology, retry infrastructure, orchestration, attestation implementation, metric/rule stores, anomaly models, consumer/BI instrumentation, incident/case tooling, causal engine, Safeguard/Gate implementation, control-state persistence, LLM/retrieval architecture or UI. Phase 010 owns technical architecture.
 
 ## Group sequence
 
@@ -316,6 +375,6 @@ Do not select SDK/client libraries, polling versus streaming, event buses, stora
 3. change/deployment/execution/version/runtime evidence — **accepted**;
 4. health/schema/metrics/Expectations/Baselines/reconciliation evidence — **accepted**;
 5. Lineage/consumer use/exposure/Impact evidence — **accepted**;
-6. Investigation/causality/Safeguard/Gate/control evidence — **next**;
-7. Explanation/historical replay/basis/disclosure source contracts;
+6. Investigation/causality/Safeguard/Gate/control evidence — **accepted**;
+7. Explanation/historical replay/basis/disclosure source contracts — **next**;
 8. cross-source coverage/latency/retention/cost consolidation and exit.

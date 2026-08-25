@@ -1,6 +1,6 @@
 # Phase 009 — Integration Contracts, Source Authority, and Evidence Availability
 
-**Status:** IN PROGRESS — Groups 01–05 accepted; INTG-001–INTG-153 accepted; IC01-01–IC01-40, GOV02-01–GOV02-48, RTE03-01–RTE03-54, HME04-01–HME04-56 and LIE05-01–LIE05-60 pass; Group 06 next
+**Status:** IN PROGRESS — Groups 01–06 accepted; INTG-001–INTG-200 accepted; IC01-01–IC01-40, GOV02-01–GOV02-48, RTE03-01–RTE03-54, HME04-01–HME04-56, LIE05-01–LIE05-60 and ICE06-01–ICE06-72 pass; Group 07 next
 
 ## Goal
 
@@ -27,7 +27,7 @@ Phase 009 uses **`INTG-###`** integration-contract refinements.
 
 `INTG-###` describes the functional contract between accepted product semantics and actual source capabilities. It does not define adapter classes, service boundaries, event schemas, storage tables, polling architecture, credentials, SDK selection, or deployment topology.
 
-Accepted range so far: **INTG-001–INTG-153**.
+Accepted range so far: **INTG-001–INTG-200**.
 
 ## Logical delivery grouping
 
@@ -85,16 +85,18 @@ Accepted gaps include incomplete lineage capture, rename/path identity reconcili
 See [`05_lineage_consumer_use_exposure_impact_evidence/README.md`](05_lineage_consumer_use_exposure_impact_evidence/README.md), [`05_lineage_consumer_use_exposure_impact_evidence/source_capability_matrix.md`](05_lineage_consumer_use_exposure_impact_evidence/source_capability_matrix.md), and [`05_lineage_consumer_use_exposure_impact_evidence/external_source_review.md`](05_lineage_consumer_use_exposure_impact_evidence/external_source_review.md).
 
 ### Group 06 — Investigation, Causality, Safeguard, Gate & Control Evidence
-**Status:** **Next — not started.**
+**Status:** **Accepted — INTG-154–INTG-200; ICE06-01–ICE06-72 pass.**
 
-Map source support for Investigation leads/localization, discriminating evidence, Causal Claim support/contradiction, Propagation Safeguard proposal/authorization/request/enforcement/release, Execution Gate readiness/decision/delivery/enforcement and actual control effects.
+Maps Databricks audit/runtime/control-flow evidence, GitHub environment/deployment protection, Immuta policy/query audit and environment-specific review/control sources to Investigation localization, Causal Claim evaluation, Propagation Safeguard enforcement/prevention and Execution Gate decision/enforcement semantics.
 
-Control configuration or intended action is not enforcement. Broader prevention/delay/harm attribution remains evidence- and authority-gated Causal Claim work.
+It preserves trigger/lead/localization ≠ cause; vendor/human/model assertion ≠ confirmed Causal Claim; policy/config/request ≠ effective enforcement; Safeguard enforcement ≠ REF-028 prevention; no-opportunity ≠ prevention credit; GitHub environment Gate ≠ uncorrelated Databricks Gate; Databricks cancellation ≠ pre-start HOLD; task condition ≠ DMTZ readiness/Gate without explicit mapping; HOLD/ADMIT ≠ execution outcome; and missing control telemetry ≠ fail-open/fail-closed.
 
-See [`06_investigation_causality_safeguard_gate_control_evidence/README.md`](06_investigation_causality_safeguard_gate_control_evidence/README.md).
+Accepted gaps include no automatic causal-confirmation source, environment-specific Investigation/Annotation/authority records, path-specific Safeguard realization, Immuta registration/audit limits, cross-system GitHub→Databricks Gate correlation, explicit criterion/override/fallback/multi-Gate contracts and heterogeneous control-history retention.
+
+See [`06_investigation_causality_safeguard_gate_control_evidence/README.md`](06_investigation_causality_safeguard_gate_control_evidence/README.md), [`06_investigation_causality_safeguard_gate_control_evidence/source_capability_matrix.md`](06_investigation_causality_safeguard_gate_control_evidence/source_capability_matrix.md), and [`06_investigation_causality_safeguard_gate_control_evidence/external_source_review.md`](06_investigation_causality_safeguard_gate_control_evidence/external_source_review.md).
 
 ### Group 07 — Explanation, Historical Replay, Basis Inspection & Disclosure Source Contracts
-**Status:** Not started.
+**Status:** **Next — not started.**
 
 Map what is required to compose current/as-known/retrospective Explanation, retain or reconstruct historical views, inspect statement basis, preserve source provenance, apply current disclosure authorization and distinguish actual retained communication from present reconstruction.
 
@@ -238,6 +240,41 @@ Every later group must preserve:
 - popularity/vendor downstream-impact context ≠ realized Impact/severity;
 - historical Impact replay and strong non-exposure/no-effect/no-consequence remain source-set/coverage bound.
 
+## Accepted Group 06 investigation/causal/control-source discipline
+
+Every later group must preserve:
+
+- Investigation trigger/lead/localization ≠ Causal Claim truth;
+- first observed ≠ earliest evidenced change ≠ first reconciliation boundary ≠ first consumer effect ≠ root cause;
+- lead exclusion requires proposition-specific negative/discriminating coverage;
+- human review, GitHub issue/comment, vendor RCA or model output ≠ causal authority by origin;
+- Causal Claim proposition identity binds cause/effect/role/scope/mechanism/time before evaluation;
+- no evaluated vendor automatically owns `confirmed`; REF-017 + AUTH-034 remain mandatory;
+- remediation/rollback/rerun contrast can support a claim without automatically confirming it;
+- Databricks audit request/response ≠ asynchronous effective enforcement by default;
+- current UC privilege/policy state ≠ historical enforcement;
+- Immuta policy configuration ≠ query-time policy application;
+- Immuta applied-policy/denial evidence is strong only for covered registered/instrumented scope;
+- Safeguard proposal/authorization/request ≠ enforcement;
+- Safeguard enforcement ≠ REF-028 prevented exposure;
+- no encounter opportunity ≠ prevention credit;
+- one denied/protected path ≠ global protection;
+- Safeguard release/regrant ≠ health/currentness/recovery;
+- Databricks Jobs cancel is asynchronous post-start interruption, not pre-start HOLD;
+- no universal native output quarantine/hold capability is assumed;
+- GitHub environment protection is a strong pre-start Gate only for the exact Actions job/deployment opportunity it protects;
+- GitHub reviewer approval/rejection/bypass/wait/custom-rule results retain distinct source semantics;
+- GitHub Gate ≠ Databricks Gate absent explicit Group 03 correlation;
+- Databricks `Run if`/`If/else` becomes a DMTZ Gate only under explicit criterion/opportunity mapping;
+- criterion identity/evidence suitability/readiness/decision/delivery/acceptance/enforcement/execution remain distinct;
+- start during unsuperseded HOLD contradicts full HOLD enforcement;
+- no start alone ≠ successful HOLD;
+- ADMIT ≠ execution;
+- override/fallback/timeout/escalation retain separate semantics;
+- multiple Gates/Safeguards have no hidden universal precedence;
+- missing/conflicting control telemetry ≠ fail-open/fail-closed/success/failure;
+- broader control-effect attribution remains Causal Claim work except the bounded REF-028 prevention determination.
+
 ## Why this order
 
 1. **Contract vocabulary first** — every source must be evaluated using the same proposition/authority/time/coverage vocabulary before vendor facts can be compared.
@@ -274,7 +311,10 @@ Preserve throughout the phase:
 - deployment/workflow success ≠ activation/realized Change/run-specific version by convenience;
 - run success ≠ output existence/currentness/health;
 - check/metric availability ≠ governed Expectation/Baseline/Assessment authority;
+- Investigation/localization ≠ Causal Claim status;
 - control configuration/request/decision ≠ enforcement/effect;
+- Safeguard enforcement ≠ prevented exposure without exact opportunity/path evidence;
+- Gate HOLD/ADMIT ≠ execution outcome;
 - restricted ≠ unavailable/absent;
 - retained source history ≠ exact retained Explanation communication;
 - unsupported integration capability is an explicit result, not a reason to weaken product semantics;

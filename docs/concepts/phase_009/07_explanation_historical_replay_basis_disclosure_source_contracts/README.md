@@ -1,10 +1,18 @@
 # Phase 009 Group 07 — Explanation, Historical Replay, Basis Inspection & Disclosure Source Contracts
 
-**Status:** Not started
+**Status:** Next — not started
 
 ## Goal
 
 Determine whether source capabilities across Groups 02–06 can support the completed Phase 008 Explanation contract, including time-cut replay, statement-to-basis traceability, safe abstraction and retained communication distinctions.
+
+## Group 06 entry contract
+
+Group 07 may consume Investigation/localization state, Causal Claim propositions/status/basis, Propagation Safeguard lifecycle/enforcement/prevention evidence and Execution Gate criterion/decision/enforcement facts **only where INTG-154–INTG-200 establish them**.
+
+Material Group 06 limitations remain attached: no evaluated vendor automatically confirms causality; Investigation/Annotation/claim records are environment-specific; Databricks audit records actions but not every effective enforcement stage; Immuta enforcement is population/integration/retention bound; no universal native Safeguard covers every path; GitHub environments gate the GitHub job rather than an uncorrelated Databricks run; conditional Databricks tasks require explicit Gate-semantic mapping; and missing control telemetry remains unknown rather than fail-open/fail-closed.
+
+Explanation must preserve the difference among Investigation lead/localization, Causal Claim status, Safeguard request/enforcement/prevention, Gate readiness/decision/enforcement and actual execution/effect. It must also preserve historical incident-time knowledge separately from current retrospective evidence.
 
 ## Primary questions
 
@@ -17,6 +25,11 @@ Determine whether source capabilities across Groups 02–06 can support the comp
 - What source metadata itself is sensitive, including existence, counts, paths, provenance class and redaction markers?
 - Where do missing retention or inaccessible historical authorization records make Phase 008 questions only partially answerable?
 - How can source outages/late evidence be surfaced as unavailable/unknown instead of reassuring narrative completion?
+- Can control/causal statement basis preserve unavailable intermediate stages without narratively promoting configuration to enforcement or lead to cause?
+
+## External-fact requirement
+
+Verify current source history, access/disclosure and inspectability characteristics across Databricks, GitHub, Immuta, Collibra and other evaluated sources. Record stable IDs, timestamps, revision/history behavior, visibility filtering, retention, redaction/sensitivity and whether exact prior communication exists independently of source reconstruction.
 
 ## Boundary
 
