@@ -1,0 +1,23 @@
+---
+description: Canonical current project phase status. Supersedes status-only wording in older always-applied rules while preserving their substantive constraints.
+globs:
+alwaysApply: true
+---
+
+# Canonical current phase status
+
+Use this file when older broad rules contain stale `next group` wording. Do **not** treat it as replacing their accepted semantic guardrails.
+
+- Phase 003 complete: SYN-001–SYN-035.
+- Phase 004 complete: REF-001–REF-030.
+- Phase 005 complete: AUTH-001–AUTH-053.
+- Phase 006 is **ACTIVE**.
+- Phase 006 Groups 01–06 are accepted.
+- Accepted Phase 006 range: **HLTH-001–HLTH-066**.
+- Scenario suites H01–H06 pass under their accepted group contracts.
+- Accepted concept count remains **24**.
+- **Phase 006 Group 07 — Consolidation / Exit Review is next and has not started.**
+
+Do not begin Group 07 or a later phase without explicit user direction.
+
+No implementation architecture has been selected by Phase 006. Preserve documentation/design-first discipline.

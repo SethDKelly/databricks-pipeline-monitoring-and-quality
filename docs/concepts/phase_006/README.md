@@ -1,12 +1,12 @@
 # Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement
 
-**Status:** ACTIVE — Groups 01–05 accepted; HLTH-001–HLTH-054 accepted; Group 06 next
+**Status:** ACTIVE — Groups 01–06 accepted; HLTH-001–HLTH-066 accepted; Group 07 next
 
 ## Goal
 
-Refine how the framework determines whether a pipeline/table state is operationally, structurally, statistically, semantically, and transformation-consistently healthy now that Phase 005 has completed the authority/governance/capability/disclosure model.
+Refine how the framework determines whether a pipeline/table state is operationally, structurally, statistically, semantically, transformation-consistently, and use-appropriately healthy now that Phase 005 has completed the authority/governance/capability/disclosure model.
 
-Phase 006 uses `HLTH-###` refinement contracts. These contracts define health/metric/schema/statistical/reconciliation semantics over accepted concepts; they are not new truth-owning concepts, do not extend the Phase 003 SYN range, and do not reopen Phase 004 evidence standards or Phase 005 authority decisions.
+Phase 006 uses `HLTH-###` refinement contracts. These contracts define health/metric/schema/statistical/reconciliation/composite/timing semantics over accepted concepts; they are not new truth-owning concepts, do not extend the Phase 003 SYN range, and do not reopen Phase 004 evidence standards or Phase 005 authority decisions.
 
 ## Accepted handoff from Phase 005
 
@@ -65,16 +65,18 @@ Defines local versus downstream-relevant evidence, derived reconciliation Observ
 See [`05_transformation_reconciliation_metric_propagation/README.md`](05_transformation_reconciliation_metric_propagation/README.md).
 
 ### Group 06 — Composite Health, Readiness Suitability & Progressive Result Timing
-**Status:** **Next — not started.**
+**Status:** **Accepted — HLTH-055–HLTH-066.**
 
-Define whether/how dimension-level and reconciliation Assessments compose into broader health without hiding conflict/unknown state; define technical/business projection requirements, result freshness/maturity, readiness suitability and AUTH-023 control-use evidence requirements while preserving the distinction among health, readiness, gate decision, enforcement and execution.
+Defines bounded composite-health profiles and explicit component composition, dimension-preserving summary vocabulary, waiver/conflict/unavailable treatment, severity/criticality separation, one-truth audience projections, exact-use result freshness/staleness, progressive analytical maturity, readiness suitability, AUTH-023 high-consequence-use composition, progressive reassessment, and historical composite/readiness replay.
 
 See [`06_composite_health_readiness_timing/README.md`](06_composite_health_readiness_timing/README.md).
 
 ### Group 07 — Consolidation / Exit Review
-**Status:** Planned — not started.
+**Status:** **Next — not started.**
 
-Replay Groups 01–06 across representative ecosystem scenarios and verify that the health model composes without a universal score, hidden authority, false passes, blind propagation, causal shortcuts, or selected architecture.
+Replay Groups 01–06 across representative ecosystem scenarios and verify that the health model composes without a universal score, hidden authority, false passes, blind propagation, causal shortcuts, latency shortcuts, control conflation, or selected architecture.
+
+See [`07_consolidation_and_exit/README.md`](07_consolidation_and_exit/README.md).
 
 ## Accepted Group 01 — HLTH-001–HLTH-008
 
@@ -257,32 +259,71 @@ Key results:
 - reconciliation can localize mismatch but never establishes root cause by itself;
 - historical reconciliation uses then-effective Lineage/transformation/reconciliation versions and preserves reassessment history.
 
-## Group 06 handoff — Composite Health, Readiness Suitability & Progressive Result Timing
-
-Group 06 now composes fully qualified local and reconciliation Assessments while preserving every evidence/reference/waiver/status distinction.
-
-It must address:
-
-- whether/when an overall health representation is useful;
-- preservation/drill-down of component/dimension Assessments;
-- composition of meets/violates/warning/indeterminate/conflicting/unavailable/not-applicable plus Baseline typicality;
-- waived violations and bounded exceptions in summary health;
-- severity/criticality/priority versus health truth;
-- technical/business projections over one health truth;
-- readiness-suitability of specific health/reconciliation conditions;
-- evidence/result freshness, age and window alignment;
-- progressive result availability from operational facts through schema/core, enriched DQ/reconciliation/distribution, diagnostics/RCA and retrospective results;
-- pending slower evidence and later broader reassessment;
-- AUTH-023 control-use eligibility plus actual freshness/comparability/availability/maturity requirements;
-- passive monitoring remaining non-blocking absent explicit gate/control semantics.
+## Accepted Group 06 — HLTH-055–HLTH-066
 
 Preserve:
 
-**health Assessment ≠ readiness Assessment ≠ gate decision ≠ enforcement ≠ actual execution**.
+**component Assessment ≠ composite health Assessment ≠ result freshness/suitability ≠ readiness result ≠ gate decision ≠ enforcement ≠ actual execution**.
 
-A component can be control-eligible yet currently unsuitable because evidence is stale, unavailable, indeterminate or not aligned to the target execution opportunity.
+Accepted contracts:
 
-## Metric-health principles retained for later groups
+- **HLTH-055 — Composite Health Proposition, Profile, Scope & Use Binding**;
+- **HLTH-056 — Component Eligibility, Required/Optional Roles & Explicit Composition Logic**;
+- **HLTH-057 — Structured Composite Health Vocabulary & Decisive-State Semantics**;
+- **HLTH-058 — Unresolved State, Conflict, Waiver & Exception Preservation in Composite Health**;
+- **HLTH-059 — Severity, Criticality, Priority & Health-Truth Separation in Composition**;
+- **HLTH-060 — Technical, Business, Executive & Consumer Health Projection over One Truth**;
+- **HLTH-061 — Health Result Age, Evidence Freshness & Use-Specific Staleness**;
+- **HLTH-062 — Progressive Health Result Maturity, Pending Evidence & Analytical Horizons**;
+- **HLTH-063 — Exact-Use Readiness Suitability of Health Evidence**;
+- **HLTH-064 — High-Consequence Control-Use Suitability & AUTH-023 Composition**;
+- **HLTH-065 — Late Evidence, Progressive Summary Revision & Non-Rewriting History**;
+- **HLTH-066 — Historical Composite Health, Suitability & Readiness Replay**.
+
+Key results:
+
+- composite health is a bounded derived Assessment over an explicit profile/use/context rather than an intrinsic scalar asset property;
+- component required/optional/conditional/alternative/informational roles and composition logic are explicit;
+- majority/average/weighted/severity-weighted universal health scoring is rejected;
+- a conjunctive healthy summary requires all applicable required components to meet and no required unresolved state;
+- warning/proximity can yield healthy-with-warning without becoming a violation;
+- a known required violation can establish degraded while unresolved/unavailable qualifiers remain visible;
+- required indeterminate/conflicting/unavailable state cannot be averaged away into healthy;
+- `violates + waived response` remains violation/degraded; bounded non-applicability is distinct;
+- severity/criticality/priority does not manufacture health or Impact truth;
+- technical/business/executive/audit/consumer views remain authorized projections over one truth;
+- consumer-specific composites can differ when their bound profiles/propositions differ;
+- evidence age/current-cycle identity and Assessment evaluation time remain distinct;
+- recently recomputed old evidence can remain stale, and no universal health-result TTL is accepted;
+- progressive horizons are immediate operational → fast core/schema/current-cycle → enriched DQ/reconciliation/distribution → diagnostic/RCA → retrospective/post-ops;
+- analytical maturity follows evidence sufficiency, never elapsed time;
+- narrow trustworthy results are emitted as soon as supportable while broader health can remain pending;
+- readiness suitability is exact-opportunity bound and outcome-neutral;
+- fresh well-evidenced violation can be suitable for not-ready while stale meets can be unsuitable for ready;
+- AUTH-023 eligibility and evidence suitability are independent prerequisites for high-consequence use;
+- suitability does not create readiness, gate/control authority, decision, enforcement or execution;
+- passive monitoring remains non-blocking outside explicit active controls;
+- late/corrected evidence can revise broader composites through reassessment without rewriting earlier narrow/historical truths;
+- historical replay uses then-effective component/profile/reference/reconciliation/freshness semantics and knowledge cut.
+
+## Group 07 handoff — Consolidation / Exit Review
+
+Group 07 now replays HLTH-001–HLTH-066 as one health model.
+
+It must verify:
+
+- all accepted distinction chains still compose without a new truth owner;
+- profile anti-bloat, structural compatibility, Baseline comparability, normative criteria, reconciliation, composite health and result suitability remain independently meaningful;
+- composite summary logic never reintroduces blind upstream propagation or hidden score semantics;
+- consumer/use-specific health remains bounded rather than becoming contradictory global truth;
+- warnings, waivers, severity, conflict, unavailability and pending state remain visible through composition;
+- freshness/current-cycle/maturity requirements do not become a universal TTL or fixed wait;
+- narrow early results remain available while broader health matures;
+- AUTH-023 eligibility plus suitable evidence still does not create readiness/gate/enforcement/execution truth;
+- historical metric/schema/Baseline/transformation/composite/suitability replay remains non-rewriting;
+- no implementation architecture is chosen merely to exit Phase 006.
+
+## Metric-health principles retained for later phases
 
 ### Metric profiles and anti-bloat
 A metric/check needs identifiable purpose and governed profile role. Availability is not enough reason to compute/store/display/propagate it.
@@ -293,11 +334,14 @@ Baseline remains descriptive; typicality never creates a normative criterion. Re
 ### Transformation-aware propagation
 For A+B→C, only explicit transformation-aware reconciliation relationships compose local evidence. Lineage never carries local metric/status truth downstream by itself.
 
+### Composite health
+Composite health is profile/use/context bound and component-preserving. It is not a universal score or a substitute for readiness/control state.
+
 ### Technical versus business health
-Technical/business/executive/audit views remain authorized projections over one truth. Group 06 defines health-composition requirements; Phase 008 later defines Explanation/UX.
+Technical/business/executive/audit views remain authorized projections over one truth. Phase 008 later defines Explanation/UX.
 
 ### Progressive result timing
-Group 06 defines functional freshness/maturity semantics; Phase 009 characterizes actual source latency/support; Phase 010 selects architecture/performance budgets.
+Phase 006 defines functional freshness/maturity/suitability semantics; Phase 009 characterizes actual source latency/support; Phase 010 selects architecture/performance budgets.
 
 ## Phase boundaries
 
@@ -305,7 +349,7 @@ Phase 006 must not:
 
 - redefine Phase 004 evidence sufficiency;
 - override Phase 005 authority, authorization, control-use eligibility, or disclosure governance;
-- create convenience concepts for Metric, Metric Profile, Check, Schema, Baseline Reference Set, Threshold, Waiver, Severity, Reconciliation, Metric Propagation, Drift/Anomaly Result, Health Result or Composite Health absent a proven ownership gap;
+- create convenience concepts for Metric, Metric Profile, Check, Schema, Baseline Reference Set, Threshold, Waiver, Severity, Reconciliation, Metric Propagation, Composite Health, Readiness Suitability, Result Maturity or Timing absent a proven ownership gap;
 - turn extraction, structural compatibility, Baseline typicality or upstream health into downstream normative health automatically;
 - allow authority to manufacture empirical comparability or evidence sufficiency;
 - collapse warning, violation, severity and waiver into one status;
@@ -319,11 +363,15 @@ Phase 006 must not:
 - globally reset metrics/Baselines merely because any DDL changed;
 - propagate upstream metrics, Baseline status, warning, violation, severity or waiver blindly through Lineage;
 - infer causal attribution from reconciliation/localization;
+- treat recent evaluation time as proof of fresh evidence;
+- adopt a universal result TTL;
+- make elapsed time itself a maturity upgrade;
+- turn readiness suitability into readiness/gate decision/enforcement;
 - require production-path computation merely because a metric is useful for monitoring;
 - weaken evidence standards for latency;
 - create separate technical/business health truths;
-- select GitHub Actions, Unity Catalog, Metric Views/DQX, Spark/SQL reconciliation implementation, anomaly/statistical algorithms, storage, streaming, caching, graph, orchestration, IAM, redaction, or service architecture.
+- select GitHub Actions, Unity Catalog, Metric Views/DQX, Spark/SQL reconciliation implementation, anomaly/statistical algorithms, latency SLAs, storage, streaming, caching, graph, orchestration, IAM, redaction, gate mechanism, or service architecture.
 
 ## Phase direction
 
-**Phase 006 is ACTIVE. Groups 01–05 are accepted with HLTH-001–HLTH-054. Group 06 — Composite Health, Readiness Suitability & Progressive Result Timing is next and has not started.**
+**Phase 006 is ACTIVE. Groups 01–06 are accepted with HLTH-001–HLTH-066. Group 07 — Consolidation / Exit Review is next and has not started.**

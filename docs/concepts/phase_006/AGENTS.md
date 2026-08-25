@@ -10,7 +10,8 @@ Applies to work under `docs/concepts/phase_006/` and complements the repository 
 - Group 03 accepted: HLTH-019–HLTH-029; H03-01–H03-32 pass.
 - Group 04 accepted: HLTH-030–HLTH-040; H04-01–H04-40 pass.
 - Group 05 accepted: HLTH-041–HLTH-054; H05-01–H05-44 pass.
-- **Group 06 — Composite Health, Readiness Suitability & Progressive Result Timing is next and has not started.**
+- Group 06 accepted: HLTH-055–HLTH-066; H06-01–H06-44 pass.
+- **Group 07 — Consolidation / Exit Review is next and has not started.**
 - Accepted concept count remains 24; SYN-001–SYN-035, REF-001–REF-030 and AUTH-001–AUTH-053 remain unchanged.
 
 ## Permanent Phase 006 boundaries
@@ -26,29 +27,37 @@ Preserve:
 - Lineage relation ≠ metric propagation ≠ status propagation ≠ causality;
 - local Observation ≠ downstream-relevant context ≠ derived reconciliation Observation ≠ reconciliation Assessment;
 - A+B→C does not imply generic row-count arithmetic or conservation;
-- join match rate is directional and fan-out/cardinality is explicit;
-- aggregation conservation is measure-specific; averages/ratios/quantiles/distinct counts are not generically composable;
-- filter/dedupe/union/merge/null/default/value transformations create their own reconciliation semantics;
-- output completion ≠ all required inputs current;
-- multi-hop Lineage does not create transitive reconciliation formulas;
 - reconciliation localization ≠ root cause;
-- authority cannot manufacture evidence sufficiency or empirical comparability;
-- passive monitoring remains non-blocking unless an explicitly governed active control later requires otherwise.
+- component Assessment ≠ composite health Assessment;
+- composite health ≠ readiness suitability ≠ readiness result ≠ gate decision ≠ enforcement ≠ actual execution;
+- evaluation recency ≠ evidence freshness/current-cycle validity;
+- result freshness/maturity is exact-use specific; no universal TTL;
+- a suitable violation can support `not ready`; a stale `meets` result can be unsuitable;
+- AUTH-023 eligibility ≠ current evidence freshness/comparability/availability/maturity ≠ control authority;
+- narrow trustworthy results do not wait for slower unrelated evidence;
+- elapsed time never upgrades result maturity;
+- passive monitoring remains non-blocking unless an explicitly governed active control requires otherwise;
+- authority cannot manufacture evidence sufficiency or empirical comparability.
 
-## Group 06 entry contract
+## Group 07 entry contract
 
-Group 06 must compose existing local and reconciliation Assessments without erasing dimension state, conflict, unavailable/indeterminate evidence, warning/proximity, severity or waiver truth.
+Replay Groups 01–06 end-to-end. Do not add a new Concept or HLTH contract merely for summary convenience. Add one only if a genuine independent truth owner or unresolved semantic gap is exposed by consolidation.
 
-It must define functional result freshness/maturity and readiness suitability while preserving:
+Verify especially:
 
-**health Assessment ≠ readiness Assessment ≠ gate decision ≠ enforcement ≠ actual execution**.
-
-AUTH-023 high-consequence-use eligibility does not make a stale/unavailable/non-comparable/immature metric suitable for a particular control opportunity.
-
-Do not introduce a universal numeric health/confidence score or majority/average roll-up that hides severe/conflicting/unknown child state.
+- composite health is profile/use/context bound and dimension-preserving;
+- required violation + unresolved component remains degraded with unresolved qualifier rather than becoming clean or unknown-only;
+- `healthy` requires positive resolution of all applicable required predicates under the accepted profile logic;
+- warnings, waivers, severity, conflict, unavailability and Baseline typicality remain separate;
+- consumer-specific composites differ only because their bound propositions/profiles differ;
+- recent recomputation does not make stale evidence current;
+- progressive horizons preserve narrow early results while broader health matures;
+- readiness suitability is outcome-neutral and exact-opportunity bound;
+- AUTH-023 eligibility plus evidence suitability still does not create a gate decision or enforcement;
+- historical composite/suitability/readiness replay is non-rewriting.
 
 ## Architecture boundary
 
-Do not select latency SLAs, caching/streaming architecture, DQX/Metric View computation placement, Spark/SQL implementation, scheduler/gate mechanism, storage, graph engine, or service topology during Group 06.
+Do not select latency SLAs, caching/streaming architecture, DQX/Metric View computation placement, Spark/SQL implementation, scheduler/gate mechanism, storage, graph engine, or service topology during Group 07 merely to close Phase 006.
 
-Do not begin Group 06 or a later group without explicit user direction.
+Do not begin Group 07 or a later phase without explicit user direction.

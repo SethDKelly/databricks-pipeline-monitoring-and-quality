@@ -1,12 +1,12 @@
 ---
-description: Phase 006 health/metric design guardrails with Groups 01–05 accepted measurement, structural, Baseline, normative Assessment, and reconciliation semantics.
+description: Phase 006 health/metric design guardrails with Groups 01–06 accepted measurement, structural, Baseline, normative Assessment, reconciliation, composite-health, and result-suitability semantics.
 globs:
 alwaysApply: true
 ---
 
 # Phase 006 — health and metric semantics
 
-Status: **Phase 006 is ACTIVE. Groups 01–05 are accepted with HLTH-001–HLTH-054. Group 06 — Composite Health, Readiness Suitability & Progressive Result Timing is next and has not started.**
+Status: **Phase 006 is ACTIVE. Groups 01–06 are accepted with HLTH-001–HLTH-066. Group 07 — Consolidation / Exit Review is next and has not started.**
 
 Phase 006 uses `HLTH-###` refinement identifiers. They refine existing concepts and do not extend SYN/REF/AUTH ranges or create hidden truth owners.
 
@@ -17,8 +17,8 @@ Accepted delivery order:
 3. Baselines, Comparability, Distribution & Statistical Context — **accepted**.
 4. Expectations, Thresholds, Margins, Waivers & Assessment Semantics — **accepted**.
 5. Transformation Reconciliation & Metric Propagation — **accepted**.
-6. Composite Health, Readiness Suitability & Progressive Result Timing — **next**.
-7. Consolidation / Exit Review — planned.
+6. Composite Health, Readiness Suitability & Progressive Result Timing — **accepted**.
+7. Consolidation / Exit Review — **next**.
 
 ## Group 01 accepted rules — HLTH-001–HLTH-008
 
@@ -135,22 +135,58 @@ Preserve:
 - reconciliation mismatch/localization is Investigation evidence, not causal confirmation;
 - historical reconciliation binds then-effective Lineage/transformation/reconciliation/input/output versions and supports non-rewriting reassessment.
 
-## Group 06 boundary
-
-Next define composite health, readiness suitability and progressive result timing over the accepted local and reconciliation semantics.
+## Group 06 accepted rules — HLTH-055–HLTH-066
 
 Preserve:
 
-- dimension/component Assessments remain inspectable; do not create a universal numeric score that hides child truth;
-- criterion outcome, warning/proximity, severity/priority, waiver/disposition and Baseline typicality remain separate during composition;
-- `violates + waived` never becomes clean `meets` in summary health;
-- conflicting/indeterminate/unavailable component state cannot be silently averaged away;
-- technical/business/executive/audit views remain authorized projections over one health truth;
-- readiness suitability is use/time-specific and requires current applicable evidence;
-- AUTH-023 control-use eligibility ≠ current evidence freshness/comparability/availability/maturity;
-- health Assessment ≠ readiness Assessment ≠ gate decision ≠ enforcement ≠ actual execution;
-- fast narrow operational facts can be available before slower schema/DQ/reconciliation/distribution evidence without claiming broader health completeness;
-- passive monitoring remains non-blocking for ungated production.
+**component Assessment ≠ composite health Assessment ≠ result freshness/suitability ≠ readiness result ≠ gate decision ≠ enforcement ≠ actual execution**.
+
+- composite health binds subject, consumer/use/context, profile/version, component roles/logic, cycle/window and evaluation/knowledge time;
+- global unqualified `healthy` is too broad for strong reasoning;
+- required/optional/conditional/alternative/informational roles and AND/OR/conditional composition must be explicit;
+- no universal majority vote, weighted average, severity-weighted score or numeric health score;
+- for conjunctive profiles, healthy requires all applicable required components to meet with no required unresolved state;
+- healthy-with-warning can represent all required components meeting while a warning/proximity band is active;
+- a known required violation can establish degraded while unresolved/unavailable qualifiers remain visible;
+- no known violation plus required indeterminate/conflicting/unavailable state cannot become healthy;
+- `violates + waived response` remains violation/degraded; genuine bounded non-applicability is distinct;
+- not-applicable is not counted as a passing vote;
+- severity/criticality/priority may guide governed membership/escalation/presentation but do not create health truth or Impact;
+- technical/business/executive/audit/consumer views are authorized projections over one underlying health truth;
+- consumer-specific profiles can legitimately differ because the proposition differs, not because audiences get separate truth models;
+- result/evidence freshness is exact-use specific; recent Assessment evaluation does not make old evidence current;
+- current-cycle/version alignment is independent from wall-clock recency;
+- cached prior evidence is usable only when the exact use permits its age/context;
+- no universal health-result TTL is accepted;
+- analytical horizons are immediate operational → fast core/schema/current-cycle → enriched DQ/reconciliation/distribution → diagnostic/RCA → retrospective/post-ops;
+- horizons describe evidence maturity, not fixed waiting periods or architecture stages;
+- elapsed time never upgrades result maturity;
+- emit the narrowest trustworthy result as soon as its evidence standard is met;
+- pending slower evidence can keep broader health incomplete without invalidating supported narrow propositions;
+- readiness suitability is exact-use and outcome-neutral: fresh violation can be suitable for not-ready, stale meets can be unsuitable for ready;
+- suitability can require sufficiency, availability, non-conflict, comparability/reference validity, current-cycle identity, permitted evidence age and required horizon;
+- AUTH-023 eligibility does not make stale/immature/unavailable/non-comparable evidence suitable and suitable evidence does not create eligibility;
+- suitability does not create readiness, control authority, gate decision, enforcement or execution;
+- unsuitable/unavailable evidence never invents fail-open/fail-closed/hold/release fallback;
+- passive monitoring remains non-blocking for ungated production;
+- late/enriched/corrected evidence can revise broader composites through reassessment without rewriting earlier narrow/historical results;
+- historical composite/suitability replay binds then-effective profiles/components/rules/references/reconciliation/evidence/freshness semantics and knowledge cut.
+
+## Group 07 boundary
+
+Next perform consolidation/exit across HLTH-001–HLTH-066.
+
+Verify especially:
+
+- no hidden new concept is needed for Metric, Reconciliation, Composite Health, Readiness Suitability or Result Maturity;
+- no summary can hide required violation/conflict/indeterminate/unavailable/waived state;
+- no upstream metric/status propagation reappears through composite logic;
+- no latency shortcut weakens evidence standards;
+- no result freshness rule becomes a universal TTL;
+- no readiness suitability result becomes gate decision/enforcement;
+- technical/business projections remain one truth;
+- historical health and readiness replay remains non-rewriting;
+- passive monitoring remains non-blocking outside explicit control semantics.
 
 ## Permanent phase boundaries
 
@@ -165,8 +201,8 @@ Preserve:
 - Do not invent hidden threshold tolerance/boundary semantics.
 - Lineage does not recursively propagate metrics or statuses.
 - Upstream anomaly/violation does not automatically become downstream failure or cause.
-- High-consequence eligibility does not make stale/unavailable/immature evidence usable.
+- High-consequence eligibility does not make stale/unavailable/immature/non-comparable evidence usable.
 - Passive monitoring remains out-of-band/non-blocking for ungated production.
-- Do not select Metric Views/DQX, GitHub Actions, Unity Catalog, Spark/SQL reconciliation implementation, anomaly/statistical algorithms, storage, streaming, caching, scheduler/orchestrator or service topology during Phase 006.
+- Do not select Metric Views/DQX, GitHub Actions, Unity Catalog, Spark/SQL reconciliation implementation, anomaly/statistical algorithms, latency SLAs, storage, streaming, caching, scheduler/orchestrator, gate mechanism or service topology during Phase 006.
 
-Do not begin Group 06 or a later group without explicit user direction.
+Do not begin Group 07 or a later phase without explicit user direction.

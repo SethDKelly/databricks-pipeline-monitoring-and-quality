@@ -6,7 +6,7 @@ alwaysApply: true
 
 # Metric health and propagation foundation
 
-Status: **Phase 006 is active. Groups 01–05 are accepted with HLTH-001–HLTH-054. Group 06 is next.**
+Status: **Phase 006 is active. Groups 01–06 are accepted with HLTH-001–HLTH-066. Group 07 is next.**
 
 Preserve permanently:
 
@@ -35,7 +35,11 @@ Preserve permanently:
 - Lineage relation ≠ metric/status propagation;
 - local Observation ≠ downstream-relevant upstream context ≠ derived reconciliation Observation ≠ reconciliation Assessment;
 - A+B→C ≠ generic row-count conservation;
-- reconciliation localization ≠ root cause.
+- reconciliation localization ≠ root cause;
+- component Assessment ≠ composite health Assessment;
+- composite health ≠ readiness suitability ≠ readiness result ≠ gate decision ≠ enforcement ≠ actual execution;
+- evaluation recency ≠ evidence freshness/current-cycle validity;
+- AUTH-023 control eligibility ≠ evidence suitability ≠ control authority.
 
 Accepted Phase 006 Group 01 foundation:
 
@@ -116,17 +120,40 @@ Accepted Phase 006 Group 05 transformation/reconciliation foundation:
 - Reconciliation mismatch/localization is Investigation evidence, not Causal Claim confirmation.
 - Historical reconciliation binds then-effective Lineage/transformation/reconciliation/input/output versions and knowledge cut.
 
+Accepted Phase 006 Group 06 composite/timing/readiness foundation:
+
+- Composite health binds subject, consumer/use/context, profile/version, component roles/logic, cycle/window and evaluation/knowledge time.
+- Required/optional/conditional/alternative/informational component roles and AND/OR/conditional composition are explicit.
+- No universal majority, weighted average, severity-weighted or numeric health score is accepted.
+- For a conjunctive profile, healthy requires all applicable required components to meet with no required unresolved state; warnings can produce healthy-with-warning.
+- A required violation can establish degraded while unresolved/unavailable qualifiers remain visible.
+- Required indeterminate/conflicting/unavailable state cannot be silently averaged away into healthy.
+- `violates + waived response` remains violation/degraded; genuine bounded non-applicability is distinct.
+- Severity/criticality/priority do not manufacture health truth or Impact.
+- Technical/business/executive/audit/consumer views are authorized projections over one underlying health truth.
+- Result freshness is exact-use specific; recent recomputation does not make stale evidence current and no universal TTL is accepted.
+- Current-cycle/version identity is separate from wall-clock recency.
+- Analytical horizons are immediate operational → fast core/schema/current-cycle → enriched DQ/reconciliation/distribution → diagnostic/RCA → retrospective/post-ops.
+- Horizons are evidence maturity, not fixed delays; elapsed time never upgrades a result.
+- Emit the narrowest trustworthy result as soon as its evidence standard is satisfied.
+- Readiness suitability is exact-use and outcome-neutral: a suitable violation can support not-ready while a stale meets result can be unsuitable.
+- Suitability preserves sufficiency, availability, conflict, comparability/reference validity, cycle alignment, permitted evidence age and required maturity.
+- AUTH-023 eligibility cannot make unsuitable evidence usable, and suitable evidence cannot create eligibility or control authority.
+- Unsuitable/unavailable evidence does not invent fail-open/fail-closed/hold/release fallback.
+- Passive monitoring remains non-blocking for ungated production.
+- Progressive late/corrected evidence creates reassessment rather than rewriting prior narrow/historical results.
+- Historical composite/suitability replay uses then-effective profiles/rules/evidence and remains separate from gate decision/enforcement/execution.
+
 Later Phase 006 rules still to be refined:
 
-- Group 06 — composite health and progressive result timing/control-suitability — **next**;
-- Group 07 — consolidation/exit.
+- Group 07 — consolidation/exit — **next**.
 
 Cross-phase boundaries:
 
 - Phase 005 decides metric/Expectation/threshold authority and disclosure governance.
-- Phase 006 defines metric, reconciliation and health semantics.
+- Phase 006 defines metric, reconciliation, composite-health and result-suitability semantics.
 - Phase 007 refines Lineage-aware operational/change propagation.
 - Phase 009 evaluates actual source support, cost, latency and retention.
 - Phase 010 selects computation/storage/fast-path architecture.
 
-Do not recursively cascade every upstream statistic, Baseline result, warning, violation, severity or waiver through Lineage. Do not force monitoring/reconciliation metrics onto the production critical path unless an explicitly accepted high-consequence control requires them and later evidence/timing criteria are satisfied.
+Do not recursively cascade every upstream statistic, Baseline result, warning, violation, severity or waiver through Lineage. Do not force monitoring/reconciliation metrics onto the production critical path unless an explicitly accepted high-consequence control requires them and current evidence is independently suitable for that exact use.

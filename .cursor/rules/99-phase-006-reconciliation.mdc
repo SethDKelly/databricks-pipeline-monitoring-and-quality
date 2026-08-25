@@ -6,7 +6,7 @@ alwaysApply: true
 
 # Phase 006 Group 05 — transformation reconciliation guardrails
 
-Status: **Accepted — HLTH-041–HLTH-054; H05-01–H05-44 pass. Group 06 is next.**
+Status: **Accepted — HLTH-041–HLTH-054; H05-01–H05-44 pass. Group 06 has consumed these semantics; Group 07 is next.**
 
 Preserve permanently:
 
@@ -33,6 +33,8 @@ Preserve permanently:
 - causal propositions remain Causal Claim under REF-013–REF-020;
 - historical reconciliation uses then-effective Lineage/transformation/reconciliation/input/output versions and preserves reassessment history.
 
-Group 06 must compose these reconciliation Assessments alongside local dimensions without hiding indeterminate/conflicting/unavailable/waived state and must separately define result freshness/maturity and readiness suitability.
+Accepted Group 06 composes reconciliation Assessments only as explicit profile components. It does not convert reconciliation success into overall health, readiness, gate state, or causality. Result freshness/current-cycle alignment and exact-use suitability remain independently evaluated.
+
+Group 07 must verify these relationships survive full Phase 006 consolidation without blind propagation or summary flattening.
 
 Do not select Spark/SQL implementation, DQX/Metric Views realization, graph/storage design, scheduler/control topology, or streaming/caching architecture from these semantics.

@@ -6,7 +6,7 @@ alwaysApply: true
 
 # Phase 006 Group 04 — normative Assessment guardrails
 
-Status: **Accepted — HLTH-030–HLTH-040; H04-01–H04-40 pass. Group 05 has now consumed these rules and is accepted; Group 06 is next.**
+Status: **Accepted — HLTH-030–HLTH-040; H04-01–H04-40 pass. Groups 05–06 have consumed these rules and are accepted; Group 07 is next.**
 
 Preserve permanently:
 
@@ -35,5 +35,9 @@ Preserve permanently:
 - Historical Assessments retain exact criterion, warning/tolerance, waiver, evidence and referenced Baseline versions.
 - Later corrected evidence creates reassessment; do not silently mutate historical Assessment.
 - Group 05 does not propagate local warning/violation/severity/waiver through Lineage; it derives transformation-specific reconciliation propositions instead.
+- Group 06 preserves warning, waiver, severity and criterion outcome as separate component axes during composite health and readiness-suitability reasoning.
+- A waived required violation does not become composite healthy, and a stale `meets` criterion can be unsuitable for an exact readiness opportunity.
+
+Group 07 must verify the normative distinctions remain visible through consolidation and no composite shortcut creates false green or control readiness.
 
 Do not select DQX/Metric Views expression syntax, alert engines, statistical libraries, storage, compute or service architecture from these rules.
