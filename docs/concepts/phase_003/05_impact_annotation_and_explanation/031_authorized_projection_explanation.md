@@ -111,3 +111,11 @@ Each material statement has proposition identity independent of wording and reta
 Supporting, contradicting and limiting basis are statement-relative roles and preserve common-derivation/independence semantics. Basis count never becomes confidence. Headline/summary/detail views may differ in verbosity but cannot strengthen scope, polarity or epistemic status, and material limitations cannot be compressed away.
 
 Multiple statements remain independent rather than forming one synthetic global answer truth. Internal basis traceability is required for every material statement, while authorized visible basis inspection remains governed later by Phase 008 Group 06.
+
+## Later refinement — Phase 008 Group 03
+
+Phase 008 Group 03 applies SYN-031 to direct health/change/execution questions without adding a new source-truth layer. See [`../../phase_008/03_health_change_execution_question_semantics/README.md`](../../phase_008/03_health_change_execution_question_semantics/README.md).
+
+Composition preserves execution occurrence versus lifecycle outcome versus output existence/qualification versus freshness/currentness versus health; profile-bound health versus structure/comparability/quality; Baseline versus Expectation; warning/waiver/severity; realized Change versus Change Intent/Deployment/activation; intent-realization comparison; and run-specific version use versus active Deployment/latest output.
+
+Repeated execution, dependency/precedence/waiting/consumption, missing-work negatives and timing/lateness remain separately answerable. Historical domain answers retain event/effective time and knowledge cut. Causal `why` wording may consume these statements as basis but cannot strengthen them into Causal Claim truth through composition.

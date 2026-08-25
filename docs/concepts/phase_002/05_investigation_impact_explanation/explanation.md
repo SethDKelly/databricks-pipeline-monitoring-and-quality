@@ -167,3 +167,15 @@ Headline/summary/detail views may compress detail but cannot change scope, polar
 Every material statement retains internal statement-to-basis identity/provenance even if Group 06 later restricts what basis may be visibly disclosed. Answer coverage is tracked by bounded subquestion/proposition rather than a universal confidence/completeness score.
 
 Group 02 accepts EXPL-013–EXPL-028 and AS02-01–AS02-30 without changing the 24-concept catalog.
+
+## Later refinement — Phase 008 Group 03
+
+Phase 008 Group 03 refines how common health/change/execution wording maps to accepted Phase 006/007 propositions without adding an operational-status concept. See [`../../phase_008/03_health_change_execution_question_semantics/README.md`](../../phase_008/03_health_change_execution_question_semantics/README.md).
+
+It preserves execution occurrence versus lifecycle outcome versus output existence/qualification versus freshness/currentness versus health; health dimension/profile/use binding; realized structure versus compatibility versus comparability versus normative quality; Baseline versus Expectation; warning/waiver/severity separation; and reconciliation versus causal attribution.
+
+Change answers preserve realized Change versus Change Intent versus Deployment attempt/activation and intent-to-realization comparison. Run-specific implementation/input/output versions require Execution History binding rather than active Deployment/latest-output inference. Retry/rerun/backfill, dependency/precedence/waiting/consumption, expected-work negatives and timing/lateness remain independently answerable.
+
+Historical health/change/execution answers retain event/effective time plus knowledge perspective. Direct state evidence can support an inquiry but cannot become Causal Claim truth through wording, sequence or temporal proximity.
+
+Group 03 accepts EXPL-029–EXPL-049 and HCE03-01–HCE03-36 without changing the 24-concept catalog.

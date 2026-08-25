@@ -10,7 +10,8 @@ Canonical repository phase status is maintained in [`../../README.md#current-sta
 - Phase 008 grouping is accepted.
 - **Group 01 is complete with EXPL-001–EXPL-012; BQ01-01–BQ01-24 pass.**
 - **Group 02 is complete with EXPL-013–EXPL-028; AS02-01–AS02-30 pass.**
-- **Group 03 — Health, Change & Execution Question Semantics is next.**
+- **Group 03 is complete with EXPL-029–EXPL-049; HCE03-01–HCE03-36 pass.**
+- **Group 04 — Investigation, Causality, Impact, Control & Governance Question Semantics is next.**
 - Accepted concept count remains 24.
 
 ## Accepted Group 01 rules
@@ -70,6 +71,39 @@ Preserve:
 
 See [`02_answer_structure_statement_selection_basis_traceability/README.md`](02_answer_structure_statement_selection_basis_traceability/README.md).
 
+## Accepted Group 03 rules
+
+Preserve:
+
+- operational shorthand resolves to exact accepted propositions rather than a universal status;
+- `did it run?` is separate from lifecycle success/failure/cancellation;
+- execution success is separate from output existence/qualification;
+- output existence is separate from currentness/freshness/health/downstream use;
+- freshness/currentness/current-cycle questions bind exact temporal/use rules rather than latest-run shortcuts;
+- `is it healthy?` requires explicit dimension/profile/use/context semantics;
+- realized structure, compatibility, statistical comparability and normative quality remain separate;
+- Baseline typicality does not become Expectation health;
+- warning/proximity/severity/priority/waiver do not rewrite criterion truth;
+- reconciliation result does not become Causal Claim;
+- `what changed?` routes to realized Change;
+- `was it planned?` binds exact Change Intent revision/component;
+- no matching registered intent does not prove unplanned change;
+- Deployment attempt/outcome, activation and downstream effect remain separate;
+- intent-to-realization matched/diverged does not establish health or cause;
+- run-specific implementation/input/output versions require Execution History binding;
+- active Deployment does not automatically establish run-specific version use;
+- latest upstream output does not establish consumed input;
+- retry/restart/rerun/backfill preserve source-specific continuity semantics;
+- dependency, expected order, actual precedence, waiting and consumption remain separate;
+- expected work/opportunity/Gate state does not manufacture execution;
+- strong no-run/no-output/no-consumption claims retain negative-evidence coverage burden;
+- duration, start delay, wait interval, delivery lateness and freshness/currentness are distinct;
+- timing/overlap does not establish causality;
+- historical health/change/execution answers preserve event/effective time and knowledge cut;
+- direct domain statements can support Group 04 but cannot become causality/Impact/control/governance truth by composition.
+
+See [`03_health_change_execution_question_semantics/README.md`](03_health_change_execution_question_semantics/README.md).
+
 ## Permanent Phase 008 boundaries
 
 Preserve throughout the phase:
@@ -87,30 +121,36 @@ Preserve throughout the phase:
 - audience ≠ authority;
 - authorized abstraction ≠ declassification by inference;
 - internal statement basis ≠ visible raw evidence requirement for every audience;
-- Observation ≠ Assessment ≠ Change Intent ≠ realized Change ≠ Causal Claim ≠ Impact ≠ Annotation;
+- Observation ≠ Assessment ≠ Change Intent ≠ Deployment ≠ realized Change ≠ Execution History ≠ Causal Claim ≠ Impact ≠ Annotation;
+- run success ≠ output existence/currentness/health;
+- structural compatibility ≠ statistical comparability ≠ normative health;
+- active Deployment ≠ run-specific version use;
+- timing/Lineage/reconciliation/change proximity ≠ causality;
 - reachability ≠ exposure ≠ effect ≠ consequence ≠ causal attribution;
 - current retrospective Explanation ≠ what was known then;
 - retained Explanation snapshot ≠ current source truth;
 - progressive maturity ≠ automatic status strengthening;
-- no universal Explanation confidence/completeness/quality score.
+- no universal Explanation confidence/completeness/quality/operational-status score.
 
-## Group 03 entry contract
+## Group 04 entry contract
 
-Group 03 consumes EXPL-001–EXPL-028 and applies the accepted question/answer structure to health/change/execution propositions.
+Group 04 consumes EXPL-001–EXPL-049 and applies the accepted question/answer/domain structure to Investigation, causality, Impact, control and governance propositions.
 
-It should explicitly test questions such as:
+It should explicitly test:
 
-- `Did it run?` versus `Did it succeed?` versus `Did it produce the expected/current output?`;
-- `Is it healthy?` across explicit dimensions/profiles without inventing a universal asset health state;
-- freshness/currentness versus latest successful execution;
-- schema compatibility versus observed realized schema versus statistical comparability;
-- `What changed?` versus `What was intended?` versus `What was deployed/activated?`;
-- intent-to-realization comparison without turning match/divergence into health or cause;
-- `Which version/configuration was used?` from run-specific execution evidence rather than active Deployment by convenience;
-- retry/restart/rerun/backfill distinctions;
-- actual dependency sequence/waiting/consumption versus expected schedule/dependency;
-- current versus historical execution/health questions under event/effective time + knowledge cut;
-- partial/missing telemetry producing partial answers rather than negative facts;
-- direct health/execution statements versus cross-concept derived answers preserving EXPL-015/021.
+- `why did this happen?`, `what is the root cause?`, `what contributed?`, and unresolved-cause questions;
+- Investigation lead/localization versus Causal Claim status;
+- supported/rejected/confirmed competing causal claims without narrative winner selection;
+- downstream candidate/reachability versus actual encounter/exposure/effect/consequence;
+- `who was affected?` and strong `nobody was affected` coverage burdens;
+- Safeguard proposal/authorization/request/enforcement/prevented-exposure/release/recovery distinctions;
+- Gate configuration/readiness/decision/delivery/enforcement/execution/control-effect distinctions;
+- `did the control prevent the problem?` versus control overlap;
+- responsibility/ownership versus fault/cause/authorization;
+- Semantic Definition/Policy Context/Classification versus compliance conclusions;
+- Capability Authorization versus responsibility/policy/assertion authority;
+- business consequence versus technical/analytical effect;
+- causal attribution from control/change/exposure facts only through accepted Causal Claim semantics;
+- historical/restricted questions without current-disclosure or retrospective strengthening shortcuts.
 
-Do not reopen HLTH/OPS semantics, select UI/rendering/LLM architecture, or turn domain shorthand into universal scalar status.
+Do not reopen Phase 005/007 truth semantics, select UI/rendering/LLM architecture, or create a universal RCA/Impact/control/governance score.

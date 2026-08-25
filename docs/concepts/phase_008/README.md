@@ -1,6 +1,6 @@
 # Phase 008 — Business Questioning and Explanation
 
-**Status:** IN PROGRESS — Groups 01–02 accepted; EXPL-001–EXPL-028 accepted; Group 03 next
+**Status:** IN PROGRESS — Groups 01–03 accepted; EXPL-001–EXPL-049 accepted; Group 04 next
 
 ## Goal
 
@@ -14,7 +14,7 @@ Phase 008 uses **`EXPL-###`** refinement contracts.
 
 `EXPL-###` means business-question and Explanation refinement over accepted concepts. It does **not** create a new `Question`, `Answer`, or answer-statement truth concept by default, does not extend SYN/REF/AUTH/HLTH/OPS ranges, and must not become an umbrella state that absorbs the truth owned by other concepts.
 
-Accepted range so far: **EXPL-001–EXPL-028**.
+Accepted range so far: **EXPL-001–EXPL-049**.
 
 ## Logical delivery grouping
 
@@ -39,14 +39,16 @@ No new concept is required. Explanation owns the composed communication only; an
 See [`02_answer_structure_statement_selection_basis_traceability/README.md`](02_answer_structure_statement_selection_basis_traceability/README.md).
 
 ### Group 03 — Health, Change & Execution Question Semantics
-**Status:** **Next — not started.**
+**Status:** **Accepted — EXPL-029–EXPL-049; HCE03-01–HCE03-36 pass.**
 
-Will refine how status/health, freshness, schema/quality, change, deployment, execution, version-use and operational-timing questions map to accepted Phase 006/007 truth without hidden composite-health, causal, or execution assumptions.
+Defines how operational shorthand resolves into exact execution occurrence/lifecycle/output/currentness/health/structure/comparability/quality/reconciliation/change/intent/deployment/version/sequence/timing/historical propositions without collapsing accepted Phase 006/007 distinctions.
+
+No new concept is required. Explanation translates question wording; Assessment, Observation, Change Intent, Deployment, Change and Execution History retain source truth.
 
 See [`03_health_change_execution_question_semantics/README.md`](03_health_change_execution_question_semantics/README.md).
 
 ### Group 04 — Investigation, Causality, Impact, Control & Governance Question Semantics
-**Status:** Not started.
+**Status:** **Next — not started.**
 
 Will refine `why`, root-cause, downstream Impact, consumer exposure, Safeguard, Gate, responsibility, policy/meaning and capability-oriented questions while preserving Investigation/Causal Claim/Impact/control/governance ownership boundaries.
 
@@ -92,7 +94,7 @@ See [`08_historical_comparative_explanation_consolidation_exit/README.md`](08_hi
 
 ## Accepted answer foundation through Group 02
 
-Phase 008 now preserves:
+Phase 008 preserves:
 
 **bounded question/subquestion → candidate source-owned propositions → question-relevant/material statement selection → direct projection or explicit cross-concept derivation → statement-level source/epistemic identity → supporting/contradicting/limiting basis → headline/summary/detail composition → internal basis inspection → bounded answer coverage**.
 
@@ -112,6 +114,32 @@ For answer composition specifically:
 - sibling statements remain independent and do not create one synthetic global answer truth;
 - internal statement-to-basis traceability is mandatory even when visible basis disclosure is later restricted;
 - answer coverage is subquestion/proposition bound, not a universal completeness/confidence score.
+
+## Accepted Group 03 domain-question discipline
+
+Health/change/execution questions now preserve:
+
+- `ran` ≠ lifecycle success/failure/cancellation;
+- execution success ≠ output existence/qualification;
+- output existence ≠ current/fresh/healthy/consumed;
+- freshness/currentness/current-cycle semantics are use- and opportunity-bound;
+- health is dimension/profile/use/context bound rather than a universal scalar property;
+- realized schema ≠ structural compatibility ≠ statistical comparability ≠ normative quality;
+- Baseline typicality ≠ Expectation outcome;
+- warning/severity/waiver ≠ criterion truth;
+- reconciliation mismatch ≠ root cause;
+- realized Change ≠ Change Intent ≠ Deployment attempt/activation;
+- intent-realization match/divergence ≠ health/cause;
+- no matching registered intent ≠ proven unplanned change;
+- active Deployment ≠ run-specific implementation state;
+- latest upstream output ≠ run-specific consumed input;
+- retry/restart/rerun/backfill retain distinct source semantics;
+- dependency ≠ actual precedence ≠ waiting ≠ consumption;
+- expected work/opportunity/Gate state ≠ execution;
+- missing telemetry ≠ no run/output/consumption;
+- duration/start delay/wait/lateness/currentness are distinct timing propositions;
+- timing or deployment proximity ≠ causal attribution;
+- current retrospective operational answer ≠ what was known then.
 
 ## Accepted Phase 007 handoff
 
@@ -148,4 +176,4 @@ Phase 009 will map accepted question/Explanation requirements to real source ava
 
 ## Phase direction
 
-**Groups 01–02 are accepted with EXPL-001–EXPL-028. BQ01-01–BQ01-24 and AS02-01–AS02-30 pass. Group 03 — Health, Change & Execution Question Semantics is next.**
+**Groups 01–03 are accepted with EXPL-001–EXPL-049. BQ01-01–BQ01-24, AS02-01–AS02-30 and HCE03-01–HCE03-36 pass. Group 04 — Investigation, Causality, Impact, Control & Governance Question Semantics is next.**
