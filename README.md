@@ -15,15 +15,7 @@ Phase 002 originally completed with 20 retained concepts. Later requirements exp
 
 The current catalog contains **24 accepted concepts**.
 
-**Phase 003 — Concept Synchronizations and Ecosystem Scenarios: COMPLETE.** Groups 01–06 accepted; SYN-001–SYN-035 accepted; E-01–E-22 pass end-to-end historical/consolidation review.
-
-**Phase 004 — Evidence, Time, and Causality Refinement: COMPLETE.** Groups 01–05 accepted; REF-001–REF-030 accepted.
-
-**Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement: COMPLETE.** Groups 01–07 accepted; AUTH-001–AUTH-053 final; G07-01–G07-26 pass consolidation.
-
-**Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement: COMPLETE.** Groups 01–07 accepted; HLTH-001–HLTH-066 final; H07-01–H07-36 pass consolidation.
-
-**Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: NEXT — not started.**
+**Live repository phase progression is declared only in [`docs/README.md#current-state`](docs/README.md#current-state).** This README intentionally does not maintain a separate current/next phase declaration. Phase-specific documentation records accepted contracts, historical exits, and group-local progress without overriding the canonical status declaration.
 
 ## Product thesis
 
@@ -206,7 +198,7 @@ Warning/proximity, Baseline typicality, severity/priority, and waiver/dispositio
 **typical + violates**  
 **atypical + violates**.
 
-`Violates + waived response` remains a violation. A bounded exception that makes a criterion genuinely non-applicable is different.
+`Violates + waived response` remains a violation. A bounded exception that makes the criterion genuinely non-applicable is different.
 
 ### Transformation reconciliation
 
@@ -245,6 +237,28 @@ AUTH-023 high-consequence-use eligibility and current evidence suitability are i
 H07-01–H07-36 replay the complete chain across execution-versus-health, metric availability, schema contracts, Baseline regime breaks, seasonal/normative behavior, low-volume/approximate evidence, waivers/conflicts, A+B→C reconciliation, transformation repair/introduction, composite disagreement, progressive result timing, stale/suitable readiness evidence, AUTH-023 eligibility, passive monitoring outage, active-control uncertainty, and historical replay.
 
 All pass without HLTH-067, a new concept, universal score, false pass, blind propagation, causal shortcut, stale-evidence shortcut, control conflation, or architecture selection.
+
+## Phase 007 operational Lineage foundation
+
+Phase 007 Group 01 refines the accepted Lineage concept through **OPS-001–OPS-009** without adding a new concept.
+
+A Lineage relationship is now treated explicitly as a **bounded relationship proposition**, not a generic edge. Material interpretation binds source/target identity, semantic relationship family/role, field/key/population/consumer/version scope, effective interval and proposition-specific evidence basis.
+
+The accepted minimum operational relationship families are:
+
+- `data_derivation`;
+- `production`;
+- `operational_dependency`;
+- `publication`;
+- `consumption_path`.
+
+Repository membership, Deployment provenance, Change state, execution state, Gate/Safeguard state, authority/authorization and causality remain owned elsewhere rather than being converted into Lineage merely because they are graph-representable.
+
+The earlier preliminary notion of Lineage edge `confidence` is superseded by Phase 004 evidence semantics. Relationship existence uses applicability, provenance, opportunity/coverage, corroboration/conflict and conclusion-specific sufficiency; there is no universal Lineage confidence or completeness score. A bounded relationship proposition may resolve `established`, `absent`, `unknown`, `conflicting` or `unavailable`, with `absent` requiring adequate negative-evidence coverage.
+
+Graph reachability is also distinct from **operational relevance**. Relevance is evaluated for an exact traversal question and can be relevant, not relevant or indeterminate based on relationship family, semantic scope, time/version/consumer context and path composition. Reachability/relevance still do not establish encounter, Impact or cause.
+
+Historical topology remains bitemporal and non-rewriting: planned topology belongs to Change Intent; effective Lineage is evidence-backed; specific run/consumer encounter remains separate; later topology discovery can revise retrospective views without backdating framework knowledge.
 
 ## Capability Authorization is exact and least-privilege
 
@@ -555,6 +569,9 @@ These are environmental facts, not architecture. Availability of Databricks/Unit
 54. **Historical authority/authorization/disclosure is not current authority/disclosure permission.**
 55. **Monitoring must not broaden raw-data or production-control authority.**
 56. **Databricks-native first where it fits; integrate before duplicate.**
+57. **A Lineage relationship is a bounded semantic proposition, not a generic graph edge.**
+58. **Lineage reachability is not question-bound operational relevance, encounter, Impact, or cause.**
+59. **Lineage evidence and topology completeness are conclusion-relative; no universal edge confidence/completeness score exists.**
 
 ## Canonical A+B→C scenario
 
@@ -573,6 +590,8 @@ For the exact A+B→C join, the framework can evaluate eligible populations, dir
 Local upstream health still does not propagate. B can violate an upstream criterion while C meets its own required profile because the transformation isolates/repairs the condition; A and B can both meet while C's transformation introduces a defect.
 
 A composite C health result is profile/use/context bound. One required violation can make a conjunctive profile degraded while an unavailable schema component remains visible as unresolved. Consumer A and Consumer B may have different bounded health results when their contracts/profiles differ.
+
+Phase 007 Group 01 now makes the topology path itself more explicit. A and B can both be `data_derivation` sources for C while carrying different semantic roles—for example A supplying projected values and B determining join/filter population. A table-level A→C relationship does not imply every A field is relevant to every C field, and graph reachability can remain true while a particular field/population path is known not relevant or remains indeterminate.
 
 Causal claims remain explicit. `B match degradation contributed to C row loss` and `join-key nulls contributed to C row loss` can both become supported. A recent Deployment can remain a competing claim; if sufficient evidence shows C degradation began before activation, that claim may be weakened or rejected. No one root cause is forced and no contributor is called primary without comparative evidence.
 
@@ -596,9 +615,9 @@ If downstream consumption, enforcement, corrected timing, metric-definition/sche
 
 ## Repository map
 
-- [`docs/README.md`](docs/README.md) — documentation navigation/system of record.
+- [`docs/README.md`](docs/README.md) — documentation navigation/system of record and canonical phase status.
 - [`docs/foundation/`](docs/foundation/) — accepted foundation and roadmap.
-- [`docs/foundation/011_phase_006_exit_phase_007_handoff.md`](docs/foundation/011_phase_006_exit_phase_007_handoff.md) — current Phase 006 exit / Phase 007 handoff.
+- [`docs/foundation/011_phase_006_exit_phase_007_handoff.md`](docs/foundation/011_phase_006_exit_phase_007_handoff.md) — accepted Phase 006 exit / original Phase 007 handoff; historical handoff status does not override `docs/README.md`.
 - [`docs/concepts/phase_002/`](docs/concepts/phase_002/) — concept specifications and four post-exit addenda.
 - [`docs/concepts/phase_003/`](docs/concepts/phase_003/) — completed synchronization contracts/scenarios and exit review.
 - [`docs/concepts/phase_004/`](docs/concepts/phase_004/) — completed evidence/time/causality refinement contracts and exit review.
@@ -606,7 +625,8 @@ If downstream consumption, enforcement, corrected timing, metric-definition/sche
 - [`docs/concepts/phase_005/07_consolidation_and_exit/phase_005_exit_review.md`](docs/concepts/phase_005/07_consolidation_and_exit/phase_005_exit_review.md) — accepted Phase 005 exit review.
 - [`docs/concepts/phase_006/README.md`](docs/concepts/phase_006/README.md) — completed health/metrics/schema/statistical/reconciliation/composite/timing phase.
 - [`docs/concepts/phase_006/07_consolidation_and_exit/phase_006_exit_review.md`](docs/concepts/phase_006/07_consolidation_and_exit/phase_006_exit_review.md) — accepted Phase 006 exit review.
-- [`docs/concepts/phase_007/README.md`](docs/concepts/phase_007/README.md) — next Lineage/change/Investigation/Impact/control phase handoff.
+- [`docs/concepts/phase_007/README.md`](docs/concepts/phase_007/README.md) — Phase 007 operational refinement plan and group-local progress.
+- [`docs/concepts/phase_007/01_lineage_relationship_taxonomy_historical_topology/README.md`](docs/concepts/phase_007/01_lineage_relationship_taxonomy_historical_topology/README.md) — accepted operational Lineage/historical-topology refinement.
 - [`docs/reference/glossary.md`](docs/reference/glossary.md) — canonical vocabulary.
 - [`docs/reference/authority_vocabulary.md`](docs/reference/authority_vocabulary.md) — authority vocabulary.
 - [`docs/decisions/`](docs/decisions/) — durable decision history.
@@ -614,4 +634,4 @@ If downstream consumption, enforcement, corrected timing, metric-definition/sche
 
 ## Phase direction
 
-**Phase 006 is complete with HLTH-001–HLTH-066 final. Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement is next and has not started.**
+For live repository phase/group progression, use **[`docs/README.md#current-state`](docs/README.md#current-state)**. Phase-local README/AGENTS files define the active group's accepted contracts and next handoff without creating a second repository-wide status authority.

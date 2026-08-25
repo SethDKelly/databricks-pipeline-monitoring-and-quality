@@ -2,6 +2,14 @@
 
 **Status:** Accepted — Phase 002 Group 04
 
+## Later refinement — Phase 007 Group 01
+
+The accepted concept remains the Lineage truth owner. Phase 007 Group 01 refines its operational semantics through **OPS-001–OPS-009** in [`../../phase_007/01_lineage_relationship_taxonomy_historical_topology/README.md`](../../phase_007/01_lineage_relationship_taxonomy_historical_topology/README.md).
+
+In particular, the preliminary Phase 002 phrase `evidence quality/confidence` is superseded by Phase 004/007 proposition-specific evidence applicability, provenance, opportunity/coverage, corroboration/conflict and conclusion-specific sufficiency. There is **no universal Lineage confidence or completeness score**.
+
+Group 01 also accepts five minimum operational relationship families—`data_derivation`, `production`, `operational_dependency`, `publication`, and `consumption_path`—with field/key/population/consumer/version-capable scope. Repository/deployment/control/authority/causal facts remain owned by their existing concepts rather than becoming generic Lineage edges.
+
 ## Purpose
 
 Let users trace typed, directed relationships among identified ecosystem entities for the topology that was applicable at a relevant time, with provenance and uncertainty explicit.
@@ -27,7 +35,7 @@ Table C is derived by joining A and B, is produced by Pipeline P, and feeds a Me
 - effective/valid interval when known;
 - provenance/source and assertion/observation time;
 - knowledge/record time where material;
-- evidence quality/confidence for asserted, observed, or inferred relationships;
+- evidence applicability, provenance, opportunity/coverage, corroboration/conflict, and conclusion-specific sufficiency for asserted, observed, derived, or inferred relationships;
 - supersession/correction history;
 - conflict/ambiguity/completeness context.
 
@@ -37,7 +45,7 @@ Table C is derived by joining A and B, is produced by Pipeline P, and feeds a Me
 - **Intent:** record a source/authorized assertion that a typed relationship applies.
 
 ### `observeRelationship`
-- **Intent:** record a relationship established/inferred from runtime, catalog, code, query, or other evidence with provenance/confidence.
+- **Intent:** record a relationship established/inferred from runtime, catalog, code, query, or other evidence with provenance and explicit evidence limitations.
 
 ### `supersedeRelationship`
 - **Intent:** end/revise relationship validity without erasing historical topology.
@@ -47,7 +55,7 @@ Table C is derived by joining A and B, is produced by Pipeline P, and feeds a Me
 
 ### `traverseAt`
 - **Intent:** traverse typed upstream/downstream relationships applicable at a relevant time.
-- **Observable result:** path/subgraph plus relationship type, provenance, completeness/ambiguity, and authorized redaction context.
+- **Observable result:** path/subgraph plus relationship type, provenance, bounded completeness/ambiguity, and authorized redaction context.
 
 ## Invariants / behavioral expectations
 
@@ -58,7 +66,7 @@ Table C is derived by joining A and B, is produced by Pipeline P, and feeds a Me
 - Lineage represents relationship/dependency, not causal blame.
 - Reachability does not prove actual downstream impact or upstream cause.
 - Missing Lineage is not proof that no relationship exists.
-- Inferred relationships retain confidence/evidence basis and are distinguishable from authoritative assertions.
+- Inferred/derived relationships retain their evidence basis and limitations; no universal confidence score is attached to an edge.
 - Entity identities remain distinct even when connected by replacement/migration/derivation relationships.
 - Event/effective time and knowledge/record time remain distinguishable where correction/late discovery matters.
 
@@ -70,7 +78,7 @@ This does **not** select a graph database, RDF/property-graph standard, graph qu
 
 ## Ambiguity and missing evidence
 
-Partial topology, stale metadata, conflicting edges, ambiguous identity, inferred relationships, and unauthorized nodes/edges remain explicit. Traversal may return `incomplete` with reason rather than presenting a falsely complete dependency model.
+Partial topology, stale metadata, conflicting edges, ambiguous identity, inferred relationships, and unauthorized nodes/edges remain explicit. Traversal may return `incomplete`, `unknown`, `conflicting`, or `unavailable` with reason rather than presenting a falsely complete dependency model. A bounded `absent` relationship conclusion requires adequate opportunity-to-observe and coverage under OPS-005.
 
 ## Synchronizations
 
@@ -89,7 +97,7 @@ Lineage can reveal sensitive asset names, architecture, business processes, rest
 
 ## Evidence / provenance considerations
 
-Every material relationship retains its type, source, effective interval, assertion/observation basis, confidence where inferred, and correction/supersession history. Traversal completeness should be explainable from source coverage and authorization rather than implied.
+Every material relationship retains its type, source, effective interval, assertion/observation basis, proposition-specific evidence applicability/coverage/sufficiency, and correction/supersession history. Traversal completeness should be explainable from the exact source/relationship universe, evidence coverage and authorization rather than implied or reduced to a universal score.
 
 ## Representative scenarios
 
@@ -97,7 +105,7 @@ Every material relationship retains its type, source, effective interval, assert
 C has typed derivation edges from A and B plus production/consumption relationships to its pipeline/consumers. An upstream RCA traversal can inspect A/B without conflating those data edges with deployment provenance.
 
 ### Planned new source
-A Change Intent says D will become an additional source. Before activation, D is planned context only. After deployment/execution/catalog evidence establishes D→C, the Lineage relationship becomes effective from the supported time.
+A Change Intent says D will become an additional source. Before activation, D is planned context only. After deployment/execution/catalog evidence sufficiently establishes D→C, the Lineage relationship becomes effective from the supported time.
 
 ### Historical topology
 C used B1 in January and B2 after a migration in February. January incident replay traverses B1; current topology does not replace the historical path.
@@ -119,8 +127,9 @@ A business user sees that C depends on a restricted upstream entity represented 
 
 ## Deferred questions
 
-- minimum MVP relationship taxonomy;
-- evidence hierarchy for code/catalog/runtime-derived Lineage;
-- column-level Lineage scope for MVP;
-- historical topology retention granularity;
-- graph architecture evaluation criteria for later technical design.
+Phase 007 Group 01 resolves the earlier minimum relationship-taxonomy, evidence-confidence, fine-grained semantic capability, historical-topology and traversal-completeness questions functionally. Still deferred are:
+
+- concrete evidence/source support for code/catalog/runtime-derived Lineage (Phase 009);
+- actual column-level Lineage availability/cost by integration and MVP boundary (Phase 009/011);
+- physical retention/storage granularity;
+- graph architecture evaluation criteria and implementation (Phase 010).

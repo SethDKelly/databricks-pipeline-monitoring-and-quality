@@ -9,7 +9,7 @@ The `docs/` tree is the system of record for product and design decisions in thi
 - **Phase 004 — Evidence, Time, and Causality Refinement: COMPLETE.** REF-001–REF-030 accepted.
 - **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement: COMPLETE.** AUTH-001–AUTH-053 final; G07-01–G07-26 pass.
 - **Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement: COMPLETE.** Groups 01–07 accepted; HLTH-001–HLTH-066 final; H07-01–H07-36 pass.
-- **Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: NEXT — not started.**
+- **Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: IN PROGRESS.** Group 01 accepted; OPS-001–OPS-009 accepted; L01-01–L01-18 pass; Group 02 next.
 
 The current catalog contains **24 accepted concepts**: the original 20 plus **Propagation Safeguard**, **Capability Authorization**, **Execution Gate**, and **Assertion Authority**.
 
@@ -24,7 +24,7 @@ The current catalog contains **24 accepted concepts**: the original 20 plus **Pr
 7. [`foundation/006_security_governance_and_policy_model.md`](foundation/006_security_governance_and_policy_model.md) — security/governance foundation.
 8. [`foundation/007_ecosystem_lifecycles.md`](foundation/007_ecosystem_lifecycles.md) — functional lifecycles.
 9. [`foundation/008_mvp_boundary.md`](foundation/008_mvp_boundary.md) — MVP boundary.
-10. [`foundation/009_initial_roadmap.md`](foundation/009_initial_roadmap.md) — initial roadmap and later-phase ownership; use current phase docs for authoritative status.
+10. [`foundation/009_initial_roadmap.md`](foundation/009_initial_roadmap.md) — phase ownership/sequence; use this current-state section for live status.
 11. [`foundation/010_open_questions.md`](foundation/010_open_questions.md) — unresolved choices.
 12. [`concepts/README.md`](concepts/README.md) — accepted concept catalog and cross-cutting boundaries.
 13. [`concepts/phase_003/README.md`](concepts/phase_003/README.md) — completed synchronization phase.
@@ -38,14 +38,16 @@ The current catalog contains **24 accepted concepts**: the original 20 plus **Pr
 21. [`concepts/phase_006/04_expectations_thresholds_margins_waivers_assessment/README.md`](concepts/phase_006/04_expectations_thresholds_margins_waivers_assessment/README.md) — HLTH-030–HLTH-040.
 22. [`concepts/phase_006/05_transformation_reconciliation_metric_propagation/README.md`](concepts/phase_006/05_transformation_reconciliation_metric_propagation/README.md) — HLTH-041–HLTH-054.
 23. [`concepts/phase_006/06_composite_health_readiness_timing/README.md`](concepts/phase_006/06_composite_health_readiness_timing/README.md) — HLTH-055–HLTH-066.
-24. [`concepts/phase_006/07_consolidation_and_exit/README.md`](concepts/phase_006/07_consolidation_and_exit/README.md) — accepted Group 07 / Phase 006 exit status.
-25. [`concepts/phase_006/07_consolidation_and_exit/consolidation_scenario_matrix.md`](concepts/phase_006/07_consolidation_and_exit/consolidation_scenario_matrix.md) — H07-01–H07-36.
-26. [`concepts/phase_006/07_consolidation_and_exit/phase_006_exit_review.md`](concepts/phase_006/07_consolidation_and_exit/phase_006_exit_review.md) — canonical Phase 006 exit review.
-27. [`concepts/phase_007/README.md`](concepts/phase_007/README.md) — next-phase handoff; Phase 007 has not started.
-28. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
-29. [`reference/authority_vocabulary.md`](reference/authority_vocabulary.md) — authority vocabulary.
-30. [`decisions/README.md`](decisions/README.md) — durable decision history/index.
-31. [`decisions/phase_006_group_07_consolidation_and_exit.md`](decisions/phase_006_group_07_consolidation_and_exit.md) — D-383–D-405.
+24. [`concepts/phase_006/07_consolidation_and_exit/phase_006_exit_review.md`](concepts/phase_006/07_consolidation_and_exit/phase_006_exit_review.md) — canonical Phase 006 exit review.
+25. [`concepts/phase_007/README.md`](concepts/phase_007/README.md) — current Phase 007 plan and progress.
+26. [`concepts/phase_007/01_lineage_relationship_taxonomy_historical_topology/README.md`](concepts/phase_007/01_lineage_relationship_taxonomy_historical_topology/README.md) — accepted Group 01 / OPS-001–OPS-009.
+27. [`concepts/phase_007/01_lineage_relationship_taxonomy_historical_topology/scenario_review.md`](concepts/phase_007/01_lineage_relationship_taxonomy_historical_topology/scenario_review.md) — L01-01–L01-18.
+28. [`concepts/phase_007/02_change_intent_deployment_realized_change/README.md`](concepts/phase_007/02_change_intent_deployment_realized_change/README.md) — next Phase 007 group.
+29. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
+30. [`reference/authority_vocabulary.md`](reference/authority_vocabulary.md) — authority vocabulary.
+31. [`decisions/README.md`](decisions/README.md) — durable decision history/index.
+32. [`decisions/phase_006_group_07_consolidation_and_exit.md`](decisions/phase_006_group_07_consolidation_and_exit.md) — D-383–D-405.
+33. [`decisions/phase_007_group_01_lineage_topology.md`](decisions/phase_007_group_01_lineage_topology.md) — D-406–D-421.
 
 ## Phase 006 exit summary
 
@@ -67,15 +69,24 @@ It preserves:
 - passive monitoring as non-blocking for ungated production;
 - non-rewriting historical health/readiness replay.
 
+## Phase 007 accepted progress
+
+Group 01 establishes the operational Lineage foundation for the rest of Phase 007:
+
+**bounded relationship proposition → minimum semantic family → field/key/population/consumer/version scope → effective/historical interval → REF-based relationship evidence → authority-aware resolution → question-bound traversal relevance → bounded completeness**, while actual execution/encounter/Impact/control/cause remain separate.
+
+Accepted Group 01 range: **OPS-001–OPS-009**. No new concept was required.
+
 ## Documentation discipline
 
 - Concepts/synchronizations/refinements remain implementation-neutral.
-- `REF-###` defines evidence/time/causal/control standards; `AUTH-###` defines authority/governance/capability/disclosure standards; `HLTH-###` defines health/metric/schema/statistical/reconciliation/composite/timing standards.
+- `REF-###` defines evidence/time/causal/control standards; `AUTH-###` defines authority/governance/capability/disclosure standards; `HLTH-###` defines health/metric/schema/statistical/reconciliation/composite/timing standards; `OPS-###` defines Phase 007 operational/topology/change/impact/control refinements.
 - Preserve historical rationale; add/supersede rather than silently rewrite.
 - Synchronization/refinement order never becomes source authority or causation.
 - Evidence sufficiency is conclusion-relative; missing/restricted/unavailable evidence is not a negative fact.
 - Baseline remains descriptive; Expectation remains normative.
 - Metric/reconciliation/composite semantics do not blindly propagate through Lineage.
+- Lineage reachability does not imply relevance, encounter, Impact or causality.
 - Audience simplification cannot strengthen underlying status.
 - Passive monitoring remains non-blocking/out-of-band by default; Execution Gate remains explicit opt-in active control.
 - Phase 007 must consume HLTH-001–HLTH-066 rather than reopen health semantics by convenience.

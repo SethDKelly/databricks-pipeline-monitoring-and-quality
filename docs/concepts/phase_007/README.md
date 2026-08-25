@@ -1,6 +1,6 @@
 # Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement
 
-**Status:** PLANNED — logical delivery grouping accepted; no OPS contracts accepted yet; Group 01 next
+**Status:** IN PROGRESS — Group 01 accepted; OPS-001–OPS-009 accepted; Group 02 next
 
 ## Goal
 
@@ -10,11 +10,11 @@ Phase 007 must consume rather than reopen Phase 006.
 
 ## Refinement namespace
 
-Phase 007 will use **`OPS-###`** refinement contracts.
+Phase 007 uses **`OPS-###`** refinement contracts.
 
 `OPS-###` means operational/topology/change/impact/control refinement over accepted concepts. It does **not** create an `Operations` concept, does not extend SYN/REF/AUTH/HLTH ranges, and must not become an umbrella state that absorbs Lineage, Change, Investigation, Impact, Execution Gate, Propagation Safeguard or Execution History truth.
 
-The first contract will begin at **OPS-001** when Group 01 is explicitly started.
+Accepted range so far: **OPS-001–OPS-009**.
 
 ## Accepted handoff from Phase 006
 
@@ -36,17 +36,19 @@ Preserve:
 
 ## Logical delivery grouping
 
-The phase will be reviewed in **nine functional design groups**. This sequence is a dependency/review strategy, not an implementation-service decomposition.
+The phase is reviewed in **nine functional design groups**. This sequence is a dependency/review strategy, not an implementation-service decomposition.
 
 ### Group 01 — Lineage Relationship Taxonomy, Historical Topology & Operational Relevance
-**Status:** **Next — not started.**
+**Status:** **Accepted — OPS-001–OPS-009; L01-01–L01-18 pass.**
 
-Define the relationship vocabulary and evidence needed to know what depends on what, at which layer, for which fields/populations/versions/consumers, and during which effective interval. Establish historical topology, relationship applicability/relevance, unknown/missing-edge limitations, and source disagreement without turning Lineage into causality or metric propagation.
+Defines Lineage relationship proposition identity, five minimum operational families, semantic field/key/population/consumer/version scope, planned/effective/historical topology separation, REF-based relationship evidence and negative-evidence rules, Assertion Authority/source-disagreement separation, question-bound operational relevance, path composition, bounded/cycle-safe traversal, topology completeness and cross-concept ownership.
+
+No new concept is required. The accepted Lineage concept remains the relationship/topology truth owner.
 
 See [`01_lineage_relationship_taxonomy_historical_topology/README.md`](01_lineage_relationship_taxonomy_historical_topology/README.md).
 
 ### Group 02 — Change Intent, Deployment Realization & Realized Change
-**Status:** Planned.
+**Status:** **Next — not started.**
 
 Refine how intended modifications, deployment attempts/activation, and realized Change coordinate. Distinguish intended scope, deployed artifact/config/schema/transformation version, activation/effective state, partial/mismatched realization, unplanned Change, rollback/reversion, and what evidence establishes that an intent actually became realized state.
 
@@ -169,4 +171,4 @@ Phase 010 owns technical architecture and implementation placement.
 
 ## Phase direction
 
-**Phase 007 grouping is accepted. No OPS contracts have been accepted yet. Group 01 — Lineage Relationship Taxonomy, Historical Topology & Operational Relevance is next and has not started.**
+**Phase 007 Group 01 is accepted with OPS-001–OPS-009. Group 02 — Change Intent, Deployment Realization & Realized Change is next and has not started.**

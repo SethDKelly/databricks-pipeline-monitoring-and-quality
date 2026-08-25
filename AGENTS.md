@@ -1,18 +1,10 @@
 # Repository Agent Instructions
 
-## Project status
+## Project status authority
 
-Phase 002 originally accepted 20 concepts. Four post-exit addenda are accepted: **Propagation Safeguard**, **Capability Authorization**, **Execution Gate**, and **Assertion Authority**. Current accepted concept count: **24**.
+The accepted concept catalog contains **24 concepts**: the original 20 plus **Propagation Safeguard**, **Capability Authorization**, **Execution Gate**, and **Assertion Authority**.
 
-**Phase 003 is complete.** Groups 01–06 accepted; SYN-001–SYN-035 accepted; E-01–E-22 pass end-to-end consolidation.
-
-**Phase 004 — Evidence, Time, and Causality Refinement is complete.** Groups 01–05 accepted; REF-001–REF-030 accepted.
-
-**Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement is complete.** Groups 01–07 accepted; AUTH-001–AUTH-053 final; G07-01–G07-26 pass; D-251–D-265 close the phase.
-
-**Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement is complete. Groups 01–07 are accepted; HLTH-001–HLTH-066 are final; H07-01–H07-36 pass; D-383–D-405 close the phase.**
-
-**Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement is next and has not started.**
+**Live repository phase and group progression is declared only in [`docs/README.md#current-state`](docs/README.md#current-state).** This root agent file intentionally does not maintain a parallel current/next phase declaration. For Phase 007 group-local accepted contracts and handoff, use [`docs/concepts/phase_007/AGENTS.md`](docs/concepts/phase_007/AGENTS.md).
 
 Work remains documentation/design-first. Do not add application code, infrastructure, notebooks, schemas, APIs, IAM implementations, assertion-authority engines, approval/workflow engines, deployment workflows, quarantine implementations, gate/orchestration implementations, metric engines, graph/causal engines, redaction systems, LLMs, or prototypes unless the user explicitly advances the project into technical design.
 
@@ -26,7 +18,8 @@ Treat `docs/` as the product/design system of record.
 - Phase 004 `REF-###` artifacts refine evidence/time/causal/control standards over accepted concepts/synchronizations.
 - Phase 005 `AUTH-###` artifacts refine authority/governance/capability/disclosure standards over accepted concepts.
 - Phase 006 `HLTH-###` artifacts refine health/metric/schema/statistical/reconciliation/composite/timing semantics over accepted concepts.
-- REF, AUTH, and HLTH identifiers do not create hidden truth owners or extend the Phase 003 SYN range.
+- Phase 007 `OPS-###` artifacts refine operational/topology/change/impact/control semantics over accepted concepts.
+- REF, AUTH, HLTH, and OPS identifiers do not create hidden truth owners or extend the Phase 003 SYN range.
 - Synchronization/refinement order is never authority; a trigger is never causation.
 - Do not create umbrella state for implementation convenience.
 - Reopen accepted boundaries only explicitly, with a concrete scenario that cannot be represented otherwise.
@@ -77,7 +70,16 @@ Preserve:
 - criterion outcome ≠ warning/proximity ≠ Baseline typicality ≠ severity/priority ≠ waiver/disposition;
 - criticality ≠ threshold severity ≠ actual Impact;
 - waiver/exception ≠ rewritten Observation/Baseline/Assessment ≠ false `pass`;
+- Lineage relationship proposition ≠ generic graph edge;
 - Lineage relation ≠ metric/status propagation;
+- Lineage reachability ≠ question-bound operational relevance;
+- operational relevance ≠ encounter/exposure ≠ Impact ≠ cause;
+- asset-level relationship ≠ field/key/population/consumer-specific relationship unless evidenced;
+- planned topology ≠ effective Lineage topology ≠ specific runtime/consumer encounter;
+- Lineage `established` ≠ `absent` ≠ `unknown` ≠ `conflicting` ≠ `unavailable`;
+- missing edge evidence ≠ absent edge;
+- no universal Lineage edge confidence/completeness score;
+- Lineage Assertion Authority ≠ Lineage evidence sufficiency;
 - local Observation ≠ downstream-relevant context ≠ reconciliation Observation ≠ reconciliation Assessment ≠ Causal Claim;
 - reconciliation localization ≠ root cause;
 - component Assessment ≠ composite health Assessment;
@@ -225,11 +227,11 @@ Preserve:
 - Control-effect causal claims use REF-013–REF-020.
 - Late enforcement/consumption evidence may revise retrospective conclusions without rewriting historical actions.
 
-## Phase 005 authority/governance rules — COMPLETE
+## Phase 005 authority/governance rules — accepted
 
-### Group 01 — AUTH-001–AUTH-008
+### AUTH-001–AUTH-008 — authority vocabulary and conflict
 
-- **Assertion Authority is the 24th concept.** It owns authority standing/rules, not the domain assertions.
+- Assertion Authority owns authority standing/rules, not domain assertions.
 - Bind authority to explicit target category/facet/scheme/type, subject scope, context, effective interval, and knowledge cutoff where relevant.
 - Preserve source assertions regardless of standing.
 - Keep disagreement, authoritative assertion conflict, and authority-rule conflict distinct.
@@ -239,7 +241,7 @@ Preserve:
 - Fallback requires explicit rule plus evidenced activation condition.
 - Authority is bitemporal/non-rewriting.
 
-### Group 02 — AUTH-009–AUTH-015
+### AUTH-009–AUTH-015 — semantic governance authority
 
 - Semantic authority is facet-specific across business/technical/schema/grain/key/unit/population/calculation/field-role meaning.
 - Preserve **declared/governed schema meaning ≠ normative schema contract ≠ realized schema state ≠ compatibility Assessment**.
@@ -251,7 +253,7 @@ Preserve:
 - Lineage/container/tag inference does not silently propagate governance assertions/authority.
 - Descriptive governance does not become normative health, access, enforcement, compliance, or Impact.
 
-### Group 03 — AUTH-016–AUTH-023
+### AUTH-016–AUTH-023 — normative health governance
 
 - Expectation authority is subject/dimension/property/context/time/action scoped.
 - **Metric meaning ≠ profile selection ≠ threshold/margin ≠ severity ≠ waiver ≠ high-consequence-use eligibility.**
@@ -264,7 +266,7 @@ Preserve:
 - Criticality may affect review/priority, not threshold truth/Impact.
 - High-consequence-use eligibility is separate from control capability/evidence/enforcement.
 
-### Group 04 — AUTH-024–AUTH-032
+### AUTH-024–AUTH-032 — Capability Authorization
 
 - Capability Authorization is the permission truth owner.
 - Bind exact principal + capability/action + subject + context/time + material detail level.
@@ -281,7 +283,7 @@ Preserve:
 - Historical authorization is non-rewriting and not reusable current permission.
 - Authorization does not prove action occurrence, enforcement, or success.
 
-### Group 05 — AUTH-033–AUTH-043
+### AUTH-033–AUTH-043 — high-consequence authority
 
 - High-consequence authorization is action/lifecycle-stage scoped: request/propose, approve, execute/issue, override/release/cancel, review.
 - Broad `admin`, `operator`, `owner`, `on-call`, or service-account labels never create universal authority.
@@ -299,7 +301,7 @@ Preserve:
 - Existing protective state during outage is separate from authority to change it.
 - Preserve request → authorization/approval → issuance → control-plane acceptance → enforcement/effect → resulting state/outcome.
 
-### Group 06 — AUTH-044–AUTH-053
+### AUTH-044–AUTH-053 — disclosure governance
 
 - Bind disclosure to requester/audience + information/detail class + subject/context + purpose + temporal perspective + delivery scope.
 - Audience labels do not grant authorization.
@@ -319,17 +321,9 @@ Preserve:
 - Current requester authorization governs present historical disclosure.
 - Unknown/conflicting/unavailable/unsafe-to-project disclosure state never becomes permission.
 
-### Group 07 — consolidation / exit
+## Phase 006 health/metric rules — accepted
 
-- G07-01–G07-26 pass across metric/schema governance, threshold conflict/waiver, structural-change comparability, restricted RCA, causal confirmation, gating, safeguards, break-glass/outage, automation, disclosure, and history.
-- No 25th concept and no AUTH-054 are required.
-- **AUTH-001–AUTH-053 is final for Phase 005.**
-- Authority standing, semantic/normative governance, permission, high-consequence authority, and disclosure remain separate layers over domain truth.
-- No Phase 005 layer can manufacture Phase 004 evidence truth.
-
-## Phase 006 health/metric rules — COMPLETE
-
-### Group 01 — HLTH-001–HLTH-008
+### HLTH-001–HLTH-008 — measurement vocabulary and profiles
 
 - Every material measurement binds exact subject, metric/check definition/version, grain/population, window, relevant output/data/schema/current-cycle context, and material temporal context.
 - Metric definition ≠ measured Observation ≠ normative/comparative Assessment.
@@ -341,7 +335,7 @@ Preserve:
 - Material Observations retain definition/source/scope/time/coverage/approximation/restriction provenance.
 - Local metric existence does not imply downstream propagation.
 
-### Group 02 — HLTH-009–HLTH-018
+### HLTH-009–HLTH-018 — structural/schema compatibility
 
 - Structural observations and compatibility bind the consumer-visible interface/contract surface, not only producer physical schema.
 - Preserve governed schema meaning ≠ structural Expectation ≠ planned state ≠ realized structural state ≠ compatibility Assessment.
@@ -355,7 +349,7 @@ Preserve:
 - Structural incompatibility does not prove execution failure, exposure, Impact or causality.
 - Validation placement remains architecture-neutral.
 
-### Group 03 — HLTH-019–HLTH-029
+### HLTH-019–HLTH-029 — Baselines/comparability/statistical context
 
 - Observation ≠ reference-set membership ≠ Baseline summary/version ≠ comparative Assessment ≠ normative Expectation/health.
 - Available history is not automatically eligible reference history.
@@ -372,7 +366,7 @@ Preserve:
 - Repeated abnormal behavior can become descriptively typical without becoming acceptable.
 - Historical Baselines/Assessments remain non-rewriting.
 
-### Group 04 — HLTH-030–HLTH-040
+### HLTH-030–HLTH-040 — criteria/thresholds/waivers
 
 - Criteria bind exact subject/dimension, metric/check/structural definition, grain/population/window/context, operator/direction, boundary, unit/denominator and required reference basis.
 - Warning/proximity is separate from criterion outcome and can coexist with `meets`.
@@ -386,7 +380,7 @@ Preserve:
 - Severity/priority does not decide criterion outcome; Criticality does not prove Impact.
 - Historical rule/reference/waiver versions and corrected-evidence reassessments are non-rewriting.
 
-### Group 05 — HLTH-041–HLTH-054
+### HLTH-041–HLTH-054 — transformation reconciliation
 
 - Local Observation ≠ downstream-relevant context ≠ reconciliation Observation ≠ reconciliation Assessment ≠ Causal Claim.
 - Every reconciliation binds exact transformation/version, input/output roles, fields/keys/measures, grain/population/window and cycle/version context.
@@ -403,7 +397,7 @@ Preserve:
 - Reconciliation/localization is Investigation evidence, not causal confirmation.
 - Historical reconciliation uses then-effective Lineage/transformation/reconciliation/input/output versions.
 
-### Group 06 — HLTH-055–HLTH-066
+### HLTH-055–HLTH-066 — composite health/readiness timing
 
 - Component Assessment ≠ composite health Assessment ≠ result freshness/suitability ≠ readiness result ≠ gate decision ≠ enforcement ≠ execution.
 - Composite health binds subject, consumer/use/context, profile/version, component roles/logic, cycle/window and evaluation/knowledge time.
@@ -423,13 +417,43 @@ Preserve:
 - Late/corrected evidence revises broader summaries through reassessment without rewriting earlier narrow/historical results.
 - Historical composite/suitability replay uses then-effective profiles/rules/evidence and knowledge cut.
 
-### Group 07 — Phase 006 consolidation / exit
+## Phase 007 operational/topology rules
 
-- H07-01–H07-36 pass across execution-vs-health, availability/applicability, consumer schema compatibility, Baseline breaks, seasonal/normative behavior, low-volume/approximate evidence, waivers/conflict, A+B→C reconciliation, transformation repair/introduction, composite disagreement, progressive timing, stale/suitable readiness evidence, AUTH-023 eligibility, passive monitoring outage, active-control uncertainty and history.
-- No 25th concept and no HLTH-067 are required.
-- **HLTH-001–HLTH-066 is final for Phase 006.**
-- The final chain is definition/applicability → Observation → structural/comparability context → component Assessment → transformation reconciliation → composite Assessment → freshness/maturity → exact-use suitability → readiness, with gate/control decision/enforcement/execution remaining separate.
-- Phase 006 selects no implementation architecture.
+For live group-local status and handoff, read [`docs/concepts/phase_007/AGENTS.md`](docs/concepts/phase_007/AGENTS.md). Do not infer current group state from this root file.
+
+Accepted operational Lineage rules from Phase 007 Group 01 include:
+
+- every material Lineage relationship is a bounded proposition with explicit source/target identity, semantic family/role, relevant scope/version/context, effective interval and evidence basis;
+- minimum Lineage families are `data_derivation`, `production`, `operational_dependency`, `publication`, and `consumption_path`;
+- repository membership, Deployment/Change/execution/control/authority/causal facts remain owned by their existing concepts rather than becoming generic Lineage edges;
+- field/key/population/consumer/version scope can narrow relationship meaning;
+- planned topology remains Change Intent context until sufficient realization evidence establishes effective Lineage;
+- effective topology does not prove a particular run/consumer encountered a particular version;
+- Phase 004 evidence semantics replace generic edge confidence: applicability, provenance, opportunity/coverage, corroboration/conflict and conclusion-specific sufficiency;
+- `absent` relationship conclusions require adequate negative-evidence coverage;
+- runtime/catalog/code/human/platform sources have no hidden universal precedence;
+- Assertion Authority over a relationship assertion remains separate from empirical evidence sufficiency;
+- operational relevance is traversal-question bound and may be `relevant`, `not relevant`, or `indeterminate`;
+- multi-hop relevance requires semantic scope composition rather than graph reachability alone;
+- Lineage is graph-compatible but not assumed to be a DAG; traversal must remain bounded/cycle-safe;
+- topology completeness is bounded to an exact relationship universe/time/scope/depth/evidence/authorization context and is never a universal percentage;
+- opaque/restricted topology remains hidden/restricted rather than absent.
+
+Phase 007 as a whole refines:
+
+- Lineage taxonomy and historical topology evidence;
+- Change Intent realization, Deployment and realized Change;
+- prospective blast radius/change-aware downstream review;
+- execution/dependency reconstruction;
+- Investigation lifecycle and first-deviation localization;
+- prospective versus actual Impact and consumer/version encounter patterns;
+- Lineage-aware operational relevance under accepted reconciliation rules;
+- Propagation Safeguard placement/release/recovery;
+- Execution Gate classes, timeout/fallback/escalation/override/recovery;
+- control-induced delay/freshness/availability effects;
+- historical operational replay.
+
+Do not let Phase 007 turn Lineage/reconciliation/localization into causality, prospective reachability into actual Impact, health/readiness into enforcement, or implementation convenience into a reason to reopen HLTH-001–HLTH-066.
 
 ## Passive monitoring / integration-independence rules
 
@@ -515,25 +539,7 @@ Preserve:
 - Historical Assertion Authority/Capability Authorization/disclosure is evidence about past standing/permission/disclosure; current authority/requester authorization governs present resolution/disclosure.
 - Partial/unknown/conflicting/restricted replay remains valid rather than being completed by guesswork.
 - Historical Baseline replay uses the exact Baseline/reference version and context available/used at the historical knowledge cut; current refreshed Baselines are not substituted backward.
-- Historical metric/schema/reconciliation/composite/suitability replay uses then-effective definitions/profiles/rules and does not project current Phase 006 state backward.
-
-## Phase 007 entry contract
-
-Phase 007 is next and must consume the completed Phase 006 health model while refining:
-
-- Lineage taxonomy and historical topology evidence;
-- Change Intent realization, Deployment and realized Change;
-- prospective blast radius/change-aware downstream review;
-- execution/dependency reconstruction;
-- Investigation lifecycle and first-deviation localization;
-- prospective versus actual Impact and consumer/version encounter patterns;
-- Lineage-aware operational relevance under accepted reconciliation rules;
-- Propagation Safeguard placement/release/recovery;
-- Execution Gate classes, timeout/fallback/escalation/override/recovery;
-- control-induced delay/freshness/availability effects;
-- historical operational replay.
-
-Do not let Phase 007 turn Lineage/reconciliation/localization into causality, prospective reachability into actual Impact, health/readiness into enforcement, or implementation convenience into a reason to reopen HLTH-001–HLTH-066.
+- Historical metric/schema/reconciliation/composite/suitability replay uses then-effective definitions/profiles/rules and does not project current state backward.
 
 ## GitHub repository mutation guardrail
 
@@ -552,19 +558,7 @@ Remote GitHub `main` is authoritative; local/ZIP copies are archival or working 
 
 ## Phase direction
 
-- Phase 003 complete: SYN-001–SYN-035.
-- Phase 004 complete: REF-001–REF-030; D-140–D-152 close the phase.
-- Pre-Phase-005 metric-health planning accepted: D-153–D-160.
-- Phase 005 complete: AUTH-001–AUTH-053; D-161–D-265 across Groups 01–07.
-- Phase 006 Group 01: HLTH-001–HLTH-008; D-266–D-278.
-- Phase 006 Group 02: HLTH-009–HLTH-018; D-279–D-295.
-- Phase 006 Group 03: HLTH-019–HLTH-029; D-296–D-314.
-- Phase 006 Group 04: HLTH-030–HLTH-040; D-315–D-334.
-- Phase 006 Group 05: HLTH-041–HLTH-054; D-335–D-357.
-- Phase 006 Group 06: HLTH-055–HLTH-066; D-358–D-382.
-- Phase 006 Group 07: consolidation/exit; D-383–D-405; H07-01–H07-36 pass.
-- **Phase 006 complete: HLTH-001–HLTH-066 final.**
-- **Phase 007 is next and has not started. Do not begin Phase 007 without explicit user request.**
+For live repository phase/group progression, use **[`docs/README.md#current-state`](docs/README.md#current-state)**. Phase-local accepted contract ranges and handoffs are recorded in the corresponding phase README/AGENTS files. Historical decision numbering and exit records remain evidence of accepted work but are not a second current-status authority.
 
 ## Tooling stance
 

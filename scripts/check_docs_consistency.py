@@ -28,12 +28,13 @@ LIVING_DOCS = (
     ROOT / "docs" / "foundation" / "009_initial_roadmap.md",
 )
 
-# These are current-state contradictions, not historical statements. Add a rule
-# when a newly observed drift pattern should be prevented from recurring.
+# Living documents should reference canonical phase progression rather than
+# independently declaring a current/next phase. Phase-specific/historical docs
+# are intentionally outside LIVING_DOCS and may state status in their own scope.
 FORBIDDEN_CURRENT_STATUS = (
-    re.compile(r"repository is currently in \*\*Phase 002", re.IGNORECASE),
-    re.compile(r"Phase 006(?:\s+—[^\n]*)?\s+is next and has not started", re.IGNORECASE),
-    re.compile(r"Phase 006\s+—\s+NEXT\s+—\s+not started", re.IGNORECASE),
+    re.compile(r"repository is currently in \*\*Phase \d{3}", re.IGNORECASE),
+    re.compile(r"Phase \d{3}[^\n]*\bis next and has not started\b", re.IGNORECASE),
+    re.compile(r"Phase \d{3}[^\n]*\bNEXT\s+—\s+not started\b", re.IGNORECASE),
 )
 
 
@@ -81,7 +82,10 @@ def check() -> list[str]:
             match = pattern.search(text)
             if match:
                 rel = path.relative_to(ROOT)
-                errors.append(f"{rel}: stale current-phase wording: {match.group(0)!r}")
+                errors.append(
+                    f"{rel}: independently maintained current-phase wording: {match.group(0)!r}; "
+                    "reference docs/README.md#current-state instead"
+                )
 
     return errors
 
