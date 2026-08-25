@@ -1,6 +1,6 @@
 # Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement
 
-**Status:** IN PROGRESS — Groups 01–03 accepted; OPS-001–OPS-033 accepted; Group 04 next
+**Status:** IN PROGRESS — Groups 01–04 accepted; OPS-001–OPS-049 accepted; Group 05 next
 
 ## Goal
 
@@ -14,7 +14,7 @@ Phase 007 uses **`OPS-###`** refinement contracts.
 
 `OPS-###` means operational/topology/change/impact/control refinement over accepted concepts. It does **not** create an `Operations` concept, does not extend SYN/REF/AUTH/HLTH ranges, and must not become an umbrella state that absorbs Lineage, Change, Investigation, Impact, Execution Gate, Propagation Safeguard or Execution History truth.
 
-Accepted range so far: **OPS-001–OPS-033**.
+Accepted range so far: **OPS-001–OPS-049**.
 
 ## Accepted handoff from Phase 006
 
@@ -66,16 +66,18 @@ No new concept is required. Impact retains candidate/reachability ownership; pro
 See [`03_prospective_blast_radius_change_aware_review/README.md`](03_prospective_blast_radius_change_aware_review/README.md).
 
 ### Group 04 — Execution Reconstruction, Dependency Sequence & Version Use
-**Status:** **Next — not started.**
+**Status:** **Accepted — OPS-034–OPS-049; X04-01–X04-32 pass.**
 
-Refine reconstruction of actual run/dependency sequence, qualifying outputs, input/output versions, expected versus actual dependency ordering, late/duplicate/missing telemetry, retries/restarts, schedule opportunities, and bounded absence claims. Produce an execution history suitable for Investigation without turning intended schedule, Lineage, proposed versions or prospective review into proof of actual execution/consumption.
+Refines evidence-backed execution identity, expected/opportunity/Gate-versus-run separation, partial lifecycle evidence, multi-job logical assembly, retry/restart/rerun/backfill continuity, actual temporal precedence/waiting, run-specific input/output/implementation version binding, mid-run activation/rollback, duplicate/common-derived/conflicting telemetry, clock-domain ordering, bounded operational absence, multi-input version sets and bitemporal reconstruction.
+
+No new concept is required. Execution History remains the truth owner for actual run reconstruction and supplies sequence/version evidence to later Investigation/Impact reasoning without creating health, exposure or causality.
 
 See [`04_execution_reconstruction_dependency_sequence/README.md`](04_execution_reconstruction_dependency_sequence/README.md).
 
 ### Group 05 — Investigation Lifecycle, First-Deviation Localization & Causal Handoff
-**Status:** Planned.
+**Status:** **Next — not started.**
 
-Refine Investigation question/outcome binding, candidate generation, evidence collection, first-deviation localization, competing hypotheses, narrowing/escalation, and closure. Define the exact handoff from useful operational localization/reconciliation into explicit Causal Claim semantics without promoting proximity, first observation, or Investigation closure into cause.
+Refine Investigation question/outcome binding, candidate generation, evidence collection, first-deviation localization, competing hypotheses, narrowing/escalation, and closure. Define the exact handoff from useful operational localization/reconciliation into explicit Causal Claim semantics without promoting proximity, first observation, first post-change run, shared version or Investigation closure into cause.
 
 See [`05_investigation_localization_causal_handoff/README.md`](05_investigation_localization_causal_handoff/README.md).
 
@@ -120,7 +122,7 @@ The order is dependency-driven:
 7. **Safeguard and Gate separately** — they protect different boundaries and have different state/evidence semantics.
 8. **Historical replay last** — cross-group time/version correctness is the final composition test.
 
-## Accepted operational chain through Group 03
+## Accepted operational chain through Group 04
 
 The Phase 007 operational foundation now preserves:
 
@@ -130,7 +132,11 @@ For prospective review it additionally preserves:
 
 **exact proposal + review knowledge cut → then-effective Lineage + explicit planned topology delta scenario → downstream/path-loss candidates → field/key/population/interface/consumer/version relevance → proposal-bound structural/metric/reference/reconciliation/readiness/control review → authority/coverage limitations**.
 
-No link in either chain automatically creates the next.
+For actual runtime reconstruction it now preserves:
+
+**expected/opportunity/control context → actual execution identity → partial lifecycle/attempt assembly → actual sequence/waiting evidence → run-specific implementation/input version binding → produced output/version binding → multi-input version set → historical as-known/retrospective reconstruction**.
+
+No link in these chains automatically creates the next.
 
 For deployment/change reasoning specifically:
 
@@ -156,6 +162,22 @@ For prospective review specifically:
 - incomplete/restricted/conflicting topology can make candidate sets non-exhaustive;
 - mixed rollout and historical review remain slice/time/knowledge-cut specific.
 
+For execution reconstruction specifically:
+
+- expected work, opportunity and Gate state do not create executions;
+- lifecycle state may remain partial without fabricated transitions;
+- logical execution assembly is evidence-driven and may remain ambiguous;
+- retry/restart/rerun/backfill continuity is source/evidence specific;
+- effective dependency, scheduled order, actual precedence, evidenced waiting and consumption remain distinct;
+- Deployment active-at-time is not universal run-specific implementation proof;
+- latest upstream output is not automatically consumed output;
+- run success is independent of output existence/version and health;
+- duplicate/common-derived telemetry is not independent corroboration;
+- clock-domain limitations can make exact ordering indeterminate;
+- `no run/output/consumption` requires bounded negative evidence;
+- current/fresh/ready input is an Assessment/readiness question over the reconstructed version set;
+- historical reconstruction is bitemporal and non-rewriting.
+
 ## Cross-group invariants
 
 Preserve throughout Phase 007:
@@ -176,8 +198,14 @@ Preserve throughout Phase 007:
 - review relevance ≠ obligation/approval/control;
 - proposed compatibility ≠ realized compatibility;
 - intended schedule/dependency ≠ actual execution sequence;
+- expected/opportunity/Gate state ≠ actual execution;
 - proposed/reviewed version ≠ executed version;
+- Deployment active-at-time ≠ run-specific implementation state by default;
 - execution occurrence ≠ consumed-version proof unless evidenced;
+- run success ≠ qualifying output/health;
+- actual precedence ≠ waiting ≠ consumption;
+- missing telemetry ≠ no run/output/consumption;
+- duplicate/common-derived telemetry ≠ independent corroboration;
 - first-observed deviation ≠ root cause;
 - Investigation ≠ Causal Claim truth;
 - reachable/candidate ≠ exposed ≠ downstream effect ≠ consequence ≠ causal attribution;
@@ -188,7 +216,7 @@ Preserve throughout Phase 007:
 - override ≠ prerequisite ready;
 - configured fallback ≠ fallback actually applied;
 - control-induced delay/non-delivery is evidence/Impact, not automatically a defect or cause;
-- current topology/change/control/review state ≠ historical state;
+- current topology/change/control/review/execution reconstruction ≠ historical state;
 - later evidence/correction ≠ what was known then;
 - authority/authorization/disclosure boundaries from Phase 005 remain intact;
 - health semantics from Phase 006 remain intact.
@@ -199,9 +227,10 @@ Phase 007 must remain implementation-neutral. Do not select:
 
 - graph database or Lineage store;
 - graph traversal/static-analysis engine;
-- event/history persistence mechanism;
+- event/history persistence mechanism or event schema;
 - CDC/change-capture architecture;
 - deployment fingerprint/attestation mechanism;
+- run/version-attestation source integration;
 - change-risk scoring algorithm;
 - scheduler/orchestrator;
 - Databricks Workflows dependency mechanism;
@@ -225,4 +254,4 @@ Phase 010 owns technical architecture and implementation placement.
 
 ## Phase direction
 
-**Phase 007 Groups 01–03 are accepted with OPS-001–OPS-033. Group 04 — Execution Reconstruction, Dependency Sequence & Version Use is next and has not started.**
+**Phase 007 Groups 01–04 are accepted with OPS-001–OPS-049. Group 05 — Investigation Lifecycle, First-Deviation Localization & Causal Handoff is next and has not started.**

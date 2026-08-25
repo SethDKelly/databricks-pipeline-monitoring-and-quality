@@ -11,7 +11,8 @@ Canonical repository phase status is maintained in [`../../README.md#current-sta
 - **Group 01 is complete with OPS-001–OPS-009; L01-01–L01-18 pass.**
 - **Group 02 is complete with OPS-010–OPS-020; C02-01–C02-24 pass.**
 - **Group 03 is complete with OPS-021–OPS-033; P03-01–P03-30 pass.**
-- **Group 04 — Execution Reconstruction, Dependency Sequence & Version Use is next.**
+- **Group 04 is complete with OPS-034–OPS-049; X04-01–X04-32 pass.**
+- **Group 05 — Investigation Lifecycle, First-Deviation Localization & Causal Handoff is next.**
 - Accepted concept count remains 24; SYN-001–SYN-035, REF-001–REF-030, AUTH-001–AUTH-053 and HLTH-001–HLTH-066 remain unchanged.
 
 ## Accepted Group 01 Lineage rules
@@ -100,6 +101,35 @@ Preserve:
 
 See [`03_prospective_blast_radius_change_aware_review/README.md`](03_prospective_blast_radius_change_aware_review/README.md).
 
+## Accepted Group 04 Execution Reconstruction rules
+
+Preserve:
+
+- Execution History remains the actual execution truth owner; no new concept is required;
+- actual execution identity is evidence-bound and cannot be created from schedule/job/repository/prospective state;
+- expected work ≠ execution opportunity ≠ Gate HOLD/ADMIT/override ≠ actual execution;
+- start/progress/terminal lifecycle facts may remain partial; missing transitions are not fabricated;
+- logical execution assembly from jobs/tasks requires identity/correlation/dependency evidence;
+- overlapping windows/name/repository membership alone do not prove common logical execution;
+- retry/restart/rerun/backfill continuity is source/evidence specific;
+- attempt outcome ≠ logical-execution outcome absent explicit composition semantics;
+- effective dependency ≠ expected order ≠ actual precedence ≠ evidenced waiting ≠ run-specific consumption;
+- Lineage/latest upstream output/prior completion/time proximity do not prove consumed version;
+- successful run ≠ output existence; failed/partial run may still produce material output;
+- output exists ≠ committed/published/current-cycle/fresh/healthy/ready;
+- Deployment active-at-time constrains but does not universally prove run-specific code/config/schema/transformation state;
+- no universal `run version` token is accepted when implementation state is composite;
+- mid-run activation/rollback is facet/task/binding-semantics specific; no automatic switch/reversion rule;
+- duplicate/common-derived telemetry ≠ independent corroboration;
+- out-of-order arrival ≠ event chronology; applicable conflict remains explicit;
+- cross-source clocks can make close sequence indeterminate; explicit sequence evidence can be stronger;
+- `no run`, `no output`, `no consumption` and similar negatives require REF opportunity/coverage;
+- partial lifecycle/child/root outcomes remain level-specific;
+- multi-input version set can be incomplete/mixed/stale; currentness/freshness/readiness remain Assessment semantics;
+- historical execution reconstruction is bitemporal and non-rewriting.
+
+See [`04_execution_reconstruction_dependency_sequence/README.md`](04_execution_reconstruction_dependency_sequence/README.md).
+
 ## Permanent Phase 007 boundaries
 
 Preserve:
@@ -110,9 +140,14 @@ Preserve:
 - Change Intent ≠ Deployment ≠ realized Change;
 - prospective blast radius ≠ actual Impact;
 - intended schedule/dependency ≠ actual execution sequence;
+- expected/opportunity/control state ≠ actual execution;
 - proposed/reviewed version ≠ executed version;
+- Deployment active-at-time ≠ run-specific version use by default;
 - execution occurrence ≠ specific consumed-version proof unless evidenced;
-- missing telemetry ≠ no event;
+- actual precedence ≠ waiting ≠ consumption;
+- run success ≠ output existence/health;
+- missing telemetry ≠ no event/run/output/consumption;
+- duplicate/common-derived telemetry ≠ independent corroboration;
 - first-deviation localization ≠ root cause;
 - Investigation ≠ Causal Claim truth;
 - candidate/reachable ≠ exposed ≠ effect ≠ consequence ≠ causal attribution;
@@ -128,26 +163,25 @@ Preserve:
 - control-induced delay/staleness/non-delivery remains observable/assessable and is not automatically defect/cause;
 - historical operational replay uses event/effective time plus knowledge cut and remains non-rewriting.
 
-## Group 04 entry contract
+## Group 05 entry contract
 
-Group 04 consumes OPS-001–OPS-033 and must reconstruct actual execution/dependency/version state independently of prospective assumptions.
+Group 05 consumes OPS-001–OPS-049 and must turn topology/change/health/execution evidence into a structured Investigation without causal promotion.
 
 It should explicitly test:
 
-- execution opportunity versus actual execution instance;
-- start/completion/cancel/failure/retry/restart and execution-attempt identity;
-- intended schedule/dependency ordering versus actual observed sequence;
-- qualifying outputs/publication evidence and output/run association;
-- Deployment active-at-time versus run-specific implementation-state proof;
-- specific input/output version consumption evidence;
-- long-running execution spanning activation/rollback boundaries;
-- duplicate/common-derived telemetry versus independent corroboration;
-- late/out-of-order evidence and knowledge-time reconstruction;
-- ambiguous run/output identity and unknown version use;
-- `no run`/`no output` negative claims requiring opportunity/coverage;
-- planned scenario paths, proposed versions and prospective compatibility/review results not substituting for runtime evidence.
+- investigation question/outcome/scope/time binding;
+- candidate generation from Lineage, Change, execution and reconciliation evidence;
+- first-observed deviation versus earliest evidenced state change versus transformation-boundary mismatch versus first downstream effect;
+- multiple simultaneous/compatible upstream deviations;
+- first post-change run with insufficient discriminatory causal evidence;
+- retries/reruns/backfills altering apparent sequence;
+- stale/mixed input versions relevant to localization;
+- incomplete/ambiguous run/version evidence limiting localization;
+- late evidence changing retrospective first-deviation localization without rewriting what investigators knew then;
+- handoff from operational hypothesis/lead into explicit Causal Claim REF-013–REF-020 state;
+- Investigation closure with causal status still unresolved/weakened/rejected/supported rather than confirmed.
 
-Do not let Group 04 turn Lineage, schedule, Deployment timing, reviewed/proposed state or temporal proximity into proof of actual consumption or cause.
+Do not let Group 05 promote first deviation, temporal precedence, shared version, dependency path, deployment proximity, reconciliation mismatch or analyst closure into root cause/confirmation.
 
 ## Architecture boundary
 

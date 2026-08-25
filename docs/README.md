@@ -9,7 +9,7 @@ The `docs/` tree is the system of record for product and design decisions in thi
 - **Phase 004 — Evidence, Time, and Causality Refinement: COMPLETE.** REF-001–REF-030 accepted.
 - **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement: COMPLETE.** AUTH-001–AUTH-053 final; G07-01–G07-26 pass.
 - **Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement: COMPLETE.** Groups 01–07 accepted; HLTH-001–HLTH-066 final; H07-01–H07-36 pass.
-- **Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: IN PROGRESS.** Groups 01–03 accepted; OPS-001–OPS-033 accepted; L01-01–L01-18, C02-01–C02-24 and P03-01–P03-30 pass; Group 04 next.
+- **Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: IN PROGRESS.** Groups 01–04 accepted; OPS-001–OPS-049 accepted; L01-01–L01-18, C02-01–C02-24, P03-01–P03-30 and X04-01–X04-32 pass; Group 05 next.
 
 The current catalog contains **24 accepted concepts**: the original 20 plus **Propagation Safeguard**, **Capability Authorization**, **Execution Gate**, and **Assertion Authority**.
 
@@ -46,14 +46,17 @@ The current catalog contains **24 accepted concepts**: the original 20 plus **Pr
 29. [`concepts/phase_007/02_change_intent_deployment_realized_change/scenario_review.md`](concepts/phase_007/02_change_intent_deployment_realized_change/scenario_review.md) — C02-01–C02-24.
 30. [`concepts/phase_007/03_prospective_blast_radius_change_aware_review/README.md`](concepts/phase_007/03_prospective_blast_radius_change_aware_review/README.md) — accepted Group 03 / OPS-021–OPS-033.
 31. [`concepts/phase_007/03_prospective_blast_radius_change_aware_review/scenario_review.md`](concepts/phase_007/03_prospective_blast_radius_change_aware_review/scenario_review.md) — P03-01–P03-30.
-32. [`concepts/phase_007/04_execution_reconstruction_dependency_sequence/README.md`](concepts/phase_007/04_execution_reconstruction_dependency_sequence/README.md) — next Phase 007 group.
-33. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
-34. [`reference/authority_vocabulary.md`](reference/authority_vocabulary.md) — authority vocabulary.
-35. [`decisions/README.md`](decisions/README.md) — durable decision history/index.
-36. [`decisions/phase_006_group_07_consolidation_and_exit.md`](decisions/phase_006_group_07_consolidation_and_exit.md) — D-383–D-405.
-37. [`decisions/phase_007_group_01_lineage_topology.md`](decisions/phase_007_group_01_lineage_topology.md) — D-406–D-421.
-38. [`decisions/phase_007_group_02_change_realization.md`](decisions/phase_007_group_02_change_realization.md) — D-422–D-440.
-39. [`decisions/phase_007_group_03_prospective_blast_radius.md`](decisions/phase_007_group_03_prospective_blast_radius.md) — D-441–D-461.
+32. [`concepts/phase_007/04_execution_reconstruction_dependency_sequence/README.md`](concepts/phase_007/04_execution_reconstruction_dependency_sequence/README.md) — accepted Group 04 / OPS-034–OPS-049.
+33. [`concepts/phase_007/04_execution_reconstruction_dependency_sequence/scenario_review.md`](concepts/phase_007/04_execution_reconstruction_dependency_sequence/scenario_review.md) — X04-01–X04-32.
+34. [`concepts/phase_007/05_investigation_localization_causal_handoff/README.md`](concepts/phase_007/05_investigation_localization_causal_handoff/README.md) — next Phase 007 group.
+35. [`reference/glossary.md`](reference/glossary.md) — canonical vocabulary.
+36. [`reference/authority_vocabulary.md`](reference/authority_vocabulary.md) — authority vocabulary.
+37. [`decisions/README.md`](decisions/README.md) — durable decision history/index.
+38. [`decisions/phase_006_group_07_consolidation_and_exit.md`](decisions/phase_006_group_07_consolidation_and_exit.md) — D-383–D-405.
+39. [`decisions/phase_007_group_01_lineage_topology.md`](decisions/phase_007_group_01_lineage_topology.md) — D-406–D-421.
+40. [`decisions/phase_007_group_02_change_realization.md`](decisions/phase_007_group_02_change_realization.md) — D-422–D-440.
+41. [`decisions/phase_007_group_03_prospective_blast_radius.md`](decisions/phase_007_group_03_prospective_blast_radius.md) — D-441–D-461.
+42. [`decisions/phase_007_group_04_execution_reconstruction.md`](decisions/phase_007_group_04_execution_reconstruction.md) — D-462–D-484.
 
 ## Phase 006 exit summary
 
@@ -105,6 +108,16 @@ It preserves planned scenario topology ≠ effective Lineage; candidate ≠ expo
 
 Accepted range: **OPS-021–OPS-033**. No new concept was required.
 
+### Group 04 — execution reconstruction / dependency sequence / version use
+
+Group 04 establishes:
+
+**expected/opportunity/control context → evidence-established execution instance → partial lifecycle/attempt assembly → actual sequence/waiting evidence → run-specific implementation/input version binding → produced output/version binding → multi-input version set → bitemporal reconstruction**.
+
+It preserves opportunity/Gate state ≠ execution; intended dependency ≠ actual precedence ≠ waiting ≠ consumption; Deployment active-at-time ≠ run-specific implementation state by default; run success ≠ output existence/health; duplicate/common-derived telemetry ≠ independent corroboration; missing telemetry ≠ operational absence; and exact consumed-version evidence as separate from currentness/readiness/cause.
+
+Accepted range: **OPS-034–OPS-049**. No new concept was required.
+
 ## Documentation discipline
 
 - Concepts/synchronizations/refinements remain implementation-neutral.
@@ -119,6 +132,12 @@ Accepted range: **OPS-021–OPS-033**. No new concept was required.
 - Prospective candidate/review does not become actual exposure/Impact/cause.
 - Review relevance remains separate from governed obligation, approval and active control.
 - Proposed/reviewed version is not executed/consumed version.
+- Expected/opportunity/Gate state does not create actual execution.
+- Deployment active-at-time does not automatically prove run-specific implementation state.
+- Actual temporal precedence does not automatically prove waiting or version consumption.
+- Run success does not automatically prove output existence, currentness, health or readiness.
+- Duplicate/common-derived telemetry is not independent corroboration.
+- `no run/output/consumption` requires bounded negative evidence.
 - Audience simplification cannot strengthen underlying status.
 - Passive monitoring remains non-blocking/out-of-band by default; Execution Gate remains explicit opt-in active control.
 - Phase 007 must consume HLTH-001–HLTH-066 rather than reopen health semantics by convenience.
