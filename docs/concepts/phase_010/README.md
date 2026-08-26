@@ -1,6 +1,6 @@
 # Phase 010 — Technical Architecture
 
-**Status:** IN PROGRESS — Group 01 next
+**Status:** IN PROGRESS — Group 01 accepted; Group 02 next
 
 ## Purpose
 
@@ -28,23 +28,31 @@ Phase 010 uses **ARCH-###** for durable technical-architecture contracts.
 
 `ARCH-###` records architecture constraints/decisions needed to realize accepted semantics. It must not redefine source facts, functional truth, evidence sufficiency, source authority, or product concepts already owned by earlier phases.
 
-No ARCH contract is accepted by this phase-level grouping commit. Group 01 will establish the first accepted architecture range after review.
+Current accepted range: **ARCH-001–ARCH-032** from Group 01.
 
 ## Logical groups
 
 ### Group 01 — Architecture Frame, Environment Discovery & Decision Criteria
 
-**Status:** Next — not started
+**Status:** COMPLETE / ACCEPTED
 
-Establish target-environment assumptions, architecture quality attributes, MVP versus enterprise-extension boundaries, service classes, capability discovery, decision criteria, ADR discipline, and explicit non-goals before selecting technical components.
+Accepted range: **ARCH-001–ARCH-032**. **AFE01-01–AFE01-60 pass.** Decisions D-1269–D-1298 accepted.
+
+Group 01 establishes the deployment-bound capability model, architecture fact classes, environment verification/unknown discipline, MVP/enterprise boundary, hard constraints, decision-specific quality tradeoffs, six service classes, ADR discipline and GAP-009 ownership.
+
+Its central rule is:
+
+**documented capability ≠ deployment presence ≠ licensed entitlement ≠ enablement ≠ authorization ≠ reachability ≠ observable coverage ≠ proposition-specific usability**.
 
 Path: [`01_architecture_frame_environment_discovery_decision_criteria/README.md`](01_architecture_frame_environment_discovery_decision_criteria/README.md)
 
 ### Group 02 — Evidence, Provenance, Temporal & Persistence Architecture
 
-**Status:** Planned
+**Status:** Next — not started
 
 Select the durable representation and persistence strategy for evidence identity, provenance, source identity, bitemporal coordinates, correction/supersession, common derivation, historical reconstruction, retention, and durable statement-to-basis traceability.
+
+Path: [`02_evidence_provenance_temporal_persistence_architecture/README.md`](02_evidence_provenance_temporal_persistence_architecture/README.md)
 
 ### Group 03 — Identity, Scope, Authority, Authorization & Disclosure Architecture
 
@@ -96,9 +104,29 @@ The review order is intentional:
 
 This order is a reasoning dependency. It does not require the final runtime to have one service per group or to deploy components in this sequence.
 
-## Architecture choices intentionally open at entry
+## Group 01 accepted architecture discipline
 
-Phase 010 begins without having selected:
+Later groups must preserve:
+
+- verified public/vendor fact ≠ target-environment discovered fact ≠ organization requirement ≠ architecture assumption ≠ unresolved unknown;
+- vendor/product name ≠ concrete capability instance;
+- documented support ≠ target deployment presence/enablement/entitlement/permission/reachability/coverage;
+- capability usability as proposition/service-class specific rather than one Boolean;
+- capability verification as provenance-bearing and time-aware;
+- unknown capability state as first-class;
+- cloud/region/Geo/government deployment, version, plan/license, preview/feature flag and network/security context where material;
+- optional source absence as bounded capability loss, not benign default;
+- semantic/evidence/security/degraded-state rules as hard architecture constraints;
+- decision-specific quality tradeoffs with no universal architecture score;
+- explicit decision reversibility and assumption/unknown register;
+- SC-01–SC-06 service classes instead of one freshness SLA;
+- GAP-009-01–GAP-009-40 ownership/treatment through Phase 010 exits.
+
+The public/reference architecture must be deployable across heterogeneous enterprise environments by binding capability prerequisites and degraded modes. It must not treat one discovered tenant profile as the universal Databricks/GitHub/Collibra/Immuta environment.
+
+## Architecture choices still intentionally open after Group 01
+
+Group 01 deliberately selected no final:
 
 - polling versus streaming versus hybrid ingestion;
 - event bus or queue technology;
@@ -118,13 +146,14 @@ Phase 010 begins without having selected:
 - observability stack;
 - cost-control implementation.
 
-These choices must be justified by the accepted contracts and environment facts rather than selected by familiarity.
+These choices must be justified by accepted contracts and deployment facts rather than selected by familiarity.
 
 ## Durable architecture rejection rules
 
 Reject an architecture if it requires any of the following shortcuts:
 
 - source availability treated as Assertion Authority;
+- public vendor documentation treated as proof of tenant capability;
 - names or timestamp proximity used as exact entity/deployment/run joins;
 - current state projected backward as historical state;
 - missing/degraded telemetry converted into negative truth;
@@ -135,11 +164,11 @@ Reject an architecture if it requires any of the following shortcuts:
 - copied/retained source evidence promoted to newly authoritative or independent evidence;
 - loss of proposition/source/basis provenance;
 - disclosure/authorization boundaries removed for convenience;
-- one global confidence/health/Impact/control/replay score;
+- one global confidence/health/Impact/control/replay/architecture score;
 - unsupported capabilities hidden behind planned future instrumentation.
 
 ## Phase 010 exit direction
 
-Phase 010 should exit only when the architecture can demonstrate, through scenario replay and explicit traceability, that the accepted semantics are technically realizable under documented environment/cost/latency/retention constraints and that all material residual gaps are resolved, reduced, intentionally scoped, or carried forward explicitly.
+Phase 010 should exit only when the architecture can demonstrate, through scenario replay and explicit traceability, that the accepted semantics are technically realizable under documented and deployment-verified environment/cost/latency/retention constraints and that all material residual gaps are resolved, reduced, intentionally scoped, or carried forward explicitly.
 
-**Group 01 — Architecture Frame, Environment Discovery & Decision Criteria is next.**
+**Group 02 — Evidence, Provenance, Temporal & Persistence Architecture is next.**

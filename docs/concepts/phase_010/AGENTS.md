@@ -17,7 +17,8 @@ Before accepting an `ARCH-###` contract, preserve and consult:
 - Phase 009 INTG-001–INTG-270;
 - Phase 009 Group 08 consolidated capability matrix;
 - Phase 009 residual gap register GAP-009-01–GAP-009-40;
-- Phase 009 `phase_010_handoff.md`.
+- Phase 009 `phase_010_handoff.md`;
+- Phase 010 Group 01 ARCH-001–ARCH-032 after Group 01 acceptance.
 
 Earlier functional/integration semantics remain authoritative. Architecture may realize them; it may not simplify them away.
 
@@ -43,8 +44,8 @@ Do not use ARCH contracts to redefine a product concept, source fact, authority 
 
 Review Phase 010 in this order:
 
-1. Architecture Frame, Environment Discovery & Decision Criteria;
-2. Evidence, Provenance, Temporal & Persistence Architecture;
+1. Architecture Frame, Environment Discovery & Decision Criteria — **accepted**;
+2. Evidence, Provenance, Temporal & Persistence Architecture — **next**;
 3. Identity, Scope, Authority, Authorization & Disclosure Architecture;
 4. Source Acquisition, Adapter, Synchronization & Integration-Health Architecture;
 5. Runtime Provenance, Health, Lineage & Impact Evidence Architecture;
@@ -55,24 +56,44 @@ Review Phase 010 in this order:
 
 This is a design dependency order, not a mandate for runtime service boundaries.
 
-## Group 01 discipline
+## Group 01 accepted discipline
 
-Group 01 must establish the decision frame before selecting major technologies.
+ARCH-001–ARCH-032 and AFE01-01–AFE01-60 are accepted.
 
-It must define:
+Later architecture work must preserve:
 
-- deployment/environment discovery requirements;
-- MVP and enterprise-extension boundary assumptions;
-- architecture quality attributes and explicit tradeoff criteria;
-- service/use classes for latency and replay;
-- architecture decision record discipline;
-- technology-selection evidence requirements;
-- capability inventory and unsupported/unknown handling;
-- cost/quota/retention assumptions that require environment confirmation;
-- architecture-wide nonfunctional constraints;
-- unresolved architecture questions that later groups own.
+- `verified_public_vendor_fact` ≠ `target_environment_fact` ≠ organization requirement/policy ≠ architecture assumption ≠ unknown/unverified;
+- documented vendor capability ≠ deployment presence ≠ enablement ≠ entitlement ≠ permission ≠ reachability ≠ observable coverage ≠ proposition-specific usability;
+- capability identity bound to deployment model/cloud/region/Geo/account/workspace/edition/version/surface where material;
+- capability facts as provenance-bearing, revisioned and time-aware;
+- unknown deployment facts as unknown rather than guessed support/absence;
+- proposition/service-class usability rather than one vendor-wide availability flag;
+- optional Collibra/Immuta absence as bounded degradation rather than hidden hard dependency;
+- explicit MVP/enterprise capability boundaries;
+- architecture hard constraints before optimization;
+- decision-specific tradeoffs with no universal architecture score;
+- explicit reversibility and assumption/unknown register;
+- SC-01 through SC-06 service classes;
+- GAP-009-01–GAP-009-40 ownership/treatment.
 
-Group 01 must **not** select final persistence, graph, event-bus, orchestration, LLM/retrieval, policy-engine, Gate/Safeguard, service, or deployment technologies merely to create momentum.
+A public vendor document can justify a public capability statement. It cannot alone justify an architecture assumption that a particular enterprise deployment exposes that capability.
+
+## Group 02 discipline
+
+Group 02 may select concrete evidence/provenance/time/persistence architecture only after evaluating alternatives against ARCH-001–ARCH-032.
+
+It must especially preserve:
+
+- source evidence identity and source ownership after retention/copy;
+- proposition/basis identity and common derivation;
+- event/effective, availability/knowledge, correction/supersession and communication time separation;
+- historical replay without current-state back-projection;
+- service-class-specific durability/latency requirements;
+- security/disclosure/residency constraints;
+- capability-dependent designs that degrade when a required source surface is unavailable;
+- decision evidence, alternatives and reversibility.
+
+Group 02 must not choose a database/graph/search/lakehouse pattern by convention or because a vendor feature is documented as generally available.
 
 ## Cross-group invariants
 
@@ -98,7 +119,7 @@ Preserve all accepted durable boundaries, especially:
 
 ## Environment facts
 
-Documented vendor defaults are architecture inputs, not tenant facts. Group 01 and Group 04 must distinguish:
+Documented vendor defaults are architecture inputs, not tenant facts. Every later group must distinguish:
 
 - verified public capability/default;
 - target-environment discovered fact;
@@ -107,6 +128,8 @@ Documented vendor defaults are architecture inputs, not tenant facts. Group 01 a
 - unresolved unknown.
 
 Do not silently promote a public default into a production tenant contract.
+
+When capability is material, bind the exact deployment instance: deployment model, cloud/region/Geo, account/workspace/tenant scope, edition/plan/version/license, feature/release status, enablement, permission, reachability, coverage and current integration health as applicable.
 
 ## Decision quality
 
@@ -121,6 +144,8 @@ Prefer architecture decisions that are:
 - testable through scenario replay;
 - modular enough that optional Collibra/Immuta integration does not become a universal core dependency.
 
+Material decisions must follow the accepted ADR rubric rather than relying on familiarity.
+
 ## Documentation discipline
 
 - Keep Phase 010 architecture documentation under `docs/concepts/phase_010/` unless another repository authority explicitly owns the artifact.
@@ -132,4 +157,4 @@ Prefer architecture decisions that are:
 
 ## Current state
 
-**Phase 010 is IN PROGRESS. Group 01 — Architecture Frame, Environment Discovery & Decision Criteria is next. No ARCH contracts are accepted yet.**
+**Phase 010 is IN PROGRESS. Group 01 is accepted: ARCH-001–ARCH-032; AFE01-01–AFE01-60 pass. Group 02 — Evidence, Provenance, Temporal & Persistence Architecture is next.**

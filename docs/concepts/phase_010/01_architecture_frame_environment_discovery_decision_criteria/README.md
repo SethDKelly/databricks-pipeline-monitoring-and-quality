@@ -1,6 +1,6 @@
 # Phase 010 Group 01 — Architecture Frame, Environment Discovery & Decision Criteria
 
-**Status:** Next — not started
+**Status:** COMPLETE / ACCEPTED
 
 ## Goal
 
@@ -8,183 +8,178 @@ Establish the architecture decision frame and target-environment discovery contr
 
 Group 01 answers **what the architecture must optimize for, what environment facts must be discovered, what assumptions may be made, how alternatives will be evaluated, and what remains intentionally undecided**.
 
-It does not yet choose the final persistence, graph, event-bus, orchestration, retrieval/LLM, control, service, or deployment architecture.
+## Accepted result
 
-## Entry contract
+Accepted architecture range: **ARCH-001–ARCH-032**.
 
-Group 01 consumes:
+Scenario suite: **AFE01-01–AFE01-60 pass**.
 
-- Phase 009 final range INTG-001–INTG-270;
-- Phase 009 consolidated source capability matrix;
-- GAP-009-01–GAP-009-40;
-- Phase 009 `phase_010_handoff.md`;
-- all durable semantic boundaries from SYN/REF/AUTH/HLTH/OPS/EXPL.
+Decision range: **D-1269–D-1298 accepted**.
 
-The Phase 009 conclusion that a bounded Databricks/GitHub-centered MVP is feasible is an architecture input, not a preselected topology.
+No final persistence, graph, event-bus/queue, orchestration, LLM/retrieval, policy/control, service or deployment technology is selected by this group.
 
-## Primary questions
+## Central architecture chain
 
-### A. Target deployment/environment discovery
+**public/vendor capability statement → deployment-bound capability instance → provenance-bearing environment verification → dimensioned capability facts + unknowns → proposition/service-class usability → architecture hard constraints + decision-specific tradeoffs → MVP/enterprise/gap ownership → later technology ADR**.
 
-- Which Databricks cloud/regions/workspaces/metastores/editions are in the initial target environment?
-- Which system tables, APIs, Lakeflow features, Unity Catalog capabilities, DQ/metric/profile/anomaly surfaces and preview features are enabled?
-- What GitHub plan/authentication model/App installation/audit streaming/Actions usage exists?
-- Are Collibra and/or Immuta present, and if so which editions, APIs, history/audit settings, licenses and populations are relevant?
-- What IAM/SSO/SCIM/service-principal topology exists?
-- What consumer modes matter initially: Databricks SQL, dashboards, external BI, APIs/applications, exports, notifications, files, or others?
-- What consequence/incident/business systems are in scope for enterprise extensions?
-- What retention, audit, legal/security, regional/data-residency and disclosure constraints are organization requirements rather than vendor defaults?
+No link automatically creates the next.
 
-Environment discovery must preserve `verified public default` ≠ `target-environment fact` ≠ `architecture assumption`.
+In particular:
 
-### B. MVP versus enterprise-extension boundary
+**documented capability ≠ deployment presence ≠ licensed entitlement ≠ enablement ≠ authorization ≠ reachability ≠ observable coverage ≠ proposition-specific usability**.
 
-- Which GAP-009 items are mandatory for the first architecture and which are explicit enterprise extensions?
-- Which organization-owned capabilities are mandatory even for a bounded MVP (for example Monitoring Scope, Assertion Authority, identity/correlation where the product asks those propositions)?
-- Which optional Collibra/Immuta capabilities must degrade gracefully when absent?
-- Which consumer/consequence/control capabilities are intentionally deferred without weakening core monitoring/RCA semantics?
+## Environment variability is a first-class rule
 
-### C. Architecture quality attributes
+Current vendor documentation confirms that capability differs materially across enterprise deployment contexts:
 
-Define explicit priorities and tradeoff criteria for at least:
+- Databricks documents cloud/region-limited features, AWS GovCloud system-table differences, account/workspace preview enablement and Geo/cross-Geo requirements for selected services.
+- GitHub capabilities vary across GitHub.com, GHE.com, GHES versions, repository visibility and plans.
+- Collibra publishes different feature availability across commercial cloud, UAE, Government and self-hosted/deployment/site models.
+- Phase 009 already requires Immuta API/licensing/export limits to be discovered for the target deployment rather than assumed universally.
 
-- semantic fidelity / evidence traceability;
-- correctness under partial/degraded evidence;
-- security, least privilege and disclosure control;
-- historical replay/durability;
-- availability and graceful degradation;
-- latency by use class;
-- scalability and source-volume growth;
-- operational simplicity;
-- reversibility/evolvability;
-- testability/observability;
-- quota efficiency;
-- compute/storage/operational cost;
-- portability across Databricks/GitHub environments where intended.
+Therefore the reference architecture cannot use a static vendor-wide capability Boolean.
 
-Do not combine these into one universal architecture score. Tradeoffs must remain decision-specific.
+## ARCH-001–ARCH-032 summary
 
-### D. Service/use classes
+### Fact and capability model — ARCH-001–ARCH-015
 
-Establish architecture service classes rather than one universal freshness target, at minimum considering:
+Group 01 establishes:
 
-1. near-current operational facts;
-2. periodic/core health and quality evaluation;
-3. enriched investigation/RCA reasoning;
-4. historical/as-known replay;
-5. retained communication / basis inspection;
-6. active control path if/when Gate or Safeguard is enabled.
+- explicit architecture fact classes;
+- deployment-bound capability instance identity;
+- documented capability vs target-environment fact separation;
+- multidimensional capability state;
+- provenance-bearing verification;
+- unknown preservation;
+- capability fact freshness/history;
+- cloud/region/Geo, plan/license/version, preview/enablement, permission/reachability and residency bindings;
+- proposition-specific usability;
+- optional-source graceful degradation.
 
-Each class should define the kind of source latency, completeness and retention needed; Group 01 need not yet choose implementation mechanisms.
+The architecture may never say merely `Databricks supports X` where the decision requires proof that X is usable in a particular enterprise environment.
 
-### E. Architecture decision discipline
+### Scope and architecture quality — ARCH-016–ARCH-021
 
-Define the ADR/architecture-contract process for later groups:
+Group 01 establishes:
 
-- what evidence is required before selecting a technology;
-- which alternatives must be evaluated;
-- how decisions trace to ARCH/INTG/GAP requirements;
-- how assumptions and target-environment facts are recorded;
-- how reversible versus hard-to-reverse decisions are treated;
-- how supersession/rollback of architecture decisions is recorded;
-- what qualifies a decision for acceptance.
+- explicit MVP/enterprise/optional/conditional capability classes;
+- organization-owned core capabilities where dependent propositions are promised;
+- hard constraints for semantic/evidence/security/degraded-state correctness;
+- decision-specific quality-attribute tradeoffs;
+- no universal architecture score;
+- explicit decision reversibility.
 
-### F. Integration capability inventory model
+A simpler/faster/cheaper option cannot win by violating an accepted semantic boundary.
 
-Define what the architecture needs to know about every enabled source surface:
+### Service classes — ARCH-022–ARCH-023
 
-- exact product/source/version/edition;
-- region/account/workspace scope;
-- authentication/authorization requirements;
-- proposition/evidence roles supported;
-- source authority applicability;
-- identity/join keys;
-- time semantics and publication lag;
-- retention;
-- positive/negative coverage;
-- pagination/query limits;
-- quota/rate state;
-- cost surface;
-- preview/deprecation status;
-- schema/API version;
-- integration-health state;
-- optional/required status.
+Six use classes are accepted:
 
-Group 01 defines the required capability metadata shape, not necessarily its final storage schema.
+1. SC-01 near-current operational facts;
+2. SC-02 periodic core health/quality;
+3. SC-03 enriched Investigation/RCA;
+4. SC-04 historical/as-known replay;
+5. SC-05 retained communication/basis inspection;
+6. SC-06 active control.
 
-### G. Architecture-wide nonfunctional constraints
+They constrain completeness/latency/retention needs without inventing one universal freshness SLA. Numeric targets remain later environment-informed ADR work.
 
-Establish constraints that later groups must obey, including:
+### Decision discipline — ARCH-024–ARCH-032
 
-- no source failure may become domain absence;
-- all strong-negative-capable paths require coverage/integration-health awareness;
-- retained evidence preserves source provenance/common derivation;
-- current state is not sufficient for historical replay where a historical proposition is promised;
-- sensitive basis/provenance can require separate authorization from conclusion visibility;
-- active control paths must fail observably and preserve exact enforcement evidence rather than inventing fail-open/fail-closed conclusions;
-- architecture must support partial answers instead of all-or-nothing source dependency where semantics allow;
-- optional sources cannot become hidden hard dependencies.
+Group 01 establishes:
 
-## Phase 009 residual gaps primarily owned or framed here
+- assumption/unknown register;
+- evidence/alternative requirements for material ADRs;
+- supersession/rollback history;
+- explicit ownership/treatment for GAP-009-01–GAP-009-40;
+- cross-group entry preconditions;
+- cost/quota/retention fact binding;
+- architecture failure semantics;
+- security/disclosure nonfunctional constraints;
+- Group 02 entry readiness.
 
-Group 01 should classify ownership/priority for every GAP-009 item, with particular direct responsibility for:
+## Target-environment discovery profile
 
-- GAP-009-32 — source-latency/availability SLO framing;
-- GAP-009-36 — Collibra environment discovery;
-- GAP-009-37 — Immuta environment discovery;
-- GAP-009-38 — cost-attribution requirements;
-- GAP-009-39 — graceful-degradation policy;
-- GAP-009-40 — enterprise deployment-specific capability inventory.
+The accepted discovery profile records at least:
 
-GAP-009-01–GAP-009-35 remain later-group architecture problems but Group 01 must establish their MVP/enterprise priority and acceptance ownership.
+- vendor/product and deployment model;
+- cloud/hosting and region/Geo;
+- account/tenant/workspace/metastore/org/repository scope;
+- edition/plan/license/version/release state;
+- exact source surface/feature;
+- documented support;
+- deployment presence;
+- enablement/configuration;
+- entitlement;
+- authorization;
+- reachability;
+- observable coverage;
+- retention/time semantics;
+- quota/capacity and cost facts;
+- integration health;
+- provenance and verification time;
+- optional/MVP/enterprise role.
 
-## Explicit non-goals
+The result is evaluated for an exact proposition/service class rather than flattened into one global status.
 
-Group 01 does **not** yet select:
+See [`environment_capability_profile.md`](environment_capability_profile.md).
 
-- database/lakehouse/graph/search/object-store products;
-- an event bus/queue;
-- polling/streaming implementation;
-- a canonical event/provenance schema;
-- an orchestration engine;
-- an LLM/provider/model/retrieval/embedding stack;
-- a redaction/policy engine;
-- a Gate or Safeguard engine;
-- final API/service decomposition;
-- container/Kubernetes/serverless topology;
-- observability vendor;
-- exact cost-control implementation.
+## MVP / enterprise boundary
 
-Those decisions require the decision criteria and environment facts produced here.
+A bounded Databricks/GitHub-centered **passive monitoring/RCA** MVP remains feasible, but capability claims are conditioned on deployment discovery.
 
-## Expected Group 01 artifacts
+MVP-core architecture concerns include capability discovery, integration health, Monitoring Scope/Assertion Authority where required, durable identity/correlation, supported run/output/health provenance, Investigation persistence, evidence/basis traceability and secure graceful degradation.
 
-At minimum, Group 01 should produce:
+Optional Collibra/Immuta integrations enrich exact capabilities without becoming universal prerequisites.
 
-- accepted ARCH contracts for the architecture frame;
-- target-environment discovery checklist/profile;
-- MVP versus enterprise-extension capability boundary;
-- architecture quality-attribute/tradeoff matrix;
-- service/use-class matrix;
-- technology/ADR decision rubric;
-- cross-group gap ownership matrix for GAP-009-01–GAP-009-40;
-- architecture-wide nonfunctional constraints;
-- scenario/decision-quality review;
-- Group 01 decision record and Group 02 handoff.
+External BI/application-use evidence, business consequence integrations, broad multi-hop negative coverage and active Gate/Safeguard control are explicit enterprise extensions unless a deployment intentionally pulls them into its MVP.
 
-## Acceptance gate
+Exact input-version attestation, long-horizon replay, authentic Explanation retention and historical inspectBasis are product-commitment dependent: if promised, architecture must support them; if not, the limitation remains explicit.
 
-Group 01 exits only if:
+See [`mvp_enterprise_boundary.md`](mvp_enterprise_boundary.md).
 
-- later groups can evaluate technologies against an explicit decision rubric;
-- target-environment unknowns are clearly separated from verified defaults and architecture assumptions;
-- every GAP-009 item has a Phase 010 owner/priority/treatment path;
-- MVP versus enterprise-extension scope is explicit enough to constrain architecture;
-- service classes are explicit enough to prevent one universal latency/retention target;
-- architecture-wide failure/degradation/security/history constraints are explicit;
-- no major technology has been selected merely by convention;
-- the group introduces no semantic shortcut prohibited by Phases 002–009.
+## Quality-attribute frame
 
-## Handoff
+Hard constraints are evaluated before optimization. Material later ADRs then compare applicable durability, availability, latency, scalability, operational simplicity, observability/testability, reversibility, quota efficiency, cost, portability, performance and maintainability.
 
-After Group 01 acceptance, Group 02 may select the durable **Evidence, Provenance, Temporal & Persistence Architecture** using the criteria and environment facts established here.
+No weighted sum or universal architecture score is accepted.
+
+See [`architecture_quality_attributes.md`](architecture_quality_attributes.md).
+
+## Gap ownership
+
+Every GAP-009-01–GAP-009-40 item now has a primary Phase 010 owner, priority and treatment path. Later groups may share implementation responsibility but may not let assigned gaps disappear without explicit exit treatment.
+
+See [`gap_ownership_matrix.md`](gap_ownership_matrix.md).
+
+## Scenario result
+
+AFE01-01–AFE01-60 pass across region/cloud/deployment/version/plan/license/preview/permission/reachability variability, optional-source degradation, source failure, proposition-specific usability, MVP scoping, service classes, hard constraints, ADR quality, gap ownership and Group 02 readiness.
+
+See [`scenario_review.md`](scenario_review.md).
+
+## External review
+
+The current external review was verified on 2026-08-26 and is intentionally recorded as public/vendor evidence rather than target-environment fact.
+
+See [`external_environment_variability_review.md`](external_environment_variability_review.md).
+
+## Acceptance gate result
+
+Group 01 passes because:
+
+- later groups now have an explicit decision rubric;
+- target-environment facts are separated from public defaults, requirements, assumptions and unknowns;
+- enterprise deployment variability is modeled at capability-instance/dimension level;
+- every GAP-009 item has ownership/priority/treatment;
+- MVP vs enterprise-extension scope is explicit enough to constrain design;
+- service classes prevent a universal latency/retention target;
+- hard failure/degradation/security/history constraints are explicit;
+- AFE01-01–AFE01-60 pass;
+- no major technology was selected by convention.
+
+## Group 02 handoff
+
+**Phase 010 Group 02 — Evidence, Provenance, Temporal & Persistence Architecture is next.**
+
+Group 02 must consume ARCH-001–ARCH-032, especially the fact/capability model, hard constraints, SC-01–SC-06, ADR rubric, MVP/enterprise boundary and gap ownership. It may select concrete persistence architecture only by tracing alternatives to these inputs and must not assume a source capability merely because public vendor documentation describes it.
