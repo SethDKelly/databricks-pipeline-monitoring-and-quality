@@ -1,12 +1,12 @@
 # Phase 009 — Integration Contracts, Source Authority, and Evidence Availability
 
-**Status:** IN PROGRESS — Groups 01–07 accepted; INTG-001–INTG-238 accepted; IC01-01–IC01-40, GOV02-01–GOV02-48, RTE03-01–RTE03-54, HME04-01–HME04-56, LIE05-01–LIE05-60, ICE06-01–ICE06-72 and EBR07-01–EBR07-64 pass; Group 08 next
+**Status:** COMPLETE — Groups 01–08 accepted; INTG-001–INTG-270 final; IC01-01–IC01-40, GOV02-01–GOV02-48, RTE03-01–RTE03-54, HME04-01–HME04-56, LIE05-01–LIE05-60, ICE06-01–ICE06-72, EBR07-01–EBR07-64 and XRC08-01–XRC08-64 pass; Phase 009 exit review accepted; Phase 010 next
 
 ## Goal
 
 Map the accepted functional requirements from Phases 002–008 to concrete evidence/source capabilities without weakening those requirements to match whichever integration happens to be easiest to query.
 
-Phase 009 must determine, proposition by proposition:
+Phase 009 determines, proposition by proposition:
 
 - which source surface can provide relevant evidence;
 - what that source is authoritative, assertive, observational, contextual, or merely available for;
@@ -27,11 +27,11 @@ Phase 009 uses **`INTG-###`** integration-contract refinements.
 
 `INTG-###` describes the functional contract between accepted product semantics and actual source capabilities. It does not define adapter classes, service boundaries, event schemas, storage tables, polling architecture, credentials, SDK selection, or deployment topology.
 
-Accepted range so far: **INTG-001–INTG-238**.
+Final accepted range: **INTG-001–INTG-270**. No INTG-271 is required.
 
 ## Logical delivery grouping
 
-Phase 009 is reviewed in eight dependency-ordered groups. The groups are organized around **evidence responsibilities and reasoning dependencies**, not vendor ownership.
+Phase 009 was reviewed in eight dependency-ordered groups organized around **evidence responsibilities and reasoning dependencies**, not vendor ownership.
 
 ### Group 01 — Integration Contract Vocabulary, Source Roles & Capability Matrix
 **Status:** **Accepted — INTG-001–INTG-022; IC01-01–IC01-40 pass.**
@@ -107,17 +107,19 @@ Accepted gaps include heterogeneous/short vendor retention, incomplete availabil
 See [`07_explanation_historical_replay_basis_disclosure_source_contracts/README.md`](07_explanation_historical_replay_basis_disclosure_source_contracts/README.md), [`07_explanation_historical_replay_basis_disclosure_source_contracts/source_capability_matrix.md`](07_explanation_historical_replay_basis_disclosure_source_contracts/source_capability_matrix.md), and [`07_explanation_historical_replay_basis_disclosure_source_contracts/external_source_review.md`](07_explanation_historical_replay_basis_disclosure_source_contracts/external_source_review.md).
 
 ### Group 08 — Cross-Source Coverage, Latency, Retention, Cost & Phase Consolidation / Exit
-**Status:** **Next — not started.**
+**Status:** **Accepted — INTG-239–INTG-270; XRC08-01–XRC08-64 pass; Phase 009 exit accepted.**
 
-Compose the source contracts across all prior groups. Identify evidence gaps, conflicting/overlapping source roles, cross-source join risks, clock/time-cut limitations, coverage boundaries, latency/freshness envelopes, retention/replay/communication-retention feasibility, quotas/cost, integration observability and graceful degradation.
+Consolidates all prior source contracts into one source-capability matrix, residual-gap register and Phase 010 architecture handoff. It explicitly separates native/strong, conditional/composed, unsupported-out-of-box and environment-specific/unknown capability rather than generating a support percentage.
 
-The exit review must state which accepted product requirements are fully supportable, partially supportable, unsupported or still unknown with the evaluated integrations, without weakening source semantics. It must separately distinguish source reconstruction, as-known replay, authentic retained communication and current basis-disclosure support before handing concrete facts to Phase 010 technical architecture.
+It preserves proposition-specific support; identity/join evidence; authority applicability; independent T/K/communication clocks; strong-negative coverage; latency as knowledge eligibility rather than truth; heterogeneous retention; authentic communication versus reconstruction; current disclosure versus historical authorization; quota/cost as operational feasibility rather than authority; and integration-health limitations rather than domain negatives.
 
-See [`08_cross_source_coverage_latency_retention_cost_consolidation_exit/README.md`](08_cross_source_coverage_latency_retention_cost_consolidation_exit/README.md).
+The exit accepts a bounded Databricks/GitHub-centered MVP as architecturally feasible, while requiring explicit organization-owned Monitoring Scope/Assertion Authority/correlation records and product-owned durability/instrumentation where the corresponding enterprise propositions demand them. Collibra and Immuta remain optional integrations whose absence creates explicit gaps rather than benign defaults.
+
+See [`08_cross_source_coverage_latency_retention_cost_consolidation_exit/README.md`](08_cross_source_coverage_latency_retention_cost_consolidation_exit/README.md), [`08_cross_source_coverage_latency_retention_cost_consolidation_exit/consolidated_source_capability_matrix.md`](08_cross_source_coverage_latency_retention_cost_consolidation_exit/consolidated_source_capability_matrix.md), [`08_cross_source_coverage_latency_retention_cost_consolidation_exit/residual_gap_register.md`](08_cross_source_coverage_latency_retention_cost_consolidation_exit/residual_gap_register.md), [`08_cross_source_coverage_latency_retention_cost_consolidation_exit/phase_009_exit_review.md`](08_cross_source_coverage_latency_retention_cost_consolidation_exit/phase_009_exit_review.md), and [`08_cross_source_coverage_latency_retention_cost_consolidation_exit/phase_010_handoff.md`](08_cross_source_coverage_latency_retention_cost_consolidation_exit/phase_010_handoff.md).
 
 ## Accepted Group 01 integration-contract discipline
 
-Every later source review uses the common matrix:
+Every source review uses the common matrix:
 
 **source-surface identity/version → bounded proposition → evidence role → authority applicability → subject/join contract → temporal coordinates → grain/context → positive capability → negative/opportunity/coverage capability → availability/latency → retention/replay → mutation/correction → disclosure → derivation/independence → quota/cost → integration observability → support classification + residual gaps**.
 
@@ -146,7 +148,7 @@ Preserve:
 
 ## Accepted Group 02 source-contract discipline
 
-Every later group must preserve:
+Every later composition must preserve:
 
 - Unity Catalog object/principal identity ≠ ecosystem Entity Identity without cross-system mapping;
 - Collibra UUID ≠ Unity Catalog/GitHub/Immuta identity without a governed crosswalk;
@@ -165,7 +167,7 @@ Every later group must preserve:
 
 ## Accepted Group 03 runtime-source discipline
 
-Every later group must preserve:
+Preserve:
 
 - Git commit SHA ≠ governed Change Intent unless an explicit Change Intent rule binds the change record;
 - event-triggering SHA ≠ workflow-definition SHA;
@@ -188,7 +190,7 @@ Every later group must preserve:
 
 ## Accepted Group 04 health-source discipline
 
-Every later group must preserve:
+Preserve:
 
 - current Unity Catalog schema metadata ≠ historical structure ≠ consumer-specific compatibility;
 - principal-filtered schema metadata cannot support absence by non-return;
@@ -215,7 +217,7 @@ Every later group must preserve:
 
 ## Accepted Group 05 lineage/consumer/Impact-source discipline
 
-Every later group must preserve:
+Preserve:
 
 - captured lineage event ≠ permanent/effective relationship interval;
 - lineage capture is incomplete and missing lineage cannot support global no-dependency/no-use conclusions;
@@ -244,7 +246,7 @@ Every later group must preserve:
 
 ## Accepted Group 06 investigation/causal/control-source discipline
 
-Every later group must preserve:
+Preserve:
 
 - Investigation trigger/lead/localization ≠ Causal Claim truth;
 - first observed ≠ earliest evidenced change ≠ first reconciliation boundary ≠ first consumer effect ≠ root cause;
@@ -279,7 +281,7 @@ Every later group must preserve:
 
 ## Accepted Group 07 Explanation/replay/basis-source discipline
 
-Every later group must preserve:
+Preserve:
 
 - material statement identity retains exact source proposition/basis identity independently of rendered wording;
 - source-local names/URLs/display labels are not stable historical identity where rename/recreate/mutation matters;
@@ -316,6 +318,32 @@ Every later group must preserve:
 - exact prior `inspectBasis` presentation requires independently retained prior projection/communication evidence;
 - comparative Explanation sides independently bind source coverage/retention before a delta is asserted.
 
+## Accepted Group 08 cross-source/exit discipline
+
+Preserve:
+
+- support classification is proposition/source-set/context/time bound and never becomes a support/confidence/completeness percentage;
+- source-family composition follows evidence responsibility rather than vendor precedence;
+- cross-system identity and operational association require durable explicit joins;
+- Monitoring Scope and Assertion Authority remain deliberate governed records rather than emergent vendor metadata;
+- direct-Git run provenance does not generalize to bundle/workspace-source provenance;
+- exact multi-input consumption remains an explicit instrumentation gap where required;
+- health/Lineage/Impact/causal/control/Explanation support remains layered and cannot be collapsed during architecture;
+- common-derived sources do not become independent through collection into one store;
+- cross-source clock/availability differences constrain ordering and K eligibility;
+- source latency affects answer timeliness, not proposition truth;
+- strong negatives require source health plus opportunity/population/path/window coverage;
+- integration health must distinguish auth, permission, throttle, timeout, lag, partial pagination, schema drift, parser failure, retention expiry and optional-source absence;
+- retention horizon is source-surface/proposition specific;
+- product-owned long-horizon retention may be required but planned retention is not current source capability;
+- authentic Explanation communication and exact prior basis projection require independent retention when promised;
+- historical authorization retention is independent of current disclosure;
+- basis existence/type/count/provenance can itself be disclosure-sensitive;
+- Databricks/GitHub/Collibra/Immuta quota/cost limits are operational feasibility constraints and do not alter authority/evidence burden;
+- Collibra/Immuta remain optional integrations with explicit degradation semantics;
+- a bounded Databricks/GitHub-centered MVP is feasible, but enterprise gaps remain explicit;
+- Phase 010 may choose architecture only after accepting the Phase 009 matrix/gap facts unchanged.
+
 ## Why this order
 
 1. **Contract vocabulary first** — every source must be evaluated using the same proposition/authority/time/coverage vocabulary before vendor facts can be compared.
@@ -329,7 +357,7 @@ Every later group must preserve:
 
 ## Permanent Phase 009 boundaries
 
-Preserve throughout the phase:
+Preserve after phase exit:
 
 - source availability ≠ source authority;
 - source authority ≠ evidence sufficiency;
@@ -363,10 +391,18 @@ Preserve throughout the phase:
 - current requester disclosure ≠ historical actor authorization;
 - citation/reference ≠ inspectBasis permission;
 - more visible basis ≠ more true/more supported;
+- quota/cost pressure ≠ permission to weaken evidence coverage;
+- planned retention/instrumentation ≠ currently supported source capability;
 - restricted ≠ unavailable/absent;
 - unsupported integration capability is an explicit result, not a reason to weaken product semantics;
-- no integration adapter, service, storage, event, polling, streaming, agent, LLM, snapshot-store or deployment architecture is selected in Phase 009.
+- no integration adapter, service, storage, event, polling, streaming, graph, agent, LLM, snapshot-store or deployment architecture was selected in Phase 009.
 
-## Phase 010 handoff target
+## Phase 010 handoff
 
-Phase 010 should receive a concrete, evidence-backed matrix of source capabilities and gaps, including identity/join contracts, authority applicability, temporal semantics, coverage, latency, retention, historical availability timing, retained-communication requirements, basis inspectability, disclosure constraints, cost/quota and observability. Architecture may then choose how to ingest, persist, archive, reconcile and serve those capabilities without rediscovering or changing the functional contracts.
+Phase 010 receives a concrete, evidence-backed matrix of source capabilities and gaps, including identity/join contracts, authority applicability, temporal semantics, coverage, latency, retention, historical availability timing, retained-communication requirements, basis inspectability, disclosure constraints, cost/quota and integration observability.
+
+Architecture may now choose how to ingest, persist, archive, reconcile, control and serve those capabilities without rediscovering or changing the functional contracts.
+
+See [`08_cross_source_coverage_latency_retention_cost_consolidation_exit/phase_010_handoff.md`](08_cross_source_coverage_latency_retention_cost_consolidation_exit/phase_010_handoff.md).
+
+**Phase 009 is COMPLETE. Phase 010 — Technical Architecture is next.**

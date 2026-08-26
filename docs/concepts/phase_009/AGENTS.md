@@ -13,7 +13,8 @@ Applies to work under `docs/concepts/phase_009/` and complements the repository 
 - **Group 05 is complete with INTG-120–INTG-153; LIE05-01–LIE05-60 pass.**
 - **Group 06 is complete with INTG-154–INTG-200; ICE06-01–ICE06-72 pass.**
 - **Group 07 is complete with INTG-201–INTG-238; EBR07-01–EBR07-64 pass.**
-- **Group 08 — Cross-Source Coverage, Latency, Retention, Cost & Consolidation / Exit Review is next.**
+- **Group 08 is complete with INTG-239–INTG-270; XRC08-01–XRC08-64 pass.**
+- **Phase 009 is COMPLETE; INTG-001–INTG-270 final; Phase 010 — Technical Architecture is next.**
 - Accepted concept count remains 24.
 - Canonical repository status remains in `../../README.md#current-state`.
 
@@ -253,12 +254,12 @@ Preserve:
 - delivery evidence ≠ exact rendered content ≠ reading/comprehension/reliance;
 - mutable GitHub/ticket/comment history is communication evidence only to the extent revisions survive;
 - missing retained communication remains missing; reconstruction must be labeled reconstruction;
-- statement identity can persist across wording/detail/basis changes only when proposition-defining scope/time remains materially stable;
-- basis enrichment does not automatically strengthen status/confidence;
+- statement identity can persist across refresh only while proposition-defining scope/time is materially stable;
+- basis enrichment ≠ confidence/status strengthening;
 - source outage/lag/permission failure is a basis limitation, not proposition-level negative truth;
-- partial Explanation remains valid and no global completeness percentage is accepted;
+- partial answerability remains proposition/subquestion bound;
 - internal `inspectBasis` traceability is required independently of requester-visible disclosure;
-- visible citation/reference ≠ source retrievability ≠ disclosure authorization;
+- visible reference/citation ≠ source retrievability ≠ disclosure authorization;
 - current requester authorization governs current disclosure of historical basis;
 - historical actor authorization and current requester disclosure do not rewrite each other;
 - result/context/limitation/basis/provenance/detail visibility can be separately authorized;
@@ -278,6 +279,34 @@ Preserve:
 - asymmetric basis availability is not automatically a source-truth difference.
 
 See [`07_explanation_historical_replay_basis_disclosure_source_contracts/README.md`](07_explanation_historical_replay_basis_disclosure_source_contracts/README.md).
+
+## Accepted Group 08 rules
+
+Preserve:
+
+- consolidated support classification remains proposition/source-set/context/time specific and never becomes a universal score;
+- source families compose by evidence responsibility rather than vendor precedence;
+- cross-system Entity Identity and operational joins require durable explicit mappings/correlation;
+- Monitoring Scope and Assertion Authority remain explicit organization-owned/governed requirements;
+- direct-Git run commit evidence does not generalize to bundle/workspace-source execution;
+- generic exact multi-input consumed-version evidence remains unsupported out of box where no explicit workload/query/source provenance exists;
+- consumer compatibility, run-specific health, exact exposure, causality, Safeguard prevention and Gate enforcement retain their original evidence burdens;
+- common-derived source surfaces remain common-derived after ingestion/consolidation;
+- clock semantics/precision/publication lag constrain cross-source ordering and as-known replay;
+- latency affects answer timeliness and K eligibility, not event truth;
+- strong negative capability depends on source health plus exact opportunity/population/path/window coverage;
+- integration-health observability must distinguish auth failure, permission, throttling, timeout, lag, partial pagination, schema drift, parser failure, retention expiry and optional-source absence;
+- native vendor retention is not one enterprise ledger and can be shorter than required replay;
+- planned product-owned retention/instrumentation is a Phase 010 requirement, not current Phase 009 capability;
+- authentic retained Explanation communication and exact prior `inspectBasis` require independent retention when promised;
+- historical authorization replay and current disclosure remain independent;
+- basis metadata can be sensitive even when raw payload is withheld;
+- Databricks system-table/query economics and API limits, GitHub API/Actions limits, Collibra throttling/license capacity and Immuta environment-specific limits constrain architecture but never truth/authority;
+- optional Collibra/Immuta absence creates explicit feature/source gaps and no benign defaults;
+- a bounded Databricks/GitHub-centered MVP is feasible if organization-owned scope/authority/correlation requirements are realized for the propositions in scope;
+- Phase 010 receives the consolidated matrix and 40-gap register without reopening Phase 002–009 semantics.
+
+See [`08_cross_source_coverage_latency_retention_cost_consolidation_exit/README.md`](08_cross_source_coverage_latency_retention_cost_consolidation_exit/README.md), [`08_cross_source_coverage_latency_retention_cost_consolidation_exit/residual_gap_register.md`](08_cross_source_coverage_latency_retention_cost_consolidation_exit/residual_gap_register.md), and [`08_cross_source_coverage_latency_retention_cost_consolidation_exit/phase_010_handoff.md`](08_cross_source_coverage_latency_retention_cost_consolidation_exit/phase_010_handoff.md).
 
 ## Required evaluation dimensions
 
@@ -336,6 +365,8 @@ Never convert:
 - Gate HOLD → failed execution;
 - Gate ADMIT → run;
 - GitHub environment approval → uncorrelated Databricks Gate result;
+- quota/cost pressure → reduced evidence burden;
+- planned retention/instrumentation → current support;
 - restricted/redacted → absent;
 - source count → confidence;
 - synchronization order → authority or causality.
@@ -408,7 +439,7 @@ A source may be authoritative for one metadata/control category and merely suppo
 
 ## Group 07 gaps carried forward
 
-- exact retained communication is not provided by telemetry/source reconstruction and requires an explicit retention strategy where prior wording/context matters;
+- exact retained communication is not provided by telemetry/source reconstruction and requires explicit retention where prior wording/context matters;
 - exact availability-by-knowledge-cut is not uniformly exposed across sources;
 - vendor-native history is heterogeneous and often shorter than enterprise replay goals;
 - Databricks exact query basis can be blank/truncated under security/storage behavior;
@@ -423,21 +454,21 @@ A source may be authoritative for one metadata/control category and merely suppo
 - observer-relative source views remain unsafe for strong negatives;
 - comparative Explanation can differ because basis retention differs without implying a truth delta.
 
-## Group 08 entry contract
+## Group 08 consolidated gaps / Phase 010 entry
 
-Group 08 must consolidate all accepted Phase 009 source capabilities and residual gaps without weakening the underlying REF/AUTH/HLTH/OPS/EXPL contracts.
+The canonical consolidated gap register is [`08_cross_source_coverage_latency_retention_cost_consolidation_exit/residual_gap_register.md`](08_cross_source_coverage_latency_retention_cost_consolidation_exit/residual_gap_register.md). It contains **GAP-009-01–GAP-009-40**.
 
-It must separately assess source-truth feasibility, as-known-at-cut replay, actual retained communication, current basis inspectability/disclosure, cross-system joins, latency, coverage, retention, cost/quota and integration observability. Planned Phase 010 retention/instrumentation cannot be counted as a capability that already exists, but explicit architecture prerequisites must be recorded.
+Phase 010 must consume those gaps as architecture requirements/options. It may resolve them through product-owned retention, instrumentation, explicit organization records or additional integrations, but it may not claim those future mechanisms were already source capabilities in Phase 009.
 
 ## External-fact discipline
 
-Groups 02–08 necessarily evaluate evolving vendor capabilities. Verify current external documentation when executing a group, distinguish product documentation from repository assumptions, record meaningful edition/feature/retention/permission limitations, and avoid treating undocumented behavior as guaranteed.
-
-Group 02 records sources in [`02_identity_scope_governance_authority_authorization_sources/external_source_review.md`](02_identity_scope_governance_authority_authorization_sources/external_source_review.md); Group 03 records sources in [`03_change_deployment_execution_version_runtime_evidence/external_source_review.md`](03_change_deployment_execution_version_runtime_evidence/external_source_review.md); Group 04 records sources in [`04_health_schema_metrics_expectations_baselines_reconciliation_evidence/external_source_review.md`](04_health_schema_metrics_expectations_baselines_reconciliation_evidence/external_source_review.md); Group 05 records sources in [`05_lineage_consumer_use_exposure_impact_evidence/external_source_review.md`](05_lineage_consumer_use_exposure_impact_evidence/external_source_review.md); Group 06 records sources in [`06_investigation_causality_safeguard_gate_control_evidence/external_source_review.md`](06_investigation_causality_safeguard_gate_control_evidence/external_source_review.md); Group 07 records sources in [`07_explanation_historical_replay_basis_disclosure_source_contracts/external_source_review.md`](07_explanation_historical_replay_basis_disclosure_source_contracts/external_source_review.md).
+Groups 02–08 evaluate evolving vendor capabilities. Current external facts are recorded in each group's `external_source_review.md`; Group 08's consolidation review is verified on 2026-08-26. Environment-specific discovery remains required before implementation.
 
 ## Architecture boundary
 
-Do not select SDK/client libraries, polling versus streaming, event buses, storage schemas, graph databases, caches, credential mechanisms, deployment topology, retry infrastructure, orchestration, attestation implementation, metric/rule stores, anomaly models, consumer/BI instrumentation, incident/case tooling, causal engine, Safeguard/Gate implementation, control-state persistence, Explanation snapshot store, source archive, redaction engine, LLM/retrieval architecture or UI. Phase 010 owns technical architecture.
+Phase 009 is complete. It intentionally did not select SDK/client libraries, polling versus streaming, event buses, storage schemas, graph databases, caches, credential mechanisms, deployment topology, retry infrastructure, orchestration, attestation implementation, metric/rule stores, anomaly models, consumer/BI instrumentation, incident/case tooling, causal engine, Safeguard/Gate implementation, control-state persistence, Explanation snapshot store, source archive, redaction engine, LLM/retrieval architecture or UI.
+
+**Phase 010 owns technical architecture and must begin from [`08_cross_source_coverage_latency_retention_cost_consolidation_exit/phase_010_handoff.md`](08_cross_source_coverage_latency_retention_cost_consolidation_exit/phase_010_handoff.md).**
 
 ## Group sequence
 
@@ -448,4 +479,4 @@ Do not select SDK/client libraries, polling versus streaming, event buses, stora
 5. Lineage/consumer use/exposure/Impact evidence — **accepted**;
 6. Investigation/causality/Safeguard/Gate/control evidence — **accepted**;
 7. Explanation/historical replay/basis/disclosure source contracts — **accepted**;
-8. cross-source coverage/latency/retention/cost consolidation and exit — **next**.
+8. cross-source coverage/latency/retention/cost consolidation and exit — **accepted; Phase 009 complete**.
