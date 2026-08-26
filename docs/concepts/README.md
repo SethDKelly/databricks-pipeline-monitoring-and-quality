@@ -59,6 +59,7 @@ Use [`concept_template.md`](concept_template.md) as the specification checklist.
 - [`phase_007/README.md`](phase_007/README.md) — Lineage, change, Investigation, Impact, safeguard, execution-control, and historical operational replay refinement.
 - [`phase_008/README.md`](phase_008/README.md) — business-question, material answer-statement, basis-traceability, and evidence-grounded Explanation refinement.
 - [`phase_009/README.md`](phase_009/README.md) — integration-contract, source-role, authority-applicability, evidence-availability, coverage, retention, disclosure and feasibility refinement; consult canonical status above for phase progression.
+- [`phase_010/README.md`](phase_010/README.md) — technical architecture, environment discovery, persistence/provenance, identity/authority, acquisition, reasoning, controls, serving and architecture validation; consult canonical status above for phase progression.
 
 ## Durable boundaries
 
