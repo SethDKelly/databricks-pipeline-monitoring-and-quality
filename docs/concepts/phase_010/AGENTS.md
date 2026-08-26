@@ -18,7 +18,8 @@ Before accepting an `ARCH-###` contract, preserve and consult:
 - Phase 009 Group 08 consolidated capability matrix;
 - Phase 009 residual gap register GAP-009-01–GAP-009-40;
 - Phase 009 `phase_010_handoff.md`;
-- Phase 010 Group 01 ARCH-001–ARCH-032 after Group 01 acceptance.
+- Phase 010 Group 01 ARCH-001–ARCH-032;
+- Phase 010 Group 02 ARCH-033–ARCH-080.
 
 Earlier functional/integration semantics remain authoritative. Architecture may realize them; it may not simplify them away.
 
@@ -45,8 +46,8 @@ Do not use ARCH contracts to redefine a product concept, source fact, authority 
 Review Phase 010 in this order:
 
 1. Architecture Frame, Environment Discovery & Decision Criteria — **accepted**;
-2. Evidence, Provenance, Temporal & Persistence Architecture — **next**;
-3. Identity, Scope, Authority, Authorization & Disclosure Architecture;
+2. Evidence, Provenance, Temporal & Persistence Architecture — **accepted**;
+3. Identity, Scope, Authority, Authorization & Disclosure Architecture — **next**;
 4. Source Acquisition, Adapter, Synchronization & Integration-Health Architecture;
 5. Runtime Provenance, Health, Lineage & Impact Evidence Architecture;
 6. Investigation, Reasoning, Historical Replay & Explanation Architecture;
@@ -78,22 +79,48 @@ Later architecture work must preserve:
 
 A public vendor document can justify a public capability statement. It cannot alone justify an architecture assumption that a particular enterprise deployment exposes that capability.
 
-## Group 02 discipline
+## Group 02 accepted discipline
 
-Group 02 may select concrete evidence/provenance/time/persistence architecture only after evaluating alternatives against ARCH-001–ARCH-032.
+ARCH-033–ARCH-080 and EPT02-01–EPT02-72 are accepted.
 
-It must especially preserve:
+Later architecture work must preserve:
 
-- source evidence identity and source ownership after retention/copy;
-- proposition/basis identity and common derivation;
-- event/effective, availability/knowledge, correction/supersession and communication time separation;
-- historical replay without current-state back-projection;
-- service-class-specific durability/latency requirements;
-- security/disclosure/residency constraints;
-- capability-dependent designs that degrade when a required source surface is unavailable;
-- decision evidence, alternatives and reversibility.
+- framework-owned Delta Lake canonical structured evidence/provenance journals;
+- Unity Catalog managed tables/volumes as preferred conditional deployment realizations, not universal requirements;
+- external Delta/governed object storage as valid portability realization;
+- selective data-minimized payload capture rather than wholesale raw copying;
+- durable framework evidence IDs independent of source-local IDs/physical paths;
+- source authority/limitations after retention/copy;
+- proposition/basis and common-derivation links;
+- event/effective, availability/knowledge, collection/persistence, correction/supersession and communication time separation;
+- late evidence excluded from earlier K;
+- append/supersede/correct semantic history despite physical file optimization;
+- parser/normalizer revision provenance;
+- Delta transaction-log time travel not being the product replay contract;
+- graph/search/vector/serving stores as derived/rebuildable;
+- storage retention, retained detail/resolution and reporting relevance as separate dimensions;
+- lifecycle states for recent, warm, summary-eligible, cold/pinned, provenance-stub and expired material;
+- configurable reference retention rather than a universal TTL;
+- dependency pinning/holds and exact-basis non-lossy retention;
+- safe trend aggregation only when future exact-evidence promises permit it;
+- archive/restore/purge provenance and cost observability;
+- security/residency sharding without unauthorized duplication.
 
-Group 02 must not choose a database/graph/search/lakehouse pattern by convention or because a vendor feature is documented as generally available.
+Do not solve performance/cost by silently making retained evidence less exact than the product promise or by allowing old retained history to flood every report.
+
+## Group 03 discipline
+
+Group 03 must build durable identity, Monitoring Scope, Assertion Authority, Capability Authorization, historical authorization and disclosure/basis projection on ARCH-001–ARCH-080.
+
+It must not:
+
+- use name/timestamp convenience as canonical identity;
+- treat source availability or storage presence as Assertion Authority;
+- make retention state equal permission;
+- duplicate evidence into a new authority store that loses source provenance;
+- expose a provenance stub merely because payload content has expired;
+- let current authorization rewrite historical communication or historical source state;
+- collapse conclusion visibility, basis visibility and exact-detail visibility.
 
 ## Cross-group invariants
 
@@ -104,6 +131,9 @@ Preserve all accepted durable boundaries, especially:
 - current state ≠ historical state;
 - copied/retained evidence ≠ independent/newly authoritative evidence;
 - missing/degraded integration telemetry ≠ source/domain negative truth;
+- storage retention ≠ reporting relevance;
+- payload expired ≠ source absent;
+- graph/search/cache projection ≠ canonical truth;
 - Baseline ≠ Expectation ≠ Observation ≠ Assessment;
 - Lineage ≠ exposure ≠ effect ≠ consequence ≠ causality;
 - Investigation/localization ≠ Causal Claim truth;
@@ -129,8 +159,6 @@ Documented vendor defaults are architecture inputs, not tenant facts. Every late
 
 Do not silently promote a public default into a production tenant contract.
 
-When capability is material, bind the exact deployment instance: deployment model, cloud/region/Geo, account/workspace/tenant scope, edition/plan/version/license, feature/release status, enablement, permission, reachability, coverage and current integration health as applicable.
-
 ## Decision quality
 
 Prefer architecture decisions that are:
@@ -142,7 +170,7 @@ Prefer architecture decisions that are:
 - secure by least privilege and disclosure-aware design;
 - cost/quota aware without weakening truth/evidence semantics;
 - testable through scenario replay;
-- modular enough that optional Collibra/Immuta integration does not become a universal core dependency.
+- modular enough that optional integrations/derived stores do not become hidden canonical dependencies.
 
 Material decisions must follow the accepted ADR rubric rather than relying on familiarity.
 
@@ -157,4 +185,4 @@ Material decisions must follow the accepted ADR rubric rather than relying on fa
 
 ## Current state
 
-**Phase 010 is IN PROGRESS. Group 01 is accepted: ARCH-001–ARCH-032; AFE01-01–AFE01-60 pass. Group 02 — Evidence, Provenance, Temporal & Persistence Architecture is next.**
+**Phase 010 is IN PROGRESS. Groups 01–02 are accepted: ARCH-001–ARCH-080; AFE01-01–AFE01-60 and EPT02-01–EPT02-72 pass. Group 03 — Identity, Scope, Authority, Authorization & Disclosure Architecture is next.**
