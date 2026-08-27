@@ -1,6 +1,6 @@
 # Phase 010 — Technical Architecture
 
-**Status:** IN PROGRESS — Groups 01–02 accepted; Group 03 next
+**Status:** IN PROGRESS — Groups 01–03 accepted; Group 04 next
 
 ## Purpose
 
@@ -28,7 +28,7 @@ Phase 010 uses **ARCH-###** for durable technical-architecture contracts.
 
 `ARCH-###` records architecture constraints/decisions needed to realize accepted semantics. It must not redefine source facts, functional truth, evidence sufficiency, source authority, or product concepts already owned by earlier phases.
 
-Current accepted range: **ARCH-001–ARCH-080** from Groups 01–02.
+Current accepted range: **ARCH-001–ARCH-132** from Groups 01–03.
 
 ## Logical groups
 
@@ -64,17 +64,27 @@ Path: [`02_evidence_provenance_temporal_persistence_architecture/README.md`](02_
 
 ### Group 03 — Identity, Scope, Authority, Authorization & Disclosure Architecture
 
-**Status:** Next — not started
+**Status:** COMPLETE / ACCEPTED
 
-Realize ecosystem Entity Identity, Monitoring Scope, Assertion Authority, Capability Authorization, historical authorization, basis disclosure, and safe projection without collapsing those independent concerns.
+Accepted range: **ARCH-081–ARCH-132**. **IAD03-01–IAD03-84 pass.** Decisions D-1337–D-1382 accepted.
+
+Group 03 realizes tenant-scoped canonical Entity/Principal identity, evidence-bearing source identity bindings, organization-owned Monitoring Scope, Assertion Authority and Capability Authorization policy-as-data, current/historical authorization decision semantics, and disclosure-dimensional safe projection.
+
+Its central governance chain is:
+
+**source-local identity → canonical ecosystem identity → Monitoring Scope → Assertion Authority → Capability Authorization → current/historical authorization evaluation → authorized disclosure projection → independently evidenced enforcement/action**.
+
+It preserves source-local IDs after mapping; unknown scope membership is not exclusion; vendor roles/ownership are not automatic Assertion Authority; authorization is not enforcement; service-principal processing permission is not requester access; actual authorization decision is not replay-derived authorization; and safe abstraction cannot strengthen truth.
 
 Path: [`03_identity_scope_authority_authorization_disclosure_architecture/README.md`](03_identity_scope_authority_authorization_disclosure_architecture/README.md)
 
 ### Group 04 — Source Acquisition, Adapter, Synchronization & Integration-Health Architecture
 
-**Status:** Planned
+**Status:** Next — not started
 
-Design source capability discovery, adapters/connectors, polling/streaming/hybrid acquisition, checkpoints, pagination, retries, quotas, source lag, schema drift, integration health, and graceful degradation.
+Design source capability discovery, adapters/connectors, polling/streaming/hybrid acquisition, checkpoints, pagination, retries, quotas, source lag, schema drift, integration health, and graceful degradation using the accepted identity/scope/authorization primitives.
+
+Path: [`04_source_acquisition_adapter_synchronization_integration_health_architecture/README.md`](04_source_acquisition_adapter_synchronization_integration_health_architecture/README.md)
 
 ### Group 05 — Runtime Provenance, Health, Lineage & Impact Evidence Architecture
 
@@ -151,22 +161,47 @@ Later groups must also preserve:
 - exact basis/communication/control evidence protected from lossy downsampling for its promised horizon;
 - no indefinite detailed accumulation as a default merely because storage can grow.
 
-The public/reference persistence architecture can be physically sharded by tenant/residency/security boundary and must remain deployable without assuming every Databricks feature is available in every enterprise environment.
+## Group 03 accepted architecture discipline
 
-## Architecture choices still intentionally open after Group 02
+Later groups must also preserve:
 
-Groups 01–02 deliberately selected no final:
+- canonical tenant-scoped Entity/Principal IDs distinct from vendor-local identities;
+- source identity bindings as evidence-bearing, revisioned and conflict-capable;
+- rename continuity distinct from delete/recreate/incarnation;
+- human/group/service/workload identity and acting-on-behalf-of relationships kept distinct;
+- historical membership based on historical evidence rather than current group state;
+- Monitoring Scope as organization-owned expected coverage, not discoverability/access;
+- scope selectors/materializations retaining unknown membership and bounded denominator semantics;
+- Assertion Authority as structured target/context/time rules independent from evidence sufficiency and permission;
+- explicit authority precedence/co-authority/fallback with no hidden rule ordering;
+- vendor role/ownership/responsibility/permission as source evidence, not automatic DMTZ authority;
+- Capability Authorization as principal/action/subject/context/time/detail specific;
+- no universal deny-wins/allow-wins authorization precedence;
+- actual authorization decision ≠ replay-derived authorization ≠ enforcement/action;
+- service processing permission ≠ requester visibility;
+- disclosure of conclusion/context/limitation/basis/provenance/detail/export independently authorized;
+- exact/coarse/redacted/opaque/withheld projection with epistemic monotonicity;
+- hidden basis existence/count/type/path/provenance treated as potentially sensitive;
+- retained/archived/provenance-stub material not automatically disclosable;
+- tenant/residency policy limiting identity/governance metadata and evidence movement;
+- canonical policy state in Group 02 persistence with caches/indexes as derived projections.
+
+## Architecture choices still intentionally open after Group 03
+
+Groups 01–03 deliberately selected no final:
 
 - polling versus streaming versus hybrid ingestion;
 - event bus or queue technology;
 - source-adapter/SDK strategy;
+- external IAM/IdP product;
+- external policy-engine product or runtime packaging;
+- policy authoring UI/API/Git workflow;
 - graph database/product;
 - search/vector product;
 - cache/materialized-serving technology;
 - workflow/orchestration engine;
 - credential/secrets implementation;
 - LLM/retrieval/embedding/reranking/template architecture;
-- redaction/policy engine;
 - Gate/Safeguard implementation;
 - UI/API/service topology;
 - deployment topology;
@@ -184,6 +219,16 @@ Reject an architecture if it requires any of the following shortcuts:
 - public vendor documentation treated as proof of tenant capability;
 - retained/copied evidence treated as newly authoritative or independent;
 - names or timestamp proximity used as exact entity/deployment/run joins;
+- vendor role/ownership/responsibility treated as automatic DMTZ Assertion Authority;
+- source discoverability or technical access treated as Monitoring Scope;
+- unknown scope membership treated as exclusion;
+- current membership/permission projected backward as historical authorization;
+- service-principal access inherited by end users;
+- authorization treated as enforcement/action occurrence;
+- replay-derived authorization presented as an actual retained decision;
+- retention/archive state treated as disclosure permission;
+- redaction/generalization that strengthens, broadens or hides a material limitation;
+- hidden basis counts/provenance leaked by convenience;
 - current state projected backward as historical state;
 - missing/degraded telemetry converted into negative truth;
 - Delta transaction-log history used as the sole long-horizon product replay model;
@@ -195,12 +240,11 @@ Reject an architecture if it requires any of the following shortcuts:
 - control configuration/request treated as effective enforcement;
 - reconstructed history labeled as authentic retained communication;
 - loss of proposition/source/basis provenance;
-- disclosure/authorization boundaries removed for convenience;
-- one global confidence/health/Impact/control/replay/architecture/relevance score;
+- one global confidence/health/Impact/control/replay/architecture/relevance/authorization score;
 - unsupported capabilities hidden behind planned future instrumentation.
 
 ## Phase 010 exit direction
 
-Phase 010 should exit only when the architecture can demonstrate, through scenario replay and explicit traceability, that accepted semantics are technically realizable under deployment-verified environment/cost/latency/retention constraints and that all material residual gaps are resolved, reduced, intentionally scoped, or carried forward explicitly.
+Phase 010 should exit only when the architecture can demonstrate, through scenario replay and explicit traceability, that accepted semantics are technically realizable under deployment-verified environment/cost/latency/retention/security constraints and that all material residual gaps are resolved, reduced, intentionally scoped, or carried forward explicitly.
 
-**Group 03 — Identity, Scope, Authority, Authorization & Disclosure Architecture is next.**
+**Group 04 — Source Acquisition, Adapter, Synchronization & Integration-Health Architecture is next.**

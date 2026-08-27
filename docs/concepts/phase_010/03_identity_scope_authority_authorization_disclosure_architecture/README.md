@@ -1,67 +1,103 @@
 # Phase 010 Group 03 — Identity, Scope, Authority, Authorization & Disclosure Architecture
 
-**Status:** Next — not started
+**Status:** COMPLETE / ACCEPTED
 
-## Goal
+## Result
 
-Realize durable ecosystem Entity Identity, Monitoring Scope, Assertion Authority, Capability Authorization, historical authorization, disclosure controls, and safe basis projection.
+Group 03 accepts **ARCH-081–ARCH-132** and **IAD03-01–IAD03-84**. Decisions D-1337–D-1382 are accepted.
 
-## Accepted entry contract from Groups 01–02
+The architecture realizes the Phase 005 authority model and Phase 009 governance-source gaps without collapsing identity, Monitoring Scope, Assertion Authority, Capability Authorization, vendor IAM enforcement or disclosure.
 
-Group 03 consumes **ARCH-001–ARCH-080** and must preserve:
+The governing chain is:
 
-- deployment-bound capability instances and unknown preservation;
-- canonical Delta Lake structured evidence/provenance journals plus selective object payload plane;
-- source authority preserved after framework copy;
-- durable evidence/proposition/basis IDs independent of physical location;
-- event/effective, availability/knowledge, collection/persistence, correction/supersession and communication time separation;
-- non-rewriting historical journals;
-- common-derivation provenance;
-- data-minimized payload capture;
-- graph/search/serving stores as derived projections;
-- storage retention ≠ resolution/detail ≠ reporting relevance;
-- explicit lifecycle tiers, pinning/holds, archive/expiry/provenance-stub semantics;
-- residency/security sharding support;
-- no public vendor capability assumed present without environment verification.
+**source-local identity + organization identity evidence → canonical ecosystem Entity/Principal identity → governed Monitoring Scope → proposition-specific Assertion Authority → action-specific Capability Authorization → current/historical authorization evaluation → disclosure-dimensional projection → later source/control enforcement evidence**.
 
-## Primary Phase 009 gaps
+No link automatically creates the next.
 
-Primary ownership includes:
+## Canonical architecture
 
-- GAP-009-01 — Monitoring Scope;
-- GAP-009-02 — Assertion Authority;
-- GAP-009-03 — cross-system Entity Identity;
-- GAP-009-20 — causal confirmation authority;
-- GAP-009-29 — historical authorization;
-- GAP-009-31 — sensitive basis disclosure.
+Group 03 adds organization-owned structured record families to the Group 02 canonical Delta Lake plane:
 
-Group 03 also supplies governance/authorization foundations used by later runtime, Explanation and active-control groups.
+1. **Entity registry** — durable tenant-scoped ecosystem entity IDs;
+2. **Source identity bindings** — evidence-bearing links from vendor-local identities/incarnations to canonical entities;
+3. **Principal registry** — normalized human/group/service/workload identities plus source/IdP provenance;
+4. **Monitoring Scope registry** — versioned explicit memberships/selectors and bounded materializations;
+5. **Assertion Authority registry** — structured target/facet/context/time/source/actor rules, precedence/co-authority/fallback and resolution history;
+6. **Capability Authorization registry** — structured principal/action/subject/context/detail rules and conditions;
+7. **Authorization decision journal** — retained actual evaluations where product/audit/control commitments require them;
+8. **Disclosure projection records** — current request context, authorized dimensions and exact/coarse/redacted/opaque/withheld projection metadata.
 
-## Primary questions
+These are organization-owned governance state, not copied vendor evidence promoted to authority.
 
-- What canonical identity/crosswalk architecture maps source-local objects to durable ecosystem entities without name/time convenience joins?
-- What is the organization-owned source of Monitoring Scope and how is it versioned/effective-dated?
-- How are Assertion Authority rules represented independently from source availability and evidence sufficiency?
-- How is Capability Authorization represented for inspect, query, export, publish, control and other actions?
-- How are current and historical authorization states represented using Group 02 temporal semantics?
-- How are conclusion visibility, context/limitation visibility, basis visibility and exact-detail visibility evaluated separately?
-- How are redacted/coarse/opaque projections linked to the same internal proposition without becoming stronger or contradictory truth?
-- How are sensitive existence/count/type/source/provenance details protected?
-- How does authorization work across physically sharded/residency-separated evidence planes?
-- Which identity/authority/policy records are canonical organization-owned state versus vendor-enriched evidence?
+## Identity architecture
 
-## Persistence boundary
+- names, paths, emails and timestamps are descriptive evidence, never sufficient exact cross-system identity by convenience;
+- source-local stable IDs remain source identities and are retained even when an ecosystem entity mapping exists;
+- source rename versus delete/recreate/incarnation is resolved from stable identity/evidence rather than visible naming;
+- identity mappings are revisioned and can remain provisional/conflicting/unresolved;
+- principal identities distinguish humans, groups, service principals, apps and workload identities;
+- acting-on-behalf-of, run-as, delegation and impersonation are explicit relationships rather than identity collapse;
+- current group membership cannot be projected backward as historical membership.
 
-Group 03 may define new canonical identity/governance/security record families inside the accepted evidence persistence plane, but it must not reopen Group 02's canonical/derived store roles simply to simplify authorization.
+## Monitoring Scope architecture
 
-Identity and authority records can be stored in Delta Lake without becoming source evidence. They must retain their own ownership, revision and temporal provenance.
+No evaluated vendor owns DMTZ Monitoring Scope. Group 03 therefore makes it explicit organization state.
 
-## Retention/disclosure boundary
+Scope may contain explicit entity membership and governed selectors. Dynamic selectors retain their rule revision and materialization inputs. Missing selector/source inputs produce **unknown membership**, not automatic exclusion. A scope materialization can establish an expected population for bounded collection/negative-claim coverage, but cannot prove the sources were observed successfully.
 
-Retention of a basis does not authorize its disclosure. Expiry of a payload does not grant permission to reveal its provenance stub. Historical authorization does not become current requester permission.
+Monitoring Scope is independent from technical accessibility and authorization.
 
-Group 03 must define authorization in a way that Group 06 can later perform `inspectBasis` over current, archived and provenance-stub states without treating storage state as permission.
+## Assertion Authority architecture
 
-## Handoff
+Assertion Authority is policy-as-data. Each rule binds the exact assertion family/facet, subject scope, context/time, eligible source/actor and governing conditions. Explicit precedence, co-authority and fallback are represented as rule data.
 
-After Group 03 acceptance, Group 04 may design source acquisition/adapters/integration health using durable identity, scope, authority and authorization primitives rather than inventing those semantics in connector code.
+There is no implicit latest-wins, most-specific-wins, majority-wins, source-count, vendor-order or role-title precedence. Co-authoritative conflict persists until an independently authorized resolution applies.
+
+Vendor roles/ownership can be evidence used by an organization rule but are not automatically Assertion Authority.
+
+Causal confirmation receives an explicit authority profile but remains jointly **REF-017 evidence + AUTH-034 authority** gated.
+
+## Capability Authorization architecture
+
+Authorization uses a canonical action vocabulary and binds:
+
+**principal + action + subject/resource + context/audience/purpose/delivery + time + material detail → allowed / denied / conditional / unknown / conflicting / unavailable**.
+
+Group/role inheritance and conflict resolution are explicit rules. DMTZ introduces no universal deny-wins or allow-wins rule.
+
+Material evaluations may persist an actual authorization-decision record with exact rule revision and inputs. A later historical replay is labeled as reconstruction and does not prove the decision actually ran.
+
+Authorization remains separate from request, issuance, source/control enforcement, action occurrence and outcome.
+
+## Disclosure architecture
+
+Disclosure evaluates conclusion, material context, limitations, basis identity, provenance metadata and exact evidence detail independently. Supported projection forms are exact, coarse/generalized, redacted, opaque-reference and withheld.
+
+Safe abstraction is epistemically monotone: it may reveal less but cannot strengthen a proposition, broaden its scope, merge distinct subjects or hide a material limitation to make the visible answer stronger.
+
+`inspectBasis` is itemwise. Hidden basis existence/count/type/source/path/timestamp/redaction metadata can itself be sensitive, so the framework is not required to disclose how many basis items were withheld.
+
+Retention or historical prior visibility never creates current permission.
+
+## Vendor integration posture
+
+Current vendor IAM/governance surfaces remain useful but bounded:
+
+- Databricks users/groups/service principals, Unity Catalog privileges/ownership and workspace entitlements provide Databricks-local principal/access evidence;
+- GitHub Apps, installations, enterprise/org/repository permissions, teams and managed-user identity provide GitHub-local authorization/identity evidence;
+- Collibra resource/global roles and responsibilities can supply governed responsibilities/permissions where deployed and assigned organizational meaning;
+- Immuta permissions, policy definitions and query-time policy/entitlement audit can supply bounded policy/enforcement evidence where installed and covered.
+
+No vendor surface automatically becomes DMTZ Monitoring Scope, ecosystem Entity Identity or full Assertion Authority. Deployment availability remains subject to ARCH-001–ARCH-032.
+
+## Security/residency
+
+Identity/governance metadata is tenant-partitioned and residency-aware. Cross-shard decisions may exchange the minimum permitted identifiers/decision inputs, but evidence payloads are not centralized merely to simplify authorization. Even the existence of a cross-shard reference may be sensitive.
+
+## Persistence/retention interaction
+
+Group 02 retention tiers remain authoritative. Governance history needed for a retained authorization decision, Explanation, basis, control record, audit commitment or legal/security hold is pinned according to that dependency. Low-value evaluation telemetry can age normally; exact retained decisions or basis projections cannot be downsampled in ways that destroy the promised audit proposition.
+
+## Group 04 handoff
+
+Group 04 receives ARCH-001–ARCH-132 and may design source acquisition/adapters/integration health. Connectors must emit source-local identities, provenance, coverage and permission/error facts into these primitives rather than inventing connector-specific canonical identity, scope, authority or benign authorization defaults.

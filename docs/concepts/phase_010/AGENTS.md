@@ -19,7 +19,8 @@ Before accepting an `ARCH-###` contract, preserve and consult:
 - Phase 009 residual gap register GAP-009-01–GAP-009-40;
 - Phase 009 `phase_010_handoff.md`;
 - Phase 010 Group 01 ARCH-001–ARCH-032;
-- Phase 010 Group 02 ARCH-033–ARCH-080.
+- Phase 010 Group 02 ARCH-033–ARCH-080;
+- Phase 010 Group 03 ARCH-081–ARCH-132.
 
 Earlier functional/integration semantics remain authoritative. Architecture may realize them; it may not simplify them away.
 
@@ -47,8 +48,8 @@ Review Phase 010 in this order:
 
 1. Architecture Frame, Environment Discovery & Decision Criteria — **accepted**;
 2. Evidence, Provenance, Temporal & Persistence Architecture — **accepted**;
-3. Identity, Scope, Authority, Authorization & Disclosure Architecture — **next**;
-4. Source Acquisition, Adapter, Synchronization & Integration-Health Architecture;
+3. Identity, Scope, Authority, Authorization & Disclosure Architecture — **accepted**;
+4. Source Acquisition, Adapter, Synchronization & Integration-Health Architecture — **next**;
 5. Runtime Provenance, Health, Lineage & Impact Evidence Architecture;
 6. Investigation, Reasoning, Historical Replay & Explanation Architecture;
 7. Execution Gate, Propagation Safeguard & Active-Control Architecture;
@@ -108,19 +109,66 @@ Later architecture work must preserve:
 
 Do not solve performance/cost by silently making retained evidence less exact than the product promise or by allowing old retained history to flood every report.
 
-## Group 03 discipline
+## Group 03 accepted discipline
 
-Group 03 must build durable identity, Monitoring Scope, Assertion Authority, Capability Authorization, historical authorization and disclosure/basis projection on ARCH-001–ARCH-080.
+ARCH-081–ARCH-132 and IAD03-01–IAD03-84 are accepted.
 
-It must not:
+Later architecture work must preserve:
 
-- use name/timestamp convenience as canonical identity;
-- treat source availability or storage presence as Assertion Authority;
-- make retention state equal permission;
-- duplicate evidence into a new authority store that loses source provenance;
-- expose a provenance stub merely because payload content has expired;
-- let current authorization rewrite historical communication or historical source state;
-- collapse conclusion visibility, basis visibility and exact-detail visibility.
+- tenant-scoped canonical Entity and Principal identities distinct from vendor-local identities;
+- source identity bindings as evidence-bearing, revisioned and conflict-capable;
+- rename continuity distinct from delete/recreate/incarnation;
+- human, group, service-principal, application/workload and acting-on-behalf-of relationships kept distinct;
+- current group/role membership not projected backward as historical membership;
+- upstream IdP provenance retained where known without making synchronized vendor state silently authoritative;
+- organization-owned Monitoring Scope rather than inference from discoverability/access;
+- scope selectors and materializations retaining revision, input coverage, explicit exclusions and unresolved membership;
+- unknown scope membership not converted into exclusion or a smaller negative-claim denominator;
+- Monitoring Scope independent from Capability Authorization;
+- Assertion Authority as structured, versioned policy-as-data with exact facet/proposition/subject/context/time targets;
+- authority precedence, co-authority and fallback as explicit rule data rather than hidden engine ordering;
+- co-authoritative conflict retained until an authorized resolver applies;
+- vendor role/title/ownership/responsibility/permission as source evidence, never automatic DMTZ Assertion Authority;
+- causal confirmation authority eligibility distinct from REF-017 evidence sufficiency and AUTH-034 confirmation;
+- Capability Authorization as exact principal/action/subject/context/time/detail state;
+- granular action vocabulary rather than one generic `access` Boolean;
+- `allowed`, `denied`, `conditional`, `unknown`, `conflicting` and `unavailable` preserved;
+- membership/inheritance composition explicit and source/rule scoped;
+- no universal deny-wins, allow-wins, direct-user-wins, role-wins or latest-wins authorization rule;
+- actual authorization-decision record distinct from replay-derived historical evaluation;
+- authorization distinct from request, enforcement, action occurrence and outcome;
+- service-principal/internal processing authorization distinct from requester visibility;
+- least-privilege workload identity as source-acquisition posture where supported;
+- delegation/break-glass bounded, expiring/revocable and auditable;
+- disclosure bound to requester/audience/purpose/delivery/onward-use context;
+- conclusion, material context, limitation, basis identity, provenance, exact detail and export/publish independently authorizable;
+- exact/coarse/redacted/opaque/withheld projections as detail states, not epistemic-strength states;
+- safe abstraction epistemically monotone: no strengthening, scope broadening, subject merging or material-limitation erasure;
+- `inspectBasis` itemwise while internal statement-to-basis traceability remains complete;
+- hidden basis existence/count/type/source/path/timestamp/provenance/redaction metadata potentially sensitive;
+- mosaic/differencing/repeated-query leakage considered by disclosure policy;
+- retained/cold/archived/provenance-stub material not automatically disclosable;
+- current authorization distinct from historical authorization and prior visibility;
+- tenant/residency boundaries limiting governance metadata/evidence movement;
+- canonical identity/policy state in Group 02 structured persistence with caches/indexes as derived/rebuildable projections.
+
+Group 03 selects the canonical record/rule semantics but no external policy engine, IAM/IdP product, policy authoring UI/API/Git workflow, secrets implementation or runtime service topology.
+
+## Group 04 discipline
+
+Group 04 designs acquisition/synchronization/integration health over ARCH-001–ARCH-132.
+
+A source adapter must emit source-local identity, provenance, capability-instance context, collection coverage and integration-health facts into the accepted architecture. It must not:
+
+- create canonical identity from names/timestamps;
+- infer Monitoring Scope from current discoverability;
+- translate permission denial into domain/source absence;
+- translate empty or incomplete pagination into a strong negative;
+- promote source roles/permissions into Assertion Authority;
+- silently fall back to a lower-authority source;
+- expose evidence merely because the integration service principal can read it.
+
+Collection failure, throttling, permission denial, lag, partial pagination, parser/schema drift, retention expiry and optional-source absence remain integration-health facts rather than benign monitored-domain truth.
 
 ## Cross-group invariants
 
@@ -128,12 +176,18 @@ Preserve all accepted durable boundaries, especially:
 
 - source availability ≠ Assertion Authority;
 - Entity Identity ≠ source-local name equality;
+- Monitoring Scope ≠ accessibility ≠ authorization;
 - current state ≠ historical state;
 - copied/retained evidence ≠ independent/newly authoritative evidence;
 - missing/degraded integration telemetry ≠ source/domain negative truth;
 - storage retention ≠ reporting relevance;
+- retained/archived evidence ≠ disclosure permission;
 - payload expired ≠ source absent;
 - graph/search/cache projection ≠ canonical truth;
+- current authorization ≠ historical authorization;
+- actual authorization decision ≠ replay-derived authorization ≠ enforcement/action;
+- service processing authorization ≠ requester visibility;
+- Assertion Authority ≠ evidence sufficiency ≠ Capability Authorization;
 - Baseline ≠ Expectation ≠ Observation ≠ Assessment;
 - Lineage ≠ exposure ≠ effect ≠ consequence ≠ causality;
 - Investigation/localization ≠ Causal Claim truth;
@@ -142,7 +196,6 @@ Preserve all accepted durable boundaries, especially:
 - Safeguard enforcement ≠ REF-028 prevention;
 - reconstructed historical Explanation ≠ authentic retained communication;
 - internal basis traceability ≠ universal visible raw evidence;
-- current authorization ≠ historical authorization;
 - cost/quota optimization ≠ relaxed evidence burden;
 - optional source absence ≠ benign default;
 - architecture convenience ≠ semantic permission.
@@ -158,6 +211,8 @@ Documented vendor defaults are architecture inputs, not tenant facts. Every late
 - unresolved unknown.
 
 Do not silently promote a public default into a production tenant contract.
+
+When capability is material, bind exact deployment model/cloud/region/Geo/account/workspace/tenant/edition/plan/version/license/release/enablement/permission/reachability/coverage/health dimensions as applicable.
 
 ## Decision quality
 
@@ -185,4 +240,4 @@ Material decisions must follow the accepted ADR rubric rather than relying on fa
 
 ## Current state
 
-**Phase 010 is IN PROGRESS. Groups 01–02 are accepted: ARCH-001–ARCH-080; AFE01-01–AFE01-60 and EPT02-01–EPT02-72 pass. Group 03 — Identity, Scope, Authority, Authorization & Disclosure Architecture is next.**
+**Phase 010 is IN PROGRESS. Groups 01–03 are accepted: ARCH-001–ARCH-132; AFE01-01–AFE01-60, EPT02-01–EPT02-72 and IAD03-01–IAD03-84 pass. Group 04 — Source Acquisition, Adapter, Synchronization & Integration-Health Architecture is next.**
