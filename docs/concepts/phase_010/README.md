@@ -1,6 +1,6 @@
 # Phase 010 — Technical Architecture
 
-**Status:** IN PROGRESS — Groups 01–03 accepted; Group 04 next
+**Status:** IN PROGRESS — Groups 01–04 accepted; Group 05 next
 
 ## Purpose
 
@@ -28,7 +28,7 @@ Phase 010 uses **ARCH-###** for durable technical-architecture contracts.
 
 `ARCH-###` records architecture constraints/decisions needed to realize accepted semantics. It must not redefine source facts, functional truth, evidence sufficiency, source authority, or product concepts already owned by earlier phases.
 
-Current accepted range: **ARCH-001–ARCH-132** from Groups 01–03.
+Current accepted range: **ARCH-001–ARCH-190** from Groups 01–04.
 
 ## Logical groups
 
@@ -80,17 +80,27 @@ Path: [`03_identity_scope_authority_authorization_disclosure_architecture/README
 
 ### Group 04 — Source Acquisition, Adapter, Synchronization & Integration-Health Architecture
 
-**Status:** Next — not started
+**Status:** COMPLETE / ACCEPTED
 
-Design source capability discovery, adapters/connectors, polling/streaming/hybrid acquisition, checkpoints, pagination, retries, quotas, source lag, schema drift, integration health, and graceful degradation using the accepted identity/scope/authorization primitives.
+Accepted range: **ARCH-133–ARCH-190**. **AHI04-01–AHI04-96 pass.** Decisions D-1383–D-1432 accepted.
+
+Group 04 establishes reconciliation-first hybrid source acquisition, durable acquisition-run/surface/plan/checkpoint/page/window provenance, versioned normalization, explicit collection coverage, source publication/acquisition lag, quota/cost-aware scheduling and multidimensional integration health.
+
+Its central acquisition chain is:
+
+**verified capability + governed scope → revisioned acquisition plan → reconciliation-first hybrid collection → durable source/request/page/checkpoint provenance → versioned normalization → coverage + source lag + integration-health dimensions → canonical evidence publication**.
+
+Streams/webhooks accelerate freshness but do not replace reconciliation where completeness matters. Empty/partial/degraded collection never becomes domain absence; integration recovery does not rewrite historical evidence gaps; no global integration-health score is accepted.
 
 Path: [`04_source_acquisition_adapter_synchronization_integration_health_architecture/README.md`](04_source_acquisition_adapter_synchronization_integration_health_architecture/README.md)
 
 ### Group 05 — Runtime Provenance, Health, Lineage & Impact Evidence Architecture
 
-**Status:** Planned
+**Status:** Next — not started
 
-Realize Git/change/deployment/run/implementation/input/output correlations, health measurement provenance, reconciliation, topology, consumer encounter, cache/copy paths, exposure, downstream effect, and consequence evidence.
+Realize Git/change/deployment/run/implementation/input/output correlations, health measurement provenance, reconciliation, topology, consumer encounter, cache/copy paths, exposure, downstream effect, and consequence evidence using acquisition coverage/health as evidence conditions.
+
+Path: [`05_runtime_provenance_health_lineage_impact_evidence_architecture/README.md`](05_runtime_provenance_health_lineage_impact_evidence_architecture/README.md)
 
 ### Group 06 — Investigation, Reasoning, Historical Replay & Explanation Architecture
 
@@ -186,20 +196,45 @@ Later groups must also preserve:
 - tenant/residency policy limiting identity/governance metadata and evidence movement;
 - canonical policy state in Group 02 persistence with caches/indexes as derived projections.
 
-## Architecture choices still intentionally open after Group 03
+## Group 04 accepted architecture discipline
 
-Groups 01–03 deliberately selected no final:
+Later groups must also preserve:
 
-- polling versus streaming versus hybrid ingestion;
-- event bus or queue technology;
-- source-adapter/SDK strategy;
+- source adapters bound to exact deployment-verified capability instances and revisioned surfaces/plans;
+- reconciliation as the completeness/recovery foundation, with stream/webhook/incremental/export paths as source-specific accelerators;
+- acquisition-run/attempt identity and durable request/page/partition/window provenance;
+- source cursor/checkpoint state as source-bound operational state, never truth;
+- checkpoint advancement only after corresponding evidence/provenance commit;
+- overlap/redelivery/retries as idempotent and common-derived where they represent one source event;
+- Monitoring Scope expected population independent from connector discoverability;
+- pagination/partition/window completion explicit rather than inferred from HTTP success;
+- request/response/source identifiers retained where permitted for troubleshooting/provenance;
+- source envelope/raw representation distinct from normalized evidence;
+- versioned parser/normalizer and non-rewriting reparsing semantics;
+- additive schema evolution tolerated while breaking drift becomes explicit integration state;
+- malformed/unsupported payloads quarantined rather than silently discarded when coverage can be affected;
+- source publication lag distinct from event/effective time and collection/persistence lag;
+- service-class-specific acquisition cadence rather than one polling interval;
+- authentication, permission, observer-relative not-found, quota, source outage, reachability, lag, checkpoint, pagination, schema, parser, persistence, coverage and freshness as separable integration-health dimensions;
+- no universal integration-health score;
+- collection coverage manifests used before strong negative reasoning;
+- source-native retention expiry distinct from product-retained evidence;
+- optional-source absence as proposition-bound degradation, not benign default;
+- acquisition cost/volume observable without weakening required evidence coverage.
+
+## Architecture choices still intentionally open after Group 04
+
+Groups 01–04 deliberately selected no final:
+
+- universal event bus or queue technology;
+- final workflow/orchestration/worker runtime;
+- source-adapter SDK implementation language/framework;
 - external IAM/IdP product;
 - external policy-engine product or runtime packaging;
 - policy authoring UI/API/Git workflow;
 - graph database/product;
 - search/vector product;
 - cache/materialized-serving technology;
-- workflow/orchestration engine;
 - credential/secrets implementation;
 - LLM/retrieval/embedding/reranking/template architecture;
 - Gate/Safeguard implementation;
@@ -229,6 +264,13 @@ Reject an architecture if it requires any of the following shortcuts:
 - retention/archive state treated as disclosure permission;
 - redaction/generalization that strengthens, broadens or hides a material limitation;
 - hidden basis counts/provenance leaked by convenience;
+- checkpoint advancement before durable evidence persistence;
+- webhook/stream silence treated as complete no-event evidence;
+- partial pagination/partitions treated as complete coverage;
+- 401/403/observer-relative 404/throttle/outage treated as domain absence;
+- source publication lag ignored for current negatives;
+- schema/parser failure silently dropping evidence;
+- current integration recovery rewriting a prior evidence gap;
 - current state projected backward as historical state;
 - missing/degraded telemetry converted into negative truth;
 - Delta transaction-log history used as the sole long-horizon product replay model;
@@ -239,12 +281,12 @@ Reject an architecture if it requires any of the following shortcuts:
 - Lineage traversal treated as exposure, Impact, or causality;
 - control configuration/request treated as effective enforcement;
 - reconstructed history labeled as authentic retained communication;
-- loss of proposition/source/basis provenance;
-- one global confidence/health/Impact/control/replay/architecture/relevance/authorization score;
+- loss of proposition/source/basis/acquisition provenance;
+- one global confidence/health/Impact/control/replay/architecture/relevance/authorization/integration-health score;
 - unsupported capabilities hidden behind planned future instrumentation.
 
 ## Phase 010 exit direction
 
 Phase 010 should exit only when the architecture can demonstrate, through scenario replay and explicit traceability, that accepted semantics are technically realizable under deployment-verified environment/cost/latency/retention/security constraints and that all material residual gaps are resolved, reduced, intentionally scoped, or carried forward explicitly.
 
-**Group 04 — Source Acquisition, Adapter, Synchronization & Integration-Health Architecture is next.**
+**Group 05 — Runtime Provenance, Health, Lineage & Impact Evidence Architecture is next.**

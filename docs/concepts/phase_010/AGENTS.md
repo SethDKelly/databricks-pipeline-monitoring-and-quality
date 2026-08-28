@@ -20,7 +20,8 @@ Before accepting an `ARCH-###` contract, preserve and consult:
 - Phase 009 `phase_010_handoff.md`;
 - Phase 010 Group 01 ARCH-001–ARCH-032;
 - Phase 010 Group 02 ARCH-033–ARCH-080;
-- Phase 010 Group 03 ARCH-081–ARCH-132.
+- Phase 010 Group 03 ARCH-081–ARCH-132;
+- Phase 010 Group 04 ARCH-133–ARCH-190.
 
 Earlier functional/integration semantics remain authoritative. Architecture may realize them; it may not simplify them away.
 
@@ -49,8 +50,8 @@ Review Phase 010 in this order:
 1. Architecture Frame, Environment Discovery & Decision Criteria — **accepted**;
 2. Evidence, Provenance, Temporal & Persistence Architecture — **accepted**;
 3. Identity, Scope, Authority, Authorization & Disclosure Architecture — **accepted**;
-4. Source Acquisition, Adapter, Synchronization & Integration-Health Architecture — **next**;
-5. Runtime Provenance, Health, Lineage & Impact Evidence Architecture;
+4. Source Acquisition, Adapter, Synchronization & Integration-Health Architecture — **accepted**;
+5. Runtime Provenance, Health, Lineage & Impact Evidence Architecture — **next**;
 6. Investigation, Reasoning, Historical Replay & Explanation Architecture;
 7. Execution Gate, Propagation Safeguard & Active-Control Architecture;
 8. Serving, Security, Deployment, Observability & Cost Architecture;
@@ -154,21 +155,60 @@ Later architecture work must preserve:
 
 Group 03 selects the canonical record/rule semantics but no external policy engine, IAM/IdP product, policy authoring UI/API/Git workflow, secrets implementation or runtime service topology.
 
-## Group 04 discipline
+## Group 04 accepted discipline
 
-Group 04 designs acquisition/synchronization/integration health over ARCH-001–ARCH-132.
+ARCH-133–ARCH-190 and AHI04-01–AHI04-96 are accepted.
 
-A source adapter must emit source-local identity, provenance, capability-instance context, collection coverage and integration-health facts into the accepted architecture. It must not:
+Later architecture work must preserve:
 
-- create canonical identity from names/timestamps;
-- infer Monitoring Scope from current discoverability;
-- translate permission denial into domain/source absence;
-- translate empty or incomplete pagination into a strong negative;
-- promote source roles/permissions into Assertion Authority;
-- silently fall back to a lower-authority source;
-- expose evidence merely because the integration service principal can read it.
+- adapters as acquisition mechanisms, never independent owners of canonical identity/scope/authority/domain truth;
+- exact capability-instance + source-surface + acquisition-plan revision binding;
+- reconciliation-first hybrid collection, with incremental/stream/webhook/export/on-demand paths as source-specific accelerators;
+- durable acquisition run/attempt identity;
+- checkpoint/cursor/window/page/partition provenance tied to the exact query/surface;
+- overlap for ambiguous ordering/late publication with idempotent deduplication;
+- pagination/partition completion explicitly evidenced rather than inferred from successful HTTP response;
+- expected population from Monitoring Scope/materialization, not whatever the connector can currently list;
+- source request IDs and safe request/response provenance where available;
+- source envelope/raw capture separated from normalized evidence and governed by minimization;
+- normalized evidence bound to parser/normalizer revision and acquisition provenance;
+- API/webhook/stream/export representations of one event marked common-derived rather than independent corroboration;
+- additive schema evolution tolerated; breaking drift and unsupported fields explicit;
+- malformed/unsupported payloads quarantined where their omission can affect coverage;
+- partial collection allowed to preserve usable evidence without claiming complete coverage;
+- evidence publication only after required provenance is durably persisted;
+- checkpoint advancement only after corresponding evidence/provenance commit;
+- retry behavior based on error taxonomy, idempotency and vendor guidance;
+- authentication, permission and observer-relative not-found distinct from source/domain absence;
+- 429/quota state, Retry-After/reset handling and bounded backoff;
+- source-selective queries/partitioning/conditional requests used to conserve quota without hiding omitted coverage;
+- source publication lag separated from event time and observed acquisition/persistence lag;
+- acquisition scheduling bound to SC-01–SC-06 rather than one universal frequency;
+- multidimensional integration health across presence/authn/authz/reachability/quota/publication/checkpoint/pagination/schema/parser/persistence/coverage/freshness/retention;
+- no universal integration-health score;
+- collection coverage manifest required for strong-negative support;
+- source retention expiry distinguished from product-retained evidence;
+- optional-source absence treated as proposition-bound degradation;
+- acquisition request/query/compute/transfer volume and cost-relevant telemetry attributable where measurable;
+- current integration recovery non-rewriting with respect to historical evidence gaps.
 
-Collection failure, throttling, permission denial, lag, partial pagination, parser/schema drift, retention expiry and optional-source absence remain integration-health facts rather than benign monitored-domain truth.
+Group 04 selects no universal event bus, queue product, orchestration engine, worker runtime, secret store, observability vendor, API gateway or deployment topology.
+
+## Group 05 discipline
+
+Group 05 must design runtime provenance, health, Lineage and Impact evidence over ARCH-001–ARCH-190.
+
+It must not:
+
+- infer exact deployment/run/input/output identity from names or timestamp proximity;
+- infer run-specific implementation state from current Deployment alone;
+- infer consumed input version from latest/current source state;
+- infer output existence/health/currentness from run success alone;
+- treat a connector gap as no run/output/measurement/dependency/encounter/exposure/effect;
+- use Lineage reachability as encounter/exposure/Impact/cause;
+- ignore source acquisition coverage when issuing strong operational/Impact negatives;
+- turn health measurement availability into normative authority;
+- collapse source publication time, run time, measurement time and knowledge time.
 
 ## Cross-group invariants
 
@@ -180,6 +220,10 @@ Preserve all accepted durable boundaries, especially:
 - current state ≠ historical state;
 - copied/retained evidence ≠ independent/newly authoritative evidence;
 - missing/degraded integration telemetry ≠ source/domain negative truth;
+- checkpoint progress ≠ source completeness/domain truth;
+- HTTP/request success ≠ page/population/window completeness;
+- webhook/stream silence ≠ no event;
+- integration recovery ≠ historical gap erasure;
 - storage retention ≠ reporting relevance;
 - retained/archived evidence ≠ disclosure permission;
 - payload expired ≠ source absent;
@@ -240,4 +284,4 @@ Material decisions must follow the accepted ADR rubric rather than relying on fa
 
 ## Current state
 
-**Phase 010 is IN PROGRESS. Groups 01–03 are accepted: ARCH-001–ARCH-132; AFE01-01–AFE01-60, EPT02-01–EPT02-72 and IAD03-01–IAD03-84 pass. Group 04 — Source Acquisition, Adapter, Synchronization & Integration-Health Architecture is next.**
+**Phase 010 is IN PROGRESS. Groups 01–04 are accepted: ARCH-001–ARCH-190; AFE01-01–AFE01-60, EPT02-01–EPT02-72, IAD03-01–IAD03-84 and AHI04-01–AHI04-96 pass. Group 05 — Runtime Provenance, Health, Lineage & Impact Evidence Architecture is next.**
