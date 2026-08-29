@@ -1,6 +1,6 @@
 # Phase 010 — Technical Architecture
 
-**Status:** IN PROGRESS — Groups 01–06 accepted; Group 07 next
+**Status:** IN PROGRESS — Groups 01–07 accepted; Group 08 next
 
 ## Purpose
 
@@ -28,7 +28,7 @@ Phase 010 uses **ARCH-###** for durable technical-architecture contracts.
 
 `ARCH-###` records architecture constraints/decisions needed to realize accepted semantics. It must not redefine source facts, functional truth, evidence sufficiency, source authority, or product concepts already owned by earlier phases.
 
-Current accepted range: **ARCH-001–ARCH-350** from Groups 01–06.
+Current accepted range: **ARCH-001–ARCH-420** from Groups 01–07.
 
 ## Logical groups
 
@@ -128,17 +128,31 @@ Path: [`06_investigation_reasoning_historical_replay_explanation_architecture/RE
 
 ### Group 07 — Execution Gate, Propagation Safeguard & Active-Control Architecture
 
-**Status:** Next — not started
+**Status:** COMPLETE / ACCEPTED
 
-Realize Execution Gate and Propagation Safeguard independently, including criterion/evidence suitability, readiness, decisions, delivery/acceptance, enforcement, actual execution, overrides/fallbacks, protected paths/cohorts, prevention evidence, release, and recovery.
+Accepted range: **ARCH-351–ARCH-420**. **ACS07-01–ACS07-120 pass.** Decisions D-1545–D-1602 accepted.
+
+Group 07 realizes independent Execution Gate and Propagation Safeguard state machines, opportunity-specific deterministic Gate decisions, deployment-verified GitHub/Databricks enforcement adapters, explicit override/fallback/degradation policy, path/cohort-specific Safeguard enforcement, REF-028 prevention manifests and non-rewriting historical control replay.
+
+Its Gate chain is:
+
+**execution opportunity → criterion/evidence suitability → readiness → normal/override/fallback decision → issuance → delivery/acceptance → effective enforcement → actual execution/non-execution**.
+
+Its Safeguard chain is:
+
+**protected state/path/cohort → proposal/authorization/request → effective enforcement → opportunity + alternate-path coverage → REF-028 prevention → release/expiry → independent recovery**.
+
+GitHub environment protection is a strong pre-start candidate only for the exact protected GitHub job/deployment opportunity. Databricks conditional logic becomes a DMTZ Gate only under explicit mapping; Databricks cancellation is asynchronous interruption, not pre-start HOLD. Active controls remain optional over passive monitoring.
 
 Path: [`07_execution_gate_propagation_safeguard_active_control_architecture/README.md`](07_execution_gate_propagation_safeguard_active_control_architecture/README.md)
 
 ### Group 08 — Serving, Security, Deployment, Observability & Cost Architecture
 
-**Status:** Planned
+**Status:** Next — not started
 
-Design API/service/UI-facing topology, authentication/credentials/secrets, runtime authorization enforcement, deployment topology, observability, operational SLOs, capacity/performance, quota/cost attribution, and optional-integration deployment behavior.
+Design API/service/UI-facing topology, authentication/credentials/secrets, runtime authorization enforcement, deployment topology, observability, operational SLOs, performance/capacity, quota/cost attribution, and optional-integration deployment behavior over ARCH-001–ARCH-420.
+
+Path: [`08_serving_security_deployment_observability_cost_architecture/README.md`](08_serving_security_deployment_observability_cost_architecture/README.md)
 
 ### Group 09 — Architecture Consolidation, Validation & Phase 010 Exit
 
@@ -299,7 +313,6 @@ Later groups must also preserve:
 - Causal Claim persistence/status as canonical proposition state rather than model output;
 - `confirmed` Causal Claim remaining REF-017 + AUTH-034 gated;
 - rejected cause requiring contradiction/exclusion evidence, not absence of support;
-- localization and counterfactual analysis remaining separate from realized causal truth;
 - availability-by-K historical replay with late evidence excluded from earlier cuts;
 - corrections/supersessions changing retrospective interpretation without rewriting prior as-known state;
 - canonical bitemporal journals rather than Delta time travel/current graph/current policy as the replay model;
@@ -317,9 +330,46 @@ Later groups must also preserve:
 - model/provider agreement remaining common-derived rather than corroboration;
 - model/vector/trace/prompt-registry outages degrading convenience/observability rather than source truth or basic answerability.
 
-## Architecture choices still intentionally open after Group 06
+## Group 07 accepted architecture discipline
 
-Groups 01–06 deliberately selected no final:
+Later groups must also preserve:
+
+- active control as explicit opt-in over passive monitoring;
+- Gate and Safeguard as independent state machines even when sharing infrastructure;
+- control mechanisms bound to deployment-verified capability instances;
+- immutable control/profile/criterion revisions and opportunity-specific identities;
+- exact proposition/Assessment criteria rather than prose/model recommendations;
+- evidence suitability distinct from readiness, decision, delivery, enforcement and execution;
+- HOLD distinct from failure/non-execution and ADMIT distinct from actual execution;
+- override/fallback preserving underlying readiness and requiring explicit authorization/rules;
+- timeout/escalation distinct from Gate decisions;
+- explicit multi-Gate composition with no hidden precedence;
+- decision TTL/applicability and stale-decision rejection where material;
+- decision/audit records bound to actual knowledge cut and exact basis;
+- GitHub environment protection scoped to exact protected GitHub job/deployment opportunity;
+- GitHub Gate → Databricks execution requiring Group 05 durable correlation;
+- governed Databricks pre-start trigger broker only where alternate trigger paths are controlled;
+- Databricks If/else/Run-if becoming DMTZ Gate only under explicit criterion/opportunity mapping;
+- Databricks cancellation as asynchronous interruption rather than pre-start HOLD;
+- explicit degraded-dependency policy with no hidden fail-open/fail-closed default;
+- model/search/graph outputs never becoming active-control decisions;
+- Safeguard protected state/version, surface/path/cohort and interval explicitly bound;
+- proposal/authorization/request/attempt/effective enforcement separated;
+- partial Safeguard path/cohort enforcement remaining partial;
+- alternate-path inventory and actual exposure opportunity required for broad prevention reasoning;
+- no opportunity meaning no prevention credit;
+- `not exposed` remaining distinct from `prevented by Safeguard`;
+- REF-028 prevention as conclusion-specific opportunity/enforcement/path evidence rather than a universal effectiveness score;
+- safe stale serving distinct from freshness/currentness/health;
+- configured expiry/release request/effective release/recovery separated;
+- overlapping controls retaining independent evidence and no hidden first-control attribution;
+- broader control-effect attribution remaining Causal Claim work;
+- historical actual control actions distinct from as-known reconstruction/current retrospective/counterfactual preferred action;
+- control trace retention following Group 02 value/audit obligations rather than forever accumulation.
+
+## Architecture choices still intentionally open after Group 07
+
+Groups 01–07 deliberately selected no final:
 
 - universal event bus or queue technology;
 - final workflow/orchestration/worker runtime;
@@ -335,7 +385,7 @@ Groups 01–06 deliberately selected no final:
 - incident/business consequence source product;
 - credential/secrets implementation;
 - final LLM/model/provider or agent framework;
-- Gate/Safeguard implementation;
+- final active-control service runtime or universal Safeguard enforcement product;
 - UI/API/service topology;
 - deployment topology;
 - final observability stack;
@@ -399,14 +449,31 @@ Reject an architecture if it requires any of the following shortcuts:
 - `inspectBasis` permission inherited from conclusion visibility;
 - model/vector availability made a prerequisite for truthful basic answers;
 - indefinite retention of every reasoning/model trace merely because it was produced;
+- Gate configuration/readiness treated as an opportunity-specific decision;
+- Gate decision issuance/delivery treated as effective enforcement;
+- HOLD treated as failed execution or ADMIT as execution occurrence;
+- override/fallback admission treated as prerequisite readiness;
+- timeout/escalation treated as fallback/admission by convenience;
+- multiple Gates resolved through hidden implementation-order precedence;
+- stale Gate decisions reused outside their exact applicability horizon;
+- GitHub environment protection treated as universal downstream Databricks Gate enforcement without correlation;
+- Databricks cancellation treated as pre-start HOLD after execution begins;
+- control-service/model/search outage silently defining fail-open or fail-closed behavior;
+- Safeguard configuration/request treated as effective enforcement;
+- one protected path/cohort treated as global protection;
+- `not exposed` treated as Safeguard prevention without REF-028 control nexus;
+- no exposure opportunity awarded prevention credit;
+- effective release/expiry treated as health/currentness/recovery;
+- overlapping controls assigned first/last-control causal credit without evidence;
+- control timing/enforcement treated as broad operational/business causality;
+- current control policy backfilled as historical actual decision/enforcement;
 - current state projected backward as historical state;
 - missing/degraded telemetry converted into negative truth;
 - Delta transaction-log history used as the sole long-horizon product replay model;
 - physical compaction/downsampling silently rewriting semantic history;
 - retained old history automatically flooding routine reporting;
 - age alone treated as irrelevance or deletion justification;
-- control configuration/request treated as effective enforcement;
-- loss of proposition/source/basis/acquisition/runtime/measurement/Lineage/reasoning provenance;
+- loss of proposition/source/basis/acquisition/runtime/measurement/Lineage/reasoning/control provenance;
 - one global confidence/health/Impact/control/replay/architecture/relevance/authorization/integration-health score;
 - unsupported capabilities hidden behind planned future instrumentation.
 
@@ -414,4 +481,4 @@ Reject an architecture if it requires any of the following shortcuts:
 
 Phase 010 should exit only when the architecture can demonstrate, through scenario replay and explicit traceability, that accepted semantics are technically realizable under deployment-verified environment/cost/latency/retention/security constraints and that all material residual gaps are resolved, reduced, intentionally scoped, or carried forward explicitly.
 
-**Group 07 — Execution Gate, Propagation Safeguard & Active-Control Architecture is next.**
+**Group 08 — Serving, Security, Deployment, Observability & Cost Architecture is next.**

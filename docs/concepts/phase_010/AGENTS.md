@@ -23,7 +23,8 @@ Before accepting an `ARCH-###` contract, preserve and consult:
 - Phase 010 Group 03 ARCH-081–ARCH-132;
 - Phase 010 Group 04 ARCH-133–ARCH-190;
 - Phase 010 Group 05 ARCH-191–ARCH-274;
-- Phase 010 Group 06 ARCH-275–ARCH-350.
+- Phase 010 Group 06 ARCH-275–ARCH-350;
+- Phase 010 Group 07 ARCH-351–ARCH-420.
 
 Earlier functional/integration semantics remain authoritative. Architecture may realize them; it may not simplify them away.
 
@@ -55,8 +56,8 @@ Review Phase 010 in this order:
 4. Source Acquisition, Adapter, Synchronization & Integration-Health Architecture — **accepted**;
 5. Runtime Provenance, Health, Lineage & Impact Evidence Architecture — **accepted**;
 6. Investigation, Reasoning, Historical Replay & Explanation Architecture — **accepted**;
-7. Execution Gate, Propagation Safeguard & Active-Control Architecture — **next**;
-8. Serving, Security, Deployment, Observability & Cost Architecture;
+7. Execution Gate, Propagation Safeguard & Active-Control Architecture — **accepted**;
+8. Serving, Security, Deployment, Observability & Cost Architecture — **next**;
 9. Architecture Consolidation, Validation & Phase 010 Exit.
 
 This is a design dependency order, not a mandate for runtime service boundaries.
@@ -294,19 +295,63 @@ Later architecture work must preserve:
 
 Group 06 selects deterministic reasoning, Statement/Answer IR and the Delta graph-projection MVP, but no final LLM/provider, embedding model, agent framework, dedicated graph product, orchestration runtime, UI/API topology, secrets implementation or active-control technology.
 
-## Group 07 discipline
+## Group 07 accepted discipline
 
-Group 07 must design Execution Gate and Propagation Safeguard over ARCH-001–ARCH-350.
+ARCH-351–ARCH-420 and ACS07-01–ACS07-120 are accepted.
+
+Later architecture work must preserve:
+
+- active control as opt-in and separable from passive monitoring/RCA;
+- Gate and Safeguard independent state machines;
+- deployment-verified control capability instances;
+- immutable control/profile/criterion revisions and exact control-opportunity identities;
+- criteria bound to exact accepted proposition/Assessment identities;
+- evidence suitability, readiness, decision, issuance, delivery, acceptance, enforcement and execution kept separate;
+- HOLD not becoming failed execution/non-execution by wording; ADMIT not becoming run occurrence;
+- override authorization/decision/expiry explicit while preserving underlying readiness;
+- fallback policy, trigger, decision and enforcement explicit; timeout/escalation separate;
+- multi-Gate composition/precedence explicit with no hidden implementation-order rule;
+- concurrency/idempotency/stale-decision handling bound to opportunity/decision identity;
+- control decisions bound to actual knowledge cut and basis manifest;
+- GitHub environment protection treated as pre-start only for the exact protected GitHub job/deployment opportunity;
+- GitHub custom protection rule use conditional on target plan/deployment capability;
+- GitHub Gate → Databricks execution requiring Group 05 durable correlation;
+- Databricks external trigger broker requiring governance of alternate/bypass trigger paths;
+- Databricks `If/else`/`Run if` becoming DMTZ Gate only through explicit criterion/opportunity mapping;
+- Databricks cancellation represented as asynchronous post-start interruption, not pre-start HOLD;
+- degraded control dependencies following explicit Gate/Safeguard policy rather than implicit fail-open/fail-closed;
+- model/search/graph recommendations never becoming control decisions;
+- Safeguard profiles binding exact protected state/version, surface/path/cohort and interval;
+- Safeguard proposal, authorization, request, attempt and effective enforcement distinct;
+- partial enforcement remaining path/cohort specific;
+- alternate-path inventory and actual exposure opportunity required for broad prevention evaluation;
+- no opportunity → no prevention credit;
+- `not exposed` distinct from `prevented by Safeguard`;
+- REF-028 prevention conclusion-specific and not a universal control-effectiveness score;
+- safe stale serving distinct from freshness/currentness/health;
+- configured expiry, effective expiry, release request, effective release and recovery separate;
+- overlapping controls retaining independent evidence and no hidden causal credit;
+- broader control-effect attribution remaining Causal Claim work beyond narrow REF-028 prevention;
+- actual historical control decision/enforcement distinct from replay reconstruction/current retrospective/counterfactual preferred action;
+- control/audit retention following explicit product/audit/value horizons rather than indefinite trace accumulation.
+
+Group 07 selects canonical Gate/Safeguard state/evidence architecture and bounded GitHub/Databricks adapter patterns, but no final control runtime, external policy engine, queue/event bus, workflow engine, secrets product, serving topology, deployment topology or observability vendor.
+
+## Group 08 discipline
+
+Group 08 must package serving, security, deployment, observability and cost over ARCH-001–ARCH-420.
 
 It must not:
 
-- use a model recommendation, Investigation lead, semantic-search candidate, rendered Explanation sentence or reasoning-cache entry directly as a control decision;
-- collapse criterion/evidence suitability, readiness, Gate decision, delivery/acceptance, enforcement and actual execution;
-- collapse Execution Gate and Propagation Safeguard;
-- infer Safeguard prevention from configuration/enforcement without exact opportunity/path/alternate-path evidence;
-- infer ADMIT/HOLD from enabled configuration alone;
-- let current reasoning/model/search degradation silently change fail-open/fail-closed behavior without explicit governed policy;
-- convert current control recovery/release into historical healthy/current state or causal success.
+- collapse canonical evidence with caches/search/serving projections;
+- make UI/API convenience determine truth or disclosure scope;
+- merge internal service authorization with requester authorization;
+- hide connector/reasoning/control-path degradation behind one health score;
+- place an LLM/model in the mandatory truth or active-control path when deterministic evidence/rules suffice;
+- relax evidence, negative-coverage, retention, disclosure or control decision TTL requirements for latency/cost;
+- make active-control availability a prerequisite for passive monitoring;
+- treat a control-service HTTP success as effective external enforcement;
+- treat deployment topology boundaries as permission to merge Gate and Safeguard semantics.
 
 ## Cross-group invariants
 
@@ -344,12 +389,17 @@ Preserve all accepted durable boundaries, especially:
 - historical as-known reconstruction ≠ retained authentic communication ≠ current retrospective interpretation;
 - Statement IR ≠ prose wording;
 - conclusion visibility ≠ inspectBasis permission;
-- readiness ≠ Gate decision ≠ enforcement ≠ execution;
+- readiness ≠ Gate decision ≠ delivery ≠ enforcement ≠ execution;
+- HOLD ≠ failed execution; ADMIT ≠ execution occurrence;
+- override/fallback admission ≠ prerequisite readiness;
 - Execution Gate ≠ Propagation Safeguard;
+- Safeguard proposal/authorization/request ≠ enforcement;
 - Safeguard enforcement ≠ REF-028 prevention;
+- `not exposed` ≠ `prevented by Safeguard`;
+- release/expiry ≠ health/currentness/recovery;
 - internal basis traceability ≠ universal visible raw evidence;
 - cost/quota optimization ≠ relaxed evidence burden;
-- optional source/instrumentation/model/index absence ≠ benign default;
+- optional source/instrumentation/model/index/control absence ≠ benign default;
 - architecture convenience ≠ semantic permission.
 
 ## Environment facts
@@ -392,4 +442,4 @@ Material decisions must follow the accepted ADR rubric rather than relying on fa
 
 ## Current state
 
-**Phase 010 is IN PROGRESS. Groups 01–06 are accepted: ARCH-001–ARCH-350; AFE01-01–AFE01-60, EPT02-01–EPT02-72, IAD03-01–IAD03-84, AHI04-01–AHI04-96, RHI05-01–RHI05-108 and IRE06-01–IRE06-120 pass. Group 07 — Execution Gate, Propagation Safeguard & Active-Control Architecture is next.**
+**Phase 010 is IN PROGRESS. Groups 01–07 are accepted: ARCH-001–ARCH-420; AFE01-01–AFE01-60, EPT02-01–EPT02-72, IAD03-01–IAD03-84, AHI04-01–AHI04-96, RHI05-01–RHI05-108, IRE06-01–IRE06-120 and ACS07-01–ACS07-120 pass. Group 08 — Serving, Security, Deployment, Observability & Cost Architecture is next.**
