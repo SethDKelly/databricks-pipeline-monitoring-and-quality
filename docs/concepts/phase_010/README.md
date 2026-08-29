@@ -1,6 +1,6 @@
 # Phase 010 — Technical Architecture
 
-**Status:** IN PROGRESS — Groups 01–05 accepted; Group 06 next
+**Status:** IN PROGRESS — Groups 01–06 accepted; Group 07 next
 
 ## Purpose
 
@@ -28,7 +28,7 @@ Phase 010 uses **ARCH-###** for durable technical-architecture contracts.
 
 `ARCH-###` records architecture constraints/decisions needed to realize accepted semantics. It must not redefine source facts, functional truth, evidence sufficiency, source authority, or product concepts already owned by earlier phases.
 
-Current accepted range: **ARCH-001–ARCH-274** from Groups 01–05.
+Current accepted range: **ARCH-001–ARCH-350** from Groups 01–06.
 
 ## Logical groups
 
@@ -112,17 +112,27 @@ Path: [`05_runtime_provenance_health_lineage_impact_evidence_architecture/README
 
 ### Group 06 — Investigation, Reasoning, Historical Replay & Explanation Architecture
 
-**Status:** Next — not started
+**Status:** COMPLETE / ACCEPTED
 
-Realize Investigation/Causal Claim persistence, reasoning-graph traversal, historical/as-known replay, current retrospective reasoning, statement-to-basis composition, `inspectBasis`, authentic retained Explanation communication, and retrieval/LLM architecture where justified.
+Accepted range: **ARCH-275–ARCH-350**. **IRE06-01–IRE06-120 pass.** Decisions D-1491–D-1544 accepted.
+
+Group 06 realizes canonical Investigation/Causal Claim persistence, deterministic evidence-bound reasoning, Delta-backed rebuildable graph projections, exact-first retrieval, availability-by-K replay, Statement IR / Answer IR, independently authorized basis inspection, authentic Explanation snapshots and optional non-authoritative model assistance.
+
+Its central reasoning chain is:
+
+**bounded question / Investigation → exact retrieval + bounded derived graph → deterministic evidence/time/coverage/authority evaluation → lead/Causal Claim state → Statement IR / Answer IR → authorized basis projection → deterministic or optional model rendering → immutable retained communication where promised**.
+
+Model, graph and semantic-search outputs remain derived. A model outage must not prevent a truthful basic answer when canonical evidence is available. Causal confirmation remains REF-017 + AUTH-034 gated, and reconstructed historical Explanation remains distinct from authentic retained communication.
 
 Path: [`06_investigation_reasoning_historical_replay_explanation_architecture/README.md`](06_investigation_reasoning_historical_replay_explanation_architecture/README.md)
 
 ### Group 07 — Execution Gate, Propagation Safeguard & Active-Control Architecture
 
-**Status:** Planned
+**Status:** Next — not started
 
 Realize Execution Gate and Propagation Safeguard independently, including criterion/evidence suitability, readiness, decisions, delivery/acceptance, enforcement, actual execution, overrides/fallbacks, protected paths/cohorts, prevention evidence, release, and recovery.
+
+Path: [`07_execution_gate_propagation_safeguard_active_control_architecture/README.md`](07_execution_gate_propagation_safeguard_active_control_architecture/README.md)
 
 ### Group 08 — Serving, Security, Deployment, Observability & Cost Architecture
 
@@ -268,9 +278,48 @@ Later groups must also preserve:
 - Group 04 acquisition coverage/integration health constraining all strong operational/Impact negatives;
 - derived operational graph/index remaining rebuildable projection rather than canonical truth.
 
-## Architecture choices still intentionally open after Group 05
+## Group 06 accepted architecture discipline
 
-Groups 01–05 deliberately selected no final:
+Later groups must also preserve:
+
+- canonical Investigation identity and non-rewriting scope/lifecycle history independent from external tickets/model sessions;
+- Investigation leads/annotations remaining workflow/commentary state rather than source or causal truth;
+- lead exclusion requiring proposition-specific contradiction/exclusion evidence and adequate coverage;
+- human/rule/graph/search/model lead origin retained as provenance without truth/authority promotion;
+- reasoning graph/search/vector stores as derived/rebuildable projections over canonical evidence;
+- semantically typed graph edges with exact source/derivation provenance;
+- bounded graph traversal and no causal/Impact ranking from distance, centrality, path count or recency;
+- Delta node/edge projection as the MVP graph realization, with dedicated graph technology only for measured scale/latency needs;
+- exact structured retrieval by canonical identity/proposition/time/scope before semantic candidate retrieval;
+- semantic/vector similarity as candidate recall only, never truth/authority/evidence/completeness;
+- tenant/residency/authorization/disclosure filtering before sensitive retrieval/model exposure;
+- versioned reasoning plans/runs with rule/code/source-watermark/knowledge-cut/authorization provenance;
+- deterministic accepted evidence/status/negative-coverage/authority rules where the functional contracts define them;
+- cross-concept derived statements requiring explicit versioned derivation rules and exact input proposition IDs;
+- Causal Claim persistence/status as canonical proposition state rather than model output;
+- `confirmed` Causal Claim remaining REF-017 + AUTH-034 gated;
+- rejected cause requiring contradiction/exclusion evidence, not absence of support;
+- localization and counterfactual analysis remaining separate from realized causal truth;
+- availability-by-K historical replay with late evidence excluded from earlier cuts;
+- corrections/supersessions changing retrospective interpretation without rewriting prior as-known state;
+- canonical bitemporal journals rather than Delta time travel/current graph/current policy as the replay model;
+- reconstructed Explanation distinct from authentic retained communication;
+- Statement IR / Answer IR carrying exact proposition/status/basis/limitations before rendering;
+- partial sibling answers without a global completeness/confidence score;
+- deterministic template rendering available without any LLM;
+- renderer epistemic equivalence and output validation against Statement IR;
+- `inspectBasis` separately authorized itemwise from conclusion visibility;
+- authentic Explanation snapshots bound to content, Statement IDs, limitations, audience/purpose/delivery and communication time where promised;
+- Explanation/model trace retention driven by explicit product/audit/value horizons rather than indefinite accumulation;
+- provider-neutral model gateway with Databricks model/AI services as conditional deployment realization;
+- model/prompt/template/tool immutable invocation identity rather than mutable alias history;
+- models restricted to assistance roles and bounded tools; free-form output never becomes domain fact;
+- model/provider agreement remaining common-derived rather than corroboration;
+- model/vector/trace/prompt-registry outages degrading convenience/observability rather than source truth or basic answerability.
+
+## Architecture choices still intentionally open after Group 06
+
+Groups 01–06 deliberately selected no final:
 
 - universal event bus or queue technology;
 - final workflow/orchestration/worker runtime;
@@ -279,17 +328,17 @@ Groups 01–05 deliberately selected no final:
 - external IAM/IdP product;
 - external policy-engine product or runtime packaging;
 - policy authoring UI/API/Git workflow;
-- graph database/product;
-- search/vector product;
+- dedicated graph database/product beyond the accepted Delta-projection MVP and optional measured later extension;
+- final search/vector product or embedding model/provider;
 - cache/materialized-serving technology;
 - external BI/application telemetry vendor;
 - incident/business consequence source product;
 - credential/secrets implementation;
-- LLM/retrieval/embedding/reranking/template architecture;
+- final LLM/model/provider or agent framework;
 - Gate/Safeguard implementation;
 - UI/API/service topology;
 - deployment topology;
-- observability stack;
+- final observability stack;
 - final backup/archive/lifecycle automation vendor;
 - final cost-control implementation.
 
@@ -336,6 +385,20 @@ Reject an architecture if it requires any of the following shortcuts:
 - vendor downstream-impact/RCA or Criticality treated as realized Impact/cause;
 - exposure treated as effect/consequence, or consequence treated as cause;
 - missing external consumer/consequence telemetry converted into no impact;
+- an LLM/agent/model treated as a source of domain truth or Assertion Authority;
+- model confidence/probability treated as DMTZ evidence strength;
+- agreement across model runs/providers treated as independent corroboration;
+- graph distance/centrality/path count or semantic similarity treated as causal ranking;
+- a graph/search/vector index treated as the only historical truth store;
+- semantic retrieval allowed to bypass tenant/disclosure restrictions;
+- free-form model output accepted directly as domain fact;
+- current evidence/policy/source state projected backward into an as-known knowledge cut;
+- reconstructed Explanation labeled as authentic retained communication;
+- Statement-to-basis links lost during rendering or model transformation;
+- summary/model prose that strengthens status, broadens scope or suppresses material limitations;
+- `inspectBasis` permission inherited from conclusion visibility;
+- model/vector availability made a prerequisite for truthful basic answers;
+- indefinite retention of every reasoning/model trace merely because it was produced;
 - current state projected backward as historical state;
 - missing/degraded telemetry converted into negative truth;
 - Delta transaction-log history used as the sole long-horizon product replay model;
@@ -343,8 +406,7 @@ Reject an architecture if it requires any of the following shortcuts:
 - retained old history automatically flooding routine reporting;
 - age alone treated as irrelevance or deletion justification;
 - control configuration/request treated as effective enforcement;
-- reconstructed history labeled as authentic retained communication;
-- loss of proposition/source/basis/acquisition/runtime/measurement/Lineage provenance;
+- loss of proposition/source/basis/acquisition/runtime/measurement/Lineage/reasoning provenance;
 - one global confidence/health/Impact/control/replay/architecture/relevance/authorization/integration-health score;
 - unsupported capabilities hidden behind planned future instrumentation.
 
@@ -352,4 +414,4 @@ Reject an architecture if it requires any of the following shortcuts:
 
 Phase 010 should exit only when the architecture can demonstrate, through scenario replay and explicit traceability, that accepted semantics are technically realizable under deployment-verified environment/cost/latency/retention/security constraints and that all material residual gaps are resolved, reduced, intentionally scoped, or carried forward explicitly.
 
-**Group 06 — Investigation, Reasoning, Historical Replay & Explanation Architecture is next.**
+**Group 07 — Execution Gate, Propagation Safeguard & Active-Control Architecture is next.**

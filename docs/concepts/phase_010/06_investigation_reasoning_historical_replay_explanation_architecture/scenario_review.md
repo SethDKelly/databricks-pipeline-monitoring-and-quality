@@ -1,0 +1,126 @@
+# Phase 010 Group 06 — Scenario Review
+
+**Status:** PASS — IRE06-01–IRE06-120
+
+All scenarios preserve accepted Phase 002–009 semantics and ARCH-001–ARCH-350.
+
+- **IRE06-01 — PASS:** New alert creates Investigation identity distinct from alert/ticket ID.
+- **IRE06-02 — PASS:** Investigation scope widens after discovery; original revision remains replayable.
+- **IRE06-03 — PASS:** Investigation closes operationally while all Causal Claims remain unresolved.
+- **IRE06-04 — PASS:** Late evidence reopens a closed Investigation without rewriting closure history.
+- **IRE06-05 — PASS:** Analyst-generated lead retains analyst origin but no automatic authority.
+- **IRE06-06 — PASS:** Model-generated lead is treated identically to analyst lead for evidence burden.
+- **IRE06-07 — PASS:** Graph-generated lead is navigation output, not causal support.
+- **IRE06-08 — PASS:** Semantic-search false positive remains candidate only.
+- **IRE06-09 — PASS:** Lead lacks supporting evidence; it is unresolved, not rejected.
+- **IRE06-10 — PASS:** Lead is excluded only after complete version-consumption evidence disproves it.
+- **IRE06-11 — PASS:** Restricted evidence prevents exclusion; limitation remains explicit.
+- **IRE06-12 — PASS:** Two compatible contributor leads remain active without forced winner.
+- **IRE06-13 — PASS:** Two mutually exclusive leads retain separate dispositions.
+- **IRE06-14 — PASS:** Annotation states a factual claim not elsewhere evidenced; it stays commentary.
+- **IRE06-15 — PASS:** Incident ticket is deleted while canonical Investigation remains intact.
+- **IRE06-16 — PASS:** Derived graph rebuild produces same canonical identities with new projection revision.
+- **IRE06-17 — PASS:** Stale graph omits a new Lineage edge; reasoning falls back or reports projection staleness.
+- **IRE06-18 — PASS:** Graph path A→B→C does not create exposure of C.
+- **IRE06-19 — PASS:** Shortest graph path is not ranked as most causal.
+- **IRE06-20 — PASS:** High-centrality node does not become root cause.
+- **IRE06-21 — PASS:** Exact ID retrieval returns evidence excluded by K; replay filter removes it.
+- **IRE06-22 — PASS:** Semantic similarity returns unrelated evidence; deterministic proposition checks reject it.
+- **IRE06-23 — PASS:** Vector index unavailable; exact structured answer still succeeds.
+- **IRE06-24 — PASS:** Search index rebuilt with new embeddings; source evidence identity is unchanged.
+- **IRE06-25 — PASS:** Restricted entity is absent from requester's authorized retrieval corpus.
+- **IRE06-26 — PASS:** Index metadata existence is itself restricted and is not leaked in result counts.
+- **IRE06-27 — PASS:** Duplicate indexed chunks from one source do not become corroboration.
+- **IRE06-28 — PASS:** Direct/indirect Lineage edge types remain distinct during traversal.
+- **IRE06-29 — PASS:** Graph traversal depth limit causes partial candidate coverage and records limitation.
+- **IRE06-30 — PASS:** Dedicated graph store failure cannot erase canonical evidence.
+- **IRE06-31 — PASS:** Timing correlation alone yields no causal confirmation.
+- **IRE06-32 — PASS:** Deployment and failure share timestamp; name/time proximity is not cause.
+- **IRE06-33 — PASS:** Run-version contrast supports a claim but does not confirm it automatically.
+- **IRE06-34 — PASS:** Reconciliation boundary localizes first mismatch but is not root cause.
+- **IRE06-35 — PASS:** Remediation reverses effect and strengthens support only under explicit rule/basis.
+- **IRE06-36 — PASS:** Remediation succeeds while causal claim remains unresolved.
+- **IRE06-37 — PASS:** Two model providers agree on cause; status remains unchanged without source evidence.
+- **IRE06-38 — PASS:** Incident owner confirms verbally but lacks AUTH-034 authority; no confirmed status.
+- **IRE06-39 — PASS:** Authorized confirmer lacks REF-017 evidence sufficiency; no confirmed status.
+- **IRE06-40 — PASS:** REF-017 evidence sufficient but authority unresolved; no confirmed status.
+- **IRE06-41 — PASS:** Evidence and authority both satisfied; confirmed transition is allowed.
+- **IRE06-42 — PASS:** Contradictory evidence weakens a previously supported claim non-rewritingly.
+- **IRE06-43 — PASS:** Exclusion evidence supports rejected status for exact bounded claim.
+- **IRE06-44 — PASS:** Absence of support cannot produce rejected status.
+- **IRE06-45 — PASS:** Counterfactual simulation is retained as analytical artifact, not realized history.
+- **IRE06-46 — PASS:** Event occurred before K but source row appeared after K; excluded as-known.
+- **IRE06-47 — PASS:** Late evidence changes current retrospective answer but not historical as-known answer.
+- **IRE06-48 — PASS:** Correction after K changes current preferred interpretation only.
+- **IRE06-49 — PASS:** Historical definition revision differs from current definition; correct historical revision used.
+- **IRE06-50 — PASS:** Historical authority policy differs from current; internal as-known evaluation uses historical state while current disclosure is separate.
+- **IRE06-51 — PASS:** Current authorization grant does not imply historical requester could inspect basis.
+- **IRE06-52 — PASS:** Current revocation does not erase authentic prior communication.
+- **IRE06-53 — PASS:** Expired evidence payload leaves provenance stub; exact replay is limited.
+- **IRE06-54 — PASS:** Cold archived evidence restores successfully and becomes usable for current retrospective analysis.
+- **IRE06-55 — PASS:** Missing availability timestamp makes exact K eligibility unresolved.
+- **IRE06-56 — PASS:** Current graph projection contains edge unknown at K; replay excludes its late basis.
+- **IRE06-57 — PASS:** Delta time travel contains old row but DMTZ availability-by-K says it was unknown; unknown wins.
+- **IRE06-58 — PASS:** Reconstructed historical wording differs from retained message; retained message remains authentic communication.
+- **IRE06-59 — PASS:** No retained message exists; reconstruction is labeled reconstruction.
+- **IRE06-60 — PASS:** Historical Explanation basis had three visible items; current user sees two due authorization.
+- **IRE06-61 — PASS:** Current user gains access to fourth item; prior historical projection is not backfilled.
+- **IRE06-62 — PASS:** Two comparison sides use different K cuts; each side evaluates independently.
+- **IRE06-63 — PASS:** Historical source outage causes bounded evidence gap, not negative domain truth.
+- **IRE06-64 — PASS:** Source correction supersedes value retrospectively without deleting original record.
+- **IRE06-65 — PASS:** Replay with expired exact basis returns partial result instead of invented detail.
+- **IRE06-66 — PASS:** Direct source proposition becomes Statement IR without new truth state.
+- **IRE06-67 — PASS:** Two adjacent statements do not create a derived causal statement.
+- **IRE06-68 — PASS:** Explicit derivation rule creates a cross-concept statement with exact inputs.
+- **IRE06-69 — PASS:** Supporting and limiting basis are retained simultaneously.
+- **IRE06-70 — PASS:** Common-derived duplicate basis does not increase confidence.
+- **IRE06-71 — PASS:** Summary renderer shortens text but retains limitation.
+- **IRE06-72 — PASS:** Model renderer attempts to broaden population; validator rejects output.
+- **IRE06-73 — PASS:** Model renderer omits material unknown; validator rejects output.
+- **IRE06-74 — PASS:** Template renderer produces valid answer with model disabled.
+- **IRE06-75 — PASS:** One sibling subquestion answered while another remains unknown.
+- **IRE06-76 — PASS:** Unresolved sibling does not suppress supported sibling.
+- **IRE06-77 — PASS:** Answer ordering changes without changing evidence strength.
+- **IRE06-78 — PASS:** Statement wording changes while proposition identity remains stable.
+- **IRE06-79 — PASS:** Changed event window creates a new statement proposition identity.
+- **IRE06-80 — PASS:** Changed subject creates a new statement identity rather than silent refresh.
+- **IRE06-81 — PASS:** Statement removed from current answer remains historical communication if previously sent.
+- **IRE06-82 — PASS:** Visible citation exists but source payload is no longer resolvable.
+- **IRE06-83 — PASS:** Basis is resolvable internally but requester lacks inspectBasis permission.
+- **IRE06-84 — PASS:** Exact basis hidden but coarse provenance allowed; conclusion remains appropriately bounded.
+- **IRE06-85 — PASS:** Hidden material limitation requires narrowing/withholding rather than stronger visible prose.
+- **IRE06-86 — PASS:** Conclusion visible while exact basis withheld.
+- **IRE06-87 — PASS:** Requester may inspect privately but cannot export/forward.
+- **IRE06-88 — PASS:** Executive projection is coarser than analyst projection without contradicting same proposition.
+- **IRE06-89 — PASS:** Opaque basis existence itself is sensitive and withheld.
+- **IRE06-90 — PASS:** Repeated queries could reveal hidden count; policy prevents differencing leak.
+- **IRE06-91 — PASS:** Communication approved for release but approval does not strengthen truth.
+- **IRE06-92 — PASS:** Delivery event exists without bound content snapshot; exact wording remains unproven.
+- **IRE06-93 — PASS:** Bound snapshot plus delivery event proves what was delivered to that channel.
+- **IRE06-94 — PASS:** Read receipt is absent; delivery does not imply reading.
+- **IRE06-95 — PASS:** User later relies on answer; reliance evidence is separate from delivery.
+- **IRE06-96 — PASS:** Refreshed Explanation supersedes prior current-use preference without overwriting prior snapshot.
+- **IRE06-97 — PASS:** Authorization-driven projection change is not a truth change.
+- **IRE06-98 — PASS:** Retained snapshot reaches policy TTL but active incident pin preserves it.
+- **IRE06-99 — PASS:** Incident closes and pin releases; lifecycle policy can age snapshot/basis.
+- **IRE06-100 — PASS:** Routine draft/model trace expires while authentic released Explanation remains retained.
+- **IRE06-101 — PASS:** Question decomposition model proposes wrong subject; deterministic identity validation rejects it.
+- **IRE06-102 — PASS:** Model suggests unsupported root cause; suggestion stays a lead.
+- **IRE06-103 — PASS:** Model free-form response invents a run version; render validator rejects it.
+- **IRE06-104 — PASS:** Tool call requests evidence outside authorized scope; tool denies it.
+- **IRE06-105 — PASS:** Model receives only Statement IR and permitted basis projection.
+- **IRE06-106 — PASS:** Model endpoint unavailable; template answer still returns.
+- **IRE06-107 — PASS:** Model quota exhausted; truth status remains unchanged.
+- **IRE06-108 — PASS:** AI Search unavailable; exact retrieval still supports answer.
+- **IRE06-109 — PASS:** Prompt alias moves to new version; invocation records resolved immutable prompt version.
+- **IRE06-110 — PASS:** Prompt Registry unavailable; DMTZ prompt revision record still identifies invocation.
+- **IRE06-111 — PASS:** MLflow trace missing; canonical model invocation record still exists.
+- **IRE06-112 — PASS:** MLflow trace exists but Explanation snapshot missing; trace is not authentic communication.
+- **IRE06-113 — PASS:** Two model calls return same conclusion; no corroboration credit.
+- **IRE06-114 — PASS:** Model upgrade changes prose style but not Statement IR status.
+- **IRE06-115 — PASS:** External model prohibited by residency policy; provider-neutral gateway selects permitted route or deterministic fallback.
+- **IRE06-116 — PASS:** GAP-009-19 durable Investigation state is represented without external case-system dependency.
+- **IRE06-117 — PASS:** GAP-009-25/26 replay works from retained evidence and availability-by-K rather than vendor retention alone.
+- **IRE06-118 — PASS:** GAP-009-27/28 authentic communication and prior inspectBasis require retained snapshots, never reconstruction by convenience.
+- **IRE06-119 — PASS:** GAP-009-29–31 historical authorization/basis durability/sensitive disclosure compose without collapsing current access into history.
+- **IRE06-120 — PASS:** Group 07 receives only exact Statement/Assessment/proposition identities; model recommendations cannot become active control decisions.

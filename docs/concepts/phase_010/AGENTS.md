@@ -22,7 +22,8 @@ Before accepting an `ARCH-###` contract, preserve and consult:
 - Phase 010 Group 02 ARCH-033–ARCH-080;
 - Phase 010 Group 03 ARCH-081–ARCH-132;
 - Phase 010 Group 04 ARCH-133–ARCH-190;
-- Phase 010 Group 05 ARCH-191–ARCH-274.
+- Phase 010 Group 05 ARCH-191–ARCH-274;
+- Phase 010 Group 06 ARCH-275–ARCH-350.
 
 Earlier functional/integration semantics remain authoritative. Architecture may realize them; it may not simplify them away.
 
@@ -53,8 +54,8 @@ Review Phase 010 in this order:
 3. Identity, Scope, Authority, Authorization & Disclosure Architecture — **accepted**;
 4. Source Acquisition, Adapter, Synchronization & Integration-Health Architecture — **accepted**;
 5. Runtime Provenance, Health, Lineage & Impact Evidence Architecture — **accepted**;
-6. Investigation, Reasoning, Historical Replay & Explanation Architecture — **next**;
-7. Execution Gate, Propagation Safeguard & Active-Control Architecture;
+6. Investigation, Reasoning, Historical Replay & Explanation Architecture — **accepted**;
+7. Execution Gate, Propagation Safeguard & Active-Control Architecture — **next**;
 8. Serving, Security, Deployment, Observability & Cost Architecture;
 9. Architecture Consolidation, Validation & Phase 010 Exit.
 
@@ -247,20 +248,65 @@ Later architecture work must preserve:
 
 Group 05 selects canonical record/attestation interfaces but no graph product, runtime-attestation SDK language, tracing vendor, external BI telemetry vendor, incident/business system, event bus, serving topology or LLM stack.
 
-## Group 06 discipline
+## Group 06 accepted discipline
 
-Group 06 must design Investigation, Causal Claim, historical replay and Explanation over ARCH-001–ARCH-274.
+ARCH-275–ARCH-350 and IRE06-01–IRE06-120 are accepted.
+
+Later architecture work must preserve:
+
+- canonical Investigation identity independent from alerts/tickets/chats/model sessions;
+- non-rewriting Investigation scope/lifecycle/reopen history;
+- leads as inquiry state with human/rule/graph/search/model generation provenance but no automatic truth or authority;
+- lead exclusion requiring proposition-specific contradiction/exclusion evidence and adequate coverage;
+- annotations as commentary unless separately evidenced;
+- reasoning graph/search/vector state as derived/rebuildable projection over canonical journals;
+- semantically typed graph edges with exact canonical/derivation provenance;
+- bounded graph traversal and graph distance/centrality/path count not becoming causal or Impact rank;
+- Delta node/edge projection as the MVP graph realization, with specialized graph technology only for measured later needs;
+- exact structured retrieval before semantic/vector candidate retrieval;
+- semantic similarity as candidate recall only;
+- tenant/residency/authorization/disclosure filtering before sensitive retrieval/model exposure where metadata itself can leak;
+- versioned Reasoning Plan/Run identity with rules, source watermarks, knowledge cut and authorization context;
+- deterministic versioned evidence/status/negative-coverage/authority evaluation where accepted contracts define it;
+- explicit derivation rules for cross-concept statements; prose adjacency never a semantic join;
+- canonical Causal Claim persistence using the accepted six-state vocabulary;
+- `confirmed` remaining REF-017 + AUTH-034 gated and `rejected` requiring contradiction/exclusion evidence;
+- localization/counterfactual analysis remaining distinct from realized causal truth;
+- historical replay bound to event/effective window plus availability-by-K;
+- late evidence excluded from earlier as-known cuts and corrections/supersessions non-rewriting;
+- canonical bitemporal journals rather than Delta time travel/current graph/current policy as replay truth;
+- expired/missing basis constraining replay rather than being reconstructed from provenance stubs;
+- reconstructed historical Explanation distinct from authentic retained communication;
+- Statement IR and Answer IR carrying exact proposition/status/basis/material limitations before rendering;
+- sibling partial answers without global confidence/completeness scores;
+- deterministic template rendering available without model service;
+- model/UI/API/template renderers epistemically equivalent and validated against Statement IR;
+- `inspectBasis` separately authorized itemwise, with reference visibility/resolvability/payload availability/permission distinct;
+- authentic retained Explanation snapshots for promised communication replay;
+- composition/approval/release/delivery/read/reliance evidence kept distinct;
+- snapshot/basis/model-trace retention governed by explicit product/audit/value horizon rather than indefinite accumulation;
+- provider-neutral model invocation, with Databricks AI/model facilities only conditional deployment realizations;
+- immutable model/prompt/template/tool identity for each invocation;
+- model roles limited to interpretation/lead/candidate/rendering assistance and bounded tools;
+- free-form model output never becoming domain fact;
+- model/provider agreement not becoming independent corroboration;
+- semantic index/model/MLflow/Prompt Registry failure degrading convenience/observability rather than source truth or basic answerability.
+
+Group 06 selects deterministic reasoning, Statement/Answer IR and the Delta graph-projection MVP, but no final LLM/provider, embedding model, agent framework, dedicated graph product, orchestration runtime, UI/API topology, secrets implementation or active-control technology.
+
+## Group 07 discipline
+
+Group 07 must design Execution Gate and Propagation Safeguard over ARCH-001–ARCH-350.
 
 It must not:
 
-- infer missing run/deployment/input/output/version bindings through graph proximity or narrative convenience;
-- convert Investigation lead/localization into Causal Claim truth;
-- convert Lineage, timing, reconciliation or exposure sequence into causality;
-- let model/LLM output create source truth, evidence sufficiency, Assertion Authority or disclosure permission;
-- rebuild current source state into as-known-at-K history without availability evidence;
-- label reconstruction as authentic retained communication;
-- hide Group 04/05 acquisition, runtime, Lineage or Impact limitations in summaries;
-- broaden a partial answer merely because other sibling evidence is strong.
+- use a model recommendation, Investigation lead, semantic-search candidate, rendered Explanation sentence or reasoning-cache entry directly as a control decision;
+- collapse criterion/evidence suitability, readiness, Gate decision, delivery/acceptance, enforcement and actual execution;
+- collapse Execution Gate and Propagation Safeguard;
+- infer Safeguard prevention from configuration/enforcement without exact opportunity/path/alternate-path evidence;
+- infer ADMIT/HOLD from enabled configuration alone;
+- let current reasoning/model/search degradation silently change fail-open/fail-closed behavior without explicit governed policy;
+- convert current control recovery/release into historical healthy/current state or causal success.
 
 ## Cross-group invariants
 
@@ -286,6 +332,7 @@ Preserve all accepted durable boundaries, especially:
 - retained/archived evidence ≠ disclosure permission;
 - payload expired ≠ source absent;
 - graph/search/cache projection ≠ canonical truth;
+- semantic similarity/model output ≠ source truth/evidence strength/causal status;
 - current authorization ≠ historical authorization;
 - actual authorization decision ≠ replay-derived authorization ≠ enforcement/action;
 - service processing authorization ≠ requester visibility;
@@ -294,13 +341,15 @@ Preserve all accepted durable boundaries, especially:
 - Lineage ≠ encounter ≠ exposure ≠ effect ≠ consequence ≠ causality;
 - query execution ≠ human view ≠ decision reliance;
 - Investigation/localization ≠ Causal Claim truth;
+- historical as-known reconstruction ≠ retained authentic communication ≠ current retrospective interpretation;
+- Statement IR ≠ prose wording;
+- conclusion visibility ≠ inspectBasis permission;
 - readiness ≠ Gate decision ≠ enforcement ≠ execution;
 - Execution Gate ≠ Propagation Safeguard;
 - Safeguard enforcement ≠ REF-028 prevention;
-- reconstructed historical Explanation ≠ authentic retained communication;
 - internal basis traceability ≠ universal visible raw evidence;
 - cost/quota optimization ≠ relaxed evidence burden;
-- optional source/instrumentation absence ≠ benign default;
+- optional source/instrumentation/model/index absence ≠ benign default;
 - architecture convenience ≠ semantic permission.
 
 ## Environment facts
@@ -343,4 +392,4 @@ Material decisions must follow the accepted ADR rubric rather than relying on fa
 
 ## Current state
 
-**Phase 010 is IN PROGRESS. Groups 01–05 are accepted: ARCH-001–ARCH-274; AFE01-01–AFE01-60, EPT02-01–EPT02-72, IAD03-01–IAD03-84, AHI04-01–AHI04-96 and RHI05-01–RHI05-108 pass. Group 06 — Investigation, Reasoning, Historical Replay & Explanation Architecture is next.**
+**Phase 010 is IN PROGRESS. Groups 01–06 are accepted: ARCH-001–ARCH-350; AFE01-01–AFE01-60, EPT02-01–EPT02-72, IAD03-01–IAD03-84, AHI04-01–AHI04-96, RHI05-01–RHI05-108 and IRE06-01–IRE06-120 pass. Group 07 — Execution Gate, Propagation Safeguard & Active-Control Architecture is next.**
