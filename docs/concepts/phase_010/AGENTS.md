@@ -21,7 +21,8 @@ Before accepting an `ARCH-###` contract, preserve and consult:
 - Phase 010 Group 01 ARCH-001–ARCH-032;
 - Phase 010 Group 02 ARCH-033–ARCH-080;
 - Phase 010 Group 03 ARCH-081–ARCH-132;
-- Phase 010 Group 04 ARCH-133–ARCH-190.
+- Phase 010 Group 04 ARCH-133–ARCH-190;
+- Phase 010 Group 05 ARCH-191–ARCH-274.
 
 Earlier functional/integration semantics remain authoritative. Architecture may realize them; it may not simplify them away.
 
@@ -51,8 +52,8 @@ Review Phase 010 in this order:
 2. Evidence, Provenance, Temporal & Persistence Architecture — **accepted**;
 3. Identity, Scope, Authority, Authorization & Disclosure Architecture — **accepted**;
 4. Source Acquisition, Adapter, Synchronization & Integration-Health Architecture — **accepted**;
-5. Runtime Provenance, Health, Lineage & Impact Evidence Architecture — **next**;
-6. Investigation, Reasoning, Historical Replay & Explanation Architecture;
+5. Runtime Provenance, Health, Lineage & Impact Evidence Architecture — **accepted**;
+6. Investigation, Reasoning, Historical Replay & Explanation Architecture — **next**;
 7. Execution Gate, Propagation Safeguard & Active-Control Architecture;
 8. Serving, Security, Deployment, Observability & Cost Architecture;
 9. Architecture Consolidation, Validation & Phase 010 Exit.
@@ -194,21 +195,72 @@ Later architecture work must preserve:
 
 Group 04 selects no universal event bus, queue product, orchestration engine, worker runtime, secret store, observability vendor, API gateway or deployment topology.
 
-## Group 05 discipline
+## Group 05 accepted discipline
 
-Group 05 must design runtime provenance, health, Lineage and Impact evidence over ARCH-001–ARCH-190.
+ARCH-191–ARCH-274 and RHI05-01–RHI05-108 are accepted.
+
+Later architecture work must preserve:
+
+- run/task/retry/repair/backfill identities as distinct source-backed executions;
+- immutable Git commit identity separate from mutable branch/tag labels;
+- Change Intent, GitHub CI, GitHub Deployment, target deployment, activation and Databricks run as separate evidence stages;
+- cross-system correlation ID/attestation as join evidence, not truth or authority;
+- direct-Git Databricks `used_commit` as run-specific code evidence only for qualifying task/source scope;
+- bundle/workspace/Git-folder exact revision unresolved unless deployment/content/run attestation establishes it;
+- deployment manifest distinct from actual run execution and realized target state;
+- run-specific implementation manifest across code/config/parameters/runtime/compute/libraries/environment/external-config facets;
+- missing implementation facets preserved as partial rather than filled from current state;
+- secret/config references minimized and disclosure-governed;
+- exact input consumption bound to run/task/query evidence or approved attestation;
+- table history/current/latest state not used as generic exact input-version evidence;
+- file/object version/generation/digest and streaming offset/range semantics source-specific;
+- multi-input manifest completeness explicit with sibling unknowns preserved;
+- current-cycle alignment as an explicit cycle/window proposition;
+- output existence/version based on exact production/write/transaction/attestation evidence;
+- run success/failure distinct from output existence/non-existence/health;
+- every measurement bound to exact target, definition/profile revision, window/grain, source and acquisition context;
+- measurement→run/output/version attribution explicit rather than temporal convenience;
+- commit freshness, event-time freshness, publication, ingestion, processing and acquisition lag kept separate;
+- completeness/volume/schema/compatibility/expectation/baseline/reconciliation observations not flattened;
+- Baseline/anomaly typicality distinct from normative Expectation/Assessment;
+- reconciliation discrepancy distinct from cause;
+- health conflict retained and no universal asset-health rollup;
+- health strong negatives requiring applicable check/population and acquisition coverage;
+- Lineage edges typed, temporal, source-provenanced and coverage-limited;
+- source-documented incomplete Lineage preserved as incomplete rather than absence;
+- rename/incarnation identity semantics inherited from Group 03;
+- stable statement/query IDs used for source-supported encounter joins only;
+- direct/indirect Lineage preserved distinctly;
+- Lineage reachability never becoming actual consumption/exposure/effect/cause;
+- consumer encounter identity/use context independent from availability/publication;
+- query execution independent from human viewing/decision reliance;
+- cache/materialization/result state separately versioned from upstream current state;
+- exact affected-version exposure requiring encounter + version/state binding;
+- multi-hop exposure evaluated hop-by-hop rather than transitively;
+- alternate-path coverage required for global non-exposure;
+- exposure, technical effect, analytical/decision effect, business/customer/financial consequence and Causal Claim separate;
+- vendor downstream-impact/RCA/Criticality retained only as bounded source Assessments;
+- external BI/application use and business consequence sources optional/environment-specific;
+- `not exposed`, `no effect`, `no consequence` requiring exact population/path/outcome and Group 04 coverage;
+- late/backfilled evidence changing current retrospective state without rewriting earlier K;
+- derived operational graph as rebuildable projection over canonical journals.
+
+Group 05 selects canonical record/attestation interfaces but no graph product, runtime-attestation SDK language, tracing vendor, external BI telemetry vendor, incident/business system, event bus, serving topology or LLM stack.
+
+## Group 06 discipline
+
+Group 06 must design Investigation, Causal Claim, historical replay and Explanation over ARCH-001–ARCH-274.
 
 It must not:
 
-- infer exact deployment/run/input/output identity from names or timestamp proximity;
-- infer run-specific implementation state from current Deployment alone;
-- infer consumed input version from latest/current source state;
-- infer output existence/health/currentness from run success alone;
-- treat a connector gap as no run/output/measurement/dependency/encounter/exposure/effect;
-- use Lineage reachability as encounter/exposure/Impact/cause;
-- ignore source acquisition coverage when issuing strong operational/Impact negatives;
-- turn health measurement availability into normative authority;
-- collapse source publication time, run time, measurement time and knowledge time.
+- infer missing run/deployment/input/output/version bindings through graph proximity or narrative convenience;
+- convert Investigation lead/localization into Causal Claim truth;
+- convert Lineage, timing, reconciliation or exposure sequence into causality;
+- let model/LLM output create source truth, evidence sufficiency, Assertion Authority or disclosure permission;
+- rebuild current source state into as-known-at-K history without availability evidence;
+- label reconstruction as authentic retained communication;
+- hide Group 04/05 acquisition, runtime, Lineage or Impact limitations in summaries;
+- broaden a partial answer merely because other sibling evidence is strong.
 
 ## Cross-group invariants
 
@@ -224,6 +276,12 @@ Preserve all accepted durable boundaries, especially:
 - HTTP/request success ≠ page/population/window completeness;
 - webhook/stream silence ≠ no event;
 - integration recovery ≠ historical gap erasure;
+- Git/CI/deployment status ≠ target activation ≠ execution;
+- run success ≠ output existence ≠ output health/currentness;
+- active deployment/current config ≠ run-specific implementation state;
+- current/latest input ≠ exact consumed input;
+- Lineage read/dependency ≠ exact consumed version;
+- measurement availability/vendor health label ≠ normative authority;
 - storage retention ≠ reporting relevance;
 - retained/archived evidence ≠ disclosure permission;
 - payload expired ≠ source absent;
@@ -233,7 +291,8 @@ Preserve all accepted durable boundaries, especially:
 - service processing authorization ≠ requester visibility;
 - Assertion Authority ≠ evidence sufficiency ≠ Capability Authorization;
 - Baseline ≠ Expectation ≠ Observation ≠ Assessment;
-- Lineage ≠ exposure ≠ effect ≠ consequence ≠ causality;
+- Lineage ≠ encounter ≠ exposure ≠ effect ≠ consequence ≠ causality;
+- query execution ≠ human view ≠ decision reliance;
 - Investigation/localization ≠ Causal Claim truth;
 - readiness ≠ Gate decision ≠ enforcement ≠ execution;
 - Execution Gate ≠ Propagation Safeguard;
@@ -241,7 +300,7 @@ Preserve all accepted durable boundaries, especially:
 - reconstructed historical Explanation ≠ authentic retained communication;
 - internal basis traceability ≠ universal visible raw evidence;
 - cost/quota optimization ≠ relaxed evidence burden;
-- optional source absence ≠ benign default;
+- optional source/instrumentation absence ≠ benign default;
 - architecture convenience ≠ semantic permission.
 
 ## Environment facts
@@ -284,4 +343,4 @@ Material decisions must follow the accepted ADR rubric rather than relying on fa
 
 ## Current state
 
-**Phase 010 is IN PROGRESS. Groups 01–04 are accepted: ARCH-001–ARCH-190; AFE01-01–AFE01-60, EPT02-01–EPT02-72, IAD03-01–IAD03-84 and AHI04-01–AHI04-96 pass. Group 05 — Runtime Provenance, Health, Lineage & Impact Evidence Architecture is next.**
+**Phase 010 is IN PROGRESS. Groups 01–05 are accepted: ARCH-001–ARCH-274; AFE01-01–AFE01-60, EPT02-01–EPT02-72, IAD03-01–IAD03-84, AHI04-01–AHI04-96 and RHI05-01–RHI05-108 pass. Group 06 — Investigation, Reasoning, Historical Replay & Explanation Architecture is next.**

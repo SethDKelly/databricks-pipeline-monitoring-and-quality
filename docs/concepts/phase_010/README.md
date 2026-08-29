@@ -1,6 +1,6 @@
 # Phase 010 — Technical Architecture
 
-**Status:** IN PROGRESS — Groups 01–04 accepted; Group 05 next
+**Status:** IN PROGRESS — Groups 01–05 accepted; Group 06 next
 
 ## Purpose
 
@@ -28,7 +28,7 @@ Phase 010 uses **ARCH-###** for durable technical-architecture contracts.
 
 `ARCH-###` records architecture constraints/decisions needed to realize accepted semantics. It must not redefine source facts, functional truth, evidence sufficiency, source authority, or product concepts already owned by earlier phases.
 
-Current accepted range: **ARCH-001–ARCH-190** from Groups 01–04.
+Current accepted range: **ARCH-001–ARCH-274** from Groups 01–05.
 
 ## Logical groups
 
@@ -96,17 +96,27 @@ Path: [`04_source_acquisition_adapter_synchronization_integration_health_archite
 
 ### Group 05 — Runtime Provenance, Health, Lineage & Impact Evidence Architecture
 
-**Status:** Next — not started
+**Status:** COMPLETE / ACCEPTED
 
-Realize Git/change/deployment/run/implementation/input/output correlations, health measurement provenance, reconciliation, topology, consumer encounter, cache/copy paths, exposure, downstream effect, and consequence evidence using acquisition coverage/health as evidence conditions.
+Accepted range: **ARCH-191–ARCH-274**. **RHI05-01–RHI05-108 pass.** Decisions D-1433–D-1490 accepted.
+
+Group 05 realizes exact/partial Change→deployment→activation→run correlation, run-specific implementation/input/output manifests, measurement/health provenance, typed historical Lineage, consumer encounter/cache/result state, exact-version exposure, downstream effect and consequence evidence.
+
+Its central evidence chain is:
+
+**source-owned runtime facts + selective attestation → exact/partial implementation/input/output manifests → measurements + governed Assessments → typed historical Lineage → actual encounter/version state → exposure → effect → consequence → Group 06 causal/reasoning handoff**.
+
+Native source evidence is preferred; selective DMTZ deployment/runtime/consumer attestation fills explicit gaps where the deployment chooses to support stronger propositions. Missing exact bindings remain partial/unknown rather than inferred from current/latest state. Group 04 coverage/integration health constrains every strong operational/Impact negative.
 
 Path: [`05_runtime_provenance_health_lineage_impact_evidence_architecture/README.md`](05_runtime_provenance_health_lineage_impact_evidence_architecture/README.md)
 
 ### Group 06 — Investigation, Reasoning, Historical Replay & Explanation Architecture
 
-**Status:** Planned
+**Status:** Next — not started
 
-Realize Investigation/Causal Claim persistence, reasoning-graph traversal, historical/as-known replay, current retrospective reasoning, statement-to-basis composition, `inspectBasis`, authentic retained Explanation communication, and any retrieval/LLM architecture.
+Realize Investigation/Causal Claim persistence, reasoning-graph traversal, historical/as-known replay, current retrospective reasoning, statement-to-basis composition, `inspectBasis`, authentic retained Explanation communication, and retrieval/LLM architecture where justified.
+
+Path: [`06_investigation_reasoning_historical_replay_explanation_architecture/README.md`](06_investigation_reasoning_historical_replay_explanation_architecture/README.md)
 
 ### Group 07 — Execution Gate, Propagation Safeguard & Active-Control Architecture
 
@@ -222,19 +232,58 @@ Later groups must also preserve:
 - optional-source absence as proposition-bound degradation, not benign default;
 - acquisition cost/volume observable without weakening required evidence coverage.
 
-## Architecture choices still intentionally open after Group 04
+## Group 05 accepted architecture discipline
 
-Groups 01–04 deliberately selected no final:
+Later groups must also preserve:
+
+- stable source run/task/attempt identities rather than name/time joins;
+- Git/CI/deployment/activation/run as separately evidenced transitions;
+- DMTZ correlation token/attestation as join evidence, not truth/authority;
+- direct-Git `used_commit` as strong code evidence only within its exact supported source/task scope;
+- bundle/workspace-source exact revision requiring deployment/content/run attestation where promised;
+- current workspace/job configuration never back-projected as run-specific state;
+- run implementation as a composite manifest with independent code/config/parameter/runtime/library/environment/external-config facets;
+- missing implementation facets remaining partial rather than inherited from current state;
+- exact input consumption requiring source/runtime/query evidence or approved attestation;
+- table history/latest state not becoming arbitrary exact read-version evidence;
+- multi-input completeness explicit and current-cycle alignment separately proven;
+- output existence/version requiring write/transaction/attestation evidence rather than run status/timestamp proximity;
+- measurement identity bound to exact target, definition/profile revision, window/grain and source/acquisition context;
+- run/output/version-specific health requiring explicit attribution;
+- event-time freshness distinct from commit/publication/ingestion/processing/acquisition lag;
+- Baseline/anomaly/typicality remaining distinct from Expectation and Assessment;
+- reconciliation mismatch not becoming causality;
+- typed historical Lineage with source/acquisition evidence and capture limitations;
+- missing Lineage under incomplete capture not becoming `no dependency`;
+- Lineage reachability not becoming consumption/encounter/exposure/effect/cause;
+- statement/query IDs used for encounter joins only where source semantics support them;
+- direct and indirect Lineage retained distinctly;
+- consumer encounter/use context distinct from resource availability;
+- cache/materialization/result-state provenance independent from current upstream state;
+- exact exposure requiring actual encounter plus affected-version/state evidence;
+- multi-hop exposure evaluated hop-by-hop and alternate paths considered for global negatives;
+- exposure, effect, consequence and Causal Claim kept distinct;
+- vendor downstream-impact/RCA labels retained as bounded vendor Assessments rather than DMTZ realized Impact/cause;
+- external BI/application use and business/customer/financial consequence remaining explicit optional telemetry/source integrations;
+- Group 04 acquisition coverage/integration health constraining all strong operational/Impact negatives;
+- derived operational graph/index remaining rebuildable projection rather than canonical truth.
+
+## Architecture choices still intentionally open after Group 05
+
+Groups 01–05 deliberately selected no final:
 
 - universal event bus or queue technology;
 - final workflow/orchestration/worker runtime;
 - source-adapter SDK implementation language/framework;
+- runtime-attestation SDK implementation language/framework;
 - external IAM/IdP product;
 - external policy-engine product or runtime packaging;
 - policy authoring UI/API/Git workflow;
 - graph database/product;
 - search/vector product;
 - cache/materialized-serving technology;
+- external BI/application telemetry vendor;
+- incident/business consequence source product;
 - credential/secrets implementation;
 - LLM/retrieval/embedding/reranking/template architecture;
 - Gate/Safeguard implementation;
@@ -253,8 +302,14 @@ Reject an architecture if it requires any of the following shortcuts:
 - source availability treated as Assertion Authority;
 - public vendor documentation treated as proof of tenant capability;
 - retained/copied evidence treated as newly authoritative or independent;
-- names or timestamp proximity used as exact entity/deployment/run joins;
-- vendor role/ownership/responsibility treated as automatic DMTZ Assertion Authority;
+- names or timestamp proximity used as exact entity/deployment/run/input/output joins;
+- Git branch/tag/current workspace state treated as historical executed revision without exact evidence;
+- successful CI/deployment status treated as target activation/run execution;
+- deployment manifest treated as proof every later run executed unchanged content;
+- current job/config/library/environment state projected backward as run-specific implementation state;
+- latest/current input state used as exact consumed version;
+- run success/failure used as output existence/non-existence proof;
+- output write timestamp proximity used as exact run-version correlation;
 - source discoverability or technical access treated as Monitoring Scope;
 - unknown scope membership treated as exclusion;
 - current membership/permission projected backward as historical authorization;
@@ -271,17 +326,25 @@ Reject an architecture if it requires any of the following shortcuts:
 - source publication lag ignored for current negatives;
 - schema/parser failure silently dropping evidence;
 - current integration recovery rewriting a prior evidence gap;
+- measurement label/source availability treated as normative health authority;
+- Baseline/anomaly/Expectation/Assessment flattened together;
+- Lineage traversal treated as consumption, exposure, Impact, or causality;
+- query/read activity automatically treated as human viewing or decision reliance;
+- cached/materialized state assumed equal to current upstream state;
+- multi-hop exposure propagated transitively;
+- one safe path treated as global non-exposure;
+- vendor downstream-impact/RCA or Criticality treated as realized Impact/cause;
+- exposure treated as effect/consequence, or consequence treated as cause;
+- missing external consumer/consequence telemetry converted into no impact;
 - current state projected backward as historical state;
 - missing/degraded telemetry converted into negative truth;
 - Delta transaction-log history used as the sole long-horizon product replay model;
 - physical compaction/downsampling silently rewriting semantic history;
 - retained old history automatically flooding routine reporting;
 - age alone treated as irrelevance or deletion justification;
-- Baseline, Expectation, Observation and Assessment flattened together;
-- Lineage traversal treated as exposure, Impact, or causality;
 - control configuration/request treated as effective enforcement;
 - reconstructed history labeled as authentic retained communication;
-- loss of proposition/source/basis/acquisition provenance;
+- loss of proposition/source/basis/acquisition/runtime/measurement/Lineage provenance;
 - one global confidence/health/Impact/control/replay/architecture/relevance/authorization/integration-health score;
 - unsupported capabilities hidden behind planned future instrumentation.
 
@@ -289,4 +352,4 @@ Reject an architecture if it requires any of the following shortcuts:
 
 Phase 010 should exit only when the architecture can demonstrate, through scenario replay and explicit traceability, that accepted semantics are technically realizable under deployment-verified environment/cost/latency/retention/security constraints and that all material residual gaps are resolved, reduced, intentionally scoped, or carried forward explicitly.
 
-**Group 05 — Runtime Provenance, Health, Lineage & Impact Evidence Architecture is next.**
+**Group 06 — Investigation, Reasoning, Historical Replay & Explanation Architecture is next.**
