@@ -1,0 +1,30 @@
+---
+description: Executable architecture/contract conformance and testing discipline. Apply to tests, fixtures, scenario manifests, validation tooling, and implementation exit evidence.
+globs:
+  - "tests/**"
+  - "**/*test*.py"
+  - "**/*fixture*"
+  - "**/*scenario*"
+  - "**/*traceability*"
+alwaysApply: false
+---
+
+# Testing and conformance
+
+Primary references:
+
+- `docs/implementation/validation_strategy.md`
+- `docs/implementation/traceability_and_change_control.md`
+- active implementation package acceptance gates.
+
+Rules:
+
+- prior design `PASS` is not executable proof;
+- prove behavior at the lowest appropriate level: unit/property → contract/schema → persistence → adapter → integration → product scenario → E2E;
+- material behavior should trace to stable SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH IDs where applicable;
+- fixture expected results should prefer semantic state/IR over brittle prose strings;
+- include adversarial unknown/partial/conflict/late/corrected/unauthorized/failure cases, not only happy paths;
+- tests for negative claims must model opportunity-to-observe/coverage, not merely absence from a fixture;
+- persistence tests must prove non-rewriting correction/supersession and knowledge-cut replay;
+- adapter tests must prove pagination/checkpoint/retry/schema/auth/throttle failure semantics;
+- exit reviews must cite real test/deployment evidence, known skips/unsupported scenarios, and residual debt.
