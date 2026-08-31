@@ -1,0 +1,29 @@
+---
+description: API, serving, authentication, disclosure, cache, secrets, tenant/residency, UI projection, and security guardrails. Apply to serving/API/UI/security-boundary code.
+globs:
+  - "src/dmtz/serving/**"
+  - "src/dmtz/api/**"
+  - "src/dmtz/security/**"
+  - "src/dmtz/ui/**"
+  - "frontend/**"
+  - "web/**"
+alwaysApply: false
+---
+
+# Serving and security
+
+Use `docs/implementation/agent_reference_index.md` to locate Phase 010 Groups 03/08 and Implementations 006/007.
+
+Preserve directly:
+
+- authentication ≠ canonical Principal binding ≠ Capability Authorization ≠ Assertion Authority;
+- service permission to process evidence ≠ requester permission to view/disclose it;
+- UI/API/cache/read models are derived projections, not parallel truth stores;
+- authorization-sensitive caches must be context-keyed and revalidated with bounded freshness;
+- unknown/partial/conflicting/stale/unavailable/withheld states remain visible and are not normalized to benign defaults;
+- safe abstraction must not silently upgrade epistemic status;
+- secrets/raw credentials never enter canonical evidence or routine logs;
+- human and workload identities are least privilege and separated where practical;
+- tenant/residency boundaries apply to derived stores, telemetry, caches, and retained communications;
+- callbacks/commands that affect control state require authenticity and replay protection;
+- direct unrestricted UI access to raw canonical/system tables is not the serving architecture.

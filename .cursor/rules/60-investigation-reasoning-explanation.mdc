@@ -1,0 +1,28 @@
+---
+description: Investigation, causal reasoning, historical replay, Statement/Answer IR, basis inspection, deterministic explanation, graph/search/model assistance guardrails.
+globs:
+  - "src/dmtz/investigation/**"
+  - "src/dmtz/reasoning/**"
+  - "src/dmtz/explanation/**"
+  - "src/dmtz/replay/**"
+alwaysApply: false
+---
+
+# Investigation, reasoning, Explanation
+
+Use `docs/implementation/agent_reference_index.md` to locate REF/EXPL/OPS contracts, Phase 010 Group 06, and Implementation 005/006.
+
+Preserve directly:
+
+- Investigation organizes inquiry; it does not own evidence or causal truth;
+- first deviation, localization, Lineage, deployment timing, change correlation, and leading hypothesis do not confirm cause;
+- Causal Claim states remain explicit and confirmation requires the accepted evidence + authority gates;
+- compatible contributors may coexist; one supported contributor does not reject others;
+- `primary`/percentage attribution requires comparative evidence;
+- historical replay is availability-by-knowledge-cut and does not project current state backward;
+- retained historical Explanation ≠ reconstructed historical Explanation;
+- Statement IR / Answer IR carry proposition, subject, perspective/time, epistemic state, basis, limitations, and disclosure-safe structure;
+- `inspectBasis` is separately authorized;
+- deterministic exact retrieval/rules precede semantic/vector recall where correctness depends on exactness;
+- graph/search/vector/model outputs are derived assistance and cannot manufacture truth, coverage, authority, causal confirmation, Impact, or disclosure permission;
+- model outage must not remove deterministic core answerability for the committed passive MVP.

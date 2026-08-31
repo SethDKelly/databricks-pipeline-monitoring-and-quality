@@ -1,0 +1,27 @@
+---
+description: Databricks, GitHub, and optional source adapter/acquisition guardrails including capability discovery, reconciliation, pagination, checkpoints, coverage, integration health, and quota behavior.
+globs:
+  - "src/dmtz/acquisition/**"
+  - "src/dmtz/integrations/**"
+  - "src/dmtz/adapters/**"
+alwaysApply: false
+---
+
+# Acquisition and integrations
+
+Use `docs/implementation/agent_reference_index.md` to locate INTG contracts, Phase 010 Group 04, Implementation 003, and the active adapter plan.
+
+Catastrophic-error guardrails:
+
+- target-environment capability must be verified; vendor documentation alone is not deployment proof;
+- raw vendor response objects are adapter evidence, not canonical DMTZ domain models;
+- source-native IDs remain provenance/binding inputs, not canonical identities by convenience;
+- partial pagination/window/partition coverage ≠ complete acquisition;
+- adapter error, timeout, throttle, 401/403, retention expiry, unsupported surface, parser/schema failure, or unknown coverage ≠ negative domain fact;
+- do not advance a checkpoint past unproven coverage;
+- reconciliation is the correctness path; streams/webhooks/incremental reads are accelerators unless explicitly proven otherwise;
+- retries/redelivery must be idempotent at canonical evidence identity;
+- acquisition/integration health is distinct from monitored-domain health;
+- quota exhaustion degrades freshness/coverage and is represented explicitly.
+
+Record run/attempt/request/page/window/checkpoint/capability revision and normalization provenance needed to explain what was or was not observed.
