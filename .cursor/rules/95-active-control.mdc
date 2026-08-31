@@ -1,0 +1,30 @@
+---
+description: Optional Execution Gate and Propagation Safeguard implementation guardrails. Apply only when implementing/reviewing active-control state, enforcement adapters, control authorization, prevention evidence, or Implementation 010.
+globs:
+  - "src/dmtz/control/**"
+  - "src/dmtz/gate/**"
+  - "src/dmtz/safeguard/**"
+  - "tests/control/**"
+alwaysApply: false
+---
+
+# Active control — optional capability
+
+Do not treat active control as required for the passive MVP unless the committed product profile says so.
+
+Use `docs/implementation/agent_reference_index.md` to locate OPS control contracts, Phase 010 Group 07 (ARCH-351–420), and Implementation 010.
+
+Preserve directly:
+
+- Execution Gate ≠ Execution History ≠ Propagation Safeguard;
+- readiness ≠ Gate decision ≠ issuance ≠ delivery/acceptance ≠ enforcement ≠ actual execution/non-execution;
+- HOLD ≠ failed run; ADMIT ≠ actual run;
+- override/fallback do not rewrite prerequisite evidence/readiness;
+- Safeguard proposal/configuration/authorization/request/attempt/effective enforcement/prevention/release/recovery are distinct;
+- active safeguard + non-exposure does not automatically prove prevented exposure;
+- REF-028 prevention requires exact opportunity, enforcement, alternate-path coverage, and relevant protected-state/path/cohort evidence;
+- release ≠ recovery;
+- authorization freshness is revalidated at enforcement time as required;
+- control channels require authenticity/replay protection;
+- model/vector/search output cannot issue authoritative control decisions;
+- SC-06 control capacity/failure domains are isolated from optional heavy workloads to the committed deployment requirement.

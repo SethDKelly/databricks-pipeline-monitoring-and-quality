@@ -1,0 +1,28 @@
+---
+description: Route DMTZ implementation work to the live implementation program, active package, frozen architecture handoff, and concise agent reference index. Use for implementation planning, task selection, or when project status/authority is unclear.
+globs:
+alwaysApply: false
+---
+
+# Implementation routing
+
+Do not infer current project status from historical phase documents or Git history.
+
+Start from:
+
+- `IMPLEMENTATION.md` — repository implementation entry point;
+- `docs/implementation/README.md` — sole living implementation-program status authority;
+- `docs/implementation/agent_reference_index.md` — compact domain-to-contract/document lookup;
+- `docs/implementation/AGENTS.md` — implementation engineering discipline;
+- the active implementation package/group plan;
+- `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md` — frozen architecture handoff.
+
+Current program entry is **Implementation 001 — Executable Foundations & Walking Skeleton** until `docs/implementation/README.md` says otherwise.
+
+Rules:
+
+- read only the active package/group plus domain-specific references needed for the task;
+- search stable contract IDs (`REF-###`, `AUTH-###`, `HLTH-###`, `OPS-###`, `EXPL-###`, `INTG-###`, `ARCH-###`) instead of loading whole phases;
+- code/tests/schemas/Databricks resources/CI are permitted within active implementation scope;
+- implementation convenience never supersedes accepted contracts;
+- design-scenario PASS is not executable implementation proof.
