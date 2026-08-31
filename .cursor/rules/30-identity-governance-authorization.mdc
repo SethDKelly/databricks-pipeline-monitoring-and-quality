@@ -1,0 +1,28 @@
+---
+description: Entity/Principal identity, Monitoring Scope, Assertion Authority, Capability Authorization, disclosure, governance, and policy guardrails. Apply to identity/governance/authorization code and related serving policy.
+globs:
+  - "src/dmtz/identity/**"
+  - "src/dmtz/governance/**"
+  - "src/dmtz/authorization/**"
+  - "src/dmtz/policy/**"
+alwaysApply: false
+---
+
+# Identity, governance, authorization
+
+Use `docs/implementation/agent_reference_index.md` to locate AUTH contracts, Phase 010 Group 03, and Implementation 002.
+
+Preserve directly:
+
+- Entity Identity ≠ source name/path/ID;
+- rename continuity requires evidence; delete/recreate does not imply identity;
+- Principal authentication/binding ≠ Capability Authorization;
+- Monitoring Scope ≠ Assertion Authority ≠ Capability Authorization;
+- Responsibility Assignment/title/admin/repository ownership ≠ Assertion Authority;
+- source assertion ≠ authoritative assertion; recency/count/ingestion order are not authority precedence;
+- evidence sufficiency ≠ authority ≠ authorization ≠ enforcement/action;
+- current visibility/disclosure permission does not rewrite historical truth or retained communication;
+- unknown/conflicting/unavailable authorization is not invented allow/deny;
+- tenant/environment boundaries must remain explicit.
+
+Authority and authorization decisions that materially affect outputs/actions retain rule/version/principal/time provenance.
