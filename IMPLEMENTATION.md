@@ -7,10 +7,18 @@ Phase 010 — Technical Architecture is complete. The repository is ready to beg
 1. [`docs/implementation/enterprise_team_handoff.md`](docs/implementation/enterprise_team_handoff.md) — team prerequisites, roles, pilot topology and first-week onboarding.
 2. [`docs/implementation/README.md`](docs/implementation/README.md) — implementation-program status and 001–011 roadmap.
 3. [`docs/implementation/001_executable_foundations_walking_skeleton/README.md`](docs/implementation/001_executable_foundations_walking_skeleton/README.md) — the first executable work package, 001-A–001-H.
-4. [`docs/implementation/technology_baseline.md`](docs/implementation/technology_baseline.md) — reference stack and version-pinning expectations.
-5. [`docs/implementation/validation_strategy.md`](docs/implementation/validation_strategy.md) — how the design scenario corpus becomes automated tests.
-6. [`docs/implementation/traceability_and_change_control.md`](docs/implementation/traceability_and_change_control.md) — how implementation decisions relate to frozen contracts and when architecture may be reopened.
-7. [`docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md`](docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md) — immediate frozen architecture handoff.
+4. [`docs/implementation/agent_reference_index.md`](docs/implementation/agent_reference_index.md) — compact agent/developer lookup from implementation area to the smallest authoritative contract/document set.
+5. [`docs/implementation/technology_baseline.md`](docs/implementation/technology_baseline.md) — reference stack and version-pinning expectations.
+6. [`docs/implementation/validation_strategy.md`](docs/implementation/validation_strategy.md) — how the design scenario corpus becomes automated tests.
+7. [`docs/implementation/traceability_and_change_control.md`](docs/implementation/traceability_and_change_control.md) — how implementation decisions relate to frozen contracts and when architecture may be reopened.
+8. [`docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md`](docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md) — immediate frozen architecture handoff.
+
+## Cursor / coding-agent guidance
+
+- Root [`AGENTS.md`](AGENTS.md) is the always-on repository constitution.
+- `.cursor/rules/*.mdc` contains scoped implementation-era rules; they route to canonical documents rather than duplicating phase histories.
+- `.cursor/BUGBOT.md` defines high-priority PR-review concerns for Cursor Bugbot.
+- Historical phase-specific Cursor rules were removed from the active rule set; authoritative semantics remain under `docs/` and prior rule text remains available through Git history.
 
 ## Immediate next work
 
