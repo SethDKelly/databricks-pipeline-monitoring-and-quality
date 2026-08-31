@@ -1,0 +1,29 @@
+---
+description: Canonical contract, evidence, provenance, temporal, historical replay, and persistence guardrails. Apply to core contracts, temporal/evidence models, schemas, and canonical persistence work.
+globs:
+  - "src/dmtz/contracts/**"
+  - "src/dmtz/temporal/**"
+  - "src/dmtz/evidence/**"
+  - "src/dmtz/persistence/**"
+  - "resources/schemas/**"
+alwaysApply: false
+---
+
+# Contracts, evidence, time, persistence
+
+Start with `docs/implementation/agent_reference_index.md`, then follow the Phase 010 Group 02 / active implementation references it names.
+
+Preserve directly:
+
+- canonical identity/reference IDs are distinct from source-local IDs;
+- Observation/evidence is not Assessment or truth-by-arrival;
+- event/effective time, source availability, collection/persistence, framework knowledge/recorded time, derived evaluation, correction/supersession, and communication time remain distinct where material;
+- current retrieval of an old fact does not backdate framework knowledge;
+- later evidence cannot appear in an earlier `known by K` cut;
+- correction/supersession appends/links state and preserves what was previously recorded;
+- missing/restricted/failed/unavailable evidence is not negative truth;
+- negative claims require bounded opportunity-to-observe and sufficient coverage;
+- Delta time travel is not the sole product definition of historical/as-known replay;
+- persistence/storage maintenance must not rewrite semantic history.
+
+Use stable REF/ARCH tags in tests and ADRs. Prefer opaque typed IDs and explicit temporal types over generic strings/timestamps.
