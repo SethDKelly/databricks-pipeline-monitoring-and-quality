@@ -19,6 +19,8 @@ Implementation does **not** create a new truth model. The accepted semantic/arch
 
 The Phase 010 implementation handoff is the immediate upstream contract: [`../concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md`](../concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md).
 
+For implementation-agent context routing, use [`agent_reference_index.md`](agent_reference_index.md). It maps implementation areas to the smallest relevant architecture/contract/document set so agents do not need to preload the complete design history.
+
 ## Status authority
 
 - `docs/README.md` remains the sole living authority for design-phase progression.
@@ -103,6 +105,15 @@ Each `00X_*` package should contain, at minimum:
 5. implementation ADRs for concrete technology choices that do not alter frozen semantics;
 6. risk/debt register updates;
 7. exit review showing test/deployment evidence rather than design-only PASS declarations.
+
+## Agent / Cursor rule architecture
+
+- Root `AGENTS.md` is the always-on repository constitution.
+- `.cursor/rules/*.mdc` is a small scoped routing/guardrail layer, not a duplicate of the design corpus.
+- No implementation-era Cursor rule is intentionally `alwaysApply: true`; relevance/file scoping should load domain rules only when needed.
+- `.cursor/BUGBOT.md` provides concise PR-review guardrails.
+- Historical phase-specific Cursor rules remain available in Git history but are not active Agent context.
+- `agent_reference_index.md` is the preferred bridge from an implementation task to exact stable IDs and canonical documents.
 
 ## Change control
 
