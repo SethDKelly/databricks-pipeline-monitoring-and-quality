@@ -1,0 +1,33 @@
+---
+description: Databricks deployment, GitHub Actions CI/CD, infrastructure, observability, SLO, capacity, quota, cost, backup/DR, and environment validation guardrails.
+globs:
+  - ".github/workflows/**"
+  - "databricks/**"
+  - "databricks.yml"
+  - "infra/**"
+  - "terraform/**"
+  - "**/*.tf"
+  - "src/dmtz/ops/**"
+alwaysApply: false
+---
+
+# Deployment, CI, operations
+
+Primary references:
+
+- `docs/implementation/technology_baseline.md`
+- `docs/implementation/agent_reference_index.md`
+- active implementation deployment/operations group plan.
+
+Rules:
+
+- deployment-specific versions/runtime/capabilities are pinned and verified, not assumed from generic vendor capability;
+- prefer workload identity/federation and service principals for automation; do not introduce long-lived secrets when a supported federation path exists;
+- keep environment configuration explicit/versioned and prevent cross-environment accidental writes;
+- deployment rollback must not rewrite canonical semantic history;
+- platform/integration/reasoning/control health dimensions remain distinct from monitored-domain health;
+- SLOs are service-class/deployment specific, not one global health score;
+- quota/backpressure/capacity failures degrade service/coverage explicitly and do not manufacture domain negatives;
+- cost policy cannot silently weaken evidence retention/control promises;
+- backup/restore/DR exercises must preserve explicit gaps and historical non-rewriting semantics;
+- optional integration outage should degrade only dependent capabilities.

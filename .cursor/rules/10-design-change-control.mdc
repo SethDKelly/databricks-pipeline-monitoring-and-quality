@@ -1,0 +1,29 @@
+---
+description: Guard design, architecture, ADR, and semantic changes during implementation. Apply when changing product meaning, architecture boundaries, implementation ADRs, or claiming a frozen contract cannot be realized.
+globs:
+  - "docs/**"
+  - "**/*adr*"
+  - "**/*decision*"
+alwaysApply: false
+---
+
+# Design and change control
+
+Primary references:
+
+- `docs/implementation/traceability_and_change_control.md`
+- `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/target_reference_architecture.md`
+- `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/adr_summary.md`
+- `docs/foundation/004_concept_design_method.md` only when functional concepts are intentionally being reconsidered.
+
+Escalation order:
+
+1. change concrete technology/configuration inside frozen contracts;
+2. explicitly narrow deployment capability/product promise if source support is insufficient;
+3. add instrumentation/attestation if the stronger proposition is required;
+4. raise an architecture change request only when no compliant realization exists;
+5. reopen functional semantics only for an intentional product change or an unavoidable required scenario the accepted model cannot represent.
+
+Implementation ADRs choose **how** a contract is realized; they do not silently redefine **what** it means.
+
+Any change request must name affected stable contract/scenario IDs and the executable consequences.

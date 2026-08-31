@@ -1,0 +1,32 @@
+---
+description: Health, quality, runtime provenance, change, Lineage, exposure, Impact, Baseline/Expectation, and reconciliation guardrails. Apply to monitoring evaluation and topology/impact code.
+globs:
+  - "src/dmtz/health/**"
+  - "src/dmtz/quality/**"
+  - "src/dmtz/runtime/**"
+  - "src/dmtz/lineage/**"
+  - "src/dmtz/impact/**"
+alwaysApply: false
+---
+
+# Health, runtime, Lineage, Impact
+
+Use `docs/implementation/agent_reference_index.md` to locate HLTH/OPS contracts, Phase 010 Group 05, and Implementation 004.
+
+Preserve directly:
+
+- successful execution ≠ timely execution ≠ freshness ≠ structural compatibility ≠ data quality;
+- metric definition ≠ metric Observation ≠ Assessment;
+- Expectation is normative; Baseline is descriptive;
+- within Baseline ≠ healthy, outside Baseline ≠ failed;
+- missing telemetry ≠ observed absence;
+- Change Intent ≠ Deployment ≠ realized Change;
+- timestamp proximity/name similarity alone cannot prove deployment/run/version association;
+- Lineage proposition ≠ generic graph edge;
+- Lineage reachability ≠ operational relevance ≠ encounter/exposure ≠ Impact ≠ cause;
+- downstream run/refresh timing alone does not prove affected-state exposure;
+- exposure ≠ downstream effect ≠ business consequence;
+- `not exposed` requires bounded negative-consumption/path coverage;
+- reconciliation/localization remains evidence, not root-cause confirmation.
+
+Keep dimension-scoped health states and explicit unknown/unsupported/unavailable/partial states instead of a universal health/confidence score.
