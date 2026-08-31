@@ -8,7 +8,9 @@ Live **design-phase** progression is declared only in [`docs/README.md#current-s
 
 Live **implementation-program** progression is declared only in [`docs/implementation/README.md`](docs/implementation/README.md). Implementation 001 is the next executable work package.
 
-For implementation-specific engineering rules, read [`docs/implementation/AGENTS.md`](docs/implementation/AGENTS.md) before adding code.
+For implementation-specific engineering rules, read [`docs/implementation/AGENTS.md`](docs/implementation/AGENTS.md) before adding code. For compact task-to-contract routing, use [`docs/implementation/agent_reference_index.md`](docs/implementation/agent_reference_index.md).
+
+Cursor project rules under `.cursor/rules/` are deliberately scoped and reference-driven. They are not a second system of record. Historical phase-specific Cursor rules have been removed from the active rule set to reduce context bloat and stale-status conflicts.
 
 ## Code is now permitted within active implementation scope
 
