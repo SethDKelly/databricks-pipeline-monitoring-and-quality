@@ -12,6 +12,18 @@ Implementation work is governed by:
 
 If code and accepted contracts disagree, the code is presumptively wrong until an explicit change request is accepted.
 
+## Cursor / agent context discipline
+
+Use `docs/implementation/agent_reference_index.md` as the compact routing surface for implementation agents.
+
+For routine work, prefer this context order:
+
+**root `AGENTS.md` → active scoped `.cursor/rules/*.mdc` rule → active implementation package/group plan → one or two domain architecture/reference documents → exact stable contract IDs/tests as needed.**
+
+Do not preload all SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH documentation. Search exact stable IDs when deeper semantics are required.
+
+Historical phase-specific Cursor rules have been removed from the active `.cursor/rules` set. Their authoritative semantics remain in `docs/` and their prior rule text remains available through Git history.
+
 ## Code is now allowed — within active implementation scope
 
 Phase 010 is complete. Application code, schemas, tests, Databricks resources, CI/CD and infrastructure changes may now be introduced **only when they are within the active implementation package and its acceptance gates**.
