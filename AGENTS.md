@@ -8,19 +8,45 @@ Live **design-phase** progression is declared only in [`docs/README.md#current-s
 
 Live **implementation-program** progression is declared only in [`docs/implementation/README.md`](docs/implementation/README.md).
 
-The immediate enabling work is the **Agentic Development Foundation**, whose accepted design and ADF-A–ADF-H execution sequence live in [`docs/agentic_development_foundation/README.md`](docs/agentic_development_foundation/README.md). Implementation 001 follows only after the implemented foundation passes its execution exit review.
+The immediate enabling work is the **Agentic Development Foundation**, whose accepted design and execution sequence live in [`docs/agentic_development_foundation/README.md`](docs/agentic_development_foundation/README.md). Implementation 001 follows only after the implemented foundation passes its execution exit review.
 
 For implementation-specific engineering rules, read [`docs/implementation/AGENTS.md`](docs/implementation/AGENTS.md) before adding product code. For compact task-to-contract routing, use [`docs/implementation/agent_reference_index.md`](docs/implementation/agent_reference_index.md); ADF execution will integrate this with a portable OKF v0.2 knowledge plane.
 
 Cursor project rules under `.cursor/rules/` are deliberately scoped and reference-driven. They are not a second system of record. Future Claude/Codex adapters must follow the same rule: tool-specific mechanics may not become competing semantic authority.
 
+## Shared agent authority
+
+The accepted shared agent scope policy is [`docs/agentic_development_foundation/authority_scope_policy.md`](docs/agentic_development_foundation/authority_scope_policy.md).
+
+When repository/tool instructions conflict, preserve this precedence:
+
+1. canonical DMTZ contracts and `docs/` authority;
+2. root `AGENTS.md`;
+3. live implementation/active-package or active-ADF status;
+4. accepted Agentic Development Foundation mechanics;
+5. tool-specific repository adapters;
+6. personal/user-level tool preferences and tool memory.
+
+A human request establishes the current task and requested action, but does not silently weaken higher repository/contract authority.
+
 ## Current agentic boundary
 
 The accepted Agentic Development Foundation is **human-directed**, not autonomous.
 
+Use these action classes:
+
+- **A1 — read/review/plan:** inspect and report; do not edit unless the human also requests changes.
+- **A2 — change/build/fix:** perform in-scope repository edits, directly necessary tests/fixtures/status/traceability updates, and safe non-destructive validation without repetitive permission prompts.
+- **A3 — external/destructive/scope-expanding:** require explicit task-specific human authorization plus applicable repository/team gates.
+- **A4 — architecture/semantic change:** follow DMTZ change control; never weaken contracts silently.
+
 Agents may inspect, edit and run safe/non-destructive validation within a task a human explicitly requests. They must not infer authority to create unrelated follow-on work, spawn implementation agents, reprioritize the backlog, merge/deploy unattended, or reopen architecture autonomously.
 
+Completing a requested group authorizes reporting the next eligible step; it does **not** authorize starting that step automatically.
+
 During ADF-A–ADF-H execution, repository changes may add agent configuration, OKF routing knowledge, portable workflow/skill definitions and deterministic validation helpers. Product/application implementation remains planned under Implementation 001 unless the user explicitly advances it separately.
+
+Tool memory, auto-memory, chat history and generated summaries are advisory only. A fact required for future correctness must be promoted into an appropriate repository artifact.
 
 ## Frozen incoming contract stack
 
