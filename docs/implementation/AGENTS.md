@@ -1,6 +1,6 @@
 # Implementation Agent / Developer Instructions
 
-**ADF status mirror: COMPLETE ADF-A–ADF-F; NEXT ADF-G.**
+**ADF status mirror: COMPLETE ADF-A–ADF-F; IN EXECUTION ADF-G.**
 
 ## Authority
 
@@ -34,7 +34,7 @@ Completing one group does not authorize beginning the next group automatically.
 
 ## Current implementation boundary
 
-The repository is still completing the Agentic Development Foundation. ADF-A–ADF-F are complete; ADF-G is next. Product/application implementation begins only after the full foundation exit and an explicitly active implementation package.
+The repository is still completing the Agentic Development Foundation. ADF-A–ADF-F are complete; **ADF-G is in execution with provider runtime smoke evidence still pending**. Product/application implementation begins only after ADF-G, ADF-H, the full foundation exit, and an explicitly active implementation package.
 
 ADF work may change agent configuration, knowledge/workflow routing, validation helpers and related documentation; it does not itself activate product code, Databricks resources, product schemas, or production infrastructure.
 
@@ -46,7 +46,7 @@ For agent-facing repository changes run:
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-The result is **agentic configuration conformance**, not DMTZ domain health or product/runtime proof. Actual Cursor/Claude Code/Codex behavior remains ADF-G evidence.
+The result is **agentic configuration conformance**, not DMTZ domain health or product/runtime proof. Provider runtime evidence is recorded independently in `docs/agentic_development_foundation/runtime_compatibility_evidence.json`.
 
 ## Engineering discipline once implementation activates
 
