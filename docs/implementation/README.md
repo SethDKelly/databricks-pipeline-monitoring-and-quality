@@ -1,6 +1,6 @@
 # DMTZ Implementation Program
 
-**Status:** PLANNED / BLOCKED ON AGENTIC FOUNDATION — ADF-A through ADF-D complete; ADF-E next; Implementation 001 follows foundation exit
+**Status:** PLANNED / BLOCKED ON AGENTIC FOUNDATION — ADF-A through ADF-E complete; ADF-F next; Implementation 001 follows foundation exit
 
 ## Purpose
 
@@ -19,7 +19,7 @@ Implementation does **not** create a new truth model. The accepted semantic/arch
 
 The Phase 010 implementation handoff is the immediate upstream contract: [`../concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md`](../concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md).
 
-For portable first-hop discovery use [`../../knowledge/index.md`](../../knowledge/index.md). For exact stable-ID/canonical-document routing, [`agent_reference_index.md`](agent_reference_index.md) remains a secondary compact bridge. Canonical `docs/` remains authority.
+For portable first-hop discovery use [`../../knowledge/index.md`](../../knowledge/index.md). For exact stable-ID lookup use the ADF-E policy/helper; [`agent_reference_index.md`](agent_reference_index.md) remains a compact secondary family/path bridge. Canonical `docs/` remains authority.
 
 ## Status authority
 
@@ -28,7 +28,7 @@ For portable first-hop discovery use [`../../knowledge/index.md`](../../knowledg
 - [`../agentic_development_foundation/README.md`](../agentic_development_foundation/README.md) owns pre-implementation ADF-A–ADF-H progression.
 - Each implementation package owns its internal group status.
 - Completed implementation packages require an exit review with executable evidence.
-- Code, agent configuration, knowledge entries, or skills may not silently supersede accepted design/architecture contracts.
+- Code, agent configuration, knowledge entries, reference registries, context budgets, or skills may not silently supersede accepted design/architecture contracts.
 
 ## Pre-implementation enabling foundation
 
@@ -40,10 +40,11 @@ Current ADF state:
 - **ADF-B — OKF v0.2 Knowledge Plane & DMTZ Knowledge Profile: COMPLETE / ACCEPTED.**
 - **ADF-C — Shared Instruction Hierarchy & Tool Adapter Contract: COMPLETE / ACCEPTED.**
 - **ADF-D — Portable Skills & Human-Directed Workflow Contract: COMPLETE / ACCEPTED.** Canonical workflows are under [`../../.agents/skills/`](../../.agents/skills/).
-- **ADF-E — Context Discovery, Stable References & Knowledge Maintenance: NEXT / READY.**
-- ADF-F–ADF-H remain planned behind their dependency gates.
+- **ADF-E — Context Discovery, Stable References & Knowledge Maintenance: COMPLETE / ACCEPTED.** See [`../agentic_development_foundation/adf_e_execution_review.md`](../agentic_development_foundation/adf_e_execution_review.md).
+- **ADF-F — Conformance, Validation, Drift Detection & CI: NEXT / READY.**
+- ADF-G–ADF-H remain planned behind their dependency gates.
 
-ADF-A's shared action/authority policy is [`../agentic_development_foundation/authority_scope_policy.md`](../agentic_development_foundation/authority_scope_policy.md). ADF-B's producer profile is [`../agentic_development_foundation/okf_profile.md`](../agentic_development_foundation/okf_profile.md). ADF-C's adapter state is [`../agentic_development_foundation/tool_compatibility.json`](../agentic_development_foundation/tool_compatibility.json). ADF-D's workflow contract is [`../agentic_development_foundation/portable_workflow_profile.md`](../agentic_development_foundation/portable_workflow_profile.md).
+ADF-A's shared action/authority policy is [`../agentic_development_foundation/authority_scope_policy.md`](../agentic_development_foundation/authority_scope_policy.md). ADF-B's producer profile is [`../agentic_development_foundation/okf_profile.md`](../agentic_development_foundation/okf_profile.md). ADF-C's adapter state is [`../agentic_development_foundation/tool_compatibility.json`](../agentic_development_foundation/tool_compatibility.json). ADF-D's workflow contract is [`../agentic_development_foundation/portable_workflow_profile.md`](../agentic_development_foundation/portable_workflow_profile.md). ADF-E's retrieval/reference/context policies are [`../agentic_development_foundation/context_discovery_policy.md`](../agentic_development_foundation/context_discovery_policy.md), [`../agentic_development_foundation/stable_reference_policy.md`](../agentic_development_foundation/stable_reference_policy.md), and [`../agentic_development_foundation/context_budget_policy.md`](../agentic_development_foundation/context_budget_policy.md).
 
 The foundation remains operational/tooling portability only. It does not alter DMTZ product semantics or authorize autonomous development.
 
@@ -131,8 +132,9 @@ Each `00X_*` package should contain, at minimum:
 - ADF-B defines `knowledge/` as portable OKF routing over canonical authority.
 - ADF-C defines thin adapters for Cursor, Claude Code and Codex.
 - ADF-D defines seven canonical portable workflows under `.agents/skills/`; Claude Code uses thin `.claude/commands/` bridges to those same files.
-- ADF-E will refine context/reference/maintenance discipline over these implemented layers.
-- No adapter, skill, knowledge entry or tool memory may become a DMTZ truth owner.
+- ADF-E defines shortest-path discovery, accepted stable-ID ranges/exact occurrence resolution, deterministic byte budgets, and changed-source knowledge-routing impact review.
+- ADF-F will integrate these validators/helpers and ADF-A–E fixtures into deterministic repository conformance/CI.
+- No adapter, skill, knowledge entry, stable-ID registry, context budget or tool memory may become a DMTZ truth owner.
 - Autonomous execution/orchestration remains outside the accepted foundation and Implementation 001 entry gate.
 
 ## Change control
@@ -149,7 +151,7 @@ No developer or agent may silently weaken a contract because it is easier to imp
 
 ## Current state
 
-**Agentic Development Foundation: IN EXECUTION — ADF-A through ADF-D COMPLETE / ACCEPTED; ADF-E NEXT / READY.** Complete ADF-E–ADF-H and the foundation execution exit review before beginning Implementation 001-A.
+**Agentic Development Foundation: IN EXECUTION — ADF-A through ADF-E COMPLETE / ACCEPTED; ADF-F NEXT / READY.** Complete ADF-F–ADF-H and the foundation execution exit review before beginning Implementation 001-A.
 
 **Implementation 001 — Executable Foundations & Walking Skeleton: PLANNED / READY AFTER AGENTIC FOUNDATION EXIT.** Groups 001-A–001-H remain defined in [`001_executable_foundations_walking_skeleton/README.md`](001_executable_foundations_walking_skeleton/README.md).
 
