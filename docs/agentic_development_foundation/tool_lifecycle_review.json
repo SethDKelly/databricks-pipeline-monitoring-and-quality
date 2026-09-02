@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "reviewed_on": "2026-09-02",
+  "policy": "docs/agentic_development_foundation/security_trust_lifecycle_policy.md",
+  "default_horizons_days": {
+    "instruction_and_workflow_compatibility": 90,
+    "security_privacy_retention": 30,
+    "runtime_smoke": 60
+  },
+  "tools": {
+    "cursor": {
+      "instruction_reviewed_on": "2026-09-02",
+      "security_reviewed_on": "2026-09-02",
+      "runtime_status": "unverified",
+      "official_sources": [
+        "https://prod.cursor.com/docs/rules",
+        "https://prod.cursor.com/docs/enterprise/security-hardening",
+        "https://prod.cursor.com/docs/enterprise/privacy-and-data-governance"
+      ],
+      "fallback": "Use checked-in AGENTS.md, canonical Markdown workflows and ordinary repository tooling; do not rely on unavailable native convenience."
+    },
+    "claude_code": {
+      "instruction_reviewed_on": "2026-09-02",
+      "security_reviewed_on": "2026-09-02",
+      "runtime_status": "unverified",
+      "official_sources": [
+        "https://code.claude.com/docs/en/memory",
+        "https://code.claude.com/docs/en/security",
+        "https://code.claude.com/docs/en/permissions"
+      ],
+      "fallback": "Use checked-in AGENTS.md and canonical .agents/skills Markdown directly when native bridge behavior is unavailable."
+    },
+    "codex": {
+      "instruction_reviewed_on": "2026-09-02",
+      "security_reviewed_on": "2026-09-02",
+      "runtime_status": "unverified",
+      "official_sources": [
+        "https://openai.com/index/running-codex-safely/",
+        "https://help.openai.com/en/articles/11369540"
+      ],
+      "fallback": "Use checked-in AGENTS.md, canonical Markdown workflows and ordinary repository tooling; do not infer runtime support from documentation alone."
+    }
+  },
+  "immediate_reverification_triggers": [
+    "runtime smoke failure",
+    "material instruction or skill discovery change",
+    "material permission sandbox privacy or retention change",
+    "new repository-level plugin MCP or remote execution integration",
+    "compatibility review horizon exceeded"
+  ]
+}
