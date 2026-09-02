@@ -1,0 +1,39 @@
+version: 1
+suite: ADF-B OKF knowledge-plane scenarios
+scenarios:
+  - id: ADF-B-01
+    name: progressive-domain-routing
+    expected: knowledge/index.md -> domains/index.md -> acquisition.md -> canonical Phase 010 Group 04
+  - id: ADF-B-02
+    name: active-program-routing
+    expected: knowledge/index.md -> project/implementation-program.md -> docs/implementation/README.md
+  - id: ADF-B-03
+    name: exact-contract-remains-canonical
+    expected: OKF route identifies contract family; exact stable ID is retrieved from canonical docs
+  - id: ADF-B-04
+    name: unknown-type-tolerated
+    expected: structurally valid concept with unknown type is not rejected solely for type value
+  - id: ADF-B-05
+    name: deprecated-entry-surfaced
+    expected: validator/consumer reports deprecated lifecycle instead of silently treating it as current
+  - id: ADF-B-06
+    name: stale-entry-surfaced
+    expected: stale_after in the past is reported as stale knowledge, not DMTZ freshness failure
+  - id: ADF-B-07
+    name: broken-resource-fails
+    expected: missing repository-relative resource is a validation error
+  - id: ADF-B-08
+    name: broken-local-link-fails
+    expected: missing local Markdown target is a validation error
+  - id: ADF-B-09
+    name: trust-firewall
+    expected: OKF verified/stable metadata does not imply Assertion Authority, evidence sufficiency, health or causal confirmation
+  - id: ADF-B-10
+    name: canonical-conflict-wins
+    expected: canonical resource overrides conflicting OKF summary; knowledge entry is corrected
+  - id: ADF-B-11
+    name: generated-layer-cannot-rewrite-docs
+    expected: knowledge generation/validation never mutates canonical DMTZ docs
+  - id: ADF-B-12
+    name: workflow-draft-is-explicit
+    expected: planned ADF-D workflow routes are draft until portable workflow artifacts exist
