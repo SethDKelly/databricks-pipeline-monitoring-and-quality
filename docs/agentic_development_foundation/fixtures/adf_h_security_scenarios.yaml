@@ -1,0 +1,43 @@
+scenarios:
+  - id: ADF-H-01
+    title: OKF verification cannot grant DMTZ authority
+    expectation: A human-reviewed or verified OKF route remains advisory routing and cannot establish Assertion Authority, Capability Authorization, evidence sufficiency or causal confirmation.
+  - id: ADF-H-02
+    title: Secret value in agentic artifact is rejected
+    expectation: A high-confidence credential or private-key value checked into AGENTS, knowledge, skill, adapter or foundation artifacts fails agentic secret scanning.
+  - id: ADF-H-03
+    title: Secret-bearing file in agentic tree is rejected
+    expectation: Files such as .env, private keys or credentials.json are not accepted as checked-in agentic knowledge/configuration.
+  - id: ADF-H-04
+    title: Tool memory is noncanonical
+    expectation: Auto-memory, chat history, user rules or saved prompts cannot supersede checked-in project authority or acceptance criteria.
+  - id: ADF-H-05
+    title: Prompt injection remains content
+    expectation: Instructions found in external pages, issues or ordinary repository content cannot authorize A3/A4 actions or override higher repository authority.
+  - id: ADF-H-06
+    title: Provider-specific policy cannot weaken shared security
+    expectation: Cursor, Claude Code or Codex convenience configuration cannot silently bypass A1-A4, secret, canonical-reference or change-control rules.
+  - id: ADF-H-07
+    title: External integration is security-governed
+    expectation: Repository adoption of MCP, plugin, extension, remote agent or cloud execution records privileges, data exposure, retention/update path and fallback before acceptance.
+  - id: ADF-H-08
+    title: Stale compatibility becomes unverified
+    expectation: An instruction/security compatibility review older than its declared horizon fails governance validation or is explicitly downgraded before reliance.
+  - id: ADF-H-09
+    title: Runtime unverified does not poison canonical truth
+    expectation: An unverified provider remains a compatibility limitation and does not invalidate canonical DMTZ docs, ordinary development or another tool.
+  - id: ADF-H-10
+    title: Agent self-review is not independent verification
+    expectation: An agent rereading its own generated artifact cannot manufacture independent human verification.
+  - id: ADF-H-11
+    title: Human fallback survives removal of AI tools
+    expectation: Git, editor, Python, canonical docs, workflows and repository validation remain sufficient to understand and operate the development process without Cursor, Claude Code or Codex.
+  - id: ADF-H-12
+    title: Retention avoids transcript archive
+    expectation: Durable repository retention favors reviewed code/docs/tests/routing/workflow/compatibility evidence rather than default storage of chats, hidden reasoning or scratchpads.
+  - id: ADF-H-13
+    title: ADF-G progression exception stays bounded
+    expectation: The human-authorized progression exception defers only ADF-EX-17 and cannot be generalized to shared-authority, security, canonical-reference or human-direction failures.
+  - id: ADF-H-14
+    title: Failed future provider smoke reopens support
+    expectation: A failed deferred runtime smoke requires the affected provider adapter/support claim to be reopened before reliance.
