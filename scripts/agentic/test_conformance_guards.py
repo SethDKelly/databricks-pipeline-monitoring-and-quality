@@ -47,10 +47,11 @@ def main() -> int:
         mutate_and_expect_failure(repo, 'IMPLEMENTATION.md', stale_status, 'validate_status_drift.py', 'stale implementation status mirror', errors)
         mutate_and_expect_failure(repo, 'knowledge/project/authority.md', lambda t: t.replace('resource:', 'resource: "../../definitely-missing.md"\nold_resource:', 1), 'validate_okf.py', 'broken canonical resource route', errors)
         mutate_and_expect_failure(repo, 'AGENTS.md', lambda t: t + '\nARCH-501\n', 'validate_agentic_references.py', 'unaccepted stable ID citation', errors)
+        mutate_and_expect_failure(repo, 'docs/agentic_development_foundation/runtime_compatibility_evidence.json', lambda t: t.replace('"runtime_status": "unverified"', '"runtime_status": "supported"', 1), 'validate_adf_g_compatibility.py', 'fabricated provider runtime support', errors)
 
     for error in errors:
         print(f'ERROR {error}')
-    print(f'Conformance guard tests: {len(errors)} error(s), 7 negative control(s)')
+    print(f'Conformance guard tests: {len(errors)} error(s), 8 negative control(s)')
     return 1 if errors else 0
 
 if __name__ == '__main__':
