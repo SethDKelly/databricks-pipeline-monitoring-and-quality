@@ -1,12 +1,14 @@
 # DMTZ Implementation Program
 
-**Status:** PLANNED / BLOCKED ON AGENTIC FOUNDATION — ADF-A through ADF-E complete; ADF-F next; Implementation 001 follows foundation exit
+**Status:** PLANNED / BLOCKED ON AGENTIC FOUNDATION — ADF-A THROUGH ADF-F COMPLETE / ACCEPTED; ADF-G NEXT; Implementation 001 follows foundation exit
 
-## Purpose
+**ADF status mirror: COMPLETE ADF-A–ADF-F; NEXT ADF-G.**
 
-This directory is the system of record for realization of the frozen DMTZ product, integration and technical architecture. It translates the accepted design stack through Phase 010 into executable software, infrastructure, automated validation and production-readiness work.
+## Purpose and authority
 
-Implementation does **not** create a new truth model. The accepted semantic/architecture stack remains authoritative:
+This directory is the system of record for realization of the frozen DMTZ product, integration and technical architecture. It translates the accepted design stack through Phase 010 into executable software, infrastructure, automated validation and production-readiness work; it does not create a new truth model.
+
+Accepted incoming ranges remain authoritative:
 
 - SYN-001–SYN-035;
 - REF-001–REF-030;
@@ -17,142 +19,124 @@ Implementation does **not** create a new truth model. The accepted semantic/arch
 - INTG-001–INTG-270;
 - ARCH-001–ARCH-500.
 
-The Phase 010 implementation handoff is the immediate upstream contract: [`../concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md`](../concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md).
+The immediate upstream architecture handoff is [`../concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md`](../concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md).
 
-For portable first-hop discovery use [`../../knowledge/index.md`](../../knowledge/index.md). For exact stable-ID lookup use the ADF-E policy/helper; [`agent_reference_index.md`](agent_reference_index.md) remains a compact secondary family/path bridge. Canonical `docs/` remains authority.
+Status authority:
 
-## Status authority
+- `docs/README.md` — design progression;
+- **this file** — implementation-program progression;
+- `../agentic_development_foundation/README.md` — pre-implementation ADF progression;
+- active implementation package README/group plan — package-local progression.
 
-- `docs/README.md` remains the sole living authority for design-phase progression.
-- **This file is the sole living authority for implementation-program progression.**
-- [`../agentic_development_foundation/README.md`](../agentic_development_foundation/README.md) owns pre-implementation ADF-A–ADF-H progression.
-- Each implementation package owns its internal group status.
-- Completed implementation packages require an exit review with executable evidence.
-- Code, agent configuration, knowledge entries, reference registries, context budgets, or skills may not silently supersede accepted design/architecture contracts.
+Code, tests, knowledge, skills, adapters, or CI may not silently supersede accepted design/architecture contracts.
 
-## Pre-implementation enabling foundation
+## Pre-implementation Agentic Development Foundation
 
-Before Implementation 001-A, complete the **Agentic Development Foundation**.
+Completed / accepted:
 
-Current ADF state:
+- ADF-A — shared authority and human-directed A1–A4 scope;
+- ADF-B — OKF v0.2 portable knowledge routing;
+- ADF-C — thin Cursor/Claude/Codex instruction adapters;
+- ADF-D — canonical portable workflows under `.agents/skills/`;
+- ADF-E — shortest-path context, exact stable references, knowledge maintenance and context budgets;
+- ADF-F — unified agentic conformance, drift detection, negative controls and CI.
 
-- **ADF-A — Authority, Scope & Human-Directed Operating Boundary: COMPLETE / ACCEPTED.**
-- **ADF-B — OKF v0.2 Knowledge Plane & DMTZ Knowledge Profile: COMPLETE / ACCEPTED.**
-- **ADF-C — Shared Instruction Hierarchy & Tool Adapter Contract: COMPLETE / ACCEPTED.**
-- **ADF-D — Portable Skills & Human-Directed Workflow Contract: COMPLETE / ACCEPTED.** Canonical workflows are under [`../../.agents/skills/`](../../.agents/skills/).
-- **ADF-E — Context Discovery, Stable References & Knowledge Maintenance: COMPLETE / ACCEPTED.** See [`../agentic_development_foundation/adf_e_execution_review.md`](../agentic_development_foundation/adf_e_execution_review.md).
-- **ADF-F — Conformance, Validation, Drift Detection & CI: NEXT / READY.**
-- ADF-G–ADF-H remain planned behind their dependency gates.
+Next:
 
-ADF-A's shared action/authority policy is [`../agentic_development_foundation/authority_scope_policy.md`](../agentic_development_foundation/authority_scope_policy.md). ADF-B's producer profile is [`../agentic_development_foundation/okf_profile.md`](../agentic_development_foundation/okf_profile.md). ADF-C's adapter state is [`../agentic_development_foundation/tool_compatibility.json`](../agentic_development_foundation/tool_compatibility.json). ADF-D's workflow contract is [`../agentic_development_foundation/portable_workflow_profile.md`](../agentic_development_foundation/portable_workflow_profile.md). ADF-E's retrieval/reference/context policies are [`../agentic_development_foundation/context_discovery_policy.md`](../agentic_development_foundation/context_discovery_policy.md), [`../agentic_development_foundation/stable_reference_policy.md`](../agentic_development_foundation/stable_reference_policy.md), and [`../agentic_development_foundation/context_budget_policy.md`](../agentic_development_foundation/context_budget_policy.md).
+- **ADF-G — Developer Tool Compatibility, Onboarding & Operating Model**;
+- ADF-H — Security, Trust, Lifecycle & Governance;
+- foundation execution exit review.
 
-The foundation remains operational/tooling portability only. It does not alter DMTZ product semantics or authorize autonomous development.
+Implementation 001-A begins only after that exit passes.
 
-## Program outcome
+ADF-F conformance command:
 
-The program is complete when an enterprise deployment can:
+```bash
+python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
+```
 
-1. acquire bounded evidence from supported sources with explicit capability, coverage, health and quota state;
-2. preserve canonical identity, provenance, time, governance and historical semantics without rewriting history;
-3. evaluate health/quality/change/Lineage/Impact propositions deterministically and preserve unknown/conflicting/partial states;
-4. organize Investigations and Causal Claims without manufacturing confirmation;
-5. reconstruct historical/as-known state by knowledge cut;
-6. produce authorization-aware Statement IR / Answer IR and basis inspection;
-7. serve business and engineering users through governed APIs/UI;
-8. operate with measurable SLOs, security, resilience, cost/quota governance and recovery procedures;
-9. pass the accepted MVP proof scenarios and applicable design scenario corpus as executable tests;
-10. optionally add model/search assistance and active control without changing passive truth semantics;
-11. graduate through production operational acceptance and architecture-conformance review.
+Agentic configuration PASS/FAIL is distinct from DMTZ domain/runtime health. ADF-G owns actual Cursor/Claude Code/Codex runtime smoke evidence.
 
 ## Implementation sequence
 
-| Implementation | Outcome | Required for core MVP? |
+| Implementation | Outcome | Core MVP? |
 |---|---|---:|
 | **001 — Executable Foundations & Walking Skeleton** | Buildable repo, executable contracts/invariants, minimal Delta history, first Databricks slice, first evidence-to-Statement-IR question | Yes |
 | **002 — Identity, Scope, Authority & Authorization Runtime** | Enterprise identity/governance/policy runtime and disclosure boundary | Yes |
 | **003 — Source Acquisition, Capability & Evidence Reliability** | Production-shaped Databricks/GitHub acquisition, reconciliation, coverage and integration health | Yes |
-| **004 — Runtime Provenance, Health, Quality, Change & Lineage** | Full passive monitoring evidence spine and representative Impact evidence | Yes |
+| **004 — Runtime Provenance, Health, Quality, Change & Lineage** | Passive monitoring evidence spine and representative Impact evidence | Yes |
 | **005 — Investigation, Impact Reasoning & Historical Replay** | Deterministic Investigation/Causal Claim/replay/Statement reasoning | Yes |
 | **006 — Serving, Explanation, Basis Inspection & User Experience** | Governed API/UI product experience | Yes |
 | **007 — Operationalization, Security, Resilience, SLO & Cost** | Production-shaped deployment/operations | Yes |
 | **008 — MVP Pilot Validation & Release Candidate** | Full MVP scenario proof and pilot release candidate | Yes |
-| **009 — Enterprise Expansion, Scale & Optional Integrations** | Multi-tenant/scale hardening plus optional Collibra/Immuta/search/model/graph accelerators as justified | Enterprise |
-| **010 — Active Control & Enterprise Control Plane** | Execution Gate / Propagation Safeguard realization | Optional unless control is a product commitment |
-| **011 — Production Graduation & Operational Acceptance** | Production deployment, burn-in, runbooks, support ownership and final conformance | Yes for GA |
+| **009 — Enterprise Expansion, Scale & Optional Integrations** | Multi-tenant/scale hardening plus optional integrations/accelerators | Enterprise |
+| **010 — Active Control & Enterprise Control Plane** | Execution Gate / Propagation Safeguard realization | Conditional |
+| **011 — Production Graduation & Operational Acceptance** | Production deployment, burn-in, runbooks, support ownership and final conformance | GA |
 
-Implementations 001–008 define the bounded MVP realization path. Implementation 009 extends the passive enterprise product. Implementation 010 is conditional on active-control scope. Implementation 011 graduates the actually committed product profile.
+Completion profiles:
 
-## Dependency rule
+- MVP: 001–008;
+- enterprise passive monitoring: 001–009 + 011, skipping 010 if active control is not committed;
+- full active-control enterprise: 001–011.
 
-The sequence is dependency-oriented. Limited overlap is allowed only when the upstream contract needed by downstream work is executable and stable. A team may parallelize within an implementation, but must not bypass the entry gate of a dependent capability.
+## Dependency and implementation rules
 
-Examples:
+The sequence is dependency-oriented. Limited overlap is allowed only after the upstream contract needed by dependent work is executable and stable. UI or adapters may progress in parallel where appropriate, but downstream work may not invent independent semantics.
 
-- UI shell work may begin before all reasoning features exist, but production Explanation rendering cannot define its own epistemic model.
-- Databricks and GitHub adapters may be developed in parallel after the adapter contract is stable.
-- Model/search assistance may be prototyped separately, but cannot become required for deterministic MVP acceptance.
-- Active-control adapters cannot be accepted before deterministic Gate/Safeguard state and authorization contracts are executable.
-
-## Cross-program non-negotiables
-
-Every implementation must preserve:
+Every implementation must preserve, among other accepted distinctions:
 
 - execution success ≠ data health;
 - freshness ≠ execution success;
 - Observation ≠ Assessment;
 - Expectation ≠ Baseline;
-- current state ≠ historical state;
+- current state ≠ historical/as-known state;
 - source availability ≠ authority;
 - evidence sufficiency ≠ Assertion Authority ≠ Capability Authorization;
 - Lineage ≠ exposure ≠ Impact ≠ causality;
 - correlation ≠ cause;
 - missing evidence ≠ negative truth;
-- unknown/conflicting/stale/partial/unavailable/withheld remain first-class states;
-- retained historical communication ≠ retrospective reconstruction;
+- unknown/conflicting/stale/partial/unavailable/withheld remain legitimate;
 - Gate readiness ≠ Gate decision ≠ enforcement ≠ execution;
 - Safeguard configuration ≠ enforcement ≠ prevention ≠ recovery;
 - model/search output cannot manufacture truth, authority, evidence sufficiency, confirmation or control decisions.
 
 ## Standard implementation package
 
-Each `00X_*` package should contain, at minimum:
+Each package should include:
 
-1. `README.md` — goal, scope, entry dependencies, group sequence and exit gate;
-2. group plans when iterative execution is required;
+1. README with goal/scope/dependencies/group sequence/exit gate;
+2. group plans where iterative execution is required;
 3. executable acceptance criteria;
-4. scenario/contract traceability to accepted design IDs;
-5. implementation ADRs for concrete technology choices that do not alter frozen semantics;
-6. risk/debt register updates;
-7. exit review showing test/deployment evidence rather than design-only PASS declarations.
+4. scenario/contract traceability;
+5. implementation ADRs for concrete choices that preserve frozen semantics;
+6. risk/debt updates;
+7. exit review with actual test/deployment evidence rather than design-only PASS.
 
-## Agent/tool architecture
+## Agent/developer routing
 
-- Root `AGENTS.md` is the shared repository constitution.
-- ADF-A defines the common human-directed A1–A4 model.
-- ADF-B defines `knowledge/` as portable OKF routing over canonical authority.
-- ADF-C defines thin adapters for Cursor, Claude Code and Codex.
-- ADF-D defines seven canonical portable workflows under `.agents/skills/`; Claude Code uses thin `.claude/commands/` bridges to those same files.
-- ADF-E defines shortest-path discovery, accepted stable-ID ranges/exact occurrence resolution, deterministic byte budgets, and changed-source knowledge-routing impact review.
-- ADF-F will integrate these validators/helpers and ADF-A–E fixtures into deterministic repository conformance/CI.
-- No adapter, skill, knowledge entry, stable-ID registry, context budget or tool memory may become a DMTZ truth owner.
-- Autonomous execution/orchestration remains outside the accepted foundation and Implementation 001 entry gate.
+- shared constitution: root `AGENTS.md`;
+- portable discovery: `../../knowledge/index.md` when needed;
+- exact stable-ID policy/helper: ADF-E `stable_reference_policy.md` / `scripts/agentic/resolve_stable_id.py`;
+- compact family/path bridge: [`agent_reference_index.md`](agent_reference_index.md);
+- canonical workflows: `../../.agents/skills/`;
+- conformance: `../agentic_development_foundation/conformance_policy.md` and `scripts/agentic/run_conformance.py`.
+
+Autonomous execution/orchestration remains outside the accepted foundation and Implementation 001 entry gate.
 
 ## Change control
 
-When implementation encounters a constraint:
+When implementation encounters a target constraint:
 
 1. change concrete technology/configuration within frozen contracts;
 2. explicitly narrow deployment/product capability if source support is insufficient;
 3. add instrumentation/attestation if the stronger proposition is required;
-4. raise an architecture change request only when no compliant realization exists;
-5. reopen functional semantics only when the product requirement itself intentionally changes.
+4. raise architecture change only when no compliant realization exists;
+5. reopen functional semantics only for an intentional product requirement change.
 
 No developer or agent may silently weaken a contract because it is easier to implement.
 
 ## Current state
 
-**Agentic Development Foundation: IN EXECUTION — ADF-A through ADF-E COMPLETE / ACCEPTED; ADF-F NEXT / READY.** Complete ADF-F–ADF-H and the foundation execution exit review before beginning Implementation 001-A.
+**Agentic Development Foundation: IN EXECUTION — ADF-A THROUGH ADF-F COMPLETE / ACCEPTED; ADF-G NEXT / READY.** Complete ADF-G, ADF-H and the foundation execution exit review before beginning Implementation 001-A.
 
-**Implementation 001 — Executable Foundations & Walking Skeleton: PLANNED / READY AFTER AGENTIC FOUNDATION EXIT.** Groups 001-A–001-H remain defined in [`001_executable_foundations_walking_skeleton/README.md`](001_executable_foundations_walking_skeleton/README.md).
-
-Implementations 002–011 remain mapped at an intentionally general/abstract level so an enterprise team has a durable forward path without premature low-level design.
+**Implementation 001 — Executable Foundations & Walking Skeleton: PLANNED / READY AFTER AGENTIC FOUNDATION EXIT.**
