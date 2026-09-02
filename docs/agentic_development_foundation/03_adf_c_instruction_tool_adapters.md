@@ -1,6 +1,8 @@
 # ADF-C — Shared Instruction Hierarchy & Tool Adapter Contract
 
-**Status:** PLANNED / READY TO EXECUTE
+**Status:** COMPLETE / ACCEPTED
+
+Execution evidence: [`adf_c_execution_review.md`](adf_c_execution_review.md).
 
 ## Objective
 
@@ -28,19 +30,21 @@ Adapters may express native loading/scoping mechanics but must not copy the full
 
 Retain the existing `.cursor/rules/*.mdc` structure as a scoped reference/guardrail layer. Rules should remain `alwaysApply: false` unless a future measured failure justifies otherwise.
 
-Cursor rules should point to `knowledge/index.md`, the active implementation package and canonical references; they must not recreate historical phase rulebooks.
+Cursor rules point to `knowledge/index.md`, the active program/group and canonical references; they do not recreate historical phase rulebooks.
 
 #### Claude Code
 
-Introduce a small root `CLAUDE.md` that imports or references root `AGENTS.md` using Claude's supported import mechanism, then adds only Claude-specific mechanics.
+ADF-C implements `.claude/CLAUDE.md` importing `../AGENTS.md`. Current Claude Code supports `.claude/CLAUDE.md` as a project instruction location and resolves the relative import from that file.
 
-Use `.claude/rules/` only when path-specific Claude behavior is necessary and cannot be expressed portably. Unscoped Claude rules should be avoided because they consume persistent context.
+The adapter is deliberately under `.claude/` rather than repository-root `CLAUDE.md` because current Cursor also loads a root `CLAUDE.md` as persistent instructions. This avoids adding duplicate always-on context to Cursor.
 
-Do not allow Claude auto-memory to become project authority; persistent discoveries that matter to the team must be promoted to repository artifacts.
+Use `.claude/rules/` only when a path-specific Claude behavior is demonstrated and cannot be expressed portably. No Claude rules are required by ADF-C.
+
+Claude auto-memory remains noncanonical; persistent discoveries that matter to the team must be promoted to repository artifacts.
 
 #### Codex
 
-Use root `AGENTS.md` directly as the primary repository instruction surface. Add Codex-specific configuration only for capabilities not expressible through shared files.
+Use root `AGENTS.md` directly as the primary repository instruction surface. No Codex-specific semantic configuration is required by ADF-C.
 
 No Codex-specific file may redefine DMTZ semantics or implementation status.
 
@@ -55,46 +59,49 @@ No Codex-specific file may redefine DMTZ semantics or implementation status.
 
 ## Context budget
 
-Persistent instruction surfaces should be intentionally small.
+Persistent instruction surfaces are intentionally small:
 
-Targets during ADF execution:
-
-- root `AGENTS.md`: shared universal rules only;
-- `CLAUDE.md`: thin import + Claude-specific notes;
+- root `AGENTS.md`: shared universal rules;
+- `.claude/CLAUDE.md`: thin import plus Claude-specific mechanics;
 - Cursor rules: scoped/relevance-driven;
-- `.claude/rules`: path-scoped whenever practical;
-- detailed procedures moved to skills or canonical docs rather than persistent prompts.
+- `.claude/rules`: none until a demonstrated path-specific need exists;
+- detailed procedures remain deferred to ADF-D skills/workflows and canonical docs.
 
 ## Tool compatibility manifest
 
-Create a machine-readable or easily diffable compatibility manifest recording, per supported tool:
+[`tool_compatibility.json`](tool_compatibility.json) records, per supported tool:
 
 - instruction root used;
 - scoped-rule mechanism;
-- skill/workflow mechanism;
-- manual invocation syntax where relevant;
+- workflow/skill mechanism or deferred status;
 - knowledge-index entry point;
-- known unsupported/degraded features;
-- version/date last verified.
+- known design/degraded boundaries;
+- documentation-verification date;
+- runtime-smoke owner.
 
 This manifest is operational compatibility data, not product semantics.
 
-## Deliverables
+## Delivered artifacts
 
-- minimal `CLAUDE.md` adapter;
-- any justified `.claude/rules/` adapters;
-- reviewed Cursor rule references to the portable knowledge plane;
-- Codex compatibility notes where required;
-- compatibility manifest and verification checklist;
-- adapter drift tests/checks.
+- `.claude/CLAUDE.md` thin shared-authority bridge;
+- reviewed/synchronized Cursor routing over `AGENTS.md` + `knowledge/index.md`;
+- Codex compatibility through native root `AGENTS.md` without a semantic fork;
+- `tool_compatibility.json` compatibility manifest;
+- `tool_adapter_authority_checklist.md` completed repository-adapter audit;
+- `fixtures/adf_c_adapter_scenarios.yaml` conformance fixtures;
+- `scripts/agentic/validate_agent_adapters.py` deterministic static validator;
+- `knowledge/project/tool-compatibility.md` OKF routing concept;
+- `external_standards_baseline.md` current tool-mechanics verification.
 
-## Acceptance scenarios
+## Acceptance result
 
-ADF-C passes when:
+ADF-C passes at the repository-configuration layer because:
 
 - the same repository-wide invariant appears canonically once and is reachable by all three tools;
-- Claude consumes the shared `AGENTS.md` authority rather than a copied semantic fork;
-- Cursor continues to load only relevant domain rules;
-- Codex can operate from `AGENTS.md` plus shared knowledge/workflows;
-- disabling a tool-specific convenience feature does not change DMTZ truth or acceptance criteria;
-- an intentionally contradictory adapter rule is caught by review/validation rather than silently becoming effective policy.
+- Claude consumes shared `AGENTS.md` via import rather than a copied semantic fork;
+- Cursor remains scoped/relevance-driven;
+- Codex operates from shared `AGENTS.md` plus the portable knowledge plane;
+- loss of a native convenience feature does not change DMTZ truth or acceptance criteria;
+- contradictory/duplicative adapter states have deterministic static validation seams.
+
+Runtime tool-in-the-loop verification remains explicitly owned by ADF-G. CI enforcement remains owned by ADF-F.
