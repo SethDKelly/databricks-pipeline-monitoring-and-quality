@@ -1,5 +1,5 @@
 ---
-description: Route DMTZ agentic/implementation work to live status, portable OKF knowledge, canonical Agent Skills, shared authority, and frozen architecture. Use for task selection or when project status/authority/workflow location is unclear.
+description: Route DMTZ agentic/implementation work to live status, portable OKF knowledge, canonical Agent Skills, stable-reference/context policy, shared authority, and frozen architecture. Use for task selection or when project status/authority/workflow/reference location is unclear.
 globs:
 alwaysApply: false
 ---
@@ -8,20 +8,22 @@ alwaysApply: false
 
 Do not infer current project status from historical phase documents, Git history, model memory or tool-specific configuration.
 
-Start from:
+Start from the shortest relevant path:
 
 - `IMPLEMENTATION.md` — repository implementation/agentic entry point;
-- `knowledge/index.md` — portable OKF v0.2 progressive-disclosure entry;
 - `docs/agentic_development_foundation/README.md` — live ADF execution status;
-- `docs/agentic_development_foundation/authority_scope_policy.md` — shared human-directed action/authority policy;
 - root `AGENTS.md` — shared repository constitution;
 - `.agents/skills/<name>/SKILL.md` — canonical portable workflow when a named DMTZ workflow is relevant;
+- `knowledge/index.md` — portable OKF progressive-disclosure entry when location is not already known;
+- `docs/agentic_development_foundation/context_discovery_policy.md` — shortest-path context rules;
+- `docs/agentic_development_foundation/stable_reference_policy.md` — exact stable-ID lookup/canonicality discipline;
+- `docs/agentic_development_foundation/authority_scope_policy.md` — human-directed action/authority policy;
 - `docs/implementation/README.md` — sole living implementation-program status authority;
-- `docs/implementation/agent_reference_index.md` — secondary stable-ID/canonical-document bridge;
+- `docs/implementation/agent_reference_index.md` — secondary family/range/canonical-document bridge;
 - the active ADF or implementation group plan;
 - `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md` — frozen architecture handoff.
 
-**ADF-A through ADF-D are complete. ADF-E is the next required Agentic Development Foundation group.** Implementation 001 follows the complete Agentic Development Foundation exit.
+**ADF-A through ADF-E are complete. ADF-F is the next required Agentic Development Foundation group.** Implementation 001 follows the complete Agentic Development Foundation exit.
 
 Tool/workflow rules:
 
@@ -30,7 +32,7 @@ Tool/workflow rules:
 - Claude Code uses `.claude/CLAUDE.md` plus thin `.claude/commands/` bridges to the same `.agents/skills/` source;
 - Codex uses root `AGENTS.md` and `.agents/skills/` natively;
 - `tool_compatibility.json` records documented compatibility; ADF-G owns runtime smoke evidence;
-- no adapter/skill may create a parallel semantic/status authority.
+- no adapter/skill/reference helper may create a parallel semantic/status authority.
 
 Human-directed action classes:
 
@@ -48,18 +50,19 @@ Workflow boundary:
 - `update-traceability` requires actual supporting evidence;
 - `exit-review` cannot self-waive unresolved mandatory gates.
 
-Knowledge rules:
+Context/reference rules:
 
-- use `knowledge/index.md` for first-hop routing when location is not already known;
-- traverse one category/concept at a time;
-- follow canonical `resource` links for exact meaning;
-- treat OKF metadata as knowledge-artifact metadata only;
-- canonical resources win over OKF summaries.
+- use an explicit group/path/stable ID directly when already known; do not traverse OKF ceremonially;
+- otherwise use `knowledge/index.md` one category/concept at a time;
+- exact stable IDs must be validated against `stable_id_registry.json` and searched exactly under canonical `docs/`;
+- all exact occurrences are retrieval candidates; first search result or `definition_candidate` classification alone is not canonical ownership;
+- canonical resources win over OKF summaries, agent memory and derived indexes;
+- missing/ambiguous retrieval remains explicit and is not evidence that no constraint exists;
+- obey `context_budget_policy.md`; detailed semantics stay on demand.
 
 Other rules:
 
 - read only the active group and domain references needed for the task;
-- search exact stable IDs instead of loading whole phases;
 - ADF work may add agent configuration, knowledge/workflow routing and deterministic validation helpers;
 - product code remains under the active implementation package, not implied by ADF work;
 - do not create unrelated follow-on work, delegate implementation to other agents, or merge/deploy unattended;
