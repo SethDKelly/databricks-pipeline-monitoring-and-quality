@@ -1,124 +1,90 @@
 # ADF-F — Conformance, Validation, Drift Detection & CI
 
-**Status:** PLANNED / READY TO EXECUTE
+**Status:** COMPLETE / ACCEPTED
 
 ## Objective
 
 Make the Agentic Development Foundation reviewable and enforceable through repository checks rather than relying on agent instructions alone.
 
+ADF-F is realized by the accepted policy in [`conformance_policy.md`](conformance_policy.md), the unified runner `scripts/agentic/run_conformance.py`, the repository CI workflow `.github/workflows/agentic-conformance.yml`, the ADF-F fixture set, and the execution evidence recorded in [`adf_f_execution_review.md`](adf_f_execution_review.md).
+
 ## Validation layers
 
 ### 1. OKF structure validation
 
-Validate the `knowledge/` bundle against the adopted OKF v0.2 structural requirements and the stricter DMTZ producer profile.
-
-Checks should include:
-
-- every concept document has parseable YAML frontmatter;
-- `type` is present and non-empty;
-- DMTZ-required profile fields are present;
-- root `index.md` declares `okf_version: "0.2"` if the bundle uses that declaration;
-- reserved `index.md` / `log.md` structures are valid;
-- cross-links/resources resolve when repository-relative;
-- status values are valid;
-- stale/deprecated entries are surfaced in generated reports.
+Validate the `knowledge/` bundle against OKF v0.2 structural requirements and the stricter DMTZ producer profile, including required fields, local resources/links, lifecycle state, and stale/deprecated reporting.
 
 ### 2. Authority/reference validation
 
-Check that agent-facing artifacts do not become the only location for a material requirement.
-
-Useful mechanical checks:
-
-- referenced canonical paths exist;
-- stable contract IDs cited by routing entries exist in `docs/`;
-- active implementation package in agent-routing artifacts matches `docs/implementation/README.md`;
-- no tool adapter declares a contradictory project phase/status;
-- no generated knowledge entry points to a removed/deprecated resource without explicit lifecycle state.
+Validate agent-facing canonical links and accepted stable-ID citations without turning search order into semantic authority. Live ADF status mirrors are checked against the ADF README authority.
 
 ### 3. Tool adapter validation
 
-At minimum, lint/parse:
-
-- Cursor `.mdc` frontmatter and relevant globs;
-- Claude `CLAUDE.md` import/reference path and `.claude/rules` frontmatter where used;
-- portable `SKILL.md` frontmatter/profile;
-- any generated native skill adapters;
-- Bugbot or review-policy references.
-
-Where a vendor provides a local validation command, the execution plan may use it, but repository-owned structural validation remains the portable baseline.
+Validate Cursor scoped rules, the Claude shared-authority bridge, absence of competing root semantic adapters, and the portable Agent Skills workflow structure.
 
 ### 4. Context-budget checks
 
-Track simple deterministic measures such as lines/bytes for always-loaded instruction surfaces. CI should flag accidental expansion beyond agreed thresholds rather than allowing gradual return to monolithic prompts.
+Enforce the deterministic UTF-8 byte budgets accepted in ADF-E. Context budget failure is agentic configuration drift, not DMTZ domain health.
 
-Context size is an engineering signal, not a semantic correctness score.
+### 5. Workflow/fixture conformance
 
-### 5. Workflow conformance
-
-Each portable workflow should have scenario fixtures that verify required steps and boundaries at the artifact level.
-
-Examples:
-
-- `resolve-context` returns canonical sources rather than invented summaries;
-- `implement-group` requires affected tests/traceability and does not chain to the next group;
-- `exit-review` cannot mark a missing mandatory gate complete;
-- review workflow flags a deliberately seeded semantic boundary violation.
-
-These tests may begin as deterministic fixtures/checklists before deeper tool-in-the-loop evaluation is justified.
+Validate the ADF-A–ADF-F scenario catalogs structurally and execute bounded negative controls proving that seeded configuration defects are rejected by their owning validators.
 
 ## CI integration
 
-ADF execution should add a fast agentic-conformance job early in the repository CI sequence:
+The canonical sequence is:
 
 ```text
-parse/structure
+documentation consistency
   → OKF/profile/link validation
   → adapter/skill validation
-  → authority/status drift checks
-  → context-budget checks
-  → normal repository tests
+  → canonical reference validation
+  → ADF status drift
+  → fixture catalog
+  → context budgets
+  → negative controls
+  → future normal repository/product tests
 ```
 
-A failure in agentic metadata should block merging the broken agentic configuration but must not be represented as a DMTZ domain-health failure.
+`.github/workflows/agentic-conformance.yml` runs this sequence for relevant pull requests and pushes to `main`.
+
+A failure in agentic metadata blocks the broken agentic configuration but must not be represented as a DMTZ domain-health, data-quality, source-health, or production-readiness failure.
 
 ## Tool-in-the-loop compatibility tests
 
-Because Cursor/Claude/Codex behavior changes independently, keep tool-in-the-loop smoke checks separate from deterministic CI where licensing/network/runtime makes them unsuitable for every PR.
-
-Run them:
-
-- during ADF-G compatibility acceptance;
-- after material adapter changes;
-- after supported-tool major/minor behavior changes when relevant;
-- before declaring a tool compatibility profile current.
+Cursor/Claude Code/Codex runtime smoke checks remain separate because they may require installed/licensed/networked tool environments. [`compatibility_smoke_checklist.md`](compatibility_smoke_checklist.md) defines the ADF-G checklist.
 
 ## Drift report
 
-Provide one compact command/report showing:
+The unified runner produces one human-readable Agentic Conformance Report containing:
 
-- OKF validation status;
-- broken resources/contract references;
-- adapter versions last verified;
-- context-budget exceptions;
-- stale/deprecated knowledge entries;
-- skill/native-adapter divergence where generated copies are used.
+- deterministic check results;
+- current per-tool compatibility status;
+- stale/deprecated knowledge counts;
+- explicit non-domain-health semantics.
+
+## Negative controls
+
+`scripts/agentic/test_conformance_guards.py` mutates a temporary checkout only and requires failure detection for:
+
+- malformed OKF metadata;
+- provider-specific portable-skill metadata;
+- accidental `alwaysApply: true` Cursor routing;
+- persistent-context overflow;
+- stale ADF status;
+- broken canonical knowledge routing;
+- unaccepted stable-ID citation.
 
 ## Deliverables
 
-- repository-owned agentic validation script(s);
-- CI job/workflow integration;
-- fixtures for structural and boundary failures;
-- context-budget configuration;
-- compatibility smoke-test checklist;
+- repository-owned unified conformance runner;
+- dedicated GitHub Actions CI job;
+- authority/status/reference/context/fixture validators;
+- bounded negative-control suite;
+- ADF-F scenario catalog;
+- compatibility smoke-test checklist for ADF-G;
 - human-readable drift report.
 
-## Acceptance scenarios
+## Acceptance result
 
-ADF-F passes when:
-
-- malformed OKF/skill/rule metadata is caught before merge;
-- an intentionally stale implementation-status copy is detected;
-- a broken stable-ID/path reference is surfaced;
-- accidental growth of universal instruction files beyond the agreed threshold is visible/failing according to policy;
-- normal product tests remain distinct from agentic-config conformance;
-- a tool upgrade can be marked unverified without making another tool unusable.
+ADF-F passes when the real repository checkout passes the unified conformance job and each seeded negative control is detected. See [`adf_f_execution_review.md`](adf_f_execution_review.md) for the actual run evidence and any residual obligations.
