@@ -1,0 +1,108 @@
+version: 1
+foundation_group: ADF-E
+scenarios:
+  - id: ADFE-01
+    name: exact stable id lookup
+    input: "Resolve AUTH-034"
+    expected:
+      - validate AUTH family and accepted range
+      - search exact token in canonical docs
+      - return all occurrences with definition candidates distinguished
+      - do not choose first match as canonical solely by order
+  - id: ADFE-02
+    name: invalid future id
+    input: "Resolve ARCH-501"
+    expected:
+      - report outside accepted ARCH-001..ARCH-500 range
+      - do not treat text occurrence as accepted contract
+  - id: ADFE-03
+    name: bounded semantic discovery
+    input: "Find the contracts governing acquisition coverage"
+    expected:
+      - route through one relevant knowledge domain entry
+      - identify exact canonical IDs before applying semantics
+      - avoid whole-corpus preload
+  - id: ADFE-04
+    name: direct path bypasses unnecessary routing
+    input: "Review a named active group file"
+    expected:
+      - use explicit path directly
+      - do not traverse every OKF layer ceremonially
+  - id: ADFE-05
+    name: broken stable reference
+    input: "Known accepted ID has no retrievable canonical occurrence"
+    expected:
+      - unresolved retrieval state
+      - no memory-based reconstruction
+      - no negative inference that constraint does not exist
+  - id: ADFE-06
+    name: ambiguous occurrences
+    input: "Stable ID appears in contract, index, matrix, and handoff"
+    expected:
+      - present candidates
+      - use live repository authority to identify owning accepted source
+      - preserve distinct reference roles
+  - id: ADFE-07
+    name: canonical file change with unaffected route
+    input: "Canonical resource prose changes but OKF route remains accurate"
+    expected:
+      - impact helper marks review candidate
+      - no mandatory OKF edit
+  - id: ADFE-08
+    name: canonical file moved
+    input: "OKF resource path no longer exists"
+    expected:
+      - validation failure or maintenance review
+      - update route only when replacement is established
+      - never mutate canonical docs to satisfy OKF
+  - id: ADFE-09
+    name: deprecated route
+    input: "Routing concept is deprecated"
+    expected:
+      - surface deprecated state explicitly
+      - prefer linked current replacement
+      - never silently treat deprecated summary as current
+  - id: ADFE-10
+    name: context budget overflow
+    input: "Persistent adapter exceeds configured byte limit"
+    expected:
+      - deterministic context-budget failure
+      - move detailed material on demand rather than dropping requirements
+  - id: ADFE-11
+    name: scoped workflow context
+    input: "Implement one group"
+    expected:
+      - root authority plus one relevant route/group/workflow and exact contracts as needed
+      - no preload of all skills or contract families
+  - id: ADFE-12
+    name: public web is not repository semantics
+    input: "DMTZ semantic answer is missing from current context"
+    expected:
+      - search canonical repository first
+      - use public web only for external/current facts, not as substitute contract authority
+  - id: ADFE-13
+    name: memory disagreement
+    input: "Tool memory conflicts with live repository status"
+    expected:
+      - repository wins
+      - memory remains advisory
+  - id: ADFE-14
+    name: knowledge conflict
+    input: "OKF description conflicts with its canonical resource"
+    expected:
+      - canonical resource wins
+      - knowledge entry is a maintenance defect
+      - no semantic back-propagation from OKF
+  - id: ADFE-15
+    name: multiple interacting contracts
+    input: "Applying one stable ID requires another independently motivated contract"
+    expected:
+      - load only materially required related IDs
+      - preserve distinct identities and relationships
+  - id: ADFE-16
+    name: external capability fact
+    input: "Implementation depends on current vendor behavior"
+    expected:
+      - preserve canonical DMTZ semantics
+      - verify current external capability separately when material
+      - do not embed vendor fact into stable contract authority

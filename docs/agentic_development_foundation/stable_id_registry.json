@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "status": "accepted_frozen_ranges",
+  "search_root": "docs",
+  "id_width": 3,
+  "families": {
+    "SYN": {"min": 1, "max": 35},
+    "REF": {"min": 1, "max": 30},
+    "AUTH": {"min": 1, "max": 53},
+    "HLTH": {"min": 1, "max": 66},
+    "OPS": {"min": 1, "max": 123},
+    "EXPL": {"min": 1, "max": 160},
+    "INTG": {"min": 1, "max": 270},
+    "ARCH": {"min": 1, "max": 500}
+  },
+  "resolution_rule": "Exact occurrences are retrieval candidates. Mechanical definition_candidate classification does not establish canonicality; live repository authority and the owning accepted document do."
+}

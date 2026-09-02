@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "unit": "utf8_bytes",
+  "limits": {
+    "agents_md": 16384,
+    "claude_md": 2048,
+    "cursor_rule_each": 6144,
+    "cursor_rules_aggregate": 32768,
+    "cursor_root_baseline": 20480,
+    "claude_root_baseline": 18432,
+    "codex_root_baseline": 16384,
+    "skill_each": 7168,
+    "claude_command_each": 1024,
+    "knowledge_root_index": 4096,
+    "knowledge_nested_index_each": 6144,
+    "knowledge_concept_each": 4096
+  }
+}

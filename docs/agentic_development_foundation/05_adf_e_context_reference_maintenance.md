@@ -1,116 +1,61 @@
 # ADF-E — Context Discovery, Stable References & Knowledge Maintenance
 
-**Status:** PLANNED / READY TO EXECUTE
+**Status:** COMPLETE / ACCEPTED
 
 ## Objective
 
 Make correct context easy to discover while keeping agent startup context small and preventing knowledge-routing artifacts from drifting away from canonical DMTZ sources.
 
+## Implemented decisions
+
+ADF-E establishes four complementary controls:
+
+1. `context_discovery_policy.md` — shortest-path progressive disclosure and retrieval-failure semantics;
+2. `stable_reference_policy.md` + `stable_id_registry.json` — accepted stable-ID ranges and exact-occurrence resolution without first-match canonicality;
+3. `context_budget_policy.md` + `context_budget.json` — deterministic UTF-8 byte budgets for persistent/routing/workflow surfaces;
+4. `knowledge_maintenance_workflow.md` — changed-source impact review without forcing ceremonial OKF rewrites.
+
 ## Default context path
 
-Routine development should follow:
+Routine work uses the shortest authoritative path:
 
 ```text
-shared agent constitution
-  → knowledge/index.md
-  → active implementation package/group
-  → one domain routing entry
-  → one or two canonical architecture/reference documents
+human-selected task
+  → shared authority/live status
+  → explicit path/ID if known; otherwise knowledge/index.md
+  → one route/group
+  → canonical resource
   → exact stable IDs/tests as required
 ```
 
-Preloading the entire DMTZ design corpus is explicitly discouraged.
+Preloading the entire DMTZ corpus remains explicitly discouraged.
 
-## Stable-reference strategy
+## Stable-reference behavior
 
-The accepted identifiers remain the primary semantic lookup keys:
+Accepted SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH IDs remain the semantic lookup keys. `scripts/agentic/resolve_stable_id.py` validates accepted ranges and returns every exact occurrence with a mechanical `definition_candidate`/`reference` role.
 
-- SYN-###;
-- REF-###;
-- AUTH-###;
-- HLTH-###;
-- OPS-###;
-- EXPL-###;
-- INTG-###;
-- ARCH-###.
-
-Implementation/test IDs may be added under their own implementation namespaces, but they do not replace the accepted contract IDs they realize.
-
-A routing artifact should point to stable IDs and canonical file paths rather than copying full contract prose.
+The helper never equates `definition_candidate` or first search result with canonical authority. The owning accepted document/live repository authority determines meaning.
 
 ## Context budgets
 
-ADF execution should establish measurable budgets rather than relying on subjective 'keep it small' guidance.
+ADF-E uses byte limits rather than guessed cross-provider token counts. The current root `AGENTS.md` (12,699 bytes) and Claude bridge (1,054 bytes) are below their configured limits. Detailed skills, OKF concepts, scoped rules, and canonical docs remain on demand.
 
-Recommended initial targets:
-
-- universal instructions: only rules required for nearly every repository task;
-- tool adapter persistent context: less than the shared constitution, preferably only a few dozen lines;
-- one active scoped rule at a time where tooling supports it;
-- one workflow skill plus supporting files on demand;
-- OKF index descriptions concise enough to scan without pulling the linked source.
-
-Exact token/line limits may be calibrated during compatibility tests. The important invariant is that detailed DMTZ semantics remain retrieval-on-demand.
-
-## Search behavior
-
-Agents should prefer, in order:
-
-1. active package/group path known from implementation status;
-2. OKF domain/implementation routing entry;
-3. exact stable-ID repository search;
-4. targeted canonical file read;
-5. broader semantic search only when the exact reference is unknown.
-
-Do not search public web for a DMTZ semantic answer that should come from the repository.
+`scripts/agentic/measure_context_budget.py` provides deterministic measurement; ADF-F owns CI enforcement.
 
 ## Knowledge maintenance
 
-When canonical documentation changes:
+Canonical changes may create routing review candidates. They do not automatically make every referencing OKF concept stale. `scripts/agentic/knowledge_impact.py` identifies direct resource references for review while `validate_okf.py` continues to catch broken paths/links.
 
-- determine whether one or more OKF routing entries reference the changed source;
-- update only the routing metadata/description that became stale;
-- retain canonical history in Git rather than copying retired semantics into a new knowledge layer;
-- mark obsolete knowledge entries `deprecated` rather than leaving contradictory current entries;
-- update `knowledge/log.md` for material routing changes if the log is adopted.
+Knowledge may be corrected from canonical sources; it may never generate semantic changes back into canonical DMTZ authority.
 
-## Generated versus authored content
+## Workflow integration
 
-Mechanically derivable content should be generated where useful:
+`resolve-context` and `resolve-contract` now consume the ADF-E discovery/reference policies and deterministic helper seams. The secondary `agent_reference_index.md` remains a compact human bridge rather than becoming a duplicate semantic registry.
 
-- directory indexes;
-- lists of implementation packages;
-- known contract ranges;
-- link existence checks;
-- compatibility-version metadata.
+## Validation ownership
 
-Interpretive summaries should be short and human-reviewable.
+ADF-E supplies policies, fixtures, registries, and dependency-free helpers. ADF-F is responsible for executing them as an integrated deterministic conformance/CI suite. ADF-G remains responsible for observed runtime/tool-specific context behavior.
 
-No generated summary should contain unique semantic requirements that are absent from canonical sources.
+## Exit
 
-## Retrieval failure semantics
-
-If an agent cannot resolve a referenced file/contract:
-
-- report the missing/broken reference;
-- do not infer the contract from memory;
-- do not silently use a similar historical contract;
-- do not treat inability to retrieve as evidence that no constraint exists.
-
-## Deliverables
-
-- updated `agent_reference_index.md` integrated with the OKF bundle or superseded by a generated view;
-- deterministic stable-ID/link discovery helpers as useful;
-- context-size checks/metrics for shared instruction surfaces;
-- routing-entry maintenance process;
-- broken-reference behavior documented and validated.
-
-## Acceptance scenarios
-
-ADF-E passes when:
-
-- a developer can locate a referenced contract without loading the corresponding whole phase;
-- stale/deprecated routing is surfaced explicitly;
-- a broken link fails knowledge validation but does not mutate canonical docs;
-- agents do not rely on chat/memory for missing contract text;
-- tool startup context remains materially smaller than the historical always-applied Cursor-rule model.
+Execution evidence and the final decision are recorded in `adf_e_execution_review.md`.
