@@ -2,13 +2,13 @@
 
 **Reviewed:** 2026-09-02
 
-This document records the external tool/format assumptions used by the Agentic Development Foundation. These are compatibility facts, not DMTZ semantic authority, and must be reverified when the corresponding foundation group is executed or when vendor behavior changes materially.
+This document records external tool/format assumptions used by the Agentic Development Foundation. These are compatibility facts, not DMTZ semantic authority, and must be reverified when a corresponding foundation group is executed or vendor behavior changes materially.
 
 ## Open Knowledge Format
 
-Canonical source: GoogleCloudPlatform `knowledge-catalog/okf/SPEC.md`.
+Canonical source: upstream GoogleCloudPlatform `knowledge-catalog/okf/SPEC.md`.
 
-Reverified during ADF-B on **2026-09-02** against the upstream specification. Current targeted specification: **OKF v0.2**.
+Reverified during ADF-B on **2026-09-02**. Current targeted specification: **OKF v0.2**.
 
 Relevant properties used by this foundation:
 
@@ -28,45 +28,70 @@ DMTZ intentionally does not adopt OKF Attested Computation runtime behavior in t
 
 Canonical source: current Cursor Rules documentation.
 
-Assumed capabilities:
+Reverified during ADF-C on **2026-09-02**.
 
-- root and nested `AGENTS.md` support;
-- project rules under `.cursor/rules/*.mdc`;
-- rules can be always-applied, relevance-selected or glob/file scoped;
+Relevant current behavior:
+
+- root and nested `AGENTS.md` are supported;
+- project rules live under `.cursor/rules/*.mdc` and may be relevance-selected or file/glob scoped;
+- `alwaysApply: true` includes a rule in every Agent conversation;
 - rules consume model context when applied;
-- `@filename` references may include other files;
-- project rules do not govern every Cursor product surface, so repository tests/CI remain the enforcement layer.
+- `@filename` references can include repository files;
+- Cursor also recognizes a **root** `CLAUDE.md` as persistent project instructions for Claude Code compatibility;
+- Cursor rules do not govern every Cursor product surface, so repository tests/CI remain the enforcement layer.
 
-DMTZ current policy remains: scoped/relevance-driven project rules, no intentional universal `.mdc` rule unless a measured need is accepted.
+DMTZ policy remains: scoped/relevance-driven `.mdc` project rules, no intentional universal `.mdc` rule unless a measured need is accepted.
+
+Because Cursor also reads root `CLAUDE.md`, DMTZ intentionally places the Claude project adapter at `.claude/CLAUDE.md` instead of repository-root `CLAUDE.md`. This avoids a duplicate always-on Cursor instruction surface.
 
 ## Claude Code
 
 Canonical source: current Claude Code documentation.
 
-Assumed capabilities:
+Reverified during ADF-C on **2026-09-02**.
 
-- project `CLAUDE.md` files provide persistent instructions;
-- Claude Code reads `CLAUDE.md`, not `AGENTS.md` directly;
-- `CLAUDE.md` can import another file using `@path`, including a repository `AGENTS.md`;
-- `.claude/rules/` supports modular and path-scoped rules;
-- project skills use `SKILL.md` under `.claude/skills/<skill-name>/`;
-- detailed procedures are better placed in skills or path-scoped rules than a large persistent `CLAUDE.md`;
+Relevant current behavior:
+
+- Claude Code reads project `CLAUDE.md` instructions rather than `AGENTS.md` directly;
+- project instructions may live at `./CLAUDE.md` **or** `./.claude/CLAUDE.md`;
+- a `CLAUDE.md` can import other files with `@path`; relative imports resolve relative to the file containing the import;
+- current documentation explicitly recommends importing an existing `AGENTS.md` rather than duplicating its contents;
+- `.claude/rules/*.md` supports modular/path-scoped rules;
+- project skills use `SKILL.md` under `.claude/skills/<skill-name>/` and follow the open Agent Skills format with Claude-specific extensions;
+- detailed procedures are better placed in skills or path-scoped rules than in a large persistent `CLAUDE.md`;
+- `/memory`, `/skills`, and `/doctor` provide useful configuration diagnostics;
 - auto-memory is contextual memory, not enforced project configuration.
 
-The foundation should use a thin `CLAUDE.md` importing shared authority rather than copying it.
+DMTZ therefore uses `.claude/CLAUDE.md` importing `../AGENTS.md`, with only minimal Claude-specific mechanics. No `.claude/rules/` files are required by ADF-C.
+
+Claude subagents/agent teams may exist as native product capabilities, but repository implementation delegation remains outside the accepted human-directed foundation and is not enabled by these compatibility facts.
 
 ## Codex / OpenAI
 
-Canonical sources: current OpenAI Codex/developer guidance.
+Canonical sources: current OpenAI Codex guidance and the OpenAI Codex repository's AGENTS discovery documentation.
 
-Assumed capabilities/practices:
+Reverified during ADF-C on **2026-09-02**.
 
-- repository `AGENTS.md` is an established persistent-context mechanism for Codex workflows;
-- OpenAI supports reusable Skills as a platform capability;
-- current model guidance favors lean prompts, relevant tools/context, and explicit action/autonomy boundaries;
-- repository/environment configuration and tests materially affect coding-agent reliability.
+Relevant current behavior/practices:
 
-The foundation must not depend on a specific Codex model name. Model selection is an implementation/runtime choice and may change independently of repository semantics.
+- repository `AGENTS.md` is a native persistent-context mechanism for Codex workflows;
+- Codex discovers `AGENTS.md` along the repository path and supports more-specific nested instruction files when present;
+- repository/environment configuration and executable tests materially affect coding-agent reliability;
+- current OpenAI guidance recommends using `AGENTS.md` as a concise map into structured repository knowledge rather than a monolithic manual;
+- reusable skills/workflows are supported in the OpenAI ecosystem, but ADF-D owns DMTZ's portable workflow realization;
+- execution/sandbox/approval behavior is a runtime/environment concern and must not be inferred from repository documentation alone.
+
+DMTZ requires no Codex-specific semantic rulebook. Root `AGENTS.md`, `knowledge/index.md`, canonical docs, and repository validation are the shared surfaces.
+
+The foundation does not depend on a particular Codex model name or version.
+
+## Runtime verification status
+
+ADF-C verifies **documented native mechanisms and repository adapter structure**, not installed developer-tool binaries.
+
+`docs/agentic_development_foundation/tool_compatibility.json` records all three supported tools as `documentation_verified_runtime_smoke_pending`.
+
+ADF-G owns tool-in-the-loop verification using representative bounded tasks. A runtime mismatch must be recorded as degraded/unverified rather than silently changing DMTZ authority.
 
 ## Reverification triggers
 
@@ -76,6 +101,7 @@ Reverify a tool/format baseline when:
 - an OKF major version is proposed;
 - a tool-specific adapter begins relying on a new native capability;
 - a compatibility smoke test fails after a tool update;
+- a previously avoided instruction surface changes loading behavior;
 - documentation is older than the review horizon established during ADF-H.
 
 A compatibility fact becoming stale should mark the tool feature unverified/degraded, not silently invalidate DMTZ product documentation.
