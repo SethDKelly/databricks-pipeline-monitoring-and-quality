@@ -1,12 +1,22 @@
 # DMTZ Agentic Development Foundation
 
-**Status:** DESIGN COMPLETE / READY FOR ADF-A EXECUTION
+**Status:** IN EXECUTION — ADF-A COMPLETE; ADF-B / ADF-C NEXT
 
 ## Purpose
 
 The Agentic Development Foundation establishes a tool-neutral, human-directed development model for using coding agents with DMTZ before Implementation 001 begins. It is an enabling foundation, not a new product/concept/architecture phase and not a replacement for the frozen SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH contract stack.
 
 The target outcome is that a developer may choose Cursor, Claude Code, Codex, or another compatible coding agent and receive the same project authority, knowledge-routing, workflow, validation and safety model without maintaining separate semantic copies for each tool.
+
+## Current execution state
+
+- **ADF-A — Authority, Scope & Human-Directed Operating Boundary: COMPLETE / ACCEPTED.** See [`adf_a_execution_review.md`](adf_a_execution_review.md).
+- **ADF-B — OKF v0.2 Knowledge Plane & DMTZ Knowledge Profile: NEXT / READY.**
+- **ADF-C — Shared Instruction Hierarchy & Tool Adapter Contract: NEXT / READY.**
+- ADF-D–ADF-H remain planned behind their dependency gates.
+- Implementation 001 remains planned and follows the implemented Agentic Development Foundation exit.
+
+ADF-B and ADF-C are intentionally independent after ADF-A and may proceed in either order or in parallel if the team chooses.
 
 ## Boundary
 
@@ -37,15 +47,27 @@ Those topics are retained only in [`autonomous_backlog.md`](autonomous_backlog.m
 
 ## Authority model
 
+The shared ADF-A policy is [`authority_scope_policy.md`](authority_scope_policy.md).
+
 The authority order is:
 
 1. accepted DMTZ functional/integration/technical contracts and canonical `docs/`;
 2. root `AGENTS.md` for repository-wide agent/developer behavior;
-3. `docs/implementation/README.md` and the active implementation package for executable program scope;
-4. this Agentic Development Foundation for agent-tool interoperability and knowledge/workflow mechanics;
-5. tool-specific adapters (`.cursor/`, `CLAUDE.md`, `.claude/`, Codex-facing configuration) only for mechanics unique to that tool.
+3. live implementation status/package or active ADF status;
+4. accepted Agentic Development Foundation mechanics;
+5. tool-specific adapters (`.cursor/`, `CLAUDE.md`, `.claude/`, Codex-facing configuration) only for mechanics unique to that tool;
+6. personal/user-level tool preferences and tool memory.
 
 No OKF entry, skill, Cursor rule, Claude rule, generated index or tool memory may become an independent source of DMTZ semantic truth.
+
+ADF-A established four common action classes:
+
+- A1 read/review/plan;
+- A2 change/build/fix;
+- A3 external/destructive/scope-expanding;
+- A4 architecture/semantic change.
+
+See [`tool_adapter_authority_checklist.md`](tool_adapter_authority_checklist.md) and [`fixtures/adf_a_boundary_scenarios.yaml`](fixtures/adf_a_boundary_scenarios.yaml) for downstream adapter/conformance inputs.
 
 ## External standards baseline
 
@@ -60,9 +82,9 @@ Vendor/tool behavior is version-sensitive. [`external_standards_baseline.md`](ex
 
 ## Execution groups
 
-1. **ADF-A — Authority, Scope & Human-Directed Operating Boundary**
-2. **ADF-B — OKF v0.2 Knowledge Plane & DMTZ Knowledge Profile**
-3. **ADF-C — Shared Instruction Hierarchy & Tool Adapter Contract**
+1. **ADF-A — Authority, Scope & Human-Directed Operating Boundary — COMPLETE**
+2. **ADF-B — OKF v0.2 Knowledge Plane & DMTZ Knowledge Profile — NEXT**
+3. **ADF-C — Shared Instruction Hierarchy & Tool Adapter Contract — NEXT**
 4. **ADF-D — Portable Skills & Human-Directed Workflow Contract**
 5. **ADF-E — Context Discovery, Stable References & Knowledge Maintenance**
 6. **ADF-F — Conformance, Validation, Drift Detection & CI**
@@ -73,7 +95,7 @@ Detailed plans are in the corresponding files in this directory.
 
 ## Dependency sequence
 
-ADF-A establishes authority and the non-autonomous boundary first.
+ADF-A establishes authority and the non-autonomous boundary first and is complete.
 
 ADF-B and ADF-C may proceed in parallel after A because knowledge representation and tool instruction adapters are separate concerns.
 
@@ -85,7 +107,7 @@ ADF-G proves that a human developer can use Cursor, Claude Code or Codex without
 
 ADF-H consolidates security/trust/lifecycle rules across the whole foundation.
 
-The design exit review is [`design_exit_review.md`](design_exit_review.md).
+The design exit review is [`design_exit_review.md`](design_exit_review.md). The later implementation exit gate is [`execution_exit_criteria.md`](execution_exit_criteria.md).
 
 ## Planned repository shape after foundation execution
 
