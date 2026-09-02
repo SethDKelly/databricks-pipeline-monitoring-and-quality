@@ -8,9 +8,9 @@ Live **design-phase** progression is declared only in [`docs/README.md#current-s
 
 Live **implementation-program** progression is declared only in [`docs/implementation/README.md`](docs/implementation/README.md).
 
-The immediate enabling work is the **Agentic Development Foundation**, whose accepted design and execution sequence live in [`docs/agentic_development_foundation/README.md`](docs/agentic_development_foundation/README.md). ADF-A through ADF-D are complete; ADF-E is next. Implementation 001 follows only after the implemented foundation passes its execution exit review.
+The immediate enabling work is the **Agentic Development Foundation**, whose accepted design and execution sequence live in [`docs/agentic_development_foundation/README.md`](docs/agentic_development_foundation/README.md). ADF-A through ADF-E are complete; ADF-F is next. Implementation 001 follows only after the implemented foundation passes its execution exit review.
 
-For portable project/domain/implementation/workflow discovery, start at [`knowledge/index.md`](knowledge/index.md). The OKF knowledge bundle is a routing projection only; exact meaning remains in the canonical resource it references. For implementation-specific engineering rules, read [`docs/implementation/AGENTS.md`](docs/implementation/AGENTS.md). [`docs/implementation/agent_reference_index.md`](docs/implementation/agent_reference_index.md) remains a secondary compact bridge for stable-ID/canonical-document lookup.
+For portable project/domain/implementation/workflow discovery, use an explicit known path/stable ID directly; otherwise start at [`knowledge/index.md`](knowledge/index.md). The OKF knowledge bundle is a routing projection only; exact meaning remains in the canonical resource it references. For implementation-specific engineering rules, read [`docs/implementation/AGENTS.md`](docs/implementation/AGENTS.md). [`docs/implementation/agent_reference_index.md`](docs/implementation/agent_reference_index.md) remains a secondary compact bridge for contract-family/path lookup.
 
 Tool adapters are deliberately thin: Cursor uses this file plus scoped `.cursor/rules/*.mdc`; Claude Code uses `.claude/CLAUDE.md` to import this file; Codex uses this file natively. [`docs/agentic_development_foundation/tool_compatibility.json`](docs/agentic_development_foundation/tool_compatibility.json) records operational compatibility status. No adapter is a second system of semantic authority.
 
@@ -52,15 +52,18 @@ During ADF-A–ADF-H execution, repository changes may add agent configuration, 
 
 Tool memory, auto-memory, chat history and generated summaries are advisory only. A fact required for future correctness must be promoted into an appropriate repository artifact.
 
-## Knowledge-plane discipline
+## Knowledge and context discipline
 
-The ADF-B bundle under `knowledge/` follows the DMTZ OKF v0.2 producer profile in [`docs/agentic_development_foundation/okf_profile.md`](docs/agentic_development_foundation/okf_profile.md).
+The ADF-B bundle under `knowledge/` follows the DMTZ OKF v0.2 producer profile in [`docs/agentic_development_foundation/okf_profile.md`](docs/agentic_development_foundation/okf_profile.md). ADF-E retrieval rules live in [`context_discovery_policy.md`](docs/agentic_development_foundation/context_discovery_policy.md), [`stable_reference_policy.md`](docs/agentic_development_foundation/stable_reference_policy.md), and [`context_budget_policy.md`](docs/agentic_development_foundation/context_budget_policy.md).
 
 - `knowledge/` routes to authority; it is not authority.
-- Prefer progressive disclosure: root index → one category index → one concept → canonical resource → exact stable IDs as needed.
+- Prefer the shortest sufficient path: explicit path/ID when known; otherwise one OKF category/concept → canonical resource → exact IDs as needed.
+- Validate stable IDs against accepted ranges and search exact occurrences; first match or mechanical `definition_candidate` status alone does not establish canonical ownership.
+- Missing/ambiguous retrieval remains explicit and is not evidence that no constraint exists.
 - OKF lifecycle/trust/provenance metadata describes the knowledge artifact, not DMTZ domain truth.
 - If an OKF summary conflicts with its `resource`, the canonical resource wins and the knowledge entry must be corrected.
-- Do not preload the full knowledge bundle or full accepted contract corpus for routine work.
+- Do not preload the full knowledge bundle, all skills/rules, or full accepted contract corpus for routine work.
+- Keep persistent/routing/workflow surfaces within the deterministic byte budgets; move detail on demand rather than deleting obligations.
 
 ## Tool-adapter discipline
 
@@ -192,4 +195,4 @@ When target-environment reality conflicts with implementation plans:
 4. raise an architecture change request only when no compliant realization exists;
 5. reopen functional semantics only when the product requirement intentionally changes or a required real-world scenario truly cannot be represented.
 
-Never silently weaken a contract in code, a knowledge entry, an adapter, or a skill and then treat that behavior as the new architecture.
+Never silently weaken a contract in code, a knowledge entry, an adapter, a reference helper, or a skill and then treat that behavior as the new architecture.
