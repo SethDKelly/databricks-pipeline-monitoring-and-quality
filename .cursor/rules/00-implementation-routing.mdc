@@ -11,14 +11,22 @@ Do not infer current project status from historical phase documents, Git history
 Start from:
 
 - `IMPLEMENTATION.md` — repository implementation entry point;
-- `docs/implementation/README.md` — sole living implementation-program status authority;
-- `docs/agentic_development_foundation/README.md` — immediate human-directed agentic-enablement sequence;
-- `docs/implementation/agent_reference_index.md` — compact domain-to-contract/document lookup;
+- `docs/agentic_development_foundation/README.md` — live ADF execution sequence/status;
+- `docs/agentic_development_foundation/authority_scope_policy.md` — shared human-directed action/authority policy;
 - root `AGENTS.md` — shared repository constitution;
+- `docs/implementation/README.md` — sole living implementation-program status authority;
+- `docs/implementation/agent_reference_index.md` — compact domain-to-contract/document lookup;
 - the active ADF or implementation group plan;
 - `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md` — frozen architecture handoff.
 
-Current planned work is **ADF-A — Authority, Scope & Human-Directed Operating Boundary** until the live status authority says otherwise. Implementation 001 follows the implemented Agentic Development Foundation exit.
+**ADF-A is complete. ADF-B and ADF-C are the next eligible Agentic Development Foundation groups.** They may proceed independently/overlap only as allowed by the ADF dependency rules. Implementation 001 follows the implemented Agentic Development Foundation exit.
+
+Human-directed action classes:
+
+- A1 review/inspect/plan: do not edit unless changes are also requested;
+- A2 change/build/fix: perform in-scope repository edits, directly necessary supporting tests/status/traceability, and safe validation without repetitive permission prompts;
+- A3 external/destructive/scope-expanding: require explicit task-specific human authorization plus repository/team gates;
+- A4 architecture/semantic change: follow DMTZ change control.
 
 Rules:
 
@@ -26,6 +34,8 @@ Rules:
 - search stable contract IDs (`REF-###`, `AUTH-###`, `HLTH-###`, `OPS-###`, `EXPL-###`, `INTG-###`, `ARCH-###`) instead of loading whole phases;
 - ADF work may add agent configuration, OKF routing, portable workflow/skill sources and deterministic validation helpers;
 - product code remains under the active implementation package, not implied by ADF work;
-- the current agentic model is human-directed: do not create unrelated follow-on work, delegate implementation to other agents, or merge/deploy unattended;
+- do not create unrelated follow-on work, delegate repository implementation to other agents, or merge/deploy unattended;
+- completing the requested group authorizes reporting the next step, not automatically starting it;
+- tool memory and lower-precedence preferences are noncanonical;
 - implementation convenience and tool-specific configuration never supersede accepted contracts;
 - design-scenario PASS is not executable implementation proof.
