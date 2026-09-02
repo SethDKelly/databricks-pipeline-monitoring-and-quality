@@ -2,7 +2,7 @@
 
 Phase 010 — Technical Architecture is complete. Before executable product work begins, the repository is completing the **Agentic Development Foundation** so Cursor, Claude Code, Codex, and ordinary tooling operate against one shared authority/knowledge/workflow/conformance model.
 
-**ADF status mirror: COMPLETE ADF-A–ADF-F; NEXT ADF-G.**
+**ADF status mirror: COMPLETE ADF-A–ADF-F; IN EXECUTION ADF-G.**
 
 ## Start here
 
@@ -12,9 +12,10 @@ Phase 010 — Technical Architecture is complete. Before executable product work
 4. [`.agents/skills/`](.agents/skills/) — canonical human-directed development workflows.
 5. [`docs/agentic_development_foundation/conformance_policy.md`](docs/agentic_development_foundation/conformance_policy.md) — unified agentic validation/failure semantics.
 6. [`docs/agentic_development_foundation/tool_compatibility.json`](docs/agentic_development_foundation/tool_compatibility.json) — Cursor/Claude Code/Codex compatibility state.
-7. [`docs/implementation/README.md`](docs/implementation/README.md) — implementation-program status and 001–011 roadmap.
-8. [`docs/implementation/agent_reference_index.md`](docs/implementation/agent_reference_index.md) — compact stable-ID/path bridge.
-9. [`docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md`](docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md) — frozen architecture handoff.
+7. [`docs/agentic_development_foundation/runtime_compatibility_evidence.json`](docs/agentic_development_foundation/runtime_compatibility_evidence.json) — ADF-G provider runtime evidence ledger.
+8. [`docs/implementation/README.md`](docs/implementation/README.md) — implementation-program status and 001–011 roadmap.
+9. [`docs/implementation/agent_reference_index.md`](docs/implementation/agent_reference_index.md) — compact stable-ID/path bridge.
+10. [`docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md`](docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md) — frozen architecture handoff.
 
 ## Agentic foundation state
 
@@ -27,11 +28,11 @@ Completed and accepted:
 - ADF-E — Context Discovery, Stable References & Knowledge Maintenance;
 - ADF-F — Conformance, Validation, Drift Detection & CI.
 
-Next required group:
+Current required group:
 
-- **ADF-G — Developer Tool Compatibility, Onboarding & Operating Model.**
+- **ADF-G — Developer Tool Compatibility, Onboarding & Operating Model: IN EXECUTION.** Repository/onboarding compatibility and ordinary IDE/CLI viability are implemented; actual Cursor, Claude Code and Codex runtime smokes remain unverified until `ADF-G-XT01` is executed in those provider runtimes.
 
-Then:
+Then, after ADF-G acceptance:
 
 - ADF-H — Security, Trust, Lifecycle & Governance;
 - Agentic Development Foundation execution exit review;
@@ -43,7 +44,7 @@ Then:
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-This command reports agentic **configuration conformance only**. It is not DMTZ domain health, data quality, source health, runtime correctness, or production readiness. Tool-in-the-loop Cursor/Claude/Codex verification remains ADF-G evidence.
+This command reports agentic **configuration conformance only**. It is not DMTZ domain health, data quality, source health, runtime correctness, or production readiness. Provider runtime verification remains independent ADF-G evidence.
 
 ## Coding-agent boundaries
 
@@ -53,6 +54,7 @@ This command reports agentic **configuration conformance only**. It is not DMTZ 
 - ADF-D keeps workflow meaning under `.agents/skills/`.
 - ADF-E requires shortest-path discovery, exact accepted stable-ID lookup, and deterministic context budgets.
 - ADF-F makes those repository configuration invariants mechanically checkable and CI-gated.
+- ADF-G proves tool-neutral onboarding/repository compatibility and requires actual provider runtime evidence before acceptance.
 - Skill selection does not create new project scope.
 - Autonomous task selection, multi-agent implementation delegation, unattended merge/deploy, and agent-created backlog work remain out of scope.
 
