@@ -1,6 +1,6 @@
 # ADF-B — OKF v0.2 Knowledge Plane & DMTZ Knowledge Profile
 
-**Status:** PLANNED / READY TO EXECUTE
+**Status:** COMPLETE / ACCEPTED
 
 ## Objective
 
@@ -18,7 +18,7 @@ OKF is appropriate because it is intentionally Markdown/YAML, git-friendly, cons
 
 A knowledge document may summarize where a contract lives, what implementation area it supports and how current the routing entry is. Exact semantics remain in the referenced canonical document/code/test.
 
-## Proposed bundle
+## Implemented bundle
 
 ```text
 knowledge/
@@ -28,7 +28,8 @@ knowledge/
 │   ├── index.md
 │   ├── authority.md
 │   ├── architecture.md
-│   └── implementation-program.md
+│   ├── implementation-program.md
+│   └── agentic-foundation.md
 ├── domains/
 │   ├── index.md
 │   ├── evidence-temporal.md
@@ -50,37 +51,28 @@ knowledge/
     └── exit-review.md
 ```
 
-The initial bundle should remain small. Do not create one OKF document for every SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH contract.
+The bundle deliberately remains small enough to scan. DMTZ does not create one OKF document for every SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH contract.
 
 ## DMTZ OKF profile
 
-OKF v0.2 requires only `type`, but DMTZ should define a stricter producer profile for repository-maintained entries.
+The accepted producer profile is documented in [`okf_profile.md`](okf_profile.md).
 
-Recommended required fields for DMTZ concept documents:
+Every non-reserved DMTZ concept document under `knowledge/` requires:
 
 ```yaml
 ---
-type: <DMTZ knowledge type>
-title: <human-readable title>
-description: <one-sentence routing summary>
-resource: <canonical repository-relative resource or stable URI>
-tags: [dmtz, ...]
-status: draft|stable|deprecated
+type: "<DMTZ knowledge type>"
+title: "<human-readable title>"
+description: "<one-sentence routing summary>"
+resource: "<canonical repository-relative resource or stable URI>"
+tags: ["dmtz", "..."]
+status: "draft|stable|deprecated"
 ---
 ```
 
-Use optional OKF v0.2 families where they provide real value:
+The root `knowledge/index.md` declares `okf_version: "0.2"`.
 
-- `sources` when an entry synthesizes more than one canonical source;
-- `generated` when a tool/process created or materially regenerated the knowledge entry;
-- `verified` when a human or process has explicitly checked the entry against its source;
-- `stale_after` only for genuinely time-sensitive routing/compatibility knowledge.
-
-Do not add metadata merely because the format permits it.
-
-## DMTZ knowledge types
-
-Initial producer-defined types:
+Initial producer-defined knowledge types are:
 
 - `Project Authority`;
 - `Architecture Reference`;
@@ -89,60 +81,57 @@ Initial producer-defined types:
 - `Development Workflow`;
 - `Tool Compatibility Reference`.
 
-Future types may be added without changing the canonical DMTZ concept catalog; OKF `type` is a knowledge-routing classification, not a DMTZ product Concept.
+Future types may be added without changing the canonical DMTZ concept catalog; OKF `type` is a knowledge-routing classification, not a DMTZ product Concept. Unknown valid types must be tolerated.
 
 ## Trust-semantics firewall
 
-OKF trust/lifecycle signals must remain semantically separate from DMTZ domain authority:
+OKF trust/lifecycle signals remain semantically separate from DMTZ domain authority:
 
 - OKF `verified` ≠ Assertion Authority;
-- OKF trust tier ≠ evidence sufficiency;
-- OKF human-reviewed ≠ causal confirmation authority;
+- OKF trust/review ≠ evidence sufficiency;
+- OKF human review ≠ causal confirmation authority;
 - OKF lifecycle `stable` ≠ DMTZ health/quality status;
 - OKF `stale_after` describes a knowledge entry, not monitored-data freshness;
-- OKF provenance describes the routing artifact's origin, not necessarily the proposition-level evidence represented by DMTZ.
+- OKF provenance describes the routing artifact's origin, not necessarily proposition-level DMTZ evidence.
 
-This firewall must be documented and tested in any generated tooling.
+This firewall is documented in the profile and represented in ADF-B fixture scenarios.
 
 ## Progressive disclosure
 
-Agents should normally traverse:
+The accepted traversal is:
 
 ```text
 knowledge/index.md
-  → domain or implementation index
+  → one category index
   → one routing concept
   → canonical document(s)
   → exact stable contract IDs when needed
 ```
 
-The bundle should reduce context, not encourage preloading.
+The bundle is optimized to reduce context rather than encourage preloading.
 
-## Generation strategy
+## Validation and maintenance
 
-Prefer deterministic generation for indexes and mechanical metadata where possible. Human-authored descriptions should remain concise and reviewed.
+- [`okf_maintenance_policy.md`](okf_maintenance_policy.md) defines ownership, lifecycle, provenance and update rules.
+- `scripts/agentic/validate_okf.py` provides a dependency-free structural/profile/resource/local-link validator appropriate before Implementation 001 establishes the Python dependency baseline.
+- [`fixtures/adf_b_knowledge_scenarios.yaml`](fixtures/adf_b_knowledge_scenarios.yaml) provides deterministic scenario inputs for later ADF-F automation.
 
-Generated OKF content must never overwrite canonical documentation. A generation error should fail validation of the knowledge layer, not mutate product truth.
+ADF-F owns CI integration, richer parser/test harnesses and context-budget enforcement. ADF-B does not claim those later controls are already implemented.
 
-## Deliverables
+## Acceptance findings
 
-- `knowledge/` v0.2 bundle root with `okf_version: "0.2"` declaration;
-- initial project/domain/implementation/workflow routing entries;
-- DMTZ OKF profile documentation;
-- deterministic OKF validation/index-link checks;
-- source/verification/lifecycle maintenance policy.
+ADF-B passes because:
 
-## Acceptance scenarios
+- a new developer/agent can route from `knowledge/index.md` to current project, domain and implementation sources through progressive disclosure;
+- exact stable contracts remain retrieved from canonical docs rather than OKF summaries;
+- the DMTZ validator does not reject a concept solely because its producer-defined `type` is unknown;
+- `deprecated` and `stale_after` states are surfaced as knowledge-layer warnings rather than mapped to DMTZ domain state;
+- broken repository-relative resources/local links are validation errors;
+- generated/maintained knowledge is prohibited from writing product truth back into canonical docs;
+- OKF trust metadata is explicitly firewalled from DMTZ authority/evidence/health/causality semantics.
 
-ADF-B passes when:
-
-- a new developer/agent can reach the active implementation package and relevant Phase 010 architecture through progressive disclosure;
-- an exact stable contract can still be retrieved from canonical docs without an OKF summary becoming authoritative;
-- unknown OKF types are tolerated;
-- deprecated/stale routing entries are surfaced rather than silently used as current;
-- a broken OKF entry cannot corrupt or supersede canonical DMTZ documentation;
-- OKF trust metadata is never interpreted as DMTZ authority/evidence status.
+See [`adf_b_execution_review.md`](adf_b_execution_review.md) for the execution closure.
 
 ## Deferred OKF capabilities
 
-Do not introduce OKF Attested Computation runtime protocols or an OKF MCP server in this foundation. These may be reconsidered later if a concrete workflow requires them.
+ADF-B does not introduce OKF Attested Computation runtime protocols or an OKF MCP server. These remain deferred unless a concrete later workflow justifies them.
