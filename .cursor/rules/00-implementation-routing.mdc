@@ -1,5 +1,5 @@
 ---
-description: Route DMTZ agentic/implementation work to the live program, portable OKF knowledge entry, active package, shared authority, and frozen architecture handoff. Use for task selection or when project status/authority is unclear.
+description: Route DMTZ agentic/implementation work to live status, portable OKF knowledge, canonical Agent Skills, shared authority, and frozen architecture. Use for task selection or when project status/authority/workflow location is unclear.
 globs:
 alwaysApply: false
 ---
@@ -12,47 +12,58 @@ Start from:
 
 - `IMPLEMENTATION.md` — repository implementation/agentic entry point;
 - `knowledge/index.md` — portable OKF v0.2 progressive-disclosure entry;
-- `docs/agentic_development_foundation/README.md` — live ADF execution sequence/status;
+- `docs/agentic_development_foundation/README.md` — live ADF execution status;
 - `docs/agentic_development_foundation/authority_scope_policy.md` — shared human-directed action/authority policy;
 - root `AGENTS.md` — shared repository constitution;
+- `.agents/skills/<name>/SKILL.md` — canonical portable workflow when a named DMTZ workflow is relevant;
 - `docs/implementation/README.md` — sole living implementation-program status authority;
 - `docs/implementation/agent_reference_index.md` — secondary stable-ID/canonical-document bridge;
 - the active ADF or implementation group plan;
 - `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md` — frozen architecture handoff.
 
-**ADF-A, ADF-B and ADF-C are complete. ADF-D and ADF-E are the next eligible Agentic Development Foundation groups.** Implementation 001 follows the implemented Agentic Development Foundation exit.
+**ADF-A through ADF-D are complete. ADF-E is the next required Agentic Development Foundation group.** Implementation 001 follows the complete Agentic Development Foundation exit.
 
-Tool-adapter rules:
+Tool/workflow rules:
 
 - Cursor uses root `AGENTS.md` plus scoped `.cursor/rules/*.mdc`;
-- Claude Code uses `.claude/CLAUDE.md` importing root `AGENTS.md`;
-- Codex uses root `AGENTS.md` natively;
-- `docs/agentic_development_foundation/tool_compatibility.json` records compatibility state;
-- no adapter may create a parallel semantic/status authority.
+- Cursor consumes DMTZ workflows natively from `.agents/skills/`;
+- Claude Code uses `.claude/CLAUDE.md` plus thin `.claude/commands/` bridges to the same `.agents/skills/` source;
+- Codex uses root `AGENTS.md` and `.agents/skills/` natively;
+- `tool_compatibility.json` records documented compatibility; ADF-G owns runtime smoke evidence;
+- no adapter/skill may create a parallel semantic/status authority.
 
 Human-directed action classes:
 
 - A1 review/inspect/plan: do not edit unless changes are also requested;
-- A2 change/build/fix: perform in-scope repository edits, directly necessary supporting tests/status/traceability, and safe validation without repetitive permission prompts;
+- A2 change/build/fix: perform in-scope edits and directly necessary support/validation without repetitive permission prompts;
 - A3 external/destructive/scope-expanding: require explicit task-specific human authorization plus repository/team gates;
 - A4 architecture/semantic change: follow DMTZ change control.
 
+Workflow boundary:
+
+- selecting or auto-matching a skill inside the current human task does not create new work;
+- `implement-group` stops at the selected task/group;
+- `review-change` remains read-only unless fixes are separately requested;
+- `run-conformance` does not rewrite requirements to make checks pass;
+- `update-traceability` requires actual supporting evidence;
+- `exit-review` cannot self-waive unresolved mandatory gates.
+
 Knowledge rules:
 
-- use `knowledge/index.md` for first-hop routing when project/domain/implementation/workflow location is not already known;
-- traverse one category/concept at a time rather than loading the whole bundle;
-- follow the concept `resource`/canonical links for exact semantics;
-- treat OKF lifecycle/trust/provenance as knowledge-artifact metadata only, never DMTZ authority/health/evidence/causality state;
-- if OKF text conflicts with the canonical resource, the canonical resource wins.
+- use `knowledge/index.md` for first-hop routing when location is not already known;
+- traverse one category/concept at a time;
+- follow canonical `resource` links for exact meaning;
+- treat OKF metadata as knowledge-artifact metadata only;
+- canonical resources win over OKF summaries.
 
 Other rules:
 
-- read only the active group plus domain-specific references needed for the task;
-- search stable contract IDs (`REF-###`, `AUTH-###`, `HLTH-###`, `OPS-###`, `EXPL-###`, `INTG-###`, `ARCH-###`) instead of loading whole phases;
-- ADF work may add agent configuration, OKF routing, portable workflow/skill sources and deterministic validation helpers;
+- read only the active group and domain references needed for the task;
+- search exact stable IDs instead of loading whole phases;
+- ADF work may add agent configuration, knowledge/workflow routing and deterministic validation helpers;
 - product code remains under the active implementation package, not implied by ADF work;
-- do not create unrelated follow-on work, delegate repository implementation to other agents, or merge/deploy unattended;
-- completing the requested group authorizes reporting the next step, not automatically starting it;
-- tool memory and lower-precedence preferences are noncanonical;
-- implementation convenience and tool-specific configuration never supersede accepted contracts;
+- do not create unrelated follow-on work, delegate implementation to other agents, or merge/deploy unattended;
+- completing the requested group authorizes reporting the next step, not starting it;
+- tool memory/preferences are noncanonical;
+- implementation convenience never supersedes accepted contracts;
 - design-scenario PASS is not executable implementation proof.
