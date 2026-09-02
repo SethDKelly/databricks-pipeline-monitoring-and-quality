@@ -89,9 +89,9 @@ Hard limits include:
 - one Claude workflow bridge ≤ 1 KiB;
 - bounded OKF index/concept sizes.
 
-At ADF-E execution, GitHub reported root `AGENTS.md` at 12,699 bytes and `.claude/CLAUDE.md` at 1,054 bytes, both within policy limits.
+After final ADF-E guidance synchronization, GitHub reported root `AGENTS.md` at 13,537 bytes and `.claude/CLAUDE.md` at 1,054 bytes. The conservative Claude root-byte baseline is therefore 14,591 bytes, while the Cursor/Codex root `AGENTS.md` baseline is 13,537 bytes before relevance-selected/on-demand material. All remain below the configured root budgets.
 
-`measure_context_budget.py` implements repository measurement. ADF-F must execute it against the real checkout in CI before ADF-EX-15 is closed.
+`measure_context_budget.py` implements complete repository measurement. ADF-F must execute it against the real checkout in CI before ADF-EX-15 is closed.
 
 ### 7. Context-budget semantics — PASS
 
