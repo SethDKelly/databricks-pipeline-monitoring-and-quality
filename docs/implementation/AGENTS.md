@@ -6,27 +6,39 @@ Implementation work is governed by:
 
 1. accepted functional/integration architecture contracts through ARCH-500;
 2. Phase 010 Group 09 reference architecture and implementation handoff;
-3. `docs/implementation/README.md` for live implementation-program status;
-4. the active implementation package README/group plan;
-5. implementation ADRs that select concrete tools without changing accepted semantics.
+3. root `AGENTS.md` plus `docs/agentic_development_foundation/authority_scope_policy.md` for shared agent action/scope behavior;
+4. `docs/implementation/README.md` for live implementation-program status;
+5. the active implementation package README/group plan;
+6. implementation ADRs that select concrete tools without changing accepted semantics.
 
 If code and accepted contracts disagree, the code is presumptively wrong until an explicit change request is accepted.
 
-## Cursor / agent context discipline
+## Agent context and action discipline
 
 Use `docs/implementation/agent_reference_index.md` as the compact routing surface for implementation agents.
 
 For routine work, prefer this context order:
 
-**root `AGENTS.md` → active scoped `.cursor/rules/*.mdc` rule → active implementation package/group plan → one or two domain architecture/reference documents → exact stable contract IDs/tests as needed.**
+**root `AGENTS.md` → shared ADF-A scope policy when action/scope is material → active scoped tool rule/adapter → active implementation package/group plan → one or two domain architecture/reference documents → exact stable contract IDs/tests as needed.**
+
+Human-directed action follows ADF-A:
+
+- A1 review/inspect/plan does not authorize edits;
+- A2 change/build/fix authorizes in-scope edits, directly necessary tests/status/traceability and safe validation;
+- A3 external/destructive/scope-expanding actions require explicit task-specific human authorization plus repository/team gates;
+- A4 architecture/semantic changes follow DMTZ change control.
+
+Completing one implementation group does not authorize beginning the next group automatically.
 
 Do not preload all SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH documentation. Search exact stable IDs when deeper semantics are required.
 
 Historical phase-specific Cursor rules have been removed from the active `.cursor/rules` set. Their authoritative semantics remain in `docs/` and their prior rule text remains available through Git history.
 
-## Code is now allowed — within active implementation scope
+## Code is allowed only within active implementation scope
 
-Phase 010 is complete. Application code, schemas, tests, Databricks resources, CI/CD and infrastructure changes may now be introduced **only when they are within the active implementation package and its acceptance gates**.
+Phase 010 is complete, but the current repository is completing the Agentic Development Foundation before Implementation 001-A begins. Application code, schemas, tests, Databricks resources, CI/CD and infrastructure changes may be introduced **only when they are within an explicitly active implementation package and its acceptance gates**.
+
+ADF execution alone does not activate DMTZ product/application implementation.
 
 Do not use implementation permission as permission to redesign the product model.
 
@@ -66,7 +78,8 @@ Design scenario PASS from prior phases is not executable proof. Implementation e
 - current Capability Authorization/disclosure at serving boundaries;
 - secrets and sensitive telemetry minimized/redacted;
 - tenant/environment separation explicit;
-- control callbacks/commands authenticated and replay-protected where applicable.
+- control callbacks/commands authenticated and replay-protected where applicable;
+- agent/tool memory remains noncanonical.
 
 ## Change escalation
 
