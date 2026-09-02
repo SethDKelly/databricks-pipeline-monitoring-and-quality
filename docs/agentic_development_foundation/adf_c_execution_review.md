@@ -38,7 +38,7 @@ Cursor continues to use:
 - `.cursor/rules/*.mdc` for scoped/relevance-driven domain mechanics;
 - `knowledge/index.md` for portable discovery.
 
-No new universal Cursor rule was introduced. The ADF policy remains that no `.mdc` rule is intentionally `alwaysApply: true` without a measured accepted need.
+No new universal Cursor rule was introduced. Repository search during ADF-C found no `alwaysApply: true` project rule.
 
 The routing rule now records ADF-A/B/C complete and routes later work through the shared compatibility model.
 
@@ -52,7 +52,7 @@ ADF-C deliberately uses:
 
 rather than copying shared rules.
 
-The adapter contains only Claude-specific mechanics: portable knowledge discovery, memory non-authority, workflow ownership in ADF-D, and the current no-delegation boundary.
+Repository readback confirmed the committed adapter imports `../AGENTS.md` and contains only Claude-specific mechanics: portable knowledge discovery, memory non-authority, workflow ownership in ADF-D, and the current no-delegation boundary.
 
 ### 4. Root CLAUDE.md avoidance — PASS
 
@@ -60,13 +60,15 @@ Current Cursor documentation states that Cursor also reads a root `CLAUDE.md` as
 
 Using `.claude/CLAUDE.md` avoids creating a second always-on Cursor instruction surface while remaining a supported Claude Code project-instruction location.
 
+Repository readback confirmed root `CLAUDE.md` is absent.
+
 This is a context-efficiency/tool-compatibility decision only; it does not change DMTZ semantic authority.
 
 ### 5. Codex adapter — PASS
 
 Current Codex/OpenAI guidance confirms `AGENTS.md` as the native repository instruction mechanism.
 
-ADF-C therefore adds no `CODEX.md` or repository-local Codex semantic rulebook. Codex consumes the same root `AGENTS.md`, portable `knowledge/index.md`, canonical docs, and repository validation as other developers/tools.
+ADF-C therefore adds no `CODEX.md` or repository-local `.codex/AGENTS.md` semantic rulebook. Repository readback confirmed both are absent. Codex consumes the same root `AGENTS.md`, portable `knowledge/index.md`, canonical docs, and repository validation as other developers/tools.
 
 ### 6. Compatibility manifest — PASS
 
@@ -103,9 +105,9 @@ Detailed repeated procedures remain correctly deferred to the portable ADF-D wor
 - competing `CODEX.md` or `.codex/AGENTS.md` semantic adapters;
 - missing/invalid manifest authority/tool entries.
 
-It emits warnings—not false failures—for runtime smoke checks that remain pending ADF-G.
+Repository-static readback during ADF-C verified the high-risk topology checks directly: root `CLAUDE.md` absent, `.claude/CLAUDE.md` present with the shared import, no `alwaysApply: true` search result, and no competing Codex semantic file.
 
-ADF-F owns CI integration and richer automated fixture execution. ADF-C does not claim those later gates are active.
+The validator is committed but is not yet represented as a required CI gate; ADF-F owns execution/integration and richer automated fixture coverage. It emits warnings—not false failures—for runtime smoke checks that remain pending ADF-G.
 
 ### 9. Human-directed boundary — PASS
 
@@ -145,7 +147,7 @@ Whole-foundation gates remain open until ADF-F/G execute deterministic/runtime v
 
 - **ADF-D:** realize portable human-directed workflows/skills without duplicating adapter semantics.
 - **ADF-E:** refine context discovery, stable references, and knowledge-maintenance behavior over the implemented adapters/OKF plane.
-- **ADF-F:** run/integrate adapter and OKF validators/fixtures in deterministic CI/conformance.
+- **ADF-F:** execute/integrate adapter and OKF validators/fixtures in deterministic CI/conformance.
 - **ADF-G:** execute representative bounded tasks in Cursor, Claude Code and Codex and record actual runtime/degraded states.
 - **ADF-H:** define the long-term compatibility review horizon and lifecycle governance.
 
