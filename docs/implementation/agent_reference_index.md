@@ -1,17 +1,19 @@
 # DMTZ Agent Reference Index
 
-**Purpose:** give developers and coding agents a compact routing surface from an implementation task to the smallest authoritative document/contract set needed to work safely.
+**Purpose:** give developers and coding agents a compact routing surface from a task to the smallest authoritative document/contract set needed to work safely.
 
-Do **not** load every historical phase for routine work. Start here, follow the active implementation package, then search stable IDs when a deeper rule is required.
+Do **not** load every historical phase for routine work. Follow the live status, then the active Agentic Development Foundation or implementation group, then exact stable IDs when deeper semantics are required.
 
 ## Universal start
 
 | Need | Read first |
 |---|---|
+| Repository implementation/agentic entry | `IMPLEMENTATION.md` |
 | Current implementation status | `docs/implementation/README.md` |
-| Repository implementation entry | `IMPLEMENTATION.md` |
-| Engineering/agent discipline | `docs/implementation/AGENTS.md` and root `AGENTS.md` |
-| Active first package | `docs/implementation/001_executable_foundations_walking_skeleton/README.md` |
+| Current pre-implementation agentic work | `docs/agentic_development_foundation/README.md` |
+| Shared engineering/agent constitution | root `AGENTS.md` |
+| Agentic knowledge/tool/workflow design | `docs/agentic_development_foundation/` |
+| Active first product implementation | `docs/implementation/001_executable_foundations_walking_skeleton/README.md` after ADF exit |
 | Frozen implementation handoff | `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md` |
 | Frozen target/reference architecture | `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/target_reference_architecture.md` |
 | Validation/test strategy | `docs/implementation/validation_strategy.md` |
@@ -19,7 +21,22 @@ Do **not** load every historical phase for routine work. Start here, follow the 
 | Traceability/change control | `docs/implementation/traceability_and_change_control.md` |
 | Completion profiles | `docs/implementation/completion_definition.md` |
 
-## Domain routing
+## Agentic foundation routing
+
+| Working area | ADF group | Primary source |
+|---|---|---|
+| Agent authority / human-directed action boundary | ADF-A | `docs/agentic_development_foundation/01_adf_a_authority_scope_boundary.md` |
+| OKF v0.2 portable knowledge plane | ADF-B | `docs/agentic_development_foundation/02_adf_b_okf_knowledge_plane.md` |
+| Cursor/Claude/Codex instruction adapters | ADF-C | `docs/agentic_development_foundation/03_adf_c_instruction_tool_adapters.md` |
+| Portable human-directed workflows/skills | ADF-D | `docs/agentic_development_foundation/04_adf_d_portable_skills_workflows.md` |
+| Context/stable-ID discovery and routing maintenance | ADF-E | `docs/agentic_development_foundation/05_adf_e_context_reference_maintenance.md` |
+| Agentic validation/drift/CI | ADF-F | `docs/agentic_development_foundation/06_adf_f_conformance_validation_ci.md` |
+| Cross-tool onboarding/compatibility | ADF-G | `docs/agentic_development_foundation/07_adf_g_tool_compatibility_operating_model.md` |
+| Security/trust/lifecycle governance | ADF-H | `docs/agentic_development_foundation/08_adf_h_security_trust_lifecycle_governance.md` |
+
+During ADF execution, autonomy is out of scope. See `docs/agentic_development_foundation/autonomous_backlog.md` only when explicitly reviewing deferred future work.
+
+## DMTZ domain routing
 
 | Working area | Implementation package | Phase 010 architecture | Primary earlier contract families | Key concern |
 |---|---|---|---|---|
@@ -53,15 +70,15 @@ When a task or test references an ID, search that exact ID in `docs/` rather tha
 
 Examples:
 
-- `REF-004` — bounded coverage / negative evidence requirements;
-- `AUTH-034` — use the exact accepted authority contract text where causal confirmation/authority is involved;
-- `HLTH-030` — locate the normative Expectation/Assessment contract;
+- `REF-004` — locate the exact bounded coverage / negative-evidence contract;
+- `AUTH-034` — use the exact accepted authority contract when confirmation/authority is involved;
+- `HLTH-030` — locate the exact normative Expectation/Assessment contract;
 - `OPS-067` — locate the exact operational/Impact proposition;
-- `EXPL-101` — locate the exact audience/authorization Explanation contract;
+- `EXPL-101` — locate the exact Explanation contract;
 - `INTG-145` — locate the exact integration/source evidence contract;
-- `ARCH-017` — locate the exact architecture decision/contract.
+- `ARCH-017` — locate the exact architecture contract.
 
-Do not treat the examples above as summaries of those contracts; the exact document is authoritative.
+Do not treat examples or OKF summaries as substitutes for the exact contract text.
 
 ## Implementation package paths
 
@@ -79,8 +96,8 @@ Do not treat the examples above as summaries of those contracts; the exact docum
 
 ## Context-minimization rule
 
-For routine implementation, the expected context stack is:
+Until ADF-B/E replaces this index with or integrates it into the OKF knowledge plane, the expected routine context stack is:
 
-**root `AGENTS.md` → active scoped Cursor rule → active implementation group → one or two domain architecture/reference documents → exact stable contracts/tests as needed.**
+**root `AGENTS.md` → active scoped tool rule/adapter → active ADF or implementation group → one domain routing source → one or two canonical architecture/reference documents → exact stable contracts/tests as needed.**
 
 Do not proactively load all SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH documentation.
