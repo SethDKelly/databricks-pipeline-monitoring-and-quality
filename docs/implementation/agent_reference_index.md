@@ -1,88 +1,90 @@
 # DMTZ Agent Reference Index
 
-**Purpose:** provide a compact secondary bridge from a task to accepted contract families and canonical document sets. Portable first-hop discovery begins at `knowledge/index.md`; reusable task procedures live under `.agents/skills/`; exact stable-ID occurrence discovery follows ADF-E.
+**Purpose:** compact secondary bridge from a task to accepted contract families and canonical document sets. Portable first-hop discovery begins at `knowledge/index.md`; task procedures live under `.agents/skills/`; exact stable-ID occurrence discovery follows ADF-E.
 
-Do **not** load every historical phase for routine work. Prefer the shortest path: use an explicit group/path/ID directly when known; otherwise use `knowledge/index.md` → one category/concept → canonical resource, then exact stable IDs as required.
+**ADF status mirror: COMPLETE ADF-A–ADF-F; NEXT ADF-G.**
+
+Use the shortest path: explicit group/path/ID directly when known; otherwise `knowledge/index.md` → one route → canonical resource → exact IDs/tests as required. Do not load entire historical phases for routine work.
 
 ## Universal start
 
 | Need | Read first |
 |---|---|
+| Live Agentic Development Foundation status | `docs/agentic_development_foundation/README.md` |
+| Shared agent/developer constitution | root `AGENTS.md` |
 | Portable knowledge discovery | `knowledge/index.md` |
-| Portable development workflow | `.agents/skills/<workflow>/SKILL.md` |
-| Repository implementation/agentic entry | `IMPLEMENTATION.md` |
-| Current implementation status | `docs/implementation/README.md` |
-| Current pre-implementation agentic work | `docs/agentic_development_foundation/README.md` |
-| Shared engineering/agent constitution | root `AGENTS.md` |
-| Human-directed authority/action policy | `docs/agentic_development_foundation/authority_scope_policy.md` |
+| Portable workflow | `.agents/skills/<workflow>/SKILL.md` |
+| Human-directed action policy | `docs/agentic_development_foundation/authority_scope_policy.md` |
 | Context discovery policy | `docs/agentic_development_foundation/context_discovery_policy.md` |
-| Stable-ID resolution policy | `docs/agentic_development_foundation/stable_reference_policy.md` |
-| Accepted stable-ID ranges | `docs/agentic_development_foundation/stable_id_registry.json` |
-| Context-size budgets | `docs/agentic_development_foundation/context_budget_policy.md` |
+| Stable-ID policy | `docs/agentic_development_foundation/stable_reference_policy.md` |
+| Stable-ID accepted ranges | `docs/agentic_development_foundation/stable_id_registry.json` |
+| Context budgets | `docs/agentic_development_foundation/context_budget_policy.md` |
+| Agentic conformance | `docs/agentic_development_foundation/conformance_policy.md` / `scripts/agentic/run_conformance.py` |
 | Tool compatibility state | `docs/agentic_development_foundation/tool_compatibility.json` |
-| Portable workflow profile | `docs/agentic_development_foundation/portable_workflow_profile.md` |
-| DMTZ OKF producer profile | `docs/agentic_development_foundation/okf_profile.md` |
-| Active first product implementation | `docs/implementation/001_executable_foundations_walking_skeleton/README.md` after ADF exit |
-| Frozen implementation handoff | `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md` |
-| Frozen target/reference architecture | `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/target_reference_architecture.md` |
-| Validation/test strategy | `docs/implementation/validation_strategy.md` |
-| Technology defaults | `docs/implementation/technology_baseline.md` |
+| Implementation-program status | `docs/implementation/README.md` |
+| First implementation after ADF exit | `docs/implementation/001_executable_foundations_walking_skeleton/README.md` |
+| Frozen architecture handoff | `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md` |
+| Frozen target architecture | `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/target_reference_architecture.md` |
+| Validation strategy | `docs/implementation/validation_strategy.md` |
 | Traceability/change control | `docs/implementation/traceability_and_change_control.md` |
-| Completion profiles | `docs/implementation/completion_definition.md` |
 
 ## Agentic foundation routing
 
-| Working area | ADF group | Primary source |
+| Area | Group | Primary source |
 |---|---|---|
-| Agent authority / human-directed action boundary | ADF-A — COMPLETE | `docs/agentic_development_foundation/authority_scope_policy.md`; `adf_a_execution_review.md` |
-| OKF v0.2 portable knowledge plane | ADF-B — COMPLETE | `knowledge/index.md`; `okf_profile.md`; `adf_b_execution_review.md` |
+| Authority / human-directed scope | ADF-A — COMPLETE | `authority_scope_policy.md`; `adf_a_execution_review.md` |
+| Portable OKF knowledge | ADF-B — COMPLETE | `knowledge/index.md`; `okf_profile.md`; `adf_b_execution_review.md` |
 | Cursor/Claude/Codex instruction adapters | ADF-C — COMPLETE | `tool_compatibility.json`; `adf_c_execution_review.md` |
-| Portable human-directed workflows/skills | ADF-D — COMPLETE | `.agents/skills/`; `portable_workflow_profile.md`; `adf_d_execution_review.md` |
-| Context/stable-ID discovery and routing maintenance | ADF-E — COMPLETE | `context_discovery_policy.md`; `stable_reference_policy.md`; `context_budget_policy.md`; `adf_e_execution_review.md` |
-| Agentic validation/drift/CI | ADF-F — NEXT | `docs/agentic_development_foundation/06_adf_f_conformance_validation_ci.md` |
-| Cross-tool onboarding/compatibility | ADF-G | `docs/agentic_development_foundation/07_adf_g_tool_compatibility_operating_model.md` |
-| Security/trust/lifecycle governance | ADF-H | `docs/agentic_development_foundation/08_adf_h_security_trust_lifecycle_governance.md` |
+| Portable workflows / Agent Skills | ADF-D — COMPLETE | `.agents/skills/`; `portable_workflow_profile.md`; `adf_d_execution_review.md` |
+| Context / stable IDs / maintenance / budgets | ADF-E — COMPLETE | `context_discovery_policy.md`; `stable_reference_policy.md`; `adf_e_execution_review.md` |
+| Conformance / drift / CI | ADF-F — COMPLETE | `conformance_policy.md`; `scripts/agentic/run_conformance.py`; `adf_f_execution_review.md` |
+| Cross-tool runtime compatibility / onboarding | ADF-G — NEXT | `07_adf_g_tool_compatibility_operating_model.md`; `compatibility_smoke_checklist.md` |
+| Security / trust / lifecycle governance | ADF-H — PLANNED | `08_adf_h_security_trust_lifecycle_governance.md` |
 
-Autonomy is out of scope. See `docs/agentic_development_foundation/autonomous_backlog.md` only when explicitly reviewing deferred future work.
+Autonomy remains out of scope; see `autonomous_backlog.md` only when explicitly reviewing deferred future work.
 
-## Workflow routing
+## Workflow map
 
-- `resolve-context` — shortest-path minimum current authority/context; A1, no edits.
-- `implement-group` — implement one human-selected task/group; A2, then stop.
-- `resolve-contract` — validate accepted range, locate every exact occurrence, then identify canonical meaning through live authority; A1.
-- `run-conformance` — safe deterministic checks/reporting; A1 by default.
-- `review-change` — substantive read-only review; A1.
-- `update-traceability` — evidence-backed A2 supporting update.
-- `exit-review` — A1 evaluation; A2 only when explicitly recording the bounded review/status artifact.
+- `resolve-context` — A1 minimum authoritative context;
+- `implement-group` — A2 one human-selected group/task, then stop;
+- `resolve-contract` — A1 accepted stable-ID/semantic lookup;
+- `run-conformance` — A1 safe deterministic validation by default;
+- `review-change` — A1 substantive review;
+- `update-traceability` — evidence-backed A2 supporting update;
+- `exit-review` — A1 evaluation; bounded A2 only when recording the requested review/status artifact.
 
-Cursor and Codex consume `.agents/skills/` directly. Claude Code uses thin `.claude/commands/` bridges to the same source. Native runtime behavior remains ADF-G evidence.
+Cursor and Codex consume `.agents/skills/` directly. Claude Code uses thin `.claude/commands/` bridges. ADF-G owns actual runtime verification.
 
-## Tool adapter routing
+## Stable-ID discipline
 
-- Cursor: root `AGENTS.md` + scoped `.cursor/rules/*.mdc` + `.agents/skills/`.
-- Claude Code: `.claude/CLAUDE.md` imports `../AGENTS.md`; `.claude/commands/` bridges to `.agents/skills/`.
-- Codex: root `AGENTS.md` + `.agents/skills/` natively; no parallel semantic rulebook.
-- Portable discovery: `knowledge/index.md` for all supported tools when location is not already known.
-- Repository/static validators/helpers: `scripts/agentic/validate_okf.py`, `validate_agent_adapters.py`, `validate_agent_skills.py`, `resolve_stable_id.py`, `measure_context_budget.py`, `knowledge_impact.py`.
-- Runtime compatibility: ADF-G.
+Accepted ranges:
+
+- SYN-001–SYN-035;
+- REF-001–REF-030;
+- AUTH-001–AUTH-053;
+- HLTH-001–HLTH-066;
+- OPS-001–OPS-123;
+- EXPL-001–EXPL-160;
+- INTG-001–INTG-270;
+- ARCH-001–ARCH-500.
+
+Use `scripts/agentic/resolve_stable_id.py <ID>` when exact occurrence discovery helps. Every hit is a candidate; neither first-hit order nor definition-like formatting establishes canonical ownership. Resolve meaning from the accepted owning document and live repository authority.
 
 ## DMTZ domain routing
 
-| Working area | Implementation package | Phase 010 architecture | Primary earlier contract families | Key concern |
+| Working area | Implementation | Phase 010 architecture | Primary contract families | Key boundary |
 |---|---|---|---|---|
-| Canonical IDs, evidence, provenance, time, persistence | 001 B/D | Group 02 / ARCH-033–080 | REF-001–030, SYN | bitemporal/knowledge-cut non-rewriting truth |
-| Identity, scope, authority, authorization, disclosure | 002 | Group 03 / ARCH-081–132 | AUTH-001–053, REF | identity and permission/authority separation |
-| Databricks/GitHub acquisition, capability, coverage | 003 (walking slice in 001-E) | Group 04 / ARCH-133–190 | INTG-001–270, REF | partial/error ≠ negative domain fact |
-| Runtime/deployment provenance, health, quality, change, Lineage, Impact | 004 | Group 05 / ARCH-191–274 | HLTH-001–066, OPS-001–123, INTG | execution/health/Lineage/exposure distinctions |
-| Investigation, causal claims, historical replay | 005 | Group 06 / ARCH-275–350 | REF, OPS, EXPL | hypothesis/localization ≠ confirmation; as-known replay |
-| Statement/Answer IR, Explanation, basis, API/UI | 006 (first Statement IR in 001-F) | Groups 06/08 / ARCH-275–350, 421–500 | EXPL-001–160, AUTH | deterministic, traceable, authorization-aware projection |
-| Security, deployment, observability, SLO, cost, DR | 007 | Group 08 / ARCH-421–500 | AUTH, INTG | operational health ≠ domain health; explicit degradation |
-| MVP pilot / release candidate validation | 008 | Group 09 consolidation | all applicable | executable proof of bounded MVP profile |
-| Enterprise scale/optional Collibra/Immuta/search/model | 009 | Groups 01/04/08/09 | INTG/AUTH/EXPL | optional dependencies do not become hidden truth owners |
-| Execution Gate / Propagation Safeguard | 010 | Group 07 / ARCH-351–420 | OPS/REF/AUTH | decision/enforcement/execution/prevention distinctions |
-| Production graduation / operational acceptance | 011 | Group 09 + Group 08 | all supported profile | actual production capability, ownership, SLO, DR evidence |
-
-The same domains are represented as portable OKF concepts under `knowledge/domains/`; this table remains useful for contract-family/range orientation.
+| Canonical IDs, evidence, provenance, time, persistence | 001 B/D | Group 02 / ARCH-033–080 | REF, SYN | bitemporal/knowledge-cut non-rewriting truth |
+| Identity, scope, authority, authorization, disclosure | 002 | Group 03 / ARCH-081–132 | AUTH, REF | identity / authority / permission separation |
+| Databricks/GitHub acquisition, capability, coverage | 003; slice in 001-E | Group 04 / ARCH-133–190 | INTG, REF | partial/error ≠ negative fact |
+| Runtime provenance, health, quality, change, Lineage, Impact | 004 | Group 05 / ARCH-191–274 | HLTH, OPS, INTG | execution/health/Lineage/exposure distinctions |
+| Investigation, causal claims, historical replay | 005 | Group 06 / ARCH-275–350 | REF, OPS, EXPL | hypothesis/localization ≠ confirmation |
+| Statement/Answer IR, Explanation, basis, API/UI | 006; first Statement IR in 001-F | Groups 06/08 | EXPL, AUTH | deterministic, traceable, authorization-aware projection |
+| Security, deployment, observability, SLO, cost, DR | 007 | Group 08 / ARCH-421–500 | AUTH, INTG | operational health ≠ domain health |
+| MVP pilot / release candidate | 008 | Group 09 | all applicable | executable proof of bounded MVP |
+| Enterprise scale / optional integrations | 009 | Groups 01/04/08/09 | INTG, AUTH, EXPL | optional dependencies do not own truth |
+| Execution Gate / Propagation Safeguard | 010 | Group 07 / ARCH-351–420 | OPS, REF, AUTH | decision/enforcement/execution/prevention distinctions |
+| Production graduation | 011 | Groups 08/09 | all supported | actual production capability / ownership / SLO / DR evidence |
 
 ## Phase 010 group paths
 
@@ -96,51 +98,14 @@ The same domains are represented as portable OKF concepts under `knowledge/domai
 8. `docs/concepts/phase_010/08_serving_security_deployment_observability_cost_architecture/`
 9. `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/`
 
-## Stable-ID search discipline
-
-Accepted ranges are defined machine-readably in `docs/agentic_development_foundation/stable_id_registry.json`.
-
-When an exact ID is known:
-
-1. validate family/range;
-2. search the exact token under `docs/`;
-3. return all exact occurrences rather than only the first match;
-4. treat mechanical `definition_candidate` classification as a retrieval hint only;
-5. identify canonical meaning from the accepted owning document/live repository authority;
-6. read only the surrounding section required for the task.
-
-`scripts/agentic/resolve_stable_id.py <ID>` performs deterministic range/occurrence discovery when a local checkout is available.
-
-Examples:
-
-- `REF-004` — accepted REF family lookup;
-- `AUTH-034` — accepted AUTH family lookup;
-- `HLTH-030` — accepted HLTH family lookup;
-- `OPS-067` — accepted OPS family lookup;
-- `EXPL-101` — accepted EXPL family lookup;
-- `INTG-145` — accepted INTG family lookup;
-- `ARCH-017` — accepted ARCH family lookup.
-
-Do not infer the contract meaning from these labels, the OKF route, this index, or search order. The exact accepted source owns the semantics.
-
 ## Implementation package paths
 
-- `docs/implementation/001_executable_foundations_walking_skeleton/`
-- `docs/implementation/002_identity_scope_authority_authorization_runtime/`
-- `docs/implementation/003_source_acquisition_capability_evidence_reliability/`
-- `docs/implementation/004_runtime_provenance_health_quality_change_lineage/`
-- `docs/implementation/005_investigation_impact_reasoning_historical_replay/`
-- `docs/implementation/006_serving_explanation_basis_user_experience/`
-- `docs/implementation/007_operationalization_security_resilience_slo_cost/`
-- `docs/implementation/008_mvp_pilot_validation_release_candidate/`
-- `docs/implementation/009_enterprise_expansion_scale_optional_integrations/`
-- `docs/implementation/010_active_control_enterprise_control_plane/`
-- `docs/implementation/011_production_graduation_operational_acceptance/`
+`001_executable_foundations_walking_skeleton/` through `011_production_graduation_operational_acceptance/` live under `docs/implementation/`.
 
 ## Context-minimization rule
 
-Expected routine context is the shortest sufficient subset of:
+Expected routine context:
 
-**root `AGENTS.md` → matching `.agents/skills/` workflow when useful → explicit path/ID directly when known; otherwise `knowledge/index.md` → one category/concept → active scoped tool adapter/group → canonical resource → exact stable contracts/tests.**
+**root `AGENTS.md` → matching workflow when useful → explicit path/ID directly when known; otherwise `knowledge/index.md` → one route → active group → canonical source → exact contracts/tests.**
 
-Do not preload all skills, OKF concepts, Cursor rules, or SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH documentation. Deterministic byte budgets live in `docs/agentic_development_foundation/context_budget.json`.
+Do not preload all skills, OKF concepts or contract families.
