@@ -35,7 +35,7 @@ def parse_frontmatter(text: str) -> tuple[dict[str, str], str]:
     for line in lines[1:end]:
         match = TOP_KEY.match(line)
         if match:
-            data[match.group(1)] = match.group(2).strip().strip('"\'')
+            data[match.group(1)] = match.group(2).strip().strip("\"'")
     return data, "\n".join(lines[end + 1 :])
 
 
@@ -107,7 +107,7 @@ def main() -> int:
             data = json.loads(manifest.read_text(encoding="utf-8"))
             for tool in ("cursor", "claude_code", "codex"):
                 mechanism = data["tools"][tool].get("workflow_mechanism", "")
-                if not mechanism or "ADF-D" in mechanism and "deferred" in mechanism.lower():
+                if not mechanism or ("ADF-D" in mechanism and "deferred" in mechanism.lower()):
                     errors.append(f"tool compatibility manifest still defers ADF-D workflow mechanism for {tool}")
         except (json.JSONDecodeError, KeyError) as exc:
             errors.append(f"invalid tool compatibility manifest: {exc}")
