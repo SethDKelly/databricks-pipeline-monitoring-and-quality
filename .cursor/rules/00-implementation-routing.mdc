@@ -1,5 +1,5 @@
 ---
-description: Route DMTZ agentic/implementation work to the live program, Agentic Development Foundation, portable OKF knowledge entry, active package, and frozen architecture handoff. Use for task selection or when project status/authority is unclear.
+description: Route DMTZ agentic/implementation work to the live program, portable OKF knowledge entry, active package, shared authority, and frozen architecture handoff. Use for task selection or when project status/authority is unclear.
 globs:
 alwaysApply: false
 ---
@@ -20,7 +20,15 @@ Start from:
 - the active ADF or implementation group plan;
 - `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md` — frozen architecture handoff.
 
-**ADF-A and ADF-B are complete. ADF-C is the next required Agentic Development Foundation group.** Implementation 001 follows the implemented Agentic Development Foundation exit.
+**ADF-A, ADF-B and ADF-C are complete. ADF-D and ADF-E are the next eligible Agentic Development Foundation groups.** Implementation 001 follows the implemented Agentic Development Foundation exit.
+
+Tool-adapter rules:
+
+- Cursor uses root `AGENTS.md` plus scoped `.cursor/rules/*.mdc`;
+- Claude Code uses `.claude/CLAUDE.md` importing root `AGENTS.md`;
+- Codex uses root `AGENTS.md` natively;
+- `docs/agentic_development_foundation/tool_compatibility.json` records compatibility state;
+- no adapter may create a parallel semantic/status authority.
 
 Human-directed action classes:
 
