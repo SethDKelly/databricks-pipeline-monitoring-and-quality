@@ -1,6 +1,6 @@
 # DMTZ Agentic Development Foundation
 
-**Status:** IN EXECUTION — ADF-A / ADF-B / ADF-C / ADF-D COMPLETE; ADF-E NEXT
+**Status:** IN EXECUTION — ADF-A / ADF-B / ADF-C / ADF-D / ADF-E COMPLETE; ADF-F NEXT
 
 ## Purpose
 
@@ -14,11 +14,12 @@ The target outcome is that a developer may choose Cursor, Claude Code, Codex, or
 - **ADF-B — OKF v0.2 Knowledge Plane & DMTZ Knowledge Profile: COMPLETE / ACCEPTED.** See [`adf_b_execution_review.md`](adf_b_execution_review.md) and [`../../knowledge/index.md`](../../knowledge/index.md).
 - **ADF-C — Shared Instruction Hierarchy & Tool Adapter Contract: COMPLETE / ACCEPTED.** See [`adf_c_execution_review.md`](adf_c_execution_review.md) and [`tool_compatibility.json`](tool_compatibility.json).
 - **ADF-D — Portable Skills & Human-Directed Workflow Contract: COMPLETE / ACCEPTED.** See [`adf_d_execution_review.md`](adf_d_execution_review.md), [`portable_workflow_profile.md`](portable_workflow_profile.md), and `.agents/skills/`.
-- **ADF-E — Context Discovery, Stable References & Knowledge Maintenance: NEXT / READY.**
-- ADF-F–ADF-H remain planned behind their dependency gates.
+- **ADF-E — Context Discovery, Stable References & Knowledge Maintenance: COMPLETE / ACCEPTED.** See [`adf_e_execution_review.md`](adf_e_execution_review.md), [`context_discovery_policy.md`](context_discovery_policy.md), and [`stable_reference_policy.md`](stable_reference_policy.md).
+- **ADF-F — Conformance, Validation, Drift Detection & CI: NEXT / READY.**
+- ADF-G–ADF-H remain planned behind their dependency gates.
 - Implementation 001 remains planned and follows the implemented Agentic Development Foundation exit.
 
-ADF-A established shared authority, ADF-B portable knowledge routing, ADF-C thin tool adapters, and ADF-D one portable human-directed workflow source. ADF-E can now refine context discovery/reference maintenance across the completed A–D foundation.
+ADF-A established shared authority, ADF-B portable knowledge routing, ADF-C thin tool adapters, ADF-D one portable human-directed workflow source, and ADF-E deterministic context/reference/maintenance discipline. ADF-F now integrates those artifacts into a single conformance/CI path.
 
 ## Boundary
 
@@ -47,7 +48,7 @@ This foundation explicitly excludes:
 
 Those topics remain only in [`autonomous_backlog.md`](autonomous_backlog.md).
 
-## Authority, knowledge, adapter and workflow model
+## Authority, knowledge, adapter, workflow and retrieval model
 
 The shared ADF-A policy is [`authority_scope_policy.md`](authority_scope_policy.md).
 
@@ -76,7 +77,14 @@ ADF-D workflow access:
 - Claude Code: thin `.claude/commands/<name>.md` bridges to the canonical skills;
 - Codex: native `.agents/skills/` discovery.
 
-Initial workflows:
+ADF-E retrieval/maintenance controls:
+
+- shortest-path discovery: [`context_discovery_policy.md`](context_discovery_policy.md);
+- accepted stable-ID ranges/exact lookup: [`stable_reference_policy.md`](stable_reference_policy.md) + [`stable_id_registry.json`](stable_id_registry.json);
+- deterministic context budgets: [`context_budget_policy.md`](context_budget_policy.md) + [`context_budget.json`](context_budget.json);
+- canonical-change routing review: [`knowledge_maintenance_workflow.md`](knowledge_maintenance_workflow.md).
+
+Initial workflows remain:
 
 - `resolve-context`;
 - `implement-group`;
@@ -86,7 +94,7 @@ Initial workflows:
 - `update-traceability`;
 - `exit-review`.
 
-No OKF entry, skill, Cursor rule, Claude adapter, generated index, or tool memory may become an independent source of DMTZ semantic truth.
+No OKF entry, skill, Cursor rule, Claude adapter, generated index, stable-ID registry, context budget, or tool memory may become an independent source of DMTZ semantic truth.
 
 ADF-A action classes remain controlling:
 
@@ -114,18 +122,16 @@ Documentation verification remains distinct from ADF-G runtime smoke verificatio
 2. **ADF-B — OKF v0.2 Knowledge Plane & DMTZ Knowledge Profile — COMPLETE**
 3. **ADF-C — Shared Instruction Hierarchy & Tool Adapter Contract — COMPLETE**
 4. **ADF-D — Portable Skills & Human-Directed Workflow Contract — COMPLETE**
-5. **ADF-E — Context Discovery, Stable References & Knowledge Maintenance — NEXT**
-6. **ADF-F — Conformance, Validation, Drift Detection & CI**
+5. **ADF-E — Context Discovery, Stable References & Knowledge Maintenance — COMPLETE**
+6. **ADF-F — Conformance, Validation, Drift Detection & CI — NEXT**
 7. **ADF-G — Developer Tool Compatibility, Onboarding & Operating Model**
 8. **ADF-H — Security, Trust, Lifecycle & Governance**
 
 ## Dependency sequence
 
-ADF-A–ADF-D are complete.
+ADF-A–ADF-E are complete.
 
-ADF-E is now the next required group. It refines discovery, stable-reference retrieval, knowledge maintenance and context budgets over the implemented authority/OKF/adapter/workflow layers.
-
-ADF-F then integrates deterministic validation/drift controls into repository conformance/CI.
+ADF-F is now the next required group. It integrates deterministic validation/drift controls and the ADF-A–E scenario corpus into repository conformance/CI, including the agentic configuration-health report required by ADF-EX-16.
 
 ADF-G performs actual tool-in-the-loop Cursor/Claude Code/Codex compatibility exercises.
 
@@ -139,7 +145,7 @@ The design exit review is [`design_exit_review.md`](design_exit_review.md). The 
 /
 ├── AGENTS.md
 ├── IMPLEMENTATION.md
-├── knowledge/                    # ADF-B
+├── knowledge/
 ├── .agents/
 │   └── skills/                   # ADF-D canonical portable workflows
 ├── .cursor/
@@ -148,8 +154,11 @@ The design exit review is [`design_exit_review.md`](design_exit_review.md). The 
 ├── .claude/
 │   ├── CLAUDE.md                 # ADF-C shared-authority bridge
 │   └── commands/                 # ADF-D thin workflow bridges
+├── docs/agentic_development_foundation/
+│   ├── stable_id_registry.json   # ADF-E accepted ID ranges
+│   └── context_budget.json       # ADF-E byte budgets
 ├── docs/
-└── scripts/agentic/              # ADF-B/C/D validators; ADF-F CI integration later
+└── scripts/agentic/              # ADF-B–E deterministic helper/validation seams
 ```
 
 No root `CLAUDE.md` is used. No duplicated DMTZ workflow set is placed under `.claude/skills/`.
