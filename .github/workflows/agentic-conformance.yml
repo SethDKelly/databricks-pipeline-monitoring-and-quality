@@ -1,0 +1,57 @@
+name: Agentic conformance
+
+on:
+  pull_request:
+    paths:
+      - "AGENTS.md"
+      - "IMPLEMENTATION.md"
+      - ".agents/**"
+      - ".claude/**"
+      - ".cursor/**"
+      - "knowledge/**"
+      - "docs/agentic_development_foundation/**"
+      - "docs/implementation/AGENTS.md"
+      - "docs/implementation/README.md"
+      - "docs/implementation/agent_reference_index.md"
+      - "scripts/agentic/**"
+      - "scripts/check_docs_consistency.py"
+      - ".github/workflows/agentic-conformance.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "AGENTS.md"
+      - "IMPLEMENTATION.md"
+      - ".agents/**"
+      - ".claude/**"
+      - ".cursor/**"
+      - "knowledge/**"
+      - "docs/agentic_development_foundation/**"
+      - "docs/implementation/AGENTS.md"
+      - "docs/implementation/README.md"
+      - "docs/implementation/agent_reference_index.md"
+      - "scripts/agentic/**"
+      - "scripts/check_docs_consistency.py"
+      - ".github/workflows/agentic-conformance.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  agentic-conformance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Run agentic conformance
+        run: python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
+      - name: Publish agentic conformance summary
+        if: always()
+        run: |
+          if [ -f agentic-conformance-report.md ]; then
+            cat agentic-conformance-report.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Agentic conformance report was not produced." >> "$GITHUB_STEP_SUMMARY"
+          fi
