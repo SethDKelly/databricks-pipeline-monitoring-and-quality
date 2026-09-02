@@ -1,21 +1,27 @@
 # ADF-D — Portable Skills & Human-Directed Workflow Contract
 
-**Status:** PLANNED / READY TO EXECUTE
+**Status:** COMPLETE / ACCEPTED
 
 ## Objective
 
 Define reusable development procedures once, in a portable form, so Cursor/Claude/Codex users can invoke materially equivalent workflows without repeating long prompt recipes.
 
+## Execution outcome
+
+ADF-D uses `.agents/skills/<name>/SKILL.md` as the single canonical workflow source. This differs from the original proposed `agent-skills/` path because current Cursor and Codex documentation both natively discover repository skills under `.agents/skills/`.
+
+Claude Code follows the same open Agent Skills standard but natively discovers project skills under `.claude/skills/`. DMTZ intentionally does **not** copy the seven canonical skills there because Cursor also discovers Claude skill directories. Instead `.claude/commands/<name>.md` provides a thin Claude-native invocation bridge that tells Claude to read the canonical `.agents/skills/` workflow.
+
+See [`portable_workflow_profile.md`](portable_workflow_profile.md), [`workflow_invocation.md`](workflow_invocation.md), and [`adf_d_execution_review.md`](adf_d_execution_review.md).
+
 ## Scope
 
-Skills are **human-directed workflow aids**, not autonomous workers. A human chooses the task and invokes or requests the workflow. Skills may inspect, edit and validate within that task's authorized scope but may not create unrelated follow-on work or delegate implementation to other agents.
+Skills are **human-directed workflow aids**, not autonomous workers. A human chooses the task. A host may explicitly or implicitly select the matching workflow inside that task, but skill selection cannot create a new task, expand scope, authorize A3/A4 action, or start unrelated follow-on work.
 
 ## Canonical skill source
 
-Use one repository-owned source tree, proposed as:
-
 ```text
-agent-skills/
+.agents/skills/
 ├── resolve-context/SKILL.md
 ├── implement-group/SKILL.md
 ├── resolve-contract/SKILL.md
@@ -25,88 +31,81 @@ agent-skills/
 └── exit-review/SKILL.md
 ```
 
-The canonical source should use the smallest common portable `SKILL.md` subset that can be adapted to native tool locations. Tool-specific-only frontmatter or dynamic command syntax belongs in adapters, not the portable source, unless all supported tools tolerate it.
+Canonical skills use only the common portable `name` and `description` frontmatter plus Markdown instructions. Provider-specific metadata, model selection, permission syntax, subagent routing, dynamic shell interpolation, and UI metadata are excluded from the shared workflow source.
 
-## Initial workflow semantics
+## Implemented workflow semantics
 
 ### `resolve-context`
 
-Given a task or implementation group:
-
-1. identify live implementation status;
-2. traverse the OKF knowledge index to the smallest relevant domain/package entry;
-3. retrieve the active group plan;
-4. search exact stable IDs as needed;
-5. return the minimal authoritative context set and unresolved assumptions.
-
-No repository edits.
+Read-only A1 workflow that resolves live authority, the smallest relevant OKF route/canonical files, exact stable IDs when needed, and unresolved assumptions. No repository edits.
 
 ### `implement-group`
 
-For a human-selected group/task:
-
-1. resolve context;
-2. inspect existing code/tests/config;
-3. state affected contracts/acceptance gates;
-4. implement the smallest compliant change;
-5. add/update tests at the lowest appropriate level;
-6. run relevant non-destructive validation;
-7. update traceability/ADRs when required;
-8. report residual gaps/capability assumptions.
-
-It must not automatically start the next group.
+A2 workflow for one human-selected group/task: resolve context, inspect state, state affected gates, implement the smallest compliant change, add appropriate proof, run safe validation, update directly impacted support artifacts, report residuals, and stop. It cannot start the next group.
 
 ### `resolve-contract`
 
-Search a stable contract ID or bounded semantic question and return the exact canonical source plus the narrow surrounding context needed to apply it. Summaries are advisory and must link to exact authority.
+Read-only A1 lookup of an exact stable ID or bounded semantic question to canonical source and minimal surrounding context. Summaries remain advisory.
 
 ### `run-conformance`
 
-Run or instruct the repository's deterministic checks for the current change scope and report failures without rewriting requirements to make tests pass.
+Normally A1: run safe deterministic checks appropriate to the current scope and report pass/fail/skipped/unavailable evidence faithfully. A failure does not itself authorize fixes or requirement weakening.
 
 ### `review-change`
 
-Review a diff against affected contracts, security, historical semantics and test obligations. Focus on substantive defects rather than stylistic preference.
+Read-only A1 substantive review against affected contracts, security, historical semantics, and test obligations. Finding a defect does not authorize editing it.
 
 ### `update-traceability`
 
-Update the implementation traceability manifest after material behavior is added/changed. It may not mark a contract satisfied without supporting executable evidence.
+A2 supporting workflow that updates existing implementation traceability/status only when the material behavior and required supporting evidence actually exist.
 
 ### `exit-review`
 
-Evaluate one implementation group/package against its documented exit gates and produce a review artifact. It cannot self-approve unresolved mandatory criteria.
+A1 evaluation workflow; when a human explicitly asks to execute/record the repository exit review, writing the bounded review/status artifact is an A2 supporting action. Mandatory unresolved criteria cannot be self-waived.
 
 ## Skill design rules
 
 - workflow steps, not duplicated domain specification;
-- refer to OKF index/canonical docs rather than embedding long architecture summaries;
-- idempotent where practical;
-- safe failure: inability to resolve authority becomes an explicit unresolved state;
-- no hidden tool-specific assumptions in portable source;
-- no network/external writes unless the human task explicitly requires and authorizes them;
-- no autonomous chaining from one skill to another except within the bounded workflow explicitly invoked.
+- route through `AGENTS.md`, OKF, canonical docs/tests and exact stable IDs;
+- safe failure: unresolved authority remains unresolved;
+- no hidden provider-specific assumptions in canonical source;
+- no external/destructive actions without A3 authorization;
+- architecture/semantic conflicts remain A4 and follow DMTZ change control;
+- no agent delegation or autonomous backlog selection;
+- no automatic continuation to a new group;
+- progressive/on-demand skill loading rather than persistent prompt bloat.
 
 ## Tool adapters
 
-ADF execution may place generated/copied/thin adapters in native locations such as `.claude/skills/` or Cursor command/rule surfaces if useful. Adapter generation should be deterministic where possible.
+### Cursor
 
-Do not rely on symlinks as the sole cross-platform distribution strategy; Windows/enterprise environments may make them inconvenient. Prefer generation/copy validation when portability matters.
+Consumes `.agents/skills/` natively. Current documented explicit invocation is `/skill-name`; description matching may also surface skills automatically within the current human task.
+
+### Claude Code
+
+Uses `.claude/commands/<name>.md` thin bridges, invoked as `/<name>`, which route to `.agents/skills/<name>/SKILL.md`. These bridges contain no independent DMTZ workflow semantics.
+
+### Codex
+
+Consumes `.agents/skills/` natively. Current documented explicit selection is `$<skill-name>` (or `/skills` to inspect skills); description matching may also select skills inside the current human task.
+
+Native runtime discovery remains subject to ADF-G tool-in-the-loop verification.
 
 ## Deliverables
 
-- canonical portable skill directory and profile;
-- first seven human-directed skills above or a justified reduced set;
-- tool adapter strategy for Cursor/Claude/Codex;
-- skill validation tests;
-- documentation for invoking skills manually in each supported tool;
-- clear unsupported-feature behavior.
+- canonical `.agents/skills/` portable workflow tree;
+- all seven planned workflows;
+- `portable_workflow_profile.md`;
+- `workflow_invocation.md`;
+- thin Claude command bridges;
+- updated tool compatibility manifest;
+- `fixtures/adf_d_workflow_scenarios.yaml`;
+- `scripts/agentic/validate_agent_skills.py` deterministic structural validator;
+- stable OKF workflow routes for all seven workflows;
+- ADF-D execution review.
 
-## Acceptance scenarios
+## Acceptance status
 
-ADF-D passes when:
+Repository-configuration acceptance is recorded in [`adf_d_execution_review.md`](adf_d_execution_review.md).
 
-- a developer can invoke `resolve-context` and `implement-group` semantics from each supported tool;
-- the portable workflow produces equivalent required steps despite different native invocation UX;
-- the implementation skill stops after the requested group/task instead of continuing independently;
-- a skill cannot override an unresolved architecture conflict by changing its own instructions;
-- supporting detail can be loaded on demand instead of inflating every session's persistent context.
+Cross-tool runtime invocation remains deliberately unclaimed until ADF-G. CI enforcement/automated fixture execution remains ADF-F.
