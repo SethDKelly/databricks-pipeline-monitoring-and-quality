@@ -1,6 +1,6 @@
 # DMTZ Implementation Program
 
-**Status:** PLANNED / READY TO BEGIN — Implementation 001 next
+**Status:** PLANNED / READY TO BEGIN — Agentic Development Foundation next; Implementation 001 follows
 
 ## Purpose
 
@@ -19,15 +19,33 @@ Implementation does **not** create a new truth model. The accepted semantic/arch
 
 The Phase 010 implementation handoff is the immediate upstream contract: [`../concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md`](../concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md).
 
-For implementation-agent context routing, use [`agent_reference_index.md`](agent_reference_index.md). It maps implementation areas to the smallest relevant architecture/contract/document set so agents do not need to preload the complete design history.
+For implementation-agent context routing, use [`agent_reference_index.md`](agent_reference_index.md). The Agentic Development Foundation will evolve this routing into a portable OKF v0.2 knowledge plane while preserving canonical `docs/` as authority.
 
 ## Status authority
 
 - `docs/README.md` remains the sole living authority for design-phase progression.
 - **This file is the sole living authority for implementation-program progression.**
+- [`../agentic_development_foundation/README.md`](../agentic_development_foundation/README.md) owns the pre-implementation agentic-enablement execution sequence ADF-A–ADF-H.
 - Each implementation package may state its own internal group status.
 - Completed implementation packages must include an exit review with executable evidence.
 - Code behavior is never allowed to silently supersede an accepted design/architecture contract.
+
+## Pre-implementation enabling foundation
+
+Before Implementation 001-A, execute the **Agentic Development Foundation** defined in [`../agentic_development_foundation/README.md`](../agentic_development_foundation/README.md).
+
+Its purpose is operational/tooling portability only:
+
+- shared repository agent authority;
+- OKF v0.2 knowledge routing/progressive disclosure;
+- thin Cursor/Claude/Codex adapters;
+- portable human-directed workflow skills;
+- context minimization and stable-reference retrieval;
+- validation/drift/CI controls;
+- tool compatibility/onboarding;
+- security/trust/lifecycle governance.
+
+It does not alter DMTZ product semantics or add autonomous development. Autonomous execution/orchestration is explicitly deferred.
 
 ## Program outcome
 
@@ -106,14 +124,13 @@ Each `00X_*` package should contain, at minimum:
 6. risk/debt register updates;
 7. exit review showing test/deployment evidence rather than design-only PASS declarations.
 
-## Agent / Cursor rule architecture
+## Agent/tool architecture
 
-- Root `AGENTS.md` is the always-on repository constitution.
-- `.cursor/rules/*.mdc` is a small scoped routing/guardrail layer, not a duplicate of the design corpus.
-- No implementation-era Cursor rule is intentionally `alwaysApply: true`; relevance/file scoping should load domain rules only when needed.
-- `.cursor/BUGBOT.md` provides concise PR-review guardrails.
-- Historical phase-specific Cursor rules remain available in Git history but are not active Agent context.
-- `agent_reference_index.md` is the preferred bridge from an implementation task to exact stable IDs and canonical documents.
+- Root `AGENTS.md` is the shared repository constitution.
+- `.cursor/rules/*.mdc` remains a small scoped routing/guardrail layer, not a duplicate of the design corpus.
+- The Agentic Development Foundation will add portable OKF knowledge and human-directed workflow/skill layers plus thin tool adapters.
+- No agentic adapter, skill, knowledge entry or tool memory may become a DMTZ truth owner.
+- Autonomous execution/orchestration remains outside the accepted foundation and Implementation 001 entry gate.
 
 ## Change control
 
@@ -129,6 +146,8 @@ No developer may silently weaken a contract because it is easier to implement.
 
 ## Current state
 
-**Implementation 001 — Executable Foundations & Walking Skeleton: PLANNED / READY TO BEGIN.** Groups 001-A–001-H are defined in [`001_executable_foundations_walking_skeleton/README.md`](001_executable_foundations_walking_skeleton/README.md).
+**Agentic Development Foundation: DESIGN COMPLETE / READY FOR ADF-A EXECUTION.** Execute ADF-A–ADF-H and an implementation exit review before beginning Implementation 001-A.
 
-Implementations 002–011 are mapped at an intentionally general/abstract level so an enterprise team has a durable forward path without premature low-level design.
+**Implementation 001 — Executable Foundations & Walking Skeleton: PLANNED / READY AFTER AGENTIC FOUNDATION EXIT.** Groups 001-A–001-H remain defined in [`001_executable_foundations_walking_skeleton/README.md`](001_executable_foundations_walking_skeleton/README.md).
+
+Implementations 002–011 remain mapped at an intentionally general/abstract level so an enterprise team has a durable forward path without premature low-level design.
