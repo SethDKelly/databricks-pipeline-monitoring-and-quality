@@ -38,12 +38,16 @@ These limits keep routing/procedure artifacts focused. A canonical DMTZ contract
 
 ## Current measured baseline
 
-At ADF-E execution on 2026-09-02, GitHub reports:
+After final ADF-E root-guidance synchronization on 2026-09-02, GitHub reports:
 
-- root `AGENTS.md`: 12,699 bytes;
-- `.claude/CLAUDE.md`: 1,054 bytes.
+- root `AGENTS.md`: 13,537 bytes;
+- `.claude/CLAUDE.md`: 1,054 bytes;
+- Claude conservative root-byte baseline: 14,591 bytes;
+- Cursor/Codex root `AGENTS.md` baseline: 13,537 bytes before any relevance-selected/on-demand material.
 
-Both remain below their ADF-E limits. Cursor domain rules remain scoped/relevance-driven and no ADF rule is intentionally `alwaysApply: true`.
+These remain below their ADF-E limits. Cursor domain rules remain scoped/relevance-driven and no ADF rule is intentionally `alwaysApply: true`.
+
+The complete rule/skill/knowledge budget check is performed by `measure_context_budget.py`; ADF-F owns running it against the real checkout and CI.
 
 ## Budget semantics
 
