@@ -1,6 +1,6 @@
 # DMTZ Implementation Program
 
-**Status:** PLANNED / READY TO BEGIN — Agentic Development Foundation next; Implementation 001 follows
+**Status:** PLANNED / BLOCKED ON AGENTIC FOUNDATION — ADF-A complete; ADF-B / ADF-C next; Implementation 001 follows foundation exit
 
 ## Purpose
 
@@ -19,7 +19,7 @@ Implementation does **not** create a new truth model. The accepted semantic/arch
 
 The Phase 010 implementation handoff is the immediate upstream contract: [`../concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md`](../concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md).
 
-For implementation-agent context routing, use [`agent_reference_index.md`](agent_reference_index.md). The Agentic Development Foundation will evolve this routing into a portable OKF v0.2 knowledge plane while preserving canonical `docs/` as authority.
+For implementation-agent context routing, use [`agent_reference_index.md`](agent_reference_index.md). The Agentic Development Foundation is evolving this routing into a portable OKF v0.2 knowledge plane while preserving canonical `docs/` as authority.
 
 ## Status authority
 
@@ -32,9 +32,18 @@ For implementation-agent context routing, use [`agent_reference_index.md`](agent
 
 ## Pre-implementation enabling foundation
 
-Before Implementation 001-A, execute the **Agentic Development Foundation** defined in [`../agentic_development_foundation/README.md`](../agentic_development_foundation/README.md).
+Before Implementation 001-A, complete the **Agentic Development Foundation** defined in [`../agentic_development_foundation/README.md`](../agentic_development_foundation/README.md).
 
-Its purpose is operational/tooling portability only:
+Current ADF state:
+
+- **ADF-A — Authority, Scope & Human-Directed Operating Boundary: COMPLETE / ACCEPTED.**
+- **ADF-B — OKF v0.2 Knowledge Plane & DMTZ Knowledge Profile: NEXT / READY.**
+- **ADF-C — Shared Instruction Hierarchy & Tool Adapter Contract: NEXT / READY.**
+- ADF-D–ADF-H remain planned behind their dependency gates.
+
+ADF-A's shared action/authority policy is [`../agentic_development_foundation/authority_scope_policy.md`](../agentic_development_foundation/authority_scope_policy.md).
+
+The foundation's purpose is operational/tooling portability only:
 
 - shared repository agent authority;
 - OKF v0.2 knowledge routing/progressive disclosure;
@@ -127,8 +136,9 @@ Each `00X_*` package should contain, at minimum:
 ## Agent/tool architecture
 
 - Root `AGENTS.md` is the shared repository constitution.
+- Completed ADF-A defines the common human-directed A1–A4 action model and authority precedence.
 - `.cursor/rules/*.mdc` remains a small scoped routing/guardrail layer, not a duplicate of the design corpus.
-- The Agentic Development Foundation will add portable OKF knowledge and human-directed workflow/skill layers plus thin tool adapters.
+- ADF-B/C will add portable OKF knowledge and thin tool-adapter mechanics; ADF-D/E will add portable human-directed workflows and retrieval discipline.
 - No agentic adapter, skill, knowledge entry or tool memory may become a DMTZ truth owner.
 - Autonomous execution/orchestration remains outside the accepted foundation and Implementation 001 entry gate.
 
@@ -146,7 +156,7 @@ No developer may silently weaken a contract because it is easier to implement.
 
 ## Current state
 
-**Agentic Development Foundation: DESIGN COMPLETE / READY FOR ADF-A EXECUTION.** Execute ADF-A–ADF-H and an implementation exit review before beginning Implementation 001-A.
+**Agentic Development Foundation: IN EXECUTION — ADF-A COMPLETE / ACCEPTED; ADF-B and ADF-C NEXT / READY.** Complete ADF-B–ADF-H and the foundation implementation exit review before beginning Implementation 001-A.
 
 **Implementation 001 — Executable Foundations & Walking Skeleton: PLANNED / READY AFTER AGENTIC FOUNDATION EXIT.** Groups 001-A–001-H remain defined in [`001_executable_foundations_walking_skeleton/README.md`](001_executable_foundations_walking_skeleton/README.md).
 
