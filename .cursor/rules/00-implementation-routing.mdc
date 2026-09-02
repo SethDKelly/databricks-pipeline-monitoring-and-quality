@@ -1,72 +1,55 @@
 ---
-description: Route DMTZ agentic/implementation work to live status, portable OKF knowledge, canonical Agent Skills, stable-reference/context policy, shared authority, and frozen architecture. Use for task selection or when project status/authority/workflow/reference location is unclear.
+description: Route DMTZ agentic/implementation work to live status, portable OKF knowledge, canonical Agent Skills, stable-reference/context policy, shared authority, conformance, and frozen architecture. Use when project status/authority/workflow/reference location is unclear.
 globs:
 alwaysApply: false
 ---
 
 # Agentic / implementation routing
 
-Do not infer current project status from historical phase documents, Git history, model memory or tool-specific configuration.
+Do not infer current status from historical phase documents, Git history, model memory, or tool-specific state.
 
-Start from the shortest relevant path:
+**ADF status mirror: COMPLETE ADF-A–ADF-F; NEXT ADF-G.**
 
-- `IMPLEMENTATION.md` — repository implementation/agentic entry point;
-- `docs/agentic_development_foundation/README.md` — live ADF execution status;
+Use the shortest relevant path:
+
+- `docs/agentic_development_foundation/README.md` — live ADF authority;
 - root `AGENTS.md` — shared repository constitution;
-- `.agents/skills/<name>/SKILL.md` — canonical portable workflow when a named DMTZ workflow is relevant;
-- `knowledge/index.md` — portable OKF progressive-disclosure entry when location is not already known;
-- `docs/agentic_development_foundation/context_discovery_policy.md` — shortest-path context rules;
-- `docs/agentic_development_foundation/stable_reference_policy.md` — exact stable-ID lookup/canonicality discipline;
-- `docs/agentic_development_foundation/authority_scope_policy.md` — human-directed action/authority policy;
-- `docs/implementation/README.md` — sole living implementation-program status authority;
-- `docs/implementation/agent_reference_index.md` — secondary family/range/canonical-document bridge;
-- the active ADF or implementation group plan;
-- `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md` — frozen architecture handoff.
+- `.agents/skills/<name>/SKILL.md` — canonical human-directed workflow when relevant;
+- explicit group/path/stable ID directly when already known;
+- otherwise `knowledge/index.md` → one relevant route → canonical resource;
+- `docs/agentic_development_foundation/stable_reference_policy.md` / `scripts/agentic/resolve_stable_id.py` — exact stable-ID discipline;
+- `docs/implementation/README.md` — live implementation-program authority;
+- `docs/implementation/agent_reference_index.md` — secondary family/path bridge;
+- frozen Phase 010 Group 09 architecture handoff for implementation realization.
 
-**ADF-A through ADF-E are complete. ADF-F is the next required Agentic Development Foundation group.** Implementation 001 follows the complete Agentic Development Foundation exit.
+ADF-A through ADF-F are complete. **ADF-G — Developer Tool Compatibility, Onboarding & Operating Model is next.** Implementation 001 remains blocked until the full Agentic Development Foundation exit.
 
-Tool/workflow rules:
+## Human-directed boundaries
 
-- Cursor uses root `AGENTS.md` plus scoped `.cursor/rules/*.mdc`;
-- Cursor consumes DMTZ workflows natively from `.agents/skills/`;
-- Claude Code uses `.claude/CLAUDE.md` plus thin `.claude/commands/` bridges to the same `.agents/skills/` source;
-- Codex uses root `AGENTS.md` and `.agents/skills/` natively;
-- `tool_compatibility.json` records documented compatibility; ADF-G owns runtime smoke evidence;
-- no adapter/skill/reference helper may create a parallel semantic/status authority.
-
-Human-directed action classes:
-
-- A1 review/inspect/plan: do not edit unless changes are also requested;
-- A2 change/build/fix: perform in-scope edits and directly necessary support/validation without repetitive permission prompts;
-- A3 external/destructive/scope-expanding: require explicit task-specific human authorization plus repository/team gates;
+- A1 review/inspect/plan: no edits unless changes are also requested;
+- A2 change/build/fix: in-scope edits plus directly necessary tests/status/traceability and safe validation;
+- A3 external/destructive/scope-expanding: explicit task-specific human authorization plus normal gates;
 - A4 architecture/semantic change: follow DMTZ change control.
 
-Workflow boundary:
+Skill selection inside an existing human task does not create new scope. `implement-group` stops at the selected task/group. Do not delegate repository implementation, create unrelated follow-on work, or merge/deploy unattended.
 
-- selecting or auto-matching a skill inside the current human task does not create new work;
-- `implement-group` stops at the selected task/group;
-- `review-change` remains read-only unless fixes are separately requested;
-- `run-conformance` does not rewrite requirements to make checks pass;
-- `update-traceability` requires actual supporting evidence;
-- `exit-review` cannot self-waive unresolved mandatory gates.
+## Context and knowledge
 
-Context/reference rules:
+- avoid full-corpus preload;
+- canonical resources win over OKF summaries;
+- exact-ID search hits are candidates, not authority-by-order;
+- missing/broken reference remains unresolved rather than being reconstructed from memory;
+- public web is for current external/vendor facts, not DMTZ semantic authority;
+- tool memory/preferences remain noncanonical.
 
-- use an explicit group/path/stable ID directly when already known; do not traverse OKF ceremonially;
-- otherwise use `knowledge/index.md` one category/concept at a time;
-- exact stable IDs must be validated against `stable_id_registry.json` and searched exactly under canonical `docs/`;
-- all exact occurrences are retrieval candidates; first search result or `definition_candidate` classification alone is not canonical ownership;
-- canonical resources win over OKF summaries, agent memory and derived indexes;
-- missing/ambiguous retrieval remains explicit and is not evidence that no constraint exists;
-- obey `context_budget_policy.md`; detailed semantics stay on demand.
+## Conformance
 
-Other rules:
+For agent-facing repository changes use:
 
-- read only the active group and domain references needed for the task;
-- ADF work may add agent configuration, knowledge/workflow routing and deterministic validation helpers;
-- product code remains under the active implementation package, not implied by ADF work;
-- do not create unrelated follow-on work, delegate implementation to other agents, or merge/deploy unattended;
-- completing the requested group authorizes reporting the next step, not starting it;
-- tool memory/preferences are noncanonical;
-- implementation convenience never supersedes accepted contracts;
-- design-scenario PASS is not executable implementation proof.
+```bash
+python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
+```
+
+The result is **agentic configuration conformance only**, not DMTZ domain health, data quality, runtime proof, or production readiness. ADF-G owns actual Cursor/Claude Code/Codex runtime smoke evidence.
+
+Implementation convenience and tool-specific configuration never supersede accepted contracts. Design-scenario PASS is not executable implementation proof.
