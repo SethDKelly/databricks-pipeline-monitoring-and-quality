@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "reviewed_on": "2026-09-02",
   "authority": {
     "shared_instructions": "AGENTS.md",
@@ -8,9 +8,18 @@
     "workflow_source": ".agents/skills",
     "implementation_status": "docs/implementation/README.md"
   },
+  "evidence": {
+    "runtime_ledger": "docs/agentic_development_foundation/runtime_compatibility_evidence.json",
+    "runtime_probe_contract": "docs/agentic_development_foundation/adf_g_runtime_probe.md",
+    "environment_probe": "scripts/agentic/probe_runtime_tools.py",
+    "developer_onboarding": "docs/agentic_development_foundation/developer_onboarding.md"
+  },
   "tools": {
     "cursor": {
       "support_status": "documentation_verified_runtime_smoke_pending",
+      "documentation_verified_on": "2026-09-02",
+      "runtime_status": "unverified",
+      "runtime_verified_on": null,
       "instruction_surfaces": ["AGENTS.md", ".cursor/rules/*.mdc"],
       "scoped_rules": ".cursor/rules/*.mdc",
       "knowledge_entry": "knowledge/index.md",
@@ -18,42 +27,50 @@
       "verification_owner": "ADF-G",
       "notes": [
         "Project rules remain relevance/file scoped and no ADF rule is intentionally alwaysApply=true.",
-        "Cursor natively discovers .agents/skills and also Claude skill directories; DMTZ therefore avoids duplicate .claude/skills copies.",
-        "A root CLAUDE.md is intentionally not used because Cursor also loads root CLAUDE.md as always-on context; Claude uses .claude/CLAUDE.md instead."
+        "Cursor natively discovers .agents/skills and also Claude/Codex skill directories; DMTZ therefore avoids duplicate semantic skill copies.",
+        "A root CLAUDE.md is intentionally not used because Cursor CLI also reads it as project instructions; Claude uses .claude/CLAUDE.md instead.",
+        "Actual Cursor runtime exercise remains unverified until recorded in the runtime evidence ledger."
       ]
     },
     "claude_code": {
       "support_status": "documentation_verified_runtime_smoke_pending",
+      "documentation_verified_on": "2026-09-02",
+      "runtime_status": "unverified",
+      "runtime_verified_on": null,
       "instruction_surfaces": [".claude/CLAUDE.md", "AGENTS.md via @../AGENTS.md import"],
       "scoped_rules": ".claude/rules/*.md supported; none currently required",
       "knowledge_entry": "knowledge/index.md",
       "workflow_mechanism": "thin .claude/commands/<name>.md bridges invoke the canonical .agents/skills/<name>/SKILL.md workflow with /<name>; no duplicate semantic .claude/skills copy",
-      "diagnostics": ["/memory", "/skills", "/doctor"],
+      "diagnostics": ["/context", "/memory", "/skills", "/doctor"],
       "verification_owner": "ADF-G",
       "notes": [
-        "Claude Code follows the open Agent Skills standard and normally discovers project skills in .claude/skills; DMTZ uses command bridges to keep one canonical cross-tool workflow source.",
-        "Existing Claude command files remain supported even though native skills are recommended for richer packaging.",
+        "Claude Code reads CLAUDE.md rather than AGENTS.md directly; the checked-in project bridge imports shared AGENTS.md.",
+        "Project-native skills normally live under .claude/skills; existing .claude/commands remain supported and DMTZ uses them as thin compatibility bridges.",
         "Auto-memory is noncanonical.",
-        "Subagent/team-based repository implementation remains outside the current human-directed scope."
+        "Subagent/team-based repository implementation remains outside the current human-directed scope.",
+        "Actual Claude Code runtime exercise remains unverified until recorded in the runtime evidence ledger."
       ]
     },
     "codex": {
       "support_status": "documentation_verified_runtime_smoke_pending",
+      "documentation_verified_on": "2026-09-02",
+      "runtime_status": "unverified",
+      "runtime_verified_on": null,
       "instruction_surfaces": ["AGENTS.md"],
       "scoped_rules": "nested AGENTS.md supported when future directory-specific need is demonstrated",
       "knowledge_entry": "knowledge/index.md",
-      "workflow_mechanism": "native repository Agent Skills at .agents/skills/<name>/SKILL.md; documented explicit selection uses $<skill-name> or /skills",
+      "workflow_mechanism": "repository Agent Skills at .agents/skills/<name>/SKILL.md; native selection/discovery is convenience while canonical Markdown remains usable directly",
       "verification_owner": "ADF-G",
       "notes": [
-        "Codex documentation identifies .agents/skills as the repository skill location and supports implicit description matching as well as explicit selection.",
+        "Codex discovers repository AGENTS.md instructions from project root toward the working directory.",
         "No Codex-specific semantic rulebook is required.",
-        "Model identity/version is intentionally not pinned by repository semantic authority."
+        "Model identity/version is intentionally not pinned by repository semantic authority.",
+        "Actual Codex runtime exercise remains unverified until recorded in the runtime evidence ledger."
       ]
     }
   },
   "deferred": [
-    "cross-tool runtime smoke execution (ADF-G)",
-    "CI enforcement and automated drift validation (ADF-F)",
+    "provider runtime smoke execution for Cursor, Claude Code and Codex (ADF-G acceptance remains open until actual runtimes are exercised)",
     "long-term tool/standard review horizon (ADF-H)",
     "autonomous delegation/orchestration"
   ]
