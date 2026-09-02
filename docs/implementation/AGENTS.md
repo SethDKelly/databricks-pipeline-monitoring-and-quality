@@ -15,11 +15,13 @@ If code and accepted contracts disagree, the code is presumptively wrong until a
 
 ## Agent context and action discipline
 
-Use `docs/implementation/agent_reference_index.md` as the compact routing surface for implementation agents.
+Use the shortest authoritative context path defined by `docs/agentic_development_foundation/context_discovery_policy.md`.
 
-For routine work, prefer this context order:
+For routine implementation work, prefer:
 
-**root `AGENTS.md` → shared ADF-A scope policy when action/scope is material → active scoped tool rule/adapter → active implementation package/group plan → one or two domain architecture/reference documents → exact stable contract IDs/tests as needed.**
+**root `AGENTS.md` → matching `.agents/skills/` workflow when useful → explicit path/stable ID directly when known; otherwise `knowledge/index.md` → one relevant route → active implementation package/group plan → canonical source → exact stable contracts/tests as needed.**
+
+`docs/implementation/agent_reference_index.md` remains a compact secondary family/range/path bridge; it is not a separate semantic registry.
 
 Human-directed action follows ADF-A:
 
@@ -30,7 +32,11 @@ Human-directed action follows ADF-A:
 
 Completing one implementation group does not authorize beginning the next group automatically.
 
-Do not preload all SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH documentation. Search exact stable IDs when deeper semantics are required.
+Do not preload all SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH documentation, all OKF routes, or all portable skills.
+
+When an exact accepted ID is known, follow `docs/agentic_development_foundation/stable_reference_policy.md`: validate the accepted range, return/search all exact occurrences, and determine canonical meaning from the accepted owning document/live authority. Search order or a mechanical `definition_candidate` label does not establish canonicality.
+
+Tool memory, chat history, OKF summaries and derived indexes remain advisory only. Failure to retrieve a required contract is unresolved authority, not evidence that the constraint does not exist.
 
 Historical phase-specific Cursor rules have been removed from the active `.cursor/rules` set. Their authoritative semantics remain in `docs/` and their prior rule text remains available through Git history.
 
