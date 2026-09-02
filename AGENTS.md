@@ -8,11 +8,11 @@ Live **design-phase** progression is declared only in [`docs/README.md#current-s
 
 Live **implementation-program** progression is declared only in [`docs/implementation/README.md`](docs/implementation/README.md).
 
-The immediate enabling work is the **Agentic Development Foundation**, whose accepted design and execution sequence live in [`docs/agentic_development_foundation/README.md`](docs/agentic_development_foundation/README.md). ADF-A and ADF-B are complete; ADF-C is next. Implementation 001 follows only after the implemented foundation passes its execution exit review.
+The immediate enabling work is the **Agentic Development Foundation**, whose accepted design and execution sequence live in [`docs/agentic_development_foundation/README.md`](docs/agentic_development_foundation/README.md). ADF-A, ADF-B and ADF-C are complete; ADF-D and ADF-E are next. Implementation 001 follows only after the implemented foundation passes its execution exit review.
 
 For portable project/domain/implementation/workflow discovery, start at [`knowledge/index.md`](knowledge/index.md). The OKF knowledge bundle is a routing projection only; exact meaning remains in the canonical resource it references. For implementation-specific engineering rules, read [`docs/implementation/AGENTS.md`](docs/implementation/AGENTS.md). [`docs/implementation/agent_reference_index.md`](docs/implementation/agent_reference_index.md) remains a secondary compact bridge for stable-ID and canonical-document lookup.
 
-Cursor project rules under `.cursor/rules/` are deliberately scoped and reference-driven. They are not a second system of record. Future Claude/Codex adapters must follow the same rule: tool-specific mechanics may not become competing semantic authority.
+Tool adapters are deliberately thin: Cursor uses this file plus scoped `.cursor/rules/*.mdc`; Claude Code uses `.claude/CLAUDE.md` to import this file; Codex uses this file natively. [`docs/agentic_development_foundation/tool_compatibility.json`](docs/agentic_development_foundation/tool_compatibility.json) records operational compatibility status. No adapter is a second system of semantic authority.
 
 ## Shared agent authority
 
@@ -57,6 +57,14 @@ The ADF-B bundle under `knowledge/` follows the DMTZ OKF v0.2 producer profile i
 - OKF lifecycle/trust/provenance metadata describes the knowledge artifact, not DMTZ domain truth.
 - If an OKF summary conflicts with its `resource`, the canonical resource wins and the knowledge entry must be corrected.
 - Do not preload the full knowledge bundle or the full accepted contract corpus for routine work.
+
+## Tool-adapter discipline
+
+- **Cursor:** keep `.cursor/rules/*.mdc` scoped/relevance-driven; no intentional `alwaysApply: true` rule without an accepted measured need.
+- **Claude Code:** `.claude/CLAUDE.md` imports this file; do not create a root `CLAUDE.md` because Cursor also loads root `CLAUDE.md` as persistent context.
+- **Codex:** this root `AGENTS.md` is the repository instruction root; do not create a parallel Codex semantic rulebook.
+- Tool-specific rules/configuration may add native mechanics but may not copy/redefine DMTZ semantics, live status, A1–A4 scope, or validation obligations.
+- Runtime compatibility is distinct from documented configuration compatibility; ADF-G owns representative tool-in-the-loop verification.
 
 ## Frozen incoming contract stack
 
