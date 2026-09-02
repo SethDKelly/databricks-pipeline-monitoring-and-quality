@@ -4,7 +4,7 @@
 
 Canonical DMTZ product/design semantics live in `docs/`. Design-phase progression is owned by `docs/README.md`; implementation-program progression is owned by `docs/implementation/README.md`; Agentic Development Foundation progression is owned by `docs/agentic_development_foundation/README.md`.
 
-**ADF status mirror: COMPLETE ADF-A–ADF-F; NEXT ADF-G.**
+**ADF status mirror: COMPLETE ADF-A–ADF-F; IN EXECUTION ADF-G.**
 
 Phase 010 — Technical Architecture is complete and **ARCH-001–ARCH-500 are frozen**. Implementation 001 remains blocked until the Agentic Development Foundation passes its full execution exit review.
 
@@ -15,7 +15,7 @@ Tool adapters are thin by design:
 - Cursor: this file + scoped `.cursor/rules/*.mdc` + canonical `.agents/skills/`;
 - Claude Code: `.claude/CLAUDE.md` imports this file; `.claude/commands/` bridges to `.agents/skills/`;
 - Codex: this file + `.agents/skills/` natively;
-- runtime compatibility remains ADF-G evidence, not an inference from repository configuration.
+- provider runtime compatibility remains ADF-G evidence, not an inference from repository configuration.
 
 ## Shared authority precedence
 
@@ -95,7 +95,7 @@ ADF-F establishes the canonical repository-owned command:
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-It validates documentation consistency, OKF routing, tool adapters, portable skills, agent-facing references, ADF status drift, fixture integrity, context budgets and negative controls. The generated report describes **agentic configuration conformance only**. It is not DMTZ domain health, data quality, source health or production readiness.
+It validates documentation consistency, OKF routing, tool adapters, portable skills, agent-facing references, ADF status drift, fixture integrity, context budgets, ADF-G compatibility-evidence integrity and negative controls. The generated report describes **agentic configuration conformance only**. It is not DMTZ domain health, data quality, source health or production readiness.
 
 Repository byte budgets are defined in `docs/agentic_development_foundation/context_budget.json`. Budget failure does not authorize deleting required semantics; move detail to on-demand artifacts instead.
 
