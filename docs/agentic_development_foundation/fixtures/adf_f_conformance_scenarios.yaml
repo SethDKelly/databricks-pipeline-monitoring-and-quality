@@ -1,0 +1,64 @@
+version: 1
+foundation_group: ADF-F
+scenarios:
+  - id: ADFF-01
+    name: malformed OKF metadata is rejected
+    expected:
+      - validate_okf exits nonzero
+      - failure is agentic configuration conformance only
+  - id: ADFF-02
+    name: provider-specific portable skill metadata is rejected
+    expected:
+      - validate_agent_skills exits nonzero
+      - canonical workflow source remains provider neutral
+  - id: ADFF-03
+    name: always applied Cursor rule regression is rejected
+    expected:
+      - validate_agent_adapters exits nonzero
+      - no accidental universal rule context is accepted
+  - id: ADFF-04
+    name: stale ADF status mirror is rejected
+    expected:
+      - validate_status_drift exits nonzero
+      - live routing surfaces must follow ADF authority
+  - id: ADFF-05
+    name: broken canonical knowledge resource is rejected
+    expected:
+      - validate_okf exits nonzero
+      - knowledge layer does not mutate canonical docs
+  - id: ADFF-06
+    name: unaccepted stable id citation is rejected
+    expected:
+      - validate_agentic_references exits nonzero
+      - ARCH-501 is not treated as accepted while frozen range ends at ARCH-500
+  - id: ADFF-07
+    name: persistent context overflow is rejected
+    expected:
+      - measure_context_budget exits nonzero
+      - budget failure does not authorize dropping semantic requirements
+  - id: ADFF-08
+    name: fixture catalog integrity
+    expected:
+      - ADF-A through ADF-F fixture sets exist
+      - scenario ids are unique
+      - completed groups have execution reviews
+  - id: ADFF-09
+    name: unified conformance report is non-domain
+    expected:
+      - report summarizes agentic configuration checks
+      - report explicitly disclaims DMTZ domain health and production readiness
+  - id: ADFF-10
+    name: tool runtime compatibility remains separate
+    expected:
+      - deterministic CI does not require Cursor Claude Code or Codex binaries
+      - ADF-G owns tool-in-the-loop runtime smoke evidence
+  - id: ADFF-11
+    name: degraded tool does not poison independent tools
+    expected:
+      - compatibility status can be degraded or unverified per tool
+      - repository conformance does not convert that state to DMTZ domain failure
+  - id: ADFF-12
+    name: normal product tests remain separate
+    expected:
+      - agentic conformance runs before and independently from product tests
+      - future DMTZ runtime test failures retain their own status and semantics
