@@ -1,6 +1,6 @@
 # DMTZ Implementation Program
 
-**Status:** PLANNED / BLOCKED ON AGENTIC FOUNDATION — ADF-A / ADF-B complete; ADF-C next; Implementation 001 follows foundation exit
+**Status:** PLANNED / BLOCKED ON AGENTIC FOUNDATION — ADF-A / ADF-B / ADF-C complete; ADF-D / ADF-E next; Implementation 001 follows foundation exit
 
 ## Purpose
 
@@ -38,10 +38,12 @@ Current ADF state:
 
 - **ADF-A — Authority, Scope & Human-Directed Operating Boundary: COMPLETE / ACCEPTED.**
 - **ADF-B — OKF v0.2 Knowledge Plane & DMTZ Knowledge Profile: COMPLETE / ACCEPTED.** Portable discovery begins at [`../../knowledge/index.md`](../../knowledge/index.md).
-- **ADF-C — Shared Instruction Hierarchy & Tool Adapter Contract: NEXT / READY.**
-- ADF-D–ADF-H remain planned behind their dependency gates.
+- **ADF-C — Shared Instruction Hierarchy & Tool Adapter Contract: COMPLETE / ACCEPTED.** Tool compatibility is recorded in [`../agentic_development_foundation/tool_compatibility.json`](../agentic_development_foundation/tool_compatibility.json).
+- **ADF-D — Portable Skills & Human-Directed Workflow Contract: NEXT / READY.**
+- **ADF-E — Context Discovery, Stable References & Knowledge Maintenance: NEXT / READY.**
+- ADF-F–ADF-H remain planned behind their dependency gates.
 
-ADF-A's shared action/authority policy is [`../agentic_development_foundation/authority_scope_policy.md`](../agentic_development_foundation/authority_scope_policy.md). ADF-B's producer profile is [`../agentic_development_foundation/okf_profile.md`](../agentic_development_foundation/okf_profile.md).
+ADF-A's shared action/authority policy is [`../agentic_development_foundation/authority_scope_policy.md`](../agentic_development_foundation/authority_scope_policy.md). ADF-B's producer profile is [`../agentic_development_foundation/okf_profile.md`](../agentic_development_foundation/okf_profile.md). ADF-C establishes thin Cursor/Claude Code/Codex adapters over shared authority and knowledge.
 
 The foundation's purpose is operational/tooling portability only:
 
@@ -138,8 +140,8 @@ Each `00X_*` package should contain, at minimum:
 - Root `AGENTS.md` is the shared repository constitution.
 - Completed ADF-A defines the common human-directed A1–A4 action model and authority precedence.
 - Completed ADF-B defines `knowledge/` as a portable OKF v0.2 routing projection over canonical authority.
-- `.cursor/rules/*.mdc` remains a small scoped routing/guardrail layer, not a duplicate of the design corpus.
-- ADF-C will add thin tool-adapter mechanics; ADF-D/E will add portable human-directed workflows and refined retrieval discipline.
+- Completed ADF-C defines thin adapters: Cursor uses root `AGENTS.md` plus scoped `.cursor/rules/*.mdc`; Claude Code uses `.claude/CLAUDE.md` importing shared authority; Codex uses root `AGENTS.md` natively.
+- ADF-D/E will add portable human-directed workflows and refined retrieval/maintenance discipline.
 - No agentic adapter, skill, knowledge entry or tool memory may become a DMTZ truth owner.
 - Autonomous execution/orchestration remains outside the accepted foundation and Implementation 001 entry gate.
 
@@ -157,7 +159,7 @@ No developer may silently weaken a contract because it is easier to implement.
 
 ## Current state
 
-**Agentic Development Foundation: IN EXECUTION — ADF-A / ADF-B COMPLETE / ACCEPTED; ADF-C NEXT / READY.** Complete ADF-C–ADF-H and the foundation implementation exit review before beginning Implementation 001-A.
+**Agentic Development Foundation: IN EXECUTION — ADF-A / ADF-B / ADF-C COMPLETE / ACCEPTED; ADF-D and ADF-E NEXT / READY.** Complete ADF-D–ADF-H and the foundation implementation exit review before beginning Implementation 001-A.
 
 **Implementation 001 — Executable Foundations & Walking Skeleton: PLANNED / READY AFTER AGENTIC FOUNDATION EXIT.** Groups 001-A–001-H remain defined in [`001_executable_foundations_walking_skeleton/README.md`](001_executable_foundations_walking_skeleton/README.md).
 
