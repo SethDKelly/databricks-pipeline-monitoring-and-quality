@@ -1,6 +1,6 @@
 # DMTZ Agentic Development Foundation
 
-**Status:** IN EXECUTION — ADF-A THROUGH ADF-F COMPLETE / ACCEPTED; ADF-G NEXT / READY
+**Status:** IN EXECUTION — ADF-A THROUGH ADF-F COMPLETE / ACCEPTED; ADF-G IN EXECUTION / PROVIDER RUNTIME EVIDENCE PENDING
 
 ## Purpose
 
@@ -14,10 +14,10 @@ The Agentic Development Foundation establishes a tool-neutral, human-directed de
 - **ADF-D — Portable Skills & Human-Directed Workflow Contract: COMPLETE / ACCEPTED.**
 - **ADF-E — Context Discovery, Stable References & Knowledge Maintenance: COMPLETE / ACCEPTED.**
 - **ADF-F — Conformance, Validation, Drift Detection & CI: COMPLETE / ACCEPTED.**
-- **ADF-G — Developer Tool Compatibility, Onboarding & Operating Model: NEXT / READY.**
+- **ADF-G — Developer Tool Compatibility, Onboarding & Operating Model: IN EXECUTION — REPOSITORY/ONBOARDING BASELINE IMPLEMENTED; PROVIDER RUNTIME SMOKES PENDING.**
 - **ADF-H — Security, Trust, Lifecycle & Governance: PLANNED.**
 
-**ADF status mirror: COMPLETE ADF-A–ADF-F; NEXT ADF-G.**
+**ADF status mirror: COMPLETE ADF-A–ADF-F; IN EXECUTION ADF-G.**
 
 Implementation 001 remains planned and blocked until ADF-G, ADF-H, and the foundation execution exit review are complete.
 
@@ -65,9 +65,13 @@ Use the shortest authoritative path: explicit path/ID when known, otherwise one 
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-It composes documentation consistency, OKF, adapter, skill, canonical-reference, ADF-status, fixture, context-budget, and negative-control checks. `.github/workflows/agentic-conformance.yml` runs the same path in CI.
+It composes documentation consistency, OKF, adapter, skill, canonical-reference, ADF-status, fixture, context-budget, compatibility-evidence, and negative-control checks. `.github/workflows/agentic-conformance.yml` runs the same path in CI.
 
 The report describes **agentic configuration conformance only**. It is not DMTZ domain health, data quality, source health, application correctness, or production readiness.
+
+### Compatibility and onboarding — ADF-G (in execution)
+
+Repository-level portability and the ordinary IDE/CLI path are implemented. `developer_onboarding.md`, `tool_compatibility_matrix.md`, `adf_g_runtime_probe.md`, and `runtime_compatibility_evidence.json` define one shared onboarding/runtime evidence model. Cursor, Claude Code and Codex remain runtime-unverified until the same bounded exercise is performed in actual provider runtimes.
 
 ## Foundation boundary
 
@@ -100,6 +104,10 @@ Deferred autonomy remains only in [`autonomous_backlog.md`](autonomous_backlog.m
 - [`authority_scope_policy.md`](authority_scope_policy.md)
 - [`okf_profile.md`](okf_profile.md)
 - [`tool_compatibility.json`](tool_compatibility.json)
+- [`tool_compatibility_matrix.md`](tool_compatibility_matrix.md)
+- [`developer_onboarding.md`](developer_onboarding.md)
+- [`adf_g_runtime_probe.md`](adf_g_runtime_probe.md)
+- [`runtime_compatibility_evidence.json`](runtime_compatibility_evidence.json)
 - [`portable_workflow_profile.md`](portable_workflow_profile.md)
 - [`context_discovery_policy.md`](context_discovery_policy.md)
 - [`stable_reference_policy.md`](stable_reference_policy.md)
@@ -108,13 +116,13 @@ Deferred autonomy remains only in [`autonomous_backlog.md`](autonomous_backlog.m
 - [`compatibility_smoke_checklist.md`](compatibility_smoke_checklist.md)
 - [`execution_exit_criteria.md`](execution_exit_criteria.md)
 
-Execution evidence for completed groups is in `adf_a_execution_review.md` through `adf_f_execution_review.md`.
+Execution evidence for completed groups is in `adf_a_execution_review.md` through `adf_f_execution_review.md`; ADF-G's current partial evidence is in `adf_g_execution_review.md`.
 
 ## Remaining dependency sequence
 
-1. **ADF-G — Developer Tool Compatibility, Onboarding & Operating Model**: exercise representative bounded tasks with actual Cursor, Claude Code and Codex environments; record supported/degraded/unverified runtime behavior and prove ordinary non-agent development remains viable.
-2. **ADF-H — Security, Trust, Lifecycle & Governance**: consolidate least privilege, secrets/data boundaries, lifecycle/reverification horizons, and long-term governance.
-3. **Foundation execution exit review**: evaluate ADF-EX-01–ADF-EX-20 using A–H evidence.
+1. **ADF-G — Developer Tool Compatibility, Onboarding & Operating Model:** execute `ADF-G-XT01` in actual Cursor, Claude Code and Codex runtimes, update the runtime ledger, and rerun conformance.
+2. **ADF-H — Security, Trust, Lifecycle & Governance:** consolidate least privilege, secrets/data boundaries, lifecycle/reverification horizons, and long-term governance after ADF-G acceptance.
+3. **Foundation execution exit review:** evaluate ADF-EX-01–ADF-EX-20 using A–H evidence.
 4. **Implementation 001-A** begins only after the foundation exit passes or a narrow explicit non-semantic/non-security waiver is accepted.
 
 Autonomy is not part of the foundation success condition.

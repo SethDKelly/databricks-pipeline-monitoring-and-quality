@@ -1,5 +1,5 @@
 ---
-description: Route DMTZ agentic/implementation work to live status, portable OKF knowledge, canonical Agent Skills, stable-reference/context policy, shared authority, conformance, and frozen architecture. Use when project status/authority/workflow/reference location is unclear.
+description: Route DMTZ agentic/implementation work to live status, portable OKF knowledge, canonical Agent Skills, stable-reference/context policy, shared authority, conformance, compatibility evidence, and frozen architecture. Use when project status/authority/workflow/reference location is unclear.
 globs:
 alwaysApply: false
 ---
@@ -8,7 +8,7 @@ alwaysApply: false
 
 Do not infer current status from historical phase documents, Git history, model memory, or tool-specific state.
 
-**ADF status mirror: COMPLETE ADF-A–ADF-F; NEXT ADF-G.**
+**ADF status mirror: COMPLETE ADF-A–ADF-F; IN EXECUTION ADF-G.**
 
 Use the shortest relevant path:
 
@@ -19,11 +19,12 @@ Use the shortest relevant path:
 - explicit group/path/stable ID directly when already known;
 - otherwise `knowledge/index.md` → one relevant route → canonical resource;
 - `docs/agentic_development_foundation/stable_reference_policy.md` / `scripts/agentic/resolve_stable_id.py` — exact stable-ID discipline;
+- `docs/agentic_development_foundation/runtime_compatibility_evidence.json` — ADF-G runtime evidence, never semantic authority;
 - `docs/implementation/README.md` — live implementation-program authority;
 - `docs/implementation/agent_reference_index.md` — secondary family/path bridge;
 - frozen Phase 010 Group 09 architecture handoff for implementation realization.
 
-ADF-A through ADF-F are complete. **ADF-G — Developer Tool Compatibility, Onboarding & Operating Model is next.** Implementation 001 remains blocked until the full Agentic Development Foundation exit.
+ADF-A through ADF-F are complete. **ADF-G — Developer Tool Compatibility, Onboarding & Operating Model is IN EXECUTION; provider runtime smokes remain pending.** Implementation 001 remains blocked until the full Agentic Development Foundation exit.
 
 ## Human-directed boundaries
 
@@ -51,6 +52,6 @@ For agent-facing repository changes use:
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-The result is **agentic configuration conformance only**, not DMTZ domain health, data quality, runtime proof, or production readiness. ADF-G owns actual Cursor/Claude Code/Codex runtime smoke evidence.
+The result is **agentic configuration conformance only**, not DMTZ domain health, data quality, provider runtime proof, or production readiness. Provider runtime status must come from actual ADF-G evidence, not from Cursor's own configuration being present.
 
 Implementation convenience and tool-specific configuration never supersede accepted contracts. Design-scenario PASS is not executable implementation proof.

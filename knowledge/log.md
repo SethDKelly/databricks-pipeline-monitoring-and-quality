@@ -1,5 +1,14 @@
 # DMTZ Knowledge Bundle Log
 
+## 2026-09-02 — ADF-G compatibility/onboarding evidence baseline
+
+- added tool-neutral developer onboarding for Cursor, Claude Code, Codex and ordinary IDE/CLI development;
+- added one shared bounded provider runtime exercise and a machine-readable runtime evidence ledger;
+- kept Cursor, Claude Code and Codex runtime state explicitly `unverified` because no actual provider runtime was available in the ADF-G execution environment;
+- verified ordinary non-agent development remains viable through repository-owned authority, workflow Markdown and conformance;
+- added evidence-integrity validation so documentation/static configuration cannot be promoted to provider runtime PASS;
+- extended the tool-compatibility OKF route to onboarding, runtime evidence and the probe contract.
+
 ## 2026-09-02 — ADF-F conformance, drift detection and CI
 
 - integrated ADF-A–ADF-E repository validators into one deterministic agentic conformance command and report;

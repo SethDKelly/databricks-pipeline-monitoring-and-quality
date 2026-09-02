@@ -12,6 +12,7 @@ CHECKS = (
     ('ADF status drift', 'scripts/agentic/validate_status_drift.py', ['--repo', '{repo}']),
     ('fixture catalog', 'scripts/agentic/validate_fixture_catalog.py', ['--repo', '{repo}']),
     ('context budgets', 'scripts/agentic/measure_context_budget.py', ['{repo}']),
+    ('ADF-G compatibility evidence', 'scripts/agentic/validate_adf_g_compatibility.py', ['--repo', '{repo}']),
 )
 
 
@@ -77,7 +78,8 @@ def main() -> int:
     lines += [f'| {name} | {"PASS" if code == 0 else "FAIL"} |' for name, code, _ in results]
     lines += ['', '## Tool compatibility state', '']
     for tool, data in compat.items():
-        lines.append(f'- **{tool}:** `{data.get("support_status", "unknown")}`')
+        runtime = data.get('runtime_status', 'unknown')
+        lines.append(f'- **{tool}:** `{data.get("support_status", "unknown")}` / runtime `{runtime}`')
     lines += [
         '',
         '## Knowledge lifecycle',
@@ -87,7 +89,7 @@ def main() -> int:
         '',
         '## Notes',
         '',
-        '- Tool-in-the-loop runtime verification remains ADF-G evidence.',
+        '- Provider tool-in-the-loop runtime verification is ADF-G evidence and remains independent per tool.',
         '- A tool may be degraded/unverified without converting another tool or DMTZ domain status to failure.',
         '',
     ]

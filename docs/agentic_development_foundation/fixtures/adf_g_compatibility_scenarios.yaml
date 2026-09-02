@@ -1,0 +1,91 @@
+version: 1
+foundation_group: ADF-G
+scenarios:
+  - id: ADFG-01
+    name: same A1 task across providers
+    input: "Run the ADF-G-XT01 representative task in a supported provider runtime"
+    expected:
+      - use shared repository authority
+      - remain read-only
+      - resolve AUTH-034 using exact stable-reference discipline
+      - report canonical conformance command
+      - stop without starting ADF-H
+  - id: ADFG-02
+    name: documentation is not runtime proof
+    input: "Vendor documentation confirms the feature but no runtime was exercised"
+    expected:
+      - documentation_verified may be current
+      - runtime_status remains unverified
+      - no runtime_verified_on timestamp is recorded
+  - id: ADFG-03
+    name: missing provider binary
+    input: "Expected coding-agent executable is absent"
+    expected:
+      - mark runtime unverified rather than unsupported
+      - record explicit reason
+      - preserve portable manual fallback
+  - id: ADFG-04
+    name: supported runtime requires evidence
+    input: "Change runtime_status to supported"
+    expected:
+      - require passing representative exercise
+      - require dated actual invocation
+      - require substantive observations
+      - reject unsupported evidence promotion in CI
+  - id: ADFG-05
+    name: Claude bridge is convenience only
+    input: "Claude Code does not natively discover the canonical .agents skill source"
+    expected:
+      - use thin .claude/commands bridge or manual canonical read
+      - do not duplicate semantic skill corpus into .claude/skills solely for parity
+      - preserve same workflow steps
+  - id: ADFG-06
+    name: native skill discovery degraded
+    input: "Tool cannot surface a native skill picker"
+    expected:
+      - read canonical SKILL.md manually
+      - classify as degraded if core workflow still works
+      - do not change DMTZ semantics
+  - id: ADFG-07
+    name: personal setting conflicts with repository
+    input: "User-level agent preference says skip mandatory validation"
+    expected:
+      - repository authority wins
+      - mandatory validation remains
+      - personal preference does not alter acceptance
+  - id: ADFG-08
+    name: tool switch uses same checkout
+    input: "Developer switches from one coding agent to another mid-task"
+    expected:
+      - continue from same Git state
+      - use same AGENTS knowledge workflow and validation authority
+      - no AI-specific branch conversion
+  - id: ADFG-09
+    name: ordinary non-agent development
+    input: "Developer uses only IDE shell and Git"
+    expected:
+      - repository remains understandable and actionable
+      - stable-ID helper and conformance command work without provider agent
+      - normal diff review and Git process remain sufficient
+  - id: ADFG-10
+    name: model version changes
+    input: "Provider changes the underlying model"
+    expected:
+      - do not alter repository semantic authority
+      - reverify runtime behavior when material
+      - do not bind DMTZ acceptance to a model name
+  - id: ADFG-11
+    name: add another coding agent
+    input: "Team wants to support a new coding-agent product"
+    expected:
+      - consume or thinly bridge shared authority knowledge and workflow surfaces
+      - add compatibility manifest and evidence entry
+      - run same representative task
+      - avoid provider-specific semantic fork
+  - id: ADFG-12
+    name: unverified tool does not poison others
+    input: "One provider runtime cannot be exercised"
+    expected:
+      - only that provider remains unverified
+      - other provider and ordinary CLI states remain independent
+      - no DMTZ domain-health failure is inferred
