@@ -1,28 +1,31 @@
 ---
-description: Route DMTZ implementation work to the live implementation program, active package, frozen architecture handoff, and concise agent reference index. Use for implementation planning, task selection, or when project status/authority is unclear.
+description: Route DMTZ agentic/implementation work to the live program, Agentic Development Foundation, active package, frozen architecture handoff, and concise reference index. Use for task selection or when project status/authority is unclear.
 globs:
 alwaysApply: false
 ---
 
-# Implementation routing
+# Agentic / implementation routing
 
-Do not infer current project status from historical phase documents or Git history.
+Do not infer current project status from historical phase documents, Git history, model memory or tool-specific configuration.
 
 Start from:
 
 - `IMPLEMENTATION.md` — repository implementation entry point;
 - `docs/implementation/README.md` — sole living implementation-program status authority;
+- `docs/agentic_development_foundation/README.md` — immediate human-directed agentic-enablement sequence;
 - `docs/implementation/agent_reference_index.md` — compact domain-to-contract/document lookup;
-- `docs/implementation/AGENTS.md` — implementation engineering discipline;
-- the active implementation package/group plan;
+- root `AGENTS.md` — shared repository constitution;
+- the active ADF or implementation group plan;
 - `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md` — frozen architecture handoff.
 
-Current program entry is **Implementation 001 — Executable Foundations & Walking Skeleton** until `docs/implementation/README.md` says otherwise.
+Current planned work is **ADF-A — Authority, Scope & Human-Directed Operating Boundary** until the live status authority says otherwise. Implementation 001 follows the implemented Agentic Development Foundation exit.
 
 Rules:
 
-- read only the active package/group plus domain-specific references needed for the task;
+- read only the active group plus domain-specific references needed for the task;
 - search stable contract IDs (`REF-###`, `AUTH-###`, `HLTH-###`, `OPS-###`, `EXPL-###`, `INTG-###`, `ARCH-###`) instead of loading whole phases;
-- code/tests/schemas/Databricks resources/CI are permitted within active implementation scope;
-- implementation convenience never supersedes accepted contracts;
+- ADF work may add agent configuration, OKF routing, portable workflow/skill sources and deterministic validation helpers;
+- product code remains under the active implementation package, not implied by ADF work;
+- the current agentic model is human-directed: do not create unrelated follow-on work, delegate implementation to other agents, or merge/deploy unattended;
+- implementation convenience and tool-specific configuration never supersede accepted contracts;
 - design-scenario PASS is not executable implementation proof.
