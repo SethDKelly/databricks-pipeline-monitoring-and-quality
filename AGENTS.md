@@ -8,9 +8,9 @@ Live **design-phase** progression is declared only in [`docs/README.md#current-s
 
 Live **implementation-program** progression is declared only in [`docs/implementation/README.md`](docs/implementation/README.md).
 
-The immediate enabling work is the **Agentic Development Foundation**, whose accepted design and execution sequence live in [`docs/agentic_development_foundation/README.md`](docs/agentic_development_foundation/README.md). Implementation 001 follows only after the implemented foundation passes its execution exit review.
+The immediate enabling work is the **Agentic Development Foundation**, whose accepted design and execution sequence live in [`docs/agentic_development_foundation/README.md`](docs/agentic_development_foundation/README.md). ADF-A and ADF-B are complete; ADF-C is next. Implementation 001 follows only after the implemented foundation passes its execution exit review.
 
-For implementation-specific engineering rules, read [`docs/implementation/AGENTS.md`](docs/implementation/AGENTS.md) before adding product code. For compact task-to-contract routing, use [`docs/implementation/agent_reference_index.md`](docs/implementation/agent_reference_index.md); ADF execution will integrate this with a portable OKF v0.2 knowledge plane.
+For portable project/domain/implementation/workflow discovery, start at [`knowledge/index.md`](knowledge/index.md). The OKF knowledge bundle is a routing projection only; exact meaning remains in the canonical resource it references. For implementation-specific engineering rules, read [`docs/implementation/AGENTS.md`](docs/implementation/AGENTS.md). [`docs/implementation/agent_reference_index.md`](docs/implementation/agent_reference_index.md) remains a secondary compact bridge for stable-ID and canonical-document lookup.
 
 Cursor project rules under `.cursor/rules/` are deliberately scoped and reference-driven. They are not a second system of record. Future Claude/Codex adapters must follow the same rule: tool-specific mechanics may not become competing semantic authority.
 
@@ -47,6 +47,16 @@ Completing a requested group authorizes reporting the next eligible step; it doe
 During ADF-A–ADF-H execution, repository changes may add agent configuration, OKF routing knowledge, portable workflow/skill definitions and deterministic validation helpers. Product/application implementation remains planned under Implementation 001 unless the user explicitly advances it separately.
 
 Tool memory, auto-memory, chat history and generated summaries are advisory only. A fact required for future correctness must be promoted into an appropriate repository artifact.
+
+## Knowledge-plane discipline
+
+The ADF-B bundle under `knowledge/` follows the DMTZ OKF v0.2 producer profile in [`docs/agentic_development_foundation/okf_profile.md`](docs/agentic_development_foundation/okf_profile.md).
+
+- `knowledge/` routes to authority; it is not authority.
+- Prefer progressive disclosure: root index → one category index → one concept → canonical resource → exact stable IDs as needed.
+- OKF lifecycle/trust/provenance metadata describes the knowledge artifact, not DMTZ domain truth.
+- If an OKF summary conflicts with its `resource`, the canonical resource wins and the knowledge entry must be corrected.
+- Do not preload the full knowledge bundle or the full accepted contract corpus for routine work.
 
 ## Frozen incoming contract stack
 
