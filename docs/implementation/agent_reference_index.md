@@ -1,6 +1,6 @@
 # DMTZ Agent Reference Index
 
-**Purpose:** provide a compact secondary bridge from a task to exact stable IDs and canonical document sets. Portable first-hop discovery begins at `knowledge/index.md`.
+**Purpose:** provide a compact secondary bridge from a task to exact stable IDs and canonical document sets. Portable first-hop discovery begins at `knowledge/index.md`; reusable task procedures live under `.agents/skills/`.
 
 Do **not** load every historical phase for routine work. Prefer `knowledge/index.md` → one category/concept → canonical resource, then use this file when exact contract-family/stable-ID routing is useful.
 
@@ -9,12 +9,14 @@ Do **not** load every historical phase for routine work. Prefer `knowledge/index
 | Need | Read first |
 |---|---|
 | Portable knowledge discovery | `knowledge/index.md` |
+| Portable development workflow | `.agents/skills/<workflow>/SKILL.md` |
 | Repository implementation/agentic entry | `IMPLEMENTATION.md` |
 | Current implementation status | `docs/implementation/README.md` |
 | Current pre-implementation agentic work | `docs/agentic_development_foundation/README.md` |
 | Shared engineering/agent constitution | root `AGENTS.md` |
 | Human-directed authority/action policy | `docs/agentic_development_foundation/authority_scope_policy.md` |
 | Tool compatibility state | `docs/agentic_development_foundation/tool_compatibility.json` |
+| Portable workflow profile | `docs/agentic_development_foundation/portable_workflow_profile.md` |
 | DMTZ OKF producer profile | `docs/agentic_development_foundation/okf_profile.md` |
 | Active first product implementation | `docs/implementation/001_executable_foundations_walking_skeleton/README.md` after ADF exit |
 | Frozen implementation handoff | `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md` |
@@ -28,24 +30,37 @@ Do **not** load every historical phase for routine work. Prefer `knowledge/index
 
 | Working area | ADF group | Primary source |
 |---|---|---|
-| Agent authority / human-directed action boundary | ADF-A — COMPLETE | `docs/agentic_development_foundation/authority_scope_policy.md`; execution evidence in `adf_a_execution_review.md` |
-| OKF v0.2 portable knowledge plane | ADF-B — COMPLETE | `knowledge/index.md`; profile in `docs/agentic_development_foundation/okf_profile.md`; execution evidence in `adf_b_execution_review.md` |
-| Cursor/Claude/Codex instruction adapters | ADF-C — COMPLETE | `docs/agentic_development_foundation/tool_compatibility.json`; execution evidence in `adf_c_execution_review.md` |
-| Portable human-directed workflows/skills | ADF-D — NEXT | `docs/agentic_development_foundation/04_adf_d_portable_skills_workflows.md` |
+| Agent authority / human-directed action boundary | ADF-A — COMPLETE | `docs/agentic_development_foundation/authority_scope_policy.md`; `adf_a_execution_review.md` |
+| OKF v0.2 portable knowledge plane | ADF-B — COMPLETE | `knowledge/index.md`; `okf_profile.md`; `adf_b_execution_review.md` |
+| Cursor/Claude/Codex instruction adapters | ADF-C — COMPLETE | `tool_compatibility.json`; `adf_c_execution_review.md` |
+| Portable human-directed workflows/skills | ADF-D — COMPLETE | `.agents/skills/`; `portable_workflow_profile.md`; `adf_d_execution_review.md` |
 | Context/stable-ID discovery and routing maintenance | ADF-E — NEXT | `docs/agentic_development_foundation/05_adf_e_context_reference_maintenance.md` |
 | Agentic validation/drift/CI | ADF-F | `docs/agentic_development_foundation/06_adf_f_conformance_validation_ci.md` |
 | Cross-tool onboarding/compatibility | ADF-G | `docs/agentic_development_foundation/07_adf_g_tool_compatibility_operating_model.md` |
 | Security/trust/lifecycle governance | ADF-H | `docs/agentic_development_foundation/08_adf_h_security_trust_lifecycle_governance.md` |
 
-During ADF execution, autonomy is out of scope. See `docs/agentic_development_foundation/autonomous_backlog.md` only when explicitly reviewing deferred future work.
+Autonomy is out of scope. See `docs/agentic_development_foundation/autonomous_backlog.md` only when explicitly reviewing deferred future work.
+
+## Workflow routing
+
+- `resolve-context` — find the minimum current authority/context; A1, no edits.
+- `implement-group` — implement one human-selected task/group; A2, then stop.
+- `resolve-contract` — locate exact accepted stable-ID/semantic authority; A1.
+- `run-conformance` — safe deterministic checks/reporting; A1 by default.
+- `review-change` — substantive read-only review; A1.
+- `update-traceability` — evidence-backed A2 supporting update.
+- `exit-review` — A1 evaluation; A2 only when explicitly recording the bounded review/status artifact.
+
+Cursor and Codex consume `.agents/skills/` directly. Claude Code uses thin `.claude/commands/` bridges to the same source. Native runtime behavior remains ADF-G evidence.
 
 ## Tool adapter routing
 
-- Cursor: root `AGENTS.md` + scoped `.cursor/rules/*.mdc`.
-- Claude Code: `.claude/CLAUDE.md` imports `../AGENTS.md`.
-- Codex: root `AGENTS.md` natively; no parallel semantic rulebook.
+- Cursor: root `AGENTS.md` + scoped `.cursor/rules/*.mdc` + `.agents/skills/`.
+- Claude Code: `.claude/CLAUDE.md` imports `../AGENTS.md`; `.claude/commands/` bridges to `.agents/skills/`.
+- Codex: root `AGENTS.md` + `.agents/skills/` natively; no parallel semantic rulebook.
 - Portable discovery: `knowledge/index.md` for all supported tools.
-- Runtime compatibility: ADF-G; repository/static adapter validation: `scripts/agentic/validate_agent_adapters.py`.
+- Repository/static validators: `scripts/agentic/validate_okf.py`, `validate_agent_adapters.py`, `validate_agent_skills.py`.
+- Runtime compatibility: ADF-G.
 
 ## DMTZ domain routing
 
@@ -59,7 +74,7 @@ During ADF execution, autonomy is out of scope. See `docs/agentic_development_fo
 | Statement/Answer IR, Explanation, basis, API/UI | 006 (first Statement IR in 001-F) | Groups 06/08 / ARCH-275–350, 421–500 | EXPL-001–160, AUTH | deterministic, traceable, authorization-aware projection |
 | Security, deployment, observability, SLO, cost, DR | 007 | Group 08 / ARCH-421–500 | AUTH, INTG | operational health ≠ domain health; explicit degradation |
 | MVP pilot / release candidate validation | 008 | Group 09 consolidation | all applicable | executable proof of bounded MVP profile |
-| Enterprise scale/optional Collibra/Immuta/search/model | 009 | Groups 01/04/08/09 as relevant | INTG/AUTH/EXPL | optional dependencies do not become hidden truth owners |
+| Enterprise scale/optional Collibra/Immuta/search/model | 009 | Groups 01/04/08/09 | INTG/AUTH/EXPL | optional dependencies do not become hidden truth owners |
 | Execution Gate / Propagation Safeguard | 010 | Group 07 / ARCH-351–420 | OPS/REF/AUTH | decision/enforcement/execution/prevention distinctions |
 | Production graduation / operational acceptance | 011 | Group 09 + Group 08 | all supported profile | actual production capability, ownership, SLO, DR evidence |
 
@@ -79,17 +94,17 @@ The same domains are represented as portable OKF concepts under `knowledge/domai
 
 ## Stable-ID search discipline
 
-When a task or test references an ID, search that exact ID in `docs/` rather than treating an OKF routing summary as the contract.
+When a task/test references an ID, search that exact ID in `docs/`; do not treat an OKF route or skill summary as the contract.
 
 Examples:
 
-- `REF-004` — locate the exact bounded coverage / negative-evidence contract;
-- `AUTH-034` — use the exact accepted authority contract when confirmation/authority is involved;
-- `HLTH-030` — locate the exact normative Expectation/Assessment contract;
-- `OPS-067` — locate the exact operational/Impact proposition;
-- `EXPL-101` — locate the exact Explanation contract;
-- `INTG-145` — locate the exact integration/source evidence contract;
-- `ARCH-017` — locate the exact architecture contract.
+- `REF-004` — bounded coverage / negative-evidence contract;
+- `AUTH-034` — exact authority contract when confirmation/authority is involved;
+- `HLTH-030` — normative Expectation/Assessment contract;
+- `OPS-067` — operational/Impact proposition;
+- `EXPL-101` — Explanation contract;
+- `INTG-145` — integration/source evidence contract;
+- `ARCH-017` — architecture contract.
 
 ## Implementation package paths
 
@@ -107,8 +122,8 @@ Examples:
 
 ## Context-minimization rule
 
-The expected routine context stack is:
+Expected routine context:
 
-**root `AGENTS.md` → `knowledge/index.md` when discovery is needed → one category/concept → active scoped tool adapter → active ADF or implementation group → canonical resource → exact stable contracts/tests as needed.**
+**root `AGENTS.md` → matching `.agents/skills/` workflow when useful → `knowledge/index.md` only when discovery is needed → one category/concept → active scoped tool adapter/group → canonical resource → exact stable contracts/tests.**
 
-Use this reference index only when its compact stable-ID/range map adds value. Do not proactively load all OKF concepts or all SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH documentation.
+Do not preload all skills, OKF concepts, or SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH documentation.
