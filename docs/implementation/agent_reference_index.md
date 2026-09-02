@@ -1,6 +1,6 @@
 # DMTZ Agent Reference Index
 
-**Purpose:** provide a compact secondary bridge from a task to exact stable IDs and canonical document sets. Portable first-hop discovery now begins at `knowledge/index.md`.
+**Purpose:** provide a compact secondary bridge from a task to exact stable IDs and canonical document sets. Portable first-hop discovery begins at `knowledge/index.md`.
 
 Do **not** load every historical phase for routine work. Prefer `knowledge/index.md` → one category/concept → canonical resource, then use this file when exact contract-family/stable-ID routing is useful.
 
@@ -14,6 +14,7 @@ Do **not** load every historical phase for routine work. Prefer `knowledge/index
 | Current pre-implementation agentic work | `docs/agentic_development_foundation/README.md` |
 | Shared engineering/agent constitution | root `AGENTS.md` |
 | Human-directed authority/action policy | `docs/agentic_development_foundation/authority_scope_policy.md` |
+| Tool compatibility state | `docs/agentic_development_foundation/tool_compatibility.json` |
 | DMTZ OKF producer profile | `docs/agentic_development_foundation/okf_profile.md` |
 | Active first product implementation | `docs/implementation/001_executable_foundations_walking_skeleton/README.md` after ADF exit |
 | Frozen implementation handoff | `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md` |
@@ -29,14 +30,22 @@ Do **not** load every historical phase for routine work. Prefer `knowledge/index
 |---|---|---|
 | Agent authority / human-directed action boundary | ADF-A — COMPLETE | `docs/agentic_development_foundation/authority_scope_policy.md`; execution evidence in `adf_a_execution_review.md` |
 | OKF v0.2 portable knowledge plane | ADF-B — COMPLETE | `knowledge/index.md`; profile in `docs/agentic_development_foundation/okf_profile.md`; execution evidence in `adf_b_execution_review.md` |
-| Cursor/Claude/Codex instruction adapters | ADF-C — NEXT | `docs/agentic_development_foundation/03_adf_c_instruction_tool_adapters.md` |
-| Portable human-directed workflows/skills | ADF-D | `docs/agentic_development_foundation/04_adf_d_portable_skills_workflows.md` |
-| Context/stable-ID discovery and routing maintenance | ADF-E | `docs/agentic_development_foundation/05_adf_e_context_reference_maintenance.md` |
+| Cursor/Claude/Codex instruction adapters | ADF-C — COMPLETE | `docs/agentic_development_foundation/tool_compatibility.json`; execution evidence in `adf_c_execution_review.md` |
+| Portable human-directed workflows/skills | ADF-D — NEXT | `docs/agentic_development_foundation/04_adf_d_portable_skills_workflows.md` |
+| Context/stable-ID discovery and routing maintenance | ADF-E — NEXT | `docs/agentic_development_foundation/05_adf_e_context_reference_maintenance.md` |
 | Agentic validation/drift/CI | ADF-F | `docs/agentic_development_foundation/06_adf_f_conformance_validation_ci.md` |
 | Cross-tool onboarding/compatibility | ADF-G | `docs/agentic_development_foundation/07_adf_g_tool_compatibility_operating_model.md` |
 | Security/trust/lifecycle governance | ADF-H | `docs/agentic_development_foundation/08_adf_h_security_trust_lifecycle_governance.md` |
 
 During ADF execution, autonomy is out of scope. See `docs/agentic_development_foundation/autonomous_backlog.md` only when explicitly reviewing deferred future work.
+
+## Tool adapter routing
+
+- Cursor: root `AGENTS.md` + scoped `.cursor/rules/*.mdc`.
+- Claude Code: `.claude/CLAUDE.md` imports `../AGENTS.md`.
+- Codex: root `AGENTS.md` natively; no parallel semantic rulebook.
+- Portable discovery: `knowledge/index.md` for all supported tools.
+- Runtime compatibility: ADF-G; repository/static adapter validation: `scripts/agentic/validate_agent_adapters.py`.
 
 ## DMTZ domain routing
 
@@ -98,7 +107,7 @@ Examples:
 
 ## Context-minimization rule
 
-The expected routine context stack is now:
+The expected routine context stack is:
 
 **root `AGENTS.md` → `knowledge/index.md` when discovery is needed → one category/concept → active scoped tool adapter → active ADF or implementation group → canonical resource → exact stable contracts/tests as needed.**
 
