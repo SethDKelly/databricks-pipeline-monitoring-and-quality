@@ -6,7 +6,7 @@
 
 Has ADF-F integrated the ADF-A–ADF-E validation seams into one deterministic repository conformance path that detects representative drift before merge while keeping agentic configuration health separate from DMTZ domain/runtime health?
 
-The repository artifacts are implemented. Final acceptance requires the real `Agentic conformance` GitHub Actions job to pass on the synchronized ADF-F closure commit. This file will be finalized with that run evidence.
+The repository artifacts are implemented. Final acceptance requires the real `Agentic conformance` GitHub Actions job to pass on the synchronized ADF-F closure content. This validation branch exists only to obtain inspectable pull-request-triggered CI evidence for that exact repository state; it does not change ADF semantics.
 
 ## Implemented artifacts
 
@@ -26,7 +26,7 @@ The repository artifacts are implemented. Final acceptance requires the real `Ag
 - real repository positive checks all PASS;
 - all seven negative controls PASS by causing their targeted validators to fail;
 - generated Agentic Conformance Report explicitly remains non-domain health;
-- dedicated CI workflow completes successfully on `main`;
+- dedicated CI workflow completes successfully on the validation PR;
 - no ADF-G runtime/tool compatibility claim is manufactured by deterministic CI.
 
 ## Residual groups
