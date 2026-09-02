@@ -1,5 +1,13 @@
 # DMTZ Knowledge Bundle Log
 
+## 2026-09-02 — ADF-E context/reference/maintenance discipline
+
+- added shortest-path context-discovery policy and deterministic byte budgets for persistent/routing/workflow surfaces;
+- added machine-readable accepted stable-ID ranges and exact-occurrence lookup without first-match canonicality;
+- added changed-canonical-resource → OKF routing review-candidate mapping without forcing ceremonial rewrites;
+- refined OKF maintenance to preserve one-way semantic authority from canonical sources into routing projections;
+- updated `resolve-context` and `resolve-contract` workflows to use the new reference/context discipline.
+
 ## 2026-09-02 — ADF-D portable workflow routing
 
 - established `.agents/skills/` as the single canonical DMTZ workflow source;
