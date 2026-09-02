@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import argparse, shutil, subprocess, sys, tempfile
+import argparse, re, shutil, subprocess, sys, tempfile
 from pathlib import Path
 
 
@@ -21,6 +21,15 @@ def mutate_and_expect_failure(repo: Path, rel: str, transform, script: str, labe
         path.write_text(original, encoding='utf-8')
 
 
+def stale_status(text: str) -> str:
+    return re.sub(
+        r'ADF status mirror: COMPLETE ADF-A–ADF-[A-H]; (?:NEXT|IN EXECUTION) ADF-[A-H]\.',
+        'ADF status mirror: COMPLETE ADF-A–ADF-E; NEXT ADF-F.',
+        text,
+        count=1,
+    )
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument('--repo', default='.')
@@ -35,7 +44,7 @@ def main() -> int:
         mutate_and_expect_failure(repo, '.agents/skills/implement-group/SKILL.md', lambda t: t.replace('description:', 'model: forbidden\ndescription:', 1), 'validate_agent_skills.py', 'provider-specific skill metadata', errors)
         mutate_and_expect_failure(repo, '.cursor/rules/00-implementation-routing.mdc', lambda t: t.replace('alwaysApply: false', 'alwaysApply: true', 1), 'validate_agent_adapters.py', 'always-applied Cursor rule regression', errors)
         mutate_and_expect_failure(repo, 'AGENTS.md', lambda t: t + '\n' + ('x' * 20000), 'measure_context_budget.py', 'persistent-context overflow', errors)
-        mutate_and_expect_failure(repo, 'IMPLEMENTATION.md', lambda t: t.replace('COMPLETE ADF-A–ADF-F; NEXT ADF-G.', 'COMPLETE ADF-A–ADF-E; NEXT ADF-F.', 1), 'validate_status_drift.py', 'stale implementation status mirror', errors)
+        mutate_and_expect_failure(repo, 'IMPLEMENTATION.md', stale_status, 'validate_status_drift.py', 'stale implementation status mirror', errors)
         mutate_and_expect_failure(repo, 'knowledge/project/authority.md', lambda t: t.replace('resource:', 'resource: "../../definitely-missing.md"\nold_resource:', 1), 'validate_okf.py', 'broken canonical resource route', errors)
         mutate_and_expect_failure(repo, 'AGENTS.md', lambda t: t + '\nARCH-501\n', 'validate_agentic_references.py', 'unaccepted stable ID citation', errors)
 
