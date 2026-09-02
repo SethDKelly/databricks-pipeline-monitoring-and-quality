@@ -14,6 +14,7 @@ Use the shortest relevant path:
 
 - `docs/agentic_development_foundation/README.md` — live ADF authority;
 - root `AGENTS.md` — shared repository constitution;
+- `docs/agentic_development_foundation/authority_scope_policy.md` — shared A1–A4 human-directed authority/action policy;
 - `.agents/skills/<name>/SKILL.md` — canonical human-directed workflow when relevant;
 - explicit group/path/stable ID directly when already known;
 - otherwise `knowledge/index.md` → one relevant route → canonical resource;

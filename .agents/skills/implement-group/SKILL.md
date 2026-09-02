@@ -8,7 +8,7 @@ description: Implement one human-selected DMTZ ADF or implementation group/task 
 
 This workflow is **A2 — change/build/fix** and only applies after a human selects the group/task to implement.
 
-It may perform directly necessary supporting edits and safe validation inside that scope. It may not choose another backlog item, continue into the next group, delegate implementation to another agent, merge/deploy unattended, or weaken DMTZ semantics.
+It may perform directly necessary supporting edits and safe validation inside that scope. It may not choose another backlog item, continue into the next group, delegate implementation to another agent, merge/deploy unattended, weaken DMTZ semantics, or convert bounded execution into autonomous continuation.
 
 ## Workflow
 

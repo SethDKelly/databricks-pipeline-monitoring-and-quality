@@ -13,11 +13,11 @@ Running checks does not itself authorize repository edits. If the human also req
 ## Workflow
 
 1. Resolve the current task/change scope and affected acceptance criteria/contracts.
-2. Select the lowest-cost relevant checks defined by the repository: structural validators, unit/property, contract/schema, persistence, adapter, integration, scenario, or end-to-end only as justified.
+2. Select the lowest-cost relevant checks defined by the repository. For Agentic Development Foundation/configuration changes, prefer the canonical ADF-F command `python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md`; for product work, select unit/property, contract/schema, persistence, adapter, integration, scenario, or end-to-end checks only as justified.
 3. Prefer repository-defined commands/configuration over remembered commands or tool-specific guesses.
 4. Run safe, non-destructive checks available in the current environment. Do not trigger deployment, external mutation, destructive resets, or credential-dependent actions without explicit A3 authorization.
 5. Capture pass/fail/skipped/unavailable results and enough evidence to make the result reproducible.
-6. Distinguish design-scenario `PASS`, static configuration validation, and actual executable/runtime proof.
+6. Distinguish agentic configuration conformance, design-scenario `PASS`, static configuration validation, and actual executable/runtime proof. Agentic configuration PASS is not DMTZ domain health or production readiness.
 7. Report failures against the requirement; never weaken or rewrite the requirement to convert a failure into a pass.
 8. Identify environment/tool limitations separately from product defects.
 

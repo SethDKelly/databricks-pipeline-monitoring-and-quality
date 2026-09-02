@@ -1,5 +1,14 @@
 # DMTZ Knowledge Bundle Log
 
+## 2026-09-02 — ADF-F conformance, drift detection and CI
+
+- integrated ADF-A–ADF-E repository validators into one deterministic agentic conformance command and report;
+- added live ADF status drift, canonical agent-facing reference, fixture-catalog and negative-control checks;
+- added dedicated GitHub Actions agentic-conformance CI without requiring Cursor, Claude Code, Codex, Databricks credentials or external mutation;
+- preserved agentic configuration health as distinct from DMTZ domain/data/source/runtime/production health;
+- verified all seven seeded negative controls are rejected and kept actual tool runtime compatibility as ADF-G evidence;
+- modernized GitHub Actions checkout/setup-python usage to current v7 majors after CI surfaced the older action runtime deprecation warning.
+
 ## 2026-09-02 — ADF-E context/reference/maintenance discipline
 
 - added shortest-path context-discovery policy and deterministic byte budgets for persistent/routing/workflow surfaces;
