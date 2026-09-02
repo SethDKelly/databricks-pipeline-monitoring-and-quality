@@ -1,19 +1,20 @@
 # DMTZ Agent Reference Index
 
-**Purpose:** give developers and coding agents a compact routing surface from a task to the smallest authoritative document/contract set needed to work safely.
+**Purpose:** provide a compact secondary bridge from a task to exact stable IDs and canonical document sets. Portable first-hop discovery now begins at `knowledge/index.md`.
 
-Do **not** load every historical phase for routine work. Follow the live status, then the active Agentic Development Foundation or implementation group, then exact stable IDs when deeper semantics are required.
+Do **not** load every historical phase for routine work. Prefer `knowledge/index.md` → one category/concept → canonical resource, then use this file when exact contract-family/stable-ID routing is useful.
 
 ## Universal start
 
 | Need | Read first |
 |---|---|
+| Portable knowledge discovery | `knowledge/index.md` |
 | Repository implementation/agentic entry | `IMPLEMENTATION.md` |
 | Current implementation status | `docs/implementation/README.md` |
 | Current pre-implementation agentic work | `docs/agentic_development_foundation/README.md` |
 | Shared engineering/agent constitution | root `AGENTS.md` |
 | Human-directed authority/action policy | `docs/agentic_development_foundation/authority_scope_policy.md` |
-| Agentic knowledge/tool/workflow design | `docs/agentic_development_foundation/` |
+| DMTZ OKF producer profile | `docs/agentic_development_foundation/okf_profile.md` |
 | Active first product implementation | `docs/implementation/001_executable_foundations_walking_skeleton/README.md` after ADF exit |
 | Frozen implementation handoff | `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md` |
 | Frozen target/reference architecture | `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/target_reference_architecture.md` |
@@ -27,7 +28,7 @@ Do **not** load every historical phase for routine work. Follow the live status,
 | Working area | ADF group | Primary source |
 |---|---|---|
 | Agent authority / human-directed action boundary | ADF-A — COMPLETE | `docs/agentic_development_foundation/authority_scope_policy.md`; execution evidence in `adf_a_execution_review.md` |
-| OKF v0.2 portable knowledge plane | ADF-B — NEXT | `docs/agentic_development_foundation/02_adf_b_okf_knowledge_plane.md` |
+| OKF v0.2 portable knowledge plane | ADF-B — COMPLETE | `knowledge/index.md`; profile in `docs/agentic_development_foundation/okf_profile.md`; execution evidence in `adf_b_execution_review.md` |
 | Cursor/Claude/Codex instruction adapters | ADF-C — NEXT | `docs/agentic_development_foundation/03_adf_c_instruction_tool_adapters.md` |
 | Portable human-directed workflows/skills | ADF-D | `docs/agentic_development_foundation/04_adf_d_portable_skills_workflows.md` |
 | Context/stable-ID discovery and routing maintenance | ADF-E | `docs/agentic_development_foundation/05_adf_e_context_reference_maintenance.md` |
@@ -53,6 +54,8 @@ During ADF execution, autonomy is out of scope. See `docs/agentic_development_fo
 | Execution Gate / Propagation Safeguard | 010 | Group 07 / ARCH-351–420 | OPS/REF/AUTH | decision/enforcement/execution/prevention distinctions |
 | Production graduation / operational acceptance | 011 | Group 09 + Group 08 | all supported profile | actual production capability, ownership, SLO, DR evidence |
 
+The same domains are represented as portable OKF concepts under `knowledge/domains/`; this table remains useful for exact contract-family ranges.
+
 ## Phase 010 group paths
 
 1. `docs/concepts/phase_010/01_architecture_frame_environment_discovery_decision_criteria/`
@@ -67,7 +70,7 @@ During ADF execution, autonomy is out of scope. See `docs/agentic_development_fo
 
 ## Stable-ID search discipline
 
-When a task or test references an ID, search that exact ID in `docs/` rather than loading an entire phase.
+When a task or test references an ID, search that exact ID in `docs/` rather than treating an OKF routing summary as the contract.
 
 Examples:
 
@@ -78,8 +81,6 @@ Examples:
 - `EXPL-101` — locate the exact Explanation contract;
 - `INTG-145` — locate the exact integration/source evidence contract;
 - `ARCH-017` — locate the exact architecture contract.
-
-Do not treat examples or OKF summaries as substitutes for the exact contract text.
 
 ## Implementation package paths
 
@@ -97,8 +98,8 @@ Do not treat examples or OKF summaries as substitutes for the exact contract tex
 
 ## Context-minimization rule
 
-Until ADF-B/E replaces this index with or integrates it into the OKF knowledge plane, the expected routine context stack is:
+The expected routine context stack is now:
 
-**root `AGENTS.md` → `authority_scope_policy.md` when scope/action is material → active scoped tool rule/adapter → active ADF or implementation group → one domain routing source → one or two canonical architecture/reference documents → exact stable contracts/tests as needed.**
+**root `AGENTS.md` → `knowledge/index.md` when discovery is needed → one category/concept → active scoped tool adapter → active ADF or implementation group → canonical resource → exact stable contracts/tests as needed.**
 
-Do not proactively load all SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH documentation.
+Use this reference index only when its compact stable-ID/range map adds value. Do not proactively load all OKF concepts or all SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH documentation.
