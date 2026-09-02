@@ -1,0 +1,89 @@
+version: 1
+suite: ADF-C tool adapter conformance
+scenarios:
+  - id: ADFC-01
+    name: Claude imports shared authority
+    given: .claude/CLAUDE.md is the Claude project adapter
+    expect:
+      - it imports ../AGENTS.md
+      - it does not duplicate the DMTZ contract stack
+      - it routes discovery to knowledge/index.md
+
+  - id: ADFC-02
+    name: Cursor remains scoped
+    given: .cursor/rules contains project rules
+    expect:
+      - no rule is intentionally alwaysApply true
+      - routing rule references knowledge/index.md
+      - tool rules do not redefine live status authority
+
+  - id: ADFC-03
+    name: Root Claude duplication avoided
+    given: Cursor also reads root CLAUDE.md as persistent instructions
+    expect:
+      - repository root CLAUDE.md is absent
+      - Claude project adapter is .claude/CLAUDE.md
+
+  - id: ADFC-04
+    name: Codex uses shared AGENTS
+    given: Codex natively discovers AGENTS.md
+    expect:
+      - root AGENTS.md remains the Codex repository instruction root
+      - no CODEX.md semantic fork is required
+      - knowledge/index.md remains the discovery plane
+
+  - id: ADFC-05
+    name: Lower adapter cannot override authority
+    given: a tool-specific rule contradicts AGENTS.md or canonical docs
+    expect:
+      - higher repository authority wins
+      - contradictory adapter is reported as drift
+
+  - id: ADFC-06
+    name: Tool memory remains advisory
+    given: native tool memory conflicts with repository state
+    expect:
+      - repository authority wins
+      - correctness-critical fact is promoted to a repository artifact if needed
+
+  - id: ADFC-07
+    name: Tool convenience loss degrades ergonomics only
+    given: a scoped rule or native workflow feature is unavailable
+    expect:
+      - canonical docs and repository validation remain sufficient
+      - DMTZ semantics do not change
+
+  - id: ADFC-08
+    name: Cross-tool acceptance is repository based
+    given: equivalent work is produced by Cursor Claude Code or Codex
+    expect:
+      - acceptance uses files tests traceability and review
+      - model or tool identity does not alter requirements
+
+  - id: ADFC-09
+    name: Workflow scope remains deferred
+    given: ADF-D portable workflows are not yet complete
+    expect:
+      - adapters do not invent independent workflow semantics
+      - workflow capability is marked pending or degraded
+
+  - id: ADFC-10
+    name: Autonomy remains deferred
+    given: Claude subagents Cursor agents or Codex capabilities can delegate work
+    expect:
+      - repository implementation delegation is not authorized by ADF-C
+      - ADF-A A3 boundaries continue to apply
+
+  - id: ADFC-11
+    name: Compatibility facts are not product truth
+    given: tool compatibility manifest becomes stale
+    expect:
+      - tool feature becomes unverified or degraded
+      - DMTZ semantic contracts remain unchanged
+
+  - id: ADFC-12
+    name: Adapter validation is deterministic
+    given: a root CLAUDE.md semantic duplicate or alwaysApply Cursor rule is introduced
+    expect:
+      - adapter validator reports a failure
+      - canonical docs are not modified by the validator
