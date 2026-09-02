@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "exercise_id": "ADF-G-XT01",
+  "exercise_contract": "docs/agentic_development_foundation/adf_g_runtime_probe.md",
+  "recorded_on": "2026-09-02",
+  "repository_ref": "adf-g-compatibility",
+  "representative_task_action_class": "A1-read-review-plan",
+  "tools": {
+    "cursor": {
+      "runtime_status": "unverified",
+      "documentation_verified_on": "2026-09-02",
+      "runtime_verified_on": null,
+      "version": null,
+      "invocation": null,
+      "exercise_result": "not_run",
+      "reason": "Cursor Agent/CLI binary is not available in the ADF-G execution environment; no authenticated Cursor runtime was available to perform the bounded task.",
+      "observations": [],
+      "workaround": "Use the same repository authority and canonical .agents/skills workflow manually until an actual Cursor runtime smoke is recorded."
+    },
+    "claude_code": {
+      "runtime_status": "unverified",
+      "documentation_verified_on": "2026-09-02",
+      "runtime_verified_on": null,
+      "version": null,
+      "invocation": null,
+      "exercise_result": "not_run",
+      "reason": "Claude Code binary is not available in the ADF-G execution environment; no authenticated Claude Code runtime was available to perform the bounded task.",
+      "observations": [],
+      "workaround": "Use .claude/CLAUDE.md plus the checked-in .claude/commands bridge when an actual Claude Code runtime is available; canonical workflow semantics remain under .agents/skills."
+    },
+    "codex": {
+      "runtime_status": "unverified",
+      "documentation_verified_on": "2026-09-02",
+      "runtime_verified_on": null,
+      "version": null,
+      "invocation": null,
+      "exercise_result": "not_run",
+      "reason": "Codex CLI/app runtime is not available in the ADF-G execution environment; this ChatGPT session is not treated as Codex runtime evidence.",
+      "observations": [],
+      "workaround": "Use root AGENTS.md, knowledge routing and canonical .agents/skills when an actual Codex runtime is available."
+    }
+  },
+  "ordinary_cli": {
+    "runtime_status": "supported",
+    "verified_on": "2026-09-02",
+    "exercise_result": "pass",
+    "evidence": [
+      "Repository-owned agentic conformance is executable through ordinary Python/GitHub Actions without Cursor, Claude Code or Codex installed.",
+      "ADF-F final Agentic conformance run #19 and Documentation consistency run #137 passed on the finalized ADF-F state."
+    ],
+    "canonical_command": "python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md"
+  }
+}
