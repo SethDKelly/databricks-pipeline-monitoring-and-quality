@@ -35,7 +35,7 @@ def main() -> int:
         mutate_and_expect_failure(repo, '.agents/skills/implement-group/SKILL.md', lambda t: t.replace('description:', 'model: forbidden\ndescription:', 1), 'validate_agent_skills.py', 'provider-specific skill metadata', errors)
         mutate_and_expect_failure(repo, '.cursor/rules/00-implementation-routing.mdc', lambda t: t.replace('alwaysApply: false', 'alwaysApply: true', 1), 'validate_agent_adapters.py', 'always-applied Cursor rule regression', errors)
         mutate_and_expect_failure(repo, 'AGENTS.md', lambda t: t + '\n' + ('x' * 20000), 'measure_context_budget.py', 'persistent-context overflow', errors)
-        mutate_and_expect_failure(repo, 'IMPLEMENTATION.md', lambda t: t.replace('ADF status mirror:', 'STALE ADF status mirror:', 1), 'validate_status_drift.py', 'stale implementation status mirror', errors)
+        mutate_and_expect_failure(repo, 'IMPLEMENTATION.md', lambda t: t.replace('COMPLETE ADF-A–ADF-F; NEXT ADF-G.', 'COMPLETE ADF-A–ADF-E; NEXT ADF-F.', 1), 'validate_status_drift.py', 'stale implementation status mirror', errors)
         mutate_and_expect_failure(repo, 'knowledge/project/authority.md', lambda t: t.replace('resource:', 'resource: "../../definitely-missing.md"\nold_resource:', 1), 'validate_okf.py', 'broken canonical resource route', errors)
         mutate_and_expect_failure(repo, 'AGENTS.md', lambda t: t + '\nARCH-501\n', 'validate_agentic_references.py', 'unaccepted stable ID citation', errors)
 
