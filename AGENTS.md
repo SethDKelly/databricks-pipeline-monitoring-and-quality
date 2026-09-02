@@ -8,11 +8,13 @@ Live **design-phase** progression is declared only in [`docs/README.md#current-s
 
 Live **implementation-program** progression is declared only in [`docs/implementation/README.md`](docs/implementation/README.md).
 
-The immediate enabling work is the **Agentic Development Foundation**, whose accepted design and execution sequence live in [`docs/agentic_development_foundation/README.md`](docs/agentic_development_foundation/README.md). ADF-A, ADF-B and ADF-C are complete; ADF-D and ADF-E are next. Implementation 001 follows only after the implemented foundation passes its execution exit review.
+The immediate enabling work is the **Agentic Development Foundation**, whose accepted design and execution sequence live in [`docs/agentic_development_foundation/README.md`](docs/agentic_development_foundation/README.md). ADF-A through ADF-D are complete; ADF-E is next. Implementation 001 follows only after the implemented foundation passes its execution exit review.
 
-For portable project/domain/implementation/workflow discovery, start at [`knowledge/index.md`](knowledge/index.md). The OKF knowledge bundle is a routing projection only; exact meaning remains in the canonical resource it references. For implementation-specific engineering rules, read [`docs/implementation/AGENTS.md`](docs/implementation/AGENTS.md). [`docs/implementation/agent_reference_index.md`](docs/implementation/agent_reference_index.md) remains a secondary compact bridge for stable-ID and canonical-document lookup.
+For portable project/domain/implementation/workflow discovery, start at [`knowledge/index.md`](knowledge/index.md). The OKF knowledge bundle is a routing projection only; exact meaning remains in the canonical resource it references. For implementation-specific engineering rules, read [`docs/implementation/AGENTS.md`](docs/implementation/AGENTS.md). [`docs/implementation/agent_reference_index.md`](docs/implementation/agent_reference_index.md) remains a secondary compact bridge for stable-ID/canonical-document lookup.
 
 Tool adapters are deliberately thin: Cursor uses this file plus scoped `.cursor/rules/*.mdc`; Claude Code uses `.claude/CLAUDE.md` to import this file; Codex uses this file natively. [`docs/agentic_development_foundation/tool_compatibility.json`](docs/agentic_development_foundation/tool_compatibility.json) records operational compatibility status. No adapter is a second system of semantic authority.
+
+Canonical human-directed workflows live under `.agents/skills/<name>/SKILL.md`. Cursor and Codex consume that location natively; Claude Code uses thin `.claude/commands/<name>.md` bridges to the same workflow source. See [`docs/agentic_development_foundation/portable_workflow_profile.md`](docs/agentic_development_foundation/portable_workflow_profile.md).
 
 ## Shared agent authority
 
@@ -44,7 +46,9 @@ Agents may inspect, edit and run safe/non-destructive validation within a task a
 
 Completing a requested group authorizes reporting the next eligible step; it does **not** authorize starting that step automatically.
 
-During ADF-A–ADF-H execution, repository changes may add agent configuration, OKF routing knowledge, portable workflow/skill definitions and deterministic validation helpers. Product/application implementation remains planned under Implementation 001 unless the user explicitly advances it separately.
+Tool/host selection of a relevant skill inside an already human-selected task does not itself create a new task or expand the action envelope.
+
+During ADF-A–ADF-H execution, repository changes may add agent configuration, OKF routing knowledge, portable workflow definitions and deterministic validation helpers. Product/application implementation remains planned under Implementation 001 unless the user explicitly advances it separately.
 
 Tool memory, auto-memory, chat history and generated summaries are advisory only. A fact required for future correctness must be promoted into an appropriate repository artifact.
 
@@ -56,7 +60,7 @@ The ADF-B bundle under `knowledge/` follows the DMTZ OKF v0.2 producer profile i
 - Prefer progressive disclosure: root index → one category index → one concept → canonical resource → exact stable IDs as needed.
 - OKF lifecycle/trust/provenance metadata describes the knowledge artifact, not DMTZ domain truth.
 - If an OKF summary conflicts with its `resource`, the canonical resource wins and the knowledge entry must be corrected.
-- Do not preload the full knowledge bundle or the full accepted contract corpus for routine work.
+- Do not preload the full knowledge bundle or full accepted contract corpus for routine work.
 
 ## Tool-adapter discipline
 
@@ -65,6 +69,27 @@ The ADF-B bundle under `knowledge/` follows the DMTZ OKF v0.2 producer profile i
 - **Codex:** this root `AGENTS.md` is the repository instruction root; do not create a parallel Codex semantic rulebook.
 - Tool-specific rules/configuration may add native mechanics but may not copy/redefine DMTZ semantics, live status, A1–A4 scope, or validation obligations.
 - Runtime compatibility is distinct from documented configuration compatibility; ADF-G owns representative tool-in-the-loop verification.
+
+## Portable workflow discipline
+
+The ADF-D canonical workflows are:
+
+- `resolve-context` — A1 read-only context resolution;
+- `implement-group` — A2 bounded implementation of one human-selected task/group, then stop;
+- `resolve-contract` — A1 exact stable-ID/semantic authority lookup;
+- `run-conformance` — A1 by default; safe checks/reporting without self-authorized fixes;
+- `review-change` — A1 substantive change review;
+- `update-traceability` — A2 supporting traceability/status update backed by evidence;
+- `exit-review` — A1 evaluation; A2 only when explicitly recording the bounded review/status artifact.
+
+Workflow rules:
+
+- shared workflow meaning lives only in `.agents/skills/`;
+- skills route to canonical docs/tests/IDs rather than embedding domain truth;
+- provider bridges may change invocation mechanics only;
+- failure to resolve authority must remain explicit, not guessed from memory;
+- a skill cannot authorize A3/A4 action, agent delegation, autonomous continuation, or a new backlog item;
+- a passing workflow/check cannot manufacture evidence or self-waive mandatory exit criteria.
 
 ## Frozen incoming contract stack
 
@@ -115,7 +140,7 @@ Preserve at minimum:
 - model/search output cannot manufacture canonical truth, authority, evidence sufficiency, causal confirmation, Impact or control decisions;
 - unknown/conflicting/stale/partial/unavailable/withheld states remain legitimate and must not be normalized to benign defaults.
 
-Detailed semantics live in their accepted phase documents and should be referenced by stable IDs in implementation tests/ADRs rather than duplicated into new parallel truth definitions.
+Detailed semantics live in their accepted phase documents and should be referenced by stable IDs in implementation tests/ADRs rather than duplicated into parallel truth definitions.
 
 ## Implementation engineering discipline
 
@@ -165,6 +190,6 @@ When target-environment reality conflicts with implementation plans:
 2. explicitly narrow the deployment/product capability if the source cannot support the stronger proposition;
 3. add instrumentation/attestation when the stronger proposition is required;
 4. raise an architecture change request only when no compliant realization exists;
-5. reopen functional semantics only when the product requirement itself intentionally changes or a required real-world scenario truly cannot be represented.
+5. reopen functional semantics only when the product requirement intentionally changes or a required real-world scenario truly cannot be represented.
 
-Never silently weaken a contract in code or agent configuration and then treat that behavior as the new architecture.
+Never silently weaken a contract in code, a knowledge entry, an adapter, or a skill and then treat that behavior as the new architecture.
