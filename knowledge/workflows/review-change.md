@@ -1,11 +1,11 @@
 ---
 type: "Development Workflow"
-title: "Review change"
-description: "Route to the planned portable workflow for contract-aware code/configuration/document review."
-resource: "../../docs/agentic_development_foundation/04_adf_d_portable_skills_workflows.md"
-tags: ["dmtz", "workflow", "review"]
-status: "draft"
+title: "Review Change"
+description: "Route to the read-only DMTZ change-review workflow focused on semantic, security, historical and executable-test correctness."
+resource: "../../.agents/skills/review-change/SKILL.md"
+tags: ["dmtz", "workflow", "review", "contracts"]
+status: "stable"
 ---
-# State
+# Use
 
-The workflow is designed but not yet implemented as a portable skill. Review remains A1 unless the human also requests edits.
+Follow the canonical [review-change skill](../../.agents/skills/review-change/SKILL.md). Finding a defect does not authorize fixing it without an A2 request.

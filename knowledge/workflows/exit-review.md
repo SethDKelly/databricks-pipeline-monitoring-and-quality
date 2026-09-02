@@ -1,11 +1,11 @@
 ---
 type: "Development Workflow"
-title: "Exit review"
-description: "Route to the planned portable workflow for validating group completion against explicit acceptance evidence."
-resource: "../../docs/agentic_development_foundation/04_adf_d_portable_skills_workflows.md"
-tags: ["dmtz", "workflow", "exit-review"]
-status: "draft"
+title: "Exit Review"
+description: "Route to the workflow for evaluating a human-selected DMTZ group/package against mandatory exit gates and evidence without self-waiving failures."
+resource: "../../.agents/skills/exit-review/SKILL.md"
+tags: ["dmtz", "workflow", "exit-review", "evidence"]
+status: "stable"
 ---
-# State
+# Use
 
-The workflow is designed but not yet implemented as a portable skill. Completion may report the next eligible work but does not authorize starting it.
+Follow the canonical [exit-review skill](../../.agents/skills/exit-review/SKILL.md). Recording a review/status artifact is allowed only when explicitly requested within the selected group; acceptance does not authorize starting the next group.
