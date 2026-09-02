@@ -11,7 +11,7 @@ MIRRORS = (
     'docs/implementation/agent_reference_index.md',
     '.cursor/rules/00-implementation-routing.mdc',
 )
-STATE_RE = re.compile(r'^- \*\*ADF-([A-H]) — .*?: (COMPLETE / ACCEPTED|NEXT / READY)\.\*\*$', re.M)
+STATE_RE = re.compile(r'^- \*\*ADF-([A-H]) — .*?: (.+?)\.\*\*$', re.M)
 
 
 def main() -> int:
@@ -23,18 +23,29 @@ def main() -> int:
     states = {letter: state for letter, state in STATE_RE.findall(authority.read_text(encoding='utf-8'))}
     complete = [c for c in 'ABCDEFGH' if states.get(c) == 'COMPLETE / ACCEPTED']
     nexts = [c for c in 'ABCDEFGH' if states.get(c) == 'NEXT / READY']
+    in_progress = [c for c in 'ABCDEFGH' if str(states.get(c, '')).startswith('IN EXECUTION')]
     errors: list[str] = []
-    if len(nexts) != 1:
-        errors.append(f'ADF authority must declare exactly one NEXT / READY group; found {nexts}')
+
     if complete:
         expected_complete = list('ABCDEFGH'[:len(complete)])
         if complete != expected_complete:
             errors.append(f'ADF completed groups are not contiguous from A: {complete}')
-    if nexts and len(complete) < 8 and nexts[0] != 'ABCDEFGH'[len(complete)]:
-        errors.append(f'ADF next group {nexts[0]} does not follow completed groups {complete}')
 
-    if complete and nexts:
+    active = nexts + in_progress
+    if len(active) != 1 and len(complete) < 8:
+        errors.append(f'ADF authority must declare exactly one NEXT / READY or IN EXECUTION group; found next={nexts}, in_progress={in_progress}')
+    if active and len(complete) < 8 and active[0] != 'ABCDEFGH'[len(complete)]:
+        errors.append(f'ADF active group {active[0]} does not follow completed groups {complete}')
+    if nexts and in_progress:
+        errors.append('ADF authority cannot declare NEXT / READY and IN EXECUTION groups simultaneously')
+
+    mirror = None
+    if complete and in_progress:
+        mirror = f"ADF status mirror: COMPLETE ADF-A–ADF-{complete[-1]}; IN EXECUTION ADF-{in_progress[0]}."
+    elif complete and nexts:
         mirror = f"ADF status mirror: COMPLETE ADF-A–ADF-{complete[-1]}; NEXT ADF-{nexts[0]}."
+
+    if mirror:
         for rel in MIRRORS:
             path = repo / rel
             if not path.is_file():
