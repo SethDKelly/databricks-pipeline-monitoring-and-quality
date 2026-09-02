@@ -6,19 +6,21 @@ The `docs/` tree remains the product/design system of record.
 
 Live **design-phase** progression is declared only in [`docs/README.md#current-state`](docs/README.md#current-state). Phase 010 — Technical Architecture is complete and **ARCH-001–ARCH-500 are frozen**.
 
-Live **implementation-program** progression is declared only in [`docs/implementation/README.md`](docs/implementation/README.md). Implementation 001 is the next executable work package.
+Live **implementation-program** progression is declared only in [`docs/implementation/README.md`](docs/implementation/README.md).
 
-For implementation-specific engineering rules, read [`docs/implementation/AGENTS.md`](docs/implementation/AGENTS.md) before adding code. For compact task-to-contract routing, use [`docs/implementation/agent_reference_index.md`](docs/implementation/agent_reference_index.md).
+The immediate enabling work is the **Agentic Development Foundation**, whose accepted design and ADF-A–ADF-H execution sequence live in [`docs/agentic_development_foundation/README.md`](docs/agentic_development_foundation/README.md). Implementation 001 follows only after the implemented foundation passes its execution exit review.
 
-Cursor project rules under `.cursor/rules/` are deliberately scoped and reference-driven. They are not a second system of record. Historical phase-specific Cursor rules have been removed from the active rule set to reduce context bloat and stale-status conflicts.
+For implementation-specific engineering rules, read [`docs/implementation/AGENTS.md`](docs/implementation/AGENTS.md) before adding product code. For compact task-to-contract routing, use [`docs/implementation/agent_reference_index.md`](docs/implementation/agent_reference_index.md); ADF execution will integrate this with a portable OKF v0.2 knowledge plane.
 
-## Code is now permitted within active implementation scope
+Cursor project rules under `.cursor/rules/` are deliberately scoped and reference-driven. They are not a second system of record. Future Claude/Codex adapters must follow the same rule: tool-specific mechanics may not become competing semantic authority.
 
-The repository has moved beyond documentation-only technical design. Application code, tests, schemas, Databricks resources, CI/CD and implementation infrastructure may now be added when they are explicitly owned by the active implementation package.
+## Current agentic boundary
 
-Do **not** interpret this as permission to redesign accepted semantics by implementation convenience.
+The accepted Agentic Development Foundation is **human-directed**, not autonomous.
 
-If code conflicts with an accepted functional/integration/architecture contract, the code is presumptively wrong until an explicit change request is accepted.
+Agents may inspect, edit and run safe/non-destructive validation within a task a human explicitly requests. They must not infer authority to create unrelated follow-on work, spawn implementation agents, reprioritize the backlog, merge/deploy unattended, or reopen architecture autonomously.
+
+During ADF-A–ADF-H execution, repository changes may add agent configuration, OKF routing knowledge, portable workflow/skill definitions and deterministic validation helpers. Product/application implementation remains planned under Implementation 001 unless the user explicitly advances it separately.
 
 ## Frozen incoming contract stack
 
@@ -108,7 +110,8 @@ Maintain traceability from accepted contract/scenario IDs to executable tests.
 - current Capability Authorization/disclosure at serving boundaries;
 - sensitive telemetry minimized/redacted;
 - tenant/environment isolation explicit;
-- active-control callbacks/commands authenticated and replay-protected when that implementation is enabled.
+- active-control callbacks/commands authenticated and replay-protected when that implementation is enabled;
+- agent knowledge, skills, rules, memory and tool configuration are never independent authorization sources.
 
 ## Change-control order
 
@@ -120,4 +123,4 @@ When target-environment reality conflicts with implementation plans:
 4. raise an architecture change request only when no compliant realization exists;
 5. reopen functional semantics only when the product requirement itself intentionally changes or a required real-world scenario truly cannot be represented.
 
-Never silently weaken a contract in code and then treat the implementation as the new architecture.
+Never silently weaken a contract in code or agent configuration and then treat that behavior as the new architecture.
