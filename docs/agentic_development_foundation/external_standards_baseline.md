@@ -8,9 +8,9 @@ This document records the external tool/format assumptions used by the Agentic D
 
 Canonical source: GoogleCloudPlatform `knowledge-catalog/okf/SPEC.md`.
 
-Assumed specification: **OKF v0.2**.
+Reverified during ADF-B on **2026-09-02** against the upstream specification. Current targeted specification: **OKF v0.2**.
 
-Relevant properties used by this design:
+Relevant properties used by this foundation:
 
 - Markdown concept documents with YAML frontmatter;
 - `type` is the only universally required concept key under the base spec;
