@@ -1,57 +1,69 @@
 # Tool Adapter Authority Checklist
 
-**Status:** ACCEPTED — ADF-A checklist; adapter realization continues in ADF-C/G
+**Status:** ACCEPTED — ADF-C repository-adapter audit complete; runtime compatibility continues in ADF-G
 
 Use this checklist whenever a repository-level adapter is added or materially changed for Cursor, Claude Code, Codex or another supported coding agent.
 
-The checklist verifies that a tool adapter preserves the shared authority/scope model. It does **not** certify native feature compatibility; ADF-C/G own that later work.
+The checklist verifies that a tool adapter preserves the shared authority/scope model. It does **not** certify a vendor binary/version at runtime; ADF-G owns tool-in-the-loop smoke verification and ADF-F owns CI enforcement.
 
 ## Shared-authority checks
 
-- [ ] Adapter identifies or inherits root `AGENTS.md` as shared repository behavioral authority where the tool permits it.
-- [ ] Adapter references `docs/agentic_development_foundation/authority_scope_policy.md` or inherits equivalent wording through `AGENTS.md`.
-- [ ] Adapter does not duplicate the full DMTZ semantic contract stack.
-- [ ] Adapter does not declare a different live project/implementation status authority.
-- [ ] Adapter cannot downgrade frozen SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH obligations.
-- [ ] Tool-specific convenience instructions are clearly lower precedence than shared repository authority.
+- [x] Every supported adapter identifies or inherits root `AGENTS.md` as shared repository behavioral authority.
+- [x] Adapters inherit `authority_scope_policy.md` through `AGENTS.md`; no separate action model is maintained.
+- [x] No adapter duplicates the full DMTZ semantic contract stack.
+- [x] No adapter declares a different live project/implementation status authority.
+- [x] No adapter downgrades frozen SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH obligations.
+- [x] Tool-specific mechanics are lower precedence than shared repository authority.
 
 ## Human-directed boundary checks
 
-- [ ] Review/inspect/audit requests remain read/review unless edits are explicitly requested.
-- [ ] Implement/change/fix requests allow ordinary in-scope repository edits and safe validation without repetitive approval prompts.
-- [ ] Completing one group does not automatically authorize starting the next group.
-- [ ] Adapter does not authorize autonomous backlog selection or reprioritization.
-- [ ] Adapter does not authorize agent-to-agent implementation delegation under the current foundation.
-- [ ] External/destructive actions require task-specific human authorization plus applicable repository/team gates.
-- [ ] Architecture/semantic changes route through DMTZ change control.
+- [x] Review/inspect/audit requests remain read/review unless edits are explicitly requested.
+- [x] Implement/change/fix requests allow ordinary in-scope repository edits and safe validation without repetitive approval prompts.
+- [x] Completing one group does not automatically authorize starting the next group.
+- [x] Adapters do not authorize autonomous backlog selection or reprioritization.
+- [x] Adapters do not authorize agent-to-agent implementation delegation under the current foundation.
+- [x] External/destructive actions remain subject to task-specific human authorization plus repository/team gates.
+- [x] Architecture/semantic changes route through DMTZ change control.
 
 ## Memory/context checks
 
-- [ ] Native memory/auto-memory/chat history is described as noncanonical where the tool exposes such a feature.
-- [ ] Adapter does not tell the agent to prefer remembered state over repository status/docs.
-- [ ] Important persistent discoveries are promoted to repository artifacts rather than retained only in tool memory.
+- [x] Native memory/auto-memory/chat history remains noncanonical.
+- [x] No adapter prefers remembered state over repository status/docs.
+- [x] Important persistent discoveries must be promoted to repository artifacts.
+- [x] Portable discovery begins at `knowledge/index.md` when the canonical location is not already known.
 
 ## Acceptance/test checks
 
-- [ ] Tool output is evaluated using repository files/tests/traceability/review, not the identity of the agent/model.
-- [ ] Loss of a native convenience feature degrades ergonomics, not semantic correctness.
-- [ ] Contradictory adapter instructions are detectable through review or later ADF-F validation.
-- [ ] Adapter remains small enough that it does not recreate monolithic persistent context.
+- [x] Tool output is evaluated using repository files/tests/traceability/review, not agent/model identity.
+- [x] Loss of a native convenience feature degrades ergonomics, not semantic correctness.
+- [x] Contradictory adapter instructions are detectable through `scripts/agentic/validate_agent_adapters.py` and later ADF-F automation.
+- [x] Persistent adapter surfaces remain intentionally small.
 
-## Initial ADF-A surface audit
+## ADF-C surface audit
 
-| Surface | Current role | ADF-A result | Follow-up owner |
+| Surface | Role | ADF-C result | Follow-up owner |
 |---|---|---|---|
-| root `AGENTS.md` | shared repository constitution | PASS after ADF-A synchronization | ADF-H lifecycle review |
-| `.cursor/rules/00-implementation-routing.mdc` | scoped current-work router | PASS after ADF-A synchronization | ADF-C/E/F |
-| remaining `.cursor/rules/*.mdc` | scoped domain mechanics/guardrails | PASS at authority layer; no known conflicting status authority | ADF-C/F full adapter audit |
-| `.cursor/BUGBOT.md` | PR review policy | PASS; review-only surface does not grant implementation authority | ADF-C/F |
-| `CLAUDE.md` / `.claude/` | not yet introduced | NOT YET APPLICABLE | ADF-C |
-| Codex-specific repository adapter | intentionally not required yet beyond shared `AGENTS.md` | NOT YET APPLICABLE | ADF-C/G |
+| root `AGENTS.md` | shared repository constitution | PASS | ADF-H lifecycle review |
+| `knowledge/index.md` | portable discovery entry | PASS | ADF-E/F maintenance/conformance |
+| `.cursor/rules/00-implementation-routing.mdc` | scoped current-work router | PASS | ADF-E/F |
+| remaining `.cursor/rules/*.mdc` | scoped domain mechanics/guardrails | PASS; no intentional `alwaysApply: true` rules | ADF-F/G runtime confirmation |
+| `.cursor/BUGBOT.md` | separate PR-review policy | PASS; does not redefine implementation authority | ADF-F |
+| `.claude/CLAUDE.md` | Claude Code compatibility bridge | PASS; imports `../AGENTS.md`, adds only Claude mechanics | ADF-G runtime smoke |
+| `.claude/rules/` | optional Claude path-scoped mechanics | NOT REQUIRED by ADF-C; avoid until demonstrated need | future scoped need |
+| Codex repository adapter | native root `AGENTS.md` | PASS; no additional semantic adapter introduced | ADF-G runtime smoke |
+| `tool_compatibility.json` | operational compatibility manifest | PASS | ADF-H review horizon |
+
+## Deliberate Claude placement decision
+
+ADF-C uses `.claude/CLAUDE.md`, not root `CLAUDE.md`.
+
+Current Claude Code documentation supports either location and resolves relative `@` imports from the containing file. Current Cursor documentation states that a root `CLAUDE.md` is also loaded as persistent project instructions. Using `.claude/CLAUDE.md` therefore avoids adding a second universal instruction surface to Cursor while allowing Claude Code to import `../AGENTS.md` directly.
+
+This is a tool-mechanics decision, not a change to DMTZ authority.
 
 ## Failure classification
 
-A checklist failure involving only convenience/loading mechanics may be treated as an ADF-C/G compatibility gap.
+A failure involving only convenience/loading mechanics may be treated as an ADF-G compatibility gap when canonical authority remains available.
 
 The following are **blocking authority failures** and must not be accepted silently:
 
@@ -60,4 +72,5 @@ The following are **blocking authority failures** and must not be accepted silen
 - a review request is configured to edit by default;
 - a tool adapter grants unattended merge/deploy or autonomous scope expansion;
 - tool memory is treated as canonical project state;
-- architecture/change-control obligations are bypassed.
+- architecture/change-control obligations are bypassed;
+- a new tool-specific persistent file reproduces shared DMTZ semantics instead of importing/routing to them.
