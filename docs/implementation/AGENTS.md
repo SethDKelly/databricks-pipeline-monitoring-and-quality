@@ -2,7 +2,7 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT.**
 
-**Pre-exit condition:** the Databricks Agent Skills Integration Addendum is in execution. Close it before the foundation execution exit review and before Implementation 001-A activation.
+The Databricks Agent Skills Integration Addendum is **COMPLETE / ACCEPTED**. The foundation execution exit review is the sole next pre-implementation gate.
 
 ## Authority
 
@@ -23,8 +23,6 @@ Use the shortest authoritative context path:
 
 **root `AGENTS.md` → matching `.agents/skills/` DMTZ workflow/overlay when useful → explicit path/stable ID directly when known; otherwise `knowledge/index.md` → one relevant route → active implementation group → canonical source → reviewed vendor product skill only when its platform mechanic is needed → exact contracts/tests.**
 
-Use `scripts/agentic/resolve_stable_id.py` for exact occurrence discovery when helpful. Do not choose the first search hit as semantic authority.
-
 Human-directed action follows ADF-A:
 
 - A1 review/inspect/plan does not authorize edits or external workspace calls;
@@ -36,13 +34,13 @@ Completing one group does not authorize beginning the next group automatically.
 
 ## Current implementation boundary
 
-ADF-A through ADF-H are complete/accepted for the later foundation execution exit review. **ADF-EX-17 remains deferred verification**. The Databricks Agent Skills pre-exit addendum is currently being closed.
+ADF-A through ADF-H and the Databricks Agent Skills addendum are complete/accepted for the foundation execution exit review. **ADF-EX-17 remains deferred verification**: Cursor, Claude Code and Codex are still runtime-`unverified` until actual `ADF-G-XT01` evidence exists.
 
-Product/application implementation begins only after addendum closure, foundation exit acceptance, and an explicitly active implementation package.
+Product/application implementation begins only after the full foundation exit passes and an implementation package is explicitly active.
 
 ## Databricks Agent Skills / overlays
 
-Addendum authority: `docs/agentic_development_foundation/databricks_agent_skills_addendum.md` and `databricks_vendor_skills_profile.json`.
+Accepted addendum authority: `docs/agentic_development_foundation/databricks_agent_skills_addendum.md`, its execution review, and `databricks_vendor_skills_profile.json`.
 
 Initial reviewed vendor skills: core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect. Model/AI implementation skills are deferred.
 
@@ -87,7 +85,7 @@ The result is **agentic configuration conformance**, not DMTZ domain health, pro
 
 Every material accepted behavior should have the lowest-cost executable proof appropriate to it: unit/property, contract/schema, persistence, adapter, integration, product scenario, then end-to-end only where the boundary itself is under test.
 
-Design-scenario PASS and vendor documentation are not executable target proof. Maintain stable-ID/scenario → executable-test traceability.
+Design-scenario PASS, agentic conformance PASS and vendor documentation are not executable target proof. Maintain stable-ID/scenario → executable-test traceability.
 
 ## Security and change escalation
 
@@ -99,6 +97,6 @@ Follow `docs/agentic_development_foundation/security_trust_lifecycle_policy.md` 
 - current Capability Authorization/disclosure governs serving boundaries;
 - agent/tool/vendor-skill memory or configuration remains noncanonical.
 
-Automatic vendor-skill expansion and managed Databricks MCP-server adoption are not authorized by the initial addendum.
+Automatic vendor-skill expansion and managed Databricks MCP-server adoption are not authorized by the accepted addendum.
 
 When a contract cannot be implemented, record exact contracts, target facts, attempted compliant realizations, instrumentation/capability-narrowing options, and raise architecture change only if necessary. Implementation convenience is not sufficient reason to reopen architecture.
