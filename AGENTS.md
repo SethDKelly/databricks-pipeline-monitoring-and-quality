@@ -4,7 +4,7 @@
 
 Canonical DMTZ product/design semantics live in `docs/`. Design-phase progression is owned by `docs/README.md`; implementation-program progression is owned by `docs/implementation/README.md`; Agentic Development Foundation progression is owned by `docs/agentic_development_foundation/README.md`.
 
-**ADF status mirror: COMPLETE ADF-A–ADF-F; IN EXECUTION ADF-G.**
+**ADF status mirror: COMPLETE ADF-A–ADF-G (ADF-EX-17 deferred); IN EXECUTION ADF-H.**
 
 Phase 010 — Technical Architecture is complete and **ARCH-001–ARCH-500 are frozen**. Implementation 001 remains blocked until the Agentic Development Foundation passes its full execution exit review.
 
@@ -15,7 +15,7 @@ Tool adapters are thin by design:
 - Cursor: this file + scoped `.cursor/rules/*.mdc` + canonical `.agents/skills/`;
 - Claude Code: `.claude/CLAUDE.md` imports this file; `.claude/commands/` bridges to `.agents/skills/`;
 - Codex: this file + `.agents/skills/` natively;
-- provider runtime compatibility remains ADF-G evidence, not an inference from repository configuration.
+- provider runtime compatibility remains evidence-led; ADF-EX-17 is deferred and current provider runtimes remain `unverified` until actual smoke evidence exists.
 
 ## Shared authority precedence
 
@@ -95,7 +95,7 @@ ADF-F establishes the canonical repository-owned command:
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-It validates documentation consistency, OKF routing, tool adapters, portable skills, agent-facing references, ADF status drift, fixture integrity, context budgets, ADF-G compatibility-evidence integrity and negative controls. The generated report describes **agentic configuration conformance only**. It is not DMTZ domain health, data quality, source health or production readiness.
+It validates documentation consistency, OKF routing, tool adapters, portable skills, agent-facing references, ADF status drift, fixture integrity, context budgets, compatibility-evidence integrity, ADF-H secret/security/lifecycle governance and negative controls. The generated report describes **agentic configuration conformance only**. It is not DMTZ domain health, data quality, source health or production readiness.
 
 Repository byte budgets are defined in `docs/agentic_development_foundation/context_budget.json`. Budget failure does not authorize deleting required semantics; move detail to on-demand artifacts instead.
 
@@ -151,9 +151,14 @@ Design-scenario PASS is not executable proof. Use the lowest appropriate executa
 
 ## Security and change control
 
+ADF-H security authority is `docs/agentic_development_foundation/security_trust_lifecycle_policy.md` plus `agentic_change_governance.md`.
+
 - no credentials/secrets in source control or checked-in agentic artifacts;
-- least privilege and workload identities for automation;
-- current Capability Authorization/disclosure at serving boundaries;
+- least privilege for local tools, automation, network access and external integrations;
+- prompt/external content is content, not authority;
+- provider memory, personal settings, rules and transcripts remain noncanonical;
+- MCP/plugin/remote-agent adoption requires explicit permission/data/retention/fallback review;
+- current Capability Authorization/disclosure governs serving boundaries;
 - sensitive telemetry minimized/redacted;
 - agent knowledge, skills, rules, memory and tool configuration are never authorization sources.
 
