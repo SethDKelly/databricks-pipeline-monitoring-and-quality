@@ -1,6 +1,6 @@
 # DMTZ Implementation Program
 
-**Status:** PLANNED / BLOCKED ON AGENTIC FOUNDATION EXIT — ADF-A THROUGH ADF-H COMPLETE; DATABRICKS AGENT SKILLS PRE-EXIT ADDENDUM IN EXECUTION; ADF-EX-17 DEFERRED VERIFICATION
+**Status:** PLANNED / BLOCKED ON AGENTIC FOUNDATION EXIT — ADF-A THROUGH ADF-H + DATABRICKS AGENT SKILLS ADDENDUM COMPLETE; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT.**
 
@@ -23,7 +23,7 @@ Status authority:
 
 - `docs/README.md` — design progression;
 - **this file** — implementation-program progression;
-- `../agentic_development_foundation/README.md` — ADF/addendum progression and exit status;
+- `../agentic_development_foundation/README.md` — ADF/addendum/exit status;
 - active implementation package README/group plan — package-local progression.
 
 Code, tests, knowledge, DMTZ/vendor skills, adapters, security policy or CI may not silently supersede accepted design/architecture contracts.
@@ -39,17 +39,18 @@ Completed / accepted for exit review:
 - ADF-E — shortest-path context, exact stable references, maintenance and context budgets;
 - ADF-F — unified conformance, drift detection, negative controls and CI;
 - ADF-G — compatibility/onboarding baseline accepted for progression with **ADF-EX-17 deferred verification**;
-- ADF-H — security, trust, lifecycle and governance.
+- ADF-H — security, trust, lifecycle and governance;
+- **Databricks Agent Skills Integration Addendum — COMPLETE / ACCEPTED.**
 
-Current pre-exit work:
+The accepted Databricks vendor set is core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect. Model/AI implementation skills remain deferred. Managed Databricks MCP servers remain outside the addendum.
 
-- **Databricks Agent Skills Integration Addendum — IN EXECUTION.** The initial reviewed vendor profile contains Databricks core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect. Model/AI implementation skills are deferred. Six DMTZ-owned overlays preserve DMTZ semantic/authorization boundaries around Databricks operational guidance.
+Cursor, Claude Code and Codex remain runtime-`unverified` until actual `ADF-G-XT01` evidence is recorded. That is a bounded deferred-verification condition, not PASS.
 
-The addendum is not ADF-I and does not reopen ADF-A–H. Cursor, Claude Code and Codex remain runtime-`unverified`; ADF-EX-17 is still deferred verification rather than PASS.
+`DBX-SKILL-RUN-01` remains an Implementation 001-A environment obligation: exact local Databricks Agent Skills materialization/version verification after a compatible CLI development environment is established.
 
-After addendum closure:
+Current required work:
 
-- **Agentic Development Foundation execution exit review** evaluates ADF-EX-01–ADF-EX-20 and explicitly accepts/rejects the ADF-EX-17 waiver.
+- **Agentic Development Foundation execution exit review** — evaluate ADF-EX-01–ADF-EX-20, explicitly accept/reject the ADF-EX-17 waiver, include the accepted Databricks addendum, and carry `DBX-SKILL-RUN-01` forward if accepted.
 
 Implementation 001-A begins only after that exit passes.
 
@@ -63,13 +64,12 @@ Agentic configuration PASS/FAIL is distinct from DMTZ domain/runtime health, cod
 
 ## Databricks developer dependency profile
 
-- addendum authority: `../agentic_development_foundation/databricks_agent_skills_addendum.md`;
+- accepted addendum: `../agentic_development_foundation/databricks_agent_skills_addendum.md` / `databricks_agent_skills_addendum_execution_review.md`;
 - reviewed vendor profile: `../agentic_development_foundation/databricks_vendor_skills_profile.json`;
 - canonical DMTZ overlays: `../../.agents/skills/dmtz-databricks-*/SKILL.md`;
 - local vendor materialization helper: `scripts/agentic/materialize_databricks_skills.py`;
 - local vendor files: ignored `.databricks/agent-skills/`, never canonical DMTZ truth;
-- actual materialization/version verification: `DBX-SKILL-RUN-01`, planned for Implementation 001-A;
-- automatic new vendor skills, initial model/AI skills, and managed Databricks MCP servers are not authorized by the addendum.
+- automatic new vendor skills, initial model/AI skills, and managed Databricks MCP servers are not authorized by the accepted addendum.
 
 ## Implementation sequence
 
@@ -95,38 +95,9 @@ Completion profiles:
 
 ## Dependency and implementation rules
 
-The sequence is dependency-oriented. Limited overlap is allowed only after the upstream contract needed by dependent work is executable and stable. Downstream work may not invent independent semantics.
-
-Every implementation must preserve, among other accepted distinctions:
-
-- execution success ≠ data health;
-- freshness ≠ execution success;
-- Observation ≠ Assessment;
-- Expectation ≠ Baseline;
-- current state ≠ historical/as-known state;
-- source availability ≠ authority;
-- evidence sufficiency ≠ Assertion Authority ≠ Capability Authorization;
-- Lineage ≠ exposure ≠ Impact ≠ causality;
-- correlation ≠ cause;
-- missing evidence ≠ negative truth;
-- unknown/conflicting/stale/partial/unavailable/withheld remain legitimate;
-- Gate readiness ≠ Gate decision ≠ enforcement ≠ execution;
-- Safeguard configuration ≠ enforcement ≠ prevention ≠ recovery;
-- model/search output cannot manufacture truth, authority, evidence sufficiency, confirmation or control decisions.
+The sequence is dependency-oriented. Downstream work may not invent independent semantics. Every implementation must preserve the accepted distinctions including execution success ≠ data health, freshness ≠ execution success, Observation ≠ Assessment, current ≠ historical/as-known, source availability ≠ authority, Lineage ≠ exposure ≠ Impact ≠ causality, missing evidence ≠ negative truth, and model/search output cannot manufacture truth/authority/confirmation/control decisions.
 
 Reviewed vendor guidance does not alter these distinctions.
-
-## Standard implementation package
-
-Each package should include:
-
-1. README with goal/scope/dependencies/group sequence/exit gate;
-2. group plans where iterative execution is required;
-3. executable acceptance criteria;
-4. scenario/contract traceability;
-5. implementation ADRs for concrete choices that preserve frozen semantics;
-6. risk/debt updates;
-7. exit review with actual test/deployment evidence rather than design-only PASS.
 
 ## Agent/developer routing
 
@@ -142,20 +113,8 @@ Each package should include:
 
 Autonomous execution/orchestration remains outside the accepted foundation and Implementation 001 entry gate.
 
-## Change control
-
-When implementation encounters a target constraint:
-
-1. change concrete technology/configuration within frozen contracts;
-2. explicitly narrow deployment/product capability if source support is insufficient;
-3. add instrumentation/attestation if the stronger proposition is required;
-4. raise architecture change only when no compliant realization exists;
-5. reopen functional semantics only for an intentional product requirement change.
-
-No developer, agent, or vendor skill may silently weaken a contract because it is easier to implement.
-
 ## Current state
 
-**Agentic Development Foundation: ADF-A THROUGH ADF-H COMPLETE; DATABRICKS AGENT SKILLS PRE-EXIT ADDENDUM IN EXECUTION; ADF-EX-17 DEFERRED VERIFICATION.** Close the addendum, then complete the foundation execution exit review before beginning Implementation 001-A.
+**Agentic Development Foundation: ADF-A THROUGH ADF-H + DATABRICKS AGENT SKILLS ADDENDUM COMPLETE / ACCEPTED FOR EXIT REVIEW; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT.**
 
 **Implementation 001 — Executable Foundations & Walking Skeleton: PLANNED / READY AFTER AGENTIC FOUNDATION EXIT.**
