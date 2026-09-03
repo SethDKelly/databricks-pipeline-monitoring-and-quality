@@ -12,6 +12,7 @@ MIRRORS = (
     '.cursor/rules/00-implementation-routing.mdc',
 )
 STATE_RE = re.compile(r'^- \*\*ADF-([A-H]) — .*?: (.+?)\.\*\*$', re.M)
+EXIT_ACCEPTED = '**Status:** ACCEPTED — AGENTIC DEVELOPMENT FOUNDATION EXECUTION EXIT COMPLETE'
 
 
 def main() -> int:
@@ -25,6 +26,8 @@ def main() -> int:
     nexts = [c for c in 'ABCDEFGH' if states.get(c) == 'NEXT / READY']
     in_progress = [c for c in 'ABCDEFGH' if str(states.get(c, '')).startswith('IN EXECUTION')]
     deferred = [c for c in complete if 'DEFERRED VERIFICATION' in str(states.get(c, ''))]
+    exit_review = repo / 'docs/agentic_development_foundation/execution_exit_review.md'
+    exit_accepted = exit_review.is_file() and EXIT_ACCEPTED in exit_review.read_text(encoding='utf-8')
     errors: list[str] = []
 
     if complete:
@@ -34,6 +37,8 @@ def main() -> int:
 
     active = nexts + in_progress
     if len(complete) < 8:
+        if exit_accepted:
+            errors.append('ADF execution exit cannot be accepted before all ADF-A–ADF-H groups are complete')
         if len(active) != 1:
             errors.append(f'ADF authority must declare exactly one NEXT / READY or IN EXECUTION group; found next={nexts}, in_progress={in_progress}')
         elif active[0] != 'ABCDEFGH'[len(complete)]:
@@ -51,7 +56,10 @@ def main() -> int:
         mirror = 'ADF status mirror: COMPLETE ADF-A–ADF-H; '
         if deferred:
             mirror += 'ADF-EX-17 DEFERRED VERIFICATION; '
-        mirror += 'EXECUTION EXIT REVIEW NEXT.'
+        if exit_accepted:
+            mirror += 'FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.'
+        else:
+            mirror += 'EXECUTION EXIT REVIEW NEXT.'
     elif complete and in_progress:
         mirror = f"ADF status mirror: COMPLETE ADF-A–ADF-{complete[-1]}{deferred_suffix}; IN EXECUTION ADF-{in_progress[0]}."
     elif complete and nexts:
