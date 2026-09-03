@@ -8,11 +8,12 @@ alwaysApply: false
 
 Do not infer current status from historical phase documents, Git history, model memory, or tool-specific state.
 
-**ADF status mirror: COMPLETE ADF-A–ADF-G (ADF-EX-17 deferred); IN EXECUTION ADF-H.**
+**ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT.**
 
 Use the shortest relevant path:
 
 - `docs/agentic_development_foundation/README.md` — live ADF authority;
+- `docs/agentic_development_foundation/execution_exit_criteria.md` — ADF-EX-01–ADF-EX-20 exit gates;
 - root `AGENTS.md` — shared repository constitution;
 - `docs/agentic_development_foundation/authority_scope_policy.md` — shared A1–A4 human-directed authority/action policy;
 - `.agents/skills/<name>/SKILL.md` — canonical human-directed workflow when relevant;
@@ -21,12 +22,12 @@ Use the shortest relevant path:
 - `docs/agentic_development_foundation/stable_reference_policy.md` / `scripts/agentic/resolve_stable_id.py` — exact stable-ID discipline;
 - `docs/agentic_development_foundation/runtime_compatibility_evidence.json` — provider runtime evidence, never semantic authority;
 - `docs/agentic_development_foundation/adf_g_progression_exception.md` — bounded ADF-EX-17 deferred-verification exception;
-- `docs/agentic_development_foundation/security_trust_lifecycle_policy.md` — ADF-H least-privilege/trust/lifecycle boundary;
+- `docs/agentic_development_foundation/security_trust_lifecycle_policy.md` — accepted least-privilege/trust/lifecycle boundary;
 - `docs/implementation/README.md` — live implementation-program authority;
 - `docs/implementation/agent_reference_index.md` — secondary family/path bridge;
 - frozen Phase 010 Group 09 architecture handoff for implementation realization.
 
-ADF-A through ADF-F are complete. **ADF-G is accepted for progression with ADF-EX-17 deferred verification; ADF-H is IN EXECUTION.** Cursor/Claude/Codex runtime support remains unverified until actual provider evidence exists. Implementation 001 remains blocked until the full Agentic Development Foundation exit.
+**ADF-A through ADF-H are complete/accepted for the foundation execution exit review.** ADF-EX-17 remains deferred verification; Cursor/Claude/Codex runtime support remains unverified until actual provider evidence exists. Implementation 001 remains blocked until the execution exit review passes.
 
 ## Human-directed boundaries
 
