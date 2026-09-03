@@ -1,6 +1,6 @@
 # DMTZ Implementation Program
 
-**Status:** PLANNED / BLOCKED ON AGENTIC FOUNDATION EXIT — ADF-A THROUGH ADF-H COMPLETE; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT
+**Status:** PLANNED / BLOCKED ON AGENTIC FOUNDATION EXIT — ADF-A THROUGH ADF-H COMPLETE; DATABRICKS AGENT SKILLS PRE-EXIT ADDENDUM IN EXECUTION; ADF-EX-17 DEFERRED VERIFICATION
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT.**
 
@@ -19,16 +19,14 @@ Accepted incoming ranges remain authoritative:
 - INTG-001–INTG-270;
 - ARCH-001–ARCH-500.
 
-The immediate upstream architecture handoff is [`../concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md`](../concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md).
-
 Status authority:
 
 - `docs/README.md` — design progression;
 - **this file** — implementation-program progression;
-- `../agentic_development_foundation/README.md` — ADF progression/exit status;
+- `../agentic_development_foundation/README.md` — ADF/addendum progression and exit status;
 - active implementation package README/group plan — package-local progression.
 
-Code, tests, knowledge, skills, adapters, security policy or CI may not silently supersede accepted design/architecture contracts.
+Code, tests, knowledge, DMTZ/vendor skills, adapters, security policy or CI may not silently supersede accepted design/architecture contracts.
 
 ## Pre-implementation Agentic Development Foundation
 
@@ -38,18 +36,22 @@ Completed / accepted for exit review:
 - ADF-B — OKF v0.2 portable knowledge routing;
 - ADF-C — thin Cursor/Claude/Codex instruction adapters;
 - ADF-D — canonical portable workflows under `.agents/skills/`;
-- ADF-E — shortest-path context, exact stable references, knowledge maintenance and context budgets;
-- ADF-F — unified agentic conformance, drift detection, negative controls and CI;
+- ADF-E — shortest-path context, exact stable references, maintenance and context budgets;
+- ADF-F — unified conformance, drift detection, negative controls and CI;
 - ADF-G — compatibility/onboarding baseline accepted for progression with **ADF-EX-17 deferred verification**;
 - ADF-H — security, trust, lifecycle and governance.
 
-Cursor, Claude Code and Codex remain runtime-`unverified` until actual `ADF-G-XT01` evidence is recorded. That is a bounded deferred-verification condition, not PASS.
+Current pre-exit work:
 
-Current required work:
+- **Databricks Agent Skills Integration Addendum — IN EXECUTION.** The initial reviewed vendor profile contains Databricks core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect. Model/AI implementation skills are deferred. Six DMTZ-owned overlays preserve DMTZ semantic/authorization boundaries around Databricks operational guidance.
 
-- **Agentic Development Foundation execution exit review** — evaluate ADF-EX-01–ADF-EX-20 and explicitly accept/reject the ADF-EX-17 waiver.
+The addendum is not ADF-I and does not reopen ADF-A–H. Cursor, Claude Code and Codex remain runtime-`unverified`; ADF-EX-17 is still deferred verification rather than PASS.
 
-Implementation 001-A begins only after that exit passes under the documented mandatory-gate/waiver rule.
+After addendum closure:
+
+- **Agentic Development Foundation execution exit review** evaluates ADF-EX-01–ADF-EX-20 and explicitly accepts/rejects the ADF-EX-17 waiver.
+
+Implementation 001-A begins only after that exit passes.
 
 Canonical conformance command:
 
@@ -57,7 +59,17 @@ Canonical conformance command:
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-Agentic configuration PASS/FAIL is distinct from DMTZ domain/runtime health. Provider runtime evidence is recorded separately in `../agentic_development_foundation/runtime_compatibility_evidence.json`; ADF-H security/lifecycle authority is `../agentic_development_foundation/security_trust_lifecycle_policy.md`.
+Agentic configuration PASS/FAIL is distinct from DMTZ domain/runtime health, coding-agent runtime certification, and target Databricks capability.
+
+## Databricks developer dependency profile
+
+- addendum authority: `../agentic_development_foundation/databricks_agent_skills_addendum.md`;
+- reviewed vendor profile: `../agentic_development_foundation/databricks_vendor_skills_profile.json`;
+- canonical DMTZ overlays: `../../.agents/skills/dmtz-databricks-*/SKILL.md`;
+- local vendor materialization helper: `scripts/agentic/materialize_databricks_skills.py`;
+- local vendor files: ignored `.databricks/agent-skills/`, never canonical DMTZ truth;
+- actual materialization/version verification: `DBX-SKILL-RUN-01`, planned for Implementation 001-A;
+- automatic new vendor skills, initial model/AI skills, and managed Databricks MCP servers are not authorized by the addendum.
 
 ## Implementation sequence
 
@@ -83,7 +95,7 @@ Completion profiles:
 
 ## Dependency and implementation rules
 
-The sequence is dependency-oriented. Limited overlap is allowed only after the upstream contract needed by dependent work is executable and stable. UI or adapters may progress in parallel where appropriate, but downstream work may not invent independent semantics.
+The sequence is dependency-oriented. Limited overlap is allowed only after the upstream contract needed by dependent work is executable and stable. Downstream work may not invent independent semantics.
 
 Every implementation must preserve, among other accepted distinctions:
 
@@ -102,6 +114,8 @@ Every implementation must preserve, among other accepted distinctions:
 - Safeguard configuration ≠ enforcement ≠ prevention ≠ recovery;
 - model/search output cannot manufacture truth, authority, evidence sufficiency, confirmation or control decisions.
 
+Reviewed vendor guidance does not alter these distinctions.
+
 ## Standard implementation package
 
 Each package should include:
@@ -118,13 +132,12 @@ Each package should include:
 
 - shared constitution: root `AGENTS.md`;
 - portable discovery: `../../knowledge/index.md` when needed;
-- exact stable-ID policy/helper: ADF-E `stable_reference_policy.md` / `scripts/agentic/resolve_stable_id.py`;
-- compact family/path bridge: [`agent_reference_index.md`](agent_reference_index.md);
-- canonical workflows: `../../.agents/skills/`;
+- compact family/path/platform bridge: [`agent_reference_index.md`](agent_reference_index.md);
+- canonical DMTZ workflows/overlays: `../../.agents/skills/`;
 - conformance: `../agentic_development_foundation/conformance_policy.md` and `scripts/agentic/run_conformance.py`;
+- Databricks addendum/profile: `../agentic_development_foundation/databricks_agent_skills_addendum.md` / `databricks_vendor_skills_profile.json`;
 - runtime compatibility evidence: `../agentic_development_foundation/runtime_compatibility_evidence.json`;
-- bounded ADF-G progression exception: `../agentic_development_foundation/adf_g_progression_exception.md`;
-- security/trust/lifecycle: `../agentic_development_foundation/security_trust_lifecycle_policy.md` and `agentic_change_governance.md`;
+- security/trust/lifecycle: `../agentic_development_foundation/security_trust_lifecycle_policy.md` / `agentic_change_governance.md`;
 - foundation exit gates: `../agentic_development_foundation/execution_exit_criteria.md`.
 
 Autonomous execution/orchestration remains outside the accepted foundation and Implementation 001 entry gate.
@@ -139,10 +152,10 @@ When implementation encounters a target constraint:
 4. raise architecture change only when no compliant realization exists;
 5. reopen functional semantics only for an intentional product requirement change.
 
-No developer or agent may silently weaken a contract because it is easier to implement.
+No developer, agent, or vendor skill may silently weaken a contract because it is easier to implement.
 
 ## Current state
 
-**Agentic Development Foundation: GROUP EXECUTION COMPLETE — ADF-A THROUGH ADF-H COMPLETE / ACCEPTED FOR EXIT REVIEW; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT.** Complete the foundation execution exit review before beginning Implementation 001-A.
+**Agentic Development Foundation: ADF-A THROUGH ADF-H COMPLETE; DATABRICKS AGENT SKILLS PRE-EXIT ADDENDUM IN EXECUTION; ADF-EX-17 DEFERRED VERIFICATION.** Close the addendum, then complete the foundation execution exit review before beginning Implementation 001-A.
 
 **Implementation 001 — Executable Foundations & Walking Skeleton: PLANNED / READY AFTER AGENTIC FOUNDATION EXIT.**
