@@ -1,6 +1,6 @@
 # Implementation 001 — Executable Foundations & Walking Skeleton
 
-**Status:** PLANNED / READY AFTER AGENTIC FOUNDATION EXIT
+**Status:** READY — 001-A NEXT / ELIGIBLE AFTER ACCEPTED AGENTIC FOUNDATION EXIT
 
 ## Objective
 
@@ -18,10 +18,13 @@ The target question is:
 
 - Phase 010 COMPLETE / ARCH-001–ARCH-500 frozen;
 - Phase 010 implementation handoff accepted;
-- Agentic Development Foundation execution exit accepted under its documented gate/waiver rule;
-- Databricks Agent Skills pre-exit addendum accepted with the reviewed initial vendor profile;
+- **Agentic Development Foundation execution exit ACCEPTED**;
+- ADF-EX-17 accepted only as **DEFERRED / WAIVED — BOUNDED VERIFICATION DEBT**, with `ADF-G-XT01` carried forward and provider runtimes still `unverified`;
+- Databricks Agent Skills addendum accepted with the reviewed initial vendor profile;
 - representative non-production Databricks target available or scheduled for 001-E/001-G;
 - repository access and a developer able to implement Python/Databricks testable code.
+
+Beginning 001-A still requires explicit human selection. Read `docs/agentic_development_foundation/execution_exit_review.md` for the final foundation disposition.
 
 ## 001-A Databricks developer-environment check
 
@@ -43,7 +46,7 @@ No workspace call, deployment, governance change or credential-bearing action is
 
 ## Group sequence
 
-1. **001-A — Developer Environment, Repository Structure & Engineering Standards** — includes Databricks CLI compatibility and reviewed Agent Skills materialization/version verification.
+1. **001-A — Developer Environment, Repository Structure & Engineering Standards** — **NEXT / ELIGIBLE**; includes Databricks CLI compatibility and reviewed Agent Skills materialization/version verification.
 2. **001-B — Canonical Type System, Contract Schemas & Versioning**
 3. **001-C — Executable Invariants, Golden Fixtures & Architecture Conformance Tests**
 4. **001-D — Minimal Canonical Delta Persistence & Historical Semantics**
