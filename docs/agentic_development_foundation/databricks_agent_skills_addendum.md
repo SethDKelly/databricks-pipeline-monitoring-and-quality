@@ -1,12 +1,12 @@
 # Databricks Agent Skills Integration Addendum
 
-**Status:** IN EXECUTION — PRE-EXIT ADDENDUM
+**Status:** COMPLETE / ACCEPTED — PRE-EXIT ADDENDUM
 
 ## Purpose
 
 Integrate first-party Databricks Agent Skills into the DMTZ developer workflow without creating a new ADF phase, a second DMTZ authority surface, or provider-specific semantic forks.
 
-This addendum cross-cuts ADF-D through ADF-H. It must be closed before the Agentic Development Foundation execution exit review.
+This addendum cross-cuts ADF-D through ADF-H. It is accepted for inclusion in the Agentic Development Foundation execution exit review.
 
 ## Authority model
 
@@ -58,7 +58,7 @@ Reviewed vendor skills are materialized locally with the Databricks CLI `aitools
 
 `.databricks/agent-skills/`
 
-That tree is already ignored by Git. `--path` writes resolved skill files without modifying coding agents or writing Databricks AI-tools install state.
+That tree is ignored by Git. `--path` writes resolved skill files without modifying coding agents or writing Databricks AI-tools install state.
 
 Use:
 
@@ -67,13 +67,13 @@ python3 scripts/agentic/materialize_databricks_skills.py
 python3 scripts/agentic/materialize_databricks_skills.py --execute
 ```
 
-The helper builds the exact reviewed `databricks aitools install --path ... --skills ...` command and, after materialization, verifies that all selected skill names and reviewed versions match the repository profile and that no extra vendor skill appeared.
+The helper builds the exact reviewed `databricks aitools install --path ... --skills ...` command and, after materialization, verifies all selected skill names/reviewed versions and rejects extra vendor skills.
 
 If upstream versions differ, stop and review the new upstream release before changing the profile. Do not silently accept drift.
 
 ## DMTZ platform overlays
 
-DMTZ-specific overlays remain canonical repository skills:
+Canonical DMTZ overlays are:
 
 - `dmtz-databricks-environment-discovery`;
 - `dmtz-databricks-acquisition`;
@@ -82,7 +82,7 @@ DMTZ-specific overlays remain canonical repository skills:
 - `dmtz-databricks-runtime-provenance`;
 - `dmtz-databricks-governance`.
 
-The overlays do **not** duplicate Databricks product documentation. They state DMTZ boundaries and route to the relevant reviewed vendor skills when local materialization is present.
+The overlays do **not** duplicate Databricks product documentation. They state DMTZ boundaries and route to relevant reviewed vendor skills when local materialization is present.
 
 ### Core composition rule
 
@@ -126,19 +126,25 @@ Update sequence:
 
 Do not use an unrestricted update path that auto-installs newly added upstream skills.
 
-## Implementation entry
+## Implementation entry residual
 
-Implementation 001-A should install/verify a compatible Databricks CLI and perform the first local materialization check. The inability to materialize vendor skills does not change DMTZ semantics; use official documentation/manual workflow and record the integration as degraded until repaired.
+`DBX-SKILL-RUN-01` belongs to Implementation 001-A: install/verify a compatible Databricks CLI and perform the first actual local materialization/version check. The inability to materialize vendor skills does not change DMTZ semantics; use official documentation/manual workflow and record the integration as degraded until repaired.
 
-## Exit conditions for this addendum
+This residual does not authorize Databricks workspace access and is not represented as already executed.
 
-- reviewed eight-skill profile is explicit and machine-valid;
+## Accepted exit conditions
+
+The accepted execution review records that:
+
+- the reviewed eight-skill profile is explicit and machine-valid;
 - Unity Catalog and Lakeflow Connect are included;
 - model/AI skills remain deferred;
-- six DMTZ overlays exist and remain under shared A1–A4 authority;
+- six DMTZ overlays remain under shared A1–A4 authority;
 - Claude bridges and OKF routes preserve one canonical overlay source;
 - vendor skills are not checked into canonical DMTZ skill directories;
 - local materialization/version validation has a deterministic helper;
 - conformance rejects automatic vendor-skill expansion and deferred-model inclusion;
 - Implementation 001-A is routed to perform environment materialization verification;
-- unified repository conformance passes on the finalized addendum state.
+- repository conformance passed and final closure validation is required before merge.
+
+See `databricks_agent_skills_addendum_execution_review.md` for execution evidence.
