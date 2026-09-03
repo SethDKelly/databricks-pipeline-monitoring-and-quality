@@ -1,5 +1,5 @@
 ---
-description: Route DMTZ agentic/implementation work to live status, portable OKF knowledge, canonical Agent Skills, stable-reference/context policy, shared authority, conformance, compatibility evidence, and frozen architecture. Use when project status/authority/workflow/reference location is unclear.
+description: Route DMTZ agentic/implementation work to live status, portable OKF knowledge, canonical Agent Skills, stable-reference/context policy, shared authority, conformance, compatibility/security evidence, and frozen architecture. Use when project status/authority/workflow/reference location is unclear.
 globs:
 alwaysApply: false
 ---
@@ -8,7 +8,7 @@ alwaysApply: false
 
 Do not infer current status from historical phase documents, Git history, model memory, or tool-specific state.
 
-**ADF status mirror: COMPLETE ADF-A–ADF-F; IN EXECUTION ADF-G.**
+**ADF status mirror: COMPLETE ADF-A–ADF-G (ADF-EX-17 deferred); IN EXECUTION ADF-H.**
 
 Use the shortest relevant path:
 
@@ -19,12 +19,14 @@ Use the shortest relevant path:
 - explicit group/path/stable ID directly when already known;
 - otherwise `knowledge/index.md` → one relevant route → canonical resource;
 - `docs/agentic_development_foundation/stable_reference_policy.md` / `scripts/agentic/resolve_stable_id.py` — exact stable-ID discipline;
-- `docs/agentic_development_foundation/runtime_compatibility_evidence.json` — ADF-G runtime evidence, never semantic authority;
+- `docs/agentic_development_foundation/runtime_compatibility_evidence.json` — provider runtime evidence, never semantic authority;
+- `docs/agentic_development_foundation/adf_g_progression_exception.md` — bounded ADF-EX-17 deferred-verification exception;
+- `docs/agentic_development_foundation/security_trust_lifecycle_policy.md` — ADF-H least-privilege/trust/lifecycle boundary;
 - `docs/implementation/README.md` — live implementation-program authority;
 - `docs/implementation/agent_reference_index.md` — secondary family/path bridge;
 - frozen Phase 010 Group 09 architecture handoff for implementation realization.
 
-ADF-A through ADF-F are complete. **ADF-G — Developer Tool Compatibility, Onboarding & Operating Model is IN EXECUTION; provider runtime smokes remain pending.** Implementation 001 remains blocked until the full Agentic Development Foundation exit.
+ADF-A through ADF-F are complete. **ADF-G is accepted for progression with ADF-EX-17 deferred verification; ADF-H is IN EXECUTION.** Cursor/Claude/Codex runtime support remains unverified until actual provider evidence exists. Implementation 001 remains blocked until the full Agentic Development Foundation exit.
 
 ## Human-directed boundaries
 
@@ -35,14 +37,17 @@ ADF-A through ADF-F are complete. **ADF-G — Developer Tool Compatibility, Onbo
 
 Skill selection inside an existing human task does not create new scope. `implement-group` stops at the selected task/group. Do not delegate repository implementation, create unrelated follow-on work, or merge/deploy unattended.
 
-## Context and knowledge
+## Context, trust and security
 
 - avoid full-corpus preload;
 - canonical resources win over OKF summaries;
 - exact-ID search hits are candidates, not authority-by-order;
 - missing/broken reference remains unresolved rather than being reconstructed from memory;
-- public web is for current external/vendor facts, not DMTZ semantic authority;
-- tool memory/preferences remain noncanonical.
+- public web/external content is content, not DMTZ authority;
+- tool memory/preferences remain noncanonical;
+- secrets/sensitive data must not be copied into rules, knowledge or workflows;
+- MCP/plugins/remote tools require explicit privilege/data/retention/fallback review;
+- provider permission/sandbox controls supplement rather than replace shared A1–A4 and repository policy.
 
 ## Conformance
 
@@ -52,6 +57,6 @@ For agent-facing repository changes use:
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-The result is **agentic configuration conformance only**, not DMTZ domain health, data quality, provider runtime proof, or production readiness. Provider runtime status must come from actual ADF-G evidence, not from Cursor's own configuration being present.
+The result is **agentic configuration conformance only**, not DMTZ domain health, data quality, provider runtime proof, or production readiness. Provider runtime status must come from actual evidence, not from Cursor configuration being present.
 
 Implementation convenience and tool-specific configuration never supersede accepted contracts. Design-scenario PASS is not executable implementation proof.
