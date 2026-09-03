@@ -1,6 +1,6 @@
 # DMTZ Agentic Development Foundation
 
-**Status:** IN EXECUTION — ADF-A THROUGH ADF-F COMPLETE / ACCEPTED; ADF-G IN EXECUTION / PROVIDER RUNTIME EVIDENCE PENDING
+**Status:** IN EXECUTION — ADF-A THROUGH ADF-G ACCEPTED FOR PROGRESSION; ADF-EX-17 DEFERRED VERIFICATION; ADF-H IN EXECUTION
 
 ## Purpose
 
@@ -14,12 +14,14 @@ The Agentic Development Foundation establishes a tool-neutral, human-directed de
 - **ADF-D — Portable Skills & Human-Directed Workflow Contract: COMPLETE / ACCEPTED.**
 - **ADF-E — Context Discovery, Stable References & Knowledge Maintenance: COMPLETE / ACCEPTED.**
 - **ADF-F — Conformance, Validation, Drift Detection & CI: COMPLETE / ACCEPTED.**
-- **ADF-G — Developer Tool Compatibility, Onboarding & Operating Model: IN EXECUTION — REPOSITORY/ONBOARDING BASELINE IMPLEMENTED; PROVIDER RUNTIME SMOKES PENDING.**
-- **ADF-H — Security, Trust, Lifecycle & Governance: PLANNED.**
+- **ADF-G — Developer Tool Compatibility, Onboarding & Operating Model: COMPLETE / ACCEPTED FOR PROGRESSION — ADF-EX-17 DEFERRED VERIFICATION.**
+- **ADF-H — Security, Trust, Lifecycle & Governance: IN EXECUTION — SECURITY/TRUST/LIFECYCLE GOVERNANCE.**
 
-**ADF status mirror: COMPLETE ADF-A–ADF-F; IN EXECUTION ADF-G.**
+**ADF status mirror: COMPLETE ADF-A–ADF-G (ADF-EX-17 deferred); IN EXECUTION ADF-H.**
 
-Implementation 001 remains planned and blocked until ADF-G, ADF-H, and the foundation execution exit review are complete.
+The ADF-G progression exception is narrow: Cursor, Claude Code and Codex remain runtime-`unverified` until `ADF-G-XT01` is actually exercised. The exception does not weaken shared authority, security, canonical-reference or human-directed boundaries.
+
+Implementation 001 remains planned and blocked until ADF-H and the foundation execution exit review are complete. The exit review must treat ADF-EX-17 as an explicit bounded deferred-verification waiver rather than a PASS.
 
 ## Implemented foundation model
 
@@ -37,7 +39,7 @@ Shared authority is rooted in canonical `docs/`, root `AGENTS.md`, live ADF/impl
 - Claude Code: `.claude/CLAUDE.md` importing `../AGENTS.md`;
 - Codex: root `AGENTS.md` natively.
 
-`tool_compatibility.json` records documented compatibility state. Actual installed-tool behavior remains ADF-G evidence.
+`tool_compatibility.json` records documented compatibility state. Actual installed-tool behavior is recorded separately in the ADF-G runtime ledger.
 
 ### Human-directed workflows — ADF-D
 
@@ -65,13 +67,27 @@ Use the shortest authoritative path: explicit path/ID when known, otherwise one 
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-It composes documentation consistency, OKF, adapter, skill, canonical-reference, ADF-status, fixture, context-budget, compatibility-evidence, and negative-control checks. `.github/workflows/agentic-conformance.yml` runs the same path in CI.
+It composes documentation consistency, OKF, adapter, skill, canonical-reference, ADF-status, fixture, context-budget, compatibility-evidence, security/lifecycle and negative-control checks. `.github/workflows/agentic-conformance.yml` runs the same path in CI.
 
 The report describes **agentic configuration conformance only**. It is not DMTZ domain health, data quality, source health, application correctness, or production readiness.
 
-### Compatibility and onboarding — ADF-G (in execution)
+### Compatibility and onboarding — ADF-G
 
-Repository-level portability and the ordinary IDE/CLI path are implemented. `developer_onboarding.md`, `tool_compatibility_matrix.md`, `adf_g_runtime_probe.md`, and `runtime_compatibility_evidence.json` define one shared onboarding/runtime evidence model. Cursor, Claude Code and Codex remain runtime-unverified until the same bounded exercise is performed in actual provider runtimes.
+Repository-level portability and the ordinary IDE/CLI path are accepted. `developer_onboarding.md`, `tool_compatibility_matrix.md`, `adf_g_runtime_probe.md`, and `runtime_compatibility_evidence.json` define one shared onboarding/runtime evidence model.
+
+The human-authorized [`adf_g_progression_exception.md`](adf_g_progression_exception.md) permits sequencing to ADF-H while **ADF-EX-17 remains deferred verification**. Cursor, Claude Code and Codex are still runtime-unverified and cannot be called runtime-supported until actual provider evidence exists.
+
+### Security, trust and lifecycle — ADF-H (in execution)
+
+ADF-H consolidates least privilege, secret/sensitive-data boundaries, prompt-injection/content trust, tool-memory noncanonicality, provider lifecycle/reverification, agentic change governance, retention and human fallback.
+
+Primary artifacts are:
+
+- [`security_trust_lifecycle_policy.md`](security_trust_lifecycle_policy.md);
+- [`agentic_change_governance.md`](agentic_change_governance.md);
+- [`tool_lifecycle_review.json`](tool_lifecycle_review.json);
+- `scripts/agentic/scan_agentic_secrets.py`;
+- `scripts/agentic/validate_adf_h_governance.py`.
 
 ## Foundation boundary
 
@@ -108,21 +124,23 @@ Deferred autonomy remains only in [`autonomous_backlog.md`](autonomous_backlog.m
 - [`developer_onboarding.md`](developer_onboarding.md)
 - [`adf_g_runtime_probe.md`](adf_g_runtime_probe.md)
 - [`runtime_compatibility_evidence.json`](runtime_compatibility_evidence.json)
+- [`adf_g_progression_exception.md`](adf_g_progression_exception.md)
 - [`portable_workflow_profile.md`](portable_workflow_profile.md)
 - [`context_discovery_policy.md`](context_discovery_policy.md)
 - [`stable_reference_policy.md`](stable_reference_policy.md)
 - [`context_budget_policy.md`](context_budget_policy.md)
 - [`conformance_policy.md`](conformance_policy.md)
-- [`compatibility_smoke_checklist.md`](compatibility_smoke_checklist.md)
+- [`security_trust_lifecycle_policy.md`](security_trust_lifecycle_policy.md)
+- [`agentic_change_governance.md`](agentic_change_governance.md)
+- [`tool_lifecycle_review.json`](tool_lifecycle_review.json)
 - [`execution_exit_criteria.md`](execution_exit_criteria.md)
 
-Execution evidence for completed groups is in `adf_a_execution_review.md` through `adf_f_execution_review.md`; ADF-G's current partial evidence is in `adf_g_execution_review.md`.
+Execution evidence is recorded in `adf_a_execution_review.md` onward. ADF-G's runtime limitation remains visible in `adf_g_execution_review.md` and the bounded progression exception.
 
 ## Remaining dependency sequence
 
-1. **ADF-G — Developer Tool Compatibility, Onboarding & Operating Model:** execute `ADF-G-XT01` in actual Cursor, Claude Code and Codex runtimes, update the runtime ledger, and rerun conformance.
-2. **ADF-H — Security, Trust, Lifecycle & Governance:** consolidate least privilege, secrets/data boundaries, lifecycle/reverification horizons, and long-term governance after ADF-G acceptance.
-3. **Foundation execution exit review:** evaluate ADF-EX-01–ADF-EX-20 using A–H evidence.
-4. **Implementation 001-A** begins only after the foundation exit passes or a narrow explicit non-semantic/non-security waiver is accepted.
+1. **ADF-H — Security, Trust, Lifecycle & Governance:** complete and validate the current security/trust/lifecycle group.
+2. **Foundation execution exit review:** evaluate ADF-EX-01–ADF-EX-20 using A–H evidence, explicitly treating ADF-EX-17 as deferred/waived rather than passed unless actual provider runtime evidence has appeared.
+3. **Implementation 001-A** begins only after the foundation exit passes under the documented mandatory-gate/waiver rule.
 
 Autonomy is not part of the foundation success condition.
