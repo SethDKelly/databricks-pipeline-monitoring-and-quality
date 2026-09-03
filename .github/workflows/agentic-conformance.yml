@@ -3,6 +3,7 @@ name: Agentic conformance
 on:
   pull_request:
     paths:
+      - ".gitignore"
       - "AGENTS.md"
       - "IMPLEMENTATION.md"
       - ".agents/**"
@@ -20,6 +21,7 @@ on:
     branches:
       - main
     paths:
+      - ".gitignore"
       - "AGENTS.md"
       - "IMPLEMENTATION.md"
       - ".agents/**"

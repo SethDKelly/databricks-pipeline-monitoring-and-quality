@@ -1,18 +1,20 @@
 # ADF-G — Execution Review
 
-**Status:** IN EXECUTION — REPOSITORY/ONBOARDING BASELINE VALIDATED; PROVIDER RUNTIME EVIDENCE PENDING
+**Status:** COMPLETE / ACCEPTED FOR FOUNDATION PROGRESSION — ADF-EX-17 DEFERRED VERIFICATION
 
 ## Review question
 
 Can a developer choose Cursor, Claude Code, Codex, or ordinary IDE/CLI development without changing DMTZ semantics, authority, workflow obligations or acceptance criteria?
 
-## Current decision
+## Decision
 
-ADF-G is **not yet COMPLETE / ACCEPTED**.
+**Yes at the repository/onboarding/ordinary-development level.**
 
-Repository portability, onboarding, evidence discipline and ordinary IDE/CLI development are established and validated. The required representative task has not yet been exercised in actual Cursor, Claude Code and Codex runtimes available to this execution environment. Those three provider entries therefore remain `unverified`, not `unsupported`.
+ADF-G established the shared compatibility model, onboarding path, runtime evidence contract and evidence-integrity checks. Actual Cursor, Claude Code and Codex provider runtimes were unavailable in the execution environment, so the representative provider exercise was not run and **ADF-EX-17 is not a PASS**.
 
-This is an intentional acceptance boundary: documentation/static configuration must not be promoted to provider runtime proof.
+On 2026-09-02 the human owner explicitly authorized proceeding to ADF-H despite that unavailable evidence. The bounded exception is recorded in `adf_g_progression_exception.md`.
+
+ADF-G is therefore **accepted for foundation sequencing only**, with ADF-EX-17 deferred. This does not permit any provider runtime to be called supported until actual runtime evidence exists.
 
 ## Delivered
 
@@ -23,207 +25,106 @@ This is an intentional acceptance boundary: documentation/static configuration m
 - `scripts/agentic/probe_runtime_tools.py` — safe binary/version availability probe;
 - `scripts/agentic/validate_adf_g_compatibility.py` — evidence integrity validation;
 - `fixtures/adf_g_compatibility_scenarios.yaml` — ADF-G scenarios;
-- ADF-F conformance extended with ADF-G evidence validation;
-- status-drift validation extended to represent an explicit `IN EXECUTION` foundation group without falsely marking it complete.
+- unified conformance extended with ADF-G evidence validation;
+- `adf_g_progression_exception.md` — bounded human-authorized deferred-verification decision.
 
 ## Findings
 
-### 1. Shared repository compatibility — PASS
+### Shared repository compatibility — PASS
 
 Cursor, Claude Code, Codex and ordinary development all route to the same checked-in authority, knowledge, workflows, stable-reference discipline, conformance command and normal Git/PR process. No provider-specific semantic rulebook is required.
 
-The shared path remains:
+### Cursor — DOCUMENTATION/CONFIGURATION PASS; RUNTIME UNVERIFIED
 
-```text
-human-selected task
-  → root/shared repository authority
-  → explicit path/ID when known; otherwise knowledge/index.md
-  → canonical .agents/skills workflow when useful
-  → canonical docs/contracts/tests
-  → repository-defined validation
-  → normal diff/Git/PR review
-```
+The repository adapter remains compatible with documented root/nested `AGENTS.md`, scoped `.cursor/rules/*.mdc` and project `.agents/skills/`. No actual Cursor Agent/CLI runtime performed `ADF-G-XT01`.
 
-Provider-native features may improve ergonomics, but correctness does not depend on semantic duplication.
+### Claude Code — DOCUMENTATION/CONFIGURATION PASS; RUNTIME UNVERIFIED
 
-### 2. Cursor — DOCUMENTATION/CONFIGURATION PASS; RUNTIME UNVERIFIED
+The repository uses `.claude/CLAUDE.md` importing shared `AGENTS.md` plus thin `.claude/commands/` bridges into canonical `.agents/skills/`. No duplicate semantic skill corpus is required. No actual Claude Code runtime performed `ADF-G-XT01`.
 
-Current Cursor documentation remains compatible with root/nested `AGENTS.md`, scoped `.cursor/rules/*.mdc`, and project `.agents/skills/`.
+### Codex — DOCUMENTATION/CONFIGURATION PASS; RUNTIME UNVERIFIED
 
-No actual Cursor Agent/CLI runtime was available in the ADF-G execution environment for `ADF-G-XT01`. Runtime state therefore remains `unverified`.
+Codex uses shared repository `AGENTS.md` and portable workflows without a separate DMTZ rulebook. No actual Codex runtime performed `ADF-G-XT01`; this ChatGPT session is not counted as Codex runtime evidence.
 
-### 3. Claude Code — DOCUMENTATION/CONFIGURATION PASS; RUNTIME UNVERIFIED
+### Ordinary IDE/CLI development — PASS
 
-Current Claude Code documentation remains compatible with `.claude/CLAUDE.md` importing shared `AGENTS.md`. Project-native skills normally live under `.claude/skills/`, while existing `.claude/commands/` remain supported. DMTZ therefore keeps thin command bridges to the canonical `.agents/skills/` workflows rather than duplicating semantic skill copies.
+A developer without a coding agent can use the same repository authority, Markdown workflows, stable-ID helpers, deterministic conformance, normal diff review and Git/PR process.
 
-No actual Claude Code runtime was available in the ADF-G execution environment for `ADF-G-XT01`. Runtime state therefore remains `unverified`.
+### Tool-neutral onboarding — PASS
 
-### 4. Codex — DOCUMENTATION/CONFIGURATION PASS; RUNTIME UNVERIFIED
+`developer_onboarding.md` covers authority/live state, A1–A4 scope, stable-ID resolution, conformance, provider adapters, personal-setting precedence, ordinary development, Git/PR lifecycle and adding another provider without semantic redesign.
 
-Current Codex guidance continues to use repository `AGENTS.md` discovery and supports repository-owned development context without a separate Codex semantic rulebook.
+### Representative runtime exercise contract — PASS at harness level
 
-No actual Codex runtime was available in the ADF-G execution environment for `ADF-G-XT01`. This ChatGPT session is not counted as Codex runtime evidence. Runtime state therefore remains `unverified`.
-
-### 5. Ordinary IDE/CLI development — PASS
-
-A developer without a coding agent can use the same authority, knowledge, stable-ID helper, workflow Markdown, conformance command, diff review and normal Git/PR process.
-
-The canonical command remains:
-
-```bash
-python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
-```
-
-No provider coding-agent runtime is required for the deterministic repository validation path.
-
-### 6. Tool-neutral onboarding — PASS
-
-`developer_onboarding.md` provides a common onboarding path for all four modes and explicitly covers:
-
-- authority and live status;
-- A1–A4 scope;
-- stable-ID resolution;
-- conformance;
-- provider-specific adapter mechanics without semantic forks;
-- ordinary IDE/CLI use;
-- personal-setting precedence;
-- normal Git/PR lifecycle;
-- onboarding a future provider through the same shared compatibility contract.
-
-There is no special AI branch or AI-authored-code acceptance model.
-
-### 7. Representative runtime exercise contract — PASS at harness level
-
-`adf_g_runtime_probe.md` defines one common A1/read-only task for Cursor, Claude Code and Codex:
+`ADF-G-XT01` requires each provider runtime to:
 
 - determine current ADF state from repository authority;
-- resolve `AUTH-034` using accepted-range/exact-occurrence/canonical-owner discipline;
-- identify the canonical `run-conformance` workflow;
-- report the canonical conformance command;
+- resolve `AUTH-034` through accepted-range/exact-occurrence/canonical-owner discipline;
+- identify the canonical `run-conformance` workflow and command;
 - make no repository edits;
-- stop without beginning ADF-H;
-- record unavailable native conveniences as degraded/unverified rather than changing semantics.
+- stop at the human-selected task;
+- record degraded/unverified native conveniences without changing semantics.
 
-The harness is ready; actual provider executions remain outstanding.
+The harness exists; provider execution remains deferred.
 
-### 8. Evidence integrity — PASS
+### Evidence integrity — PASS
 
-`validate_adf_g_compatibility.py` prevents a provider from being marked `supported` or `degraded` without:
+`validate_adf_g_compatibility.py` prevents a provider from being marked `supported` or `degraded` without a passing exercise, runtime invocation, verification date and substantive observations. An `unverified` entry must remain `not_run`, have no runtime verification timestamp and carry a reason.
 
-- a passing representative exercise;
-- an actual runtime invocation record;
-- a runtime verification date;
-- substantive observations.
+### Repository CI — PASS
 
-An `unverified` entry must remain `not_run`, have no runtime verification timestamp, and carry an explicit reason. The compatibility manifest must continue to say `runtime_smoke_pending` while evidence remains unverified.
+ADF-G PR #2 supplied actual repository-level evidence. The finalized branch passed:
 
-This protects against both false PASS and false global failure.
+- **Agentic conformance #22** — SUCCESS;
+- **Documentation consistency #140** — SUCCESS.
 
-### 9. ADF-G repository CI — PASS
+The preceding detailed run #21 reported 90 scenarios, 30 accepted stable-ID references, healthy context budgets, ADF-G compatibility validation with 0 errors / 3 expected runtime-unverified warnings, and 8/8 seeded negative controls detected.
 
-PR #2 (`Execute ADF-G compatibility and onboarding baseline`) provided inspectable repository-level execution evidence on the ADF-G branch.
+### Independent compatibility state — PASS
 
-Initial validated branch head: `ed8d345f0c6c066d3ffdd61d679501a1af0061b8`.
-
-GitHub Actions results:
-
-- **Agentic conformance #21** — run ID `33696321616`, job `100465844212`: **SUCCESS**;
-- **Documentation consistency #139** — run ID `33696321737`: **SUCCESS**.
-
-Agentic conformance #21 reported:
-
-- documentation consistency — PASS;
-- OKF structure/resources — PASS, 0 errors / 0 warnings;
-- tool adapters — PASS, with the expected 3 provider-runtime-pending warnings;
-- portable skills — PASS;
-- agentic references — PASS, 30 unique stable IDs checked;
-- ADF status drift — PASS using `COMPLETE ADF-A–ADF-F; IN EXECUTION ADF-G`;
-- fixture catalog — PASS, **90 scenarios** across ADF-A–ADF-G;
-- context budgets — PASS;
-- ADF-G compatibility evidence — PASS, **0 errors / 3 expected unverified-runtime warnings**;
-- negative controls — PASS, **8 / 8** seeded defects detected;
-- generated Agentic Conformance Report — PASS;
-- deprecated knowledge entries — 0;
-- stale knowledge entries — 0.
-
-The eighth negative control specifically attempts to promote an unverified provider to `supported` without runtime evidence and confirms the ADF-G validator rejects that false promotion.
-
-### 10. Context budgets remain healthy — PASS
-
-Agentic conformance #21 measured:
-
-- root `AGENTS.md`: **9,963 / 16,384 bytes**;
-- `.claude/CLAUDE.md`: **1,054 / 2,048 bytes**;
-- Cursor rules aggregate: **18,904 / 32,768 bytes**;
-- Cursor routing rule: **3,393 / 6,144 bytes**;
-- Cursor root baseline: **9,963 / 20,480 bytes**;
-- Claude root baseline: **11,017 / 18,432 bytes**;
-- Codex root baseline: **9,963 / 16,384 bytes**;
-- every canonical skill, Claude bridge and OKF routing artifact remained below its configured budget.
-
-ADF-G therefore did not reintroduce a monolithic persistent prompt in order to obtain cross-tool compatibility.
-
-### 11. Independent compatibility states — PASS
-
-The current runtime ledger records:
+The runtime ledger remains:
 
 - Cursor — `unverified`;
 - Claude Code — `unverified`;
 - Codex — `unverified`;
 - ordinary IDE/CLI — `supported`.
 
-One unverified provider does not poison another provider, ordinary development, agentic configuration conformance, or DMTZ domain health.
+An unverified provider does not invalidate another provider, ordinary development, canonical DMTZ documentation or agentic configuration conformance.
 
-### 12. Tool switching model — PASS at repository level
+### Tool switching / future providers — PASS at repository contract level
 
-No provider owns branch state, semantic status, acceptance criteria or workflow truth. A developer may switch tools against the same checkout and recover project state from checked-in authority rather than provider memory.
+No provider owns semantic status, branch state, acceptance criteria or workflow truth. Another coding agent may be added later if it can consume or thinly bridge to shared authority, `knowledge/index.md`, canonical workflows, repository validation and A1–A4 boundaries, and then passes the same runtime-evidence discipline.
 
-Actual cross-provider runtime execution remains part of the open `ADF-G-XT01` evidence requirement.
+## Deferred ADF-EX-17 obligation
 
-### 13. Adding another coding agent — PASS at contract level
+The provider runtime gate remains open as **deferred verification**, not PASS.
 
-A future provider can be added without redesigning DMTZ when it can consume or thinly bridge to:
+When actual runtimes become available:
 
-- root/shared repository authority;
-- `knowledge/index.md`;
-- canonical `.agents/skills/` workflows;
-- repository validation;
-- A1–A4 boundaries;
-- normal Git/PR process.
+1. execute `ADF-G-XT01` in Cursor;
+2. execute it in Claude Code;
+3. execute it in Codex;
+4. record versions, invocations, observations and results in `runtime_compatibility_evidence.json`;
+5. update `tool_compatibility.json` only where evidence justifies it;
+6. rerun repository conformance.
 
-It must receive a compatibility-manifest entry and pass the same bounded runtime exercise before being called runtime-supported.
+A failed smoke reopens the affected provider adapter/support claim before that provider is relied on.
 
-## Remaining acceptance gap
+## Progression exception boundaries
 
-**ADF-EX-17 remains OPEN.**
+The human-authorized exception permits ADF-H and the final foundation exit review to proceed. It does **not** waive:
 
-The planned foundation gate requires the same representative bounded task to be completed through actual Cursor, Claude Code and Codex environments. That runtime evidence does not exist yet because those runtimes were unavailable in the ADF-G execution environment.
+- shared semantic/change-control authority;
+- A1–A4 human direction;
+- canonical-reference discipline;
+- security/secret/data boundaries;
+- deterministic conformance;
+- the requirement for actual provider evidence before runtime support is claimed.
 
-To close ADF-G:
+The final foundation exit review must classify ADF-EX-17 explicitly as deferred/waived unless actual provider evidence has appeared.
 
-1. execute `ADF-G-XT01` from `adf_g_runtime_probe.md` in an actual Cursor runtime;
-2. execute the same task in an actual Claude Code runtime;
-3. execute the same task in an actual Codex runtime;
-4. record tool versions/invocations/observations/results in `runtime_compatibility_evidence.json`;
-5. update `tool_compatibility.json` only where actual evidence justifies it;
-6. rerun repository conformance;
-7. update this review to COMPLETE / ACCEPTED only if all mandatory ADF-G criteria pass.
+## Exit decision
 
-## Relationship to foundation exit gates
+**ADF-G — Developer Tool Compatibility, Onboarding & Operating Model: COMPLETE / ACCEPTED FOR FOUNDATION PROGRESSION WITH ADF-EX-17 DEFERRED VERIFICATION.**
 
-Current ADF-G evidence materially supports:
-
-- **ADF-EX-09 / ADF-EX-10 / ADF-EX-11 / ADF-EX-13:** shared adapter/workflow portability at repository configuration level;
-- **ADF-EX-18:** ordinary non-agent developer path — PASS at repository execution level.
-
-Still open:
-
-- **ADF-EX-17:** representative bounded task in actual Cursor / Claude Code / Codex runtimes.
-
-ADF-H and the final foundation exit review must not treat ADF-G as complete until this runtime evidence is present or an explicit narrow waiver intentionally changes the foundation acceptance decision.
-
-## Current conclusion
-
-**ADF-G remains IN EXECUTION / BLOCKED ONLY ON PROVIDER RUNTIME SMOKE EVIDENCE.**
-
-The repository/onboarding/evidence baseline is suitable to merge while preserving that open gate. ADF-H is not automatically started by this review.
+ADF-H may proceed under the recorded bounded exception.

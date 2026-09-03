@@ -23,10 +23,11 @@ def mutate_and_expect_failure(repo: Path, rel: str, transform, script: str, labe
 
 def stale_status(text: str) -> str:
     return re.sub(
-        r'ADF status mirror: COMPLETE ADF-A–ADF-[A-H]; (?:NEXT|IN EXECUTION) ADF-[A-H]\.',
+        r'ADF status mirror: .*?$',
         'ADF status mirror: COMPLETE ADF-A–ADF-E; NEXT ADF-F.',
         text,
         count=1,
+        flags=re.MULTILINE,
     )
 
 
@@ -48,10 +49,12 @@ def main() -> int:
         mutate_and_expect_failure(repo, 'knowledge/project/authority.md', lambda t: t.replace('resource:', 'resource: "../../definitely-missing.md"\nold_resource:', 1), 'validate_okf.py', 'broken canonical resource route', errors)
         mutate_and_expect_failure(repo, 'AGENTS.md', lambda t: t + '\nARCH-501\n', 'validate_agentic_references.py', 'unaccepted stable ID citation', errors)
         mutate_and_expect_failure(repo, 'docs/agentic_development_foundation/runtime_compatibility_evidence.json', lambda t: t.replace('"runtime_status": "unverified"', '"runtime_status": "supported"', 1), 'validate_adf_g_compatibility.py', 'fabricated provider runtime support', errors)
+        mutate_and_expect_failure(repo, '.claude/CLAUDE.md', lambda t: t + '\ncredential: ghp_ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890\n', 'scan_agentic_secrets.py', 'checked-in high-confidence secret', errors)
+        mutate_and_expect_failure(repo, 'docs/agentic_development_foundation/tool_lifecycle_review.json', lambda t: t.replace('"security_reviewed_on": "2026-09-02"', '"security_reviewed_on": "2020-01-01"', 1), 'validate_adf_h_governance.py', 'expired provider security review horizon', errors)
 
     for error in errors:
         print(f'ERROR {error}')
-    print(f'Conformance guard tests: {len(errors)} error(s), 8 negative control(s)')
+    print(f'Conformance guard tests: {len(errors)} error(s), 10 negative control(s)')
     return 1 if errors else 0
 
 if __name__ == '__main__':

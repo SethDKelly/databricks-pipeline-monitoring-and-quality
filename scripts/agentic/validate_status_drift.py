@@ -21,9 +21,10 @@ def main() -> int:
     repo = Path(args.repo).resolve()
     authority = repo / 'docs/agentic_development_foundation/README.md'
     states = {letter: state for letter, state in STATE_RE.findall(authority.read_text(encoding='utf-8'))}
-    complete = [c for c in 'ABCDEFGH' if states.get(c) == 'COMPLETE / ACCEPTED']
+    complete = [c for c in 'ABCDEFGH' if str(states.get(c, '')).startswith('COMPLETE / ACCEPTED')]
     nexts = [c for c in 'ABCDEFGH' if states.get(c) == 'NEXT / READY']
     in_progress = [c for c in 'ABCDEFGH' if str(states.get(c, '')).startswith('IN EXECUTION')]
+    deferred = [c for c in complete if 'DEFERRED VERIFICATION' in str(states.get(c, ''))]
     errors: list[str] = []
 
     if complete:
@@ -32,18 +33,29 @@ def main() -> int:
             errors.append(f'ADF completed groups are not contiguous from A: {complete}')
 
     active = nexts + in_progress
-    if len(active) != 1 and len(complete) < 8:
-        errors.append(f'ADF authority must declare exactly one NEXT / READY or IN EXECUTION group; found next={nexts}, in_progress={in_progress}')
-    if active and len(complete) < 8 and active[0] != 'ABCDEFGH'[len(complete)]:
-        errors.append(f'ADF active group {active[0]} does not follow completed groups {complete}')
+    if len(complete) < 8:
+        if len(active) != 1:
+            errors.append(f'ADF authority must declare exactly one NEXT / READY or IN EXECUTION group; found next={nexts}, in_progress={in_progress}')
+        elif active[0] != 'ABCDEFGH'[len(complete)]:
+            errors.append(f'ADF active group {active[0]} does not follow completed groups {complete}')
+    elif active:
+        errors.append(f'all ADF groups are complete; no ADF group may remain active: {active}')
     if nexts and in_progress:
         errors.append('ADF authority cannot declare NEXT / READY and IN EXECUTION groups simultaneously')
+    if deferred and deferred != ['G']:
+        errors.append(f'only the explicit ADF-G runtime verification exception is currently authorized; found deferred={deferred}')
 
     mirror = None
-    if complete and in_progress:
-        mirror = f"ADF status mirror: COMPLETE ADF-A–ADF-{complete[-1]}; IN EXECUTION ADF-{in_progress[0]}."
+    deferred_suffix = ' (ADF-EX-17 deferred)' if deferred else ''
+    if len(complete) == 8:
+        mirror = 'ADF status mirror: COMPLETE ADF-A–ADF-H; '
+        if deferred:
+            mirror += 'ADF-EX-17 DEFERRED VERIFICATION; '
+        mirror += 'EXECUTION EXIT REVIEW NEXT.'
+    elif complete and in_progress:
+        mirror = f"ADF status mirror: COMPLETE ADF-A–ADF-{complete[-1]}{deferred_suffix}; IN EXECUTION ADF-{in_progress[0]}."
     elif complete and nexts:
-        mirror = f"ADF status mirror: COMPLETE ADF-A–ADF-{complete[-1]}; NEXT ADF-{nexts[0]}."
+        mirror = f"ADF status mirror: COMPLETE ADF-A–ADF-{complete[-1]}{deferred_suffix}; NEXT ADF-{nexts[0]}."
 
     if mirror:
         for rel in MIRRORS:

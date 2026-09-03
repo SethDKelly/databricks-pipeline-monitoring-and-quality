@@ -1,10 +1,10 @@
 # Agentic Conformance Policy
 
-**Status:** ACCEPTED — ADF-F
+**Status:** ACCEPTED — ADF-F / EXTENDED THROUGH ADF-H
 
 ## Purpose
 
-Provide one deterministic repository-owned conformance path for the Agentic Development Foundation without turning agent configuration health into DMTZ domain health.
+Provide one deterministic repository-owned conformance path for the Agentic Development Foundation without turning agent configuration health into DMTZ domain health or provider-runtime certification.
 
 ## Canonical command
 
@@ -26,13 +26,16 @@ The command is safe and non-destructive. It may run under the A1 `run-conformanc
 6. live ADF status-mirror drift;
 7. ADF scenario fixture catalog integrity;
 8. deterministic context budgets;
-9. negative controls proving that important seeded defects are rejected.
+9. ADF-G runtime-compatibility evidence integrity;
+10. high-confidence checked-in agentic secret/sensitive-file scan;
+11. ADF-H security/trust/lifecycle governance and review-horizon validation;
+12. negative controls proving important seeded defects are rejected.
 
-This order is intentionally separate from future product/runtime tests. Agentic conformance may be an early CI gate, but it does not replace unit, integration, scenario, deployment, or production validation.
+This order is intentionally separate from future product/runtime tests. Agentic conformance may be an early CI gate, but it does not replace unit, integration, scenario, deployment, provider runtime, or production validation.
 
 ## Failure semantics
 
-A failed agentic check means an agent-facing repository configuration, routing, workflow, status, reference, or context-budget invariant is not currently conformant.
+A failed agentic check means an agent-facing repository configuration, routing, workflow, status, reference, context-budget, compatibility-evidence or security/lifecycle invariant is not currently conformant.
 
 It does **not** mean:
 
@@ -40,10 +43,11 @@ It does **not** mean:
 - data quality failed;
 - source evidence is unavailable;
 - DMTZ runtime behavior failed;
+- a provider coding-agent runtime failed unless actual provider evidence says so;
 - production readiness failed;
 - any causal or health proposition is true.
 
-Conversely, an agentic PASS does not prove DMTZ application behavior.
+Conversely, an agentic PASS does not prove DMTZ application behavior or provider runtime compatibility.
 
 ## Negative controls
 
@@ -57,18 +61,28 @@ Current negative controls cover:
 - persistent-context budget overflow;
 - stale ADF status copy;
 - broken canonical OKF resource routing;
-- an unaccepted stable-ID citation (`ARCH-501`).
+- an unaccepted stable-ID citation (`ARCH-501`);
+- fabricated provider runtime support without actual exercise evidence;
+- a seeded high-confidence credential in an agentic instruction surface;
+- an expired provider security-review horizon.
 
 The temporary checkout is discarded and no canonical repository file is mutated by the negative-control run.
+
+## Secret scanning boundary
+
+`scan_agentic_secrets.py` is intentionally a **high-confidence agentic-surface guard**. It checks known credential/private-key forms, structured non-placeholder secret assignments and secret-bearing filenames under checked-in agentic surfaces.
+
+It is not a replacement for organization-wide repository secret scanning, dependency review, DLP, credential rotation or incident response.
 
 ## Drift report
 
 `run_conformance.py` produces a human-readable report containing:
 
 - PASS/FAIL for each deterministic check;
-- current per-tool compatibility status from `tool_compatibility.json`;
+- current per-tool documented/runtime compatibility state;
 - stale/deprecated OKF knowledge counts;
-- the explicit non-domain-health disclaimer.
+- the explicit non-domain-health disclaimer;
+- the explicit ADF-G deferred-verification note.
 
 Tool compatibility states such as degraded or unverified are reported independently. One tool becoming degraded must not make another tool unusable or create DMTZ domain-health state.
 
@@ -76,6 +90,6 @@ Tool compatibility states such as degraded or unverified are reported independen
 
 `.github/workflows/agentic-conformance.yml` runs the canonical command on relevant pull requests and pushes to `main`.
 
-The job requires only a repository checkout and Python. It intentionally does not require Cursor, Claude Code, Codex, credentials, Databricks connectivity, or external mutation.
+The job requires only a repository checkout and Python. It intentionally does not require Cursor, Claude Code, Codex, credentials, Databricks connectivity, production data or external mutation.
 
-ADF-G owns tool-in-the-loop smoke exercises. ADF-H owns long-term security/trust/lifecycle governance and compatibility review horizons.
+ADF-G provider runtime evidence remains independently recorded. ADF-H governs security/trust/lifecycle policy, provider review horizons and bounded progression of the unavailable ADF-EX-17 exercise.
