@@ -4,7 +4,7 @@
 
 Canonical DMTZ product/design semantics live in `docs/`. Design-phase progression is owned by `docs/README.md`; implementation-program progression is owned by `docs/implementation/README.md`; Agentic Development Foundation progression is owned by `docs/agentic_development_foundation/README.md`.
 
-**ADF status mirror: COMPLETE ADF-A–ADF-G (ADF-EX-17 deferred); IN EXECUTION ADF-H.**
+**ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT.**
 
 Phase 010 — Technical Architecture is complete and **ARCH-001–ARCH-500 are frozen**. Implementation 001 remains blocked until the Agentic Development Foundation passes its full execution exit review.
 
@@ -134,7 +134,7 @@ Exact semantics remain in accepted contract documents and should be cited by sta
 
 ## Implementation engineering and tests
 
-Application/product code is not authorized merely because ADF work is active. Product implementation begins only inside an explicitly active implementation package after the foundation exit.
+Application/product code is not authorized merely because ADF groups are complete. Product implementation begins only inside an explicitly active implementation package after the foundation execution exit review passes.
 
 When implementation begins:
 
