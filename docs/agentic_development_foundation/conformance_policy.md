@@ -1,6 +1,6 @@
 # Agentic Conformance Policy
 
-**Status:** ACCEPTED — ADF-F / EXTENDED THROUGH ADF-H
+**Status:** ACCEPTED — ADF-F / EXTENDED THROUGH ADF-H AND DATABRICKS AGENT SKILLS ADDENDUM
 
 ## Purpose
 
@@ -21,21 +21,22 @@ The command is safe and non-destructive. It may run under the A1 `run-conformanc
 1. documentation phase consistency;
 2. OKF v0.2 / DMTZ knowledge-profile validation;
 3. Cursor / Claude Code / Codex adapter structure;
-4. canonical portable skill structure;
+4. canonical portable skill structure, including registered DMTZ Databricks overlays;
 5. agent-facing canonical links and stable-ID references;
 6. live ADF status-mirror drift;
-7. ADF scenario fixture catalog integrity;
+7. ADF and pre-exit addendum scenario fixture catalog integrity;
 8. deterministic context budgets;
 9. ADF-G runtime-compatibility evidence integrity;
-10. high-confidence checked-in agentic secret/sensitive-file scan;
-11. ADF-H security/trust/lifecycle governance and review-horizon validation;
-12. negative controls proving important seeded defects are rejected.
+10. reviewed Databricks Agent Skills dependency/profile/materialization-boundary validation;
+11. high-confidence checked-in agentic secret/sensitive-file scan;
+12. ADF-H security/trust/lifecycle governance and review-horizon validation;
+13. negative controls proving important seeded defects are rejected.
 
-This order is intentionally separate from future product/runtime tests. Agentic conformance may be an early CI gate, but it does not replace unit, integration, scenario, deployment, provider runtime, or production validation.
+This order is intentionally separate from future product/runtime tests. Agentic conformance may be an early CI gate, but it does not replace unit, integration, scenario, deployment, provider runtime, Databricks workspace, or production validation.
 
 ## Failure semantics
 
-A failed agentic check means an agent-facing repository configuration, routing, workflow, status, reference, context-budget, compatibility-evidence or security/lifecycle invariant is not currently conformant.
+A failed agentic check means an agent-facing repository configuration, routing, workflow, status, reference, context-budget, compatibility-evidence, reviewed vendor dependency, or security/lifecycle invariant is not currently conformant.
 
 It does **not** mean:
 
@@ -44,10 +45,11 @@ It does **not** mean:
 - source evidence is unavailable;
 - DMTZ runtime behavior failed;
 - a provider coding-agent runtime failed unless actual provider evidence says so;
+- a Databricks workspace/vendor skill runtime failed unless actual environment evidence says so;
 - production readiness failed;
 - any causal or health proposition is true.
 
-Conversely, an agentic PASS does not prove DMTZ application behavior or provider runtime compatibility.
+Conversely, an agentic PASS does not prove DMTZ application behavior, coding-agent runtime compatibility, or target Databricks capability.
 
 ## Negative controls
 
@@ -56,7 +58,7 @@ Conversely, an agentic PASS does not prove DMTZ application behavior or provider
 Current negative controls cover:
 
 - malformed OKF metadata;
-- provider-specific metadata in a portable skill;
+- provider-specific metadata in a portable DMTZ skill;
 - accidental `alwaysApply: true` Cursor routing;
 - persistent-context budget overflow;
 - stale ADF status copy;
@@ -64,9 +66,19 @@ Current negative controls cover:
 - an unaccepted stable-ID citation (`ARCH-501`);
 - fabricated provider runtime support without actual exercise evidence;
 - a seeded high-confidence credential in an agentic instruction surface;
-- an expired provider security-review horizon.
+- an expired provider security-review horizon;
+- automatic addition of newly published Databricks vendor skills;
+- a deferred Databricks model/AI skill entering the initial selected set.
 
 The temporary checkout is discarded and no canonical repository file is mutated by the negative-control run.
+
+## Databricks vendor-skill boundary
+
+`validate_databricks_agent_skills.py` validates the repository review profile and DMTZ overlay composition. Vendor skills themselves are materialized locally under ignored `.databricks/agent-skills/` using `aitools --path`; they are not copied into canonical `.agents/skills/`.
+
+If a local materialization exists, exact reviewed names/versions and absence of extra skills are validated. Absence of that local ignored tree is allowed in CI and remains an Implementation 001-A environment verification.
+
+Managed Databricks MCP servers are outside the addendum and require separate G3/G4 review.
 
 ## Secret scanning boundary
 
@@ -82,7 +94,8 @@ It is not a replacement for organization-wide repository secret scanning, depend
 - current per-tool documented/runtime compatibility state;
 - stale/deprecated OKF knowledge counts;
 - the explicit non-domain-health disclaimer;
-- the explicit ADF-G deferred-verification note.
+- the explicit ADF-G deferred-verification note;
+- the Databricks vendor-skill/materialization boundary.
 
 Tool compatibility states such as degraded or unverified are reported independently. One tool becoming degraded must not make another tool unusable or create DMTZ domain-health state.
 
@@ -90,6 +103,6 @@ Tool compatibility states such as degraded or unverified are reported independen
 
 `.github/workflows/agentic-conformance.yml` runs the canonical command on relevant pull requests and pushes to `main`.
 
-The job requires only a repository checkout and Python. It intentionally does not require Cursor, Claude Code, Codex, credentials, Databricks connectivity, production data or external mutation.
+The job requires only a repository checkout and Python. It intentionally does not require Cursor, Claude Code, Codex, credentials, Databricks CLI/workspace connectivity, production data or external mutation.
 
-ADF-G provider runtime evidence remains independently recorded. ADF-H governs security/trust/lifecycle policy, provider review horizons and bounded progression of the unavailable ADF-EX-17 exercise.
+ADF-G provider runtime evidence remains independently recorded. ADF-H governs security/trust/lifecycle policy and provider review horizons. The Databricks Agent Skills addendum governs the curated vendor-skill review/materialization boundary without turning vendor guidance into DMTZ authority.
