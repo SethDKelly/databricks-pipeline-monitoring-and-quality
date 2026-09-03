@@ -12,6 +12,9 @@ venv/
 .idea/
 .vscode/
 
+# Agent local/personal state
+.claude/settings.local.json
+
 # OS
 .DS_Store
 Thumbs.db
