@@ -1,6 +1,6 @@
 # DMTZ Agentic Development Foundation
 
-**Status:** ADF-A THROUGH ADF-H COMPLETE / ACCEPTED FOR EXIT REVIEW — ADF-EX-17 DEFERRED VERIFICATION; DATABRICKS AGENT SKILLS PRE-EXIT ADDENDUM IN EXECUTION
+**Status:** ADF-A THROUGH ADF-H + DATABRICKS AGENT SKILLS ADDENDUM COMPLETE / ACCEPTED FOR EXIT REVIEW — ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT
 
 ## Purpose
 
@@ -21,11 +21,11 @@ The Agentic Development Foundation establishes a tool-neutral, human-directed de
 
 ADF-EX-17 remains a narrow deferred-verification condition: Cursor, Claude Code and Codex remain runtime-`unverified` until `ADF-G-XT01` is actually exercised. It is not PASS and does not weaken shared authority, security, canonical-reference or human-directed boundaries.
 
-## Pre-exit Databricks Agent Skills addendum — IN EXECUTION
+## Pre-exit Databricks Agent Skills addendum — COMPLETE / ACCEPTED
 
-Before the execution exit review, DMTZ is completing a bounded **Databricks Agent Skills Integration Addendum**. This is not ADF-I and does not reopen ADF-A–ADF-H.
+The bounded **Databricks Agent Skills Integration Addendum** is complete. It is not ADF-I and does not reopen ADF-A–ADF-H.
 
-The reviewed initial vendor set is:
+The accepted initial vendor set is:
 
 - `databricks-core`;
 - `databricks-dabs`;
@@ -40,6 +40,8 @@ Model/AI implementation skills are explicitly deferred. Managed Databricks MCP s
 
 Vendor skills remain reviewed operational guidance and are materialized locally under ignored `.databricks/agent-skills/`; they are not copied into canonical DMTZ skill storage. DMTZ-owned overlays remain under `.agents/skills/` for environment discovery, acquisition, persistence, Lineage, runtime provenance and governance.
 
+`DBX-SKILL-RUN-01` remains an Implementation 001-A environment obligation: establish a compatible Databricks CLI and record exact local reviewed-skill materialization/version evidence. That residual is not represented as completed environment proof and does not authorize workspace access.
+
 Primary references:
 
 - [`databricks_agent_skills_addendum.md`](databricks_agent_skills_addendum.md)
@@ -47,8 +49,6 @@ Primary references:
 - [`databricks_agent_skills_addendum_execution_review.md`](databricks_agent_skills_addendum_execution_review.md)
 - `scripts/agentic/materialize_databricks_skills.py`
 - `scripts/agentic/validate_databricks_agent_skills.py`
-
-The execution exit review remains the next foundation gate **after this addendum closes**. Implementation 001 remains blocked until both are complete.
 
 ## Implemented foundation model
 
@@ -123,12 +123,11 @@ Deferred autonomy remains only in [`autonomous_backlog.md`](autonomous_backlog.m
 - [`databricks_vendor_skills_profile.json`](databricks_vendor_skills_profile.json)
 - [`execution_exit_criteria.md`](execution_exit_criteria.md)
 
-Execution evidence is recorded in `adf_a_execution_review.md` through `adf_h_execution_review.md` plus the Databricks addendum execution review.
+Execution evidence is recorded in `adf_a_execution_review.md` through `adf_h_execution_review.md` plus the accepted Databricks addendum execution review.
 
 ## Next dependency
 
-1. **Databricks Agent Skills Integration Addendum:** complete repository conformance/closure.
-2. **Agentic Development Foundation execution exit review:** evaluate ADF-EX-01–ADF-EX-20 plus the accepted addendum, explicitly deciding the bounded ADF-EX-17 deferred-verification waiver.
-3. **Implementation 001-A** becomes eligible only if that exit review passes under the documented gate/waiver rule.
+1. **Agentic Development Foundation execution exit review:** evaluate ADF-EX-01–ADF-EX-20 plus the accepted Databricks addendum, explicitly deciding the bounded ADF-EX-17 deferred-verification waiver and carrying `DBX-SKILL-RUN-01` into Implementation 001-A.
+2. **Implementation 001-A** becomes eligible only if that exit review passes under the documented gate/waiver rule.
 
 Autonomy is not part of the foundation success condition.
