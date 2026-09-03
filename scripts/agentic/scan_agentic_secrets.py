@@ -28,7 +28,7 @@ TEXT_SUFFIXES = {'.md', '.mdc', '.json', '.yaml', '.yml', '.toml', '.txt'}
 FORBIDDEN_FILE_PATTERNS = (
     '.env', '.env.*', '*.pem', '*.key', '*.p12', '*.pfx',
     'credentials.json', 'secrets.json', 'secrets.yaml', 'secrets.yml',
-    'id_rsa', 'id_ed25519',
+    'settings.local.json', 'id_rsa', 'id_ed25519',
 )
 
 SECRET_PATTERNS = (
@@ -82,7 +82,7 @@ def main() -> int:
     for path in candidate_files(repo):
         rel = path.relative_to(repo)
         if is_forbidden_name(path):
-            errors.append(f'{rel}: secret-bearing filename is not allowed in agentic surfaces')
+            errors.append(f'{rel}: secret-bearing or local-personal filename is not allowed in checked-in agentic surfaces')
             continue
         if path.suffix.lower() not in TEXT_SUFFIXES and path.name not in {'AGENTS.md', 'CLAUDE.md'}:
             continue
