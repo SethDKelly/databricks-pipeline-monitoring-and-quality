@@ -1,6 +1,6 @@
 # DMTZ Agentic Development Foundation
 
-**Status:** IN EXECUTION — ADF-A THROUGH ADF-G ACCEPTED FOR PROGRESSION; ADF-EX-17 DEFERRED VERIFICATION; ADF-H IN EXECUTION
+**Status:** ADF-A THROUGH ADF-H COMPLETE / ACCEPTED FOR EXIT REVIEW — ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT
 
 ## Purpose
 
@@ -15,23 +15,23 @@ The Agentic Development Foundation establishes a tool-neutral, human-directed de
 - **ADF-E — Context Discovery, Stable References & Knowledge Maintenance: COMPLETE / ACCEPTED.**
 - **ADF-F — Conformance, Validation, Drift Detection & CI: COMPLETE / ACCEPTED.**
 - **ADF-G — Developer Tool Compatibility, Onboarding & Operating Model: COMPLETE / ACCEPTED FOR PROGRESSION — ADF-EX-17 DEFERRED VERIFICATION.**
-- **ADF-H — Security, Trust, Lifecycle & Governance: IN EXECUTION — SECURITY/TRUST/LIFECYCLE GOVERNANCE.**
+- **ADF-H — Security, Trust, Lifecycle & Governance: COMPLETE / ACCEPTED.**
 
-**ADF status mirror: COMPLETE ADF-A–ADF-G (ADF-EX-17 deferred); IN EXECUTION ADF-H.**
+**ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT.**
 
 The ADF-G progression exception is narrow: Cursor, Claude Code and Codex remain runtime-`unverified` until `ADF-G-XT01` is actually exercised. The exception does not weaken shared authority, security, canonical-reference or human-directed boundaries.
 
-Implementation 001 remains planned and blocked until ADF-H and the foundation execution exit review are complete. The exit review must treat ADF-EX-17 as an explicit bounded deferred-verification waiver rather than a PASS.
+Implementation 001 remains planned and blocked until the **Agentic Development Foundation execution exit review** evaluates ADF-EX-01–ADF-EX-20 and explicitly accepts or rejects the bounded ADF-EX-17 deferred-verification waiver.
 
 ## Implemented foundation model
 
 ### Authority and human direction — ADF-A
 
-Shared authority is rooted in canonical `docs/`, root `AGENTS.md`, live ADF/implementation status, accepted ADF mechanics, then thin tool adapters. A1–A4 action classes preserve human-selected task scope and prevent autonomous continuation, external/destructive action without explicit authorization, or silent semantic change.
+Shared authority is rooted in canonical `docs/`, root `AGENTS.md`, live ADF/implementation status, accepted ADF mechanics, then thin tool adapters. A1–A4 action classes preserve human-selected task scope and prevent autonomous continuation, external/destructive action without authorization, or silent semantic change.
 
 ### Portable knowledge — ADF-B
 
-`knowledge/index.md` is an OKF v0.2 portable routing plane. It is never an independent source of DMTZ truth, authority, health, evidence sufficiency, or causality.
+`knowledge/index.md` is an OKF v0.2 portable routing plane. It is never an independent source of DMTZ truth, authority, health, evidence sufficiency or causality.
 
 ### Tool adapters — ADF-C
 
@@ -43,49 +43,41 @@ Shared authority is rooted in canonical `docs/`, root `AGENTS.md`, live ADF/impl
 
 ### Human-directed workflows — ADF-D
 
-Canonical workflows live once under `.agents/skills/`:
-
-- `resolve-context`;
-- `implement-group`;
-- `resolve-contract`;
-- `run-conformance`;
-- `review-change`;
-- `update-traceability`;
-- `exit-review`.
+Canonical workflows live once under `.agents/skills/`: `resolve-context`, `implement-group`, `resolve-contract`, `run-conformance`, `review-change`, `update-traceability`, and `exit-review`.
 
 Cursor and Codex consume the canonical location directly. Claude Code uses thin `.claude/commands/` bridges. Workflow or skill selection does not create new work scope.
 
 ### Context and stable references — ADF-E
 
-Use the shortest authoritative path: explicit path/ID when known, otherwise one OKF route to the canonical resource, then exact stable IDs/tests as needed. `stable_id_registry.json`, `resolve_stable_id.py`, `context_budget.json`, `measure_context_budget.py`, and `knowledge_impact.py` make reference/budget/maintenance behavior deterministic without becoming semantic authority.
+Use the shortest authoritative path: explicit path/ID when known, otherwise one OKF route to the canonical resource, then exact stable IDs/tests as needed. Stable-ID, context-budget and knowledge-impact helpers make the mechanics deterministic without becoming semantic authority.
 
 ### Conformance and CI — ADF-F
 
-`conformance_policy.md` defines the canonical conformance semantics. The repository-owned command is:
+The canonical repository-owned command is:
 
 ```bash
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-It composes documentation consistency, OKF, adapter, skill, canonical-reference, ADF-status, fixture, context-budget, compatibility-evidence, security/lifecycle and negative-control checks. `.github/workflows/agentic-conformance.yml` runs the same path in CI.
-
-The report describes **agentic configuration conformance only**. It is not DMTZ domain health, data quality, source health, application correctness, or production readiness.
+It now composes documentation consistency, OKF, adapters, skills, canonical references, ADF status, fixtures, context budgets, compatibility evidence, agentic secret scanning, security/lifecycle governance and negative controls. The report describes **agentic configuration conformance only**, not DMTZ domain/runtime/production health.
 
 ### Compatibility and onboarding — ADF-G
 
-Repository-level portability and the ordinary IDE/CLI path are accepted. `developer_onboarding.md`, `tool_compatibility_matrix.md`, `adf_g_runtime_probe.md`, and `runtime_compatibility_evidence.json` define one shared onboarding/runtime evidence model.
+Repository-level portability, tool-neutral onboarding and the ordinary IDE/CLI path are accepted. `runtime_compatibility_evidence.json` keeps actual provider-runtime evidence separate from documentation/configuration compatibility.
 
-The human-authorized [`adf_g_progression_exception.md`](adf_g_progression_exception.md) permits sequencing to ADF-H while **ADF-EX-17 remains deferred verification**. Cursor, Claude Code and Codex are still runtime-unverified and cannot be called runtime-supported until actual provider evidence exists.
+The human-authorized [`adf_g_progression_exception.md`](adf_g_progression_exception.md) permits foundation progression while **ADF-EX-17 remains deferred verification**. Cursor, Claude Code and Codex are still runtime-unverified and cannot be called runtime-supported until actual evidence exists.
 
-### Security, trust and lifecycle — ADF-H (in execution)
+### Security, trust and lifecycle — ADF-H
 
-ADF-H consolidates least privilege, secret/sensitive-data boundaries, prompt-injection/content trust, tool-memory noncanonicality, provider lifecycle/reverification, agentic change governance, retention and human fallback.
+ADF-H is complete/accepted. It establishes least privilege, secret/sensitive-data boundaries, prompt-injection/content trust, noncanonical tool memory/personal state, provider lifecycle/reverification, G1–G5 agentic change governance, retention discipline and ordinary human fallback.
 
-Primary artifacts are:
+Primary artifacts:
 
 - [`security_trust_lifecycle_policy.md`](security_trust_lifecycle_policy.md);
 - [`agentic_change_governance.md`](agentic_change_governance.md);
 - [`tool_lifecycle_review.json`](tool_lifecycle_review.json);
+- [`adf_h_security_baseline.md`](adf_h_security_baseline.md);
+- [`adf_h_execution_review.md`](adf_h_execution_review.md);
 - `scripts/agentic/scan_agentic_secrets.py`;
 - `scripts/agentic/validate_adf_h_governance.py`.
 
@@ -120,9 +112,6 @@ Deferred autonomy remains only in [`autonomous_backlog.md`](autonomous_backlog.m
 - [`authority_scope_policy.md`](authority_scope_policy.md)
 - [`okf_profile.md`](okf_profile.md)
 - [`tool_compatibility.json`](tool_compatibility.json)
-- [`tool_compatibility_matrix.md`](tool_compatibility_matrix.md)
-- [`developer_onboarding.md`](developer_onboarding.md)
-- [`adf_g_runtime_probe.md`](adf_g_runtime_probe.md)
 - [`runtime_compatibility_evidence.json`](runtime_compatibility_evidence.json)
 - [`adf_g_progression_exception.md`](adf_g_progression_exception.md)
 - [`portable_workflow_profile.md`](portable_workflow_profile.md)
@@ -135,12 +124,11 @@ Deferred autonomy remains only in [`autonomous_backlog.md`](autonomous_backlog.m
 - [`tool_lifecycle_review.json`](tool_lifecycle_review.json)
 - [`execution_exit_criteria.md`](execution_exit_criteria.md)
 
-Execution evidence is recorded in `adf_a_execution_review.md` onward. ADF-G's runtime limitation remains visible in `adf_g_execution_review.md` and the bounded progression exception.
+Execution evidence is recorded in `adf_a_execution_review.md` through `adf_h_execution_review.md`.
 
-## Remaining dependency sequence
+## Next dependency
 
-1. **ADF-H — Security, Trust, Lifecycle & Governance:** complete and validate the current security/trust/lifecycle group.
-2. **Foundation execution exit review:** evaluate ADF-EX-01–ADF-EX-20 using A–H evidence, explicitly treating ADF-EX-17 as deferred/waived rather than passed unless actual provider runtime evidence has appeared.
-3. **Implementation 001-A** begins only after the foundation exit passes under the documented mandatory-gate/waiver rule.
+1. **Agentic Development Foundation execution exit review:** evaluate ADF-EX-01–ADF-EX-20 using A–H evidence and explicitly decide the bounded ADF-EX-17 deferred-verification waiver.
+2. **Implementation 001-A** becomes eligible only if that exit review passes under the documented gate/waiver rule.
 
 Autonomy is not part of the foundation success condition.
