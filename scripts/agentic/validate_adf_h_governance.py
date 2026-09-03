@@ -21,7 +21,9 @@ def main() -> int:
         'policy': repo / 'docs/agentic_development_foundation/security_trust_lifecycle_policy.md',
         'governance': repo / 'docs/agentic_development_foundation/agentic_change_governance.md',
         'lifecycle': repo / 'docs/agentic_development_foundation/tool_lifecycle_review.json',
+        'security_baseline': repo / 'docs/agentic_development_foundation/adf_h_security_baseline.md',
         'progression_exception': repo / 'docs/agentic_development_foundation/adf_g_progression_exception.md',
+        'runtime_evidence': repo / 'docs/agentic_development_foundation/runtime_compatibility_evidence.json',
     }
     for label, path in required.items():
         if not path.is_file():
@@ -55,6 +57,22 @@ def main() -> int:
         for phrase in ('ADF-EX-17', 'DEFERRED VERIFICATION', 'does not convert missing runtime evidence into a PASS'):
             if phrase not in text:
                 errors.append(f'ADF-G progression exception missing required limitation: {phrase!r}')
+
+    gitignore = repo / '.gitignore'
+    if not gitignore.is_file() or '.claude/settings.local.json' not in gitignore.read_text(encoding='utf-8'):
+        errors.append('.gitignore must exclude .claude/settings.local.json as noncanonical local permission state')
+    if (repo / '.claude/settings.local.json').exists():
+        errors.append('.claude/settings.local.json must not be checked in')
+
+    runtime_states: dict[str, str] = {}
+    if required['runtime_evidence'].is_file():
+        try:
+            runtime_data = json.loads(required['runtime_evidence'].read_text(encoding='utf-8'))
+        except json.JSONDecodeError as exc:
+            errors.append(f'runtime_compatibility_evidence.json invalid JSON: {exc}')
+        else:
+            for name, tool in runtime_data.get('tools', {}).items():
+                runtime_states[name] = tool.get('runtime_status')
 
     if required['lifecycle'].is_file():
         try:
@@ -100,10 +118,21 @@ def main() -> int:
                 state = tool.get('runtime_status')
                 if state not in {'supported', 'degraded', 'unverified', 'unsupported'}:
                     errors.append(f'{name}: invalid runtime_status {state!r}')
+                evidence_state = runtime_states.get(name)
+                if evidence_state and state != evidence_state:
+                    errors.append(f'{name}: lifecycle runtime_status {state!r} disagrees with ADF-G evidence {evidence_state!r}')
                 if state == 'unverified':
                     warnings.append(f'{name}: runtime remains unverified under ADF-G deferred verification')
             if reviewed and (today - reviewed).days < 0:
                 errors.append('tool lifecycle reviewed_on cannot be in the future')
+
+    if required['security_baseline'].is_file():
+        text = required['security_baseline'].read_text(encoding='utf-8')
+        for provider in ('Cursor', 'Claude Code', 'Codex / OpenAI'):
+            if provider not in text:
+                errors.append(f'ADF-H security baseline missing provider section: {provider}')
+        if 'NOT DMTZ SEMANTIC AUTHORITY' not in text:
+            errors.append('ADF-H security baseline must explicitly remain non-semantic compatibility input')
 
     for warning in warnings:
         print(f'WARN {warning}')
