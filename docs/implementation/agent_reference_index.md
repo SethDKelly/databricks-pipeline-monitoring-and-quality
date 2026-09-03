@@ -2,7 +2,7 @@
 
 **Purpose:** compact secondary bridge from a task to accepted contract families and canonical document sets. Portable first-hop discovery begins at `knowledge/index.md`; task procedures live under `.agents/skills/`; exact stable-ID occurrence discovery follows ADF-E.
 
-**ADF status mirror: COMPLETE ADF-A–ADF-G (ADF-EX-17 deferred); IN EXECUTION ADF-H.**
+**ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT.**
 
 Use the shortest path: explicit group/path/ID directly when known; otherwise `knowledge/index.md` → one route → canonical resource → exact IDs/tests as required. Do not load entire historical phases for routine work.
 
@@ -11,6 +11,7 @@ Use the shortest path: explicit group/path/ID directly when known; otherwise `kn
 | Need | Read first |
 |---|---|
 | Live Agentic Development Foundation status | `docs/agentic_development_foundation/README.md` |
+| Foundation execution exit gates | `docs/agentic_development_foundation/execution_exit_criteria.md` |
 | Shared agent/developer constitution | root `AGENTS.md` |
 | Portable knowledge discovery | `knowledge/index.md` |
 | Portable workflow | `.agents/skills/<workflow>/SKILL.md` |
@@ -43,8 +44,9 @@ Use the shortest path: explicit group/path/ID directly when known; otherwise `kn
 | Portable workflows / Agent Skills | ADF-D — COMPLETE | `.agents/skills/`; `portable_workflow_profile.md`; `adf_d_execution_review.md` |
 | Context / stable IDs / maintenance / budgets | ADF-E — COMPLETE | `context_discovery_policy.md`; `stable_reference_policy.md`; `adf_e_execution_review.md` |
 | Conformance / drift / CI | ADF-F — COMPLETE | `conformance_policy.md`; `scripts/agentic/run_conformance.py`; `adf_f_execution_review.md` |
-| Cross-tool runtime compatibility / onboarding | ADF-G — ACCEPTED FOR PROGRESSION; EX-17 DEFERRED | `tool_compatibility_matrix.md`; `developer_onboarding.md`; `runtime_compatibility_evidence.json`; `adf_g_progression_exception.md` |
-| Security / trust / lifecycle governance | ADF-H — IN EXECUTION | `security_trust_lifecycle_policy.md`; `agentic_change_governance.md`; `tool_lifecycle_review.json`; `adf_h_execution_review.md` |
+| Cross-tool runtime compatibility / onboarding | ADF-G — ACCEPTED FOR PROGRESSION; EX-17 DEFERRED | `tool_compatibility_matrix.md`; `developer_onboarding.md`; `runtime_compatibility_evidence.json`; `adf_g_progression_exception.md`; `adf_g_execution_review.md` |
+| Security / trust / lifecycle governance | ADF-H — COMPLETE | `security_trust_lifecycle_policy.md`; `agentic_change_governance.md`; `tool_lifecycle_review.json`; `adf_h_execution_review.md` |
+| Foundation execution exit | NEXT | `execution_exit_criteria.md`; ADF-A–ADF-H execution reviews; `adf_g_progression_exception.md` |
 
 Autonomy remains out of scope; see `autonomous_backlog.md` only when explicitly reviewing deferred future work.
 
