@@ -11,6 +11,7 @@ EXPECTED = {
     'E': 'adf_e_context_scenarios.yaml',
     'F': 'adf_f_conformance_scenarios.yaml',
     'G': 'adf_g_compatibility_scenarios.yaml',
+    'H': 'adf_h_security_scenarios.yaml',
 }
 ID_RE = re.compile(r'^\s*-\s+id:\s*["\']?([^"\'\s]+)', re.M)
 
