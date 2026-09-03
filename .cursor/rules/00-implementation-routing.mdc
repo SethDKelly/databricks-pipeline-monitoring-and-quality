@@ -10,24 +10,23 @@ Do not infer current status from historical phase documents, Git history, model 
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT.**
 
-**Pre-exit condition:** complete the Databricks Agent Skills Integration Addendum before the foundation execution exit review. The addendum is not ADF-I.
+The Databricks Agent Skills Integration Addendum is **COMPLETE / ACCEPTED**. The foundation execution exit review is the next pre-implementation gate.
 
 Use the shortest relevant path:
 
-- `docs/agentic_development_foundation/README.md` — live ADF/addendum authority;
-- `docs/agentic_development_foundation/databricks_agent_skills_addendum.md` / `databricks_vendor_skills_profile.json` — reviewed Databricks vendor-skill boundary;
-- `docs/agentic_development_foundation/execution_exit_criteria.md` — later ADF-EX-01–ADF-EX-20 exit gate;
+- `docs/agentic_development_foundation/README.md` — live ADF authority;
+- `docs/agentic_development_foundation/execution_exit_criteria.md` — ADF-EX-01–ADF-EX-20 exit gates;
+- `docs/agentic_development_foundation/databricks_agent_skills_addendum.md` / `databricks_vendor_skills_profile.json` / addendum execution review — accepted Databricks dependency boundary;
 - root `AGENTS.md` — shared repository constitution;
 - `docs/agentic_development_foundation/authority_scope_policy.md` — A1–A4 authority;
 - `.agents/skills/<name>/SKILL.md` — canonical DMTZ workflows/platform overlays;
 - explicit group/path/stable ID directly when already known;
 - otherwise `knowledge/index.md` → one relevant route → canonical resource;
 - `scripts/agentic/resolve_stable_id.py` — exact stable-ID discipline;
-- `scripts/agentic/materialize_databricks_skills.py` — reviewed local vendor-skill materialization check;
 - `docs/implementation/README.md` / `agent_reference_index.md` — implementation routing;
 - frozen Phase 010 Group 09 architecture handoff for implementation realization.
 
-ADF-A through ADF-H are complete. ADF-EX-17 remains deferred; Cursor/Claude/Codex runtime support remains unverified. The Databricks pre-exit addendum is in execution and Implementation 001 remains blocked until addendum closure plus the foundation execution exit review.
+ADF-A through ADF-H plus the Databricks addendum are complete/accepted for the execution exit review. ADF-EX-17 remains deferred; Cursor/Claude/Codex runtime support remains unverified. Implementation 001 remains blocked until the exit review passes.
 
 ## Human-directed boundaries
 
@@ -40,11 +39,12 @@ Skill selection inside an existing human task does not create new scope. Do not 
 
 ## Databricks composition
 
-- reviewed vendor skills: core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect;
+- accepted vendor skills: core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect;
 - model/AI implementation skills are deferred;
 - DMTZ-owned overlays under `.agents/skills/dmtz-databricks-*` preserve semantic/authorization boundaries;
 - vendor files, when materialized, live only under ignored `.databricks/agent-skills/` and remain supporting context;
-- vendor skill availability/recommendations do not authorize workspace access, deployment, governance mutation or A3/A4 action;
+- `DBX-SKILL-RUN-01` actual local materialization/version proof belongs to Implementation 001-A;
+- vendor recommendations do not authorize workspace access, deployment, governance mutation or A3/A4 action;
 - automatic new vendor-skill adoption is prohibited;
 - managed Databricks MCP servers require separate G3/G4 review.
 
