@@ -13,6 +13,7 @@ CHECKS = (
     ('fixture catalog', 'scripts/agentic/validate_fixture_catalog.py', ['--repo', '{repo}']),
     ('context budgets', 'scripts/agentic/measure_context_budget.py', ['{repo}']),
     ('ADF-G compatibility evidence', 'scripts/agentic/validate_adf_g_compatibility.py', ['--repo', '{repo}']),
+    ('Databricks Agent Skills addendum', 'scripts/agentic/validate_databricks_agent_skills.py', ['--repo', '{repo}']),
     ('agentic secret scan', 'scripts/agentic/scan_agentic_secrets.py', ['--repo', '{repo}']),
     ('ADF-H security/lifecycle governance', 'scripts/agentic/validate_adf_h_governance.py', ['--repo', '{repo}']),
 )
@@ -92,6 +93,8 @@ def main() -> int:
         '## Notes',
         '',
         '- Provider tool-in-the-loop runtime verification remains independent per tool; ADF-EX-17 is currently deferred under the bounded progression exception.',
+        '- Databricks vendor skills are reviewed operational dependencies; local `aitools --path` materialization is an Implementation 001-A environment verification, not DMTZ semantic authority.',
+        '- Managed Databricks MCP servers are not configured by the Databricks Agent Skills addendum and require separate security/integration review.',
         '- Agentic secret scanning is a high-confidence repository guard, not a replacement for organization-wide secret scanning.',
         '- A tool may be degraded/unverified without converting another tool or DMTZ domain status to failure.',
         '',

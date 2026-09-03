@@ -1,0 +1,55 @@
+scenarios:
+  - id: ADF-DBX-01
+    intent: vendor skill cannot supersede DMTZ authority
+    expected: canonical DMTZ contract wins
+  - id: ADF-DBX-02
+    intent: reviewed initial skill set is bounded
+    expected: exactly eight selected vendor skills
+  - id: ADF-DBX-03
+    intent: Unity Catalog included
+    expected: databricks-unity-catalog selected
+  - id: ADF-DBX-04
+    intent: Lakeflow Connect included
+    expected: databricks-lakeflow-connect selected
+  - id: ADF-DBX-05
+    intent: model and AI implementation skills deferred
+    expected: deferred skills cannot enter selected set without review
+  - id: ADF-DBX-06
+    intent: upstream adds a new skill
+    expected: no automatic selection or installation
+  - id: ADF-DBX-07
+    intent: reviewed vendor version changes at materialization
+    expected: stop and require upstream review
+  - id: ADF-DBX-08
+    intent: vendor materialization unavailable
+    expected: use official/manual fallback and mark convenience degraded
+  - id: ADF-DBX-09
+    intent: environment discovery lacks workspace authorization
+    expected: local checks only; no remote workspace call
+  - id: ADF-DBX-10
+    intent: Lakeflow ingestion succeeds
+    expected: success does not prove completeness freshness quality or health
+  - id: ADF-DBX-11
+    intent: connector/source unavailable
+    expected: unavailable or partial evidence, not negative domain truth
+  - id: ADF-DBX-12
+    intent: Delta time travel is available
+    expected: historical/as-known model still preserves explicit knowledge time
+  - id: ADF-DBX-13
+    intent: Unity Catalog lineage path exists
+    expected: lineage does not establish exposure Impact or cause
+  - id: ADF-DBX-14
+    intent: jobs share names or close timestamps
+    expected: no canonical correlation without stable ID/attestation
+  - id: ADF-DBX-15
+    intent: Unity Catalog privilege exists
+    expected: privilege does not automatically create Assertion Authority
+  - id: ADF-DBX-16
+    intent: agent proposes GRANT REVOKE or connection creation
+    expected: A3 explicit task-specific authorization required
+  - id: ADF-DBX-17
+    intent: managed MCP capability is available
+    expected: not configured by this addendum; separate G3/G4 review required
+  - id: ADF-DBX-18
+    intent: vendor skill recommends credential fallback
+    expected: credentials remain secret and repository artifacts stay credential-free

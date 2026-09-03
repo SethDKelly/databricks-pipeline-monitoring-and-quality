@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Dependency-free structural validator for DMTZ ADF-D portable workflows."""
+"""Dependency-free structural validator for canonical DMTZ portable skills."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ import re
 import sys
 from pathlib import Path
 
-SKILLS = (
+CORE_SKILLS = (
     "resolve-context",
     "implement-group",
     "resolve-contract",
@@ -17,6 +17,15 @@ SKILLS = (
     "update-traceability",
     "exit-review",
 )
+DATABRICKS_OVERLAY_SKILLS = (
+    "dmtz-databricks-environment-discovery",
+    "dmtz-databricks-acquisition",
+    "dmtz-databricks-persistence",
+    "dmtz-databricks-lineage",
+    "dmtz-databricks-runtime-provenance",
+    "dmtz-databricks-governance",
+)
+SKILLS = CORE_SKILLS + DATABRICKS_OVERLAY_SKILLS
 ALLOWED_FRONTMATTER = {"name", "description"}
 TOP_KEY = re.compile(r"^([A-Za-z_][A-Za-z0-9_-]*):\s*(.*)$")
 MAX_SKILL_BYTES = 7000
@@ -47,6 +56,11 @@ def main() -> int:
     canonical = repo / ".agents" / "skills"
     if not canonical.is_dir():
         errors.append("canonical .agents/skills directory is missing")
+
+    actual = {p.parent.name for p in canonical.glob("*/SKILL.md")} if canonical.is_dir() else set()
+    unknown = sorted(actual - set(SKILLS))
+    if unknown:
+        warnings.append(f"unregistered canonical skills require explicit profile review: {', '.join(unknown)}")
 
     for name in SKILLS:
         skill = canonical / name / "SKILL.md"
@@ -95,7 +109,7 @@ def main() -> int:
         else:
             route_text = route.read_text(encoding="utf-8")
             if 'status: "stable"' not in route_text:
-                errors.append(f"{route.relative_to(repo)} must be stable after ADF-D")
+                errors.append(f"{route.relative_to(repo)} must be stable")
             if f"../../.agents/skills/{name}/SKILL.md" not in route_text:
                 errors.append(f"{route.relative_to(repo)} does not route to canonical skill")
 
@@ -116,7 +130,7 @@ def main() -> int:
         print(f"WARN {warning}")
     for error in errors:
         print(f"ERROR {error}")
-    print(f"Agent skill validation: {len(errors)} error(s), {len(warnings)} warning(s)")
+    print(f"Agent skill validation: {len(errors)} error(s), {len(warnings)} warning(s), {len(SKILLS)} registered skill(s)")
     return 1 if errors else 0
 
 

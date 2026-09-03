@@ -1,5 +1,15 @@
 # DMTZ Knowledge Bundle Log
 
+## 2026-09-02 — Databricks Agent Skills pre-exit integration addendum
+
+- reviewed Databricks first-party Agent Skills release `v0.2.14` / commit `ce0599506bad5dd63dead9ab88c440ebd2d8336c`;
+- selected an explicit eight-skill initial set: core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect;
+- deferred model/AI implementation skills and prohibited automatic upstream skill expansion;
+- kept vendor skills out of canonical `.agents/skills/`, using ignored `aitools --path` materialization plus exact name/version verification instead;
+- added six DMTZ-owned Databricks overlays for environment discovery, acquisition, persistence, Lineage, runtime provenance and governance;
+- kept vendor operational guidance below DMTZ semantic/security/A1–A4 authority and left managed Databricks MCP servers outside the addendum;
+- extended unified conformance, fixtures and negative controls for vendor-profile/materialization drift.
+
 ## 2026-09-02 — ADF-H security, trust and lifecycle governance
 
 - recorded the bounded human-authorized ADF-G progression exception while keeping ADF-EX-17/provider runtimes explicitly unverified;

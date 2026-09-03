@@ -6,9 +6,11 @@ Canonical DMTZ product/design semantics live in `docs/`. Design-phase progressio
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT.**
 
-Phase 010 — Technical Architecture is complete and **ARCH-001–ARCH-500 are frozen**. Implementation 001 remains blocked until the Agentic Development Foundation passes its full execution exit review.
+The Databricks Agent Skills Integration Addendum is **COMPLETE / ACCEPTED**. The foundation execution exit review is the sole next pre-implementation gate; the addendum is not ADF-I.
 
-Use `knowledge/index.md` for portable discovery only when the needed canonical resource is not already known. `knowledge/` is routing, not semantic authority. Use `docs/implementation/agent_reference_index.md` as a secondary compact bridge for contract-family/path lookup.
+Phase 010 — Technical Architecture is complete and **ARCH-001–ARCH-500 are frozen**. Implementation 001 remains blocked until the Agentic Development Foundation execution exit review passes.
+
+Use `knowledge/index.md` for portable discovery only when the needed canonical resource is not already known. `knowledge/` is routing, not semantic authority. Use `docs/implementation/agent_reference_index.md` as a secondary compact bridge for contract-family/path/platform lookup.
 
 Tool adapters are thin by design:
 
@@ -24,9 +26,10 @@ When instructions conflict, preserve:
 1. accepted DMTZ contracts and canonical `docs/`;
 2. root `AGENTS.md`;
 3. live ADF / implementation status and active package/group;
-4. accepted Agentic Development Foundation mechanics;
-5. tool-specific repository adapters;
-6. personal/user-level preferences and tool memory.
+4. accepted Agentic Development Foundation mechanics and addenda;
+5. DMTZ-owned portable workflows/platform overlays;
+6. reviewed vendor operational guidance and tool-specific repository adapters;
+7. personal/user-level preferences and tool memory.
 
 A human request establishes the current task and requested action, but does not weaken higher authority.
 
@@ -49,7 +52,7 @@ Use the shortest authoritative path:
 
 `human task → live authority → explicit path/ID if known; otherwise one OKF route → canonical resource → exact IDs/tests as needed`.
 
-Do not ceremonially traverse every routing layer and do not preload all skills, knowledge concepts, phases or contract families.
+Do not ceremonially traverse every routing layer and do not preload all DMTZ skills, vendor skills, knowledge concepts, phases or contract families.
 
 Stable accepted ranges are machine-readable in `docs/agentic_development_foundation/stable_id_registry.json`:
 
@@ -75,27 +78,45 @@ The OKF bundle follows `docs/agentic_development_foundation/okf_profile.md` and 
 - canonical changes may create routing review candidates, not automatic OKF rewrites;
 - generated or agent-facing artifacts never push semantic changes back into canonical DMTZ authority.
 
-Canonical human-directed workflows live under `.agents/skills/<name>/SKILL.md`:
+Core canonical workflows under `.agents/skills/` are `resolve-context`, `implement-group`, `resolve-contract`, `run-conformance`, `review-change`, `update-traceability`, and `exit-review`.
 
-- `resolve-context` — A1 minimum context resolution;
-- `implement-group` — A2 one human-selected group/task, then stop;
-- `resolve-contract` — A1 accepted stable-ID/semantic lookup;
-- `run-conformance` — A1 safe checks/reporting by default;
-- `review-change` — A1 substantive review;
-- `update-traceability` — evidence-backed A2 supporting update;
-- `exit-review` — A1 evaluation; bounded A2 only when recording the requested review/status artifact.
+Accepted DMTZ Databricks overlays are:
+
+- `dmtz-databricks-environment-discovery`;
+- `dmtz-databricks-acquisition`;
+- `dmtz-databricks-persistence`;
+- `dmtz-databricks-lineage`;
+- `dmtz-databricks-runtime-provenance`;
+- `dmtz-databricks-governance`.
 
 Selecting or auto-matching a skill inside an existing human task does not create new work or permission.
 
+## Databricks Agent Skills discipline
+
+`docs/agentic_development_foundation/databricks_agent_skills_addendum.md`, its execution review, and `databricks_vendor_skills_profile.json` govern the accepted vendor dependency.
+
+Initial reviewed vendor skills are Databricks core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect. Model/AI implementation skills are deferred.
+
+- **Databricks skills know how Databricks works; DMTZ overlays constrain how that capability may realize DMTZ.**
+- reviewed vendor skills are operational guidance, never DMTZ semantic authority;
+- vendor files belong only in ignored `.databricks/agent-skills/` materialization, not canonical `.agents/skills/`;
+- automatic adoption of newly published vendor skills is prohibited;
+- managed Databricks MCP servers are outside the accepted addendum and require separate G3/G4 review;
+- a vendor skill recommendation cannot authorize workspace access, deployment, governance mutation, credential handling, or any A3/A4 action;
+- target Databricks capability must still be verified for the selected workspace/environment;
+- missing vendor materialization degrades convenience only; use official Databricks documentation/manual workflow without changing DMTZ semantics.
+
+Actual local materialization/version evidence (`DBX-SKILL-RUN-01`) is an Implementation 001-A obligation via `scripts/agentic/materialize_databricks_skills.py`.
+
 ## Agentic conformance
 
-ADF-F establishes the canonical repository-owned command:
+Canonical command:
 
 ```bash
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-It validates documentation consistency, OKF routing, tool adapters, portable skills, agent-facing references, ADF status drift, fixture integrity, context budgets, compatibility-evidence integrity, ADF-H secret/security/lifecycle governance and negative controls. The generated report describes **agentic configuration conformance only**. It is not DMTZ domain health, data quality, source health or production readiness.
+It validates documentation consistency, OKF routing, tool adapters, registered DMTZ skills/overlays, agent-facing references, ADF status, fixture/addendum integrity, context budgets, compatibility evidence, the reviewed Databricks vendor-skill profile, secret/security/lifecycle governance and negative controls. The report describes **agentic configuration conformance only**. It is not DMTZ domain health, data quality, target Databricks capability, provider-runtime proof or production readiness.
 
 Repository byte budgets are defined in `docs/agentic_development_foundation/context_budget.json`. Budget failure does not authorize deleting required semantics; move detail to on-demand artifacts instead.
 
@@ -134,7 +155,7 @@ Exact semantics remain in accepted contract documents and should be cited by sta
 
 ## Implementation engineering and tests
 
-Application/product code is not authorized merely because ADF groups are complete. Product implementation begins only inside an explicitly active implementation package after the foundation execution exit review passes.
+Product implementation begins only inside an explicitly active implementation package after the foundation execution exit review passes.
 
 When implementation begins:
 
@@ -160,7 +181,7 @@ ADF-H security authority is `docs/agentic_development_foundation/security_trust_
 - MCP/plugin/remote-agent adoption requires explicit permission/data/retention/fallback review;
 - current Capability Authorization/disclosure governs serving boundaries;
 - sensitive telemetry minimized/redacted;
-- agent knowledge, skills, rules, memory and tool configuration are never authorization sources.
+- agent knowledge, DMTZ/vendor skills, rules, memory and tool configuration are never authorization sources.
 
 When target reality conflicts with implementation plans:
 

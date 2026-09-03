@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "status": "reviewed_initial_profile",
+  "reviewed_on": "2026-09-02",
+  "review_horizon_days": 30,
+  "upstream": {
+    "repository": "databricks/databricks-agent-skills",
+    "branch": "main",
+    "release": "v0.2.14",
+    "commit": "ce0599506bad5dd63dead9ab88c440ebd2d8336c",
+    "manifest_version": "2",
+    "official_docs": [
+      "https://docs.databricks.com/aws/en/agent-skills/",
+      "https://docs.databricks.com/gcp/en/dev-tools/cli/reference/aitools-commands"
+    ]
+  },
+  "minimum_databricks_cli": "1.0.0",
+  "materialization": {
+    "mode": "aitools_path",
+    "path": ".databricks/agent-skills",
+    "agent_configuration_modified": false,
+    "install_state_written": false,
+    "automatic_new_skills": false
+  },
+  "selected_skills": [
+    {"name": "databricks-core", "version": "0.1.0"},
+    {"name": "databricks-dabs", "version": "0.0.1"},
+    {"name": "databricks-jobs", "version": "0.2.0"},
+    {"name": "databricks-pipelines", "version": "0.3.0"},
+    {"name": "databricks-data-discovery", "version": "0.1.0"},
+    {"name": "databricks-dbsql", "version": "0.1.0"},
+    {"name": "databricks-unity-catalog", "version": "0.3.0"},
+    {"name": "databricks-lakeflow-connect", "version": "0.1.0"}
+  ],
+  "deferred_model_ai_skills": [
+    "databricks-model-serving",
+    "databricks-ml-training",
+    "databricks-mlflow-evaluation",
+    "databricks-agent-bricks",
+    "databricks-ai-functions",
+    "databricks-ai-runtime",
+    "databricks-vector-search"
+  ],
+  "managed_mcp_servers": {
+    "status": "not_configured_by_addendum",
+    "reason": "Skills provide reviewed operational knowledge; managed MCP servers provide live tools and require separate G3/G4 permission, data, network and retention review."
+  },
+  "runtime_materialization": {
+    "status": "pending_implementation_environment",
+    "planned_gate": "Implementation 001-A"
+  }
+}

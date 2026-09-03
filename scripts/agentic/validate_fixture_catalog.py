@@ -13,7 +13,27 @@ EXPECTED = {
     'G': 'adf_g_compatibility_scenarios.yaml',
     'H': 'adf_h_security_scenarios.yaml',
 }
+ADDENDA = (
+    ('DBX', 'adf_databricks_skills_addendum_scenarios.yaml', 'databricks_agent_skills_addendum_execution_review.md'),
+)
 ID_RE = re.compile(r'^\s*-\s+id:\s*["\']?([^"\'\s]+)', re.M)
+
+
+def collect(path: Path, label: str, seen: dict[str, str], errors: list[str]) -> int:
+    if not path.is_file():
+        errors.append(f'missing {label} fixture catalog: {path.name}')
+        return 0
+    text = path.read_text(encoding='utf-8')
+    if 'scenarios:' not in text:
+        errors.append(f'{path.name}: missing scenarios collection')
+    ids = ID_RE.findall(text)
+    if not ids:
+        errors.append(f'{path.name}: no scenario IDs found')
+    for scenario_id in ids:
+        if scenario_id in seen:
+            errors.append(f'duplicate scenario id {scenario_id}: {seen[scenario_id]} and {path.name}')
+        seen[scenario_id] = path.name
+    return len(ids)
 
 
 def main() -> int:
@@ -25,25 +45,19 @@ def main() -> int:
     errors: list[str] = []
     seen: dict[str, str] = {}
     count = 0
+
     for letter, name in EXPECTED.items():
-        path = root / name
-        if not path.is_file():
-            errors.append(f'missing ADF-{letter} fixture catalog: {name}')
-            continue
-        text = path.read_text(encoding='utf-8')
-        if 'scenarios:' not in text:
-            errors.append(f'{name}: missing scenarios collection')
-        ids = ID_RE.findall(text)
-        if not ids:
-            errors.append(f'{name}: no scenario IDs found')
-        for scenario_id in ids:
-            count += 1
-            if scenario_id in seen:
-                errors.append(f'duplicate scenario id {scenario_id}: {seen[scenario_id]} and {name}')
-            seen[scenario_id] = name
+        count += collect(root / name, f'ADF-{letter}', seen, errors)
         review = repo / f'docs/agentic_development_foundation/adf_{letter.lower()}_execution_review.md'
         if not review.is_file():
             errors.append(f'ADF-{letter}: missing execution review')
+
+    for label, name, review_name in ADDENDA:
+        count += collect(root / name, f'ADF addendum {label}', seen, errors)
+        review = repo / 'docs/agentic_development_foundation' / review_name
+        if not review.is_file():
+            errors.append(f'ADF addendum {label}: missing execution review {review_name}')
+
     for error in errors:
         print(f'ERROR {error}')
     print(f'Fixture catalog validation: {len(errors)} error(s), {count} scenario(s)')

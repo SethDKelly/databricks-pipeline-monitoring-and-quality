@@ -1,6 +1,6 @@
 # DMTZ Agentic Development Foundation
 
-**Status:** ADF-A THROUGH ADF-H COMPLETE / ACCEPTED FOR EXIT REVIEW — ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT
+**Status:** ADF-A THROUGH ADF-H + DATABRICKS AGENT SKILLS ADDENDUM COMPLETE / ACCEPTED FOR EXIT REVIEW — ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT
 
 ## Purpose
 
@@ -19,91 +19,90 @@ The Agentic Development Foundation establishes a tool-neutral, human-directed de
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT.**
 
-The ADF-G progression exception is narrow: Cursor, Claude Code and Codex remain runtime-`unverified` until `ADF-G-XT01` is actually exercised. The exception does not weaken shared authority, security, canonical-reference or human-directed boundaries.
+ADF-EX-17 remains a narrow deferred-verification condition: Cursor, Claude Code and Codex remain runtime-`unverified` until `ADF-G-XT01` is actually exercised. It is not PASS and does not weaken shared authority, security, canonical-reference or human-directed boundaries.
 
-Implementation 001 remains planned and blocked until the **Agentic Development Foundation execution exit review** evaluates ADF-EX-01–ADF-EX-20 and explicitly accepts or rejects the bounded ADF-EX-17 deferred-verification waiver.
+## Pre-exit Databricks Agent Skills addendum — COMPLETE / ACCEPTED
+
+The bounded **Databricks Agent Skills Integration Addendum** is complete. It is not ADF-I and does not reopen ADF-A–ADF-H.
+
+The accepted initial vendor set is:
+
+- `databricks-core`;
+- `databricks-dabs`;
+- `databricks-jobs`;
+- `databricks-pipelines`;
+- `databricks-data-discovery`;
+- `databricks-dbsql`;
+- `databricks-unity-catalog`;
+- `databricks-lakeflow-connect`.
+
+Model/AI implementation skills are explicitly deferred. Managed Databricks MCP servers are not configured by this addendum and require separate security/integration review.
+
+Vendor skills remain reviewed operational guidance and are materialized locally under ignored `.databricks/agent-skills/`; they are not copied into canonical DMTZ skill storage. DMTZ-owned overlays remain under `.agents/skills/` for environment discovery, acquisition, persistence, Lineage, runtime provenance and governance.
+
+`DBX-SKILL-RUN-01` remains an Implementation 001-A environment obligation: establish a compatible Databricks CLI and record exact local reviewed-skill materialization/version evidence. That residual is not represented as completed environment proof and does not authorize workspace access.
+
+Primary references:
+
+- [`databricks_agent_skills_addendum.md`](databricks_agent_skills_addendum.md)
+- [`databricks_vendor_skills_profile.json`](databricks_vendor_skills_profile.json)
+- [`databricks_agent_skills_addendum_execution_review.md`](databricks_agent_skills_addendum_execution_review.md)
+- `scripts/agentic/materialize_databricks_skills.py`
+- `scripts/agentic/validate_databricks_agent_skills.py`
 
 ## Implemented foundation model
 
 ### Authority and human direction — ADF-A
 
-Shared authority is rooted in canonical `docs/`, root `AGENTS.md`, live ADF/implementation status, accepted ADF mechanics, then thin tool adapters. A1–A4 action classes preserve human-selected task scope and prevent autonomous continuation, external/destructive action without authorization, or silent semantic change.
+Canonical DMTZ docs/contracts remain highest project authority. Root `AGENTS.md`, live program/group scope, accepted foundation mechanics and thin provider adapters follow. A1–A4 preserves human-selected scope and prevents tooling availability from becoming permission.
 
-### Portable knowledge — ADF-B
+### Portable knowledge and workflows — ADF-B through ADF-E
 
-`knowledge/index.md` is an OKF v0.2 portable routing plane. It is never an independent source of DMTZ truth, authority, health, evidence sufficiency or causality.
+`knowledge/` is an OKF routing plane, never product truth. Canonical DMTZ workflows live once under `.agents/skills/`; Claude uses thin command bridges. Progressive disclosure, exact stable-ID resolution and deterministic context budgets avoid monolithic prompts and first-search-hit authority.
 
-### Tool adapters — ADF-C
-
-- Cursor: root `AGENTS.md` + scoped `.cursor/rules/*.mdc`;
-- Claude Code: `.claude/CLAUDE.md` importing `../AGENTS.md`;
-- Codex: root `AGENTS.md` natively.
-
-`tool_compatibility.json` records documented compatibility state. Actual installed-tool behavior is recorded separately in the ADF-G runtime ledger.
-
-### Human-directed workflows — ADF-D
-
-Canonical workflows live once under `.agents/skills/`: `resolve-context`, `implement-group`, `resolve-contract`, `run-conformance`, `review-change`, `update-traceability`, and `exit-review`.
-
-Cursor and Codex consume the canonical location directly. Claude Code uses thin `.claude/commands/` bridges. Workflow or skill selection does not create new work scope.
-
-### Context and stable references — ADF-E
-
-Use the shortest authoritative path: explicit path/ID when known, otherwise one OKF route to the canonical resource, then exact stable IDs/tests as needed. Stable-ID, context-budget and knowledge-impact helpers make the mechanics deterministic without becoming semantic authority.
+The Databricks addendum follows the same rule: **Databricks skills know how Databricks works; DMTZ overlays constrain how that capability may realize DMTZ.**
 
 ### Conformance and CI — ADF-F
 
-The canonical repository-owned command is:
+Canonical command:
 
 ```bash
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-It now composes documentation consistency, OKF, adapters, skills, canonical references, ADF status, fixtures, context budgets, compatibility evidence, agentic secret scanning, security/lifecycle governance and negative controls. The report describes **agentic configuration conformance only**, not DMTZ domain/runtime/production health.
+It validates documentation consistency, OKF, adapters, DMTZ skills, canonical references, ADF status, fixtures/addenda, context budgets, provider compatibility evidence, reviewed Databricks vendor-skill integration, secret scanning, security/lifecycle governance and negative controls.
 
-### Compatibility and onboarding — ADF-G
+Agentic configuration PASS is not DMTZ domain health, provider runtime proof, target Databricks capability or production readiness.
 
-Repository-level portability, tool-neutral onboarding and the ordinary IDE/CLI path are accepted. `runtime_compatibility_evidence.json` keeps actual provider-runtime evidence separate from documentation/configuration compatibility.
+### Compatibility, security and lifecycle — ADF-G / ADF-H
 
-The human-authorized [`adf_g_progression_exception.md`](adf_g_progression_exception.md) permits foundation progression while **ADF-EX-17 remains deferred verification**. Cursor, Claude Code and Codex are still runtime-unverified and cannot be called runtime-supported until actual evidence exists.
+Provider runtime evidence remains independent from documentation/configuration compatibility. Least privilege, secret/sensitive-data boundaries, prompt/content trust, noncanonical tool memory, provider/vendor lifecycle review, G1–G5 change governance, retention and human fallback remain mandatory.
 
-### Security, trust and lifecycle — ADF-H
-
-ADF-H is complete/accepted. It establishes least privilege, secret/sensitive-data boundaries, prompt-injection/content trust, noncanonical tool memory/personal state, provider lifecycle/reverification, G1–G5 agentic change governance, retention discipline and ordinary human fallback.
-
-Primary artifacts:
-
-- [`security_trust_lifecycle_policy.md`](security_trust_lifecycle_policy.md);
-- [`agentic_change_governance.md`](agentic_change_governance.md);
-- [`tool_lifecycle_review.json`](tool_lifecycle_review.json);
-- [`adf_h_security_baseline.md`](adf_h_security_baseline.md);
-- [`adf_h_execution_review.md`](adf_h_execution_review.md);
-- `scripts/agentic/scan_agentic_secrets.py`;
-- `scripts/agentic/validate_adf_h_governance.py`.
+Databricks vendor skills are a reviewed G2/G3 dependency. Any change to permissions, external integrations, data exposure or security boundaries becomes G4. Vendor instructions never create DMTZ semantic authority or A3/A4 permission.
 
 ## Foundation boundary
 
 Included:
 
-- shared repository agent authority;
-- portable OKF discovery/progressive disclosure;
+- shared repository authority and human-directed A1–A4 action;
+- portable OKF discovery and DMTZ Agent Skills;
 - thin Cursor/Claude/Codex adapters;
-- portable human-directed skills/workflows;
-- exact stable-ID/canonical-reference retrieval;
-- context budgets;
-- deterministic agentic conformance/drift/CI;
-- developer tool compatibility/onboarding;
+- reviewed Databricks vendor-skill dependency composition through DMTZ-owned overlays;
+- exact references/context budgets;
+- deterministic conformance/drift/CI;
+- tool compatibility/onboarding;
 - security/trust/lifecycle governance.
 
 Explicitly excluded:
 
-- unattended/autonomous implementation;
-- agent-created backlog/work allocation;
+- unattended/autonomous implementation or work selection;
 - multi-agent implementation delegation/orchestration;
-- automatic spawning of repository implementation agents;
 - unattended merge/deploy/external writes;
 - autonomous architecture reopening;
-- agent memory as canonical project truth.
+- agent/tool memory as canonical truth;
+- automatic adoption of newly published Databricks skills;
+- Databricks model/AI implementation skills in the initial addendum;
+- managed Databricks MCP servers without separate review.
 
 Deferred autonomy remains only in [`autonomous_backlog.md`](autonomous_backlog.md).
 
@@ -111,24 +110,24 @@ Deferred autonomy remains only in [`autonomous_backlog.md`](autonomous_backlog.m
 
 - [`authority_scope_policy.md`](authority_scope_policy.md)
 - [`okf_profile.md`](okf_profile.md)
-- [`tool_compatibility.json`](tool_compatibility.json)
-- [`runtime_compatibility_evidence.json`](runtime_compatibility_evidence.json)
-- [`adf_g_progression_exception.md`](adf_g_progression_exception.md)
 - [`portable_workflow_profile.md`](portable_workflow_profile.md)
 - [`context_discovery_policy.md`](context_discovery_policy.md)
 - [`stable_reference_policy.md`](stable_reference_policy.md)
-- [`context_budget_policy.md`](context_budget_policy.md)
 - [`conformance_policy.md`](conformance_policy.md)
+- [`runtime_compatibility_evidence.json`](runtime_compatibility_evidence.json)
+- [`adf_g_progression_exception.md`](adf_g_progression_exception.md)
 - [`security_trust_lifecycle_policy.md`](security_trust_lifecycle_policy.md)
 - [`agentic_change_governance.md`](agentic_change_governance.md)
 - [`tool_lifecycle_review.json`](tool_lifecycle_review.json)
+- [`databricks_agent_skills_addendum.md`](databricks_agent_skills_addendum.md)
+- [`databricks_vendor_skills_profile.json`](databricks_vendor_skills_profile.json)
 - [`execution_exit_criteria.md`](execution_exit_criteria.md)
 
-Execution evidence is recorded in `adf_a_execution_review.md` through `adf_h_execution_review.md`.
+Execution evidence is recorded in `adf_a_execution_review.md` through `adf_h_execution_review.md` plus the accepted Databricks addendum execution review.
 
 ## Next dependency
 
-1. **Agentic Development Foundation execution exit review:** evaluate ADF-EX-01–ADF-EX-20 using A–H evidence and explicitly decide the bounded ADF-EX-17 deferred-verification waiver.
+1. **Agentic Development Foundation execution exit review:** evaluate ADF-EX-01–ADF-EX-20 plus the accepted Databricks addendum, explicitly deciding the bounded ADF-EX-17 deferred-verification waiver and carrying `DBX-SKILL-RUN-01` into Implementation 001-A.
 2. **Implementation 001-A** becomes eligible only if that exit review passes under the documented gate/waiver rule.
 
 Autonomy is not part of the foundation success condition.
