@@ -2,13 +2,13 @@
 
 ## Authority and live state
 
-Canonical DMTZ product/design semantics live in `docs/`. Design-phase progression is owned by `docs/README.md`; implementation-program progression is owned by `docs/implementation/README.md`; Agentic Development Foundation/addendum progression is owned by `docs/agentic_development_foundation/README.md`.
+Canonical DMTZ product/design semantics live in `docs/`. Design-phase progression is owned by `docs/README.md`; implementation-program progression is owned by `docs/implementation/README.md`; Agentic Development Foundation progression is owned by `docs/agentic_development_foundation/README.md`.
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT.**
 
-**Pre-exit condition:** the Databricks Agent Skills Integration Addendum is in execution; close it before performing the foundation execution exit review. This addendum is not ADF-I.
+The Databricks Agent Skills Integration Addendum is **COMPLETE / ACCEPTED**. The foundation execution exit review is the sole next pre-implementation gate; the addendum is not ADF-I.
 
-Phase 010 — Technical Architecture is complete and **ARCH-001–ARCH-500 are frozen**. Implementation 001 remains blocked until the Agentic Development Foundation passes its full execution exit review.
+Phase 010 — Technical Architecture is complete and **ARCH-001–ARCH-500 are frozen**. Implementation 001 remains blocked until the Agentic Development Foundation execution exit review passes.
 
 Use `knowledge/index.md` for portable discovery only when the needed canonical resource is not already known. `knowledge/` is routing, not semantic authority. Use `docs/implementation/agent_reference_index.md` as a secondary compact bridge for contract-family/path/platform lookup.
 
@@ -80,7 +80,7 @@ The OKF bundle follows `docs/agentic_development_foundation/okf_profile.md` and 
 
 Core canonical workflows under `.agents/skills/` are `resolve-context`, `implement-group`, `resolve-contract`, `run-conformance`, `review-change`, `update-traceability`, and `exit-review`.
 
-The Databricks addendum also registers DMTZ-owned overlays:
+Accepted DMTZ Databricks overlays are:
 
 - `dmtz-databricks-environment-discovery`;
 - `dmtz-databricks-acquisition`;
@@ -93,7 +93,7 @@ Selecting or auto-matching a skill inside an existing human task does not create
 
 ## Databricks Agent Skills discipline
 
-`docs/agentic_development_foundation/databricks_agent_skills_addendum.md` and `databricks_vendor_skills_profile.json` govern the reviewed vendor dependency.
+`docs/agentic_development_foundation/databricks_agent_skills_addendum.md`, its execution review, and `databricks_vendor_skills_profile.json` govern the accepted vendor dependency.
 
 Initial reviewed vendor skills are Databricks core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect. Model/AI implementation skills are deferred.
 
@@ -101,12 +101,12 @@ Initial reviewed vendor skills are Databricks core, DABs, Jobs, Pipelines, data 
 - reviewed vendor skills are operational guidance, never DMTZ semantic authority;
 - vendor files belong only in ignored `.databricks/agent-skills/` materialization, not canonical `.agents/skills/`;
 - automatic adoption of newly published vendor skills is prohibited;
-- managed Databricks MCP servers are outside this addendum and require separate G3/G4 review;
+- managed Databricks MCP servers are outside the accepted addendum and require separate G3/G4 review;
 - a vendor skill recommendation cannot authorize workspace access, deployment, governance mutation, credential handling, or any A3/A4 action;
 - target Databricks capability must still be verified for the selected workspace/environment;
 - missing vendor materialization degrades convenience only; use official Databricks documentation/manual workflow without changing DMTZ semantics.
 
-Actual local materialization/version evidence (`DBX-SKILL-RUN-01`) belongs to Implementation 001-A via `scripts/agentic/materialize_databricks_skills.py`.
+Actual local materialization/version evidence (`DBX-SKILL-RUN-01`) is an Implementation 001-A obligation via `scripts/agentic/materialize_databricks_skills.py`.
 
 ## Agentic conformance
 
@@ -155,7 +155,7 @@ Exact semantics remain in accepted contract documents and should be cited by sta
 
 ## Implementation engineering and tests
 
-Application/product code is not authorized merely because ADF groups are complete. Product implementation begins only inside an explicitly active implementation package after the addendum closes and the foundation execution exit review passes.
+Product implementation begins only inside an explicitly active implementation package after the foundation execution exit review passes.
 
 When implementation begins:
 
