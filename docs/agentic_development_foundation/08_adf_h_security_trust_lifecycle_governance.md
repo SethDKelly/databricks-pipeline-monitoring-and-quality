@@ -1,22 +1,22 @@
 # ADF-H — Security, Trust, Lifecycle & Governance
 
-**Status:** IN EXECUTION — IMPLEMENTED / FINAL CONFORMANCE PENDING
+**Status:** COMPLETE / ACCEPTED
 
 ## Objective
 
 Ensure the agent-facing knowledge/instruction/workflow layer improves development ergonomics without creating new security boundaries, hidden authority, stale trust or uncontrolled tool state.
 
-## Security principles
+## Accepted security model
 
 ### Repository truth stays inspectable
 
-Project-critical instructions, portable workflows and OKF routing knowledge must be version-controlled and reviewable. Personal/user tool settings may exist for preferences but must not be required to understand DMTZ correctness.
+Project-critical instructions, portable workflows and OKF routing knowledge remain version-controlled and reviewable. Personal/user tool settings may exist for preferences but are not required to understand DMTZ correctness.
 
 ### Least privilege applies to agents too
 
 Tool access follows the developer/task need. The foundation does not require broad cloud, production, secret-manager, deployment or unrestricted-network permissions merely because an agent can use them.
 
-Human-directed local development should prefer read/edit/test permissions appropriate to the active task. A3 external/destructive/scope-expanding action remains separately authorized.
+Human-directed local development prefers read/edit/test permissions appropriate to the active task. A3 external/destructive/scope-expanding action remains separately authorized.
 
 ### Secrets and sensitive data
 
@@ -63,7 +63,7 @@ A lower class cannot disguise a higher-impact change. Agentic artifacts follow D
 
 ## Memory, personal configuration and retention
 
-Chat history, auto-memory, user rules, local settings, saved prompts and model preferences remain noncanonical.
+Tool memory, chat history, auto-memory, user rules, local settings, saved prompts and model preferences remain noncanonical.
 
 Do not build a repository archive of agent conversations, hidden reasoning or scratchpads by default. Preserve reviewed durable development artifacts/evidence with a clear purpose.
 
@@ -80,19 +80,17 @@ Repository-level MCP servers, plugins, extensions, remote agents or cloud execut
 - `scripts/agentic/scan_agentic_secrets.py`;
 - `scripts/agentic/validate_adf_h_governance.py`;
 - `fixtures/adf_h_security_scenarios.yaml`;
-- ADF-H checks/negative controls integrated into unified agentic conformance.
+- ADF-H checks/negative controls integrated into unified agentic conformance;
+- [`adf_h_execution_review.md`](adf_h_execution_review.md) — accepted execution evidence.
 
-The bounded ADF-G progression exception is recorded separately in [`adf_g_progression_exception.md`](adf_g_progression_exception.md). It defers ADF-EX-17 only and cannot weaken ADF-H security acceptance.
+The bounded ADF-G progression exception is recorded separately in [`adf_g_progression_exception.md`](adf_g_progression_exception.md). It defers ADF-EX-17 only and does not weaken ADF-H security acceptance.
 
-## Acceptance scenarios
+## Acceptance result
 
-ADF-H passes when:
+ADF-H is accepted based on actual repository CI evidence, including a high-confidence secret scan, lifecycle/governance validation, 104 ADF-A–ADF-H scenarios, healthy context budgets and 10/10 negative controls. See `adf_h_execution_review.md` for the evidence and the useful first-run failure history.
 
-- an OKF human-review signal cannot be mistaken for DMTZ authority;
-- secrets/sensitive values are rejected from checked-in agentic artifacts by policy/checks;
-- stale tool compatibility is visible without invalidating canonical DMTZ docs;
-- agent memory cannot supersede checked-in project state;
-- a tool-specific policy change cannot silently weaken shared security/change-control rules;
-- removing every supported AI tool still leaves the repository understandable and operable by a human developer;
-- expired provider security assumptions and fabricated support claims fail closed;
-- the final synchronized branch passes unified repository conformance.
+## Exit
+
+**ADF-H COMPLETE / ACCEPTED.**
+
+The next required work is the **Agentic Development Foundation execution exit review**. That review must evaluate ADF-EX-01–ADF-EX-20 and explicitly classify ADF-EX-17 as deferred/waived rather than passed unless actual provider runtime evidence has appeared.
