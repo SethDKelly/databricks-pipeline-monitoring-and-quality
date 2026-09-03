@@ -71,7 +71,7 @@ If an agentic summary conflicts with its canonical `resource`, the canonical sou
 
 ## Memory and personal configuration
 
-Chat history, auto-memory, user rules, local settings, model preferences, saved prompts and personal tool configuration are noncanonical.
+**Tool memory**, auto-memory, chat history, user rules, local settings, model preferences, saved prompts and personal tool configuration are noncanonical.
 
 They may improve ergonomics but may not:
 
