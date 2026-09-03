@@ -1,6 +1,6 @@
 # DMTZ Portable Workflow / Agent Skills Profile
 
-**Status:** ACCEPTED — ADF-D
+**Status:** ACCEPTED — ADF-D / EXTENDED BY DATABRICKS AGENT SKILLS ADDENDUM
 
 ## Purpose
 
@@ -14,9 +14,7 @@ The canonical repository workflow source is:
 
 `/.agents/skills/<skill-name>/SKILL.md`
 
-This location was selected because current Cursor and Codex documentation both support repository Agent Skills under `.agents/skills/`, and both use the open Agent Skills `SKILL.md` model.
-
-Claude Code supports the same Agent Skills standard but natively discovers project skills under `.claude/skills/`. DMTZ does not duplicate the canonical workflows there because Cursor also discovers Claude skill directories and duplicate skill names would create avoidable ambiguity. Instead, `.claude/commands/<skill-name>.md` contains a tiny bridge that directs Claude Code to the canonical `.agents/skills/` workflow.
+This location is shared by Cursor and Codex and remains the single semantic source for DMTZ workflows. Claude Code uses thin `.claude/commands/<skill-name>.md` bridges to the same files rather than duplicate `.claude/skills/` copies.
 
 Do not use symlinks as the sole distribution mechanism.
 
@@ -31,16 +29,7 @@ description: concise trigger and boundary description
 ---
 ```
 
-The canonical source does not use provider-specific frontmatter for:
-
-- model/effort selection;
-- allowed tools or permission bypass;
-- implicit-invocation policy;
-- subagent routing;
-- dynamic shell interpolation;
-- UI appearance.
-
-Provider-specific metadata may be added only as a lower-precedence adapter after a concrete need is demonstrated and must not change workflow semantics.
+The canonical source does not use provider-specific frontmatter for model/effort, permissions, implicit invocation, subagent routing, shell interpolation, or UI appearance.
 
 ## Human-directed invocation rule
 
@@ -55,19 +44,36 @@ A supported tool may surface or implicitly select a skill when the current human
 
 Explicit invocation is always acceptable when the host supports it.
 
-## Initial canonical workflows
+## Core canonical workflows
 
-1. `resolve-context` — A1; find minimal current authority/context; no edits.
-2. `implement-group` — A2; realize one human-selected group/task, validate, update directly impacted support artifacts, then stop.
-3. `resolve-contract` — A1; locate exact canonical contract/scenario authority.
-4. `run-conformance` — A1 by default; run safe checks and report faithfully; failures do not authorize fixes by themselves.
-5. `review-change` — A1; substantive contract/security/test review; no edits by discovery alone.
-6. `update-traceability` — A2 supporting workflow; advance traceability only with appropriate evidence.
-7. `exit-review` — A1 evaluation; A2 only when the human explicitly asks to record the bounded exit/status artifact.
+1. `resolve-context` — A1 minimum current authority/context.
+2. `implement-group` — A2 one human-selected group/task, validate, update direct support artifacts, then stop.
+3. `resolve-contract` — A1 exact canonical contract/scenario resolution.
+4. `run-conformance` — A1 safe checks/reporting by default.
+5. `review-change` — A1 substantive contract/security/test review.
+6. `update-traceability` — evidence-backed A2 supporting workflow.
+7. `exit-review` — A1 evaluation; bounded A2 only when recording the requested review/status artifact.
+
+## Databricks platform overlays
+
+The pre-exit Databricks Agent Skills addendum adds six **DMTZ-owned overlays**, not copies of Databricks documentation:
+
+- `dmtz-databricks-environment-discovery`;
+- `dmtz-databricks-acquisition`;
+- `dmtz-databricks-persistence`;
+- `dmtz-databricks-lineage`;
+- `dmtz-databricks-runtime-provenance`;
+- `dmtz-databricks-governance`.
+
+These overlays compose reviewed vendor operational guidance from `databricks_vendor_skills_profile.json` with DMTZ authority, evidence, temporal, identity, health, Lineage/Impact and authorization boundaries.
+
+**Databricks skills know how Databricks works. DMTZ overlays constrain how that capability may realize DMTZ.**
+
+Vendor skills are materialized locally beneath `.databricks/agent-skills/` and never become canonical DMTZ workflows. A missing vendor materialization degrades convenience only; the overlay must fall back to official documentation/manual procedures rather than invent a semantic fork.
 
 ## Common workflow structure
 
-Each skill should contain:
+Each registered DMTZ skill contains:
 
 - a clear human-directed/action-class boundary;
 - ordered workflow steps;
@@ -75,50 +81,48 @@ Each skill should contain:
 - escalation/failure behavior where needed;
 - explicit stop conditions.
 
-Skills should route to `AGENTS.md`, `knowledge/index.md`, canonical docs, tests, and stable IDs rather than copying domain specifications.
+Skills route to `AGENTS.md`, `knowledge/index.md`, canonical docs, tests, stable IDs and reviewed vendor dependencies rather than copying domain specifications.
 
 ## Tool invocation mapping
 
 ### Cursor
 
-Native source: `.agents/skills/<name>/SKILL.md`.
-
-Current documented explicit UX: `/skill-name` in Agent chat; Cursor may also select a skill when its description matches. Actual repository runtime smoke remains ADF-G.
+Native DMTZ source: `.agents/skills/<name>/SKILL.md`. Cursor may surface/match a skill based on its description. A vendor Databricks materialization is read as supporting context only when the DMTZ overlay calls for it.
 
 ### Claude Code
 
-Native DMTZ bridge: `.claude/commands/<name>.md`.
-
-Invoke as `/<name>`. The command instructs Claude to read and follow `.agents/skills/<name>/SKILL.md`. Claude Code continues to support command files while recommending skills for richer native packaging; DMTZ uses commands only as a thin compatibility bridge to avoid a second semantic copy.
+DMTZ bridge: `.claude/commands/<name>.md`. Invoke as `/<name>` when desired; the command points back to the canonical `.agents/skills/<name>/SKILL.md`.
 
 ### Codex
 
-Native source: `.agents/skills/<name>/SKILL.md`.
+Native DMTZ source: `.agents/skills/<name>/SKILL.md`. Explicit skill selection may use the host's supported skill UX.
 
-Current documented explicit UX: type `$` to mention/select a skill in Codex CLI/IDE, or use `/skills` to inspect available skills. Actual repository runtime smoke remains ADF-G.
+Provider runtime certification remains separate ADF-G evidence.
 
 ## Degraded behavior
 
-If a tool does not discover the native skill/bridge:
+If a tool does not discover the native DMTZ skill/bridge:
 
-1. the developer may directly ask the tool to read `.agents/skills/<name>/SKILL.md` and perform that workflow;
-2. repository authority/tests remain unchanged;
-3. record the native-discovery problem as a compatibility degradation for ADF-G/H;
-4. do not create a new provider-specific semantic workflow as a workaround.
+1. directly read `.agents/skills/<name>/SKILL.md`;
+2. keep repository authority/tests unchanged;
+3. record native-discovery failure as provider degradation;
+4. do not create provider-specific semantic copies.
+
+If a reviewed Databricks vendor skill is not materialized:
+
+1. use official Databricks documentation/manual workflow for the product mechanic;
+2. retain the DMTZ overlay and all A1–A4/security boundaries;
+3. record vendor-skill convenience as degraded;
+4. do not install new/unreviewed upstream skills automatically.
 
 ## Security and autonomy boundary
 
-The initial workflows are instruction-only. They introduce no credentials, external service configuration, deployment capability, subagents, automatic queues, or unattended continuation.
+DMTZ skills introduce no credentials or permission bypass. A skill can use only actions already authorized by the human task and repository/environment gates. Tool availability and vendor instructions are not permission.
 
-A skill can use only tools/actions already authorized by the human task and repository environment. Tool availability is not permission.
+Managed Databricks MCP servers are separate live integrations and are not configured by the vendor-skill addendum.
 
 ## Change rule
 
-Material workflow changes should update:
+Material DMTZ workflow changes update the canonical `.agents/skills/` source, affected OKF route, relevant fixtures/validation and bridges only when mechanics change.
 
-- the canonical `.agents/skills/` source;
-- affected OKF workflow routing;
-- relevant fixtures/validation;
-- tool bridges only when mechanics change.
-
-Do not edit provider bridges to change shared workflow meaning.
+Databricks vendor skill changes follow `databricks_agent_skills_addendum.md`: review upstream first, update the reviewed profile, inspect affected overlays, rematerialize, and rerun conformance. Do not edit provider bridges or vendor copies to change DMTZ meaning.
