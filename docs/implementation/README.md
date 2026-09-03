@@ -1,8 +1,8 @@
 # DMTZ Implementation Program
 
-**Status:** PLANNED / BLOCKED ON AGENTIC FOUNDATION — ADF-A THROUGH ADF-G ACCEPTED FOR PROGRESSION; ADF-EX-17 DEFERRED; ADF-H IN EXECUTION; Implementation 001 follows foundation exit
+**Status:** PLANNED / BLOCKED ON AGENTIC FOUNDATION EXIT — ADF-A THROUGH ADF-H COMPLETE; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT
 
-**ADF status mirror: COMPLETE ADF-A–ADF-G (ADF-EX-17 deferred); IN EXECUTION ADF-H.**
+**ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT.**
 
 ## Purpose and authority
 
@@ -25,14 +25,14 @@ Status authority:
 
 - `docs/README.md` — design progression;
 - **this file** — implementation-program progression;
-- `../agentic_development_foundation/README.md` — pre-implementation ADF progression;
+- `../agentic_development_foundation/README.md` — ADF progression/exit status;
 - active implementation package README/group plan — package-local progression.
 
 Code, tests, knowledge, skills, adapters, security policy or CI may not silently supersede accepted design/architecture contracts.
 
 ## Pre-implementation Agentic Development Foundation
 
-Completed / accepted for progression:
+Completed / accepted for exit review:
 
 - ADF-A — shared authority and human-directed A1–A4 scope;
 - ADF-B — OKF v0.2 portable knowledge routing;
@@ -40,15 +40,14 @@ Completed / accepted for progression:
 - ADF-D — canonical portable workflows under `.agents/skills/`;
 - ADF-E — shortest-path context, exact stable references, knowledge maintenance and context budgets;
 - ADF-F — unified agentic conformance, drift detection, negative controls and CI;
-- **ADF-G — compatibility/onboarding baseline accepted for progression with ADF-EX-17 deferred verification.** Provider runtimes remain `unverified` until actual `ADF-G-XT01` evidence is recorded.
+- ADF-G — compatibility/onboarding baseline accepted for progression with **ADF-EX-17 deferred verification**;
+- ADF-H — security, trust, lifecycle and governance.
 
-Current:
+Cursor, Claude Code and Codex remain runtime-`unverified` until actual `ADF-G-XT01` evidence is recorded. That is a bounded deferred-verification condition, not PASS.
 
-- **ADF-H — Security, Trust, Lifecycle & Governance: IN EXECUTION.**
+Current required work:
 
-Then:
-
-- foundation execution exit review, which must explicitly classify ADF-EX-17 as deferred/waived rather than passed unless real provider runtime evidence exists.
+- **Agentic Development Foundation execution exit review** — evaluate ADF-EX-01–ADF-EX-20 and explicitly accept/reject the ADF-EX-17 waiver.
 
 Implementation 001-A begins only after that exit passes under the documented mandatory-gate/waiver rule.
 
@@ -125,7 +124,8 @@ Each package should include:
 - conformance: `../agentic_development_foundation/conformance_policy.md` and `scripts/agentic/run_conformance.py`;
 - runtime compatibility evidence: `../agentic_development_foundation/runtime_compatibility_evidence.json`;
 - bounded ADF-G progression exception: `../agentic_development_foundation/adf_g_progression_exception.md`;
-- security/trust/lifecycle: `../agentic_development_foundation/security_trust_lifecycle_policy.md` and `agentic_change_governance.md`.
+- security/trust/lifecycle: `../agentic_development_foundation/security_trust_lifecycle_policy.md` and `agentic_change_governance.md`;
+- foundation exit gates: `../agentic_development_foundation/execution_exit_criteria.md`.
 
 Autonomous execution/orchestration remains outside the accepted foundation and Implementation 001 entry gate.
 
@@ -143,6 +143,6 @@ No developer or agent may silently weaken a contract because it is easier to imp
 
 ## Current state
 
-**Agentic Development Foundation: IN EXECUTION — ADF-A THROUGH ADF-G ACCEPTED FOR PROGRESSION; ADF-EX-17 DEFERRED VERIFICATION; ADF-H IN EXECUTION.** Complete ADF-H and the foundation execution exit review before beginning Implementation 001-A.
+**Agentic Development Foundation: GROUP EXECUTION COMPLETE — ADF-A THROUGH ADF-H COMPLETE / ACCEPTED FOR EXIT REVIEW; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT.** Complete the foundation execution exit review before beginning Implementation 001-A.
 
 **Implementation 001 — Executable Foundations & Walking Skeleton: PLANNED / READY AFTER AGENTIC FOUNDATION EXIT.**
