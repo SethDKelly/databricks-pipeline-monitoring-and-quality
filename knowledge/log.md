@@ -1,5 +1,14 @@
 # DMTZ Knowledge Bundle Log
 
+## 2026-09-02 — ADF-H security, trust and lifecycle governance
+
+- recorded the bounded human-authorized ADF-G progression exception while keeping ADF-EX-17/provider runtimes explicitly unverified;
+- added least-privilege, secret/sensitive-data, prompt-injection/content-trust, memory/personal-state and retention policy for agentic artifacts;
+- added G1–G5 agentic change classes so routing/workflow/tool/security changes cannot disguise DMTZ semantic change;
+- added time-bounded provider instruction/security review metadata and degraded/unverified fallback expectations;
+- added high-confidence checked-in agentic secret scanning and ADF-H governance validation to unified conformance;
+- extended security/adversarial fixtures and negative controls without making vendor security settings DMTZ semantic authority.
+
 ## 2026-09-02 — ADF-G compatibility/onboarding evidence baseline
 
 - added tool-neutral developer onboarding for Cursor, Claude Code, Codex and ordinary IDE/CLI development;
