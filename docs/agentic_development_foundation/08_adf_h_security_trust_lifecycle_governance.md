@@ -1,6 +1,6 @@
 # ADF-H — Security, Trust, Lifecycle & Governance
 
-**Status:** PLANNED / READY TO EXECUTE
+**Status:** IN EXECUTION — IMPLEMENTED / FINAL CONFORMANCE PENDING
 
 ## Objective
 
@@ -14,91 +14,75 @@ Project-critical instructions, portable workflows and OKF routing knowledge must
 
 ### Least privilege applies to agents too
 
-Tool access should follow the developer/task need. The foundation does not require broad cloud, production, secret-manager or deployment permissions merely because an agent can use them.
+Tool access follows the developer/task need. The foundation does not require broad cloud, production, secret-manager, deployment or unrestricted-network permissions merely because an agent can use them.
 
-Human-directed local development should prefer read/edit/test permissions appropriate to the active task.
+Human-directed local development should prefer read/edit/test permissions appropriate to the active task. A3 external/destructive/scope-expanding action remains separately authorized.
 
 ### Secrets and sensitive data
 
-- never place secrets/tokens/credentials in OKF frontmatter, skills, instructions, logs or examples;
+- never place secrets/tokens/credentials/private keys in OKF frontmatter, skills, instructions, logs or examples;
 - do not copy restricted production payloads into agent knowledge for convenience;
-- tool telemetry/chat retention policies are enterprise/deployment concerns and must be reviewed separately from repository semantics;
-- knowledge/index artifacts should favor metadata and canonical links over copied sensitive content.
+- provider telemetry/chat retention is a deployment concern reviewed separately from DMTZ semantics;
+- routing artifacts favor metadata/redacted examples/canonical links over copied sensitive content.
 
 ## Trust model
 
-### OKF trust is advisory knowledge trust
+### Agentic trust is advisory artifact trust
 
-OKF v0.2 `generated`, `verified`, trust tier, `status` and `stale_after` describe the **knowledge artifact**.
+OKF `generated`, `verified`, lifecycle state and staleness describe the **knowledge artifact**.
 
-They do not grant or imply DMTZ Assertion Authority, Capability Authorization, evidence sufficiency, causal confirmation or compliance.
+They do not grant or imply DMTZ Assertion Authority, Capability Authorization, evidence sufficiency, causal confirmation, compliance or production permission.
 
 ### Tool/model confidence is non-authoritative
 
-Agent self-reported confidence, reasoning, memory or 'looks correct' statements never satisfy repository tests/review gates.
-
-### Verification ownership
-
-ADF execution should identify who/what may mark knowledge entries verified:
-
-- humans may verify authored/routing entries against canonical sources;
-- deterministic generation/validation processes may record process verification where appropriate;
-- an agent that generated an entry should not be treated as independent human verification merely because it reread its output.
+Agent confidence, reasoning, memory or “looks correct” statements never satisfy repository tests/review gates. A tool rereading its own output is not independent verification.
 
 ## Lifecycle
 
-Knowledge entries should use OKF lifecycle deliberately:
+Knowledge entries use OKF lifecycle deliberately:
 
-- `draft` — not ready to be depended upon for routing;
+- `draft` — not ready for normal routing dependence;
 - `stable` — reviewed/current routing reference;
-- `deprecated` — retained for links/history, not current discovery.
+- `deprecated` — historical/transitional, not preferred current discovery.
 
-`stale_after` is appropriate only when the content truly has an external/time-based review horizon, such as tool compatibility assumptions. It should not be placed on stable architectural routing entries simply to force periodic churn.
+`stale_after` is reserved for genuinely external/time-sensitive knowledge. Canonical architecture is not made stale merely to force periodic churn.
 
-## Vendor/tool lifecycle
-
-Cursor, Claude and Codex capabilities evolve independently. Maintain a compatibility verification record containing:
-
-- tool/product name;
-- relevant native feature(s);
-- version/date last verified;
-- official source/reference;
-- current support state: verified / degraded / unverified;
-- repository fallback when unavailable.
-
-Do not encode transient vendor behavior as a permanent DMTZ architecture decision.
+Provider compatibility/security facts use explicit review horizons and immediate re-verification triggers. Stale vendor assumptions become degraded/unverified rather than rewriting DMTZ semantics.
 
 ## Governance of changes
 
-Changes to the agentic foundation should be reviewed by impact class:
+ADF-H implements G1–G5 impact classes:
 
-- **routing/content maintenance** — update OKF index/links/descriptions;
-- **workflow change** — update portable skill and affected adapters/tests;
-- **tool-adapter change** — update only the specific adapter plus compatibility verification;
-- **shared authority change** — review root `AGENTS.md` and all adapters for consistency;
-- **DMTZ semantic/architecture change** — use existing DMTZ change-control, then refresh agentic routing as a consequence.
+- G1 routing/content maintenance;
+- G2 workflow behavior;
+- G3 tool adapter/compatibility;
+- G4 shared authority/security;
+- G5 DMTZ semantic/architecture change.
 
-Agentic artifacts follow DMTZ; they do not initiate semantic authority changes by themselves.
+A lower class cannot disguise a higher-impact change. Agentic artifacts follow DMTZ; G5 changes use the existing DMTZ change-control path first.
 
-## Retention
+## Memory, personal configuration and retention
 
-Do not build a repository archive of chat transcripts or agent scratchpads by default. Preserve only durable artifacts useful to future development:
+Chat history, auto-memory, user rules, local settings, saved prompts and model preferences remain noncanonical.
 
-- canonical code/docs/tests;
-- reviewed ADRs;
-- implementation traceability;
-- OKF routing/history where useful;
-- workflow definitions;
-- compatibility verification evidence.
+Do not build a repository archive of agent conversations, hidden reasoning or scratchpads by default. Preserve reviewed durable development artifacts/evidence with a clear purpose.
 
-## Deliverables
+## External integrations
 
-- security/trust policy for agentic artifacts;
-- OKF verification/lifecycle conventions;
-- supported-tool compatibility lifecycle policy;
-- rules for handling tool memory/personal configuration;
-- review ownership and change classes;
-- security/adversarial test fixtures for agentic conformance.
+Repository-level MCP servers, plugins, extensions, remote agents or cloud execution integrations are security/dependency changes. Before adoption, review ownership/source, privileges, data/network exposure, credential requirements, retention/telemetry, update path and degraded fallback.
+
+## Implemented deliverables
+
+- [`security_trust_lifecycle_policy.md`](security_trust_lifecycle_policy.md);
+- [`agentic_change_governance.md`](agentic_change_governance.md);
+- [`tool_lifecycle_review.json`](tool_lifecycle_review.json);
+- [`adf_h_security_baseline.md`](adf_h_security_baseline.md);
+- `scripts/agentic/scan_agentic_secrets.py`;
+- `scripts/agentic/validate_adf_h_governance.py`;
+- `fixtures/adf_h_security_scenarios.yaml`;
+- ADF-H checks/negative controls integrated into unified agentic conformance.
+
+The bounded ADF-G progression exception is recorded separately in [`adf_g_progression_exception.md`](adf_g_progression_exception.md). It defers ADF-EX-17 only and cannot weaken ADF-H security acceptance.
 
 ## Acceptance scenarios
 
@@ -109,4 +93,6 @@ ADF-H passes when:
 - stale tool compatibility is visible without invalidating canonical DMTZ docs;
 - agent memory cannot supersede checked-in project state;
 - a tool-specific policy change cannot silently weaken shared security/change-control rules;
-- removing every supported AI tool would still leave the repository understandable and buildable by a human developer.
+- removing every supported AI tool still leaves the repository understandable and operable by a human developer;
+- expired provider security assumptions and fabricated support claims fail closed;
+- the final synchronized branch passes unified repository conformance.
