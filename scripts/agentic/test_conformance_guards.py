@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import argparse, re, shutil, subprocess, sys, tempfile
+import argparse, json, re, shutil, subprocess, sys, tempfile
 from pathlib import Path
 
 
@@ -31,6 +31,18 @@ def stale_status(text: str) -> str:
     )
 
 
+def enable_vendor_auto_expansion(text: str) -> str:
+    data = json.loads(text)
+    data['materialization']['automatic_new_skills'] = True
+    return json.dumps(data, indent=2) + '\n'
+
+
+def add_deferred_model_skill(text: str) -> str:
+    data = json.loads(text)
+    data['selected_skills'].append({'name': 'databricks-model-serving', 'version': '0.4.0'})
+    return json.dumps(data, indent=2) + '\n'
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument('--repo', default='.')
@@ -51,10 +63,12 @@ def main() -> int:
         mutate_and_expect_failure(repo, 'docs/agentic_development_foundation/runtime_compatibility_evidence.json', lambda t: t.replace('"runtime_status": "unverified"', '"runtime_status": "supported"', 1), 'validate_adf_g_compatibility.py', 'fabricated provider runtime support', errors)
         mutate_and_expect_failure(repo, '.claude/CLAUDE.md', lambda t: t + '\ncredential: ghp_ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890\n', 'scan_agentic_secrets.py', 'checked-in high-confidence secret', errors)
         mutate_and_expect_failure(repo, 'docs/agentic_development_foundation/tool_lifecycle_review.json', lambda t: t.replace('"security_reviewed_on": "2026-09-02"', '"security_reviewed_on": "2020-01-01"', 1), 'validate_adf_h_governance.py', 'expired provider security review horizon', errors)
+        mutate_and_expect_failure(repo, 'docs/agentic_development_foundation/databricks_vendor_skills_profile.json', enable_vendor_auto_expansion, 'validate_databricks_agent_skills.py', 'automatic Databricks vendor-skill expansion', errors)
+        mutate_and_expect_failure(repo, 'docs/agentic_development_foundation/databricks_vendor_skills_profile.json', add_deferred_model_skill, 'validate_databricks_agent_skills.py', 'deferred model skill added to initial Databricks set', errors)
 
     for error in errors:
         print(f'ERROR {error}')
-    print(f'Conformance guard tests: {len(errors)} error(s), 10 negative control(s)')
+    print(f'Conformance guard tests: {len(errors)} error(s), 12 negative control(s)')
     return 1 if errors else 0
 
 if __name__ == '__main__':
