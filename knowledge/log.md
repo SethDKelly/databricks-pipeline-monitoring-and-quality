@@ -1,5 +1,15 @@
 # DMTZ Knowledge Bundle Log
 
+## 2026-09-02 — Agentic Development Foundation execution exit accepted
+
+- adjudicated ADF-EX-01–ADF-EX-20 in `docs/agentic_development_foundation/execution_exit_review.md`;
+- accepted ADF-EX-01–16 and ADF-EX-18–20 as PASS;
+- classified ADF-EX-17 as **DEFERRED / WAIVED — BOUNDED VERIFICATION DEBT**, carrying `ADF-G-XT01` forward while Cursor, Claude Code and Codex remain runtime-`unverified`;
+- included the accepted Databricks Agent Skills addendum in the exit evidence and carried `DBX-SKILL-RUN-01` into Implementation 001-A;
+- confirmed autonomous task selection, multi-agent implementation delegation/orchestration, unattended merge/deploy and autonomous architecture reopening remain deferred/not authorized;
+- advanced live implementation routing to **Implementation 001-A NEXT / ELIGIBLE** without auto-starting the group;
+- extended deterministic ADF status drift validation to require the accepted exit artifact before post-exit routing can be declared.
+
 ## 2026-09-02 — Databricks Agent Skills pre-exit integration addendum
 
 - reviewed Databricks first-party Agent Skills release `v0.2.14` / commit `ce0599506bad5dd63dead9ab88c440ebd2d8336c`;

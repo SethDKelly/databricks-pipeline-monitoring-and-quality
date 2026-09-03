@@ -1,5 +1,5 @@
 ---
-description: Route DMTZ agentic/implementation work to live status, portable OKF knowledge, canonical DMTZ Agent Skills/Databricks overlays, reviewed vendor dependencies, conformance, security evidence, and frozen architecture. Use when project status/authority/workflow/reference/platform location is unclear.
+description: Route DMTZ implementation work to live status, shared authority, portable knowledge, canonical DMTZ Agent Skills/Databricks overlays, reviewed vendor dependencies, conformance, security evidence, and frozen architecture. Use when project status/authority/workflow/reference/platform location is unclear.
 globs:
 alwaysApply: false
 ---
@@ -8,25 +8,28 @@ alwaysApply: false
 
 Do not infer current status from historical phase documents, Git history, model memory, vendor skills, or tool-specific state.
 
-**ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; EXECUTION EXIT REVIEW NEXT.**
+**ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-The Databricks Agent Skills Integration Addendum is **COMPLETE / ACCEPTED**. The foundation execution exit review is the next pre-implementation gate.
+The Agentic Development Foundation execution exit and Databricks Agent Skills Integration Addendum are complete/accepted. **Implementation 001-A is the next eligible group.**
 
 Use the shortest relevant path:
 
-- `docs/agentic_development_foundation/README.md` — live ADF authority;
-- `docs/agentic_development_foundation/execution_exit_criteria.md` — ADF-EX-01–ADF-EX-20 exit gates;
-- `docs/agentic_development_foundation/databricks_agent_skills_addendum.md` / `databricks_vendor_skills_profile.json` / addendum execution review — accepted Databricks dependency boundary;
+- `docs/implementation/README.md` — live implementation-program authority;
+- `docs/implementation/001_executable_foundations_walking_skeleton/README.md` — Implementation 001 package/group sequence;
+- `docs/agentic_development_foundation/execution_exit_review.md` — accepted ADF exit and residual debt;
+- `docs/agentic_development_foundation/README.md` — completed ADF/addendum authority;
 - root `AGENTS.md` — shared repository constitution;
 - `docs/agentic_development_foundation/authority_scope_policy.md` — A1–A4 authority;
 - `.agents/skills/<name>/SKILL.md` — canonical DMTZ workflows/platform overlays;
 - explicit group/path/stable ID directly when already known;
 - otherwise `knowledge/index.md` → one relevant route → canonical resource;
 - `scripts/agentic/resolve_stable_id.py` — exact stable-ID discipline;
-- `docs/implementation/README.md` / `agent_reference_index.md` — implementation routing;
+- `docs/implementation/agent_reference_index.md` — compact secondary routing bridge;
 - frozen Phase 010 Group 09 architecture handoff for implementation realization.
 
-ADF-A through ADF-H plus the Databricks addendum are complete/accepted for the execution exit review. ADF-EX-17 remains deferred; Cursor/Claude/Codex runtime support remains unverified. Implementation 001 remains blocked until the exit review passes.
+ADF-EX-17 is **DEFERRED / WAIVED — BOUNDED VERIFICATION DEBT**. Cursor, Claude Code and Codex remain runtime-`unverified` until actual `ADF-G-XT01` evidence exists. This does not weaken repository acceptance criteria or ordinary IDE/CLI development.
+
+Beginning 001-A still requires explicit human selection; the exit review does not auto-start it.
 
 ## Human-directed boundaries
 
