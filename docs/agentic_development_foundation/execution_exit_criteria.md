@@ -1,8 +1,8 @@
 # Agentic Development Foundation — Execution Exit Criteria
 
-**Status:** PLANNED — evaluate after ADF-A–ADF-H implementation
+**Status:** COMPLETE / ADJUDICATED — see `execution_exit_review.md`
 
-The design exit review is complete. This file defines the later **implementation exit gate** that must pass before Implementation 001-A becomes the normal next work.
+The design exit review is complete. This file defines the **implementation exit gate** that was adjudicated in `execution_exit_review.md` before Implementation 001-A became eligible.
 
 ## Required gates
 
@@ -49,11 +49,11 @@ The design exit review is complete. This file defines the later **implementation
 
 ## Exit evidence
 
-The execution exit review should include:
+The execution exit review includes:
 
 - files/artifacts created;
 - validation commands/checks run;
-- representative cross-tool test results;
+- representative cross-tool test state;
 - context-size measurements for persistent instruction surfaces;
 - known degraded or unverified tool features;
 - unresolved risks/debt;
@@ -64,3 +64,14 @@ The execution exit review should include:
 Implementation 001-A becomes the normal next work only when all mandatory ADF-EX gates pass or a specific gate is explicitly waived with a bounded reason that does not alter DMTZ semantic/security authority.
 
 A tool-specific convenience gap may be accepted as degraded. A shared-authority, canonical-reference, security or human-directed-boundary failure may not be silently waived.
+
+## Adjudicated disposition
+
+See [`execution_exit_review.md`](execution_exit_review.md) for the evidence-backed decision:
+
+- ADF-EX-01–ADF-EX-16 — **PASS**;
+- ADF-EX-17 — **DEFERRED / WAIVED — BOUNDED VERIFICATION DEBT**; `ADF-G-XT01` carried forward;
+- ADF-EX-18–ADF-EX-20 — **PASS**;
+- Databricks Agent Skills Integration Addendum — **ACCEPTED**;
+- `DBX-SKILL-RUN-01` — **OPEN / IMPLEMENTATION 001-A**;
+- autonomous development — **DEFERRED / NOT AUTHORIZED**.
