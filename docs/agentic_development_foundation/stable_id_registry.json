@@ -3,6 +3,7 @@
   "status": "accepted_frozen_ranges",
   "search_root": "docs",
   "id_width": 3,
+  "ownership_inventory": "docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json",
   "families": {
     "SYN": {"min": 1, "max": 35},
     "REF": {"min": 1, "max": 30},
@@ -13,5 +14,5 @@
     "INTG": {"min": 1, "max": 270},
     "ARCH": {"min": 1, "max": 500}
   },
-  "resolution_rule": "Exact occurrences are retrieval candidates. Mechanical definition_candidate classification does not establish canonicality; live repository authority and the owning accepted document do."
+  "resolution_rule": "Stable-ID meaning is frozen while owner paths migrate. During CKR-A through CKR-I, exact occurrences remain retrieval candidates and the CKR ownership inventory determines whether current authority is legacy or canonicalized. CKR-J will add deterministic canonical owner/anchor resolution without changing accepted ID meaning."
 }
