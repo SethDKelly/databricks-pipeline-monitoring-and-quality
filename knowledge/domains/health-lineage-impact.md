@@ -1,13 +1,13 @@
 ---
 type: "Domain Routing Reference"
 title: "Runtime health, quality, Lineage and Impact"
-description: "Route runtime provenance, health/quality, typed Lineage, encounter/exposure and Impact evidence work."
-resource: "../../docs/concepts/phase_010/05_runtime_provenance_health_lineage_impact_evidence_architecture/README.md"
+description: "Route current HLTH health/quality semantics to canonical contracts while preserving later OPS/INTG/ARCH ownership."
+resource: "../../docs/canonical/contracts/health-quality-timing/README.md"
 tags: ["dmtz", "health", "quality", "lineage", "impact"]
 status: "stable"
 ---
 # Routing
 
-Start with [Phase 010 Group 05](../../docs/concepts/phase_010/05_runtime_provenance_health_lineage_impact_evidence_architecture/README.md). Search `HLTH-###`, `OPS-###`, `INTG-###`, and `ARCH-191`–`ARCH-274` identifiers as needed.
+For HLTH-001–HLTH-066 current semantics, start with the canonical [health/quality/timing index](../../docs/canonical/contracts/health-quality-timing/README.md). Lineage/change/Impact/control refinements in OPS-001–OPS-123, integration/source behavior in INTG, and ARCH-191–ARCH-274 remain with their current owners via the ownership inventory until later CKR cutovers.
 
-Critical boundary: execution success is not health; Lineage is not encounter, exposure, Impact or cause.
+Critical boundaries: execution success is not health; Lineage does not propagate metric or health status; reconciliation/localization is not cause; health suitability is not Gate decision or enforcement. OKF is routing only.

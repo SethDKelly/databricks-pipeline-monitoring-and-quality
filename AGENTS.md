@@ -4,25 +4,25 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-D; NEXT CKR-E; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-E; NEXT CKR-F; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-D is complete/accepted. CKR-E is next/ready but unstarted until explicitly selected. Product implementation remains blocked until CKR-K.
+CKR-E is complete/accepted. CKR-F is next/ready but unstarted until explicitly selected. Product implementation remains blocked until CKR-K.
 
 Current semantic ownership is selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`: `canonicalized` → inventoried `docs/canonical/` owner; `legacy_authoritative` / `candidate_ready` → inventoried legacy owner; `history_only` → provenance/rationale only.
 
-Foundation/glossary, all 24 concepts, SYN-001–035, the authority vocabulary, REF-001–030 and AUTH-001–053 are canonicalized. Phase 001–005 sources are provenance for migrated meanings. HLTH/OPS/EXPL/INTG/ARCH remain later-group legacy authority.
+Foundation/glossary, all 24 concepts, SYN-001–035, authority vocabulary, REF-001–030, AUTH-001–053 and HLTH-001–066 are canonicalized. Phase 001–006 sources are provenance for migrated meanings. OPS/EXPL/INTG/ARCH remain later-group legacy authority.
 
 Authority order: current semantic owner → root `AGENTS.md` → live CKR/implementation status → accepted ADF scope/security mechanics → DMTZ workflows/overlays → reviewed vendor operational guidance → tool/personal memory.
 
 ## Human-directed boundary
 
-Follow `docs/agentic_development_foundation/authority_scope_policy.md`: A1 review; A2 bounded change plus required validation/status/traceability; A3 external/destructive/scope-expanding requires explicit authorization; A4 semantic/architecture change requires explicit change control. Completing CKR-D does not authorize CKR-E.
+Follow `docs/agentic_development_foundation/authority_scope_policy.md`: A1 review; A2 bounded change plus required validation/status/traceability; A3 external/destructive/scope-expanding requires explicit authorization; A4 semantic/architecture change requires explicit change control. Completing CKR-E does not authorize CKR-F.
 
 ## Context and semantic conservation
 
 Use `human task → live CKR authority → ownership inventory when unclear → current owner → exact IDs/tests as needed`. `knowledge/index.md` is optional routing only; search order, recency, path presence, vendor guidance, tool memory or synchronization order never establish authority.
 
-Preserve Observation ≠ Assessment; Expectation ≠ Baseline; missing evidence ≠ negative truth; applicability ≠ coverage ≠ sufficiency; event/effective time ≠ source availability ≠ framework knowledge; Lineage/reachability ≠ exposure ≠ Impact ≠ cause; causal `confirmed` requires REF-017 + AUTH-034; Assertion Authority ≠ Capability Authorization ≠ Responsibility Assignment; authentication ≠ authorization; governed meaning ≠ normative Expectation ≠ realized state; permission/approval ≠ issuance ≠ enforcement ≠ outcome; Gate readiness ≠ decision ≠ enforcement ≠ execution; Gate ≠ Safeguard; Safeguard enforcement ≠ prevented exposure ≠ release/recovery; current disclosure ≠ historical authorization/communication.
+Preserve Observation ≠ Assessment; Expectation ≠ Baseline; missing evidence ≠ negative truth; applicability ≠ coverage ≠ sufficiency; event/effective time ≠ framework knowledge; Lineage/reachability ≠ exposure ≠ Impact ≠ cause; Assertion Authority ≠ Capability Authorization; permission/approval ≠ enforcement/outcome; metric definition ≠ Observation ≠ Assessment; semantic applicability ≠ profile selection ≠ computability ≠ availability ≠ outcome; governed schema meaning ≠ structural Expectation ≠ realized state ≠ compatibility; Baseline typicality ≠ normative acceptability; warning ≠ violation ≠ severity ≠ waiver; Lineage ≠ metric/status propagation; component health ≠ composite health; evaluation time ≠ evidence freshness; eligible ≠ suitable ≠ ready ≠ Gate decision ≠ enforcement ≠ execution.
 
 Accepted ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500.
 

@@ -14,6 +14,8 @@ AUTH_DOCS=(
 'docs/canonical/authority/high-consequence-authority.md','docs/canonical/authority/disclosure-governance.md')
 VOCAB='docs/canonical/authority/vocabulary.md'
 REF_RE=re.compile(r'^### (REF-\d{3}) —',re.M); AUTH_RE=re.compile(r'^### (AUTH-\d{3}) —',re.M)
+STATE_RE=re.compile(r'^- \*\*CKR-([A-K]) — .*?: (.+?)\.\*\*$',re.M)
+LATER={'HLTH':'E','OPS':'F','EXPL':'G','INTG':'H','ARCH':'I'}
 
 def marker(text):
     if '**Authority:** CANONICAL CURRENT AUTHORITY' in text:return 'canonical'
@@ -59,12 +61,16 @@ def main():
         mt=matrix.read_text()
         for phrase in ('applicability ≠ coverage ≠ sufficiency','event/effective ≠ source availability ≠ framework knowledge','confirmation requires REF-017 plus AUTH-034','readiness ≠ Gate decision ≠ enforcement ≠ execution','authentication ≠ authorization ≠ Assertion Authority','safe abstraction cannot strengthen truth'):
             if phrase not in mt: errors.append(f'CKR-D matrix missing boundary: {phrase}')
-    # Previous cutovers stay canonical; later families stay untouched.
-    if inv['stable_families']['SYN']['migration_state']!='canonicalized': errors.append('SYN must remain canonicalized during CKR-D')
-    for fam in ('HLTH','OPS','EXPL','INTG','ARCH'):
-        if inv['stable_families'][fam]['migration_state']!='legacy_authoritative': errors.append(f'{fam} ownership moved early during CKR-D')
+    if inv['stable_families']['SYN']['migration_state']!='canonicalized': errors.append('SYN must remain canonicalized after CKR-D')
     concepts=[r for r in inv['records'] if r.get('kind')=='concept']
-    if len(concepts)!=24 or any(r['migration_state']!='canonicalized' for r in concepts): errors.append('all 24 concepts must remain canonicalized during CKR-D')
+    if len(concepts)!=24 or any(r['migration_state']!='canonicalized' for r in concepts): errors.append('all 24 concepts must remain canonicalized after CKR-D')
+    states_by_group={k:v for k,v in STATE_RE.findall((repo/'docs/canonical_knowledge_retrofit/README.md').read_text(encoding='utf-8'))}
+    for fam,letter in LATER.items():
+        item=inv['stable_families'][fam]
+        if item.get('migration_group')!=f'CKR-{letter}': errors.append(f'{fam}: migration ownership moved away from CKR-{letter}')
+        if item.get('migration_state') not in {'legacy_authoritative','candidate_ready','canonicalized'}: errors.append(f'{fam}: invalid migration state')
+        phase_state=states_by_group.get(letter,'')
+        if phase_state in {'PLANNED','NEXT / READY'} and item.get('migration_state')!='legacy_authoritative': errors.append(f'{fam}: moved before CKR-{letter} entered execution')
     for e in errors: print('ERROR',e)
     print(f'CKR-D evidence/authority validation: {len(errors)} error(s), REF={len(ref_ids)}/30, AUTH={len(auth_ids)}/53, state={state}')
     return 1 if errors else 0
