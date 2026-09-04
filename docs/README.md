@@ -1,30 +1,28 @@
 # Documentation Index
 
-The `docs/` tree is the repository system of record for DMTZ product/design semantics, documentation authority, design provenance and implementation planning.
+The `docs/` tree is the repository system of record for DMTZ semantics, documentation authority, design provenance and implementation planning.
 
-This file remains the **sole living authority for completed design-phase progression**. It no longer asks readers to treat chronological phase order as the normal way to discover current meaning.
+This file is the **sole living authority for completed design-phase progression**. Current semantic lookup is ownership-oriented rather than chronology-oriented.
 
 ## Documentation authority architecture
 
-DMTZ is performing the **Canonical Knowledge & Documentation Authority Retrofit (CKR)** before product implementation begins.
+The **Canonical Knowledge & Documentation Authority Retrofit (CKR)** is active before product implementation.
 
 Current semantic ownership is resolved through [`canonical_knowledge_retrofit/canonical_ownership_inventory.json`](canonical_knowledge_retrofit/canonical_ownership_inventory.json):
 
-- `legacy_authoritative` / `candidate_ready` → the inventoried legacy owner remains current authority;
-- `canonicalized` → the inventoried target under [`canonical/`](canonical/) is current authority;
-- `history_only` → provenance/rationale, not current semantic ownership.
+- `legacy_authoritative` / `candidate_ready` → inventoried legacy owner remains current;
+- `canonicalized` → inventoried target under [`canonical/`](canonical/) is current;
+- `history_only` → provenance/rationale only.
 
-The governing rules are:
+Governing rules:
 
 - [`canonical_knowledge_retrofit/authority_model.md`](canonical_knowledge_retrofit/authority_model.md)
 - [`canonical_knowledge_retrofit/migration_contract.md`](canonical_knowledge_retrofit/migration_contract.md)
 - [`design_history/README.md`](design_history/README.md)
 
-The target invariant is simple:
+> **A current semantic question should resolve to one current owner. Design chronology explains why that rule exists; it should not be required to reconstruct current meaning after canonicalization.**
 
-> **A current semantic question should resolve to one current owner. Design chronology explains why that rule exists; it should not be required to reconstruct what the rule means after canonicalization.**
-
-OKF/`knowledge/` remains routing only and does not decide semantic authority.
+OKF/`knowledge/` remains routing only.
 
 ## Current state
 
@@ -38,116 +36,82 @@ OKF/`knowledge/` remains routing only and does not decide semantic authority.
 - **Phase 009 — Integration Contracts, Source Authority, and Evidence Availability: COMPLETE.** Groups 01–08 accepted; INTG-001–INTG-270 final; IC01-01–IC01-40, GOV02-01–GOV02-48, RTE03-01–RTE03-54, HME04-01–HME04-56, LIE05-01–LIE05-60, ICE06-01–ICE06-72, EBR07-01–EBR07-64 and XRC08-01–XRC08-64 pass; Phase 009 exit review accepted; no INTG-271 required.
 - **Phase 010 — Technical Architecture: COMPLETE.** Groups 01–09 accepted; ARCH-001–ARCH-500 final; AFE01-01–AFE01-60, EPT02-01–EPT02-72, IAD03-01–IAD03-84, AHI04-01–AHI04-96, RHI05-01–RHI05-108, IRE06-01–IRE06-120, ACS07-01–ACS07-120, SSO08-01–SSO08-120 and ACV09-01–ACV09-120 pass; D-1263–D-1700 accepted; Phase 010 exit review accepted; no ARCH-501 required. **The ADF exit is accepted; CKR is the active pre-implementation documentation-authority retrofit, and Implementation 001-A is blocked until CKR-K exits.**
 
-The current catalog contains **24 accepted concepts**: the original 20 plus **Propagation Safeguard**, **Capability Authorization**, **Execution Gate**, and **Assertion Authority**.
+The catalog contains **24 accepted concepts**.
+
+## CKR state
+
+- **CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory: COMPLETE / ACCEPTED.**
+- **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: NEXT / READY.**
+- Implementation 001-A remains blocked until CKR-K.
+
+CKR-A evidence: [`canonical_knowledge_retrofit/ckr_a_execution_review.md`](canonical_knowledge_retrofit/ckr_a_execution_review.md).
 
 ## Current semantic lookup
 
-For routine questions about what DMTZ means now:
+1. Open a known current owner directly.
+2. Otherwise consult the ownership inventory.
+3. `canonicalized` → use `docs/canonical/` owner.
+4. `legacy_authoritative` / `candidate_ready` → use inventoried legacy owner.
+5. Use stable IDs to narrow exact rules; search order is not authority.
+6. Use design history when provenance/rationale/history is actually requested.
 
-1. If an explicit current owner is already known, open it directly.
-2. Otherwise consult [`canonical_knowledge_retrofit/canonical_ownership_inventory.json`](canonical_knowledge_retrofit/canonical_ownership_inventory.json).
-3. If the record is `canonicalized`, use its `docs/canonical/` owner.
-4. If the record is `legacy_authoritative` or `candidate_ready`, use its inventoried legacy owner until cutover.
-5. Use stable IDs to narrow the exact rule; search order is not authority.
-6. Use design history only when provenance/rationale/history is actually part of the question.
-
-Examples after the relevant cutovers:
+After relevant cutovers:
 
 - `What is Lineage?` → `docs/canonical/concepts/lineage.md`.
-- `What does OPS-005 require?` → its canonical contract owner/anchor.
-- `Why does Lineage not imply Impact?` → canonical rule first, then Phase 002/007 decisions/scenarios for provenance if needed.
+- `What does OPS-005 require?` → canonical contract owner/anchor.
+- `Why does Lineage not imply Impact?` → canonical rule first, then design history if rationale is needed.
 
-CKR-A creates only the authority mechanics and structural canonical namespace. Substantive canonicalization begins in CKR-B.
+CKR-A established authority mechanics and the structural canonical namespace with **0 substantive records prematurely canonicalized**. CKR-B is the first eligible substantive migration group.
 
 ## Canonical knowledge target
 
-[`canonical/README.md`](canonical/README.md) defines the future current-truth namespace:
+[`canonical/README.md`](canonical/README.md) defines target families:
 
-- `canonical/concepts/`
-- `canonical/contracts/`
-- `canonical/policies/`
-- `canonical/invariants/`
-- `canonical/authority/`
-- `canonical/experience/`
-- `canonical/architecture/`
-- `canonical/reference/`
+- concepts;
+- contracts;
+- policies;
+- invariants;
+- authority;
+- experience;
+- architecture;
+- reference.
 
-A file under `docs/canonical/` is not automatically authoritative; the CKR inventory/cutover state controls authority.
+A file under `docs/canonical/` is authoritative only when its ownership record has atomically cut over.
 
-## Design history / provenance
+## Design history
 
-The chronological design record remains valuable and is retained in place. Use these indexes when the task is historical, rationale-oriented or change-control oriented:
+The chronological corpus remains preserved in place. Use it for provenance/rationale/change review:
 
-- [`concepts/phase_002/README.md`](concepts/phase_002/README.md) — concept specifications and later addenda origins;
-- [`concepts/phase_003/README.md`](concepts/phase_003/README.md) — concept synchronization;
-- [`concepts/phase_004/README.md`](concepts/phase_004/README.md) — evidence/time/causality refinement;
-- [`concepts/phase_005/README.md`](concepts/phase_005/README.md) — governance/authority refinement;
-- [`concepts/phase_006/README.md`](concepts/phase_006/README.md) — health/quality refinement;
-- [`concepts/phase_007/README.md`](concepts/phase_007/README.md) — Lineage/change/investigation/Impact/control refinement;
-- [`concepts/phase_008/README.md`](concepts/phase_008/README.md) — questioning/Explanation refinement;
-- [`concepts/phase_009/README.md`](concepts/phase_009/README.md) — integration/source/evidence refinement;
-- [`concepts/phase_010/README.md`](concepts/phase_010/README.md) — technical architecture design history;
-- [`decisions/README.md`](decisions/README.md) — durable decision/rationale history.
+- `concepts/phase_002/` through `concepts/phase_010/`;
+- [`decisions/README.md`](decisions/README.md);
+- scenario reviews, exits, handoffs and gap registers.
 
-Do not rewrite these records merely to make them read like today's consolidated truth. CKR progressively changes their authority role while preserving provenance.
+Do not rewrite historical records to make the final design appear contemporaneous with earlier phases.
 
-## Foundation / reference sources during migration
+## Foundation / reference during migration
 
-Legacy current owners for unmigrated foundation/reference records are explicitly listed in the ownership inventory. Their main indexes remain:
+Unmigrated current owners remain listed in the ownership inventory. CKR-B/D will progressively promote their current meaning from `foundation/` and `reference/` into canonical knowledge while leaving historical-only material as provenance.
 
-- [`foundation/README.md`](foundation/README.md)
-- [`reference/glossary.md`](reference/glossary.md)
-- [`reference/authority_vocabulary.md`](reference/authority_vocabulary.md)
+## Agentic foundation / implementation
 
-CKR-B/D will promote their applicable current meaning into canonical knowledge and leave historical-only material as provenance.
-
-## Agentic foundation and CKR
-
-- [`agentic_development_foundation/README.md`](agentic_development_foundation/README.md) — completed ADF/addendum authority;
-- [`agentic_development_foundation/execution_exit_review.md`](agentic_development_foundation/execution_exit_review.md) — accepted ADF execution exit;
-- [`canonical_knowledge_retrofit/README.md`](canonical_knowledge_retrofit/README.md) — active CKR progression;
-- [`canonical_knowledge_retrofit/ckr_a_execution_review.md`](canonical_knowledge_retrofit/ckr_a_execution_review.md) — CKR-A evidence once complete.
+- [`agentic_development_foundation/execution_exit_review.md`](agentic_development_foundation/execution_exit_review.md) — accepted ADF exit;
+- [`canonical_knowledge_retrofit/README.md`](canonical_knowledge_retrofit/README.md) — live CKR progression;
+- [`implementation/README.md`](implementation/README.md) — live implementation block;
+- [`implementation/001_executable_foundations_walking_skeleton/README.md`](implementation/001_executable_foundations_walking_skeleton/README.md) — first implementation package after CKR exit.
 
 ADF-EX-17 remains bounded verification debt; CKR does not reopen or waive it.
 
-## Implementation realization
-
-Implementation-program progression is separate from design-phase progression:
-
-- [`implementation/README.md`](implementation/README.md) — live implementation status;
-- [`implementation/001_executable_foundations_walking_skeleton/README.md`](implementation/001_executable_foundations_walking_skeleton/README.md) — first implementation package, currently blocked on CKR-K;
-- [`implementation/validation_strategy.md`](implementation/validation_strategy.md) — executable validation strategy;
-- [`implementation/traceability_and_change_control.md`](implementation/traceability_and_change_control.md) — design-to-code traceability/change control.
-
-Implementation should begin only after CKR-K establishes deterministic canonical current-truth references for code/test traceability.
-
 ## Documentation authority discipline
 
-- Design-phase completion lines are maintained only in `## Current state` above.
-- `docs/phase_status.md` is generated from those phase lines by `scripts/check_docs_consistency.py --render` and must match exactly.
-- CKR progression is maintained in `canonical_knowledge_retrofit/README.md` and mirrored in operational routing surfaces.
-- Implementation progression is maintained in `implementation/README.md`.
-- ADF completion/residual status is maintained in `agentic_development_foundation/README.md` / exit review.
-- `canonical_ownership_inventory.json` is the machine-readable current-owner/cutover ledger during CKR.
-- Historical files may preserve status and wording as of their own time.
-- Living guidance must not create a second current owner for a semantic record.
+- Design-phase completion lines live only in `## Current state` above.
+- `docs/phase_status.md` is generated from those lines and must match.
+- CKR progression lives in `canonical_knowledge_retrofit/README.md` and operational mirrors.
+- Implementation progression lives in `implementation/README.md`.
+- `canonical_ownership_inventory.json` is the machine-readable owner/cutover ledger during CKR.
+- Living guidance must not create a second current owner.
 
-## Cross-cutting semantic conservation
+## Semantic conservation
 
-CKR must preserve accepted distinctions, including:
+CKR must preserve accepted distinctions including concepts/refinements ≠ architecture ≠ implementation; missing evidence ≠ negative truth; Baseline ≠ Expectation; Observation ≠ Assessment; Lineage/reachability ≠ encounter/exposure/Impact/causality; Investigation ≠ causal confirmation; Assertion Authority ≠ Capability Authorization ≠ evidence sufficiency ≠ enforcement; current ≠ historical/as-known state; and agent/model/vendor output ≠ canonical truth or authorization.
 
-- concepts/refinements ≠ architecture ≠ implementation;
-- evidence sufficiency is conclusion-relative; missing/restricted/unavailable evidence ≠ negative truth;
-- Baseline ≠ Expectation;
-- Observation ≠ Assessment;
-- Lineage reachability ≠ encounter/exposure/Impact/causality;
-- Investigation/lead/localization ≠ causal confirmation;
-- Assertion Authority ≠ Capability Authorization ≠ evidence sufficiency ≠ enforcement;
-- current state ≠ historical/as-known state;
-- source availability ≠ semantic/assertion authority;
-- derived graph/search/vector/cache/model/UI state ≠ canonical truth;
-- agent knowledge/skills/tool memory ≠ canonical truth or authority;
-- Gate configuration/readiness/decision/enforcement/execution remain distinct;
-- Safeguard configuration/enforcement/prevention/release/recovery remain distinct.
-
-If canonicalization exposes a genuine semantic contradiction, use explicit change control. Do not resolve it as a documentation cleanup preference.
+Genuine semantic contradictions require explicit change control, not documentation-cleanup preference.
