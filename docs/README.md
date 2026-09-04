@@ -30,7 +30,8 @@ The catalog contains **24 accepted concepts**.
 
 - **CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory: COMPLETE / ACCEPTED.**
 - **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: COMPLETE / ACCEPTED.**
-- **CKR-C — Concept Catalog: IN EXECUTION / CUTOVER COMPLETE / CLOSURE VALIDATION PENDING.**
+- **CKR-C — Concept Catalog: COMPLETE / ACCEPTED.**
+- **CKR-D — Evidence, Time, Authority & Governance: NEXT / READY.**
 - Implementation 001-A remains blocked until CKR-K.
 
 Evidence: [`canonical_knowledge_retrofit/ckr_a_execution_review.md`](canonical_knowledge_retrofit/ckr_a_execution_review.md), [`canonical_knowledge_retrofit/ckr_b_execution_review.md`](canonical_knowledge_retrofit/ckr_b_execution_review.md), and [`canonical_knowledge_retrofit/ckr_c_execution_review.md`](canonical_knowledge_retrofit/ckr_c_execution_review.md).
@@ -49,7 +50,7 @@ Current migrated lookup:
 - SYN-001–SYN-035 → [`canonical/contracts/synchronization/`](canonical/contracts/synchronization/);
 - Phase 002/003 → provenance/design history for migrated concept/SYN meaning.
 
-REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain with their inventory-selected legacy owners until later CKR groups.
+`reference.authority_vocabulary` and REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain with their inventory-selected legacy owners until later CKR groups.
 
 ## Documentation authority discipline
 
