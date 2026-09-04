@@ -4,13 +4,13 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-B; IN EXECUTION CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-C; NEXT CKR-D; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-C has completed its 24-concept + SYN-001–SYN-035 atomic authority cutover and awaits closure validation. Product implementation remains blocked until CKR-K.
+CKR-C is complete/accepted. Product implementation remains blocked until CKR-K. CKR-D is next/ready but unstarted until explicitly selected by the human.
 
 Current semantic ownership is selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`: `canonicalized` → inventoried `docs/canonical/` owner; `legacy_authoritative` / `candidate_ready` → inventoried legacy owner; `history_only` → provenance/rationale only.
 
-The 24 accepted concepts now resolve to `docs/canonical/concepts/`; SYN-001–SYN-035 resolve to `docs/canonical/contracts/synchronization/`. Phase 002/003 are provenance for those migrated meanings. REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain later-group legacy authority.
+The 24 accepted concepts resolve to `docs/canonical/concepts/`; SYN-001–SYN-035 resolve to `docs/canonical/contracts/synchronization/`. Phase 002/003 are provenance for those migrated meanings. `reference.authority_vocabulary` and REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain later-group legacy authority.
 
 Authority order: current semantic owner → root `AGENTS.md` → live CKR/implementation status → accepted ADF scope/security mechanics → DMTZ workflows/overlays → reviewed vendor operational guidance → tool/personal memory.
 
@@ -26,7 +26,7 @@ Use `human task → live CKR authority → ownership inventory when unclear → 
 
 Preserve Observation ≠ Assessment; Expectation ≠ Baseline; Change Intent ≠ Deployment ≠ Change; execution success ≠ output existence ≠ freshness/data quality; missing evidence ≠ negative truth; Lineage/reachability ≠ exposure ≠ Impact ≠ cause; Investigation closure ≠ causal confirmation; authentication ≠ Capability Authorization ≠ Assertion Authority; Capability Authorization ≠ evidence sufficiency ≠ enforcement; Gate readiness ≠ decision ≠ delivery ≠ enforcement ≠ execution; Gate ≠ Safeguard; Safeguard enforcement ≠ prevented exposure ≠ release/recovery; current ≠ historical/as-known.
 
-Accepted stable ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500. Only SYN has cut over in CKR-C.
+Accepted stable ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500. SYN is canonicalized; later families retain their assigned owners until their CKR groups.
 
 ## Residuals / conformance
 
