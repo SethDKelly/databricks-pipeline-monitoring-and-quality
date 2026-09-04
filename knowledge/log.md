@@ -1,5 +1,18 @@
 # DMTZ Knowledge Bundle Log
 
+## 2026-09-03 — CKR-A canonical knowledge authority baseline
+
+- started the Canonical Knowledge & Documentation Authority Retrofit before product implementation;
+- separated current semantic ownership from preserved chronological design history without deleting or bulk-moving phase records;
+- established `docs/canonical/` as the structural target namespace while preventing path presence from implying authority;
+- defined `legacy_authoritative`, `candidate_ready`, `canonicalized`, and `history_only` migration states plus atomic cutover/no-dual-authority rules;
+- inventoried all 24 accepted concepts with exact current and target owners and all SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH families with frozen ranges/current roots/target domains;
+- inventoried the eight Phase 010 ARCH segments plus the accepted reference architecture;
+- added deterministic canonical-knowledge and CKR-status validation, CKR scenarios, and authority-specific negative controls;
+- changed living documentation routing from chronology-first to current-owner-first while preserving phase records as design provenance;
+- inserted CKR as a post-ADF pre-implementation dependency and blocked Implementation 001-A until CKR-K;
+- preserved ADF-EX-17 / `ADF-G-XT01` and future `DBX-SKILL-RUN-01` obligations unchanged.
+
 ## 2026-09-02 — Agentic Development Foundation execution exit accepted
 
 - adjudicated ADF-EX-01–ADF-EX-20 in `docs/agentic_development_foundation/execution_exit_review.md`;
