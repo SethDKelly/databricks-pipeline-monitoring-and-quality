@@ -61,6 +61,17 @@ Cutover head `bff20fb23003e832102b3482a708df3e31ef9c20` passed:
 
 The cutover moved EXPL atomically from `candidate_ready` to `canonicalized`, promoted all eight resources to `CANONICAL CURRENT AUTHORITY`, reclassified Phase 008 as provenance, and routed reasoning/Explanation to canonical experience without absorbing later INTG/ARCH ownership.
 
+### Closure/status synchronization gate
+
+Closure head `238f95165543ffdfec0231587855164a4dced13d` advanced only live CKR progression/routing to CKR-G complete / CKR-H next, finalized the CKR-G acceptance record, and retained Implementation 001-A blocked until CKR-K.
+
+It passed:
+
+- Agentic conformance **#144 — SUCCESS** (run ID `33875062839`);
+- Documentation consistency **#262 — SUCCESS** (run ID `33875062849`).
+
+This verifies that CKR-G status, EXPL ownership, canonical routing, fixture registration, context budgets and authority guards remain mutually consistent after closure.
+
 ## Acceptance criteria
 
 - exact CKR-G scope EXPL-001–EXPL-160 — **PASS**;
@@ -74,10 +85,10 @@ The cutover moved EXPL atomically from `candidate_ready` to `canonicalized`, pro
 - safe abstraction cannot strengthen truth — **PASS**;
 - retained communication/reconstruction/current-retrospective separation preserved — **PASS**;
 - no implementation/architecture selection — **PASS**;
-- candidate and cutover conformance/documentation gates — **PASS**.
+- candidate, cutover and closure conformance/documentation gates — **PASS**.
 
 ## Exit decision
 
 **CKR-G is accepted and complete. CKR-H — Integration, Source Authority & Evidence Availability is next/ready but remains unstarted until explicitly selected by the human.**
 
-Implementation 001-A remains blocked until CKR-K. The closure/status synchronization head must pass the normal repository gates before PR merge; a failure there reopens only the affected closure defect unless it demonstrates a semantic regression.
+Implementation 001-A remains blocked until CKR-K. PR merge is permitted only from an exact head that passes the repository's normal Agentic conformance and Documentation consistency gates.
