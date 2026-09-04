@@ -1,76 +1,65 @@
 ---
-description: Route DMTZ implementation work to live status, shared authority, portable knowledge, canonical DMTZ Agent Skills/Databricks overlays, reviewed vendor dependencies, conformance, security evidence, and frozen architecture. Use when project status/authority/workflow/reference/platform location is unclear.
+description: Route DMTZ work to live CKR/implementation status, current semantic ownership, portable knowledge, DMTZ skills/Databricks overlays, conformance and frozen contracts. Use when project status/authority/workflow/reference location is unclear.
 globs:
 alwaysApply: false
 ---
 
 # Agentic / implementation routing
 
-Do not infer current status from historical phase documents, Git history, model memory, vendor skills, or tool-specific state.
+Do not infer current authority from historical phase order, Git history, model memory, vendor skills or first-search-hit position.
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-The Agentic Development Foundation execution exit and Databricks Agent Skills Integration Addendum are complete/accepted. **Implementation 001-A is the next eligible group.**
+**CKR status mirror: IN EXECUTION CKR-A; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-Use the shortest relevant path:
+The ADF exit remains accepted. The **Canonical Knowledge & Documentation Authority Retrofit (CKR)** is the active pre-implementation dependency. Product implementation is blocked until CKR-K.
 
-- `docs/implementation/README.md` — live implementation-program authority;
-- `docs/implementation/001_executable_foundations_walking_skeleton/README.md` — Implementation 001 package/group sequence;
-- `docs/agentic_development_foundation/execution_exit_review.md` — accepted ADF exit and residual debt;
-- `docs/agentic_development_foundation/README.md` — completed ADF/addendum authority;
-- root `AGENTS.md` — shared repository constitution;
-- `docs/agentic_development_foundation/authority_scope_policy.md` — A1–A4 authority;
-- `.agents/skills/<name>/SKILL.md` — canonical DMTZ workflows/platform overlays;
-- explicit group/path/stable ID directly when already known;
-- otherwise `knowledge/index.md` → one relevant route → canonical resource;
-- `scripts/agentic/resolve_stable_id.py` — exact stable-ID discipline;
-- `docs/implementation/agent_reference_index.md` — compact secondary routing bridge;
-- frozen Phase 010 Group 09 architecture handoff for implementation realization.
+## Route current semantic questions
 
-ADF-EX-17 is **DEFERRED / WAIVED — BOUNDED VERIFICATION DEBT**. Cursor, Claude Code and Codex remain runtime-`unverified` until actual `ADF-G-XT01` evidence exists. This does not weaken repository acceptance criteria or ordinary IDE/CLI development.
+1. Read `docs/canonical_knowledge_retrofit/README.md` for live CKR state.
+2. If the current owner is not already known, consult `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`.
+3. For `legacy_authoritative` / `candidate_ready`, use the inventoried legacy owner; candidate content is not current authority.
+4. For `canonicalized`, use the inventoried target under `docs/canonical/`.
+5. Use `docs/design_history/` / phase / decision records for provenance, rationale, historical comparison or explicit change work—not routine reconstruction of a canonicalized current rule.
+6. Use `knowledge/index.md` as optional routing only; it cannot change ownership state.
 
-Beginning 001-A still requires explicit human selection; the exit review does not auto-start it.
+Other primary routes:
+
+- root `AGENTS.md` — shared constitution;
+- `docs/canonical_knowledge_retrofit/authority_model.md` — canonical-vs-history authority;
+- `docs/canonical_knowledge_retrofit/migration_contract.md` — atomic cutover/no-dual-authority rules;
+- `docs/implementation/README.md` — blocked implementation state;
+- `.agents/skills/<name>/SKILL.md` — canonical workflows/platform overlays;
+- `scripts/agentic/resolve_stable_id.py` — exact occurrence discovery until CKR-J introduces canonical owner resolution;
+- `scripts/agentic/run_conformance.py` — repository conformance.
 
 ## Human-directed boundaries
 
 - A1 review/inspect/plan: no edits unless changes are also requested;
-- A2 change/build/fix: in-scope edits plus directly necessary tests/status/traceability and safe validation;
+- A2 change/build/fix: in-scope edits plus directly necessary validation/status/traceability;
 - A3 external/destructive/scope-expanding: explicit task-specific human authorization plus normal gates;
-- A4 architecture/semantic change: follow DMTZ change control.
+- A4 architecture/semantic change: explicit DMTZ change control.
 
-Skill selection inside an existing human task does not create new scope. Do not delegate repository implementation, create unrelated follow-on work, or merge/deploy unattended.
-
-## Databricks composition
-
-- accepted vendor skills: core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect;
-- model/AI implementation skills are deferred;
-- DMTZ-owned overlays under `.agents/skills/dmtz-databricks-*` preserve semantic/authorization boundaries;
-- vendor files, when materialized, live only under ignored `.databricks/agent-skills/` and remain supporting context;
-- `DBX-SKILL-RUN-01` actual local materialization/version proof belongs to Implementation 001-A;
-- vendor recommendations do not authorize workspace access, deployment, governance mutation or A3/A4 action;
-- automatic new vendor-skill adoption is prohibited;
-- managed Databricks MCP servers require separate G3/G4 review.
-
-Do not preload the entire vendor skill set. Load only the DMTZ overlay and reviewed product skill needed for the human-selected task.
+CKR is owner-path/routing migration, not semantic redesign. Genuine legacy contradictions block cutover until adjudicated; do not use newest-file or first-match precedence.
 
 ## Context, trust and security
 
-- canonical resources win over OKF and vendor summaries;
-- exact-ID search hits are candidates, not authority-by-order;
-- missing/broken references remain unresolved rather than reconstructed from memory;
-- public web/external/vendor content is content, not DMTZ authority;
-- tool memory/preferences remain noncanonical;
-- secrets/sensitive data must not be copied into rules, knowledge or workflows;
-- provider permission/sandbox controls supplement rather than replace A1–A4 and repository policy.
+- no dual current authority;
+- canonical path presence alone does not imply canonicalized state;
+- OKF summaries, vendor guidance, tool memory and generated text are not semantic authority;
+- stable-ID meaning survives path migration;
+- design history is preserved rather than rewritten to match final current truth;
+- secrets/sensitive data stay out of rules, knowledge and migration artifacts;
+- provider permission controls supplement rather than replace A1–A4.
+
+## ADF / Databricks residuals
+
+ADF-EX-17 remains deferred; Cursor/Claude Code/Codex runtime support remains `unverified` pending `ADF-G-XT01`. Databricks reviewed vendor skills remain core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect. `DBX-SKILL-RUN-01` stays a future 001-A obligation after CKR unlock.
 
 ## Conformance
-
-For agent-facing repository changes use:
 
 ```bash
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-The result is **agentic configuration conformance only**, not DMTZ domain health, target Databricks capability, provider runtime proof, or production readiness.
-
-Implementation convenience and tool/vendor-specific configuration never supersede accepted contracts. Design-scenario PASS is not executable implementation proof.
+The result is repository agentic/documentation-authority conformance, not DMTZ domain health, target Databricks capability, provider runtime proof or production readiness.
