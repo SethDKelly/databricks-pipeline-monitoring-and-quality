@@ -1,7 +1,11 @@
 # Canonical Invariants
 
-Structural index for durable semantic separations and non-collapse rules that cut across concepts, policies and architecture.
+Current/candidate durable semantic separations and non-collapse rules that cut across concepts, policies and architecture.
 
-Examples include Observation ≠ Assessment, Lineage ≠ Impact ≠ cause, execution success ≠ freshness/data health, and later evidence ≠ evidence known then.
+## CKR-B candidate review
 
-**CKR-A state:** these remain governed by their inventoried legacy owners until later CKR groups promote them into canonical current-truth resources.
+[`architectural-principles.md`](architectural-principles.md) is the candidate target for `foundation.architectural_principles` and preserves AP-01–AP-32 plus their durable non-collapse implications.
+
+Its inventory state is currently `candidate_ready`; `docs/foundation/005_architectural_principles.md` remains current authority until atomic cutover.
+
+Other detailed domain invariants remain owned by their inventory-selected concept/stable-ID sources until later CKR groups.
