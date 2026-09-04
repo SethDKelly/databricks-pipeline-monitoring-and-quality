@@ -6,11 +6,11 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-D; IN EXECUTION CKR-E; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-E is human-selected and in execution. Product implementation remains blocked until CKR-K.
+CKR-E is in execution after atomic HLTH cutover; closure validation remains. Product implementation remains blocked until CKR-K.
 
 Current semantic ownership is selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`: `canonicalized` → inventoried `docs/canonical/` owner; `legacy_authoritative` / `candidate_ready` → inventoried legacy owner; `history_only` → provenance/rationale only.
 
-Foundation/glossary, all 24 concepts, SYN-001–035, authority vocabulary, REF-001–030 and AUTH-001–053 are canonicalized. During CKR-E candidate review, HLTH-001–066 remain Phase 006 legacy authority until atomic cutover. OPS/EXPL/INTG/ARCH remain later-group legacy authority.
+Foundation/glossary, all 24 concepts, SYN-001–035, authority vocabulary, REF-001–030, AUTH-001–053 and HLTH-001–066 are canonicalized. Phase 001–006 sources are provenance for migrated meanings. OPS/EXPL/INTG/ARCH remain later-group legacy authority.
 
 Authority order: current semantic owner → root `AGENTS.md` → live CKR/implementation status → accepted ADF scope/security mechanics → DMTZ workflows/overlays → reviewed vendor operational guidance → tool/personal memory.
 

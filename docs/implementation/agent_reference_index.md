@@ -12,16 +12,10 @@
 | Current semantic owner | `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` |
 | Concepts | `docs/canonical/concepts/README.md` |
 | SYN/REF/HLTH contracts | `docs/canonical/contracts/README.md` |
+| Current health/quality semantics | `docs/canonical/contracts/health-quality-timing/README.md` |
 | Authority/AUTH | `docs/canonical/authority/README.md` |
 | CKR-E comparison | `docs/canonical_knowledge_retrofit/ckr_e_semantic_conservation_matrix.md` |
-| CKR-D acceptance | `docs/canonical_knowledge_retrofit/ckr_d_execution_review.md` |
 | Design history | `docs/design_history/README.md` |
 | Conformance | `scripts/agentic/run_conformance.py` |
 
-## Current state
-
-- CKR-A–D — COMPLETE / ACCEPTED.
-- CKR-E — IN EXECUTION / CANDIDATE REVIEW.
-- Implementation 001-A — BLOCKED until CKR-K.
-
-HLTH-001–HLTH-066 remain Phase 006 authority while the candidate state is `candidate_ready`. OPS/EXPL/INTG/ARCH remain later-group legacy authority.
+CKR-E has cut over HLTH-001–HLTH-066; closure validation remains. OPS/EXPL/INTG/ARCH remain later-group legacy authority. Implementation 001-A remains blocked until CKR-K.

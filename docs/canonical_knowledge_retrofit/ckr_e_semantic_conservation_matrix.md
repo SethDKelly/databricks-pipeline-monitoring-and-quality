@@ -1,10 +1,10 @@
 # CKR-E Semantic Conservation Matrix
 
-**Status:** CANDIDATE REVIEW
+**Status:** CUTOVER STATE — CLOSURE VALIDATION PENDING
 
 CKR-E changes documentation ownership only. Acceptance requires preservation of HLTH-001–HLTH-066 and the Phase 006 exit model without importing OPS/EXPL/INTG/ARCH ownership.
 
-| Domain | Must remain true after cutover | Canonical candidate |
+| Domain | Must remain true after cutover | Canonical owner |
 |---|---|---|
 | Measurement identity | metric definition ≠ Observation ≠ Assessment; same display name does not guarantee definition continuity | `health-quality-timing/measurement-applicability.md` |
 | Applicability/profile | semantic applicability ≠ profile selection ≠ computability ≠ current availability ≠ Assessment outcome; unavailable/not-selected/not-applicable are not pass | `measurement-applicability.md` |
