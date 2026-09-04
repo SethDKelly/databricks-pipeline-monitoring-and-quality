@@ -1,0 +1,81 @@
+scenarios:
+  - id: CKRD-01
+    check: applicable evidence can prove existence without proving exclusivity
+  - id: CKRD-02
+    check: incomplete telemetry cannot support a negative absence conclusion
+  - id: CKRD-03
+    check: common-derived records are not independent corroboration
+  - id: CKRD-04
+    check: source availability before collection is not framework knowledge
+  - id: CKRD-05
+    check: later retrieval of old evidence does not backdate an as-known cut
+  - id: CKRD-06
+    check: reconstructed historical Assessment is not actual retained historical Assessment
+  - id: CKRD-07
+    check: successful execution can be known while freshness and quality remain pending
+  - id: CKRD-08
+    check: supported causal claim cannot become confirmed for latency convenience
+  - id: CKRD-09
+    check: rejection requires sufficient contradictory or exclusion evidence
+  - id: CKRD-10
+    check: multiple compatible contributors may coexist
+  - id: CKRD-11
+    check: confirmed claim remains challengeable without rewriting historical confirmation
+  - id: CKRD-12
+    check: reachability alone does not establish exposure
+  - id: CKRD-13
+    check: non-exposure requires bounded encounter and path coverage
+  - id: CKRD-14
+    check: safe prior-version encounter can coexist with stale freshness
+  - id: CKRD-15
+    check: readiness criterion can require current output rather than successful run
+  - id: CKRD-16
+    check: HOLD decision is not HOLD enforcement or failed execution
+  - id: CKRD-17
+    check: safeguard activation requires effective enforcement evidence
+  - id: CKRD-18
+    check: safeguard active plus non-exposure is insufficient for prevented exposure
+  - id: CKRD-19
+    check: authority is not inferred from majority recency availability ingestion order title or specificity
+  - id: CKRD-20
+    check: co-authoritative disagreement remains conflict absent explicit resolver
+  - id: CKRD-21
+    check: fallback authority requires explicit rule and evidenced condition
+  - id: CKRD-22
+    check: authoritative standing does not manufacture evidence sufficiency
+  - id: CKRD-23
+    check: governed schema meaning is separate from normative compatibility and realized schema
+  - id: CKRD-24
+    check: criticality does not manufacture Impact or health
+  - id: CKRD-25
+    check: Baseline-derived range does not become normative without an Expectation
+  - id: CKRD-26
+    check: waiver does not rewrite Observation or create a false clean pass
+  - id: CKRD-27
+    check: control-use eligibility does not grant control capability
+  - id: CKRD-28
+    check: unknown conflicting or unavailable authorization never becomes allow
+  - id: CKRD-29
+    check: permission to edit an assertion does not make it authoritative
+  - id: CKRD-30
+    check: requester visibility and framework processing permission remain separate
+  - id: CKRD-31
+    check: causal confirmation requires both REF-017 evidence and AUTH-034 authority
+  - id: CKRD-32
+    check: Gate override does not rewrite readiness or prove enforcement
+  - id: CKRD-33
+    check: safeguard release does not prove health or recovery
+  - id: CKRD-34
+    check: break-glass cannot manufacture evidence readiness health or causality
+  - id: CKRD-35
+    check: approval does not execute or enforce a high-consequence action
+  - id: CKRD-36
+    check: audience label does not grant disclosure permission
+  - id: CKRD-37
+    check: safe abstraction may reduce detail but cannot strengthen epistemic status
+  - id: CKRD-38
+    check: restricted basis is not described as absent
+  - id: CKRD-39
+    check: historical authorization does not grant current disclosure
+  - id: CKRD-40
+    check: CKR-D candidate state retains Phase 004 and 005 as current authority until atomic cutover
