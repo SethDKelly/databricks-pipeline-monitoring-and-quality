@@ -1,66 +1,45 @@
 ---
-description: Route DMTZ work to live CKR/implementation status, current semantic ownership, portable knowledge, DMTZ skills/Databricks overlays, conformance and frozen contracts. Use when project status/authority/workflow/reference location is unclear.
+description: Route DMTZ work to live CKR/implementation status and current semantic ownership. Use when project status, authority, workflow or reference location is unclear.
 globs:
 alwaysApply: false
 ---
 
 # Agentic / implementation routing
 
-Do not infer current authority from historical phase order, Git history, model memory, vendor skills or first-search-hit position.
-
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: IN EXECUTION CKR-A; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A; NEXT CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-The ADF exit remains accepted. The **Canonical Knowledge & Documentation Authority Retrofit (CKR)** is the active pre-implementation dependency. Product implementation is blocked until CKR-K.
+CKR-A is complete; CKR-B is next/ready. Product implementation remains blocked until CKR-K.
 
-## Route current semantic questions
+## Current semantic questions
 
-1. Read `docs/canonical_knowledge_retrofit/README.md` for live CKR state.
-2. If the current owner is not already known, consult `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`.
-3. For `legacy_authoritative` / `candidate_ready`, use the inventoried legacy owner; candidate content is not current authority.
-4. For `canonicalized`, use the inventoried target under `docs/canonical/`.
-5. Use `docs/design_history/` / phase / decision records for provenance, rationale, historical comparison or explicit change work—not routine reconstruction of a canonicalized current rule.
-6. Use `knowledge/index.md` as optional routing only; it cannot change ownership state.
+1. Use `docs/canonical_knowledge_retrofit/README.md` for CKR state.
+2. If ownership is unclear, read `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`.
+3. `legacy_authoritative` / `candidate_ready` → legacy owner remains current.
+4. `canonicalized` → inventoried `docs/canonical/` target is current.
+5. Use phase/decision history only for provenance/rationale/history/change review after cutover.
+6. `knowledge/index.md` is optional routing only.
 
-Other primary routes:
+Primary controls:
 
-- root `AGENTS.md` — shared constitution;
-- `docs/agentic_development_foundation/authority_scope_policy.md` — A1–A4 human-directed authority;
-- `docs/canonical_knowledge_retrofit/authority_model.md` — canonical-vs-history authority;
-- `docs/canonical_knowledge_retrofit/migration_contract.md` — atomic cutover/no-dual-authority rules;
-- `docs/implementation/README.md` — blocked implementation state;
-- `.agents/skills/<name>/SKILL.md` — canonical workflows/platform overlays;
-- `scripts/agentic/resolve_stable_id.py` — exact occurrence discovery until CKR-J introduces canonical owner resolution;
-- `scripts/agentic/run_conformance.py` — repository conformance.
+- `AGENTS.md` — shared constitution;
+- `docs/agentic_development_foundation/authority_scope_policy.md` — A1–A4;
+- `docs/canonical_knowledge_retrofit/authority_model.md` — canonical vs history;
+- `docs/canonical_knowledge_retrofit/migration_contract.md` — atomic cutover/no dual authority;
+- `docs/implementation/README.md` — implementation block;
+- `.agents/skills/<name>/SKILL.md` — workflows/overlays;
+- `scripts/agentic/resolve_stable_id.py` — occurrence discovery;
+- `scripts/agentic/run_conformance.py` — conformance.
 
-## Human-directed boundaries
+Do not infer authority from phase recency, first search hit, Git history, OKF summary, vendor skill, tool memory or mere presence under `docs/canonical/`.
 
-- A1 review/inspect/plan: no edits unless changes are also requested;
-- A2 change/build/fix: in-scope edits plus directly necessary validation/status/traceability;
-- A3 external/destructive/scope-expanding: explicit task-specific human authorization plus normal gates;
-- A4 architecture/semantic change: explicit DMTZ change control.
+CKR is owner-path/routing migration, not semantic redesign. Genuine conflicts require A4 change control. Stable-ID meaning survives path migration.
 
-CKR is owner-path/routing migration, not semantic redesign. Genuine legacy contradictions block cutover until adjudicated; do not use newest-file or first-match precedence.
-
-## Context, trust and security
-
-- no dual current authority;
-- canonical path presence alone does not imply canonicalized state;
-- OKF summaries, vendor guidance, tool memory and generated text are not semantic authority;
-- stable-ID meaning survives path migration;
-- design history is preserved rather than rewritten to match final current truth;
-- secrets/sensitive data stay out of rules, knowledge and migration artifacts;
-- provider permission controls supplement rather than replace A1–A4.
-
-## ADF / Databricks residuals
-
-ADF-EX-17 remains deferred; Cursor/Claude Code/Codex runtime support remains `unverified` pending `ADF-G-XT01`. Databricks reviewed vendor skills remain core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect. `DBX-SKILL-RUN-01` stays a future 001-A obligation after CKR unlock.
-
-## Conformance
+ADF-EX-17 / `ADF-G-XT01` remains deferred runtime verification. `DBX-SKILL-RUN-01` remains a future 001-A obligation after CKR unlock. Reviewed Databricks vendor skills remain operational guidance only.
 
 ```bash
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-The result is repository agentic/documentation-authority conformance, not DMTZ domain health, target Databricks capability, provider runtime proof or production readiness.
+PASS is repository agentic/documentation-authority conformance, not DMTZ domain health, provider-runtime proof, Databricks capability or production readiness.
