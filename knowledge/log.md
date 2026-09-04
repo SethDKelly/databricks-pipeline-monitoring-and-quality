@@ -1,5 +1,17 @@
 # DMTZ Knowledge Bundle Log
 
+## 2026-09-03 — CKR-B foundation, terminology and invariant cutover
+
+- canonicalized nine foundation/glossary records: product definition, actors/stakeholders, terminology, Concept Design method, AP-01–AP-32, SP-01–SP-15/security-governance, ecosystem lifecycles, MVP boundary and shared glossary;
+- preserved Phase-001 foundation documents and the pre-CKR glossary as provenance rather than rewriting historical accepted-at-the-time narrative;
+- retained foundation roadmap/open-question/handoff material as history instead of promoting stale future-tense text into current truth;
+- added a record-by-record semantic-conservation matrix and CKRB-01–CKRB-20 scenarios;
+- added deterministic CKR-B coverage validation for AP/SP identities, fourteen lifecycles, thirteen MVP capability areas, Scenarios A–K, actor/method/terminology/provenance coverage and later-domain ownership isolation;
+- expanded the conformance suite to 158 scenarios and 19 negative controls;
+- validated candidates before cutover, then validated the nine-record canonicalized state; retained the first cutover status-parser failure as drift-enforcement evidence and corrected the status syntax without weakening the validator;
+- advanced live CKR routing to **CKR-A–CKR-B COMPLETE / CKR-C NEXT** while keeping Implementation 001-A blocked until CKR-K;
+- left all 24 concepts, SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH families, and `reference.authority_vocabulary` with their later-group current owners.
+
 ## 2026-09-03 — CKR-A canonical knowledge authority baseline
 
 - started the Canonical Knowledge & Documentation Authority Retrofit before product implementation;
