@@ -1,6 +1,6 @@
 # CKR-G Semantic Conservation Matrix — Questioning, Explanation & Experience
 
-**Status:** CANDIDATE REVIEW
+**Status:** ACCEPTED — CKR-G CUTOVER
 
 CKR-G is an authority migration of accepted Phase 008 semantics. It is not an A4 semantic redesign.
 

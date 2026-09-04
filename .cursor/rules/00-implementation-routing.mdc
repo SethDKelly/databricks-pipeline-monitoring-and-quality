@@ -10,10 +10,10 @@ alwaysApply: false
 
 **CKR status mirror: COMPLETE CKR-A–CKR-F; IN EXECUTION CKR-G; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-G is in execution. Product implementation remains blocked until CKR-K.
+CKR-G EXPL cutover is complete and closure validation remains. Product implementation remains blocked until CKR-K.
 
 Primary shared authority remains root `AGENTS.md`; `docs/agentic_development_foundation/authority_scope_policy.md`; `knowledge/index.md` as optional routing only; CKR README; and the ownership inventory.
 
-Lookup: `canonicalized` → canonical owner; `legacy_authoritative`/`candidate_ready` → legacy owner. Foundation/glossary, concepts/SYN, authority vocabulary, REF, AUTH, HLTH and OPS are canonicalized. EXPL candidates are non-authoritative while `candidate_ready`; Phase 008 remains current authority. INTG/ARCH remain later-group legacy authority.
+Lookup: `canonicalized` → canonical owner; `legacy_authoritative`/`candidate_ready` → legacy owner. Foundation/glossary, concepts/SYN, authority vocabulary, REF, AUTH, HLTH, OPS and EXPL are canonicalized. INTG/ARCH remain later-group legacy authority.
 
 Do not infer authority from recency, search order, Git history, OKF, vendor skill, tool memory or path presence. Completing CKR-G does not authorize CKR-H.

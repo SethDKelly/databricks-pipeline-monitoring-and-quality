@@ -26,23 +26,19 @@ Ownership is declared in [`canonical_ownership_inventory.json`](canonical_owners
 - **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: PLANNED.**
 - **CKR-K — Consolidation, Provenance Validation & Exit Review: PLANNED.**
 
-## Current canonical scope through CKR-F
+## Current canonical scope through CKR-G cutover
 
-Foundation/glossary, all 24 concepts, SYN-001–SYN-035, authority vocabulary, REF-001–REF-030, AUTH-001–AUTH-053, HLTH-001–HLTH-066 and OPS-001–OPS-123 resolve to canonical owners. Phase 001–007 are design history/provenance for migrated meanings.
+Foundation/glossary, all 24 concepts, SYN-001–SYN-035, authority vocabulary, REF-001–REF-030, AUTH-001–AUTH-053, HLTH-001–HLTH-066, OPS-001–OPS-123 and **EXPL-001–EXPL-160** resolve to canonical owners.
 
-## CKR-G execution boundary
+EXPL is canonical across eight resources under `docs/canonical/experience/`: question scope/time, answer/basis structure, operational question semantics, inferential/governance question semantics, epistemic language, authorized projection, progressive refresh/retention and historical/comparative Explanation. Phase 008 is now design history/provenance for those meanings.
 
-CKR-G owns exactly **EXPL-001–EXPL-160** from accepted Phase 008. The candidate topology is eight bounded resources under `docs/canonical/experience/` for question scope/time, answer/basis structure, operational question semantics, inferential/governance question semantics, epistemic language, authorized projection, progressive refresh/retention and historical/comparative Explanation.
+CKR-G preserves question ≠ truth ≠ authorization; answer statement ≠ independent truth; basis count ≠ confidence; sibling independence; operational shorthand distinctions; Investigation/localization ≠ Causal Claim; candidate/reachable ≠ opportunity ≠ exposure ≠ effect ≠ consequence ≠ causal attribution; Safeguard/Gate separation; unknown/restricted/unavailable/negative distinctions; safe abstraction that cannot strengthen truth; elapsed time ≠ evidence/maturity; retained actual communication ≠ reconstruction; and historical source state ≠ as-known-at-cut Explanation ≠ retained communication ≠ current retrospective Explanation.
 
-All CKR-G targets currently declare `CANDIDATE / NOT CURRENT AUTHORITY`; the ownership inventory marks EXPL `candidate_ready`, so **Phase 008 remains current semantic authority until atomic cutover**.
+See [`ckr_g_semantic_conservation_matrix.md`](ckr_g_semantic_conservation_matrix.md) and [`ckr_g_execution_review.md`](ckr_g_execution_review.md). CKR-G remains in execution until post-cutover and closure validation succeed.
 
-CKR-G preserves question ≠ truth ≠ authorization; answer statement ≠ independent truth; basis count ≠ confidence; operational shorthand distinctions; Investigation/localization ≠ Causal Claim; candidate/reachable ≠ opportunity ≠ exposure ≠ effect ≠ consequence ≠ causal attribution; Safeguard/Gate separation; unknown/restricted/unavailable/negative distinctions; safe abstraction that cannot strengthen truth; elapsed time ≠ evidence/maturity; retained actual communication ≠ reconstruction; and historical source state ≠ as-known-at-cut Explanation ≠ retained communication ≠ current retrospective Explanation.
+## Remaining ownership
 
-See [`ckr_g_semantic_conservation_matrix.md`](ckr_g_semantic_conservation_matrix.md) and [`ckr_g_execution_review.md`](ckr_g_execution_review.md).
-
-## Scope isolation
-
-INTG-001–270 and ARCH-001–500 remain legacy-authoritative until CKR-H/I respectively. CKR-G may reference but cannot absorb them.
+INTG-001–270 and ARCH-001–500 remain legacy-authoritative until CKR-H/I respectively.
 
 ## Implementation gate
 
