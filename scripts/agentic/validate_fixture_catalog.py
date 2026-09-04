@@ -18,6 +18,7 @@ ADDENDA = (
 )
 CKR = (
     ('CKR-A', 'docs/canonical_knowledge_retrofit/fixtures/ckr_a_authority_scenarios.yaml', 'docs/canonical_knowledge_retrofit/ckr_a_execution_review.md'),
+    ('CKR-B', 'docs/canonical_knowledge_retrofit/fixtures/ckr_b_foundation_scenarios.yaml', 'docs/canonical_knowledge_retrofit/ckr_b_execution_review.md'),
 )
 ID_RE = re.compile(r'^\s*-\s+id:\s*["\']?([^"\'\s]+)', re.M)
 
