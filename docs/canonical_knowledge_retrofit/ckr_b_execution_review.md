@@ -1,14 +1,14 @@
 # CKR-B Execution Review — Foundation, Terminology & Cross-Cutting Invariants
 
-**Status:** IN EXECUTION — CANDIDATE REVIEW
+**Status:** IN EXECUTION — CUTOVER COMPLETE / CLOSURE VALIDATION PENDING
 
 ## Objective
 
-Perform the first substantive CKR migration by consolidating the nine accepted foundation/glossary records into bounded canonical candidates, proving semantic conservation, then cutting them over atomically without changing accepted DMTZ meaning.
+Perform the first substantive CKR migration by consolidating the nine accepted foundation/glossary records into bounded canonical resources, proving semantic conservation, and cutting them over without changing accepted DMTZ meaning.
 
-## Candidate set
+## Scope
 
-CKR-B owns exactly:
+CKR-B owns exactly nine records:
 
 - `foundation.product_definition`;
 - `foundation.actors_stakeholders`;
@@ -20,57 +20,68 @@ CKR-B owns exactly:
 - `foundation.mvp_boundary`;
 - `reference.glossary`.
 
-At this review stage all nine are `candidate_ready`; their legacy owners remain current authority.
+The semantic-conservation comparison is in [`ckr_b_semantic_conservation_matrix.md`](ckr_b_semantic_conservation_matrix.md). CKRB-01–CKRB-20 are in `fixtures/ckr_b_foundation_scenarios.yaml`.
 
-## Semantic-conservation evidence
+## Preserved contract surface
 
-See [`ckr_b_semantic_conservation_matrix.md`](ckr_b_semantic_conservation_matrix.md).
-
-Mandatory preservation includes:
+CKR-B preserves:
 
 - product purpose/outcome/non-goals;
-- actor authority separation;
+- actor/authority separation;
 - foundational terminology/non-equivalences;
-- Concept Design method and synchronization discipline;
-- AP-01–AP-32;
-- SP-01–SP-15;
-- fourteen ecosystem lifecycles and non-rewriting/bitemporal principle;
-- thirteen required MVP capability areas and Scenarios A–K;
-- current shared glossary vocabulary.
+- Concept Design method/synchronization discipline;
+- **AP-01–AP-32**;
+- **SP-01–SP-15**;
+- fourteen ecosystem lifecycles and non-rewriting/bitemporal semantics;
+- thirteen required MVP capability areas and **Scenarios A–K**;
+- shared current glossary vocabulary.
 
-Historical Phase 001 roadmap/open-question/handoff material remains preserved but is intentionally not promoted to canonical current truth.
+Historical roadmap/open-question/handoff material remains preserved rather than promoted as current truth.
 
-## Scenario set
+## Candidate-review evidence
 
-`fixtures/ckr_b_foundation_scenarios.yaml` defines CKRB-01 through CKRB-20.
+PR #7 candidate head `a1ee4af445f3c94fbc237b205d39fb613c1e2445` passed:
 
-## Deterministic validation required
+- **Documentation consistency #182 — SUCCESS**;
+- **Agentic conformance #64 — SUCCESS**;
+- canonical authority: **34 ownership records / 24 concepts / 0 canonicalized / 9 candidates**;
+- CKR-B semantic coverage: **9 records / `candidate_ready` / 0 errors**;
+- CKR status drift: **CKR-B IN EXECUTION / Implementation 001-A blocked**;
+- fixture catalog: **158 scenarios**;
+- negative controls: **19/19**;
+- agentic/authority secret scan: **175 text files / 0 errors**;
+- OKF: **0 errors / 0 warnings / 0 stale / 0 deprecated**;
+- all context budgets: PASS.
 
-Candidate-stage acceptance requires:
+Candidate-stage context measurements included root `AGENTS.md` 6,996/16,384 bytes, Cursor aggregate 18,215/32,768, Cursor routing 2,704/6,144, Claude root 8,050/18,432, and Codex root 6,996/16,384.
 
-- generic canonical ownership/authority validation;
-- CKR-B semantic-coverage validation;
-- CKR status drift with B IN EXECUTION;
-- fixture catalog integrity;
-- context-budget conformance;
-- negative controls for omitted AP/SP/MVP or broken candidate provenance;
-- documentation consistency and unified conformance on the candidate-review PR state.
+This proved the candidates could be reviewed without changing current authority.
 
-## Candidate-stage result
+## Atomic cutover performed
 
-Pending CI.
+After candidate validation succeeded:
 
-## Atomic cutover requirements
+1. all nine targets changed to `CANONICAL CURRENT AUTHORITY`;
+2. all nine inventory records changed from `candidate_ready` to `canonicalized`;
+3. canonical reference/invariant/policy indexes now present those resources as current;
+4. `docs/foundation/README.md` routes current foundation questions to canonical owners and classifies the original Phase-001 records as provenance/history;
+5. `docs/reference/README.md` routes shared vocabulary to the canonical glossary while leaving `authority_vocabulary.md` independently legacy-authoritative for CKR-D;
+6. living `docs/README.md`, repository/implementation/agent routing, and Cursor routing now resolve the migrated records through `docs/canonical/`;
+7. all 24 concepts and all SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH families remain untouched for later CKR groups.
 
-After candidate review succeeds, all nine records cut over only in one synchronized closure change that:
+The old Phase-001 documents and pre-CKR glossary are not rewritten to mimic present-day consolidated prose; they remain provenance. Directory-level authority notices prevent them from serving as the normal current lookup path.
 
-1. marks each target `CANONICAL CURRENT AUTHORITY`;
-2. changes each inventory record to `canonicalized`;
-3. routes current foundation/glossary questions to `docs/canonical/`;
-4. classifies the legacy 001–008 foundation owners and old glossary as provenance/history for these records without rewriting their accepted-at-the-time narrative;
-5. keeps `reference.authority_vocabulary`, all 24 concepts, and all stable-ID families with their independent existing owners;
-6. advances live CKR status to CKR-B complete / CKR-C next only after the cutover passes conformance.
+## Cutover validation required
+
+Before CKR-B can close, the cutover state must pass:
+
+- generic canonical authority validation showing 9 canonicalized / 0 candidates;
+- CKR-B semantic coverage in `canonicalized` state;
+- documentation consistency and current routing checks;
+- 158-scenario fixture integrity;
+- all 19 negative controls;
+- context budgets, secret scan and existing ADF/Databricks conformance.
 
 ## Exit decision
 
-Pending candidate CI, atomic cutover, final closure CI, and merge verification.
+Pending cutover-state CI, closure-status synchronization to CKR-C next, final exact-head CI, merge, and main-branch verification.
