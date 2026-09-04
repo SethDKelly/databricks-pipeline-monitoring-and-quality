@@ -10,7 +10,7 @@ Its existence does not make every resource beneath it authoritative. Semantic au
 - [`../canonical_knowledge_retrofit/migration_contract.md`](../canonical_knowledge_retrofit/migration_contract.md)
 - [`../canonical_knowledge_retrofit/canonical_ownership_inventory.json`](../canonical_knowledge_retrofit/canonical_ownership_inventory.json)
 
-During CKR-A, this directory contains structural indexes only. Substantive current semantic resources begin migrating in CKR-B.
+CKR-A established these structural indexes and authority guards with **0 substantive records canonicalized**. CKR-B is the first group eligible to create substantive canonical candidates/cutovers.
 
 ## Target knowledge families
 
