@@ -1,10 +1,6 @@
 # DMTZ Agentic Development Foundation
 
-**Status:** COMPLETE / EXECUTION EXIT ACCEPTED — IMPLEMENTATION 001-A NEXT; ADF-EX-17 DEFERRED / WAIVED AS BOUNDED VERIFICATION DEBT
-
-## Purpose
-
-The Agentic Development Foundation establishes the tool-neutral, human-directed development operating model used by Cursor, Claude Code, Codex and ordinary development. It is enabling infrastructure, not a replacement for frozen DMTZ SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH semantics.
+**Status:** COMPLETE / EXECUTION EXIT ACCEPTED — POST-EXIT CKR DOCUMENTATION AUTHORITY RETROFIT ACTIVE
 
 ## Final execution state
 
@@ -21,30 +17,35 @@ The Agentic Development Foundation establishes the tool-neutral, human-directed 
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-The formal exit decision is [`execution_exit_review.md`](execution_exit_review.md). It adjudicates ADF-EX-01–ADF-EX-20 as:
+The formal ADF exit decision remains [`execution_exit_review.md`](execution_exit_review.md):
 
-- ADF-EX-01–ADF-EX-16 — **PASS**;
+- ADF-EX-01–ADF-EX-16 — PASS;
 - ADF-EX-17 — **DEFERRED / WAIVED — BOUNDED VERIFICATION DEBT**;
-- ADF-EX-18–ADF-EX-20 — **PASS**.
+- ADF-EX-18–ADF-EX-20 — PASS.
 
-This is the only waived/deferred exit gate.
+The mirror above records the result of the ADF dependency itself. A later repository decision has inserted the **Canonical Knowledge & Documentation Authority Retrofit (CKR)** before product implementation. Therefore the current implementation gate is owned by `docs/canonical_knowledge_retrofit/README.md` / `docs/implementation/README.md`, not by reinterpreting the historical ADF exit.
+
+## Post-exit CKR dependency
+
+CKR separates current semantic authority from preserved chronological design history before code/test traceability begins.
+
+- ADF remains complete; CKR does not reopen ADF-A–H.
+- ADF authority/scope/security/conformance mechanics remain in force throughout CKR.
+- `knowledge/` remains routing rather than truth.
+- `docs/canonical/` becomes current authority only through CKR record-by-record cutover.
+- Implementation 001-A is currently blocked until CKR-K accepts the retrofit.
+
+Primary CKR route: [`../canonical_knowledge_retrofit/README.md`](../canonical_knowledge_retrofit/README.md).
 
 ## ADF-EX-17 residual verification
 
 Cursor, Claude Code and Codex remain runtime-`unverified` until the common `ADF-G-XT01` bounded exercise is actually run in each provider runtime and recorded in `runtime_compatibility_evidence.json`.
 
-The bounded waiver:
-
-- does not convert missing runtime evidence to PASS;
-- does not permit a provider to be called runtime-supported;
-- does not weaken DMTZ semantic/change-control authority, A1–A4 human direction, canonical-reference discipline, security or deterministic conformance;
-- requires a failed future smoke to reopen the affected provider adapter/support claim before that provider is relied on as supported.
-
-Ordinary IDE/CLI development remains supported independently of coding-agent runtime availability.
+The waiver does not convert missing runtime evidence to PASS, permit unsupported provider claims, or weaken DMTZ semantic/change-control authority, A1–A4 human direction, current-owner discipline, security or deterministic conformance.
 
 ## Databricks Agent Skills addendum
 
-The accepted initial reviewed vendor set is:
+The accepted vendor set remains:
 
 - `databricks-core`;
 - `databricks-dabs`;
@@ -55,30 +56,21 @@ The accepted initial reviewed vendor set is:
 - `databricks-unity-catalog`;
 - `databricks-lakeflow-connect`.
 
-Vendor skills are reviewed operational guidance, never DMTZ semantic or authorization authority. DMTZ-owned overlays remain canonical under `.agents/skills/` for environment discovery, acquisition, persistence, Lineage, runtime provenance and governance.
+Vendor skills are reviewed operational guidance, never DMTZ semantic/authorization authority. DMTZ overlays remain canonical development workflows under `.agents/skills/`. Model/AI implementation skills and managed Databricks MCP servers remain deferred.
 
-Model/AI implementation skills remain deferred. Managed Databricks MCP servers remain outside the accepted addendum and require separate security/integration review.
+`DBX-SKILL-RUN-01` remains a future Implementation 001-A environment obligation after CKR unlocks implementation.
 
-`DBX-SKILL-RUN-01` is explicitly carried into **Implementation 001-A**: establish a compatible Databricks CLI and record exact local reviewed-skill `aitools --path` materialization/version evidence. This residual does not authorize workspace access and is not represented as target-runtime proof.
-
-## Implemented foundation model
+## Durable foundation model
 
 ### Authority and human direction
 
-Canonical DMTZ contracts/docs remain highest project authority. Root `AGENTS.md`, live implementation/group scope, accepted foundation mechanics, DMTZ-owned workflows/overlays, reviewed vendor guidance and thin provider adapters follow in that order.
-
-A1–A4 remains the action model:
-
-- A1 read/review/plan;
-- A2 bounded repository change/build/fix;
-- A3 external/destructive/scope-expanding action requires explicit task-specific human authorization plus normal gates;
-- A4 semantic/architecture change follows DMTZ change control.
-
-Foundation exit does not authorize automatic continuation into implementation work.
+A1–A4 remains the action model. Accepted DMTZ semantics outrank agent tooling, vendor guidance and memory. CKR migration itself is A2 documentation work unless it discovers a genuine semantic/architecture contradiction, which requires A4 change control.
 
 ### Knowledge, workflows and context
 
-`knowledge/` remains OKF routing rather than semantic truth. Canonical workflows live under `.agents/skills/`; Claude uses thin command bridges. Progressive disclosure, exact stable-ID resolution and deterministic context budgets prevent first-search-hit authority and monolithic persistent prompts.
+OKF remains routing. Canonical workflows live under `.agents/skills/`; Claude uses thin bridges. Progressive disclosure, stable references and context budgets remain mandatory.
+
+CKR refines what “canonical resource” means during migration: the current owner is selected by the CKR ownership inventory rather than by path age, search order or the mere existence of `docs/canonical/`.
 
 ### Conformance and CI
 
@@ -88,11 +80,11 @@ Canonical command:
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-The report covers repository agentic configuration only. It is not DMTZ domain health, data quality, source health, provider-runtime proof, target Databricks capability or production readiness.
+The runner now also validates CKR canonical-knowledge authority and CKR status. Its PASS result remains repository configuration/documentation conformance, not DMTZ domain health or provider/Databricks runtime proof.
 
 ### Security and lifecycle
 
-Least privilege, secret/sensitive-data boundaries, prompt/content trust, noncanonical tool memory, provider/vendor lifecycle review, G1–G5 change governance and ordinary human fallback remain mandatory after foundation exit.
+Least privilege, secret/sensitive-data boundaries, prompt/content trust, noncanonical tool memory, provider/vendor lifecycle review and G1–G5 change governance remain mandatory.
 
 ## Explicitly deferred / not authorized
 
@@ -106,32 +98,19 @@ Least privilege, secret/sensitive-data boundaries, prompt/content trust, noncano
 - Databricks model/AI implementation skills until explicitly reviewed;
 - managed Databricks MCP servers until separately reviewed.
 
-Deferred autonomy remains only in [`autonomous_backlog.md`](autonomous_backlog.md).
-
 ## Key references
 
-- [`execution_exit_review.md`](execution_exit_review.md) — final exit adjudication and residual debt;
-- [`execution_exit_criteria.md`](execution_exit_criteria.md) — ADF-EX-01–ADF-EX-20 gate definitions;
-- [`adf_g_progression_exception.md`](adf_g_progression_exception.md) — bounded ADF-EX-17 exception;
-- [`runtime_compatibility_evidence.json`](runtime_compatibility_evidence.json) — provider runtime evidence ledger;
-- [`authority_scope_policy.md`](authority_scope_policy.md);
-- [`okf_profile.md`](okf_profile.md);
-- [`portable_workflow_profile.md`](portable_workflow_profile.md);
-- [`context_discovery_policy.md`](context_discovery_policy.md);
-- [`stable_reference_policy.md`](stable_reference_policy.md);
-- [`conformance_policy.md`](conformance_policy.md);
-- [`security_trust_lifecycle_policy.md`](security_trust_lifecycle_policy.md);
-- [`agentic_change_governance.md`](agentic_change_governance.md);
-- [`databricks_agent_skills_addendum.md`](databricks_agent_skills_addendum.md);
-- [`databricks_agent_skills_addendum_execution_review.md`](databricks_agent_skills_addendum_execution_review.md);
-- [`databricks_vendor_skills_profile.json`](databricks_vendor_skills_profile.json).
+- [`execution_exit_review.md`](execution_exit_review.md) — accepted ADF exit as of its decision time;
+- [`authority_scope_policy.md`](authority_scope_policy.md) — human-directed authority;
+- [`okf_profile.md`](okf_profile.md) — OKF profile;
+- [`stable_reference_policy.md`](stable_reference_policy.md) / [`stable_id_registry.json`](stable_id_registry.json) — stable reference discipline;
+- [`conformance_policy.md`](conformance_policy.md) — conformance model;
+- [`security_trust_lifecycle_policy.md`](security_trust_lifecycle_policy.md) / [`agentic_change_governance.md`](agentic_change_governance.md) — security/change governance;
+- [`databricks_agent_skills_addendum.md`](databricks_agent_skills_addendum.md) — reviewed Databricks skills boundary;
+- [`../canonical_knowledge_retrofit/README.md`](../canonical_knowledge_retrofit/README.md) — current post-ADF documentation-authority dependency.
 
-Execution evidence remains in `adf_a_execution_review.md` through `adf_h_execution_review.md`, the Databricks addendum execution review, and the final exit review.
+## Current next dependency
 
-## Next dependency
+**CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory is the current post-ADF work.**
 
-**Implementation 001-A — Development Environment, Repository Structure & Engineering Standards: NEXT / ELIGIBLE.**
-
-001-A owns `DBX-SKILL-RUN-01` and the normal Implementation 001 entry obligations. `ADF-G-XT01` remains visible verification debt but does not block ordinary development or 001-A under the accepted bounded waiver.
-
-Beginning 001-A still requires an explicit human-selected task. No foundation mechanism auto-starts it.
+Implementation 001-A becomes eligible only after CKR-K accepts the retrofit. ADF exit acceptance itself remains valid and is not rewritten retroactively.
