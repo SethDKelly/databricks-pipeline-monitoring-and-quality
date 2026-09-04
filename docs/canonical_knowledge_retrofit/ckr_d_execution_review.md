@@ -105,6 +105,17 @@ Cutover-state PR #9 passed:
 - CKR-D semantic validation REF **30/30**, AUTH **53/53**, state `canonicalized`;
 - all unified conformance layers and negative controls green.
 
+### Closure/status synchronization gate
+
+Closure head `b3328c482ba92534c39c6fe3d01fef403e728166` advanced only the live CKR progression/routing state to CKR-D complete / CKR-E next, finalized the semantic-conservation and execution records, and corrected directly affected OKF routes to current canonical REF/AUTH owners.
+
+It passed:
+
+- Agentic conformance **#127 — SUCCESS** (run ID `33839467895`);
+- Documentation consistency **#245 — SUCCESS** (run ID `33839467887`).
+
+This verifies that accepted CKR-D status, ownership, routing, fixture registration, context budgets and authority guards remain mutually consistent after closure.
+
 ## Acceptance criteria
 
 - exact CKR-D scope — **PASS**;
@@ -133,4 +144,4 @@ No new DMTZ concept, stable-ID family, semantic rule, authority boundary or arch
 
 CKR-E remains unstarted until explicitly selected by the human. Implementation 001-A remains blocked until CKR-K.
 
-The final closure head still requires the normal post-status synchronization CI gate; that operational check does not reopen the accepted semantic cutover unless it identifies a real defect.
+PR merge is permitted only from an exact head that passes the repository's normal Agentic conformance and Documentation consistency gates.
