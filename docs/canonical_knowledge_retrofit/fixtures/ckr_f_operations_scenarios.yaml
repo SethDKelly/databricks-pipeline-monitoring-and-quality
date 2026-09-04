@@ -1,0 +1,148 @@
+version: 1
+phase: CKR-F
+purpose: Semantic-conservation scenarios for OPS-001–OPS-123 authority migration.
+scenarios:
+  - id: CKRF-01
+    purpose: typed lineage family and exact direction remain proposition-bound
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-02
+    purpose: field-level relevance remains narrower than asset reachability
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-03
+    purpose: planned topology remains distinct from effective topology
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-04
+    purpose: no-edge conclusion requires bounded negative evidence
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-05
+    purpose: restricted topology does not become false absence
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-06
+    purpose: cyclic topology traversal stays bounded and question-specific
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-07
+    purpose: Change Intent revision and target identity remain exact
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-08
+    purpose: deployment attempt remains distinct from activation
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-09
+    purpose: intent and Deployment association supports many-to-many cardinality
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-10
+    purpose: partial rollout remains target and slice specific
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-11
+    purpose: unregistered activity remains weaker than proven unplanned change
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-12
+    purpose: rollback does not imply universal downstream restoration
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-13
+    purpose: planned-added path creates prospective candidate only
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-14
+    purpose: planned removal remains a path-loss change candidate
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-15
+    purpose: proposal-bound compatibility does not become realized compatibility
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-16
+    purpose: metric Baseline and reconciliation review does not create failure state
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-17
+    purpose: review relevance remains separate from governed obligation
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-18
+    purpose: restricted blast-radius coverage prevents false exhaustiveness
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-19
+    purpose: execution opportunity without a run remains no execution instance
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-20
+    purpose: partial lifecycle evidence does not fabricate terminal state
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-21
+    purpose: retry and rerun continuity remain source/evidence specific
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-22
+    purpose: actual precedence does not prove waiting
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-23
+    purpose: run-specific consumed version requires encounter evidence
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-24
+    purpose: successful run does not prove output existence
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-25
+    purpose: Investigation question does not presume a cause
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-26
+    purpose: first observed remains distinct from earliest evidenced deviation
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-27
+    purpose: reconciliation boundary localization remains below causal truth
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-28
+    purpose: multiple compatible Investigation leads remain first-class
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-29
+    purpose: lead exclusion requires discriminating negative evidence
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-30
+    purpose: explicit causal handoff preserves REF-017 plus AUTH-034 confirmation gate
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-31
+    purpose: publication without consumer encounter is not exposure
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-32
+    purpose: safe stale cache can avoid suspect exposure while freshness fails
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-33
+    purpose: multi-hop exposure is not transitively inherited
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-34
+    purpose: unresolved alternate path prevents global non-exposure
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-35
+    purpose: exposure can coexist with no evidenced downstream effect
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-36
+    purpose: business consequence evidence does not self-establish causality
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-37
+    purpose: Safeguard configured or requested does not prove enforcement
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-38
+    purpose: partial Safeguard path coverage does not prove global protection
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-39
+    purpose: prevented exposure requires a material encounter opportunity
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-40
+    purpose: safe stale serving during protection remains separate freshness state
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-41
+    purpose: Safeguard release does not prove recovery
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-42
+    purpose: missing control telemetry leaves fallback behavior unresolved
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-43
+    purpose: Gate evidence suitability remains distinct from readiness and decision
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-44
+    purpose: reliable start can contradict unsuperseded HOLD enforcement
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-45
+    purpose: ADMIT can occur without downstream execution
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-46
+    purpose: override preserves underlying readiness result
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-47
+    purpose: fallback trigger remains separate from actual fallback application
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
+  - id: CKRF-48
+    purpose: Execution Gate and Propagation Safeguard remain independent controls
+    expected: preserve accepted Phase 007 owner/evidence/state boundaries without inference shortcut
