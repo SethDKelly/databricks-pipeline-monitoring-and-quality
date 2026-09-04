@@ -4,7 +4,7 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A; IN EXECUTION CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-B; NEXT CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
 ## Universal start
 
@@ -13,7 +13,7 @@
 | CKR status | `docs/canonical_knowledge_retrofit/README.md` |
 | Current semantic owner | `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` |
 | Canonical namespace | `docs/canonical/README.md` |
-| CKR-B semantic comparison | `docs/canonical_knowledge_retrofit/ckr_b_semantic_conservation_matrix.md` |
+| CKR-B acceptance evidence | `docs/canonical_knowledge_retrofit/ckr_b_execution_review.md` |
 | Design history | `docs/design_history/README.md` |
 | Implementation status | `docs/implementation/README.md` |
 | Shared instructions | root `AGENTS.md` |
@@ -24,13 +24,14 @@
 ## CKR state
 
 - CKR-A — COMPLETE / ACCEPTED.
-- CKR-B — IN EXECUTION / nine-record foundation-glossary cutover COMPLETE / closure validation pending.
-- CKR-C–K — planned in the CKR README.
+- CKR-B — COMPLETE / ACCEPTED; first nine substantive foundation/glossary records canonicalized.
+- CKR-C — Concept Catalog: NEXT / READY, not active until selected.
+- CKR-D–K — planned in the CKR README.
 - Implementation 001-A — BLOCKED until CKR-K.
 
-## Current CKR-B owners
+## Current CKR-B canonical owners
 
-Current canonical foundation/reference resources now include:
+Current foundation/reference authority includes:
 
 - `docs/canonical/reference/product-definition.md`;
 - `actors-and-stakeholders.md`;
@@ -42,7 +43,7 @@ Current canonical foundation/reference resources now include:
 - `docs/canonical/policies/security-governance.md`;
 - `docs/canonical/policies/mvp-boundary.md`.
 
-Phase-001 foundation files and old glossary are provenance for these records. `reference.authority_vocabulary`, all 24 concepts and every stable-ID family remain with their independent legacy owners.
+Phase-001 foundation files and old glossary are provenance for these records. `reference.authority_vocabulary`, all 24 concepts and every stable-ID family remain with their independent legacy owners until later CKR groups.
 
 ## Stable IDs / residuals
 
