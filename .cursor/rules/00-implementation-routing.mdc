@@ -12,12 +12,22 @@ alwaysApply: false
 
 CKR-C concept/SYN cutover is complete and awaiting closure validation. Product implementation remains blocked until CKR-K.
 
-1. Read CKR README for live state.
-2. Consult ownership inventory when ownership is unclear.
-3. `canonicalized` → use inventoried `docs/canonical/` owner.
-4. `legacy_authoritative` / `candidate_ready` → use inventoried legacy owner.
+Primary shared authority remains:
+
+- root `AGENTS.md` — repository constitution;
+- `docs/agentic_development_foundation/authority_scope_policy.md` — A1–A4 action/scope control;
+- `knowledge/index.md` — optional progressive-disclosure routing only;
+- `docs/canonical_knowledge_retrofit/README.md` — live CKR state;
+- `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` — record/family ownership.
+
+Current lookup:
+
+1. Read the CKR README for live state.
+2. Consult the ownership inventory when ownership is unclear.
+3. `canonicalized` → use the inventoried `docs/canonical/` owner.
+4. `legacy_authoritative` / `candidate_ready` → use the inventoried legacy owner.
 5. Use phase/decision history for provenance/rationale/history, not alternate current truth.
-6. `knowledge/` remains optional routing only.
+6. Use `knowledge/index.md` only when a compact route is useful; it never creates semantic authority.
 
 All 24 concepts and SYN-001–SYN-035 are canonicalized. Phase 002/003 are provenance. REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain later-group legacy authority.
 
