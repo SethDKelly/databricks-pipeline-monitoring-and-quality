@@ -1,0 +1,136 @@
+schema_version: "1.0"
+family: CKR-E
+purpose: Semantic-conservation checks for HLTH-001–HLTH-066 migration.
+scenarios:
+  - id: CKRE-01
+    focus: measurement target binding
+    expected: A metric value without definition/grain/window context cannot be treated as portable health truth.
+  - id: CKRE-02
+    focus: metric versus assessment
+    expected: Observed value remains distinct from pass/fail interpretation.
+  - id: CKRE-03
+    focus: metric families
+    expected: Family taxonomy does not make every metric mandatory.
+  - id: CKRE-04
+    focus: metric version
+    expected: Material formula or denominator change creates a comparability boundary.
+  - id: CKRE-05
+    focus: profile role
+    expected: Diagnostic use does not create permanent routine membership.
+  - id: CKRE-06
+    focus: applicability separation
+    expected: Not applicable, not selected, unsupported, unavailable and pending remain distinct.
+  - id: CKRE-07
+    focus: anti-bloat
+    expected: Technical availability alone cannot justify collection.
+  - id: CKRE-08
+    focus: measurement provenance
+    expected: Material method and temporal limitations remain traceable.
+  - id: CKRE-09
+    focus: structural observation
+    expected: Observed schema is evidence, not compatibility by itself.
+  - id: CKRE-10
+    focus: rename identity
+    expected: Drop plus add does not prove rename and same name does not prove same meaning.
+  - id: CKRE-11
+    focus: additive change
+    expected: Additive field compatibility is consumer/interface specific.
+  - id: CKRE-12
+    focus: casting
+    expected: Engine cast capability does not prove contract compatibility.
+  - id: CKRE-13
+    focus: nullability default
+    expected: Physical non-null defaults can still violate business semantics.
+  - id: CKRE-14
+    focus: key grain
+    expected: Grain change can invalidate selected metrics despite stable columns.
+  - id: CKRE-15
+    focus: interface scope
+    expected: Producer has no universal breaking/non-breaking label.
+  - id: CKRE-16
+    focus: planned versus realized
+    expected: Prospective validation does not prove realized production state.
+  - id: CKRE-17
+    focus: scoped invalidation
+    expected: Structural change triggers scoped rather than global metric/Baseline review.
+  - id: CKRE-18
+    focus: compatible positive claim
+    expected: Compatible requires sufficient evidence for all required predicates.
+  - id: CKRE-19
+    focus: baseline membership
+    expected: Available history is not automatically eligible reference history.
+  - id: CKRE-20
+    focus: comparability dimensions
+    expected: Comparability is multidimensional and conclusion relative, not one score.
+  - id: CKRE-21
+    focus: baseline classes
+    expected: Fixed, rolling, seasonal, cohort and new-regime references are semantic classes, not algorithms.
+  - id: CKRE-22
+    focus: calendar cohort
+    expected: Recency does not override material cadence or cohort context.
+  - id: CKRE-23
+    focus: regime break
+    expected: New Baseline uses realized post-change evidence rather than planned values.
+  - id: CKRE-24
+    focus: sparse reference
+    expected: No universal minimum sample count manufactures stable reference sufficiency.
+  - id: CKRE-25
+    focus: approximation
+    expected: Approximation uncertainty remains visible and can prevent comparability.
+  - id: CKRE-26
+    focus: distribution
+    expected: Distribution difference is descriptive until a separate Expectation makes it normative.
+  - id: CKRE-27
+    focus: normalization
+    expected: Explicit semantic normalization can support derived comparison without rewriting raw non-comparability.
+  - id: CKRE-28
+    focus: baseline contamination
+    expected: Current observation cannot silently redefine the reference used to judge itself.
+  - id: CKRE-29
+    focus: baseline ambiguity
+    expected: Newest or largest Baseline does not implicitly win.
+  - id: CKRE-30
+    focus: criterion binding
+    expected: Operator, boundary, unit and denominator remain explicit.
+  - id: CKRE-31
+    focus: warning semantics
+    expected: Meets plus warning is possible and warning is not severity.
+  - id: CKRE-32
+    focus: relative criterion
+    expected: Unusable required Baseline makes the relative criterion indeterminate rather than selecting a substitute.
+  - id: CKRE-33
+    focus: boundary uncertainty
+    expected: Material uncertainty spanning a threshold preserves indeterminate evidence.
+  - id: CKRE-34
+    focus: normative vocabulary
+    expected: Meets, violates, indeterminate, conflicting, unavailable and not applicable remain distinct.
+  - id: CKRE-35
+    focus: typicality versus norm
+    expected: Typical plus violates and atypical plus meets remain valid combinations.
+  - id: CKRE-36
+    focus: waiver
+    expected: Violates plus waived response remains a violation.
+  - id: CKRE-37
+    focus: reconciliation binding
+    expected: Lineage alone does not create a metric equation.
+  - id: CKRE-38
+    focus: join fanout
+    expected: Many-to-many fanout can be valid and declared key does not prove uniqueness.
+  - id: CKRE-39
+    focus: aggregation
+    expected: Row counts, averages, ratios, distinct counts and quantiles are not generically composable.
+  - id: CKRE-40
+    focus: restriction propagation
+    expected: Derived evidence does not upgrade quality or declassify restricted evidence.
+  - id: CKRE-41
+    focus: no blind propagation
+    expected: Upstream violation does not recursively become downstream violation through Lineage.
+  - id: CKRE-42
+    focus: composite health
+    expected: No universal majority, weighted score or worst-child algorithm is accepted.
+  - id: CKRE-43
+    focus: stale result
+    expected: Recent recomputation over old evidence can be unsuitable for current use.
+  - id: CKRE-44
+    focus: readiness control separation
+    expected: Eligible, suitable, ready, authorized control, Gate decision, enforcement and execution remain distinct.
