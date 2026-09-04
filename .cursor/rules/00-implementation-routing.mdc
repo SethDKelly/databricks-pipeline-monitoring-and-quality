@@ -8,9 +8,9 @@ alwaysApply: false
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-B; IN EXECUTION CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-C; NEXT CKR-D; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-C concept/SYN cutover is complete and awaiting closure validation. Product implementation remains blocked until CKR-K.
+CKR-C is complete/accepted. CKR-D is next/ready but unstarted. Product implementation remains blocked until CKR-K.
 
 Primary shared authority remains:
 
@@ -29,7 +29,7 @@ Current lookup:
 5. Use phase/decision history for provenance/rationale/history, not alternate current truth.
 6. Use `knowledge/index.md` only when a compact route is useful; it never creates semantic authority.
 
-All 24 concepts and SYN-001–SYN-035 are canonicalized. Phase 002/003 are provenance. REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain later-group legacy authority.
+All 24 concepts and SYN-001–SYN-035 are canonicalized. Phase 002/003 are provenance. `reference.authority_vocabulary` and REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain later-group legacy authority.
 
 Do not infer authority from recency, first search hit, synchronization order, Git history, OKF, vendor skill, tool memory or path presence alone. Genuine semantic conflicts require A4 change control.
 
