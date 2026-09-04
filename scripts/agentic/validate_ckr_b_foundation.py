@@ -62,10 +62,6 @@ REQUIRED_NON_EQUIVALENCES = (
 )
 
 
-def occurrences(text: str, token: str) -> int:
-    return len(re.findall(rf"(?<![A-Za-z0-9-]){re.escape(token)}(?![A-Za-z0-9-])", text))
-
-
 def require_sequence_headings(text: str, prefix: str, start: int, end: int, label: str, errors: list[str]) -> None:
     for number in range(start, end + 1):
         if not re.search(rf"^{re.escape(prefix)}\s+{number}\.\s", text, re.M):
@@ -123,14 +119,14 @@ def main() -> int:
     principles = (repo / records["foundation.architectural_principles"]["target_owner"]).read_text(encoding="utf-8")
     for number in range(1, 33):
         token = f"AP-{number:02d}"
-        if occurrences(principles, token) != 1:
-            errors.append(f"architectural principles: {token} must appear exactly once")
+        if len(re.findall(rf"^###\s+{re.escape(token)}\s+—", principles, re.M)) != 1:
+            errors.append(f"architectural principles: {token} must appear exactly once as a principle heading")
 
     security = (repo / records["foundation.security_governance_policy"]["target_owner"]).read_text(encoding="utf-8")
     for number in range(1, 16):
         token = f"SP-{number:02d}"
-        if occurrences(security, token) != 1:
-            errors.append(f"security governance: {token} must appear exactly once")
+        if len(re.findall(rf"^###\s+{re.escape(token)}\s+—", security, re.M)) != 1:
+            errors.append(f"security governance: {token} must appear exactly once as a principle heading")
 
     lifecycles = (repo / records["foundation.ecosystem_lifecycles"]["target_owner"]).read_text(encoding="utf-8")
     require_sequence_headings(lifecycles, "##", 1, 14, "ecosystem lifecycles", errors)
@@ -178,7 +174,6 @@ def main() -> int:
         if rel not in history_paths:
             errors.append(f"CKR-B history source not retained in ownership inventory: {rel}")
 
-    # CKR-B must not preempt later semantic domains.
     for rid, rec in records.items():
         if rec.get("migration_group") == "CKR-C" and rec.get("migration_state") != "legacy_authoritative":
             errors.append(f"{rid}: CKR-C concept must remain legacy_authoritative during CKR-B")
