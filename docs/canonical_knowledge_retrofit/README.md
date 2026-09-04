@@ -50,6 +50,20 @@ During migration, records that have not yet been canonicalized continue to use t
 
 The sequence is semantic-domain oriented, not phase-order oriented.
 
+## Current execution state
+
+- **CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory: IN EXECUTION.**
+- **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: PLANNED.**
+- **CKR-C — Concept Catalog: PLANNED.**
+- **CKR-D — Evidence, Time, Authority & Governance: PLANNED.**
+- **CKR-E — Health, Quality, Metrics & Timing: PLANNED.**
+- **CKR-F — Lineage, Change, Investigation, Impact & Control: PLANNED.**
+- **CKR-G — Questioning, Explanation & Experience Contracts: PLANNED.**
+- **CKR-H — Integration, Source Authority & Evidence Availability: PLANNED.**
+- **CKR-I — Technical Architecture: PLANNED.**
+- **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: PLANNED.**
+- **CKR-K — Consolidation, Provenance Validation & Exit Review: PLANNED.**
+
 ## Authority while CKR is in progress
 
 The accepted ADF exit remains valid. CKR temporarily blocks product implementation because the repository authority topology is intentionally changing before code/test traceability begins.
