@@ -1,10 +1,10 @@
 # DMTZ Implementation Program
 
-**Status:** BLOCKED — CKR-A–CKR-B COMPLETE; CKR-C NEXT / READY
+**Status:** BLOCKED — CKR-A–CKR-B COMPLETE; CKR-C IN EXECUTION
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-B; NEXT CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-B; IN EXECUTION CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
 ## Authority and current gate
 
@@ -12,12 +12,11 @@ This directory owns implementation-program progression. Product implementation r
 
 Current required work:
 
-- CKR-A — COMPLETE / ACCEPTED;
-- CKR-B — COMPLETE / ACCEPTED;
-- CKR-C — Concept Catalog: NEXT / READY;
+- CKR-A–B — COMPLETE / ACCEPTED;
+- CKR-C — Concept Catalog: IN EXECUTION / CANDIDATE REVIEW;
 - Implementation 001-A — NOT ACTIVE / BLOCKED until CKR-K exit acceptance.
 
-CKR-B canonicalized its nine foundation/glossary records. The 24 concepts and all stable-ID families remain independently owned until later CKR groups.
+CKR-B foundation/glossary records are canonical. CKR-C has candidate targets for the 24 concepts plus SYN-001–SYN-035; Phase 002/003 remain current authority while those records are `candidate_ready`.
 
 Use `../canonical_knowledge_retrofit/README.md`, its ownership inventory, `../canonical/README.md`, and root `AGENTS.md` for current authority.
 
@@ -27,11 +26,11 @@ Use `../canonical_knowledge_retrofit/README.md`, its ownership inventory, `../ca
 - `canonicalized` → inventoried `docs/canonical/` target;
 - `history_only` → provenance/rationale only.
 
-Accepted stable ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500.
+Accepted stable ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500. CKR-C may move SYN only; later stable families remain legacy-authoritative.
 
 ## Residuals
 
-ADF-EX-17 remains deferred; `ADF-G-XT01` remains open and Cursor/Claude/Codex remain runtime-`unverified`. `DBX-SKILL-RUN-01` remains future Implementation 001-A work. Reviewed Databricks vendor skills remain operational guidance; model/AI skills and managed MCP remain deferred.
+ADF-EX-17 remains deferred; `ADF-G-XT01` remains open and Cursor/Claude/Codex remain runtime-`unverified`. `DBX-SKILL-RUN-01` remains future Implementation 001-A work. Reviewed Databricks vendor skills remain operational guidance.
 
 ## Implementation sequence
 
