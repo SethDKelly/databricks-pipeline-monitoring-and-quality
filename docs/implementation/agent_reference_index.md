@@ -4,16 +4,17 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A; NEXT CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A; IN EXECUTION CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
 ## Universal start
 
 | Need | Read first |
 |---|---|
-| CKR status / next group | `docs/canonical_knowledge_retrofit/README.md` |
+| CKR status / active group | `docs/canonical_knowledge_retrofit/README.md` |
 | Current semantic owner / target | `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` |
+| CKR-B semantic comparison | `docs/canonical_knowledge_retrofit/ckr_b_semantic_conservation_matrix.md` |
 | Authority / cutover rules | `authority_model.md` / `migration_contract.md` under CKR |
-| Target canonical namespace | `docs/canonical/README.md` |
+| Target/current canonical namespace | `docs/canonical/README.md` |
 | Design history | `docs/design_history/README.md` |
 | Implementation status | `docs/implementation/README.md` |
 | Shared instructions | root `AGENTS.md` |
@@ -35,7 +36,7 @@ Search order, phase recency, OKF summaries and canonical-path presence do not es
 ## CKR progression
 
 - **CKR-A — Authority model / migration contract / ownership inventory: COMPLETE / ACCEPTED**
-- **CKR-B — Foundation / terminology / cross-cutting invariants: NEXT / READY**
+- **CKR-B — Foundation / terminology / cross-cutting invariants: IN EXECUTION**
 - CKR-C — 24 concepts + SYN: PLANNED
 - CKR-D — REF/AUTH: PLANNED
 - CKR-E — HLTH: PLANNED
@@ -45,6 +46,8 @@ Search order, phase recency, OKF summaries and canonical-path presence do not es
 - CKR-I — ARCH: PLANNED
 - CKR-J — OKF / deterministic stable owners / routing enforcement: PLANNED
 - CKR-K — consolidation / provenance validation / exit: PLANNED
+
+CKR-B currently owns nine foundation/glossary candidates. Their legacy sources remain current authority until atomic cutover.
 
 Implementation 001-A remains blocked until CKR-K.
 
