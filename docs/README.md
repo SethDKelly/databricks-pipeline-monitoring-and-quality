@@ -41,56 +41,58 @@ The catalog contains **24 accepted concepts**.
 ## CKR state
 
 - **CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory: COMPLETE / ACCEPTED.**
-- **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: NEXT / READY.**
+- **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: IN EXECUTION.** Nine foundation/glossary records have completed atomic authority cutover; closure validation remains pending.
 - Implementation 001-A remains blocked until CKR-K.
 
 CKR-A evidence: [`canonical_knowledge_retrofit/ckr_a_execution_review.md`](canonical_knowledge_retrofit/ckr_a_execution_review.md).
+CKR-B evidence: [`canonical_knowledge_retrofit/ckr_b_execution_review.md`](canonical_knowledge_retrofit/ckr_b_execution_review.md).
 
 ## Current semantic lookup
 
 1. Open a known current owner directly.
 2. Otherwise consult the ownership inventory.
-3. `canonicalized` → use `docs/canonical/` owner.
-4. `legacy_authoritative` / `candidate_ready` → use inventoried legacy owner.
+3. `canonicalized` → use the `docs/canonical/` owner.
+4. `legacy_authoritative` / `candidate_ready` → use the inventoried legacy owner.
 5. Use stable IDs to narrow exact rules; search order is not authority.
-6. Use design history when provenance/rationale/history is actually requested.
+6. Use design history only when provenance/rationale/history is actually requested.
 
-After relevant cutovers:
+Current examples after CKR-B cutover:
 
-- `What is Lineage?` → `docs/canonical/concepts/lineage.md`.
-- `What does OPS-005 require?` → canonical contract owner/anchor.
-- `Why does Lineage not imply Impact?` → canonical rule first, then design history if rationale is needed.
+- `What is DMTZ for?` → `docs/canonical/reference/product-definition.md`.
+- `What are the architectural principles?` → `docs/canonical/invariants/architectural-principles.md`.
+- `What is the MVP boundary?` → `docs/canonical/policies/mvp-boundary.md`.
+- `What does a shared term mean?` → `docs/canonical/reference/glossary.md`, then follow the ownership inventory for detailed concept/stable-ID semantics when needed.
 
-CKR-A established authority mechanics and the structural canonical namespace with **0 substantive records prematurely canonicalized**. CKR-B is the first eligible substantive migration group.
+Future examples after later cutovers:
 
-## Canonical knowledge target
+- `What is Lineage?` → `docs/canonical/concepts/lineage.md` after CKR-C.
+- `What does OPS-005 require?` → its canonical contract owner/anchor after CKR-F/J.
 
-[`canonical/README.md`](canonical/README.md) defines target families:
+## Canonical knowledge
 
-- concepts;
-- contracts;
-- policies;
-- invariants;
-- authority;
-- experience;
-- architecture;
-- reference.
+[`canonical/README.md`](canonical/README.md) now contains the first substantive canonical current-truth resources from CKR-B. Target families remain concepts, contracts, policies, invariants, authority, experience, architecture and reference.
 
 A file under `docs/canonical/` is authoritative only when its ownership record has atomically cut over.
+
+## Foundation / reference disposition
+
+CKR-B canonicalized durable current meaning from foundation 001–008 plus the shared glossary.
+
+- [`foundation/README.md`](foundation/README.md) now routes current questions to canonical owners and preserves Phase-001 files as design-history/provenance.
+- [`reference/README.md`](reference/README.md) routes current shared vocabulary to the canonical glossary/terminology resources.
+- `reference/authority_vocabulary.md` remains a separate legacy-authoritative CKR-D record.
+- foundation 009 roadmap, 010 open questions and 011 handoff remain historical sources rather than current truth.
 
 ## Design history
 
 The chronological corpus remains preserved in place. Use it for provenance/rationale/change review:
 
+- `foundation/` historical records;
 - `concepts/phase_002/` through `concepts/phase_010/`;
 - [`decisions/README.md`](decisions/README.md);
 - scenario reviews, exits, handoffs and gap registers.
 
 Do not rewrite historical records to make the final design appear contemporaneous with earlier phases.
-
-## Foundation / reference during migration
-
-Unmigrated current owners remain listed in the ownership inventory. CKR-B/D will progressively promote their current meaning from `foundation/` and `reference/` into canonical knowledge while leaving historical-only material as provenance.
 
 ## Agentic foundation / implementation
 
