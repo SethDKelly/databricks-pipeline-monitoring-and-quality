@@ -1,0 +1,64 @@
+scenarios:
+  - id: CKRA-01
+    title: Legacy current owner remains authoritative before migration
+    expected: A current semantic question resolves to the inventoried legacy owner while migration_state is legacy_authoritative.
+
+  - id: CKRA-02
+    title: Canonical candidate does not silently become current truth
+    expected: A candidate_ready target is explicitly non-authoritative and normal current-truth routing remains on the legacy owner until cutover.
+
+  - id: CKRA-03
+    title: Atomic canonical cutover
+    expected: Canonical authority, inventory state, routing and provenance switch together in one accepted change.
+
+  - id: CKRA-04
+    title: Dual current authority is rejected
+    expected: A legacy_authoritative record whose target claims canonical current authority fails conformance.
+
+  - id: CKRA-05
+    title: Missing canonical target cannot be canonicalized
+    expected: An inventory record marked canonicalized without an existing canonical target fails conformance.
+
+  - id: CKRA-06
+    title: Current Lineage question becomes canonical-first after CKR-C
+    expected: Once concept.lineage is canonicalized, What is Lineage resolves to docs/canonical/concepts/lineage.md rather than reconstructing Phase 002 and later refinements.
+
+  - id: CKRA-07
+    title: Historical Lineage rationale remains discoverable
+    expected: Why was the Lineage boundary chosen may traverse Phase 002, Phase 007, decisions and scenarios as provenance without changing the current canonical owner.
+
+  - id: CKRA-08
+    title: Historical records are preserved
+    expected: Canonicalization does not delete or rewrite phase records to make the final design appear contemporaneous with earlier phases.
+
+  - id: CKRA-09
+    title: Stable ID meaning survives owner migration
+    expected: Moving OPS-005 to a canonical owner preserves its accepted meaning and identifier; path change is not semantic change.
+
+  - id: CKRA-10
+    title: Contradictory legacy sources block opportunistic cutover
+    expected: A genuine semantic conflict is surfaced for A4 change control rather than resolved by newest-file or first-search-hit precedence.
+
+  - id: CKRA-11
+    title: OKF remains routing rather than semantic authority
+    expected: OKF may route to the current owner but cannot promote a candidate, history record or summary into canonical truth.
+
+  - id: CKRA-12
+    title: Implementation remains blocked during retrofit
+    expected: Implementation 001-A cannot start until CKR-K accepts the documentation authority retrofit.
+
+  - id: CKRA-13
+    title: Physical history relocation is unnecessary
+    expected: Existing phase paths can remain stable while their per-record authority role changes through the ownership ledger.
+
+  - id: CKRA-14
+    title: All accepted concepts are inventoried
+    expected: Exactly 24 concept ownership records exist with unique legacy current owners and unique docs/canonical/concepts targets.
+
+  - id: CKRA-15
+    title: Architecture coverage is complete
+    expected: The CKR-A architecture inventory exactly partitions ARCH-001 through ARCH-500 into the eight accepted Phase 010 architecture groups and separately records the reference architecture.
+
+  - id: CKRA-16
+    title: Documentation refactor cannot manufacture product semantics
+    expected: CKR migration cannot create a new concept, stable ID, semantic boundary or architecture requirement without explicit semantic change control.
