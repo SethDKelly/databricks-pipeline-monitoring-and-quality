@@ -1,0 +1,100 @@
+version: 1
+phase: CKR-G
+purpose: Semantic-conservation scenarios for EXPL-001–EXPL-160 authority migration.
+scenarios:
+  - id: CKRG-01
+    purpose: question wording does not create truth
+  - id: CKRG-02
+    purpose: broad wording does not create broad coverage
+  - id: CKRG-03
+    purpose: historical event target differs from historical knowledge cut
+  - id: CKRG-04
+    purpose: compound siblings remain independent
+  - id: CKRG-05
+    purpose: negative wording retains evidence burden
+  - id: CKRG-06
+    purpose: answerability evidence and disclosure remain separate
+  - id: CKRG-07
+    purpose: wording changes preserve statement identity
+  - id: CKRG-08
+    purpose: direct projection differs from derived statement
+  - id: CKRG-09
+    purpose: duplicate basis is not independent corroboration
+  - id: CKRG-10
+    purpose: summary preserves material limitations
+  - id: CKRG-11
+    purpose: sibling statement states do not propagate
+  - id: CKRG-12
+    purpose: answer coverage is proposition-bound
+  - id: CKRG-13
+    purpose: ran differs from succeeded and output produced
+  - id: CKRG-14
+    purpose: output existence differs from freshness and health
+  - id: CKRG-15
+    purpose: structural compatibility differs from comparability and quality
+  - id: CKRG-16
+    purpose: Baseline typicality differs from Expectation outcome
+  - id: CKRG-17
+    purpose: intent deployment activation and realized change remain separate
+  - id: CKRG-18
+    purpose: dependency precedence waiting and consumption remain separate
+  - id: CKRG-19
+    purpose: Investigation localization remains below causal claim
+  - id: CKRG-20
+    purpose: root-cause wording does not force a singular winner
+  - id: CKRG-21
+    purpose: supported causal claim is not confirmed
+  - id: CKRG-22
+    purpose: candidate exposure effect consequence and cause remain layered
+  - id: CKRG-23
+    purpose: affected all-none wording retains coverage burden
+  - id: CKRG-24
+    purpose: active Safeguard plus non-exposure does not prove prevention
+  - id: CKRG-25
+    purpose: readiness Gate decision enforcement and execution remain separate
+  - id: CKRG-26
+    purpose: Gate and Safeguard remain independent
+  - id: CKRG-27
+    purpose: responsibility does not become fault cause or permission
+  - id: CKRG-28
+    purpose: assertion standing differs from evidence and capability permission
+  - id: CKRG-29
+    purpose: unknown does not become false absent or safe
+  - id: CKRG-30
+    purpose: unavailable evidence does not become negative evidence
+  - id: CKRG-31
+    purpose: restricted evidence does not become absent
+  - id: CKRG-32
+    purpose: not evidenced differs from did not occur
+  - id: CKRG-33
+    purpose: competing claims remain multiple without resolution
+  - id: CKRG-34
+    purpose: no universal explanation confidence score
+  - id: CKRG-35
+    purpose: audience context does not create disclosure permission
+  - id: CKRG-36
+    purpose: safe abstraction cannot strengthen truth
+  - id: CKRG-37
+    purpose: hidden material limitation still constrains visible conclusion
+  - id: CKRG-38
+    purpose: basis inspection is separately governed
+  - id: CKRG-39
+    purpose: mixed-visibility basis cannot leak a hidden inference
+  - id: CKRG-40
+    purpose: repeated-query inference risk is compositional
+  - id: CKRG-41
+    purpose: elapsed time does not strengthen evidence
+  - id: CKRG-42
+    purpose: basis enrichment does not automatically strengthen status
+  - id: CKRG-43
+    purpose: removal from projection does not imply false
+  - id: CKRG-44
+    purpose: visibility change differs from truth change
+  - id: CKRG-45
+    purpose: retained communication differs from current truth
+  - id: CKRG-46
+    purpose: reconstruction differs from actual prior communication
+  - id: CKRG-47
+    purpose: historical source as-known retained and retrospective views remain distinct
+  - id: CKRG-48
+    purpose: current disclosure permission does not rewrite historical knowledge
