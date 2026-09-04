@@ -1,6 +1,6 @@
 # CKR-C Semantic Conservation Matrix
 
-**Status:** CUTOVER VALIDATED — CLOSURE STATUS SYNCHRONIZED / FINAL VALIDATION PENDING
+**Status:** ACCEPTED — CKR-C COMPLETE
 
 **Scope:** all 24 `concept.*` records plus the `SYN-001..SYN-035` stable family assigned to CKR-C.
 
@@ -63,8 +63,12 @@ CKR-C conserves:
 
 ## Authority/provenance disposition
 
-All 24 concept records and SYN-001–SYN-035 are now `canonicalized`. Phase 002/003 remain design history/provenance rather than alternate current owners. `reference.authority_vocabulary` and REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain legacy-authoritative for later CKR groups.
+All 24 concept records and SYN-001–SYN-035 are `canonicalized`. Phase 002/003 remain design history/provenance rather than alternate current owners. `reference.authority_vocabulary` and REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain legacy-authoritative for later CKR groups.
 
 Phase progression text, resolved/deferred implementation questions, vendor/source-selection speculation, roadmap handoffs, and scenario-review chronology were intentionally not promoted into current canonical resources.
 
 No 25th umbrella concept was introduced and no A4 semantic contradiction was required.
+
+## Validation disposition
+
+Candidate review, atomic cutover, corrected cutover validation and closure synchronization all passed the deterministic CKR/agentic checks. CKR-C is semantically accepted; its evidence-bearing exact-head and post-merge repository checks remain operational merge verification rather than additional semantic design work.
