@@ -71,6 +71,17 @@ Corrected cutover head `a40077b3c90534c145d903ebe09f81b02dbcacb3` passed:
 
 This validates the complete atomic INTG cutover, canonical routing, Phase 009 provenance classification, semantic guard suite and ARCH isolation.
 
+### Closure/status synchronization gate
+
+Closure head `e3a93cf28e73664aac9219195cd6f5ea2915c2dc` advanced only live CKR progression/routing to CKR-H complete / CKR-I next-ready, synchronized canonical and OKF routing for INTG, and retained Implementation 001-A blocked until CKR-K.
+
+It passed:
+
+- Agentic conformance **#151 — SUCCESS** (run ID `33892469165`);
+- Documentation consistency **#269 — SUCCESS** (run ID `33892469164`).
+
+This verifies that CKR-H status, INTG ownership, canonical/OKF routing, Phase 009 provenance, fixture registration, context budgets and ARCH isolation remain mutually consistent after closure.
+
 ## Acceptance criteria
 
 - exact CKR-H scope INTG-001–INTG-270 — **PASS**;
@@ -83,10 +94,10 @@ This validates the complete atomic INTG cutover, canonical routing, Phase 009 pr
 - runtime/version and Lineage/exposure boundaries preserved — **PASS**;
 - control and historical-replay boundaries preserved — **PASS**;
 - no implementation/architecture selection — **PASS**;
-- candidate and corrected-cutover repository gates — **PASS**.
+- candidate, corrected-cutover and closure repository gates — **PASS**.
 
 ## Exit decision
 
 **CKR-H is accepted and complete. CKR-I — Technical Architecture is next/ready but remains unstarted until explicitly selected by the human.**
 
-Implementation 001-A remains blocked until CKR-K. Closure/status synchronization and the final evidence-only head must pass the normal exact-head repository gates before PR merge.
+Implementation 001-A remains blocked until CKR-K. PR merge is permitted only from an exact head that passes the repository's normal Agentic conformance and Documentation consistency gates.
