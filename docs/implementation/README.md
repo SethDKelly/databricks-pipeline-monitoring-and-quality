@@ -1,14 +1,37 @@
 # DMTZ Implementation Program
 
-**Status:** READY — AGENTIC FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT / ELIGIBLE
+**Status:** BLOCKED — CANONICAL KNOWLEDGE & DOCUMENTATION AUTHORITY RETROFIT IN PROGRESS
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
+**CKR status mirror: IN EXECUTION CKR-A; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+
 ## Purpose and authority
 
-This directory is the system of record for realization of the frozen DMTZ product, integration and technical architecture. It translates the accepted design stack through Phase 010 into executable software, infrastructure, validation and production-readiness work; it does not create a new truth model.
+This directory is the system of record for realization of the frozen DMTZ product, integration and technical architecture. It translates accepted design semantics into executable software, infrastructure, validation and production-readiness work; it does not create a new truth model.
 
-Accepted incoming ranges remain authoritative:
+Implementation is temporarily blocked while the repository performs the **Canonical Knowledge & Documentation Authority Retrofit (CKR)**. The retrofit changes where current documentation authority lives and how it is discovered before code/test traceability begins. It does not itself change accepted product semantics.
+
+Status authority:
+
+- `docs/README.md` — completed design-phase progression plus CKR pre-implementation note;
+- `../canonical_knowledge_retrofit/README.md` — live CKR progression and documentation-authority migration;
+- **this file** — implementation-program progression;
+- `../agentic_development_foundation/README.md` / `execution_exit_review.md` — completed ADF/addendum/exit authority;
+- active implementation package README/group plan — package-local progression after CKR unlocks implementation.
+
+## Documentation authority during CKR
+
+Use `../canonical_knowledge_retrofit/canonical_ownership_inventory.json` when semantic ownership is unclear.
+
+- `legacy_authoritative` — current meaning remains in the inventoried legacy owner;
+- `candidate_ready` — canonical candidate is review-only;
+- `canonicalized` — target under `docs/canonical/` is the sole current owner for that record;
+- `history_only` — provenance/rationale only.
+
+No current semantic question should be reconstructed from design chronology after its record is canonicalized. Conversely, the existence of a target path under `docs/canonical/` does not override a `legacy_authoritative` owner.
+
+Accepted incoming stable-ID ranges remain unchanged:
 
 - SYN-001–SYN-035;
 - REF-001–REF-030;
@@ -19,51 +42,33 @@ Accepted incoming ranges remain authoritative:
 - INTG-001–INTG-270;
 - ARCH-001–ARCH-500.
 
-Status authority:
-
-- `docs/README.md` — design progression;
-- **this file** — implementation-program progression;
-- `../agentic_development_foundation/README.md` and `execution_exit_review.md` — completed ADF/addendum/exit authority;
-- active implementation package README/group plan — package-local progression.
-
-Code, tests, knowledge, DMTZ/vendor skills, adapters, security policy or CI may not silently supersede accepted design/architecture contracts.
+CKR migrates owner paths and routing without renumbering or silently changing these contracts.
 
 ## Agentic Development Foundation — EXIT ACCEPTED
 
-Completed and accepted:
+ADF-A through ADF-H, the Databricks Agent Skills Integration Addendum and the ADF execution exit remain accepted.
 
-- ADF-A — shared authority and human-directed A1–A4 scope;
-- ADF-B — OKF v0.2 portable knowledge routing;
-- ADF-C — thin Cursor/Claude/Codex instruction adapters;
-- ADF-D — canonical portable workflows under `.agents/skills/`;
-- ADF-E — shortest-path context, exact stable references, maintenance and context budgets;
-- ADF-F — unified conformance, drift detection, negative controls and CI;
-- ADF-G — compatibility/onboarding baseline;
-- ADF-H — security, trust, lifecycle and governance;
-- Databricks Agent Skills Integration Addendum;
-- Agentic Development Foundation Execution Exit Review / Consolidation.
+Final ADF disposition remains:
 
-Final exit disposition:
+- ADF-EX-01–ADF-EX-16 — **PASS**;
+- ADF-EX-17 — **DEFERRED / WAIVED — BOUNDED VERIFICATION DEBT**;
+- ADF-EX-18–ADF-EX-20 — **PASS**.
 
-- **ADF-EX-01–ADF-EX-16 — PASS**;
-- **ADF-EX-17 — DEFERRED / WAIVED — BOUNDED VERIFICATION DEBT**;
-- **ADF-EX-18–ADF-EX-20 — PASS**.
+`ADF-G-XT01` remains open and Cursor/Claude Code/Codex remain runtime-`unverified`. `DBX-SKILL-RUN-01` remains a future **Implementation 001-A** environment obligation once CKR unlocks implementation.
 
-`ADF-G-XT01` remains open: Cursor, Claude Code and Codex stay runtime-`unverified` until actual bounded provider-runtime evidence is recorded. That does not block ordinary IDE/CLI development or Implementation 001-A under the accepted bounded waiver.
+## CKR dependency
 
-`DBX-SKILL-RUN-01` remains an **Implementation 001-A** obligation: exact local Databricks Agent Skills materialization/version verification after a compatible CLI environment is established.
+Current required work:
 
-Canonical exit evidence: `../agentic_development_foundation/execution_exit_review.md`.
+- **CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory: IN EXECUTION**;
+- CKR-B through CKR-K follow as declared in `../canonical_knowledge_retrofit/README.md`;
+- **Implementation 001-A remains blocked until CKR-K exit acceptance.**
+
+The accepted ADF exit is not reopened by CKR. CKR is a later documentation-authority dependency intentionally inserted before code begins.
 
 ## Databricks developer dependency profile
 
-- accepted addendum: `../agentic_development_foundation/databricks_agent_skills_addendum.md` / `databricks_agent_skills_addendum_execution_review.md`;
-- reviewed vendor profile: `../agentic_development_foundation/databricks_vendor_skills_profile.json`;
-- canonical DMTZ overlays: `../../.agents/skills/dmtz-databricks-*/SKILL.md`;
-- local vendor materialization helper: `scripts/agentic/materialize_databricks_skills.py`;
-- local vendor files: ignored `.databricks/agent-skills/`, never canonical DMTZ truth;
-- accepted vendor set: core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect;
-- automatic new vendor skills, initial model/AI skills, and managed Databricks MCP servers are not authorized by the accepted addendum.
+The accepted vendor profile remains core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect. Model/AI skills and managed Databricks MCP servers remain deferred. Vendor operational guidance never becomes DMTZ semantic authority.
 
 ## Implementation sequence
 
@@ -81,39 +86,28 @@ Canonical exit evidence: `../agentic_development_foundation/execution_exit_revie
 | **010 — Active Control & Enterprise Control Plane** | Execution Gate / Propagation Safeguard realization | Conditional |
 | **011 — Production Graduation & Operational Acceptance** | Production deployment, burn-in, runbooks, support ownership and final conformance | GA |
 
-Completion profiles:
-
-- MVP: 001–008;
-- enterprise passive monitoring: 001–009 + 011, skipping 010 if active control is not committed;
-- full active-control enterprise: 001–011.
+Completion profiles remain unchanged: MVP 001–008; enterprise passive monitoring 001–009 + 011; full active-control enterprise 001–011.
 
 ## Current implementation state
 
-**Implementation 001 — Executable Foundations & Walking Skeleton: READY.**
+**Implementation 001 — Executable Foundations & Walking Skeleton: PLANNED / BLOCKED ON CKR EXIT.**
 
-**001-A — Developer Environment, Repository Structure & Engineering Standards: NEXT / ELIGIBLE.**
+**001-A — Developer Environment, Repository Structure & Engineering Standards: NOT ACTIVE / BLOCKED ON CKR-K.**
 
-Beginning 001-A still requires explicit human selection. Completion of the foundation does not automatically begin implementation work.
-
-## Dependency and implementation rules
-
-The sequence is dependency-oriented. Downstream work may not invent independent semantics. Preserve execution success ≠ data health, freshness ≠ execution success, Observation ≠ Assessment, current ≠ historical/as-known, source availability ≠ authority, Lineage ≠ exposure ≠ Impact ≠ causality, missing evidence ≠ negative truth, and model/search output cannot manufacture truth/authority/confirmation/control decisions.
-
-Reviewed vendor guidance does not alter these distinctions.
+No product code should be introduced as part of CKR unless a later explicit semantic/change-control task separately requires executable migration tooling. CKR-A is documentation-authority infrastructure only.
 
 ## Agent/developer routing
 
+- CKR status/authority: `../canonical_knowledge_retrofit/README.md`;
+- CKR ownership ledger: `../canonical_knowledge_retrofit/canonical_ownership_inventory.json`;
+- target canonical namespace: `../canonical/README.md`;
+- logical history layer: `../design_history/README.md`;
 - shared constitution: root `AGENTS.md`;
 - portable discovery: `../../knowledge/index.md` when needed;
-- compact family/path/platform bridge: [`agent_reference_index.md`](agent_reference_index.md);
-- canonical DMTZ workflows/overlays: `../../.agents/skills/`;
+- compact bridge: [`agent_reference_index.md`](agent_reference_index.md);
+- canonical workflows/overlays: `../../.agents/skills/`;
 - conformance: `../agentic_development_foundation/conformance_policy.md` and `scripts/agentic/run_conformance.py`;
-- Databricks addendum/profile: `../agentic_development_foundation/databricks_agent_skills_addendum.md` / `databricks_vendor_skills_profile.json`;
-- runtime compatibility evidence: `../agentic_development_foundation/runtime_compatibility_evidence.json`;
-- security/trust/lifecycle: `../agentic_development_foundation/security_trust_lifecycle_policy.md` / `agentic_change_governance.md`;
-- foundation exit: `../agentic_development_foundation/execution_exit_review.md`.
-
-Autonomous execution/orchestration remains outside the accepted foundation and is not an Implementation 001 entry capability.
+- ADF exit: `../agentic_development_foundation/execution_exit_review.md`.
 
 ## Canonical conformance command
 
@@ -121,4 +115,4 @@ Autonomous execution/orchestration remains outside the accepted foundation and i
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-Agentic configuration PASS/FAIL is distinct from DMTZ domain/runtime health, coding-agent runtime certification and target Databricks capability.
+Agentic/documentation-authority conformance is distinct from DMTZ domain/runtime health, provider-runtime certification and target Databricks capability.
