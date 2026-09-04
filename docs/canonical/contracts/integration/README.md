@@ -1,6 +1,6 @@
 # Canonical Integration Contracts
 
-**Authority:** CANONICAL CURRENT AUTHORITY
+Structural index for the current INTG-001–INTG-270 owners. The eight substantive files listed below are the canonical current authority selected by `canonical_ownership_inventory.json`; this README is routing only and is not an independent semantic owner.
 
 INTG-001–INTG-270 resolve to the eight bounded current owners in this directory. Phase 009 is design history/provenance for these meanings.
 
