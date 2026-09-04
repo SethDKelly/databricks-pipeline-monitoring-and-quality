@@ -1,10 +1,10 @@
 # Canonical Integration Contracts
 
-**CKR-H state:** CANDIDATE — Phase 009 remains current INTG authority until atomic cutover.
+**Authority:** CANONICAL CURRENT AUTHORITY
 
-This directory contains the bounded canonical candidates for **INTG-001–INTG-270**. Candidate presence does not establish current authority; `canonical_ownership_inventory.json` controls ownership.
+INTG-001–INTG-270 resolve to the eight bounded current owners in this directory. Phase 009 is design history/provenance for these meanings.
 
-## Candidate topology
+## Canonical topology
 
 - `integration-contract-vocabulary.md` — INTG-001–INTG-022: exact source surface, evidence role, authority, joins, T/K, coverage, replay, disclosure, support classification and integration health.
 - `identity-governance-authority-sources.md` — INTG-023–INTG-050: identity, Monitoring Scope, semantics, governance, Assertion Authority and Capability Authorization source mappings.
@@ -28,4 +28,4 @@ Integration capability never becomes source-domain truth by convenience. In part
 **configuration/decision ≠ enforcement ≠ prevention/recovery**;
 **support class/cost/latency ≠ confidence/truth**.
 
-Phase 009 remains design/current legacy authority while `stable_family.INTG` is `candidate_ready`; these files become current authority only through atomic CKR-H cutover.
+ARCH-001–ARCH-500 remains independently legacy-authoritative under Phase 010/CKR-I until that later cutover.

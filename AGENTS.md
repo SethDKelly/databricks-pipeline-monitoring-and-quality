@@ -6,11 +6,11 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-G; IN EXECUTION CKR-H; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-G is complete/accepted. CKR-H is in candidate review. Product implementation remains blocked until CKR-K.
+CKR-G is complete/accepted. CKR-H has performed atomic INTG cutover and is validating closure. Product implementation remains blocked until CKR-K.
 
 Current semantic ownership is selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`: `canonicalized` → inventoried `docs/canonical/` owner; `legacy_authoritative` / `candidate_ready` → inventoried legacy owner; `history_only` → provenance/rationale only.
 
-Foundation/glossary, all 24 concepts, SYN-001–035, authority vocabulary, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123 and EXPL-001–160 are canonicalized. Phase 001–008 sources are provenance for migrated meanings. INTG is `candidate_ready`, so Phase 009 remains current INTG authority during CKR-H review. ARCH remains later-group legacy authority.
+Foundation/glossary, all 24 concepts, SYN-001–035, authority vocabulary, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160 and INTG-001–270 are canonicalized. Phase 001–009 sources are provenance for migrated meanings. ARCH remains later-group legacy authority.
 
 Authority order: current semantic owner → root `AGENTS.md` → live CKR/implementation status → accepted ADF scope/security mechanics → DMTZ workflows/overlays → reviewed vendor operational guidance → tool/personal memory.
 
@@ -22,7 +22,7 @@ Follow `docs/agentic_development_foundation/authority_scope_policy.md`: A1 revie
 
 Use `human task → live CKR authority → ownership inventory when unclear → current owner → exact IDs/tests as needed`. `knowledge/index.md` is optional routing only; search order, recency, path presence, vendor guidance, tool memory or synchronization order never establish authority.
 
-Preserve question ≠ truth ≠ authorization; answer statement ≠ independent truth; Observation ≠ Assessment; Expectation ≠ Baseline; available ≠ relevant ≠ eligible ≠ authoritative ≠ sufficient ≠ authorized; source-local identifier/name ≠ ecosystem Entity Identity; timestamp proximity ≠ exact cross-system association; positive support ≠ negative-evidence capability; no returned record ≠ absence; late/backfilled evidence now ≠ evidence available at an earlier knowledge cut; GitHub Actions success ≠ Databricks activation; configured dependency ≠ actual precedence ≠ waiting ≠ version consumption; execution success ≠ output existence ≠ freshness/currentness ≠ health; captured lineage event ≠ encounter ≠ exposure; exposure ≠ effect ≠ consequence ≠ causal attribution; Investigation/localization ≠ Causal Claim; `confirmed` requires REF-017 + AUTH-034; Safeguard enforcement ≠ prevented exposure; HOLD/ADMIT ≠ execution outcome; integration failure ≠ monitored-product negative; historical source state ≠ as-known-at-cut Explanation ≠ retained actual communication ≠ current retrospective Explanation; support classification/latency/quota/cost ≠ truth or authority.
+Preserve question ≠ truth ≠ authorization; answer statement ≠ independent truth; Observation ≠ Assessment; Expectation ≠ Baseline; available ≠ relevant ≠ eligible ≠ authoritative ≠ sufficient ≠ authorized; source-local identifier/name ≠ ecosystem Entity Identity; timestamp proximity ≠ exact cross-system association; positive support ≠ negative-evidence capability; no returned record ≠ absence; current availability ≠ historical replay; late/backfilled evidence now ≠ evidence available at an earlier knowledge cut; GitHub Actions success ≠ Databricks activation; configured dependency ≠ actual precedence ≠ waiting ≠ version consumption; execution success ≠ output existence ≠ freshness/currentness ≠ health; captured lineage event ≠ encounter ≠ exposure; exposure ≠ effect ≠ consequence ≠ causal attribution; Investigation/localization ≠ Causal Claim; `confirmed` requires REF-017 + AUTH-034; Safeguard enforcement ≠ prevented exposure; HOLD/ADMIT ≠ execution outcome; integration failure ≠ monitored-product negative; historical source state ≠ as-known-at-cut Explanation ≠ retained actual communication ≠ current retrospective Explanation; support classification/latency/quota/cost ≠ truth or authority.
 
 Accepted ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500.
 

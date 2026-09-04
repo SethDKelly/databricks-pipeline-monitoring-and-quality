@@ -4,7 +4,7 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-G; IN EXECUTION CKR-H; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-G is complete/accepted. CKR-H is in candidate review. Product implementation remains blocked until CKR-K.
+CKR-H has performed the atomic INTG cutover and remains in validation/closure. Product implementation remains blocked until CKR-K.
 
 ## Current semantic routing
 
@@ -15,6 +15,6 @@ CKR-G is complete/accepted. CKR-H is in candidate review. Product implementation
 5. `docs/implementation/README.md` — implementation block.
 6. root `AGENTS.md` — shared instructions.
 
-Foundation/glossary, concepts/SYN, authority vocabulary, REF, AUTH, HLTH, OPS and EXPL resolve to canonical owners. Phase 001–008 are provenance for migrated meaning. INTG is `candidate_ready`; Phase 009 remains current INTG authority until atomic CKR-H cutover. ARCH remains legacy-authoritative under CKR-I.
+Foundation/glossary, concepts/SYN, authority vocabulary, REF, AUTH, HLTH, OPS, EXPL and INTG resolve to canonical owners. Phase 001–009 are provenance for migrated meaning. ARCH remains legacy-authoritative under Phase 010/CKR-I.
 
 **Implementation 001-A — BLOCKED until CKR-K.**

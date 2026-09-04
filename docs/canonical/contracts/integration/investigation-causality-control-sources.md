@@ -4,7 +4,7 @@
 
 **Kind:** INTEGRATION CONTRACT
 
-**Authority:** CANDIDATE / NOT CURRENT AUTHORITY
+**Authority:** CANONICAL CURRENT AUTHORITY
 
 **Migration record:** `stable_family.INTG`
 

@@ -1,6 +1,6 @@
 # CKR-H Execution Review — Integration, Source Authority & Evidence Availability
 
-**Status:** IN EXECUTION — CANDIDATE REVIEW
+**Status:** IN EXECUTION — ATOMIC CUTOVER / VALIDATION
 
 **Reviewed:** 2026-09-04
 
@@ -8,7 +8,7 @@
 
 Canonicalize INTG-001–INTG-270 without turning source availability into authority, vendor capability into product truth, timestamp proximity into identity/association, partial coverage into strong negatives, lineage into exposure/Impact, source replay into actual retained communication, or Phase 009 integration findings into Phase 010 architecture decisions.
 
-## Exact scope
+## Accepted scope under review
 
 CKR-H owns only the accepted Phase 009 INTG family:
 
@@ -21,11 +21,11 @@ CKR-H owns only the accepted Phase 009 INTG family:
 - INTG-201–238 — Explanation/historical replay/basis inspection/disclosure sources;
 - INTG-239–270 — cross-source coverage/latency/retention/cost/consolidated feasibility.
 
-No INTG-271, new concept, new stable family or architecture contract is accepted by this migration.
+No INTG-271, new concept, new stable family or architecture contract is introduced.
 
-## Candidate topology
+## Canonical topology
 
-The eight bounded canonical candidates are under `docs/canonical/contracts/integration/`:
+The eight bounded owners are under `docs/canonical/contracts/integration/`:
 
 1. `integration-contract-vocabulary.md`
 2. `identity-governance-authority-sources.md`
@@ -35,8 +35,6 @@ The eight bounded canonical candidates are under `docs/canonical/contracts/integ
 6. `investigation-causality-control-sources.md`
 7. `explanation-replay-disclosure-sources.md`
 8. `cross-source-feasibility-retention-cost.md`
-
-During candidate review they are explicitly `CANDIDATE / NOT CURRENT AUTHORITY`; Phase 009 remains the current INTG owner.
 
 ## Semantic conservation
 
@@ -63,48 +61,44 @@ During candidate review they are explicitly `CANDIDATE / NOT CURRENT AUTHORITY`;
 - historical source state ≠ as-known-at-cut Explanation ≠ retained actual communication ≠ current retrospective Explanation;
 - support classification/latency/quota/cost ≠ truth or authority.
 
-No A4 semantic change is intended. Phase 009 residual gaps remain architecture inputs, not reopened semantic questions.
+No A4 semantic change was required. Phase 009 residual gaps remain architecture inputs, not reopened semantic questions.
 
 ## Deterministic protection
 
-CKR-H adds:
+- `scripts/agentic/validate_ckr_h_integration.py` requires exact INTG-001–INTG-270 coverage, the eight-document topology, authority-state alignment, Phase 009 provenance, prior canonical cutovers, ARCH isolation and semantic-conservation boundaries.
+- `fixtures/ckr_h_integration_scenarios.yaml` adds **CKRH-01–CKRH-64**.
+- The conformance guard suite has **50 negative controls**, including omitted INTG identity, partial topology, availability/authority collapse, timestamp-join inference, negative-evidence dilution, Lineage/encounter/exposure collapse, historical-view collapse and premature ARCH ownership.
 
-- `scripts/agentic/validate_ckr_h_integration.py` for exact stable-ID/topology/authority/provenance/conservation checks;
-- `fixtures/ckr_h_integration_scenarios.yaml` for migration-focused source-capability scenarios;
-- conformance runner and fixture-catalog registration;
-- negative controls for omitted IDs, partial topology, authority/availability collapse, timestamp-join inference, negative-evidence dilution, Lineage→exposure collapse, historical-view collapse and premature ARCH ownership.
+## Validation history
 
-## Candidate gate
+### Candidate gate
 
-Candidate review may advance to atomic cutover only after the exact branch head passes both:
+Candidate head `ef2fdcd0726f19373d184fb068f6c1975487aeee` passed:
 
-- Agentic conformance;
-- Documentation consistency.
+- Agentic conformance **#147 — SUCCESS** (run ID `33890950811`);
+- Documentation consistency **#265 — SUCCESS** (run ID `33890950824`).
 
-Until then:
+This authorized atomic cutover. Phase 009 remained current INTG authority throughout candidate review.
 
-- `stable_family.INTG` remains `candidate_ready` once candidate wiring is committed;
-- Phase 009 remains authoritative;
-- canonical candidate files remain non-authoritative;
-- ARCH remains legacy-authoritative under CKR-I;
-- Implementation 001-A remains blocked until CKR-K.
+## Atomic cutover
 
-## Atomic-cutover rule
+The cutover moves INTG atomically from `candidate_ready` to `canonicalized`, promotes all eight resources to `CANONICAL CURRENT AUTHORITY`, reclassifies Phase 009 as design history/provenance, and routes current source-capability questions to `docs/canonical/contracts/integration/`.
 
-After a green candidate head, one atomic cutover must:
+ARCH-001–ARCH-500 remains legacy-authoritative under Phase 010/CKR-I. CKR-H remains `IN EXECUTION` until the exact cutover head passes both repository gates.
 
-1. move `stable_family.INTG` from `candidate_ready` to `canonicalized`;
-2. promote all eight target resources together to `CANONICAL CURRENT AUTHORITY`;
-3. reclassify Phase 009 as design history/provenance for INTG;
-4. update current routing to the canonical integration root;
-5. leave ARCH untouched and CKR-H `IN EXECUTION` until the cutover head itself is green.
+## Acceptance criteria
 
-Partial cutover or dual current authority is invalid.
-
-## Closure rule
-
-After a green cutover head, closure synchronization may mark CKR-H complete/accepted and CKR-I next/ready. CKR-I must remain unstarted until explicitly selected by the human. Closure and final evidence-only heads must also pass the normal exact-head gates before merge.
+- exact CKR-H scope INTG-001–INTG-270 — pending cutover validation;
+- no INTG-271/new concept/stable family — pending cutover validation;
+- eight-resource topology and Phase 009 provenance — pending cutover validation;
+- prior concepts/SYN/REF/AUTH/HLTH/OPS/EXPL remain canonical — pending cutover validation;
+- ARCH remains later-owned — pending cutover validation;
+- source availability/authority/sufficiency/disclosure separation — pending cutover validation;
+- identity/join and strong-negative burdens preserved — pending cutover validation;
+- runtime/version and Lineage/exposure boundaries preserved — pending cutover validation;
+- control and historical-replay boundaries preserved — pending cutover validation;
+- no implementation/architecture selection — pending cutover validation.
 
 ## Current decision
 
-**CKR-H is in candidate review. No authority cutover has occurred yet.**
+**Atomic cutover is authorized by the green candidate head and is being validated. CKR-I remains unstarted. Implementation 001-A remains blocked until CKR-K.**
