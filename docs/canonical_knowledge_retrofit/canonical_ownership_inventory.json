@@ -1,474 +1,82 @@
 {
   "schema_version": "1.0",
-  "status": "ckr_b_cutover",
+  "status": "ckr_c_cutover",
   "authority_model": "docs/canonical_knowledge_retrofit/authority_model.md",
   "migration_contract": "docs/canonical_knowledge_retrofit/migration_contract.md",
   "canonical_root": "docs/canonical",
   "design_history_index": "docs/design_history/README.md",
-  "allowed_states": [
-    "legacy_authoritative",
-    "candidate_ready",
-    "canonicalized",
-    "history_only"
-  ],
+  "allowed_states": ["legacy_authoritative", "candidate_ready", "canonicalized", "history_only"],
   "concept_count": 24,
   "records": [
-    {
-      "record_id": "foundation.product_definition",
-      "kind": "foundation",
-      "migration_group": "CKR-B",
-      "migration_state": "canonicalized",
-      "current_owner": "docs/foundation/001_product_definition.md",
-      "target_owner": "docs/canonical/reference/product-definition.md"
-    },
-    {
-      "record_id": "foundation.actors_stakeholders",
-      "kind": "foundation",
-      "migration_group": "CKR-B",
-      "migration_state": "canonicalized",
-      "current_owner": "docs/foundation/002_actors_and_stakeholders.md",
-      "target_owner": "docs/canonical/reference/actors-and-stakeholders.md"
-    },
-    {
-      "record_id": "foundation.terminology",
-      "kind": "foundation",
-      "migration_group": "CKR-B",
-      "migration_state": "canonicalized",
-      "current_owner": "docs/foundation/003_terminology.md",
-      "target_owner": "docs/canonical/reference/terminology.md"
-    },
-    {
-      "record_id": "foundation.concept_design_method",
-      "kind": "foundation",
-      "migration_group": "CKR-B",
-      "migration_state": "canonicalized",
-      "current_owner": "docs/foundation/004_concept_design_method.md",
-      "target_owner": "docs/canonical/reference/concept-design-method.md"
-    },
-    {
-      "record_id": "foundation.architectural_principles",
-      "kind": "invariant",
-      "migration_group": "CKR-B",
-      "migration_state": "canonicalized",
-      "current_owner": "docs/foundation/005_architectural_principles.md",
-      "target_owner": "docs/canonical/invariants/architectural-principles.md"
-    },
-    {
-      "record_id": "foundation.security_governance_policy",
-      "kind": "policy",
-      "migration_group": "CKR-B",
-      "migration_state": "canonicalized",
-      "current_owner": "docs/foundation/006_security_governance_and_policy_model.md",
-      "target_owner": "docs/canonical/policies/security-governance.md"
-    },
-    {
-      "record_id": "foundation.ecosystem_lifecycles",
-      "kind": "foundation",
-      "migration_group": "CKR-B",
-      "migration_state": "canonicalized",
-      "current_owner": "docs/foundation/007_ecosystem_lifecycles.md",
-      "target_owner": "docs/canonical/reference/ecosystem-lifecycles.md"
-    },
-    {
-      "record_id": "foundation.mvp_boundary",
-      "kind": "policy",
-      "migration_group": "CKR-B",
-      "migration_state": "canonicalized",
-      "current_owner": "docs/foundation/008_mvp_boundary.md",
-      "target_owner": "docs/canonical/policies/mvp-boundary.md"
-    },
-    {
-      "record_id": "reference.glossary",
-      "kind": "reference",
-      "migration_group": "CKR-B",
-      "migration_state": "canonicalized",
-      "current_owner": "docs/reference/glossary.md",
-      "target_owner": "docs/canonical/reference/glossary.md"
-    },
-    {
-      "record_id": "reference.authority_vocabulary",
-      "kind": "authority",
-      "migration_group": "CKR-D",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/reference/authority_vocabulary.md",
-      "target_owner": "docs/canonical/authority/vocabulary.md"
-    },
-    {
-      "record_id": "concept.monitoring_scope",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/01_scope_and_identity/monitoring_scope.md",
-      "target_owner": "docs/canonical/concepts/monitoring-scope.md"
-    },
-    {
-      "record_id": "concept.entity_identity",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/01_scope_and_identity/entity_identity.md",
-      "target_owner": "docs/canonical/concepts/entity-identity.md"
-    },
-    {
-      "record_id": "concept.semantic_definition",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/02_semantics_governance_policy/semantic_definition.md",
-      "target_owner": "docs/canonical/concepts/semantic-definition.md"
-    },
-    {
-      "record_id": "concept.responsibility_assignment",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/02_semantics_governance_policy/responsibility_assignment.md",
-      "target_owner": "docs/canonical/concepts/responsibility-assignment.md"
-    },
-    {
-      "record_id": "concept.classification",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/02_semantics_governance_policy/classification.md",
-      "target_owner": "docs/canonical/concepts/classification.md"
-    },
-    {
-      "record_id": "concept.policy_context",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/02_semantics_governance_policy/policy_context.md",
-      "target_owner": "docs/canonical/concepts/policy-context.md"
-    },
-    {
-      "record_id": "concept.expectation",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/03_health_evaluation/expectation.md",
-      "target_owner": "docs/canonical/concepts/expectation.md"
-    },
-    {
-      "record_id": "concept.baseline",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/03_health_evaluation/baseline.md",
-      "target_owner": "docs/canonical/concepts/baseline.md"
-    },
-    {
-      "record_id": "concept.observation",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/03_health_evaluation/observation.md",
-      "target_owner": "docs/canonical/concepts/observation.md"
-    },
-    {
-      "record_id": "concept.assessment",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/03_health_evaluation/assessment.md",
-      "target_owner": "docs/canonical/concepts/assessment.md"
-    },
-    {
-      "record_id": "concept.change_intent",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/04_history_lineage_change/change_intent.md",
-      "target_owner": "docs/canonical/concepts/change-intent.md"
-    },
-    {
-      "record_id": "concept.execution_history",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/04_history_lineage_change/execution_history.md",
-      "target_owner": "docs/canonical/concepts/execution-history.md"
-    },
-    {
-      "record_id": "concept.deployment",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/04_history_lineage_change/deployment.md",
-      "target_owner": "docs/canonical/concepts/deployment.md"
-    },
-    {
-      "record_id": "concept.lineage",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/04_history_lineage_change/lineage.md",
-      "target_owner": "docs/canonical/concepts/lineage.md"
-    },
-    {
-      "record_id": "concept.change",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/04_history_lineage_change/change.md",
-      "target_owner": "docs/canonical/concepts/change.md"
-    },
-    {
-      "record_id": "concept.investigation",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/05_investigation_impact_explanation/investigation.md",
-      "target_owner": "docs/canonical/concepts/investigation.md"
-    },
-    {
-      "record_id": "concept.causal_claim",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/05_investigation_impact_explanation/causal_claim.md",
-      "target_owner": "docs/canonical/concepts/causal-claim.md"
-    },
-    {
-      "record_id": "concept.impact",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/05_investigation_impact_explanation/impact.md",
-      "target_owner": "docs/canonical/concepts/impact.md"
-    },
-    {
-      "record_id": "concept.annotation",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/05_investigation_impact_explanation/annotation.md",
-      "target_owner": "docs/canonical/concepts/annotation.md"
-    },
-    {
-      "record_id": "concept.explanation",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/05_investigation_impact_explanation/explanation.md",
-      "target_owner": "docs/canonical/concepts/explanation.md"
-    },
-    {
-      "record_id": "concept.propagation_safeguard",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/addenda/propagation_safeguard.md",
-      "target_owner": "docs/canonical/concepts/propagation-safeguard.md"
-    },
-    {
-      "record_id": "concept.capability_authorization",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/addenda/capability_authorization.md",
-      "target_owner": "docs/canonical/concepts/capability-authorization.md"
-    },
-    {
-      "record_id": "concept.execution_gate",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/addenda/execution_gate.md",
-      "target_owner": "docs/canonical/concepts/execution-gate.md"
-    },
-    {
-      "record_id": "concept.assertion_authority",
-      "kind": "concept",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_002/addenda/assertion_authority.md",
-      "target_owner": "docs/canonical/concepts/assertion-authority.md"
-    }
+    {"record_id":"foundation.product_definition","kind":"foundation","migration_group":"CKR-B","migration_state":"canonicalized","current_owner":"docs/foundation/001_product_definition.md","target_owner":"docs/canonical/reference/product-definition.md"},
+    {"record_id":"foundation.actors_stakeholders","kind":"foundation","migration_group":"CKR-B","migration_state":"canonicalized","current_owner":"docs/foundation/002_actors_and_stakeholders.md","target_owner":"docs/canonical/reference/actors-and-stakeholders.md"},
+    {"record_id":"foundation.terminology","kind":"foundation","migration_group":"CKR-B","migration_state":"canonicalized","current_owner":"docs/foundation/003_terminology.md","target_owner":"docs/canonical/reference/terminology.md"},
+    {"record_id":"foundation.concept_design_method","kind":"foundation","migration_group":"CKR-B","migration_state":"canonicalized","current_owner":"docs/foundation/004_concept_design_method.md","target_owner":"docs/canonical/reference/concept-design-method.md"},
+    {"record_id":"foundation.architectural_principles","kind":"invariant","migration_group":"CKR-B","migration_state":"canonicalized","current_owner":"docs/foundation/005_architectural_principles.md","target_owner":"docs/canonical/invariants/architectural-principles.md"},
+    {"record_id":"foundation.security_governance_policy","kind":"policy","migration_group":"CKR-B","migration_state":"canonicalized","current_owner":"docs/foundation/006_security_governance_and_policy_model.md","target_owner":"docs/canonical/policies/security-governance.md"},
+    {"record_id":"foundation.ecosystem_lifecycles","kind":"foundation","migration_group":"CKR-B","migration_state":"canonicalized","current_owner":"docs/foundation/007_ecosystem_lifecycles.md","target_owner":"docs/canonical/reference/ecosystem-lifecycles.md"},
+    {"record_id":"foundation.mvp_boundary","kind":"policy","migration_group":"CKR-B","migration_state":"canonicalized","current_owner":"docs/foundation/008_mvp_boundary.md","target_owner":"docs/canonical/policies/mvp-boundary.md"},
+    {"record_id":"reference.glossary","kind":"reference","migration_group":"CKR-B","migration_state":"canonicalized","current_owner":"docs/reference/glossary.md","target_owner":"docs/canonical/reference/glossary.md"},
+    {"record_id":"reference.authority_vocabulary","kind":"authority","migration_group":"CKR-D","migration_state":"legacy_authoritative","current_owner":"docs/reference/authority_vocabulary.md","target_owner":"docs/canonical/authority/vocabulary.md"},
+    {"record_id":"concept.monitoring_scope","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/01_scope_and_identity/monitoring_scope.md","target_owner":"docs/canonical/concepts/monitoring-scope.md"},
+    {"record_id":"concept.entity_identity","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/01_scope_and_identity/entity_identity.md","target_owner":"docs/canonical/concepts/entity-identity.md"},
+    {"record_id":"concept.semantic_definition","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/02_semantics_governance_policy/semantic_definition.md","target_owner":"docs/canonical/concepts/semantic-definition.md"},
+    {"record_id":"concept.responsibility_assignment","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/02_semantics_governance_policy/responsibility_assignment.md","target_owner":"docs/canonical/concepts/responsibility-assignment.md"},
+    {"record_id":"concept.classification","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/02_semantics_governance_policy/classification.md","target_owner":"docs/canonical/concepts/classification.md"},
+    {"record_id":"concept.policy_context","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/02_semantics_governance_policy/policy_context.md","target_owner":"docs/canonical/concepts/policy-context.md"},
+    {"record_id":"concept.expectation","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/03_health_evaluation/expectation.md","target_owner":"docs/canonical/concepts/expectation.md"},
+    {"record_id":"concept.baseline","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/03_health_evaluation/baseline.md","target_owner":"docs/canonical/concepts/baseline.md"},
+    {"record_id":"concept.observation","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/03_health_evaluation/observation.md","target_owner":"docs/canonical/concepts/observation.md"},
+    {"record_id":"concept.assessment","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/03_health_evaluation/assessment.md","target_owner":"docs/canonical/concepts/assessment.md"},
+    {"record_id":"concept.change_intent","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/04_history_lineage_change/change_intent.md","target_owner":"docs/canonical/concepts/change-intent.md"},
+    {"record_id":"concept.execution_history","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/04_history_lineage_change/execution_history.md","target_owner":"docs/canonical/concepts/execution-history.md"},
+    {"record_id":"concept.deployment","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/04_history_lineage_change/deployment.md","target_owner":"docs/canonical/concepts/deployment.md"},
+    {"record_id":"concept.lineage","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/04_history_lineage_change/lineage.md","target_owner":"docs/canonical/concepts/lineage.md"},
+    {"record_id":"concept.change","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/04_history_lineage_change/change.md","target_owner":"docs/canonical/concepts/change.md"},
+    {"record_id":"concept.investigation","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/05_investigation_impact_explanation/investigation.md","target_owner":"docs/canonical/concepts/investigation.md"},
+    {"record_id":"concept.causal_claim","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/05_investigation_impact_explanation/causal_claim.md","target_owner":"docs/canonical/concepts/causal-claim.md"},
+    {"record_id":"concept.impact","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/05_investigation_impact_explanation/impact.md","target_owner":"docs/canonical/concepts/impact.md"},
+    {"record_id":"concept.annotation","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/05_investigation_impact_explanation/annotation.md","target_owner":"docs/canonical/concepts/annotation.md"},
+    {"record_id":"concept.explanation","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/05_investigation_impact_explanation/explanation.md","target_owner":"docs/canonical/concepts/explanation.md"},
+    {"record_id":"concept.propagation_safeguard","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/addenda/propagation_safeguard.md","target_owner":"docs/canonical/concepts/propagation-safeguard.md"},
+    {"record_id":"concept.capability_authorization","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/addenda/capability_authorization.md","target_owner":"docs/canonical/concepts/capability-authorization.md"},
+    {"record_id":"concept.execution_gate","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/addenda/execution_gate.md","target_owner":"docs/canonical/concepts/execution-gate.md"},
+    {"record_id":"concept.assertion_authority","kind":"concept","migration_group":"CKR-C","migration_state":"canonicalized","current_owner":"docs/concepts/phase_002/addenda/assertion_authority.md","target_owner":"docs/canonical/concepts/assertion-authority.md"}
   ],
   "stable_families": {
-    "SYN": {
-      "accepted_range": "SYN-001..SYN-035",
-      "migration_group": "CKR-C",
-      "migration_state": "legacy_authoritative",
-      "current_owner_root": "docs/concepts/phase_003",
-      "current_topology": "distributed_legacy_authority",
-      "target_owner_root": "docs/canonical/contracts/synchronization"
-    },
-    "REF": {
-      "accepted_range": "REF-001..REF-030",
-      "migration_group": "CKR-D",
-      "migration_state": "legacy_authoritative",
-      "current_owner_root": "docs/concepts/phase_004",
-      "current_topology": "distributed_legacy_authority",
-      "target_owner_root": "docs/canonical/contracts/evidence-time-causality"
-    },
-    "AUTH": {
-      "accepted_range": "AUTH-001..AUTH-053",
-      "migration_group": "CKR-D",
-      "migration_state": "legacy_authoritative",
-      "current_owner_root": "docs/concepts/phase_005",
-      "current_topology": "distributed_legacy_authority",
-      "target_owner_root": "docs/canonical/authority"
-    },
-    "HLTH": {
-      "accepted_range": "HLTH-001..HLTH-066",
-      "migration_group": "CKR-E",
-      "migration_state": "legacy_authoritative",
-      "current_owner_root": "docs/concepts/phase_006",
-      "current_topology": "distributed_legacy_authority",
-      "target_owner_root": "docs/canonical/contracts/health-quality-timing"
-    },
-    "OPS": {
-      "accepted_range": "OPS-001..OPS-123",
-      "migration_group": "CKR-F",
-      "migration_state": "legacy_authoritative",
-      "current_owner_root": "docs/concepts/phase_007",
-      "current_topology": "distributed_legacy_authority",
-      "target_owner_root": "docs/canonical/contracts/operations"
-    },
-    "EXPL": {
-      "accepted_range": "EXPL-001..EXPL-160",
-      "migration_group": "CKR-G",
-      "migration_state": "legacy_authoritative",
-      "current_owner_root": "docs/concepts/phase_008",
-      "current_topology": "distributed_legacy_authority",
-      "target_owner_root": "docs/canonical/experience"
-    },
-    "INTG": {
-      "accepted_range": "INTG-001..INTG-270",
-      "migration_group": "CKR-H",
-      "migration_state": "legacy_authoritative",
-      "current_owner_root": "docs/concepts/phase_009",
-      "current_topology": "distributed_legacy_authority",
-      "target_owner_root": "docs/canonical/contracts/integration"
-    },
-    "ARCH": {
-      "accepted_range": "ARCH-001..ARCH-500",
-      "migration_group": "CKR-I",
-      "migration_state": "legacy_authoritative",
-      "current_owner_root": "docs/concepts/phase_010",
-      "current_topology": "distributed_legacy_authority",
-      "target_owner_root": "docs/canonical/architecture"
-    }
+    "SYN":{"accepted_range":"SYN-001..SYN-035","migration_group":"CKR-C","migration_state":"canonicalized","current_owner_root":"docs/concepts/phase_003","current_topology":"distributed_legacy_authority","target_owner_root":"docs/canonical/contracts/synchronization","target_documents":["docs/canonical/contracts/synchronization/subject-scope-governance.md","docs/canonical/contracts/synchronization/planned-change-reference-transition.md","docs/canonical/contracts/synchronization/runtime-evidence-health-control.md","docs/canonical/contracts/synchronization/investigation-causality.md","docs/canonical/contracts/synchronization/impact-annotation-explanation.md","docs/canonical/contracts/synchronization/historical-replay.md"]},
+    "REF":{"accepted_range":"REF-001..REF-030","migration_group":"CKR-D","migration_state":"legacy_authoritative","current_owner_root":"docs/concepts/phase_004","current_topology":"distributed_legacy_authority","target_owner_root":"docs/canonical/contracts/evidence-time-causality"},
+    "AUTH":{"accepted_range":"AUTH-001..AUTH-053","migration_group":"CKR-D","migration_state":"legacy_authoritative","current_owner_root":"docs/concepts/phase_005","current_topology":"distributed_legacy_authority","target_owner_root":"docs/canonical/authority"},
+    "HLTH":{"accepted_range":"HLTH-001..HLTH-066","migration_group":"CKR-E","migration_state":"legacy_authoritative","current_owner_root":"docs/concepts/phase_006","current_topology":"distributed_legacy_authority","target_owner_root":"docs/canonical/contracts/health-quality-timing"},
+    "OPS":{"accepted_range":"OPS-001..OPS-123","migration_group":"CKR-F","migration_state":"legacy_authoritative","current_owner_root":"docs/concepts/phase_007","current_topology":"distributed_legacy_authority","target_owner_root":"docs/canonical/contracts/operations"},
+    "EXPL":{"accepted_range":"EXPL-001..EXPL-160","migration_group":"CKR-G","migration_state":"legacy_authoritative","current_owner_root":"docs/concepts/phase_008","current_topology":"distributed_legacy_authority","target_owner_root":"docs/canonical/experience"},
+    "INTG":{"accepted_range":"INTG-001..INTG-270","migration_group":"CKR-H","migration_state":"legacy_authoritative","current_owner_root":"docs/concepts/phase_009","current_topology":"distributed_legacy_authority","target_owner_root":"docs/canonical/contracts/integration"},
+    "ARCH":{"accepted_range":"ARCH-001..ARCH-500","migration_group":"CKR-I","migration_state":"legacy_authoritative","current_owner_root":"docs/concepts/phase_010","current_topology":"distributed_legacy_authority","target_owner_root":"docs/canonical/architecture"}
   },
   "architecture_segments": [
-    {
-      "record_id": "architecture.frame_environment_decision_criteria",
-      "range": "ARCH-001..ARCH-032",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_010/01_architecture_frame_environment_discovery_decision_criteria/README.md",
-      "target_owner": "docs/canonical/architecture/frame-environment-decision-criteria.md"
-    },
-    {
-      "record_id": "architecture.evidence_provenance_temporal_persistence",
-      "range": "ARCH-033..ARCH-080",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_010/02_evidence_provenance_temporal_persistence_architecture/README.md",
-      "target_owner": "docs/canonical/architecture/evidence-provenance-temporal-persistence.md"
-    },
-    {
-      "record_id": "architecture.identity_scope_authority_authorization_disclosure",
-      "range": "ARCH-081..ARCH-132",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_010/03_identity_scope_authority_authorization_disclosure_architecture/README.md",
-      "target_owner": "docs/canonical/architecture/identity-scope-authority-authorization-disclosure.md"
-    },
-    {
-      "record_id": "architecture.source_acquisition_adapter_integration_health",
-      "range": "ARCH-133..ARCH-190",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_010/04_source_acquisition_adapter_synchronization_integration_health_architecture/README.md",
-      "target_owner": "docs/canonical/architecture/source-acquisition-adapter-integration-health.md"
-    },
-    {
-      "record_id": "architecture.runtime_health_lineage_impact",
-      "range": "ARCH-191..ARCH-274",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_010/05_runtime_provenance_health_lineage_impact_evidence_architecture/README.md",
-      "target_owner": "docs/canonical/architecture/runtime-provenance-health-lineage-impact.md"
-    },
-    {
-      "record_id": "architecture.investigation_reasoning_replay_explanation",
-      "range": "ARCH-275..ARCH-350",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_010/06_investigation_reasoning_historical_replay_explanation_architecture/README.md",
-      "target_owner": "docs/canonical/architecture/investigation-reasoning-replay-explanation.md"
-    },
-    {
-      "record_id": "architecture.active_control",
-      "range": "ARCH-351..ARCH-420",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_010/07_execution_gate_propagation_safeguard_active_control_architecture/README.md",
-      "target_owner": "docs/canonical/architecture/active-control.md"
-    },
-    {
-      "record_id": "architecture.serving_security_deployment_operations",
-      "range": "ARCH-421..ARCH-500",
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_010/08_serving_security_deployment_observability_cost_architecture/README.md",
-      "target_owner": "docs/canonical/architecture/serving-security-deployment-operations.md"
-    },
-    {
-      "record_id": "architecture.reference_architecture",
-      "range": null,
-      "migration_state": "legacy_authoritative",
-      "current_owner": "docs/concepts/phase_010/09_architecture_consolidation_validation_exit/target_reference_architecture.md",
-      "target_owner": "docs/canonical/architecture/reference-architecture.md"
-    }
+    {"record_id":"architecture.frame_environment_decision_criteria","range":"ARCH-001..ARCH-032","migration_state":"legacy_authoritative","current_owner":"docs/concepts/phase_010/01_architecture_frame_environment_discovery_decision_criteria/README.md","target_owner":"docs/canonical/architecture/frame-environment-decision-criteria.md"},
+    {"record_id":"architecture.evidence_provenance_temporal_persistence","range":"ARCH-033..ARCH-080","migration_state":"legacy_authoritative","current_owner":"docs/concepts/phase_010/02_evidence_provenance_temporal_persistence_architecture/README.md","target_owner":"docs/canonical/architecture/evidence-provenance-temporal-persistence.md"},
+    {"record_id":"architecture.identity_scope_authority_authorization_disclosure","range":"ARCH-081..ARCH-132","migration_state":"legacy_authoritative","current_owner":"docs/concepts/phase_010/03_identity_scope_authority_authorization_disclosure_architecture/README.md","target_owner":"docs/canonical/architecture/identity-scope-authority-authorization-disclosure.md"},
+    {"record_id":"architecture.source_acquisition_adapter_integration_health","range":"ARCH-133..ARCH-190","migration_state":"legacy_authoritative","current_owner":"docs/concepts/phase_010/04_source_acquisition_adapter_synchronization_integration_health_architecture/README.md","target_owner":"docs/canonical/architecture/source-acquisition-adapter-integration-health.md"},
+    {"record_id":"architecture.runtime_health_lineage_impact","range":"ARCH-191..ARCH-274","migration_state":"legacy_authoritative","current_owner":"docs/concepts/phase_010/05_runtime_provenance_health_lineage_impact_evidence_architecture/README.md","target_owner":"docs/canonical/architecture/runtime-provenance-health-lineage-impact.md"},
+    {"record_id":"architecture.investigation_reasoning_replay_explanation","range":"ARCH-275..ARCH-350","migration_state":"legacy_authoritative","current_owner":"docs/concepts/phase_010/06_investigation_reasoning_historical_replay_explanation_architecture/README.md","target_owner":"docs/canonical/architecture/investigation-reasoning-replay-explanation.md"},
+    {"record_id":"architecture.active_control","range":"ARCH-351..ARCH-420","migration_state":"legacy_authoritative","current_owner":"docs/concepts/phase_010/07_execution_gate_propagation_safeguard_active_control_architecture/README.md","target_owner":"docs/canonical/architecture/active-control.md"},
+    {"record_id":"architecture.serving_security_deployment_operations","range":"ARCH-421..ARCH-500","migration_state":"legacy_authoritative","current_owner":"docs/concepts/phase_010/08_serving_security_deployment_observability_cost_architecture/README.md","target_owner":"docs/canonical/architecture/serving-security-deployment-operations.md"},
+    {"record_id":"architecture.reference_architecture","range":null,"migration_state":"legacy_authoritative","current_owner":"docs/concepts/phase_010/09_architecture_consolidation_validation_exit/target_reference_architecture.md","target_owner":"docs/canonical/architecture/reference-architecture.md"}
   ],
   "history_sources": [
-    {
-      "path": "docs/concepts/phase_002",
-      "classification_during_migration": "mixed_legacy_authority_and_design_history"
-    },
-    {
-      "path": "docs/concepts/phase_003",
-      "classification_during_migration": "mixed_legacy_authority_and_design_history"
-    },
-    {
-      "path": "docs/concepts/phase_004",
-      "classification_during_migration": "mixed_legacy_authority_and_design_history"
-    },
-    {
-      "path": "docs/concepts/phase_005",
-      "classification_during_migration": "mixed_legacy_authority_and_design_history"
-    },
-    {
-      "path": "docs/concepts/phase_006",
-      "classification_during_migration": "mixed_legacy_authority_and_design_history"
-    },
-    {
-      "path": "docs/concepts/phase_007",
-      "classification_during_migration": "mixed_legacy_authority_and_design_history"
-    },
-    {
-      "path": "docs/concepts/phase_008",
-      "classification_during_migration": "mixed_legacy_authority_and_design_history"
-    },
-    {
-      "path": "docs/concepts/phase_009",
-      "classification_during_migration": "mixed_legacy_authority_and_design_history"
-    },
-    {
-      "path": "docs/concepts/phase_010",
-      "classification_during_migration": "mixed_legacy_authority_and_design_history"
-    },
-    {
-      "path": "docs/decisions",
-      "classification_during_migration": "design_history_and_supporting_rationale"
-    },
-    {
-      "path": "docs/foundation/009_initial_roadmap.md",
-      "classification_during_migration": "history_only"
-    },
-    {
-      "path": "docs/foundation/010_open_questions.md",
-      "classification_during_migration": "history_only_or_unresolved_input"
-    },
-    {
-      "path": "docs/foundation/011_phase_006_exit_phase_007_handoff.md",
-      "classification_during_migration": "history_only"
-    }
+    {"path":"docs/concepts/phase_002","classification_during_migration":"design_history_and_provenance_for_canonicalized_concepts"},
+    {"path":"docs/concepts/phase_003","classification_during_migration":"design_history_and_provenance_for_canonicalized_SYN"},
+    {"path":"docs/concepts/phase_004","classification_during_migration":"mixed_legacy_authority_and_design_history"},
+    {"path":"docs/concepts/phase_005","classification_during_migration":"mixed_legacy_authority_and_design_history"},
+    {"path":"docs/concepts/phase_006","classification_during_migration":"mixed_legacy_authority_and_design_history"},
+    {"path":"docs/concepts/phase_007","classification_during_migration":"mixed_legacy_authority_and_design_history"},
+    {"path":"docs/concepts/phase_008","classification_during_migration":"mixed_legacy_authority_and_design_history"},
+    {"path":"docs/concepts/phase_009","classification_during_migration":"mixed_legacy_authority_and_design_history"},
+    {"path":"docs/concepts/phase_010","classification_during_migration":"mixed_legacy_authority_and_design_history"},
+    {"path":"docs/decisions","classification_during_migration":"design_history_and_supporting_rationale"},
+    {"path":"docs/foundation/009_initial_roadmap.md","classification_during_migration":"history_only"},
+    {"path":"docs/foundation/010_open_questions.md","classification_during_migration":"history_only_or_unresolved_input"},
+    {"path":"docs/foundation/011_phase_006_exit_phase_007_handoff.md","classification_during_migration":"history_only"}
   ]
 }

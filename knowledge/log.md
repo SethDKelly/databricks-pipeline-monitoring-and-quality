@@ -1,5 +1,18 @@
 # DMTZ Knowledge Bundle Log
 
+## 2026-09-03 — CKR-C concept catalog and synchronization cutover
+
+- canonicalized all 24 accepted concept records under `docs/canonical/concepts/` without introducing a 25th umbrella concept;
+- canonicalized SYN-001–SYN-035 across six bounded synchronization contract resources while preserving concept state ownership separately from coordination behavior;
+- preserved Phase 002/003 as design history/provenance for migrated concept/SYN meaning;
+- left `reference.authority_vocabulary` and REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH with later CKR groups;
+- added CKRC-01–CKRC-32 and deterministic validation for exact concept inventory, accepted actions, non-collapse boundaries, exact SYN coverage, atomic concept+SYN state, provenance and later-group isolation;
+- expanded unified conformance to 190 scenarios and 24 negative controls;
+- retained the first cutover failure as useful evidence: semantic cutover checks passed, while adapter validation caught missing shared Cursor routes and negative-control execution caught two stale mutation assumptions;
+- restored required Cursor routes and repaired the negative controls without weakening semantic validators;
+- validated corrected cutover with Agentic conformance #109 and Documentation consistency #227;
+- synchronized live CKR routing to **CKR-A–CKR-C COMPLETE / CKR-D NEXT** while keeping Implementation 001-A blocked until CKR-K.
+
 ## 2026-09-03 — CKR-B foundation, terminology and invariant cutover
 
 - canonicalized nine foundation/glossary records: product definition, actors/stakeholders, terminology, Concept Design method, AP-01–AP-32, SP-01–SP-15/security-governance, ecosystem lifecycles, MVP boundary and shared glossary;

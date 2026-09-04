@@ -30,30 +30,27 @@ The catalog contains **24 accepted concepts**.
 
 - **CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory: COMPLETE / ACCEPTED.**
 - **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: COMPLETE / ACCEPTED.**
-- **CKR-C — Concept Catalog: NEXT / READY.**
+- **CKR-C — Concept Catalog: COMPLETE / ACCEPTED.**
+- **CKR-D — Evidence, Time, Authority & Governance: NEXT / READY.**
 - Implementation 001-A remains blocked until CKR-K.
 
-Evidence: [`canonical_knowledge_retrofit/ckr_a_execution_review.md`](canonical_knowledge_retrofit/ckr_a_execution_review.md) and [`canonical_knowledge_retrofit/ckr_b_execution_review.md`](canonical_knowledge_retrofit/ckr_b_execution_review.md).
+Evidence: [`canonical_knowledge_retrofit/ckr_a_execution_review.md`](canonical_knowledge_retrofit/ckr_a_execution_review.md), [`canonical_knowledge_retrofit/ckr_b_execution_review.md`](canonical_knowledge_retrofit/ckr_b_execution_review.md), and [`canonical_knowledge_retrofit/ckr_c_execution_review.md`](canonical_knowledge_retrofit/ckr_c_execution_review.md).
 
 ## Current semantic lookup
 
 1. Open a known current owner directly; otherwise consult the ownership inventory.
-2. For `canonicalized`, use `docs/canonical/`; for `legacy_authoritative` / `candidate_ready`, use the inventoried legacy owner.
+2. `canonicalized` → use `docs/canonical/`; `legacy_authoritative` / `candidate_ready` → use the inventoried legacy owner.
 3. Use stable IDs to narrow exact rules; search order is not authority.
 4. Use design history only when provenance/rationale/history is actually requested.
 
-Current CKR-B examples:
+Current migrated lookup:
 
-- `What is DMTZ for?` → `docs/canonical/reference/product-definition.md`.
-- `What are the architectural principles?` → `docs/canonical/invariants/architectural-principles.md`.
-- `What is the MVP boundary?` → `docs/canonical/policies/mvp-boundary.md`.
-- `What does a shared term mean?` → `docs/canonical/reference/glossary.md`, then follow the inventory for detailed concept/stable-ID semantics.
+- foundation/glossary → CKR-B canonical resources;
+- all 24 concept definitions → [`canonical/concepts/`](canonical/concepts/);
+- SYN-001–SYN-035 → [`canonical/contracts/synchronization/`](canonical/contracts/synchronization/);
+- Phase 002/003 → provenance/design history for migrated concept/SYN meaning.
 
-The 24 concept definitions and SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH contracts remain with their inventory-selected legacy owners until later CKR groups.
-
-## Foundation / reference disposition
-
-CKR-B canonicalized durable current meaning from foundation 001–008 plus the shared glossary. [`foundation/README.md`](foundation/README.md) and [`reference/README.md`](reference/README.md) route current questions to canonical owners while preserving historical sources. `reference/authority_vocabulary.md` remains a separate CKR-D record; foundation 009 roadmap, 010 open questions and 011 handoff remain historical.
+`reference.authority_vocabulary` and REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain with their inventory-selected legacy owners until later CKR groups.
 
 ## Documentation authority discipline
 
@@ -64,4 +61,4 @@ CKR-B canonicalized durable current meaning from foundation 001–008 plus the s
 - `canonical_ownership_inventory.json` is the machine-readable owner/cutover ledger during CKR.
 - Historical records remain preserved; living guidance must not create a second current owner.
 
-CKR semantic migration preserves, among other boundaries, Baseline ≠ Expectation, Observation ≠ Assessment, missing evidence ≠ negative truth, Lineage ≠ exposure ≠ Impact ≠ cause, Assertion Authority ≠ Capability Authorization, current ≠ historical/as-known state, and agent/model/vendor output ≠ canonical truth or authorization. Genuine contradictions require explicit change control.
+CKR semantic migration preserves, among other boundaries, Baseline ≠ Expectation, Observation ≠ Assessment, missing evidence ≠ negative truth, Change Intent ≠ Deployment ≠ Change, Lineage ≠ exposure ≠ Impact ≠ cause, Investigation closure ≠ causal confirmation, Assertion Authority ≠ Capability Authorization, Gate ≠ Safeguard, current ≠ historical/as-known state, and agent/model/vendor output ≠ canonical truth or authorization. Genuine contradictions require explicit change control.
