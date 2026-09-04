@@ -1,8 +1,8 @@
 # Canonical Knowledge & Documentation Authority Retrofit
 
-**Status:** CKR-A IN EXECUTION — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
+**Status:** CKR-A COMPLETE / ACCEPTED — CKR-B NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
 
-**CKR status mirror: IN EXECUTION CKR-A; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A; NEXT CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
 ## Purpose
 
@@ -52,8 +52,8 @@ The sequence is semantic-domain oriented, not phase-order oriented.
 
 ## Current execution state
 
-- **CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory: IN EXECUTION.**
-- **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: PLANNED.**
+- **CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory: COMPLETE / ACCEPTED.**
+- **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: NEXT / READY.**
 - **CKR-C — Concept Catalog: PLANNED.**
 - **CKR-D — Evidence, Time, Authority & Governance: PLANNED.**
 - **CKR-E — Health, Quality, Metrics & Timing: PLANNED.**
@@ -63,6 +63,8 @@ The sequence is semantic-domain oriented, not phase-order oriented.
 - **CKR-I — Technical Architecture: PLANNED.**
 - **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: PLANNED.**
 - **CKR-K — Consolidation, Provenance Validation & Exit Review: PLANNED.**
+
+CKR-A acceptance evidence is recorded in [`ckr_a_execution_review.md`](ckr_a_execution_review.md).
 
 ## Authority while CKR is in progress
 
@@ -79,7 +81,7 @@ Exact rules are in [`migration_contract.md`](migration_contract.md).
 
 ## Canonical target topology
 
-`docs/canonical/` is the future current-truth namespace. CKR-A creates its structural indexes only; semantic documents do not become authoritative merely by appearing under that path.
+`docs/canonical/` is the future current-truth namespace. CKR-A established its structural indexes and authority validation. Substantive resources become authoritative only through later domain-specific atomic cutover.
 
 Target families:
 
@@ -93,6 +95,8 @@ Target families:
 - `docs/canonical/reference/`
 
 The machine-readable ownership/migration ledger is [`canonical_ownership_inventory.json`](canonical_ownership_inventory.json).
+
+CKR-A accepted a baseline of **34 ownership records, including all 24 concepts, with 0 substantive records canonicalized and 0 candidates**. That is intentional: the authority mechanism exists before the corpus begins migration.
 
 ## Design-history treatment
 
@@ -121,20 +125,12 @@ The ADF exit remains accepted and its residuals remain open:
 
 CKR does not convert either residual into PASS or move them into the documentation migration.
 
-## Current group
+## Next eligible group
 
-### CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory
+### CKR-B — Foundation, Terminology & Cross-Cutting Invariants
 
-CKR-A must establish:
+CKR-B will perform the first substantive canonical cutovers. Its scope is to consolidate the durable current meaning from the inventoried foundation/reference owners into bounded canonical resources while separating historical roadmap/open-question/handoff material from current truth.
 
-- explicit canonical-knowledge vs design-history authority layers;
-- migration state machine and atomic cutover rule;
-- target canonical namespace and document contract;
-- machine-readable inventory of current owners, target domains and stable-ID families;
-- explicit concept inventory for all 24 accepted concepts;
-- deterministic validation that prevents dual authority and invalid migration states;
-- live CKR status and implementation-blocking mirrors;
-- representative negative/scenario tests;
-- CKR-A execution review.
+CKR-B should canonicalize, at minimum, the inventoried product definition, actors/stakeholders, terminology, Concept Design method, architectural principles, security/governance foundation, ecosystem lifecycles, MVP boundary and glossary-related foundation meaning, with semantic-conservation/provenance review before each atomic cutover.
 
-CKR-A does **not** canonicalize the substantive concept/contract/architecture corpus. That begins in CKR-B.
+Completion of CKR-A does **not** authorize starting CKR-B automatically. CKR-B begins only when explicitly selected by the human.
