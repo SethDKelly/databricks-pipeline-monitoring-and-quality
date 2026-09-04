@@ -1,0 +1,63 @@
+schema_version: "1.0"
+scenario_set: CKR-B Foundation Terminology Cross-Cutting Invariants
+scenarios:
+  - id: CKRB-01
+    requirement: Product purpose remains evidence-grounded ecosystem understanding over time rather than alert aggregation.
+    expected: Product definition candidate preserves evidence, history, uncertainty, policy/authorization and business/engineering Explanation boundaries.
+  - id: CKRB-02
+    requirement: Actor roles do not collapse technical, business, stewardship, security, assertion, authorization or control authority.
+    expected: Canonical actor candidate keeps authority distinctions and does not promote old open questions as current policy.
+  - id: CKRB-03
+    requirement: Foundational terminology preserves key non-equivalences.
+    expected: Observation/Assessment, Expectation/Baseline, execution/freshness/quality, Lineage/Impact/cause, and authority/authorization remain distinct.
+  - id: CKRB-04
+    requirement: Concept Design remains implementation and vendor neutral.
+    expected: Concept criteria, owned state/actions, synchronizations, ambiguity behavior and acceptance gate remain current methodology.
+  - id: CKRB-05
+    requirement: All accepted architectural principle identities survive migration.
+    expected: AP-01 through AP-32 each appear exactly once as canonical principle headings.
+  - id: CKRB-06
+    requirement: All accepted security principle identities survive migration.
+    expected: SP-01 through SP-15 each appear exactly once as canonical policy headings.
+  - id: CKRB-07
+    requirement: Ecosystem lifecycle coverage remains complete.
+    expected: Fourteen numbered lifecycle sections and the non-rewriting/bitemporal ledger principle remain present.
+  - id: CKRB-08
+    requirement: MVP required-capability coverage remains complete.
+    expected: Thirteen numbered required MVP capability sections remain represented.
+  - id: CKRB-09
+    requirement: Foundation MVP proof scenarios survive migration.
+    expected: Scenario A through Scenario K each remain represented and retain their non-collapse intent.
+  - id: CKRB-10
+    requirement: Optional systems remain optional for the required MVP.
+    expected: MVP does not require Collibra, Immuta, LLM/model assistance, graph database or active control.
+  - id: CKRB-11
+    requirement: Candidate resources cannot supersede legacy current owners before cutover.
+    expected: Nine CKR-B records are candidate_ready and every target declares CANDIDATE / NOT CURRENT AUTHORITY.
+  - id: CKRB-12
+    requirement: Canonical candidates retain bounded provenance.
+    expected: Each target declares its migration record and cites its inventoried legacy current owner in Provenance.
+  - id: CKRB-13
+    requirement: Historical roadmap/open-question/handoff material is not promoted as current truth.
+    expected: Foundation 009, 010 and 011 remain preserved as history sources and outside the CKR-B current-owner set.
+  - id: CKRB-14
+    requirement: CKR-B does not steal later domain ownership.
+    expected: Twenty-four concepts and all SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH families remain legacy_authoritative during CKR-B candidate review.
+  - id: CKRB-15
+    requirement: Glossary uses current accepted vocabulary without becoming a detailed contract corpus.
+    expected: Compact definitions preserve current boundaries while detailed concept/stable-family ownership remains elsewhere.
+  - id: CKRB-16
+    requirement: Current disclosure remains distinct from historical authorization/truth.
+    expected: Terminology, security policy and glossary preserve this distinction.
+  - id: CKRB-17
+    requirement: Passive monitoring remains separate from optional active control.
+    expected: Architectural principles, security policy, terminology and MVP boundary preserve passive non-blocking defaults and explicit active-control opt-in.
+  - id: CKRB-18
+    requirement: Semantic contradiction cannot be resolved as documentation cleanup.
+    expected: Genuine conflict keeps the affected record candidate_ready until explicit A4 adjudication.
+  - id: CKRB-19
+    requirement: CKR-B cutover is atomic for each migrated record.
+    expected: Canonical authority marker, inventory state, current routing and provenance agree; partial/dual authority is rejected.
+  - id: CKRB-20
+    requirement: Product implementation remains blocked during CKR-B.
+    expected: Live CKR mirrors say CKR-B IN EXECUTION and Implementation 001-A BLOCKED ON CKR EXIT.
