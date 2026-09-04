@@ -82,9 +82,15 @@ def main() -> int:
     for phrase in ['Synchronization order is never','not an umbrella concept','Unknown','concept state remains owned']:
         if phrase.lower() not in sync_text.lower(): errors.append(f'SYN corpus missing cross-cutting synchronization boundary {phrase!r}')
     if not (repo/'docs/concepts/phase_002').exists() or not (repo/'docs/concepts/phase_003').exists(): errors.append('Phase 002/003 provenance roots must remain preserved')
+    # CKR-C owns only concepts + SYN. Later families must retain their assigned migration group,
+    # but their state may legitimately advance when that later CKR group is human-selected.
+    # Later-group validators enforce their own atomicity and progression isolation.
     for fam,group in LATER.items():
         item=inv['stable_families'][fam]
-        if item.get('migration_group')!=group or item.get('migration_state')!='legacy_authoritative': errors.append(f'{fam}: later-family ownership changed during CKR-C')
+        if item.get('migration_group')!=group:
+            errors.append(f'{fam}: migration ownership moved away from assigned {group}')
+        if item.get('migration_state') not in {'legacy_authoritative','candidate_ready','canonicalized'}:
+            errors.append(f'{fam}: invalid later-family migration state {item.get("migration_state")!r}')
     for e in errors: print('ERROR',e)
     print(f'CKR-C concept validation: {len(errors)} error(s), {len(c_records)} concept(s), SYN headings={len(ids)}, state={state}')
     return 1 if errors else 0

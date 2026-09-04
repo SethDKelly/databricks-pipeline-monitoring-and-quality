@@ -10,8 +10,6 @@ status: "stable"
 
 Use the [CKR authority](../../docs/canonical_knowledge_retrofit/README.md) and [ownership inventory](../../docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json) to determine the current semantic owner.
 
-The [canonical namespace](../../docs/canonical/README.md) now contains CKR-B's first nine substantive current owners; other records remain with their inventory-selected legacy owners until later CKR groups.
+Through CKR-D, the canonical namespace owns foundation/glossary, the 24 concepts, SYN-001–035, REF-001–030, AUTH-001–053 and the authority vocabulary. Later stable families remain with their assigned legacy owners until their CKR groups.
 
-Use [design history](../../docs/design_history/README.md) for provenance/rationale/history, not as an alternate current owner after cutover.
-
-This OKF entry is routing only and cannot change migration or semantic authority state.
+Use [design history](../../docs/design_history/README.md) for provenance/rationale/history, not as an alternate current owner after cutover. This OKF entry is routing only and cannot change migration or semantic authority state.

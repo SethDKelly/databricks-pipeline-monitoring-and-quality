@@ -1,5 +1,7 @@
 # Canonical Authority Boundaries
 
-Structural index for current DMTZ authority, authorization, governance, policy-applicability and disclosure boundaries.
+Current DMTZ assertion standing, authorization, governance and disclosure authority.
 
-**CKR-A state:** AUTH-related meaning and authority concept definitions remain legacy-authoritative until CKR-D and related concept migration cutovers occur.
+- `vocabulary.md` is the current shared authority vocabulary.
+- AUTH-001–AUTH-053 are canonical across six bounded resources in this directory after CKR-D cutover.
+- Phase 005 and `docs/reference/authority_vocabulary.md` are provenance/design history for migrated meaning.

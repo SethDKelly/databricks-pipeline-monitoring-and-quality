@@ -8,31 +8,12 @@ alwaysApply: false
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-C; NEXT CKR-D; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-D; NEXT CKR-E; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-C is complete/accepted. CKR-D is next/ready but unstarted. Product implementation remains blocked until CKR-K.
+CKR-D is complete/accepted. CKR-E is next/ready but unstarted. Product implementation remains blocked until CKR-K.
 
-Primary shared authority remains:
+Primary shared authority remains root `AGENTS.md`; `docs/agentic_development_foundation/authority_scope_policy.md`; `knowledge/index.md` as optional routing only; CKR README; and the ownership inventory.
 
-- root `AGENTS.md` — repository constitution;
-- `docs/agentic_development_foundation/authority_scope_policy.md` — A1–A4 action/scope control;
-- `knowledge/index.md` — optional progressive-disclosure routing only;
-- `docs/canonical_knowledge_retrofit/README.md` — live CKR state;
-- `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` — record/family ownership.
+Lookup: `canonicalized` → canonical owner; `legacy_authoritative`/`candidate_ready` → legacy owner; phase/decision history is provenance/rationale after migration. Foundation/glossary, concepts/SYN, authority vocabulary, REF and AUTH are canonicalized. HLTH/OPS/EXPL/INTG/ARCH remain later-group legacy authority.
 
-Current lookup:
-
-1. Read the CKR README for live state.
-2. Consult the ownership inventory when ownership is unclear.
-3. `canonicalized` → use the inventoried `docs/canonical/` owner.
-4. `legacy_authoritative` / `candidate_ready` → use the inventoried legacy owner.
-5. Use phase/decision history for provenance/rationale/history, not alternate current truth.
-6. Use `knowledge/index.md` only when a compact route is useful; it never creates semantic authority.
-
-All 24 concepts and SYN-001–SYN-035 are canonicalized. Phase 002/003 are provenance. `reference.authority_vocabulary` and REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain later-group legacy authority.
-
-Do not infer authority from recency, first search hit, synchronization order, Git history, OKF, vendor skill, tool memory or path presence alone. Genuine semantic conflicts require A4 change control.
-
-```bash
-python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
-```
+Do not infer authority from recency, search order, Git history, OKF, vendor skill, tool memory or path presence. Completing CKR-D does not authorize CKR-E.
