@@ -8,9 +8,9 @@ alwaysApply: false
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-B; NEXT CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-B; IN EXECUTION CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-A and CKR-B are complete/accepted. CKR-C is next/ready but not active until explicitly selected. Product implementation remains blocked until CKR-K.
+CKR-C is in candidate review. Product implementation remains blocked until CKR-K.
 
 ## Current semantic questions
 
@@ -21,11 +21,11 @@ CKR-A and CKR-B are complete/accepted. CKR-C is next/ready but not active until 
 5. Use phase/decision history for provenance/rationale/history/change review, not alternate current truth.
 6. `knowledge/index.md` remains optional routing only.
 
-CKR-B product definition, actors/stakeholders, terminology, Concept Design method, AP-01–32, SP-01–15, lifecycles, MVP boundary and shared glossary resolve to `docs/canonical/`. Their Phase-001/legacy glossary sources are provenance.
+CKR-B foundation/glossary resources are canonical. CKR-C has candidate targets for all 24 concepts plus SYN-001–SYN-035; Phase 002/003 remain current authority while candidate state is active. Candidate files must not be cited as current truth.
 
-All 24 concepts and stable-ID families remain with later CKR groups. CKR-C may not begin without explicit human selection.
+CKR-C may not migrate `reference.authority_vocabulary` or REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH ownership. Synchronization does not become an umbrella concept; order never creates authority.
 
-Primary controls: root `AGENTS.md`; ADF-A `authority_scope_policy.md`; CKR `authority_model.md` / `migration_contract.md`; implementation README; `.agents/skills/`; stable-ID resolver; unified conformance.
+Primary controls: root `AGENTS.md`; `docs/agentic_development_foundation/authority_scope_policy.md`; CKR `authority_model.md` / `migration_contract.md`; CKR-C semantic matrix; implementation README; `.agents/skills/`; stable-ID resolver; unified conformance.
 
 Do not infer authority from phase recency, first search hit, Git history, OKF summary, vendor skill, tool memory or path presence alone. Genuine semantic conflicts require A4 change control.
 
