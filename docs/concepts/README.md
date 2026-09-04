@@ -6,7 +6,7 @@ DMTZ is migrating from chronological concept/refinement ownership to a dedicated
 
 The machine-readable authority ledger is [`../canonical_knowledge_retrofit/canonical_ownership_inventory.json`](../canonical_knowledge_retrofit/canonical_ownership_inventory.json).
 
-**During CKR-A, all 24 concepts remain `legacy_authoritative` at the paths listed below.** CKR-C will promote each concept into an exact target under `docs/canonical/concepts/` using atomic cutover. After a concept becomes `canonicalized`, this phase-era source becomes design provenance for that concept rather than its current definition.
+**CKR-A accepted all 24 concepts as `legacy_authoritative` at the paths listed below.** CKR-C will promote each concept into an exact target under `docs/canonical/concepts/` using atomic cutover. After a concept becomes `canonicalized`, its phase-era source becomes design provenance for that concept rather than the current definition.
 
 Current design-phase progression remains declared only in [`../README.md#current-state`](../README.md#current-state).
 
@@ -16,7 +16,7 @@ The accepted concept count is **24**: the original 20 plus **Propagation Safegua
 
 Concepts remain independently understandable units of functionality and synchronize rather than collapse into implementation/vendor/schema/IAM/UI boundaries.
 
-## Legacy current concept owners during CKR-A
+## Legacy current concept owners until CKR-C cutover
 
 ### Scope & Identity
 - [`Monitoring Scope`](phase_002/01_scope_and_identity/monitoring_scope.md)
