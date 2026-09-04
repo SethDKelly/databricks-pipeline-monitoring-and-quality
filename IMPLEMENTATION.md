@@ -2,9 +2,9 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-D; IN EXECUTION CKR-E; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-E; NEXT CKR-F; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-E HLTH cutover is complete and closure validation is in progress. Product implementation remains blocked until CKR-K.
+CKR-E is complete/accepted. CKR-F is next/ready but unstarted. Product implementation remains blocked until CKR-K.
 
 ## Current semantic routing
 
@@ -15,6 +15,6 @@ CKR-E HLTH cutover is complete and closure validation is in progress. Product im
 5. `docs/implementation/README.md` — implementation block.
 6. root `AGENTS.md` — shared instructions.
 
-Foundation/glossary, concepts/SYN, authority vocabulary, REF, AUTH and HLTH now resolve to canonical owners. Phase 001–006 are provenance for migrated meaning. OPS/EXPL/INTG/ARCH remain legacy-authoritative until their assigned CKR groups.
+Foundation/glossary, concepts/SYN, authority vocabulary, REF, AUTH and HLTH resolve to canonical owners. Phase 001–006 are provenance for migrated meaning. OPS/EXPL/INTG/ARCH remain legacy-authoritative until their assigned CKR groups.
 
 **Implementation 001-A — BLOCKED until CKR-K.**

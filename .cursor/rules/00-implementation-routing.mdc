@@ -8,9 +8,9 @@ alwaysApply: false
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-D; IN EXECUTION CKR-E; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-E; NEXT CKR-F; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-E is in execution after atomic HLTH cutover; product implementation remains blocked until CKR-K.
+CKR-E is complete/accepted. CKR-F is next/ready but unstarted. Product implementation remains blocked until CKR-K.
 
 Primary shared authority remains root `AGENTS.md`; `docs/agentic_development_foundation/authority_scope_policy.md`; `knowledge/index.md` as optional routing only; CKR README; and the ownership inventory.
 
