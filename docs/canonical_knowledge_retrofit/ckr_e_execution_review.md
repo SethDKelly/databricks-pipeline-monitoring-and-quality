@@ -51,6 +51,17 @@ Cutover head `d21c2138f3e38817a521fa7a18f792ac7729aa09` passed:
 
 The cutover moved HLTH atomically from `candidate_ready` to `canonicalized`, promoted all six resources to `CANONICAL CURRENT AUTHORITY`, reclassified Phase 006 as provenance, and routed the HLTH portion of the mixed health/Lineage/Impact OKF leaf to the canonical health index without absorbing later OPS/INTG/ARCH ownership.
 
+### Closure/status synchronization gate
+
+Closure head `373b86a6def2dfba8319984d9d45c5e93d52c8b0` advanced only live CKR progression/routing to CKR-E complete / CKR-F next, finalized the semantic-conservation disposition, and retained Implementation 001-A blocked until CKR-K.
+
+It passed:
+
+- Agentic conformance **#132 — SUCCESS** (run ID `33840722338`);
+- Documentation consistency **#250 — SUCCESS** (run ID `33840722294`).
+
+This verifies that CKR-E status, HLTH ownership, canonical routing, fixture registration, context budgets and authority guards remain mutually consistent after closure.
+
 ## Acceptance criteria
 
 - exact CKR-E scope HLTH-001–HLTH-066 — **PASS**;
@@ -62,10 +73,10 @@ The cutover moved HLTH atomically from `candidate_ready` to `canonicalized`, pro
 - no blind metric/status propagation through Lineage — **PASS**;
 - readiness/control separation preserved — **PASS**;
 - no implementation/architecture selection — **PASS**;
-- candidate and cutover conformance/documentation gates — **PASS**.
+- candidate, cutover and closure conformance/documentation gates — **PASS**.
 
 ## Exit decision
 
 **CKR-E is accepted and complete. CKR-F — Lineage, Change, Investigation, Impact & Control is next/ready but remains unstarted until explicitly selected by the human.**
 
-Implementation 001-A remains blocked until CKR-K. The closure/status synchronization head must pass the normal repository gates before PR merge; a failure there reopens only the affected closure defect unless it demonstrates a semantic regression.
+Implementation 001-A remains blocked until CKR-K. PR merge is permitted only from an exact head that passes the repository's normal Agentic conformance and Documentation consistency gates.
