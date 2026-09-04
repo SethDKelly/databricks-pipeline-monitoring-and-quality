@@ -1,10 +1,10 @@
 # DMTZ Implementation Program
 
-**Status:** BLOCKED — CKR-A COMPLETE; CKR-B NEXT / READY
+**Status:** BLOCKED — CKR-A COMPLETE; CKR-B IN EXECUTION
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A; NEXT CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A; IN EXECUTION CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
 ## Authority and current gate
 
@@ -15,14 +15,17 @@ The accepted ADF exit remains valid and is not reopened by CKR.
 Current required work:
 
 - **CKR-A — COMPLETE / ACCEPTED**;
-- **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: NEXT / READY**;
+- **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: IN EXECUTION**;
 - **Implementation 001-A — NOT ACTIVE / BLOCKED until CKR-K exit acceptance**.
+
+CKR-B currently has nine `candidate_ready` foundation/glossary records. Until atomic cutover, their inventoried legacy owners remain current authority.
 
 Use:
 
 - `../canonical_knowledge_retrofit/README.md` — live CKR progression;
 - `../canonical_knowledge_retrofit/canonical_ownership_inventory.json` — current semantic ownership;
-- `../canonical/README.md` — target current-truth namespace;
+- `../canonical_knowledge_retrofit/ckr_b_semantic_conservation_matrix.md` — CKR-B comparison/evidence;
+- `../canonical/README.md` — target/current canonical namespace;
 - `../design_history/README.md` — provenance/history role;
 - root `AGENTS.md` — shared behavior/authority instructions.
 
@@ -32,20 +35,9 @@ Use:
 - `canonicalized` → inventoried `docs/canonical/` target is sole current owner;
 - `history_only` → provenance/rationale only.
 
-Do not reconstruct a canonicalized current rule from design chronology. Conversely, do not promote a candidate or structural canonical path before cutover.
+Do not reconstruct a canonicalized current rule from design chronology. Conversely, do not promote a candidate before accepted cutover.
 
-Accepted stable-ID ranges remain unchanged:
-
-- SYN-001–SYN-035;
-- REF-001–REF-030;
-- AUTH-001–AUTH-053;
-- HLTH-001–HLTH-066;
-- OPS-001–OPS-123;
-- EXPL-001–EXPL-160;
-- INTG-001–INTG-270;
-- ARCH-001–ARCH-500.
-
-CKR migrates owner paths/routing without silently changing accepted semantics.
+Accepted stable-ID ranges remain unchanged: SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270, ARCH-001–500.
 
 ## ADF / Databricks residuals
 
