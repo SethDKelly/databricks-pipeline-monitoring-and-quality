@@ -15,10 +15,12 @@ def stale_status(t): return re.sub(r'ADF status mirror: .*?$','ADF status mirror
 def stale_ckr(t): return re.sub(r'CKR status mirror: .*?$','CKR status mirror: COMPLETE CKR-A; NEXT CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.',t,count=1,flags=re.M)
 def vendor_auto(t): d=json.loads(t); d['materialization']['automatic_new_skills']=True; return json.dumps(d,indent=2)+'\n'
 def model_skill(t): d=json.loads(t); d['selected_skills'].append({'name':'databricks-model-serving','version':'0.4.0'}); return json.dumps(d,indent=2)+'\n'
-def fabricate_future(t): d=json.loads(t); d['stable_families']['HLTH']['migration_state']='canonicalized'; return json.dumps(d,indent=2)+'\n'
+def misassign_hlth(t): d=json.loads(t); d['stable_families']['HLTH']['migration_group']='CKR-F'; return json.dumps(d,indent=2)+'\n'
 def move_lineage(t): d=json.loads(t); next(r for r in d['records'] if r['record_id']=='concept.lineage')['target_owner']='docs/design_history/lineage.md'; return json.dumps(d,indent=2)+'\n'
 def partial_ckrc(t): d=json.loads(t); next(r for r in d['records'] if r['record_id']=='concept.observation')['migration_state']='candidate_ready'; return json.dumps(d,indent=2)+'\n'
 def partial_ckrd(t): d=json.loads(t); d['stable_families']['AUTH']['migration_state']='legacy_authoritative'; return json.dumps(d,indent=2)+'\n'
+def remove_hlth_target(t): d=json.loads(t); d['stable_families']['HLTH']['target_documents']=d['stable_families']['HLTH']['target_documents'][:-1]; return json.dumps(d,indent=2)+'\n'
+def future_ops(t): d=json.loads(t); d['stable_families']['OPS']['migration_state']='canonicalized'; return json.dumps(d,indent=2)+'\n'
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--repo',default='.'); a=ap.parse_args(); src=Path(a.repo).resolve(); errors=[]
     with tempfile.TemporaryDirectory(prefix='dmtz-conformance-') as td:
@@ -35,7 +37,7 @@ def main():
         mutate(repo,'docs/agentic_development_foundation/tool_lifecycle_review.json',lambda t:t.replace('"security_reviewed_on": "2026-09-02"','"security_reviewed_on": "2020-01-01"',1),'validate_adf_h_governance.py','expired provider security review horizon',errors)
         mutate(repo,'docs/agentic_development_foundation/databricks_vendor_skills_profile.json',vendor_auto,'validate_databricks_agent_skills.py','automatic Databricks vendor-skill expansion',errors)
         mutate(repo,'docs/agentic_development_foundation/databricks_vendor_skills_profile.json',model_skill,'validate_databricks_agent_skills.py','deferred model skill added to initial Databricks set',errors)
-        mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',fabricate_future,'validate_ckr_d_evidence_authority.py','future HLTH ownership theft during CKR-D',errors)
+        mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',misassign_hlth,'validate_ckr_d_evidence_authority.py','later-family migration ownership drift after CKR-D',errors)
         mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',move_lineage,'validate_canonical_knowledge.py','canonical target outside docs/canonical',errors)
         mutate(repo,'IMPLEMENTATION.md',stale_ckr,'validate_ckr_status.py','stale CKR implementation status mirror',errors)
         mutate(repo,'docs/canonical/invariants/architectural-principles.md',lambda t:t.replace('### AP-32 —','### AP-XX —',1),'validate_ckr_b_foundation.py','omitted CKR-B AP-32 identity',errors)
@@ -52,6 +54,10 @@ def main():
         mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',partial_ckrd,'validate_ckr_d_evidence_authority.py','partial CKR-D authority cutover',errors)
         mutate(repo,'docs/canonical/authority/vocabulary.md',lambda t:t.replace('Assertion Authority ≠ Capability Authorization','Assertion Authority = Capability Authorization',1),'validate_ckr_d_evidence_authority.py','authority versus authorization collapse',errors)
         mutate(repo,'docs/canonical_knowledge_retrofit/ckr_d_semantic_conservation_matrix.md',lambda t:t.replace('safe abstraction cannot strengthen truth','safe abstraction may strengthen truth',1),'validate_ckr_d_evidence_authority.py','disclosure overstatement regression',errors)
+        mutate(repo,'docs/canonical/contracts/health-quality-timing/composite-health-readiness-timing.md',lambda t:t.replace('### HLTH-066 —','### HLTH-999 —',1),'validate_ckr_e_health_quality.py','omitted CKR-E HLTH-066 identity',errors)
+        mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',remove_hlth_target,'validate_ckr_e_health_quality.py','partial CKR-E target topology',errors)
+        mutate(repo,'docs/canonical_knowledge_retrofit/ckr_e_semantic_conservation_matrix.md',lambda t:t.replace('Lineage does not propagate status','Lineage propagates status',1),'validate_ckr_e_health_quality.py','blind health propagation regression',errors)
+        mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',future_ops,'validate_ckr_e_health_quality.py','future OPS ownership theft during CKR-E',errors)
     for e in errors: print('ERROR',e)
-    print(f'Conformance guard tests: {len(errors)} error(s), 29 negative control(s)'); return 1 if errors else 0
+    print(f'Conformance guard tests: {len(errors)} error(s), 33 negative control(s)'); return 1 if errors else 0
 if __name__=='__main__': raise SystemExit(main())

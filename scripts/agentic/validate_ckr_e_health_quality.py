@@ -11,7 +11,8 @@ HLTH_DOCS=(
 'docs/canonical/contracts/health-quality-timing/transformation-reconciliation.md',
 'docs/canonical/contracts/health-quality-timing/composite-health-readiness-timing.md')
 HLTH_RE=re.compile(r'^### (HLTH-\d{3}) —',re.M)
-LATER=('OPS','EXPL','INTG','ARCH')
+STATE_RE=re.compile(r'^- \*\*CKR-([A-K]) — .*?: (.+?)\.\*\*$',re.M)
+LATER={'OPS':'F','EXPL':'G','INTG':'H','ARCH':'I'}
 
 def marker(text):
     if '**Authority:** CANONICAL CURRENT AUTHORITY' in text:return 'canonical'
@@ -22,7 +23,7 @@ def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--repo',default='.'); a=ap.parse_args(); repo=Path(a.repo).resolve(); errors=[]
     inv=json.loads((repo/'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json').read_text())
     hlth=inv['stable_families']['HLTH']; state=hlth.get('migration_state')
-    if state not in {'candidate_ready','canonicalized'}: errors.append(f'HLTH must be candidate_ready/canonicalized during CKR-E, found {state!r}')
+    if state not in {'candidate_ready','canonicalized'}: errors.append(f'HLTH must be candidate_ready/canonicalized during/after CKR-E, found {state!r}')
     expected='candidate' if state=='candidate_ready' else 'canonical'
     if hlth.get('migration_group')!='CKR-E': errors.append('HLTH migration_group must remain CKR-E')
     if hlth.get('target_documents')!=list(HLTH_DOCS): errors.append('HLTH target_documents do not match CKR-E canonical topology')
@@ -42,27 +43,22 @@ def main():
     if not matrix.is_file(): errors.append('missing CKR-E semantic conservation matrix')
     else:
         mt=matrix.read_text(encoding='utf-8')
-        required=(
-        'metric definition ≠ Observation ≠ Assessment',
-        'semantic applicability ≠ profile selection ≠ computability ≠ current availability ≠ Assessment outcome',
-        'declared/governed schema meaning ≠ structural Expectation ≠ proposed/planned state ≠ realized Observation/Change ≠ compatibility Assessment',
-        'Observation ≠ reference membership ≠ Baseline ≠ comparative Assessment ≠ normative Expectation',
-        'Lineage does not propagate status',
-        'component Assessment ≠ bounded composite health',
-        'eligible ≠ suitable ≠ ready ≠ control authorization ≠ Gate decision ≠ enforcement ≠ execution',
-        'no universal health, confidence, anomaly or comparability score')
+        required=('metric definition ≠ Observation ≠ Assessment','semantic applicability ≠ profile selection ≠ computability ≠ current availability ≠ Assessment outcome','declared/governed schema meaning ≠ structural Expectation ≠ proposed/planned state ≠ realized Observation/Change ≠ compatibility Assessment','Observation ≠ reference membership ≠ Baseline ≠ comparative Assessment ≠ normative Expectation','Lineage does not propagate status','component Assessment ≠ bounded composite health','eligible ≠ suitable ≠ ready ≠ control authorization ≠ Gate decision ≠ enforcement ≠ execution','no universal health, confidence, anomaly or comparability score')
         for phrase in required:
             if phrase not in mt: errors.append(f'CKR-E matrix missing boundary: {phrase}')
-    # Prior cutovers remain canonical.
     for fam in ('SYN','REF','AUTH'):
-        if inv['stable_families'][fam]['migration_state']!='canonicalized': errors.append(f'{fam} must remain canonicalized during CKR-E')
+        if inv['stable_families'][fam]['migration_state']!='canonicalized': errors.append(f'{fam} must remain canonicalized during/after CKR-E')
     vocab=next(r for r in inv['records'] if r['record_id']=='reference.authority_vocabulary')
-    if vocab['migration_state']!='canonicalized': errors.append('authority vocabulary must remain canonicalized during CKR-E')
+    if vocab['migration_state']!='canonicalized': errors.append('authority vocabulary must remain canonicalized during/after CKR-E')
     concepts=[r for r in inv['records'] if r.get('kind')=='concept']
-    if len(concepts)!=24 or any(r['migration_state']!='canonicalized' for r in concepts): errors.append('all 24 concepts must remain canonicalized during CKR-E')
-    for fam in LATER:
+    if len(concepts)!=24 or any(r['migration_state']!='canonicalized' for r in concepts): errors.append('all 24 concepts must remain canonicalized during/after CKR-E')
+    states_by_group={k:v for k,v in STATE_RE.findall((repo/'docs/canonical_knowledge_retrofit/README.md').read_text(encoding='utf-8'))}
+    for fam,letter in LATER.items():
         item=inv['stable_families'][fam]
-        if item.get('migration_state')!='legacy_authoritative': errors.append(f'{fam} ownership moved early during CKR-E')
+        if item.get('migration_group')!=f'CKR-{letter}': errors.append(f'{fam}: migration ownership moved away from CKR-{letter}')
+        if item.get('migration_state') not in {'legacy_authoritative','candidate_ready','canonicalized'}: errors.append(f'{fam}: invalid migration state')
+        phase_state=states_by_group.get(letter,'')
+        if phase_state in {'PLANNED','NEXT / READY'} and item.get('migration_state')!='legacy_authoritative': errors.append(f'{fam}: moved before CKR-{letter} entered execution')
     fixture=repo/'docs/canonical_knowledge_retrofit/fixtures/ckr_e_health_quality_scenarios.yaml'
     if not fixture.is_file(): errors.append('missing CKR-E fixture catalog')
     else:
