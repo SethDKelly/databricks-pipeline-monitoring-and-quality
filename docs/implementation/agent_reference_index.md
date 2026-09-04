@@ -1,99 +1,88 @@
 # DMTZ Agent Reference Index
 
-**Purpose:** compact secondary bridge from a task to accepted contract families, canonical document sets, active implementation authority, and reviewed platform-development dependencies. First-hop discovery begins at `knowledge/index.md` only when an explicit path/ID is not already known; procedures live under `.agents/skills/`.
+**Purpose:** compact secondary bridge from a task to current semantic authority, migration state, stable-ID families, implementation status and reviewed platform-development dependencies.
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-The Agentic Development Foundation execution exit and Databricks Agent Skills Integration Addendum are complete/accepted. **Implementation 001-A is the next eligible group.**
+**CKR status mirror: IN EXECUTION CKR-A; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-Use the shortest path: explicit group/path/ID directly when known; otherwise `knowledge/index.md` → one route → canonical resource → exact IDs/tests as required. Do not load entire historical phases or all vendor skills for routine work.
+The ADF exit is accepted. The **Canonical Knowledge & Documentation Authority Retrofit** is now the active pre-implementation dependency; 001-A is not active.
 
 ## Universal start
 
 | Need | Read first |
 |---|---|
+| Live CKR status / migration sequence | `docs/canonical_knowledge_retrofit/README.md` |
+| Current semantic owner / target owner | `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` |
+| CKR authority model | `docs/canonical_knowledge_retrofit/authority_model.md` |
+| CKR migration/cutover rules | `docs/canonical_knowledge_retrofit/migration_contract.md` |
+| Target canonical knowledge namespace | `docs/canonical/README.md` |
+| Design-history/provenance layer | `docs/design_history/README.md` |
 | Live implementation status | `docs/implementation/README.md` |
-| Implementation 001 package | `docs/implementation/001_executable_foundations_walking_skeleton/README.md` |
 | Foundation exit decision | `docs/agentic_development_foundation/execution_exit_review.md` |
-| Completed ADF/addendum authority | `docs/agentic_development_foundation/README.md` |
-| ADF exit gate definitions | `docs/agentic_development_foundation/execution_exit_criteria.md` |
-| ADF-EX-17 bounded waiver | `docs/agentic_development_foundation/adf_g_progression_exception.md` |
-| Runtime compatibility evidence | `docs/agentic_development_foundation/runtime_compatibility_evidence.json` |
-| Databricks Agent Skills addendum/evidence | `docs/agentic_development_foundation/databricks_agent_skills_addendum.md` / `databricks_agent_skills_addendum_execution_review.md` |
-| Reviewed Databricks vendor set | `docs/agentic_development_foundation/databricks_vendor_skills_profile.json` |
-| Local Databricks skill materialization | `scripts/agentic/materialize_databricks_skills.py` |
-| Shared agent/developer constitution | root `AGENTS.md` |
-| Portable knowledge discovery | `knowledge/index.md` |
-| Canonical workflow/overlay | `.agents/skills/<workflow>/SKILL.md` |
-| Human-directed action policy | `docs/agentic_development_foundation/authority_scope_policy.md` |
-| Context / stable-reference policy | `context_discovery_policy.md` / `stable_reference_policy.md` / `stable_id_registry.json` |
-| Agentic conformance | `docs/agentic_development_foundation/conformance_policy.md` / `scripts/agentic/run_conformance.py` |
-| Security/change governance | `security_trust_lifecycle_policy.md` / `agentic_change_governance.md` |
-| Frozen architecture handoff | `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md` |
-| Validation strategy / traceability | `docs/implementation/validation_strategy.md` / `traceability_and_change_control.md` |
+| Shared constitution | root `AGENTS.md` |
+| Portable routing | `knowledge/index.md` |
+| Stable-ID occurrence discovery | `stable_id_registry.json` / `scripts/agentic/resolve_stable_id.py` |
+| Agentic/CKR conformance | `scripts/agentic/run_conformance.py` |
+| Implementation 001 package after CKR exit | `docs/implementation/001_executable_foundations_walking_skeleton/README.md` |
 
-## Agentic foundation disposition
+## Current authority rule
 
-| Area | State | Primary source |
+For a semantic record:
+
+| Inventory state | Current owner |
+|---|---|
+| `legacy_authoritative` | inventoried legacy source |
+| `candidate_ready` | inventoried legacy source; candidate is review-only |
+| `canonicalized` | inventoried `docs/canonical/` target |
+| `history_only` | no current semantic ownership; provenance/rationale only |
+
+Do not treat the newest phase, first search result, OKF summary or mere presence under `docs/canonical/` as authority.
+
+## CKR progression
+
+| Group | Scope | State |
 |---|---|---|
-| Authority / human-directed scope | ADF-A — COMPLETE | `authority_scope_policy.md`; `adf_a_execution_review.md` |
-| Portable OKF knowledge | ADF-B — COMPLETE | `knowledge/index.md`; `okf_profile.md`; `adf_b_execution_review.md` |
-| Tool instruction adapters | ADF-C — COMPLETE | `tool_compatibility.json`; `adf_c_execution_review.md` |
-| Portable DMTZ workflows | ADF-D — COMPLETE | `.agents/skills/`; `portable_workflow_profile.md`; `adf_d_execution_review.md` |
-| Context / stable IDs / budgets | ADF-E — COMPLETE | `context_discovery_policy.md`; `stable_reference_policy.md`; `adf_e_execution_review.md` |
-| Conformance / drift / CI | ADF-F — COMPLETE | `conformance_policy.md`; `run_conformance.py`; `adf_f_execution_review.md` |
-| Cross-tool compatibility / onboarding | ADF-G — COMPLETE; EX-17 DEFERRED | `runtime_compatibility_evidence.json`; `adf_g_progression_exception.md`; `adf_g_execution_review.md` |
-| Security / trust / lifecycle | ADF-H — COMPLETE | `security_trust_lifecycle_policy.md`; `agentic_change_governance.md`; `adf_h_execution_review.md` |
-| Databricks vendor skills / overlays | ADDENDUM — COMPLETE | `databricks_agent_skills_addendum.md`; `databricks_vendor_skills_profile.json`; addendum review |
-| Foundation execution exit | **ACCEPTED** | `execution_exit_review.md` |
-| Next implementation | **001-A — NEXT / ELIGIBLE** | `001_executable_foundations_walking_skeleton/README.md` |
+| CKR-A | Authority model, migration contract, ownership inventory | **IN EXECUTION** |
+| CKR-B | Foundation, terminology, cross-cutting invariants | PLANNED |
+| CKR-C | 24-concept catalog + SYN synchronization | PLANNED |
+| CKR-D | REF/AUTH evidence, time, authority, governance | PLANNED |
+| CKR-E | HLTH health/quality/metrics/timing | PLANNED |
+| CKR-F | OPS Lineage/change/investigation/Impact/control | PLANNED |
+| CKR-G | EXPL questioning/explanation/experience | PLANNED |
+| CKR-H | INTG integration/source/evidence availability | PLANNED |
+| CKR-I | ARCH technical architecture | PLANNED |
+| CKR-J | OKF, stable owners, agent routing, drift enforcement | PLANNED |
+| CKR-K | Consolidation/provenance validation/exit | PLANNED |
 
-`ADF-G-XT01` remains provider-runtime verification debt. Cursor, Claude Code and Codex remain runtime-`unverified` until actual evidence exists. This does not block ordinary IDE/CLI development under the accepted bounded waiver.
-
-Autonomy remains out of scope; see `autonomous_backlog.md` only when explicitly reviewing deferred future work.
-
-## Workflow map
-
-Core DMTZ workflows:
-
-- `resolve-context`;
-- `implement-group`;
-- `resolve-contract`;
-- `run-conformance`;
-- `review-change`;
-- `update-traceability`;
-- `exit-review`.
-
-DMTZ Databricks overlays:
-
-- `dmtz-databricks-environment-discovery`;
-- `dmtz-databricks-acquisition`;
-- `dmtz-databricks-persistence`;
-- `dmtz-databricks-lineage`;
-- `dmtz-databricks-runtime-provenance`;
-- `dmtz-databricks-governance`.
-
-Cursor and Codex consume `.agents/skills/` directly. Claude Code uses thin `.claude/commands/` bridges. Reviewed Databricks vendor skills, when materialized, live under ignored `.databricks/agent-skills/` and are supporting operational context only.
-
-## Databricks vendor profile
-
-Accepted initial set: `databricks-core`, `databricks-dabs`, `databricks-jobs`, `databricks-pipelines`, `databricks-data-discovery`, `databricks-dbsql`, `databricks-unity-catalog`, `databricks-lakeflow-connect`.
-
-Model/AI implementation skills are deferred. Automatic upstream expansion is prohibited. Managed Databricks MCP servers require separate G3/G4 review.
-
-`DBX-SKILL-RUN-01` — actual local `aitools --path` materialization and exact reviewed-version verification — is an **Implementation 001-A** environment obligation.
+**Implementation 001-A remains blocked until CKR-K exit acceptance.**
 
 ## Accepted stable-ID families
 
-Use `docs/agentic_development_foundation/stable_id_registry.json` and `scripts/agentic/resolve_stable_id.py` for exact occurrence discovery. Accepted ranges remain:
+Accepted ranges remain unchanged:
 
-- SYN-001–035;
-- REF-001–030;
-- AUTH-001–053;
-- HLTH-001–066;
-- OPS-001–123;
-- EXPL-001–160;
-- INTG-001–270;
-- ARCH-001–500.
+- SYN-001–SYN-035;
+- REF-001–REF-030;
+- AUTH-001–AUTH-053;
+- HLTH-001–HLTH-066;
+- OPS-001–OPS-123;
+- EXPL-001–EXPL-160;
+- INTG-001–INTG-270;
+- ARCH-001–ARCH-500.
 
-Search results are candidates; canonical ownership comes from accepted repository authority, not first-match order.
+CKR-A inventories each family by current legacy root and future canonical domain. Exact occurrence discovery remains non-authoritative until CKR-J introduces deterministic canonical-owner resolution for migrated IDs.
+
+## Agentic foundation / platform residuals
+
+- ADF execution exit — ACCEPTED;
+- ADF-EX-17 — DEFERRED / WAIVED as bounded verification debt;
+- `ADF-G-XT01` — OPEN; Cursor/Claude Code/Codex runtime state remains `unverified`;
+- Databricks Agent Skills addendum — ACCEPTED;
+- `DBX-SKILL-RUN-01` — future Implementation 001-A obligation after CKR unlock;
+- autonomous development — DEFERRED / NOT AUTHORIZED.
+
+## Workflow map
+
+Core workflows remain `resolve-context`, `implement-group`, `resolve-contract`, `run-conformance`, `review-change`, `update-traceability`, and `exit-review`. DMTZ Databricks overlays remain environment discovery, acquisition, persistence, Lineage, runtime provenance and governance.
+
+During CKR, use these workflows only inside the human-selected documentation-migration task. They do not authorize product implementation or automatic group continuation.
