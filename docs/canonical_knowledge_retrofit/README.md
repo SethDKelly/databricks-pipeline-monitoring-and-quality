@@ -1,6 +1,6 @@
 # Canonical Knowledge & Documentation Authority Retrofit
 
-**Status:** CKR-A–CKR-B COMPLETE / ACCEPTED — CKR-C IN EXECUTION — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
+**Status:** CKR-A–CKR-B COMPLETE / ACCEPTED — CKR-C IN EXECUTION / CUTOVER COMPLETE / CLOSURE VALIDATION PENDING — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
 
 **CKR status mirror: COMPLETE CKR-A–CKR-B; IN EXECUTION CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
@@ -8,9 +8,9 @@
 
 CKR separates current accepted DMTZ meaning from chronological design history. It changes documentation ownership/routing/provenance without silently changing accepted product semantics.
 
-> **A current semantic question resolves to one current owner. Candidate presence is never authority.**
+> **A current semantic question resolves to one current owner.**
 
-Ownership is declared in [`canonical_ownership_inventory.json`](canonical_ownership_inventory.json): `legacy_authoritative`, `candidate_ready`, `canonicalized`, or `history_only`. Atomic cutover/no-dual-authority rules are in [`migration_contract.md`](migration_contract.md).
+Ownership is declared in [`canonical_ownership_inventory.json`](canonical_ownership_inventory.json); atomic cutover/no-dual-authority rules are in [`migration_contract.md`](migration_contract.md).
 
 ## Program sequence / state
 
@@ -26,43 +26,25 @@ Ownership is declared in [`canonical_ownership_inventory.json`](canonical_owners
 - **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: PLANNED.**
 - **CKR-K — Consolidation, Provenance Validation & Exit Review: PLANNED.**
 
-## CKR-C candidate review
+## CKR-C authority cutover
 
-CKR-C owns one atomic migration set:
+CKR-C has atomically cut over:
 
-1. all **24 accepted concepts** from Phase 002/addenda;
-2. **SYN-001–SYN-035** synchronization ownership from Phase 003.
+1. all **24 accepted concept records** to `docs/canonical/concepts/`;
+2. **SYN-001–SYN-035** to six bounded resources under `docs/canonical/contracts/synchronization/`.
 
-All 24 concept records and the SYN family are currently `candidate_ready`. Therefore **Phase 002/003 remain current authority** for concept/SYN questions until the atomic cutover succeeds.
+The Phase-002/003 corpus remains provenance/design history for those meanings. `reference.authority_vocabulary` and REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain with later groups.
 
-Candidate concept resources live under [`../canonical/concepts/`](../canonical/concepts/). SYN candidates are six bounded contract resources under `docs/canonical/contracts/synchronization/`; every SYN-001–SYN-035 retains an explicit heading/identity.
+Cutover is not group closure: CKR-C remains `IN EXECUTION` until the authority-flipped state passes unified conformance and closure status is separately synchronized.
 
-### Conservation rules
+### Conserved boundaries
 
-CKR-C must preserve concept independence and the accepted state/action/boundary model. Synchronization coordinates concepts and **does not create a 25th umbrella concept**. In particular it preserves:
+Expectation ≠ Baseline; Observation ≠ Assessment; Change Intent ≠ Deployment ≠ Change; execution success ≠ output existence ≠ freshness ≠ data health; Lineage/reachability ≠ exposure ≠ Impact ≠ cause; Investigation lead/closure ≠ causal confirmation; Capability Authorization ≠ Assertion Authority ≠ evidence sufficiency ≠ enforcement; Gate readiness ≠ decision ≠ enforcement ≠ execution; Gate ≠ Safeguard; Explanation/Annotation ≠ independent truth; event/effective time ≠ knowledge/record time.
 
-- Expectation ≠ Baseline;
-- Observation ≠ Assessment;
-- Change Intent ≠ Deployment ≠ Change;
-- execution success ≠ output existence ≠ freshness ≠ data health;
-- Lineage/reachability ≠ encounter/exposure ≠ Impact ≠ cause;
-- Investigation lead/localization/closure ≠ Causal Claim status/confirmation;
-- Impact candidate ≠ exposure ≠ effect ≠ consequence ≠ causal attribution;
-- Capability Authorization ≠ Assertion Authority ≠ evidence sufficiency ≠ enforcement;
-- Gate readiness ≠ decision ≠ delivery ≠ enforcement ≠ execution;
-- Execution Gate ≠ Propagation Safeguard;
-- Safeguard proposal ≠ enforcement ≠ prevention ≠ release ≠ recovery;
-- Explanation/Annotation ≠ independent truth;
-- event/effective time ≠ knowledge/record time.
-
-Detailed comparison: [`ckr_c_semantic_conservation_matrix.md`](ckr_c_semantic_conservation_matrix.md).
-
-### Explicit exclusions
-
-CKR-C does **not** migrate `reference.authority_vocabulary` or REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH stable families. It does not create product code, reopen accepted architecture, or promote vendor/tool/model output into DMTZ truth.
+Detailed evidence: [`ckr_c_semantic_conservation_matrix.md`](ckr_c_semantic_conservation_matrix.md) and [`ckr_c_execution_review.md`](ckr_c_execution_review.md).
 
 ## Implementation gate
 
 **Implementation 001-A remains BLOCKED until CKR-K accepts the retrofit.**
 
-Completion of CKR-C will not automatically start CKR-D; the next group requires explicit human selection.
+Completion of CKR-C will not automatically start CKR-D.

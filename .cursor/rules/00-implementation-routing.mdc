@@ -10,29 +10,19 @@ alwaysApply: false
 
 **CKR status mirror: COMPLETE CKR-A–CKR-B; IN EXECUTION CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-C is in candidate review. Product implementation remains blocked until CKR-K.
+CKR-C concept/SYN cutover is complete and awaiting closure validation. Product implementation remains blocked until CKR-K.
 
-## Current semantic questions
+1. Read CKR README for live state.
+2. Consult ownership inventory when ownership is unclear.
+3. `canonicalized` → use inventoried `docs/canonical/` owner.
+4. `legacy_authoritative` / `candidate_ready` → use inventoried legacy owner.
+5. Use phase/decision history for provenance/rationale/history, not alternate current truth.
+6. `knowledge/` remains optional routing only.
 
-1. Read `docs/canonical_knowledge_retrofit/README.md` for live CKR state.
-2. Consult `canonical_ownership_inventory.json` when ownership is unclear.
-3. `canonicalized` → use the inventoried `docs/canonical/` target.
-4. `legacy_authoritative` / `candidate_ready` → use the inventoried legacy owner.
-5. Use phase/decision history for provenance/rationale/history/change review, not alternate current truth.
-6. `knowledge/index.md` remains optional routing only.
+All 24 concepts and SYN-001–SYN-035 are canonicalized. Phase 002/003 are provenance. REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain later-group legacy authority.
 
-CKR-B foundation/glossary resources are canonical. CKR-C has candidate targets for all 24 concepts plus SYN-001–SYN-035; Phase 002/003 remain current authority while candidate state is active. Candidate files must not be cited as current truth.
-
-CKR-C may not migrate `reference.authority_vocabulary` or REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH ownership. Synchronization does not become an umbrella concept; order never creates authority.
-
-Primary controls: root `AGENTS.md`; `docs/agentic_development_foundation/authority_scope_policy.md`; CKR `authority_model.md` / `migration_contract.md`; CKR-C semantic matrix; implementation README; `.agents/skills/`; stable-ID resolver; unified conformance.
-
-Do not infer authority from phase recency, first search hit, Git history, OKF summary, vendor skill, tool memory or path presence alone. Genuine semantic conflicts require A4 change control.
-
-ADF-EX-17 / `ADF-G-XT01` remains deferred runtime verification. `DBX-SKILL-RUN-01` remains future 001-A work. Reviewed Databricks vendor skills remain operational guidance only.
+Do not infer authority from recency, first search hit, synchronization order, Git history, OKF, vendor skill, tool memory or path presence alone. Genuine semantic conflicts require A4 change control.
 
 ```bash
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
-
-PASS is repository agentic/documentation-authority conformance, not DMTZ domain health, provider-runtime proof, Databricks capability or production readiness.

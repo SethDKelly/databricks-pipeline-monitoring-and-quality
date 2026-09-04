@@ -1,13 +1,13 @@
 # Canonical Concepts
 
-**Authority state:** CKR-C CANDIDATE REVIEW — NOT YET CURRENT CONCEPT AUTHORITY
+**Authority state:** CANONICAL CURRENT AUTHORITY — CKR-C CUTOVER COMPLETE / CLOSURE VALIDATION PENDING
 
-CKR-C has prepared canonical candidates for all **24 accepted DMTZ concepts**. Their inventory state is `candidate_ready`, so the Phase-002 specifications remain current authority until the atomic CKR-C cutover succeeds.
+All **24 accepted DMTZ concepts** now have current semantic owners in this directory. Phase-002 specifications/addenda remain preserved as provenance and accepted-at-the-time design history.
 
-The candidate set is intentionally one concept per independently motivated truth owner:
+The catalog remains one independently motivated truth owner per concept:
 
 Monitoring Scope · Entity Identity · Semantic Definition · Responsibility Assignment · Classification · Policy Context · Expectation · Baseline · Observation · Assessment · Change Intent · Execution History · Deployment · Lineage · Change · Investigation · Causal Claim · Impact · Annotation · Explanation · Propagation Safeguard · Capability Authorization · Execution Gate · Assertion Authority.
 
-Synchronization does not create a 25th concept. SYN-001–SYN-035 candidates live under `../contracts/synchronization/` and coordinate these owners without merging them.
+Synchronization does not create a 25th concept. SYN-001–SYN-035 are current contracts under `../contracts/synchronization/` and coordinate these owners without merging their state, actions, authority, or ambiguity semantics.
 
-A concept file here becomes current authority only when both its file marker and ownership-inventory state change to canonical in the accepted atomic cutover.
+For exact ownership/provenance, consult `../../canonical_knowledge_retrofit/canonical_ownership_inventory.json`.

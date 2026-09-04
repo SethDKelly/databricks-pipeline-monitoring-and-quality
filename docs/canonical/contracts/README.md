@@ -1,10 +1,10 @@
 # Canonical Contracts
 
-Structural index for DMTZ cross-cutting/domain contracts.
+Structural/current index for DMTZ cross-cutting/domain contracts.
 
-**CKR-C candidate state:** SYN-001–SYN-035 have bounded candidate owners under `synchronization/`, but Phase 003 remains current SYN authority while the stable-family inventory state is `candidate_ready`.
+**CKR-C current state:** SYN-001–SYN-035 are canonicalized under `synchronization/`; Phase 003 is provenance/design history for that family.
 
-Candidate synchronization groups:
+Current synchronization groups:
 
 - `synchronization/subject-scope-governance.md` — SYN-001–003;
 - `synchronization/planned-change-reference-transition.md` — SYN-004–008;
@@ -13,4 +13,4 @@ Candidate synchronization groups:
 - `synchronization/impact-annotation-explanation.md` — SYN-023–031;
 - `synchronization/historical-replay.md` — SYN-033–035.
 
-REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH families remain legacy-authoritative for later CKR groups.
+Synchronization coordinates independently owned concept truth and never establishes authority by order. REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH families remain legacy-authoritative for later CKR groups.

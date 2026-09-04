@@ -4,7 +4,7 @@
 
 **Kind:** CONCEPT
 
-**Authority:** CANDIDATE / NOT CURRENT AUTHORITY
+**Authority:** CANONICAL CURRENT AUTHORITY
 
 **Migration record:** `concept.expectation`
 
