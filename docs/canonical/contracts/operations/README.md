@@ -1,10 +1,6 @@
 # Operational Contracts
 
-Structural index for CKR-F migration of **OPS-001–OPS-123**.
-
-During candidate review, Phase 007 remains current authority. A resource here becomes current only when the ownership inventory marks OPS `canonicalized` and the resource declares `CANONICAL CURRENT AUTHORITY`.
-
-Candidate topology:
+Current canonical index for **OPS-001–OPS-123** after CKR-F cutover.
 
 - OPS-001–009 → `lineage-topology.md`
 - OPS-010–020 → `change-realization.md`
@@ -15,4 +11,4 @@ Candidate topology:
 - OPS-086–104 → `propagation-safeguard.md`
 - OPS-105–123 → `execution-gate-control.md`
 
-Phase 007 Group 09 remains consolidation/replay evidence and creates no OPS-124.
+Phase 007 is preserved as design history/provenance. Group 09 remains consolidation/historical replay evidence and creates no OPS-124.

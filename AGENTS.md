@@ -6,11 +6,11 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-E; IN EXECUTION CKR-F; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-F is human-selected and in execution. Product implementation remains blocked until CKR-K.
+CKR-F is in execution after atomic OPS cutover; closure validation remains. Product implementation remains blocked until CKR-K.
 
 Current semantic ownership is selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`: `canonicalized` → inventoried `docs/canonical/` owner; `legacy_authoritative` / `candidate_ready` → inventoried legacy owner; `history_only` → provenance/rationale only.
 
-Foundation/glossary, all 24 concepts, SYN-001–035, authority vocabulary, REF-001–030, AUTH-001–053 and HLTH-001–066 are canonicalized. OPS targets are non-authoritative candidates while OPS is `candidate_ready`; Phase 007 remains current OPS authority. EXPL/INTG/ARCH remain later-group legacy authority.
+Foundation/glossary, all 24 concepts, SYN-001–035, authority vocabulary, REF-001–030, AUTH-001–053, HLTH-001–066 and OPS-001–123 are canonicalized. Phase 001–007 sources are provenance for migrated meanings. EXPL/INTG/ARCH remain later-group legacy authority.
 
 Authority order: current semantic owner → root `AGENTS.md` → live CKR/implementation status → accepted ADF scope/security mechanics → DMTZ workflows/overlays → reviewed vendor operational guidance → tool/personal memory.
 
@@ -22,7 +22,7 @@ Follow `docs/agentic_development_foundation/authority_scope_policy.md`: A1 revie
 
 Use `human task → live CKR authority → ownership inventory when unclear → current owner → exact IDs/tests as needed`. `knowledge/index.md` is optional routing only; search order, recency, path presence, vendor guidance, tool memory or synchronization order never establish authority.
 
-Preserve Observation ≠ Assessment; Expectation ≠ Baseline; missing evidence ≠ negative truth; applicability ≠ coverage ≠ sufficiency; event/effective time ≠ framework knowledge; Lineage/reachability ≠ exposure ≠ Impact ≠ cause; Assertion Authority ≠ Capability Authorization; Change Intent ≠ Deployment ≠ Change; planned topology ≠ effective topology; candidate ≠ exposure ≠ effect ≠ consequence ≠ cause; expected work ≠ opportunity ≠ Gate state ≠ execution; intended dependency ≠ actual sequence ≠ waiting ≠ consumption; lead ≠ Causal Claim; localization ≠ cause; `confirmed` requires REF-017 + AUTH-034; exposed ≠ effect ≠ consequence ≠ causal attribution; `not exposed` ≠ `prevented by Safeguard`; Safeguard request/configuration ≠ enforcement ≠ prevention ≠ recovery; health/suitability ≠ readiness ≠ Gate decision ≠ enforcement ≠ execution; Gate ≠ Safeguard; actual retained historical state ≠ as-known-at-cut reconstruction ≠ current retrospective interpretation.
+Preserve Observation ≠ Assessment; Expectation ≠ Baseline; missing evidence ≠ negative truth; Lineage/reachability ≠ exposure ≠ Impact ≠ cause; Change Intent ≠ Deployment ≠ Change; planned topology ≠ effective topology; candidate ≠ exposure ≠ effect ≠ consequence ≠ cause; expected work ≠ opportunity ≠ Gate state ≠ execution; intended dependency ≠ actual sequence ≠ waiting ≠ consumption; lead ≠ Causal Claim; localization ≠ cause; `confirmed` requires REF-017 + AUTH-034; exposed ≠ effect ≠ consequence ≠ causal attribution; `not exposed` ≠ `prevented by Safeguard`; Safeguard request/configuration ≠ enforcement ≠ prevention ≠ recovery; health/suitability ≠ readiness ≠ Gate decision ≠ enforcement ≠ execution; Gate ≠ Safeguard; actual retained historical state ≠ as-known-at-cut reconstruction ≠ current retrospective interpretation.
 
 Accepted ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500.
 

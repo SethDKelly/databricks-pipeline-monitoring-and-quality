@@ -4,8 +4,8 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-E; IN EXECUTION CKR-F; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-F is in execution. Product implementation remains blocked until CKR-K.
+CKR-F is in execution after OPS cutover. Product implementation remains blocked until CKR-K.
 
-Use the ownership inventory to select current semantic ownership. Foundation/glossary, concepts/SYN, authority vocabulary, REF, AUTH and HLTH resolve to canonical owners. OPS targets are non-authoritative candidates while OPS is `candidate_ready`; Phase 007 remains current OPS authority. Later stable families retain their assigned owners.
+Use the ownership inventory to select current semantic ownership. Foundation/glossary, concepts/SYN, authority vocabulary, REF, AUTH, HLTH and OPS resolve to canonical owners. Phase 001–007 are provenance for migrated meanings. Later stable families retain their assigned owners.
 
 Do not create product source/schemas/tests/deployment configuration as CKR work. Completing CKR-F does not authorize CKR-G.

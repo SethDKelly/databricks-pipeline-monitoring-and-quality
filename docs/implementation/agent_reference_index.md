@@ -11,10 +11,9 @@
 | CKR status | `docs/canonical_knowledge_retrofit/README.md` |
 | Current semantic owner | `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` |
 | Concepts | `docs/canonical/concepts/README.md` |
-| SYN/REF/HLTH contracts | `docs/canonical/contracts/README.md` |
+| SYN/REF/HLTH/OPS contracts | `docs/canonical/contracts/README.md` |
 | Current health/quality semantics | `docs/canonical/contracts/health-quality-timing/README.md` |
-| Current OPS semantics during CKR-F candidate review | `docs/concepts/phase_007/README.md` |
-| CKR-F candidate topology | `docs/canonical/contracts/operations/README.md` |
+| Current operational semantics | `docs/canonical/contracts/operations/README.md` |
 | Authority/AUTH | `docs/canonical/authority/README.md` |
 | CKR-F execution review | `docs/canonical_knowledge_retrofit/ckr_f_execution_review.md` |
 | Design history | `docs/design_history/README.md` |
@@ -23,7 +22,7 @@
 ## Current state
 
 - CKR-A–E — COMPLETE / ACCEPTED.
-- CKR-F — IN EXECUTION / CANDIDATE REVIEW.
+- CKR-F — IN EXECUTION / POST-CUTOVER CLOSURE VALIDATION.
 - Implementation 001-A — BLOCKED until CKR-K.
 
-OPS-001–OPS-123 remain Phase 007 current authority while the canonical operations targets are `candidate_ready`. EXPL/INTG/ARCH remain later-group legacy authority.
+OPS-001–OPS-123 resolve to canonical operations owners. Phase 007 is provenance. EXPL/INTG/ARCH remain later-group legacy authority.
