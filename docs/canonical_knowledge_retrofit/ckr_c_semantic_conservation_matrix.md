@@ -1,12 +1,12 @@
 # CKR-C Semantic Conservation Matrix
 
-**Status:** CANDIDATE REVIEW — LEGACY CONCEPT/SYN OWNERS REMAIN CURRENT AUTHORITY
+**Status:** CUTOVER VALIDATED — CLOSURE STATUS SYNCHRONIZED / FINAL VALIDATION PENDING
 
 **Scope:** all 24 `concept.*` records plus the `SYN-001..SYN-035` stable family assigned to CKR-C.
 
 ## Review rule
 
-CKR-C succeeds only if every candidate answers its bounded current question without chronological reconstruction while preserving concept independence, accepted state/actions, ambiguity behavior, non-collapse invariants, and material later refinements. Synchronization coordinates concepts; it does not become a 25th truth-owning concept.
+CKR-C succeeds only if every canonical resource answers its bounded current question without chronological reconstruction while preserving concept independence, accepted state/actions, ambiguity behavior, non-collapse invariants, and material later refinements. Synchronization coordinates concepts; it does not become a 25th truth-owning concept.
 
 | Canonical owner | Durable current meaning conserved | Legacy/provenance sources |
 |---|---|---|
@@ -38,7 +38,7 @@ CKR-C succeeds only if every candidate answers its bounded current question with
 
 ## Durable cross-cutting separations
 
-CKR-C explicitly conserves:
+CKR-C conserves:
 
 - Monitoring Scope ≠ ecosystem existence ≠ Capability Authorization ≠ Assertion Authority;
 - Entity Identity ≠ name ≠ replacement/succession;
@@ -61,6 +61,10 @@ CKR-C explicitly conserves:
 - Capability Authorization ≠ Assertion Authority ≠ evidence sufficiency ≠ enforcement;
 - event/effective time ≠ knowledge/record time; current retrospective state ≠ as-known-at-cut state ≠ retained communication.
 
-## Intentionally not promoted
+## Authority/provenance disposition
 
-Phase progression text, resolved/deferred implementation questions, vendor/source-selection speculation, roadmap handoffs, scenario-review chronology, and later stable-family detailed contracts remain design history or later CKR ownership. CKR-C may cite later stable IDs when they materially constrain a concept boundary but does not take ownership of REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH families.
+All 24 concept records and SYN-001–SYN-035 are now `canonicalized`. Phase 002/003 remain design history/provenance rather than alternate current owners. `reference.authority_vocabulary` and REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain legacy-authoritative for later CKR groups.
+
+Phase progression text, resolved/deferred implementation questions, vendor/source-selection speculation, roadmap handoffs, and scenario-review chronology were intentionally not promoted into current canonical resources.
+
+No 25th umbrella concept was introduced and no A4 semantic contradiction was required.
