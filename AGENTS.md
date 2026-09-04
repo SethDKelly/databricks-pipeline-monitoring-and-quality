@@ -4,124 +4,52 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A; NEXT CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-B; NEXT CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-The ADF exit remains accepted. The **Canonical Knowledge & Documentation Authority Retrofit (CKR)** is a later pre-implementation dependency. CKR-A is complete; CKR-B is next/ready. Product implementation remains blocked until CKR-K exit acceptance.
+The ADF exit remains accepted. CKR-A and CKR-B are complete/accepted; CKR-C is the next eligible group but is not active until explicitly selected. Product implementation remains blocked until CKR-K.
 
 Current DMTZ semantic ownership is determined record-by-record by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`:
 
-- `legacy_authoritative` / `candidate_ready` → inventoried legacy owner remains current authority;
-- `canonicalized` → inventoried target under `docs/canonical/` is current authority;
+- `legacy_authoritative` / `candidate_ready` → inventoried legacy owner remains current;
+- `canonicalized` → inventoried `docs/canonical/` target is current;
 - `history_only` → provenance/rationale only.
 
-A path under `docs/canonical/`, a newer phase file, an OKF entry, a search hit, vendor guidance or model memory does **not** independently establish semantic authority.
+CKR-B canonicalized product definition, actors/stakeholders, foundational terminology, Concept Design method, AP-01–AP-32, SP-01–SP-15/security-governance, ecosystem lifecycles, MVP boundary and shared glossary. Their Phase-001/legacy glossary sources are provenance. The 24 concepts and all stable-ID families remain with their later-group current owners.
 
-Primary live authorities:
+Authority order: current semantic owner → this `AGENTS.md` → live CKR/implementation status → accepted ADF scope/security mechanics → DMTZ workflows/overlays → reviewed vendor operational guidance → tool/personal memory.
 
-1. current semantic owner selected by the CKR inventory plus accepted stable-ID semantics;
-2. this `AGENTS.md`;
-3. `docs/canonical_knowledge_retrofit/README.md` / active CKR group;
-4. `docs/implementation/README.md` for implementation progression;
-5. accepted ADF authority/scope/security mechanics;
-6. DMTZ workflows/platform overlays;
-7. reviewed vendor operational guidance;
-8. personal/tool memory.
+## Current-truth vs history
 
-Design-phase progression remains in `docs/README.md`. The completed ADF remains in `docs/agentic_development_foundation/README.md` and `execution_exit_review.md`.
+For a `canonicalized` record, answer current questions from its canonical owner. Use phase/decision/scenario/exit records for provenance, rationale, historical comparison or explicit semantic-change review. Search order, recency, OKF summaries, canonical-path presence and tool memory do not establish authority.
 
-## Current-truth vs design-history rule
-
-Once a record is `canonicalized`, answer current semantic questions from its canonical owner. Use phase/decision/scenario/exit history for provenance, rationale, historical comparison, rejected alternatives or explicit semantic-change review—not to reconstruct current meaning.
-
-Before cutover, use the inventoried legacy owner. `candidate_ready` is review-only. There is no accepted dual-current-authority state.
-
-CKR migration follows:
-
-- `docs/canonical_knowledge_retrofit/authority_model.md`;
-- `docs/canonical_knowledge_retrofit/migration_contract.md`;
-- `docs/canonical_knowledge_retrofit/canonical_document_template.md`.
-
-Atomic cutover must update authority marker, ownership inventory, required routing and provenance together. Genuine semantic contradictions require explicit A4 change control; never resolve them by “newest file wins” or search order.
+CKR migration follows `docs/canonical_knowledge_retrofit/authority_model.md` and `migration_contract.md`. Genuine semantic conflicts require A4 adjudication.
 
 ## Human-directed action classes
 
-Follow `docs/agentic_development_foundation/authority_scope_policy.md`:
+Follow `docs/agentic_development_foundation/authority_scope_policy.md`: A1 review; A2 in-scope change plus required validation/status/traceability; A3 external/destructive/scope-expanding requires explicit task authorization; A4 semantic/architecture change requires explicit change control.
 
-- **A1** review/inspect/plan — no edits unless changes are also requested;
-- **A2** change/build/fix — in-scope edits plus directly necessary validation/status/traceability;
-- **A3** external/destructive/scope-expanding — explicit task-specific authorization plus normal gates;
-- **A4** architecture/semantic change — explicit DMTZ change control.
+Completing one group does not authorize the next. Do not autonomously select backlog work, delegate repository implementation, merge/deploy unattended, or reopen architecture.
 
-Completing one group does not authorize the next. Do not autonomously select backlog work, delegate implementation to other agents, merge/deploy unattended, or reopen architecture.
+## Context and references
 
-## Context and stable references
-
-Use the shortest authoritative path:
+Use the shortest path:
 
 `human task → live CKR/implementation authority → known current owner/path/ID; otherwise ownership inventory or one OKF route → current semantic owner → exact IDs/tests as needed`.
 
-Do not preload all phases, contracts, knowledge entries, DMTZ/vendor skills or history.
+Do not preload phases/contracts/knowledge/vendor skills/history. `knowledge/` is routing only.
 
-Accepted stable ranges remain frozen:
-
-- SYN-001–SYN-035;
-- REF-001–REF-030;
-- AUTH-001–AUTH-053;
-- HLTH-001–HLTH-066;
-- OPS-001–OPS-123;
-- EXPL-001–EXPL-160;
-- INTG-001–INTG-270;
-- ARCH-001–ARCH-500.
-
-`scripts/agentic/resolve_stable_id.py` discovers exact occurrences and exposes CKR family state; it does not manufacture exact canonical ownership. CKR-J will add deterministic canonical owner/anchor resolution after substantive migration.
-
-`knowledge/` remains OKF v0.2 routing only. It cannot promote candidates or history into current truth.
+Accepted stable ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500. Their owner paths change only through their assigned CKR groups.
 
 ## Semantic conservation
 
-CKR changes documentation ownership/routing, not accepted product meaning. Preserve at minimum:
+Preserve at minimum Observation ≠ Assessment; Expectation ≠ Baseline; execution success ≠ freshness/data quality; missing evidence ≠ negative truth; current ≠ historical/as-known; later evidence ≠ evidence known then; Lineage ≠ exposure ≠ Impact ≠ cause; authentication ≠ Capability Authorization ≠ Assertion Authority; current disclosure ≠ historical authorization/truth; passive monitoring ≠ active Gate; Gate readiness ≠ decision ≠ enforcement ≠ execution; Gate ≠ Safeguard; and model/search output cannot manufacture truth, authority, evidence sufficiency, causal confirmation, Impact or control decisions.
 
-- Entity Identity ≠ source-local identity/name;
-- Monitoring Scope ≠ Assertion Authority ≠ Capability Authorization;
-- evidence sufficiency ≠ authority ≠ authorization ≠ enforcement;
-- Observation ≠ Assessment;
-- Expectation ≠ Baseline;
-- execution success ≠ freshness ≠ data quality;
-- missing evidence ≠ observed absence/negative truth;
-- current state ≠ historical/as-known state;
-- later evidence ≠ evidence known then;
-- event/effective time ≠ source availability ≠ framework knowledge time;
-- Lineage ≠ reachability relevance ≠ encounter/exposure ≠ Impact ≠ cause;
-- deployment/correlation timing ≠ causation;
-- Investigation/hypothesis ≠ confirmed cause;
-- authentication ≠ Capability Authorization ≠ Assertion Authority;
-- current disclosure permission ≠ historical truth;
-- passive monitoring ≠ active Execution Gate;
-- Gate readiness ≠ decision ≠ enforcement ≠ execution;
-- Safeguard configuration ≠ enforcement ≠ prevention ≠ recovery;
-- model/search output cannot manufacture truth, authority, evidence sufficiency, causal confirmation, Impact or control decisions;
-- unknown/conflicting/stale/partial/unavailable/withheld remain first-class states.
+## Residuals / conformance
 
-Omitted accepted meaning is a migration defect, not simplification.
-
-## Tool / Databricks residuals
-
-ADF-EX-17 remains **DEFERRED / WAIVED — BOUNDED VERIFICATION DEBT**. `ADF-G-XT01` remains open; Cursor, Claude Code and Codex remain runtime-`unverified` until actual evidence exists.
-
-The reviewed Databricks skill set remains core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect. Vendor skills are operational guidance only. Model/AI skills and managed Databricks MCP servers remain deferred.
-
-`DBX-SKILL-RUN-01` remains a future Implementation 001-A environment obligation after CKR-K unlocks implementation.
-
-## Conformance
-
-Run:
+ADF-EX-17 and `ADF-G-XT01` remain deferred runtime-verification debt. Cursor/Claude/Codex remain runtime-`unverified`. `DBX-SKILL-RUN-01` remains future Implementation 001-A work. Databricks vendor skills remain operational guidance only.
 
 ```bash
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-This validates repository agentic/documentation-authority configuration, including CKR ownership/status. PASS is not DMTZ domain health, provider-runtime proof, target Databricks capability or production readiness.
-
-## Implementation gate
-
-**Do not start product implementation while CKR is incomplete.** Do not create `src/dmtz`, product schemas/tests or Databricks deployment artifacts as part of CKR unless a separate explicit task requires migration tooling or an approved semantic change.
+PASS is repository agentic/documentation-authority conformance, not DMTZ domain health, provider-runtime proof, Databricks capability or production readiness.

@@ -1,5 +1,10 @@
 # Canonical Policies
 
-Structural index for current normative DMTZ policy rules such as evidence sufficiency, source/authority applicability, disclosure, retention and other policy semantics.
+Current normative DMTZ policy surfaces. Detailed policy/authority contracts remain independently owned by their inventory records.
 
-**CKR-A state:** no substantive policy cutover occurs here yet. Legacy owners remain authoritative until their inventory records are canonicalized.
+## Canonicalized in CKR-B
+
+- [`security-governance.md`](security-governance.md) — current owner for `foundation.security_governance_policy`; preserves SP-01–SP-15 and durable product-security/governance boundaries.
+- [`mvp-boundary.md`](mvp-boundary.md) — current owner for `foundation.mvp_boundary`; preserves required MVP capabilities, Scenarios A–K and explicit non-required capabilities.
+
+Later evidence/authority/retention/control policy resources remain with their inventory-selected owners until their assigned CKR groups.

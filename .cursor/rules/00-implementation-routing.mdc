@@ -8,35 +8,28 @@ alwaysApply: false
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A; NEXT CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-B; NEXT CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-A is complete; CKR-B is next/ready. Product implementation remains blocked until CKR-K.
+CKR-A and CKR-B are complete/accepted. CKR-C is next/ready but not active until explicitly selected. Product implementation remains blocked until CKR-K.
 
 ## Current semantic questions
 
-1. Use `docs/canonical_knowledge_retrofit/README.md` for CKR state.
-2. If ownership is unclear, read `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`.
-3. `legacy_authoritative` / `candidate_ready` → legacy owner remains current.
-4. `canonicalized` → inventoried `docs/canonical/` target is current.
-5. Use phase/decision history only for provenance/rationale/history/change review after cutover.
-6. `knowledge/index.md` is optional routing only.
+1. Read `docs/canonical_knowledge_retrofit/README.md` for live CKR state.
+2. Consult `canonical_ownership_inventory.json` when ownership is unclear.
+3. `canonicalized` → use the inventoried `docs/canonical/` target.
+4. `legacy_authoritative` / `candidate_ready` → use the inventoried legacy owner.
+5. Use phase/decision history for provenance/rationale/history/change review, not alternate current truth.
+6. `knowledge/index.md` remains optional routing only.
 
-Primary controls:
+CKR-B product definition, actors/stakeholders, terminology, Concept Design method, AP-01–32, SP-01–15, lifecycles, MVP boundary and shared glossary resolve to `docs/canonical/`. Their Phase-001/legacy glossary sources are provenance.
 
-- `AGENTS.md` — shared constitution;
-- `docs/agentic_development_foundation/authority_scope_policy.md` — A1–A4;
-- `docs/canonical_knowledge_retrofit/authority_model.md` — canonical vs history;
-- `docs/canonical_knowledge_retrofit/migration_contract.md` — atomic cutover/no dual authority;
-- `docs/implementation/README.md` — implementation block;
-- `.agents/skills/<name>/SKILL.md` — workflows/overlays;
-- `scripts/agentic/resolve_stable_id.py` — occurrence discovery;
-- `scripts/agentic/run_conformance.py` — conformance.
+All 24 concepts and stable-ID families remain with later CKR groups. CKR-C may not begin without explicit human selection.
 
-Do not infer authority from phase recency, first search hit, Git history, OKF summary, vendor skill, tool memory or mere presence under `docs/canonical/`.
+Primary controls: root `AGENTS.md`; ADF-A `authority_scope_policy.md`; CKR `authority_model.md` / `migration_contract.md`; implementation README; `.agents/skills/`; stable-ID resolver; unified conformance.
 
-CKR is owner-path/routing migration, not semantic redesign. Genuine conflicts require A4 change control. Stable-ID meaning survives path migration.
+Do not infer authority from phase recency, first search hit, Git history, OKF summary, vendor skill, tool memory or path presence alone. Genuine semantic conflicts require A4 change control.
 
-ADF-EX-17 / `ADF-G-XT01` remains deferred runtime verification. `DBX-SKILL-RUN-01` remains a future 001-A obligation after CKR unlock. Reviewed Databricks vendor skills remain operational guidance only.
+ADF-EX-17 / `ADF-G-XT01` remains deferred runtime verification. `DBX-SKILL-RUN-01` remains future 001-A work. Reviewed Databricks vendor skills remain operational guidance only.
 
 ```bash
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md

@@ -1,60 +1,29 @@
 # Canonical Knowledge & Documentation Authority Retrofit
 
-**Status:** CKR-A COMPLETE / ACCEPTED — CKR-B NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
+**Status:** CKR-A–CKR-B COMPLETE / ACCEPTED — CKR-C NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
 
-**CKR status mirror: COMPLETE CKR-A; NEXT CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-B; NEXT CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
 ## Purpose
 
-The Canonical Knowledge & Documentation Authority Retrofit separates **current DMTZ truth** from the chronological records that explain how that truth was designed.
+CKR separates **current DMTZ truth** from the chronological records that explain how it was designed. It changes documentation ownership, routing and provenance without silently changing accepted SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH semantics.
 
-The retrofit does not create a new product/concept/architecture phase and does not alter accepted SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH semantics by itself. It changes documentation authority, ownership, routing, provenance and maintenance so a current semantic question resolves to one bounded canonical resource rather than requiring reconstruction across design chronology.
+> **A current semantic question resolves to one current owner. Once a record is canonicalized, design history explains origin/rationale rather than reconstructing current meaning.**
 
-The target distinction is:
+Current ownership is declared in [`canonical_ownership_inventory.json`](canonical_ownership_inventory.json):
 
-```text
-CANONICAL KNOWLEDGE
-Current accepted meaning
-Concepts / policies / invariants / authority boundaries /
-experience contracts / domain contracts / architecture contracts
+- `legacy_authoritative` — legacy owner is current;
+- `candidate_ready` — candidate exists but legacy owner remains current;
+- `canonicalized` — inventoried `docs/canonical/` target is sole current owner;
+- `history_only` — provenance/rationale only.
 
-        │ provenance / accepted origin
-        ▼
+See [`migration_contract.md`](migration_contract.md) for atomic cutover/no-dual-authority rules.
 
-DESIGN HISTORY
-Phase working records / decisions / scenario reviews / exit reviews /
-refinement rationale / superseded wording
-```
-
-Design history is retained. It is not deleted merely because its accepted current meaning has been promoted into canonical knowledge.
-
-## Governing rule
-
-> **A user, developer or agent asking what DMTZ means today should resolve through canonical knowledge once that semantic record has been canonicalized. Design history is consulted for provenance, rationale, historical comparison, rejected alternatives or explicit change work—not to reconstruct current meaning.**
-
-During migration, records that have not yet been canonicalized continue to use their explicitly inventoried legacy owners. There is never an accepted state in which two independent resources simultaneously own the same current semantic record.
-
-## Program sequence
-
-1. **CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory** — define authority layers, migration states, canonical topology, ownership inventory, dual-authority prevention and implementation blocking.
-2. **CKR-B — Foundation, Terminology & Cross-Cutting Invariants** — canonicalize product foundation, terminology, methodology boundaries and universal semantic invariants.
-3. **CKR-C — Concept Catalog** — canonicalize all 24 accepted concepts as independently understandable current-truth resources.
-4. **CKR-D — Evidence, Time, Authority & Governance** — canonicalize REF/AUTH semantics and policies.
-5. **CKR-E — Health, Quality, Metrics & Timing** — canonicalize HLTH semantics and cross-concept health boundaries.
-6. **CKR-F — Lineage, Change, Investigation, Impact & Control** — canonicalize OPS semantics and related concept synchronizations.
-7. **CKR-G — Questioning, Explanation & Experience Contracts** — canonicalize EXPL semantics and current experience contracts.
-8. **CKR-H — Integration, Source Authority & Evidence Availability** — canonicalize INTG contracts and source/evidence capability boundaries.
-9. **CKR-I — Technical Architecture** — promote accepted ARCH contracts and Phase 010 reference architecture into current canonical architecture resources.
-10. **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement** — make canonical-first retrieval deterministic; update OKF routes and stable-ID ownership resolution; prohibit routine current-truth routing into design history.
-11. **CKR-K — Consolidation, Provenance Validation & Exit Review** — prove coverage, semantic conservation, provenance, bounded current-truth lookup and implementation handoff.
-
-The sequence is semantic-domain oriented, not phase-order oriented.
-
-## Current execution state
+## Program sequence / state
 
 - **CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory: COMPLETE / ACCEPTED.**
-- **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: NEXT / READY.**
-- **CKR-C — Concept Catalog: PLANNED.**
+- **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: COMPLETE / ACCEPTED.**
+- **CKR-C — Concept Catalog: NEXT / READY.**
 - **CKR-D — Evidence, Time, Authority & Governance: PLANNED.**
 - **CKR-E — Health, Quality, Metrics & Timing: PLANNED.**
 - **CKR-F — Lineage, Change, Investigation, Impact & Control: PLANNED.**
@@ -64,73 +33,40 @@ The sequence is semantic-domain oriented, not phase-order oriented.
 - **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: PLANNED.**
 - **CKR-K — Consolidation, Provenance Validation & Exit Review: PLANNED.**
 
-CKR-A acceptance evidence is recorded in [`ckr_a_execution_review.md`](ckr_a_execution_review.md).
+CKR-A evidence is in [`ckr_a_execution_review.md`](ckr_a_execution_review.md). CKR-B evidence is in [`ckr_b_execution_review.md`](ckr_b_execution_review.md).
 
-## Authority while CKR is in progress
+## Canonicalized in CKR-B
 
-The accepted ADF exit remains valid. CKR temporarily blocks product implementation because the repository authority topology is intentionally changing before code/test traceability begins.
+CKR-B established the first substantive canonical current-truth layer for nine records:
 
-For each inventory record:
+1. product definition → `docs/canonical/reference/product-definition.md`;
+2. actors/stakeholders → `docs/canonical/reference/actors-and-stakeholders.md`;
+3. foundational terminology → `docs/canonical/reference/terminology.md`;
+4. Concept Design method → `docs/canonical/reference/concept-design-method.md`;
+5. AP-01–AP-32 → `docs/canonical/invariants/architectural-principles.md`;
+6. SP-01–SP-15/security-governance → `docs/canonical/policies/security-governance.md`;
+7. ecosystem lifecycles → `docs/canonical/reference/ecosystem-lifecycles.md`;
+8. MVP boundary → `docs/canonical/policies/mvp-boundary.md`;
+9. shared glossary → `docs/canonical/reference/glossary.md`.
 
-- `legacy_authoritative` — the inventoried legacy owner remains current authority; the target canonical resource is not yet current truth;
-- `candidate_ready` — a canonical candidate may exist for review, but the legacy owner remains current authority until cutover;
-- `canonicalized` — the target under `docs/canonical/` is current authority and legacy sources become provenance/design history for that record;
-- `history_only` — the resource is provenance/rationale and is not a current semantic owner.
+Their former Phase-001/glossary owners are provenance/design history for these records. CKR-B intentionally leaves the 24 concept definitions and all stable-ID families with their later-group current owners.
 
-Exact rules are in [`migration_contract.md`](migration_contract.md).
+## Semantic-conservation disposition
 
-## Canonical target topology
+CKR-B preserved product purpose/non-goals, actor authority separations, foundational non-equivalences, Concept Design discipline, **AP-01–AP-32**, **SP-01–SP-15**, fourteen lifecycle families/non-rewriting history, thirteen MVP capability areas, **Scenarios A–K**, and the shared current vocabulary.
 
-`docs/canonical/` is the future current-truth namespace. CKR-A established its structural indexes and authority validation. Substantive resources become authoritative only through later domain-specific atomic cutover.
-
-Target families:
-
-- `docs/canonical/concepts/`
-- `docs/canonical/contracts/`
-- `docs/canonical/policies/`
-- `docs/canonical/invariants/`
-- `docs/canonical/authority/`
-- `docs/canonical/experience/`
-- `docs/canonical/architecture/`
-- `docs/canonical/reference/`
-
-The machine-readable ownership/migration ledger is [`canonical_ownership_inventory.json`](canonical_ownership_inventory.json).
-
-CKR-A accepted a baseline of **34 ownership records, including all 24 concepts, with 0 substantive records canonicalized and 0 candidates**. That is intentional: the authority mechanism exists before the corpus begins migration.
-
-## Design-history treatment
-
-Existing `docs/concepts/phase_002` through `phase_010`, decision records, scenario reviews, exit reviews and relevant foundation/planning records remain in place during the retrofit. [`../design_history/README.md`](../design_history/README.md) defines their logical provenance role without requiring a high-risk bulk filesystem move.
-
-Physical relocation of historical files is not required for CKR success. Authority separation matters more than cosmetic path normalization.
-
-## Semantic-conservation rule
-
-CKR is a documentation-authority migration, not permission to revise accepted behavior.
-
-- canonicalization must preserve accepted semantic distinctions and stable-ID meaning;
-- omitted meaning is a migration defect, not simplification;
-- contradictory legacy sources must be surfaced and adjudicated under existing authority/change control;
-- implementation convenience is not a reason to reinterpret a contract;
-- no CKR document may manufacture a new concept, contract, stable ID, architecture requirement or authority boundary without explicit A4 change control.
-
-## Implementation gate
-
-**Implementation 001-A is BLOCKED until CKR-K accepts the retrofit.**
-
-The ADF exit remains accepted and its residuals remain open:
-
-- `ADF-G-XT01` — provider runtime verification debt;
-- `DBX-SKILL-RUN-01` — still an Implementation 001-A environment obligation once implementation is unlocked.
-
-CKR does not convert either residual into PASS or move them into the documentation migration.
+Phase-001 roadmap/open-question/handoff material remains historical. No A4 semantic contradiction was required to complete CKR-B.
 
 ## Next eligible group
 
-### CKR-B — Foundation, Terminology & Cross-Cutting Invariants
+### CKR-C — Concept Catalog
 
-CKR-B will perform the first substantive canonical cutovers. Its scope is to consolidate the durable current meaning from the inventoried foundation/reference owners into bounded canonical resources while separating historical roadmap/open-question/handoff material from current truth.
+CKR-C owns canonicalization of the **24 accepted concepts** plus their SYN-001–SYN-035 synchronization ownership. Those records remain `legacy_authoritative` until CKR-C explicitly begins and follows the same candidate-review → atomic-cutover → closure-validation discipline.
 
-CKR-B should canonicalize, at minimum, the inventoried product definition, actors/stakeholders, terminology, Concept Design method, architectural principles, security/governance foundation, ecosystem lifecycles, MVP boundary and glossary-related foundation meaning, with semantic-conservation/provenance review before each atomic cutover.
+Completion of CKR-B does **not** automatically start CKR-C.
 
-Completion of CKR-A does **not** authorize starting CKR-B automatically. CKR-B begins only when explicitly selected by the human.
+## Implementation gate
+
+**Implementation 001-A remains BLOCKED until CKR-K accepts the retrofit.**
+
+The accepted ADF exit remains valid. `ADF-G-XT01` remains provider-runtime verification debt; `DBX-SKILL-RUN-01` remains a future Implementation 001-A obligation after CKR unlock.
