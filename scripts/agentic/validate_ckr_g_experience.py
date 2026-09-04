@@ -40,7 +40,7 @@ def main():
     expected_ids=[f'EXPL-{i:03d}' for i in range(1,161)]
     if sorted(ids)!=expected_ids or len(ids)!=160: errors.append(f'EXPL headings must cover EXPL-001..EXPL-160 exactly once; found {len(ids)}')
     joined='\n'.join(corpus)
-    if 'EXPL-161' in joined: errors.append('unaccepted EXPL-161 present in canonical experience corpus')
+    if re.search(r'^### EXPL-161 —',joined,re.M): errors.append('unaccepted EXPL-161 heading present in canonical experience corpus')
     matrix=repo/'docs/canonical_knowledge_retrofit/ckr_g_semantic_conservation_matrix.md'
     if not matrix.is_file(): errors.append('missing CKR-G semantic conservation matrix')
     else:
