@@ -2,9 +2,9 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-E; IN EXECUTION CKR-F; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-F; NEXT CKR-G; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-F OPS cutover is complete and closure validation is in progress. Product implementation remains blocked until CKR-K.
+CKR-F is complete/accepted. CKR-G is next/ready but unstarted. Product implementation remains blocked until CKR-K.
 
 ## Current semantic routing
 

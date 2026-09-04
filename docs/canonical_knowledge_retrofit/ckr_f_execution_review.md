@@ -1,6 +1,6 @@
 # CKR-F Execution Review — Lineage, Change, Investigation, Impact & Control
 
-**Status:** IN EXECUTION — ATOMIC CUTOVER COMPLETE / CLOSURE VALIDATION PENDING
+**Status:** ACCEPTED — CKR-F COMPLETE
 
 **Reviewed:** 2026-09-04
 
@@ -8,9 +8,9 @@
 
 Canonicalize OPS-001–OPS-123 without collapsing Lineage/topology, Change Intent/Deployment/Change, prospective review, execution reconstruction, Investigation/Causal Claim, Impact/exposure/consequence, Propagation Safeguard or Execution Gate semantics, and without importing EXPL/INTG/ARCH ownership.
 
-## Accepted topology under validation
+## Accepted result
 
-CKR-F cut over exactly eight bounded resources under `docs/canonical/contracts/operations/`:
+CKR-F canonicalized exactly OPS-001–OPS-123 across eight bounded resources:
 
 - OPS-001–009 — Lineage taxonomy, historical topology and relevance;
 - OPS-010–020 — Change Intent, Deployment realization and realized Change;
@@ -21,13 +21,13 @@ CKR-F cut over exactly eight bounded resources under `docs/canonical/contracts/o
 - OPS-086–104 — Propagation Safeguard enforcement, prevention, release and recovery;
 - OPS-105–123 — Execution Gate, override/fallback and control-induced effects.
 
-Group 09 remains consolidation/historical replay evidence and creates no OPS-124. Phase 007 is now provenance for migrated OPS meaning.
+Phase 007 is now design history/provenance for these meanings. Group 09 remains consolidation/historical replay evidence and creates no OPS-124. Prior CKR cutovers remain canonical. EXPL/INTG/ARCH remain assigned to later CKR groups.
 
 ## Semantic conservation
 
-The [`ckr_f_semantic_conservation_matrix.md`](ckr_f_semantic_conservation_matrix.md) preserves Phase 007's layered operational reasoning, including Lineage/reachability ≠ exposure/Impact/cause; Change Intent ≠ Deployment ≠ Change; candidate ≠ exposure ≠ effect ≠ consequence ≠ cause; expected work/opportunity/Gate state ≠ execution; localization ≠ cause; REF-017 + AUTH-034 causal confirmation; `not exposed` ≠ prevented by Safeguard; Safeguard ≠ Gate; and readiness ≠ Gate decision ≠ enforcement ≠ execution.
+The accepted [`ckr_f_semantic_conservation_matrix.md`](ckr_f_semantic_conservation_matrix.md) preserves typed/historical Lineage, Change Intent/Deployment/Change separation, prospective-versus-realized review, execution reconstruction, Investigation/Causal Claim independence, Impact exposure/effect/consequence layering, Safeguard enforcement/prevention/release, Gate readiness/decision/enforcement/execution separation and bitemporal replay.
 
-No A4 semantic change was required.
+No A4 semantic change was required. No universal topology/completeness/risk/RCA/Impact/control/replay score or architecture choice was introduced.
 
 ## Deterministic protection
 
@@ -46,8 +46,29 @@ PR #11 candidate head `de355ae529b7cd98647997984e20e78ea329b85f` passed:
 
 ### Atomic-cutover gate
 
-This exact cutover head must pass Agentic conformance and Documentation consistency before CKR-F can close.
+Cutover head `a18b318f720286bbcf2659318122df0c7827bb6f` passed:
 
-## Exit condition
+- Agentic conformance **#136 — SUCCESS** (run ID `33842276074`);
+- Documentation consistency **#254 — SUCCESS** (run ID `33842276078`).
 
-CKR-F can be accepted only after the atomic-cutover and closure synchronization gates succeed. CKR-G must remain unstarted until explicit human selection. Implementation 001-A remains blocked until CKR-K.
+The cutover moved OPS atomically from `candidate_ready` to `canonicalized`, promoted all eight resources to `CANONICAL CURRENT AUTHORITY`, reclassified Phase 007 as provenance, and routed the HLTH/OPS portions of the mixed runtime-health/Lineage/Impact OKF leaf to canonical contracts without absorbing later INTG/ARCH ownership.
+
+## Acceptance criteria
+
+- exact CKR-F scope OPS-001–OPS-123 — **PASS**;
+- no OPS-124/new concept/stable family — **PASS**;
+- eight-resource topology and Phase 007 provenance — **PASS**;
+- prior concepts/SYN/REF/AUTH/HLTH remain canonical — **PASS**;
+- EXPL/INTG/ARCH remain later-owned — **PASS**;
+- no universal topology/completeness/risk/RCA/Impact/control/replay score — **PASS**;
+- no topology/status propagation shortcut — **PASS**;
+- no plan/runtime, localization/causal or exposure/Impact collapse — **PASS**;
+- Safeguard/Gate separation preserved — **PASS**;
+- no implementation/architecture selection — **PASS**;
+- candidate and cutover conformance/documentation gates — **PASS**.
+
+## Exit decision
+
+**CKR-F is accepted and complete. CKR-G — Questioning, Explanation & Experience Contracts is next/ready but remains unstarted until explicitly selected by the human.**
+
+Implementation 001-A remains blocked until CKR-K. The closure/status synchronization head must pass the normal repository gates before PR merge; a failure there reopens only the affected closure defect unless it demonstrates a semantic regression.

@@ -1,8 +1,8 @@
 # CKR-F Semantic Conservation Matrix — Lineage, Change, Investigation, Impact & Control
 
-**Status:** CANDIDATE REVIEW
+**Status:** ACCEPTED — CKR-F COMPLETE
 
-**Scope:** OPS-001–OPS-123 only. Phase 007 remains current authority until atomic cutover.
+**Scope:** OPS-001–OPS-123 canonicalized from accepted Phase 007 semantics.
 
 ## Conservation objective
 
@@ -92,8 +92,8 @@ No arrow in any chain automatically creates the next proposition.
 
 ## Scope isolation
 
-CKR-F must not migrate EXPL-001–EXPL-160, INTG-001–INTG-270 or ARCH-001–ARCH-500. Phase 008–010 retain those authorities until CKR-G–I.
+CKR-F did not migrate EXPL-001–EXPL-160, INTG-001–INTG-270 or ARCH-001–ARCH-500. Phase 008–010 retain those authorities until CKR-G–I.
 
 ## Architecture / semantic-change disposition
 
-No A4 semantic change is required. CKR-F is an authority/routing migration over accepted Phase 007 meaning. Graph storage, event persistence, source mapping, control implementation, agentic RCA, scoring, polling/streaming and concrete SLAs remain later integration/architecture concerns.
+No A4 semantic change was required. CKR-F is an authority/routing migration over accepted Phase 007 meaning. Graph storage, event persistence, source mapping, control implementation, agentic RCA, scoring, polling/streaming and concrete SLAs remain later integration/architecture concerns.
