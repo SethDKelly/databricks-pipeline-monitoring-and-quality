@@ -2,9 +2,9 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A; NEXT CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A; IN EXECUTION CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-The ADF exit remains accepted. CKR-A is complete; **CKR-B is next/ready**. Product implementation remains blocked until CKR-K.
+The ADF exit remains accepted. **CKR-B is in execution**; product implementation remains blocked until CKR-K.
 
 ## Authority
 
@@ -22,7 +22,8 @@ Use, in order:
 ## Current boundary
 
 - CKR-A — **COMPLETE / ACCEPTED**;
-- CKR-B — **NEXT / READY**;
+- CKR-B — **IN EXECUTION**;
+- nine CKR-B foundation/glossary targets — **CANDIDATE / NOT CURRENT AUTHORITY** until cutover;
 - Implementation 001-A — **BLOCKED ON CKR-K**.
 
 Do not create product source, schemas, product tests or deployment configuration as CKR work unless a separate explicit task authorizes it.
@@ -33,7 +34,7 @@ Use:
 
 `root AGENTS → live CKR authority → ownership inventory when unclear → current semantic owner → matching skill/overlay → exact IDs/contracts`.
 
-OKF is routing only. Do not reconstruct a canonicalized rule from chronological phases.
+OKF is routing only. Do not reconstruct a canonicalized rule from chronological phases. During CKR-B, candidate foundation/glossary content is review material and cannot supersede the legacy owner before atomic cutover.
 
 A1–A4 remains unchanged. Completing one CKR group does not authorize starting the next.
 
