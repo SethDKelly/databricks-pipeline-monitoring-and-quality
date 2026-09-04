@@ -1,8 +1,8 @@
 # Canonical Knowledge & Documentation Authority Retrofit
 
-**Status:** CKR-A–CKR-C COMPLETE / ACCEPTED — CKR-D IN EXECUTION — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
+**Status:** CKR-A–CKR-D COMPLETE / ACCEPTED — CKR-E NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
 
-**CKR status mirror: COMPLETE CKR-A–CKR-C; IN EXECUTION CKR-D; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-D; NEXT CKR-E; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
 ## Purpose
 
@@ -17,8 +17,8 @@ Ownership is declared in [`canonical_ownership_inventory.json`](canonical_owners
 - **CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory: COMPLETE / ACCEPTED.**
 - **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: COMPLETE / ACCEPTED.**
 - **CKR-C — Concept Catalog: COMPLETE / ACCEPTED.**
-- **CKR-D — Evidence, Time, Authority & Governance: IN EXECUTION.**
-- **CKR-E — Health, Quality, Metrics & Timing: PLANNED.**
+- **CKR-D — Evidence, Time, Authority & Governance: COMPLETE / ACCEPTED.**
+- **CKR-E — Health, Quality, Metrics & Timing: NEXT / READY.**
 - **CKR-F — Lineage, Change, Investigation, Impact & Control: PLANNED.**
 - **CKR-G — Questioning, Explanation & Experience Contracts: PLANNED.**
 - **CKR-H — Integration, Source Authority & Evidence Availability: PLANNED.**
@@ -26,27 +26,23 @@ Ownership is declared in [`canonical_ownership_inventory.json`](canonical_owners
 - **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: PLANNED.**
 - **CKR-K — Consolidation, Provenance Validation & Exit Review: PLANNED.**
 
-## CKR-D execution boundary
+## Current canonical scope through CKR-D
 
-CKR-D owns exactly:
+CKR-B canonicalized foundation/glossary resources. CKR-C canonicalized all 24 accepted concepts and SYN-001–SYN-035. CKR-D canonicalized:
 
-1. `reference.authority_vocabulary` → `docs/canonical/authority/vocabulary.md`;
-2. REF-001–REF-030 → four bounded resources in `docs/canonical/contracts/evidence-time-causality/`;
-3. AUTH-001–AUTH-053 → six bounded resources in `docs/canonical/authority/`.
+1. the shared authority vocabulary at `docs/canonical/authority/vocabulary.md`;
+2. REF-001–REF-030 across four resources in `docs/canonical/contracts/evidence-time-causality/`;
+3. AUTH-001–AUTH-053 across six resources in `docs/canonical/authority/`.
 
-The candidates currently declare `CANDIDATE / NOT CURRENT AUTHORITY`. Phase 004/005 remain current semantic owners while the inventory state is `candidate_ready`.
+Phase 001–005 sources remain design history/provenance for migrated meaning. Current REF/AUTH lookup no longer requires phase chronology reconstruction.
 
-CKR-D preserves applicability ≠ coverage ≠ sufficiency; event/effective time ≠ framework knowledge; causal confirmation evidence ≠ confirmation authority; Assertion Authority ≠ Capability Authorization; governed meaning ≠ normative health ≠ realized state; permission/approval ≠ issuance/enforcement/outcome; and current disclosure ≠ historical authorization/communication.
+CKR-D preserves applicability ≠ coverage ≠ sufficiency; event/effective time ≠ source availability ≠ framework knowledge; causal confirmation evidence ≠ confirmation authority; Assertion Authority ≠ Capability Authorization; governed meaning ≠ normative health ≠ realized state; permission/approval ≠ issuance/enforcement/outcome; and current disclosure ≠ historical authorization/communication.
 
 See [`ckr_d_semantic_conservation_matrix.md`](ckr_d_semantic_conservation_matrix.md) and [`ckr_d_execution_review.md`](ckr_d_execution_review.md).
 
-## Prior canonicalized scope
+## Remaining ownership
 
-CKR-B canonicalized foundation/glossary resources. CKR-C canonicalized all 24 accepted concepts and SYN-001–SYN-035. Phase 001–003 are provenance for those migrated meanings.
-
-## Scope isolation
-
-HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500 remain legacy-authoritative until CKR-E–I respectively. CKR-D may reference but cannot absorb those contracts.
+HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500 remain legacy-authoritative until CKR-E–I respectively. CKR-E is next/ready but is not active until explicitly selected by the human.
 
 ## Implementation gate
 

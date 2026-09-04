@@ -1,13 +1,13 @@
 ---
 type: "Domain Routing Reference"
 title: "Investigation, reasoning, replay and Explanation"
-description: "Route Investigation, Causal Claim, historical replay, Statement/Answer IR and Explanation work."
-resource: "../../docs/concepts/phase_010/06_investigation_reasoning_historical_replay_explanation_architecture/README.md"
+description: "Route mixed reasoning work to current canonical concepts/REF and later-family owners as appropriate."
+resource: "../../docs/canonical/concepts/README.md"
 tags: ["dmtz", "investigation", "reasoning", "explanation", "replay"]
 status: "stable"
 ---
 # Routing
 
-Start with [Phase 010 Group 06](../../docs/concepts/phase_010/06_investigation_reasoning_historical_replay_explanation_architecture/README.md). Search exact `REF-###`, `EXPL-###`, `OPS-###`, and `ARCH-275`–`ARCH-350` identifiers as needed.
+Start from canonical Investigation, Causal Claim and Explanation concepts. REF-001–REF-030 now resolve under `docs/canonical/contracts/evidence-time-causality/`. EXPL/OPS/ARCH contracts remain with their inventoried legacy owners until CKR-G/F/I.
 
-Critical boundary: localization/correlation/hypothesis does not create causal confirmation; rendering/model output does not create canonical truth.
+Critical boundary: localization/correlation/hypothesis does not create causal confirmation; rendering/model output does not create canonical truth. OKF is routing only.
