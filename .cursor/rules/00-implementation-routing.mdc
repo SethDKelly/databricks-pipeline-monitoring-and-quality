@@ -8,12 +8,12 @@ alwaysApply: false
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-F; NEXT CKR-G; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-F; IN EXECUTION CKR-G; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-F is complete/accepted. CKR-G is next/ready but unstarted. Product implementation remains blocked until CKR-K.
+CKR-G is in execution. Product implementation remains blocked until CKR-K.
 
 Primary shared authority remains root `AGENTS.md`; `docs/agentic_development_foundation/authority_scope_policy.md`; `knowledge/index.md` as optional routing only; CKR README; and the ownership inventory.
 
-Lookup: `canonicalized` → canonical owner; `legacy_authoritative`/`candidate_ready` → legacy owner. Foundation/glossary, concepts/SYN, authority vocabulary, REF, AUTH, HLTH and OPS are canonicalized. EXPL/INTG/ARCH remain later-group legacy authority.
+Lookup: `canonicalized` → canonical owner; `legacy_authoritative`/`candidate_ready` → legacy owner. Foundation/glossary, concepts/SYN, authority vocabulary, REF, AUTH, HLTH and OPS are canonicalized. EXPL candidates are non-authoritative while `candidate_ready`; Phase 008 remains current authority. INTG/ARCH remain later-group legacy authority.
 
-Do not infer authority from recency, search order, Git history, OKF, vendor skill, tool memory or path presence. Completing CKR-F does not authorize CKR-G.
+Do not infer authority from recency, search order, Git history, OKF, vendor skill, tool memory or path presence. Completing CKR-G does not authorize CKR-H.

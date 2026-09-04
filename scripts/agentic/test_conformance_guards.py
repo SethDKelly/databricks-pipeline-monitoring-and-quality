@@ -20,8 +20,9 @@ def move_lineage(t): d=json.loads(t); next(r for r in d['records'] if r['record_
 def partial_ckrc(t): d=json.loads(t); next(r for r in d['records'] if r['record_id']=='concept.observation')['migration_state']='candidate_ready'; return json.dumps(d,indent=2)+'\n'
 def partial_ckrd(t): d=json.loads(t); d['stable_families']['AUTH']['migration_state']='legacy_authoritative'; return json.dumps(d,indent=2)+'\n'
 def remove_hlth_target(t): d=json.loads(t); d['stable_families']['HLTH']['target_documents']=d['stable_families']['HLTH']['target_documents'][:-1]; return json.dumps(d,indent=2)+'\n'
-def future_expl(t): d=json.loads(t); d['stable_families']['EXPL']['migration_state']='canonicalized'; return json.dumps(d,indent=2)+'\n'
 def remove_ops_target(t): d=json.loads(t); d['stable_families']['OPS']['target_documents']=d['stable_families']['OPS']['target_documents'][:-1]; return json.dumps(d,indent=2)+'\n'
+def remove_expl_target(t): d=json.loads(t); d['stable_families']['EXPL']['target_documents']=d['stable_families']['EXPL']['target_documents'][:-1]; return json.dumps(d,indent=2)+'\n'
+def future_intg(t): d=json.loads(t); d['stable_families']['INTG']['migration_state']='canonicalized'; return json.dumps(d,indent=2)+'\n'
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--repo',default='.'); a=ap.parse_args(); src=Path(a.repo).resolve(); errors=[]
     with tempfile.TemporaryDirectory(prefix='dmtz-conformance-') as td:
@@ -58,12 +59,17 @@ def main():
         mutate(repo,'docs/canonical/contracts/health-quality-timing/composite-health-readiness-timing.md',lambda t:t.replace('### HLTH-066 —','### HLTH-999 —',1),'validate_ckr_e_health_quality.py','omitted CKR-E HLTH-066 identity',errors)
         mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',remove_hlth_target,'validate_ckr_e_health_quality.py','partial CKR-E target topology',errors)
         mutate(repo,'docs/canonical_knowledge_retrofit/ckr_e_semantic_conservation_matrix.md',lambda t:t.replace('Lineage does not propagate status','Lineage propagates status',1),'validate_ckr_e_health_quality.py','blind health propagation regression',errors)
-        mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',future_expl,'validate_ckr_e_health_quality.py','future EXPL ownership theft before CKR-G',errors)
         mutate(repo,'docs/canonical/contracts/operations/execution-gate-control.md',lambda t:t.replace('### OPS-123 —','### OPS-999 —',1),'validate_ckr_f_operations.py','omitted CKR-F OPS-123 identity',errors)
         mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',remove_ops_target,'validate_ckr_f_operations.py','partial CKR-F target topology',errors)
         mutate(repo,'docs/canonical_knowledge_retrofit/ckr_f_semantic_conservation_matrix.md',lambda t:t.replace('candidate ≠ exposure ≠ effect ≠ consequence ≠ cause','candidate = exposure = effect = consequence = cause',1),'validate_ckr_f_operations.py','candidate/exposure/Impact collapse regression',errors)
         mutate(repo,'docs/canonical_knowledge_retrofit/ckr_f_semantic_conservation_matrix.md',lambda t:t.replace('Propagation Safeguard ≠ Execution Gate','Propagation Safeguard = Execution Gate',1),'validate_ckr_f_operations.py','Gate versus Safeguard collapse regression',errors)
-        mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',future_expl,'validate_ckr_f_operations.py','future EXPL ownership theft during CKR-F',errors)
+        mutate(repo,'docs/canonical/experience/historical-comparative-explanation.md',lambda t:t.replace('### EXPL-160 —','### EXPL-999 —',1),'validate_ckr_g_experience.py','omitted CKR-G EXPL-160 identity',errors)
+        mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',remove_expl_target,'validate_ckr_g_experience.py','partial CKR-G target topology',errors)
+        mutate(repo,'docs/canonical_knowledge_retrofit/ckr_g_semantic_conservation_matrix.md',lambda t:t.replace('question ≠ truth ≠ authorization','question = truth = authorization',1),'validate_ckr_g_experience.py','question/truth/authorization collapse regression',errors)
+        mutate(repo,'docs/canonical_knowledge_retrofit/ckr_g_semantic_conservation_matrix.md',lambda t:t.replace('one supported sibling does not strengthen an unresolved sibling','one supported sibling strengthens an unresolved sibling',1),'validate_ckr_g_experience.py','sibling-state propagation regression',errors)
+        mutate(repo,'docs/canonical_knowledge_retrofit/ckr_g_semantic_conservation_matrix.md',lambda t:t.replace('safe abstraction can reduce detail but cannot strengthen truth','safe abstraction may strengthen truth',1),'validate_ckr_g_experience.py','safe-abstraction overstatement regression',errors)
+        mutate(repo,'docs/canonical_knowledge_retrofit/ckr_g_semantic_conservation_matrix.md',lambda t:t.replace('historical source state ≠ as-known-at-cut Explanation ≠ retained actual communication ≠ current retrospective Explanation','historical source state = as-known-at-cut Explanation = retained actual communication = current retrospective Explanation',1),'validate_ckr_g_experience.py','historical-view collapse regression',errors)
+        mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',future_intg,'validate_ckr_g_experience.py','future INTG ownership theft during CKR-G',errors)
     for e in errors: print('ERROR',e)
-    print(f'Conformance guard tests: {len(errors)} error(s), 38 negative control(s)'); return 1 if errors else 0
+    print(f'Conformance guard tests: {len(errors)} error(s), 43 negative control(s)'); return 1 if errors else 0
 if __name__=='__main__': raise SystemExit(main())

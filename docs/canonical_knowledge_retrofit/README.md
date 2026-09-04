@@ -1,8 +1,8 @@
 # Canonical Knowledge & Documentation Authority Retrofit
 
-**Status:** CKR-A–CKR-F COMPLETE / ACCEPTED — CKR-G NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
+**Status:** CKR-A–CKR-F COMPLETE / ACCEPTED — CKR-G IN EXECUTION — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
 
-**CKR status mirror: COMPLETE CKR-A–CKR-F; NEXT CKR-G; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-F; IN EXECUTION CKR-G; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
 ## Purpose
 
@@ -20,7 +20,7 @@ Ownership is declared in [`canonical_ownership_inventory.json`](canonical_owners
 - **CKR-D — Evidence, Time, Authority & Governance: COMPLETE / ACCEPTED.**
 - **CKR-E — Health, Quality, Metrics & Timing: COMPLETE / ACCEPTED.**
 - **CKR-F — Lineage, Change, Investigation, Impact & Control: COMPLETE / ACCEPTED.**
-- **CKR-G — Questioning, Explanation & Experience Contracts: NEXT / READY.**
+- **CKR-G — Questioning, Explanation & Experience Contracts: IN EXECUTION.**
 - **CKR-H — Integration, Source Authority & Evidence Availability: PLANNED.**
 - **CKR-I — Technical Architecture: PLANNED.**
 - **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: PLANNED.**
@@ -28,17 +28,21 @@ Ownership is declared in [`canonical_ownership_inventory.json`](canonical_owners
 
 ## Current canonical scope through CKR-F
 
-Foundation/glossary, all 24 concepts, SYN-001–SYN-035, authority vocabulary, REF-001–REF-030, AUTH-001–AUTH-053, HLTH-001–HLTH-066 and **OPS-001–OPS-123** resolve to canonical owners.
+Foundation/glossary, all 24 concepts, SYN-001–SYN-035, authority vocabulary, REF-001–REF-030, AUTH-001–AUTH-053, HLTH-001–HLTH-066 and OPS-001–OPS-123 resolve to canonical owners. Phase 001–007 are design history/provenance for migrated meanings.
 
-OPS is canonical across eight resources under `docs/canonical/contracts/operations/`: Lineage/topology, Change realization, prospective review, execution reconstruction, Investigation/causality, Impact/exposure, Propagation Safeguard and Execution Gate/control. Phase 007 is design history/provenance for those meanings.
+## CKR-G execution boundary
 
-CKR-F preserves Lineage/reachability ≠ exposure/Impact/cause; Change Intent ≠ Deployment ≠ Change; candidate ≠ exposure ≠ effect ≠ consequence ≠ cause; expected work/opportunity/Gate state ≠ execution; localization ≠ cause; `confirmed` remains REF-017 + AUTH-034 gated; Safeguard request/configuration ≠ enforcement ≠ prevented exposure ≠ recovery; health/suitability ≠ readiness ≠ Gate decision ≠ enforcement ≠ execution; Gate ≠ Safeguard; and actual retained history ≠ as-known-at-cut reconstruction ≠ current retrospective interpretation.
+CKR-G owns exactly **EXPL-001–EXPL-160** from accepted Phase 008. The candidate topology is eight bounded resources under `docs/canonical/experience/` for question scope/time, answer/basis structure, operational question semantics, inferential/governance question semantics, epistemic language, authorized projection, progressive refresh/retention and historical/comparative Explanation.
 
-See [`ckr_f_semantic_conservation_matrix.md`](ckr_f_semantic_conservation_matrix.md) and [`ckr_f_execution_review.md`](ckr_f_execution_review.md).
+All CKR-G targets currently declare `CANDIDATE / NOT CURRENT AUTHORITY`; the ownership inventory marks EXPL `candidate_ready`, so **Phase 008 remains current semantic authority until atomic cutover**.
 
-## Remaining ownership
+CKR-G preserves question ≠ truth ≠ authorization; answer statement ≠ independent truth; basis count ≠ confidence; operational shorthand distinctions; Investigation/localization ≠ Causal Claim; candidate/reachable ≠ opportunity ≠ exposure ≠ effect ≠ consequence ≠ causal attribution; Safeguard/Gate separation; unknown/restricted/unavailable/negative distinctions; safe abstraction that cannot strengthen truth; elapsed time ≠ evidence/maturity; retained actual communication ≠ reconstruction; and historical source state ≠ as-known-at-cut Explanation ≠ retained communication ≠ current retrospective Explanation.
 
-EXPL-001–160, INTG-001–270 and ARCH-001–500 remain legacy-authoritative until CKR-G–I respectively. **CKR-G is next/ready but is not active until explicitly selected by the human.**
+See [`ckr_g_semantic_conservation_matrix.md`](ckr_g_semantic_conservation_matrix.md) and [`ckr_g_execution_review.md`](ckr_g_execution_review.md).
+
+## Scope isolation
+
+INTG-001–270 and ARCH-001–500 remain legacy-authoritative until CKR-H/I respectively. CKR-G may reference but cannot absorb them.
 
 ## Implementation gate
 
