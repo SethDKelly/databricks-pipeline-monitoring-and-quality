@@ -26,6 +26,7 @@ The ADF exit remains accepted. The **Canonical Knowledge & Documentation Authori
 Other primary routes:
 
 - root `AGENTS.md` — shared constitution;
+- `docs/agentic_development_foundation/authority_scope_policy.md` — A1–A4 human-directed authority;
 - `docs/canonical_knowledge_retrofit/authority_model.md` — canonical-vs-history authority;
 - `docs/canonical_knowledge_retrofit/migration_contract.md` — atomic cutover/no-dual-authority rules;
 - `docs/implementation/README.md` — blocked implementation state;
