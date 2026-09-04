@@ -2,7 +2,7 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-B; IN EXECUTION CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-C; NEXT CKR-D; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
 ## Universal start
 
@@ -20,10 +20,10 @@
 
 ## Current state
 
-- CKR-A–B — COMPLETE / ACCEPTED.
-- CKR-C — IN EXECUTION / concept + SYN cutover complete / closure validation pending.
+- CKR-A–C — COMPLETE / ACCEPTED.
+- CKR-D — NEXT / READY / NOT STARTED.
 - Implementation 001-A — BLOCKED until CKR-K.
 
-All 24 concepts now resolve to `docs/canonical/concepts/`. SYN-001–SYN-035 resolve to `docs/canonical/contracts/synchronization/`. Phase 002/003 are provenance for those meanings. `reference.authority_vocabulary` and REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain later-group owners.
+All 24 concepts resolve to `docs/canonical/concepts/`. SYN-001–SYN-035 resolve to `docs/canonical/contracts/synchronization/`. Phase 002/003 are provenance for those meanings. `reference.authority_vocabulary` and REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain later-group owners.
 
 ADF-EX-17 / `ADF-G-XT01` remains deferred; `DBX-SKILL-RUN-01` remains future 001-A work.
