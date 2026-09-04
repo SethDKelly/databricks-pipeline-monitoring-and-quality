@@ -15,10 +15,11 @@ def stale_status(t): return re.sub(r'ADF status mirror: .*?$','ADF status mirror
 def stale_ckr(t): return re.sub(r'CKR status mirror: .*?$','CKR status mirror: COMPLETE CKR-A; NEXT CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.',t,count=1,flags=re.M)
 def vendor_auto(t): d=json.loads(t); d['materialization']['automatic_new_skills']=True; return json.dumps(d,indent=2)+'\n'
 def model_skill(t): d=json.loads(t); d['selected_skills'].append({'name':'databricks-model-serving','version':'0.4.0'}); return json.dumps(d,indent=2)+'\n'
-def fabricate_lineage(t): d=json.loads(t); next(r for r in d['records'] if r['record_id']=='concept.lineage')['migration_state']='canonicalized'; return json.dumps(d,indent=2)+'\n'
+def fabricate_future_canonicalization(t):
+    d=json.loads(t); next(r for r in d['records'] if r['record_id']=='reference.authority_vocabulary')['migration_state']='canonicalized'; return json.dumps(d,indent=2)+'\n'
 def move_lineage(t): d=json.loads(t); next(r for r in d['records'] if r['record_id']=='concept.lineage')['target_owner']='docs/design_history/lineage.md'; return json.dumps(d,indent=2)+'\n'
 def partial_ckrc(t):
-    d=json.loads(t); next(r for r in d['records'] if r['record_id']=='concept.observation')['migration_state']='canonicalized'; return json.dumps(d,indent=2)+'\n'
+    d=json.loads(t); next(r for r in d['records'] if r['record_id']=='concept.observation')['migration_state']='candidate_ready'; return json.dumps(d,indent=2)+'\n'
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--repo',default='.'); a=ap.parse_args(); src=Path(a.repo).resolve(); errors=[]
     with tempfile.TemporaryDirectory(prefix='dmtz-conformance-') as td:
@@ -35,7 +36,7 @@ def main():
         mutate(repo,'docs/agentic_development_foundation/tool_lifecycle_review.json',lambda t:t.replace('"security_reviewed_on": "2026-09-02"','"security_reviewed_on": "2020-01-01"',1),'validate_adf_h_governance.py','expired provider security review horizon',errors)
         mutate(repo,'docs/agentic_development_foundation/databricks_vendor_skills_profile.json',vendor_auto,'validate_databricks_agent_skills.py','automatic Databricks vendor-skill expansion',errors)
         mutate(repo,'docs/agentic_development_foundation/databricks_vendor_skills_profile.json',model_skill,'validate_databricks_agent_skills.py','deferred model skill added to initial Databricks set',errors)
-        mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',fabricate_lineage,'validate_canonical_knowledge.py','canonicalization without matching canonical target evidence',errors)
+        mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',fabricate_future_canonicalization,'validate_canonical_knowledge.py','canonicalization without matching canonical target evidence',errors)
         mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',move_lineage,'validate_canonical_knowledge.py','canonical target outside docs/canonical',errors)
         mutate(repo,'IMPLEMENTATION.md',stale_ckr,'validate_ckr_status.py','stale CKR implementation status mirror',errors)
         mutate(repo,'docs/canonical/invariants/architectural-principles.md',lambda t:t.replace('### AP-32 —','### AP-XX —',1),'validate_ckr_b_foundation.py','omitted CKR-B AP-32 identity',errors)
