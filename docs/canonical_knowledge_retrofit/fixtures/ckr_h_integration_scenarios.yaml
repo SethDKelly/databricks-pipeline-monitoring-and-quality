@@ -1,0 +1,196 @@
+version: 1
+phase: CKR-H
+purpose: Semantic-conservation scenarios for INTG-001–INTG-270 authority migration.
+scenarios:
+  - id: CKRH-01
+    purpose: exact source surface identity remains narrower than vendor identity
+    expected: preserve accepted Phase 009 proposition/source/context boundary without source-convenience inference
+  - id: CKRH-02
+    purpose: source availability does not create relevance authority sufficiency or disclosure authorization
+    expected: preserve accepted Phase 009 proposition/source/context boundary without source-convenience inference
+  - id: CKRH-03
+    purpose: source role does not create Assertion Authority
+    expected: preserve accepted Phase 009 proposition/source/context boundary without source-convenience inference
+  - id: CKRH-04
+    purpose: source-local identity does not become ecosystem Entity Identity
+    expected: preserve accepted Phase 009 proposition/source/context boundary without source-convenience inference
+  - id: CKRH-05
+    purpose: timestamp proximity does not create cross-system association
+    expected: preserve accepted Phase 009 proposition/source/context boundary without source-convenience inference
+  - id: CKRH-06
+    purpose: event time remains distinct from availability and knowledge time
+    expected: preserve accepted Phase 009 proposition/source/context boundary without source-convenience inference
+  - id: CKRH-07
+    purpose: positive evidence capability does not imply negative evidence capability
+    expected: preserve accepted Phase 009 proposition/source/context boundary without source-convenience inference
+  - id: CKRH-08
+    purpose: empty query result under incomplete coverage does not prove absence
+    expected: preserve accepted Phase 009 proposition/source/context boundary without source-convenience inference
+  - id: CKRH-09
+    purpose: current-state availability does not create historical replay
+    expected: preserve accepted Phase 009 proposition/source/context boundary without source-convenience inference
+  - id: CKRH-10
+    purpose: late backfill cannot enter earlier knowledge cut
+    expected: preserve accepted Phase 009 proposition/source/context boundary without source-convenience inference
+  - id: CKRH-11
+    purpose: common-derived endpoints remain non-independent
+    expected: preserve accepted Phase 009 proposition/source/context boundary without source-convenience inference
+  - id: CKRH-12
+    purpose: fallback source does not inherit authority
+    expected: preserve accepted Phase 009 proposition/source/context boundary without source-convenience inference
+  - id: CKRH-13
+    purpose: unsupported capability remains explicit rather than weakening requirement
+    expected: preserve accepted Phase 009 proposition/source/context boundary without source-convenience inference
+  - id: CKRH-14
+    purpose: integration outage remains evidence limitation rather than product negative
+    expected: preserve accepted Phase 009 proposition/source/context boundary without source-convenience inference
+  - id: CKRH-15
+    purpose: optional Collibra or Immuta absence creates bounded gap not benign default
+    expected: preserve accepted Phase 009 governance-source boundary without source-convenience inference
+  - id: CKRH-16
+    purpose: Unity Catalog identity remains Databricks-local until governed crosswalk
+    expected: preserve accepted Phase 009 governance-source boundary without source-convenience inference
+  - id: CKRH-17
+    purpose: Monitoring Scope is not inferred from vendor operating scope
+    expected: preserve accepted Phase 009 governance-source boundary without source-convenience inference
+  - id: CKRH-18
+    purpose: vendor owner or role does not automatically implement Assertion Authority
+    expected: preserve accepted Phase 009 governance-source boundary without source-convenience inference
+  - id: CKRH-19
+    purpose: current permission does not reconstruct historical authorization
+    expected: preserve accepted Phase 009 governance-source boundary without source-convenience inference
+  - id: CKRH-20
+    purpose: composed authorization preserves principal population and enforcement path
+    expected: preserve accepted Phase 009 governance-source boundary without source-convenience inference
+  - id: CKRH-21
+    purpose: Git commit remains revision rather than Change Intent absent governance rule
+    expected: preserve accepted Phase 009 runtime-source boundary without source-convenience inference
+  - id: CKRH-22
+    purpose: triggering SHA remains distinct from workflow-definition SHA
+    expected: preserve accepted Phase 009 runtime-source boundary without source-convenience inference
+  - id: CKRH-23
+    purpose: GitHub Actions success does not prove Databricks activation
+    expected: preserve accepted Phase 009 runtime-source boundary without source-convenience inference
+  - id: CKRH-24
+    purpose: CI to Databricks association requires immutable correlation evidence
+    expected: preserve accepted Phase 009 runtime-source boundary without source-convenience inference
+  - id: CKRH-25
+    purpose: direct Git used_commit evidence remains source-pattern specific
+    expected: preserve accepted Phase 009 runtime-source boundary without source-convenience inference
+  - id: CKRH-26
+    purpose: bundle workspace-source run commit remains unresolved without attestation
+    expected: preserve accepted Phase 009 runtime-source boundary without source-convenience inference
+  - id: CKRH-27
+    purpose: configured dependency does not prove actual sequence waiting or consumption
+    expected: preserve accepted Phase 009 runtime-source boundary without source-convenience inference
+  - id: CKRH-28
+    purpose: execution success does not prove output currentness or health
+    expected: preserve accepted Phase 009 runtime-source boundary without source-convenience inference
+  - id: CKRH-29
+    purpose: Delta readVersion does not become generic multi-input manifest
+    expected: preserve accepted Phase 009 runtime-source boundary without source-convenience inference
+  - id: CKRH-30
+    purpose: successful run may retain partial output-version evidence
+    expected: preserve accepted Phase 009 runtime-source boundary without source-convenience inference
+  - id: CKRH-31
+    purpose: realized schema does not automatically establish consumer compatibility
+    expected: preserve accepted Phase 009 health-source boundary without source-convenience inference
+  - id: CKRH-32
+    purpose: declared constraint does not prove empirical integrity
+    expected: preserve accepted Phase 009 health-source boundary without source-convenience inference
+  - id: CKRH-33
+    purpose: generated DQ rule remains candidate until governed Expectation adoption
+    expected: preserve accepted Phase 009 health-source boundary without source-convenience inference
+  - id: CKRH-34
+    purpose: profile metric does not create Baseline membership normative Assessment or health
+    expected: preserve accepted Phase 009 health-source boundary without source-convenience inference
+  - id: CKRH-35
+    purpose: vendor root-cause or impact label does not bypass causal or Impact semantics
+    expected: preserve accepted Phase 009 health-source boundary without source-convenience inference
+  - id: CKRH-36
+    purpose: commit freshness does not answer event freshness
+    expected: preserve accepted Phase 009 health-source boundary without source-convenience inference
+  - id: CKRH-37
+    purpose: current-cycle health remains conditional when exact inputs are unresolved
+    expected: preserve accepted Phase 009 health-source boundary without source-convenience inference
+  - id: CKRH-38
+    purpose: missing health source under disabled or failed monitoring does not mean clean pass
+    expected: preserve accepted Phase 009 health-source boundary without source-convenience inference
+  - id: CKRH-39
+    purpose: captured lineage event does not prove persistent relationship or encounter
+    expected: preserve accepted Phase 009 Lineage/Impact-source boundary without source-convenience inference
+  - id: CKRH-40
+    purpose: query encounter does not universally identify exact table version consumed
+    expected: preserve accepted Phase 009 Lineage/Impact-source boundary without source-convenience inference
+  - id: CKRH-41
+    purpose: dashboard access remains distinct from query execution and result receipt
+    expected: preserve accepted Phase 009 Lineage/Impact-source boundary without source-convenience inference
+  - id: CKRH-42
+    purpose: cached or snapshot state remains alternate-state encounter path
+    expected: preserve accepted Phase 009 Lineage/Impact-source boundary without source-convenience inference
+  - id: CKRH-43
+    purpose: exposure remains non-transitive across multiple lineage hops
+    expected: preserve accepted Phase 009 Lineage/Impact-source boundary without source-convenience inference
+  - id: CKRH-44
+    purpose: one safe path cannot establish global non-exposure
+    expected: preserve accepted Phase 009 Lineage/Impact-source boundary without source-convenience inference
+  - id: CKRH-45
+    purpose: exposure remains distinct from downstream effect consequence and causal attribution
+    expected: preserve accepted Phase 009 Lineage/Impact-source boundary without source-convenience inference
+  - id: CKRH-46
+    purpose: platform delivery does not prove business decision reliance
+    expected: preserve accepted Phase 009 Lineage/Impact-source boundary without source-convenience inference
+  - id: CKRH-47
+    purpose: Investigation localization remains inquiry evidence rather than causal confirmation
+    expected: preserve accepted Phase 009 investigation/control-source boundary without source-convenience inference
+  - id: CKRH-48
+    purpose: vendor or human causal assertion cannot bypass REF-017 and AUTH-034
+    expected: preserve accepted Phase 009 investigation/control-source boundary without source-convenience inference
+  - id: CKRH-49
+    purpose: Safeguard configuration or enforcement does not automatically prove prevented exposure
+    expected: preserve accepted Phase 009 investigation/control-source boundary without source-convenience inference
+  - id: CKRH-50
+    purpose: no encounter opportunity earns no Safeguard prevention credit
+    expected: preserve accepted Phase 009 investigation/control-source boundary without source-convenience inference
+  - id: CKRH-51
+    purpose: Databricks cancellation remains post-start interruption rather than pre-start HOLD
+    expected: preserve accepted Phase 009 investigation/control-source boundary without source-convenience inference
+  - id: CKRH-52
+    purpose: GitHub environment Gate applies only to correlated protected opportunity
+    expected: preserve accepted Phase 009 investigation/control-source boundary without source-convenience inference
+  - id: CKRH-53
+    purpose: HOLD or ADMIT decision does not prove execution outcome
+    expected: preserve accepted Phase 009 investigation/control-source boundary without source-convenience inference
+  - id: CKRH-54
+    purpose: missing control telemetry does not establish fail-open or fail-closed
+    expected: preserve accepted Phase 009 investigation/control-source boundary without source-convenience inference
+  - id: CKRH-55
+    purpose: source replay remains distinct from retained actual communication and retrospective Explanation
+    expected: preserve accepted Phase 009 Explanation-source boundary without source-convenience inference
+  - id: CKRH-56
+    purpose: visible source reference does not grant basis inspection authorization
+    expected: preserve accepted Phase 009 Explanation-source boundary without source-convenience inference
+  - id: CKRH-57
+    purpose: delivery evidence remains weaker than exact retained communication content
+    expected: preserve accepted Phase 009 Explanation-source boundary without source-convenience inference
+  - id: CKRH-58
+    purpose: current requester authorization remains distinct from historical actor authorization
+    expected: preserve accepted Phase 009 Explanation-source boundary without source-convenience inference
+  - id: CKRH-59
+    purpose: safe basis abstraction cannot strengthen internal truth
+    expected: preserve accepted Phase 009 Explanation-source boundary without source-convenience inference
+  - id: CKRH-60
+    purpose: missing retained communication remains reconstruction not authentic prior snapshot
+    expected: preserve accepted Phase 009 Explanation-source boundary without source-convenience inference
+  - id: CKRH-61
+    purpose: support classification remains feasibility rather than confidence or truth
+    expected: preserve accepted Phase 009 cross-source boundary without source-convenience inference
+  - id: CKRH-62
+    purpose: latency affects knowledge eligibility rather than event truth
+    expected: preserve accepted Phase 009 cross-source boundary without source-convenience inference
+  - id: CKRH-63
+    purpose: retention horizons compose without inventing indefinite ledger
+    expected: preserve accepted Phase 009 cross-source boundary without source-convenience inference
+  - id: CKRH-64
+    purpose: quota cost and integration health constrain feasibility without changing semantic burden
+    expected: preserve accepted Phase 009 cross-source boundary without source-convenience inference
