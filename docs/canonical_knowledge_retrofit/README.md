@@ -1,8 +1,8 @@
 # Canonical Knowledge & Documentation Authority Retrofit
 
-**Status:** CKR-A–CKR-C COMPLETE / ACCEPTED — CKR-D NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
+**Status:** CKR-A–CKR-C COMPLETE / ACCEPTED — CKR-D IN EXECUTION — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
 
-**CKR status mirror: COMPLETE CKR-A–CKR-C; NEXT CKR-D; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-C; IN EXECUTION CKR-D; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
 ## Purpose
 
@@ -17,7 +17,7 @@ Ownership is declared in [`canonical_ownership_inventory.json`](canonical_owners
 - **CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory: COMPLETE / ACCEPTED.**
 - **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: COMPLETE / ACCEPTED.**
 - **CKR-C — Concept Catalog: COMPLETE / ACCEPTED.**
-- **CKR-D — Evidence, Time, Authority & Governance: NEXT / READY.**
+- **CKR-D — Evidence, Time, Authority & Governance: IN EXECUTION.**
 - **CKR-E — Health, Quality, Metrics & Timing: PLANNED.**
 - **CKR-F — Lineage, Change, Investigation, Impact & Control: PLANNED.**
 - **CKR-G — Questioning, Explanation & Experience Contracts: PLANNED.**
@@ -26,28 +26,27 @@ Ownership is declared in [`canonical_ownership_inventory.json`](canonical_owners
 - **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: PLANNED.**
 - **CKR-K — Consolidation, Provenance Validation & Exit Review: PLANNED.**
 
-## Canonicalized in CKR-C
+## CKR-D execution boundary
 
-CKR-C atomically canonicalized:
+CKR-D owns exactly:
 
-1. all **24 accepted concept records** under `docs/canonical/concepts/`;
-2. **SYN-001–SYN-035** across six bounded resources under `docs/canonical/contracts/synchronization/`.
+1. `reference.authority_vocabulary` → `docs/canonical/authority/vocabulary.md`;
+2. REF-001–REF-030 → four bounded resources in `docs/canonical/contracts/evidence-time-causality/`;
+3. AUTH-001–AUTH-053 → six bounded resources in `docs/canonical/authority/`.
 
-The Phase-002/003 corpus remains provenance/design history for those meanings. `reference.authority_vocabulary` and REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain with later groups.
+The candidates currently declare `CANDIDATE / NOT CURRENT AUTHORITY`. Phase 004/005 remain current semantic owners while the inventory state is `candidate_ready`.
 
-### Conserved boundaries
+CKR-D preserves applicability ≠ coverage ≠ sufficiency; event/effective time ≠ framework knowledge; causal confirmation evidence ≠ confirmation authority; Assertion Authority ≠ Capability Authorization; governed meaning ≠ normative health ≠ realized state; permission/approval ≠ issuance/enforcement/outcome; and current disclosure ≠ historical authorization/communication.
 
-Expectation ≠ Baseline; Observation ≠ Assessment; Change Intent ≠ Deployment ≠ Change; execution success ≠ output existence ≠ freshness ≠ data health; Lineage/reachability ≠ exposure ≠ Impact ≠ cause; Investigation lead/closure ≠ causal confirmation; Capability Authorization ≠ Assertion Authority ≠ evidence sufficiency ≠ enforcement; Gate readiness ≠ decision ≠ delivery ≠ enforcement ≠ execution; Gate ≠ Safeguard; Explanation/Annotation ≠ independent truth; event/effective time ≠ knowledge/record time.
+See [`ckr_d_semantic_conservation_matrix.md`](ckr_d_semantic_conservation_matrix.md) and [`ckr_d_execution_review.md`](ckr_d_execution_review.md).
 
-Detailed evidence: [`ckr_c_semantic_conservation_matrix.md`](ckr_c_semantic_conservation_matrix.md) and [`ckr_c_execution_review.md`](ckr_c_execution_review.md).
+## Prior canonicalized scope
 
-## Next eligible group
+CKR-B canonicalized foundation/glossary resources. CKR-C canonicalized all 24 accepted concepts and SYN-001–SYN-035. Phase 001–003 are provenance for those migrated meanings.
 
-### CKR-D — Evidence, Time, Authority & Governance
+## Scope isolation
 
-CKR-D owns `reference.authority_vocabulary`, REF-001–REF-030 and AUTH-001–AUTH-053 canonicalization. Those records remain `legacy_authoritative` until CKR-D explicitly begins and follows candidate review → atomic cutover → closure validation.
-
-Completion of CKR-C does **not** automatically start CKR-D.
+HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500 remain legacy-authoritative until CKR-E–I respectively. CKR-D may reference but cannot absorb those contracts.
 
 ## Implementation gate
 

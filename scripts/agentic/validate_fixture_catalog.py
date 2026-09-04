@@ -7,7 +7,8 @@ ADDENDA=(('DBX','adf_databricks_skills_addendum_scenarios.yaml','databricks_agen
 CKR=(
 ('CKR-A','docs/canonical_knowledge_retrofit/fixtures/ckr_a_authority_scenarios.yaml','docs/canonical_knowledge_retrofit/ckr_a_execution_review.md'),
 ('CKR-B','docs/canonical_knowledge_retrofit/fixtures/ckr_b_foundation_scenarios.yaml','docs/canonical_knowledge_retrofit/ckr_b_execution_review.md'),
-('CKR-C','docs/canonical_knowledge_retrofit/fixtures/ckr_c_concept_scenarios.yaml','docs/canonical_knowledge_retrofit/ckr_c_execution_review.md'),)
+('CKR-C','docs/canonical_knowledge_retrofit/fixtures/ckr_c_concept_scenarios.yaml','docs/canonical_knowledge_retrofit/ckr_c_execution_review.md'),
+('CKR-D','docs/canonical_knowledge_retrofit/fixtures/ckr_d_evidence_authority_scenarios.yaml','docs/canonical_knowledge_retrofit/ckr_d_execution_review.md'))
 ID_RE=re.compile(r'^\s*-\s+id:\s*["\']?([^"\'\s]+)',re.M)
 def collect(path,label,seen,errors):
     if not path.is_file(): errors.append(f'missing {label} fixture catalog: {path.name}'); return 0
