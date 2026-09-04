@@ -4,16 +4,16 @@ Phase 010, the Agentic Development Foundation, its execution exit, and the Datab
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A; NEXT CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A; IN EXECUTION CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-A later **Canonical Knowledge & Documentation Authority Retrofit (CKR)** now blocks product implementation until CKR-K. CKR-A established the authority/migration model; CKR-B is next/ready. The accepted ADF exit is not reopened.
+The **Canonical Knowledge & Documentation Authority Retrofit (CKR)** blocks product implementation until CKR-K. CKR-A established the authority/migration model; CKR-B is performing the first substantive foundation/glossary candidate migration. The accepted ADF exit is not reopened.
 
 ## Start here
 
 1. `docs/canonical_knowledge_retrofit/README.md` — live CKR progression.
-2. `docs/canonical_knowledge_retrofit/authority_model.md` — current knowledge vs design history.
-3. `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` — record-specific current ownership.
-4. `docs/canonical/README.md` — target current-truth namespace.
+2. `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` — record-specific ownership/migration state.
+3. `docs/canonical_knowledge_retrofit/ckr_b_semantic_conservation_matrix.md` — CKR-B semantic comparison once populated.
+4. `docs/canonical/README.md` — target/current canonical namespace.
 5. `docs/design_history/README.md` — provenance/history layer.
 6. `docs/implementation/README.md` — blocked implementation authority.
 7. `AGENTS.md` — shared repository instructions.
@@ -25,13 +25,13 @@ A later **Canonical Knowledge & Documentation Authority Retrofit (CKR)** now blo
 - `canonicalized` → use the inventoried `docs/canonical/` target;
 - `history_only` → provenance/rationale only.
 
-Do not use phase chronology, search order, OKF summaries or mere canonical-path presence to manufacture authority. CKR owner-path changes must preserve accepted SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH meaning unless a separate A4 change is explicitly accepted.
+The nine CKR-B candidate targets are review material only until atomic cutover. Do not use phase chronology, search order, OKF summaries or canonical-path presence to manufacture authority.
 
 ## Current work
 
 **CKR-A — COMPLETE / ACCEPTED.**
 
-**CKR-B — Foundation, Terminology & Cross-Cutting Invariants: NEXT / READY.**
+**CKR-B — Foundation, Terminology & Cross-Cutting Invariants: IN EXECUTION.**
 
 **Implementation 001-A — BLOCKED until CKR-K exit acceptance.**
 
