@@ -1,0 +1,67 @@
+version: 1
+scope: CKR-C
+scenarios:
+  - id: CKRC-01
+    expectation: exactly 24 accepted concept records migrate together
+  - id: CKRC-02
+    expectation: concept candidates do not become current authority before cutover
+  - id: CKRC-03
+    expectation: Monitoring Scope missing assertion remains unknown not excluded
+  - id: CKRC-04
+    expectation: Entity Identity preserves ambiguity and replacement is not identity
+  - id: CKRC-05
+    expectation: semantic responsibility classification and policy dimensions remain independent
+  - id: CKRC-06
+    expectation: Expectation remains normative while Baseline remains descriptive
+  - id: CKRC-07
+    expectation: Observation remains evidence while Assessment remains interpretation
+  - id: CKRC-08
+    expectation: missing telemetry is not evidence of absence
+  - id: CKRC-09
+    expectation: Assessment remains dimension scoped with no implicit universal rollup
+  - id: CKRC-10
+    expectation: Change Intent Deployment and realized Change remain distinct
+  - id: CKRC-11
+    expectation: execution success does not imply output freshness or data health
+  - id: CKRC-12
+    expectation: Lineage reachability does not imply exposure Impact or cause
+  - id: CKRC-13
+    expectation: Investigation lead localization and closure do not create causal confirmation
+  - id: CKRC-14
+    expectation: Causal Claim confirmed remains evidence and authority gated
+  - id: CKRC-15
+    expectation: Impact preserves candidate opportunity exposure effect consequence and attribution layers
+  - id: CKRC-16
+    expectation: Annotation redirects structured assertions to their owning concept
+  - id: CKRC-17
+    expectation: Explanation cannot manufacture truth authority evidence sufficiency Impact or causality
+  - id: CKRC-18
+    expectation: safe Explanation abstraction cannot strengthen epistemic claims
+  - id: CKRC-19
+    expectation: Propagation Safeguard proposal enforcement prevention release and recovery remain separate
+  - id: CKRC-20
+    expectation: Execution Gate readiness decision delivery enforcement and execution remain separate
+  - id: CKRC-21
+    expectation: Gate and Safeguard remain independent optional active controls
+  - id: CKRC-22
+    expectation: Capability Authorization remains distinct from Assertion Authority and enforcement
+  - id: CKRC-23
+    expectation: Assertion Authority does not create factual truth or evidence sufficiency
+  - id: CKRC-24
+    expectation: all SYN-001 through SYN-035 have one canonical candidate owner
+  - id: CKRC-25
+    expectation: synchronization order never determines authority
+  - id: CKRC-26
+    expectation: synchronization preserves unknown conflict unavailable restricted and insufficient states
+  - id: CKRC-27
+    expectation: event effective time and knowledge cut remain independently replayable
+  - id: CKRC-28
+    expectation: current authorization governs replay disclosure without rewriting historical truth
+  - id: CKRC-29
+    expectation: Phase 002 and 003 sources remain provenance after cutover
+  - id: CKRC-30
+    expectation: REF AUTH HLTH OPS EXPL INTG ARCH ownership remains untouched
+  - id: CKRC-31
+    expectation: no 25th umbrella concept is introduced by synchronization
+  - id: CKRC-32
+    expectation: CKR-C candidate and canonical states are atomic across concepts plus SYN

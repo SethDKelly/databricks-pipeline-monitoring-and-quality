@@ -1,29 +1,22 @@
 # Canonical Knowledge & Documentation Authority Retrofit
 
-**Status:** CKR-A–CKR-B COMPLETE / ACCEPTED — CKR-C NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
+**Status:** CKR-A–CKR-B COMPLETE / ACCEPTED — CKR-C IN EXECUTION — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
 
-**CKR status mirror: COMPLETE CKR-A–CKR-B; NEXT CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-B; IN EXECUTION CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
 ## Purpose
 
-CKR separates **current DMTZ truth** from the chronological records that explain how it was designed. It changes documentation ownership, routing and provenance without silently changing accepted SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH semantics.
+CKR separates current accepted DMTZ meaning from chronological design history. It changes documentation ownership/routing/provenance without silently changing accepted product semantics.
 
-> **A current semantic question resolves to one current owner. Once a record is canonicalized, design history explains origin/rationale rather than reconstructing current meaning.**
+> **A current semantic question resolves to one current owner. Candidate presence is never authority.**
 
-Current ownership is declared in [`canonical_ownership_inventory.json`](canonical_ownership_inventory.json):
-
-- `legacy_authoritative` — legacy owner is current;
-- `candidate_ready` — candidate exists but legacy owner remains current;
-- `canonicalized` — inventoried `docs/canonical/` target is sole current owner;
-- `history_only` — provenance/rationale only.
-
-See [`migration_contract.md`](migration_contract.md) for atomic cutover/no-dual-authority rules.
+Ownership is declared in [`canonical_ownership_inventory.json`](canonical_ownership_inventory.json): `legacy_authoritative`, `candidate_ready`, `canonicalized`, or `history_only`. Atomic cutover/no-dual-authority rules are in [`migration_contract.md`](migration_contract.md).
 
 ## Program sequence / state
 
 - **CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory: COMPLETE / ACCEPTED.**
 - **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: COMPLETE / ACCEPTED.**
-- **CKR-C — Concept Catalog: NEXT / READY.**
+- **CKR-C — Concept Catalog: IN EXECUTION.**
 - **CKR-D — Evidence, Time, Authority & Governance: PLANNED.**
 - **CKR-E — Health, Quality, Metrics & Timing: PLANNED.**
 - **CKR-F — Lineage, Change, Investigation, Impact & Control: PLANNED.**
@@ -33,40 +26,43 @@ See [`migration_contract.md`](migration_contract.md) for atomic cutover/no-dual-
 - **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: PLANNED.**
 - **CKR-K — Consolidation, Provenance Validation & Exit Review: PLANNED.**
 
-CKR-A evidence is in [`ckr_a_execution_review.md`](ckr_a_execution_review.md). CKR-B evidence is in [`ckr_b_execution_review.md`](ckr_b_execution_review.md).
+## CKR-C candidate review
 
-## Canonicalized in CKR-B
+CKR-C owns one atomic migration set:
 
-CKR-B established the first substantive canonical current-truth layer for nine records:
+1. all **24 accepted concepts** from Phase 002/addenda;
+2. **SYN-001–SYN-035** synchronization ownership from Phase 003.
 
-1. product definition → `docs/canonical/reference/product-definition.md`;
-2. actors/stakeholders → `docs/canonical/reference/actors-and-stakeholders.md`;
-3. foundational terminology → `docs/canonical/reference/terminology.md`;
-4. Concept Design method → `docs/canonical/reference/concept-design-method.md`;
-5. AP-01–AP-32 → `docs/canonical/invariants/architectural-principles.md`;
-6. SP-01–SP-15/security-governance → `docs/canonical/policies/security-governance.md`;
-7. ecosystem lifecycles → `docs/canonical/reference/ecosystem-lifecycles.md`;
-8. MVP boundary → `docs/canonical/policies/mvp-boundary.md`;
-9. shared glossary → `docs/canonical/reference/glossary.md`.
+All 24 concept records and the SYN family are currently `candidate_ready`. Therefore **Phase 002/003 remain current authority** for concept/SYN questions until the atomic cutover succeeds.
 
-Their former Phase-001/glossary owners are provenance/design history for these records. CKR-B intentionally leaves the 24 concept definitions and all stable-ID families with their later-group current owners.
+Candidate concept resources live under [`../canonical/concepts/`](../canonical/concepts/). SYN candidates are six bounded contract resources under `docs/canonical/contracts/synchronization/`; every SYN-001–SYN-035 retains an explicit heading/identity.
 
-## Semantic-conservation disposition
+### Conservation rules
 
-CKR-B preserved product purpose/non-goals, actor authority separations, foundational non-equivalences, Concept Design discipline, **AP-01–AP-32**, **SP-01–SP-15**, fourteen lifecycle families/non-rewriting history, thirteen MVP capability areas, **Scenarios A–K**, and the shared current vocabulary.
+CKR-C must preserve concept independence and the accepted state/action/boundary model. Synchronization coordinates concepts and **does not create a 25th umbrella concept**. In particular it preserves:
 
-Phase-001 roadmap/open-question/handoff material remains historical. No A4 semantic contradiction was required to complete CKR-B.
+- Expectation ≠ Baseline;
+- Observation ≠ Assessment;
+- Change Intent ≠ Deployment ≠ Change;
+- execution success ≠ output existence ≠ freshness ≠ data health;
+- Lineage/reachability ≠ encounter/exposure ≠ Impact ≠ cause;
+- Investigation lead/localization/closure ≠ Causal Claim status/confirmation;
+- Impact candidate ≠ exposure ≠ effect ≠ consequence ≠ causal attribution;
+- Capability Authorization ≠ Assertion Authority ≠ evidence sufficiency ≠ enforcement;
+- Gate readiness ≠ decision ≠ delivery ≠ enforcement ≠ execution;
+- Execution Gate ≠ Propagation Safeguard;
+- Safeguard proposal ≠ enforcement ≠ prevention ≠ release ≠ recovery;
+- Explanation/Annotation ≠ independent truth;
+- event/effective time ≠ knowledge/record time.
 
-## Next eligible group
+Detailed comparison: [`ckr_c_semantic_conservation_matrix.md`](ckr_c_semantic_conservation_matrix.md).
 
-### CKR-C — Concept Catalog
+### Explicit exclusions
 
-CKR-C owns canonicalization of the **24 accepted concepts** plus their SYN-001–SYN-035 synchronization ownership. Those records remain `legacy_authoritative` until CKR-C explicitly begins and follows the same candidate-review → atomic-cutover → closure-validation discipline.
-
-Completion of CKR-B does **not** automatically start CKR-C.
+CKR-C does **not** migrate `reference.authority_vocabulary` or REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH stable families. It does not create product code, reopen accepted architecture, or promote vendor/tool/model output into DMTZ truth.
 
 ## Implementation gate
 
 **Implementation 001-A remains BLOCKED until CKR-K accepts the retrofit.**
 
-The accepted ADF exit remains valid. `ADF-G-XT01` remains provider-runtime verification debt; `DBX-SKILL-RUN-01` remains a future Implementation 001-A obligation after CKR unlock.
+Completion of CKR-C will not automatically start CKR-D; the next group requires explicit human selection.
