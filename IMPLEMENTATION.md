@@ -4,9 +4,9 @@ Phase 010, the Agentic Development Foundation, its execution exit, and the Datab
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-B; NEXT CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-B; IN EXECUTION CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-A and CKR-B are complete/accepted. CKR-C is the next eligible documentation-authority group; it is not active until explicitly selected. Product implementation remains blocked until CKR-K.
+CKR-C is actively migrating the 24 accepted concepts plus SYN-001–SYN-035. Candidate targets do not supersede Phase 002/003 until atomic cutover. Product implementation remains blocked until CKR-K.
 
 ## Current semantic routing
 
@@ -17,11 +17,11 @@ CKR-A and CKR-B are complete/accepted. CKR-C is the next eligible documentation-
 5. `docs/implementation/README.md` — implementation block.
 6. root `AGENTS.md` — shared instructions.
 
-CKR-B canonicalized product definition, actors, terminology, Concept Design method, AP-01–32, SP-01–15, lifecycles, MVP boundary and shared glossary. The 24 concepts and all stable-ID families remain with their later-group legacy owners.
+CKR-B foundation/glossary resources are canonical. CKR-C concept/SYN resources are candidates only; Phase 002/003 remain current owners while their states are `candidate_ready`.
 
 ## Current work
 
-**CKR-C — Concept Catalog: NEXT / READY.**
+**CKR-C — Concept Catalog: IN EXECUTION / CANDIDATE REVIEW.**
 
 **Implementation 001-A — BLOCKED until CKR-K.**
 
