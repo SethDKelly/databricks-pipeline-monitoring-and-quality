@@ -10,21 +10,10 @@ alwaysApply: false
 
 **CKR status mirror: COMPLETE CKR-A–CKR-C; IN EXECUTION CKR-D; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-D is in execution; product implementation remains blocked until CKR-K.
+CKR-D is in execution after atomic cutover; product implementation remains blocked until CKR-K.
 
-Primary shared authority remains root `AGENTS.md`; `docs/agentic_development_foundation/authority_scope_policy.md`; `knowledge/index.md` as optional routing only; `docs/canonical_knowledge_retrofit/README.md`; and `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`.
+Primary shared authority remains root `AGENTS.md`; `docs/agentic_development_foundation/authority_scope_policy.md`; `knowledge/index.md` as optional routing only; CKR README; and the ownership inventory.
 
-Current lookup:
+Lookup: `canonicalized` → canonical owner; `legacy_authoritative`/`candidate_ready` → legacy owner; phase/decision history is provenance/rationale after migration. Foundation/glossary, concepts/SYN, authority vocabulary, REF and AUTH are canonicalized. HLTH/OPS/EXPL/INTG/ARCH remain later-group legacy authority.
 
-1. Read CKR README for live state.
-2. Consult the ownership inventory when unclear.
-3. `canonicalized` → use inventoried canonical owner.
-4. `legacy_authoritative` / `candidate_ready` → use inventoried legacy owner.
-5. Use phase/decision history for provenance/rationale/history, not alternate current truth.
-6. `knowledge/index.md` never creates semantic authority.
-
-Concepts and SYN are canonical. CKR-D authority vocabulary/REF/AUTH files are candidates only until atomic cutover. Do not infer authority from recency, first search hit, synchronization order, Git history, OKF, vendor skill, tool memory or path presence.
-
-```bash
-python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
-```
+Do not infer authority from recency, search order, Git history, OKF, vendor skill, tool memory or path presence.

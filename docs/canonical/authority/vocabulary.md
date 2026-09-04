@@ -4,7 +4,7 @@
 
 **Kind:** AUTHORITY
 
-**Authority:** CANDIDATE / NOT CURRENT AUTHORITY
+**Authority:** CANONICAL CURRENT AUTHORITY
 
 **Migration record:** `reference.authority_vocabulary`
 

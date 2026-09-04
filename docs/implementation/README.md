@@ -1,6 +1,6 @@
 # DMTZ Implementation Program
 
-**Status:** BLOCKED — CKR-A–CKR-C COMPLETE / CKR-D IN EXECUTION
+**Status:** BLOCKED — CKR-A–CKR-C COMPLETE / CKR-D IN EXECUTION AFTER CUTOVER
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
@@ -8,16 +8,6 @@
 
 Product implementation remains blocked while CKR completes documentation-authority migration.
 
-Current semantic routing uses the ownership inventory. CKR-B foundation/glossary plus CKR-C concepts/SYN resolve to canonical owners. CKR-D authority vocabulary/REF/AUTH are `candidate_ready`, so Phase 004/005 remain current authority until atomic cutover.
+CKR-D has atomically cut over the authority vocabulary, REF-001–030 and AUTH-001–053 to canonical owners; closure validation remains required before CKR-D can be accepted. HLTH/OPS/EXPL/INTG/ARCH retain assigned legacy owners.
 
-Current work:
-
-- CKR-A–C — COMPLETE / ACCEPTED;
-- CKR-D — IN EXECUTION;
-- Implementation 001-A — NOT ACTIVE / BLOCKED until CKR-K.
-
-Accepted ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500.
-
-```bash
-python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
-```
+Current work: CKR-A–C COMPLETE / ACCEPTED; CKR-D IN EXECUTION; Implementation 001-A NOT ACTIVE / BLOCKED until CKR-K.

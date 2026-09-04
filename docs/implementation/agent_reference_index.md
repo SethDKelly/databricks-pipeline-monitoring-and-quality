@@ -10,21 +10,11 @@
 |---|---|
 | CKR status | `docs/canonical_knowledge_retrofit/README.md` |
 | Current semantic owner | `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` |
-| Canonical concepts | `docs/canonical/concepts/README.md` |
-| SYN-001–035 | `docs/canonical/contracts/synchronization/` |
-| CKR-D candidate comparison | `docs/canonical_knowledge_retrofit/ckr_d_semantic_conservation_matrix.md` |
+| Concepts | `docs/canonical/concepts/README.md` |
+| SYN/REF contracts | `docs/canonical/contracts/README.md` |
+| Authority/AUTH | `docs/canonical/authority/README.md` |
+| CKR-D comparison | `docs/canonical_knowledge_retrofit/ckr_d_semantic_conservation_matrix.md` |
 | Design history | `docs/design_history/README.md` |
-| Implementation status | `docs/implementation/README.md` |
-| Shared instructions | root `AGENTS.md` |
-| Optional routing | `knowledge/index.md` |
 | Conformance | `scripts/agentic/run_conformance.py` |
 
-## Current state
-
-- CKR-A–C — COMPLETE / ACCEPTED.
-- CKR-D — IN EXECUTION.
-- Implementation 001-A — BLOCKED until CKR-K.
-
-Concepts/SYN are canonical. CKR-D authority vocabulary/REF/AUTH targets are candidates only while their inventory state is `candidate_ready`; Phase 004/005 remain current. HLTH/OPS/EXPL/INTG/ARCH remain later-group legacy owners.
-
-ADF-EX-17 / `ADF-G-XT01` remains deferred; `DBX-SKILL-RUN-01` remains future 001-A work.
+CKR-D has cut over authority vocabulary + REF + AUTH; closure validation remains. HLTH/OPS/EXPL/INTG/ARCH remain later-group legacy authority. Implementation 001-A remains blocked until CKR-K.
