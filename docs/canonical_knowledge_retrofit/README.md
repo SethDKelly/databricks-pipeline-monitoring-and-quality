@@ -1,6 +1,6 @@
 # Canonical Knowledge & Documentation Authority Retrofit
 
-**Status:** CKR-A–CKR-G COMPLETE / ACCEPTED — CKR-H IN EXECUTION / CUTOVER VALIDATION — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
+**Status:** CKR-A–CKR-G COMPLETE / ACCEPTED — CKR-H IN EXECUTION — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
 
 **CKR status mirror: COMPLETE CKR-A–CKR-G; IN EXECUTION CKR-H; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
@@ -21,10 +21,12 @@ Ownership is declared in [`canonical_ownership_inventory.json`](canonical_owners
 - **CKR-E — Health, Quality, Metrics & Timing: COMPLETE / ACCEPTED.**
 - **CKR-F — Lineage, Change, Investigation, Impact & Control: COMPLETE / ACCEPTED.**
 - **CKR-G — Questioning, Explanation & Experience Contracts: COMPLETE / ACCEPTED.**
-- **CKR-H — Integration, Source Authority & Evidence Availability: IN EXECUTION — CUTOVER VALIDATION.**
+- **CKR-H — Integration, Source Authority & Evidence Availability: IN EXECUTION.**
 - **CKR-I — Technical Architecture: PLANNED.**
 - **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: PLANNED.**
 - **CKR-K — Consolidation, Provenance Validation & Exit Review: PLANNED.**
+
+CKR-H has completed its atomic INTG authority cutover and is validating that cutover before closure.
 
 ## Current canonical scope through CKR-H cutover
 
