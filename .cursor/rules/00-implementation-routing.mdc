@@ -8,9 +8,9 @@ alwaysApply: false
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A; NEXT CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A; IN EXECUTION CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-A is complete; CKR-B is next/ready. Product implementation remains blocked until CKR-K.
+CKR-B is in execution. Its nine foundation/glossary targets are `candidate_ready`; the inventoried legacy sources remain current authority until atomic cutover. Product implementation remains blocked until CKR-K.
 
 ## Current semantic questions
 
@@ -27,6 +27,7 @@ Primary controls:
 - `docs/agentic_development_foundation/authority_scope_policy.md` — A1–A4;
 - `docs/canonical_knowledge_retrofit/authority_model.md` — canonical vs history;
 - `docs/canonical_knowledge_retrofit/migration_contract.md` — atomic cutover/no dual authority;
+- `docs/canonical_knowledge_retrofit/ckr_b_semantic_conservation_matrix.md` — CKR-B review evidence;
 - `docs/implementation/README.md` — implementation block;
 - `.agents/skills/<name>/SKILL.md` — workflows/overlays;
 - `scripts/agentic/resolve_stable_id.py` — occurrence discovery;
@@ -34,7 +35,7 @@ Primary controls:
 
 Do not infer authority from phase recency, first search hit, Git history, OKF summary, vendor skill, tool memory or mere presence under `docs/canonical/`.
 
-CKR is owner-path/routing migration, not semantic redesign. Genuine conflicts require A4 change control. Stable-ID meaning survives path migration.
+CKR-B may consolidate accepted current foundation meaning but may not absorb CKR-C–I domains, create product code, or invent semantics. Genuine conflicts require A4 change control. Stable-ID meaning survives path migration.
 
 ADF-EX-17 / `ADF-G-XT01` remains deferred runtime verification. `DBX-SKILL-RUN-01` remains a future 001-A obligation after CKR unlock. Reviewed Databricks vendor skills remain operational guidance only.
 
