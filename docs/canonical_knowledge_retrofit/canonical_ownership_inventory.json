@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "status": "ckr_a_baseline",
+  "status": "ckr_b_candidate_review",
   "authority_model": "docs/canonical_knowledge_retrofit/authority_model.md",
   "migration_contract": "docs/canonical_knowledge_retrofit/migration_contract.md",
   "canonical_root": "docs/canonical",
@@ -17,7 +17,7 @@
       "record_id": "foundation.product_definition",
       "kind": "foundation",
       "migration_group": "CKR-B",
-      "migration_state": "legacy_authoritative",
+      "migration_state": "candidate_ready",
       "current_owner": "docs/foundation/001_product_definition.md",
       "target_owner": "docs/canonical/reference/product-definition.md"
     },
@@ -25,7 +25,7 @@
       "record_id": "foundation.actors_stakeholders",
       "kind": "foundation",
       "migration_group": "CKR-B",
-      "migration_state": "legacy_authoritative",
+      "migration_state": "candidate_ready",
       "current_owner": "docs/foundation/002_actors_and_stakeholders.md",
       "target_owner": "docs/canonical/reference/actors-and-stakeholders.md"
     },
@@ -33,7 +33,7 @@
       "record_id": "foundation.terminology",
       "kind": "foundation",
       "migration_group": "CKR-B",
-      "migration_state": "legacy_authoritative",
+      "migration_state": "candidate_ready",
       "current_owner": "docs/foundation/003_terminology.md",
       "target_owner": "docs/canonical/reference/terminology.md"
     },
@@ -41,7 +41,7 @@
       "record_id": "foundation.concept_design_method",
       "kind": "foundation",
       "migration_group": "CKR-B",
-      "migration_state": "legacy_authoritative",
+      "migration_state": "candidate_ready",
       "current_owner": "docs/foundation/004_concept_design_method.md",
       "target_owner": "docs/canonical/reference/concept-design-method.md"
     },
@@ -49,7 +49,7 @@
       "record_id": "foundation.architectural_principles",
       "kind": "invariant",
       "migration_group": "CKR-B",
-      "migration_state": "legacy_authoritative",
+      "migration_state": "candidate_ready",
       "current_owner": "docs/foundation/005_architectural_principles.md",
       "target_owner": "docs/canonical/invariants/architectural-principles.md"
     },
@@ -57,7 +57,7 @@
       "record_id": "foundation.security_governance_policy",
       "kind": "policy",
       "migration_group": "CKR-B",
-      "migration_state": "legacy_authoritative",
+      "migration_state": "candidate_ready",
       "current_owner": "docs/foundation/006_security_governance_and_policy_model.md",
       "target_owner": "docs/canonical/policies/security-governance.md"
     },
@@ -65,7 +65,7 @@
       "record_id": "foundation.ecosystem_lifecycles",
       "kind": "foundation",
       "migration_group": "CKR-B",
-      "migration_state": "legacy_authoritative",
+      "migration_state": "candidate_ready",
       "current_owner": "docs/foundation/007_ecosystem_lifecycles.md",
       "target_owner": "docs/canonical/reference/ecosystem-lifecycles.md"
     },
@@ -73,7 +73,7 @@
       "record_id": "foundation.mvp_boundary",
       "kind": "policy",
       "migration_group": "CKR-B",
-      "migration_state": "legacy_authoritative",
+      "migration_state": "candidate_ready",
       "current_owner": "docs/foundation/008_mvp_boundary.md",
       "target_owner": "docs/canonical/policies/mvp-boundary.md"
     },
@@ -81,7 +81,7 @@
       "record_id": "reference.glossary",
       "kind": "reference",
       "migration_group": "CKR-B",
-      "migration_state": "legacy_authoritative",
+      "migration_state": "candidate_ready",
       "current_owner": "docs/reference/glossary.md",
       "target_owner": "docs/canonical/reference/glossary.md"
     },
