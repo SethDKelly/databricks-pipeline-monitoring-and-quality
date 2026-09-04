@@ -4,9 +4,9 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-B; NEXT CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-B; IN EXECUTION CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-The ADF exit remains accepted. CKR-A and CKR-B are complete/accepted; CKR-C is the next eligible group but is not active until explicitly selected. Product implementation remains blocked until CKR-K.
+The ADF exit remains accepted. CKR-A and CKR-B are complete/accepted; CKR-C is in execution. Product implementation remains blocked until CKR-K.
 
 Current DMTZ semantic ownership is determined record-by-record by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`:
 
@@ -14,13 +14,13 @@ Current DMTZ semantic ownership is determined record-by-record by `docs/canonica
 - `canonicalized` → inventoried `docs/canonical/` target is current;
 - `history_only` → provenance/rationale only.
 
-CKR-B canonicalized product definition, actors/stakeholders, foundational terminology, Concept Design method, AP-01–AP-32, SP-01–SP-15/security-governance, ecosystem lifecycles, MVP boundary and shared glossary. Their Phase-001/legacy glossary sources are provenance. The 24 concepts and all stable-ID families remain with their later-group current owners.
+CKR-B foundation/glossary records are canonical. During CKR-C candidate review, all 24 concept targets and six SYN contract targets are `candidate_ready`; Phase 002/003 remain current concept/SYN authority until atomic cutover.
 
 Authority order: current semantic owner → this `AGENTS.md` → live CKR/implementation status → accepted ADF scope/security mechanics → DMTZ workflows/overlays → reviewed vendor operational guidance → tool/personal memory.
 
 ## Current-truth vs history
 
-For a `canonicalized` record, answer current questions from its canonical owner. Use phase/decision/scenario/exit records for provenance, rationale, historical comparison or explicit semantic-change review. Search order, recency, OKF summaries, canonical-path presence and tool memory do not establish authority.
+For a `canonicalized` record, answer current questions from its canonical owner. For a `candidate_ready` CKR-C concept/SYN record, use the inventoried Phase-002/003 owner. Use phase/decision/scenario/exit records for provenance, rationale, historical comparison or explicit semantic-change review. Search order, recency, OKF summaries, canonical-path presence and tool memory do not establish authority.
 
 CKR migration follows `docs/canonical_knowledge_retrofit/authority_model.md` and `migration_contract.md`. Genuine semantic conflicts require A4 adjudication.
 
@@ -38,11 +38,11 @@ Use the shortest path:
 
 Do not preload phases/contracts/knowledge/vendor skills/history. `knowledge/` is routing only.
 
-Accepted stable ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500. Their owner paths change only through their assigned CKR groups.
+Accepted stable ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500. CKR-C may migrate only the 24 concepts plus SYN-001–035; later stable families retain existing owners.
 
 ## Semantic conservation
 
-Preserve at minimum Observation ≠ Assessment; Expectation ≠ Baseline; execution success ≠ freshness/data quality; missing evidence ≠ negative truth; current ≠ historical/as-known; later evidence ≠ evidence known then; Lineage ≠ exposure ≠ Impact ≠ cause; authentication ≠ Capability Authorization ≠ Assertion Authority; current disclosure ≠ historical authorization/truth; passive monitoring ≠ active Gate; Gate readiness ≠ decision ≠ enforcement ≠ execution; Gate ≠ Safeguard; and model/search output cannot manufacture truth, authority, evidence sufficiency, causal confirmation, Impact or control decisions.
+Preserve at minimum Observation ≠ Assessment; Expectation ≠ Baseline; execution success ≠ output existence ≠ freshness/data quality; missing evidence ≠ negative truth; current ≠ historical/as-known; Lineage/reachability ≠ exposure ≠ Impact ≠ cause; Investigation lead/closure ≠ causal confirmation; authentication ≠ Capability Authorization ≠ Assertion Authority; Capability Authorization ≠ evidence sufficiency ≠ enforcement; Gate readiness ≠ decision ≠ delivery ≠ enforcement ≠ execution; Gate ≠ Safeguard; Safeguard enforcement ≠ prevented exposure ≠ release/recovery; and model/search output cannot manufacture truth, authority, evidence sufficiency, causal confirmation, Impact or control decisions.
 
 ## Residuals / conformance
 
