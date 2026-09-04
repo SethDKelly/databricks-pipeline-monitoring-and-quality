@@ -2,9 +2,9 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-G; IN EXECUTION CKR-H; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-H; NEXT CKR-I; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-H has performed the atomic INTG cutover and remains in validation/closure. Product implementation remains blocked until CKR-K.
+CKR-H is complete/accepted. CKR-I is next/ready but unstarted. Product implementation remains blocked until CKR-K.
 
 ## Current semantic routing
 

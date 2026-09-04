@@ -4,19 +4,19 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-G; IN EXECUTION CKR-H; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-H; NEXT CKR-I; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-G is complete/accepted. CKR-H has performed atomic INTG cutover and is validating closure. Product implementation remains blocked until CKR-K.
+CKR-H is complete/accepted. CKR-I is next/ready but unstarted until explicitly selected. Product implementation remains blocked until CKR-K.
 
 Current semantic ownership is selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`: `canonicalized` → inventoried `docs/canonical/` owner; `legacy_authoritative` / `candidate_ready` → inventoried legacy owner; `history_only` → provenance/rationale only.
 
-Foundation/glossary, all 24 concepts, SYN-001–035, authority vocabulary, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160 and INTG-001–270 are canonicalized. Phase 001–009 sources are provenance for migrated meanings. ARCH remains later-group legacy authority.
+Foundation/glossary, all 24 concepts, SYN-001–035, authority vocabulary, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160 and INTG-001–270 are canonicalized. Phase 001–009 sources are provenance for migrated meanings. ARCH remains Phase 010 legacy authority under CKR-I.
 
 Authority order: current semantic owner → root `AGENTS.md` → live CKR/implementation status → accepted ADF scope/security mechanics → DMTZ workflows/overlays → reviewed vendor operational guidance → tool/personal memory.
 
 ## Human-directed boundary
 
-Follow `docs/agentic_development_foundation/authority_scope_policy.md`: A1 review; A2 bounded change plus required validation/status/traceability; A3 external/destructive/scope-expanding requires explicit authorization; A4 semantic/architecture change requires explicit change control. CKR-H does not authorize CKR-I or product implementation.
+Follow `docs/agentic_development_foundation/authority_scope_policy.md`: A1 review; A2 bounded change plus required validation/status/traceability; A3 external/destructive/scope-expanding requires explicit authorization; A4 semantic/architecture change requires explicit change control. Completing CKR-H does not authorize CKR-I or product implementation.
 
 ## Context and semantic conservation
 

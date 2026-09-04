@@ -1,8 +1,8 @@
 # Canonical Knowledge & Documentation Authority Retrofit
 
-**Status:** CKR-A–CKR-G COMPLETE / ACCEPTED — CKR-H IN EXECUTION — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
+**Status:** CKR-A–CKR-H COMPLETE / ACCEPTED — CKR-I NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
 
-**CKR status mirror: COMPLETE CKR-A–CKR-G; IN EXECUTION CKR-H; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-H; NEXT CKR-I; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
 ## Purpose
 
@@ -21,14 +21,12 @@ Ownership is declared in [`canonical_ownership_inventory.json`](canonical_owners
 - **CKR-E — Health, Quality, Metrics & Timing: COMPLETE / ACCEPTED.**
 - **CKR-F — Lineage, Change, Investigation, Impact & Control: COMPLETE / ACCEPTED.**
 - **CKR-G — Questioning, Explanation & Experience Contracts: COMPLETE / ACCEPTED.**
-- **CKR-H — Integration, Source Authority & Evidence Availability: IN EXECUTION.**
-- **CKR-I — Technical Architecture: PLANNED.**
+- **CKR-H — Integration, Source Authority & Evidence Availability: COMPLETE / ACCEPTED.**
+- **CKR-I — Technical Architecture: NEXT / READY.**
 - **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: PLANNED.**
 - **CKR-K — Consolidation, Provenance Validation & Exit Review: PLANNED.**
 
-CKR-H has completed its atomic INTG authority cutover and is validating that cutover before closure.
-
-## Current canonical scope through CKR-H cutover
+## Current canonical scope through CKR-H
 
 Foundation/glossary, all 24 concepts, SYN-001–SYN-035, authority vocabulary, REF-001–REF-030, AUTH-001–AUTH-053, HLTH-001–HLTH-066, OPS-001–OPS-123, EXPL-001–EXPL-160 and **INTG-001–INTG-270** resolve to canonical owners.
 
@@ -40,7 +38,7 @@ See [`ckr_h_semantic_conservation_matrix.md`](ckr_h_semantic_conservation_matrix
 
 ## Remaining ownership
 
-ARCH-001–500 remains legacy-authoritative under Phase 010 until CKR-I. **CKR-I is not active and CKR-H does not select architecture.**
+ARCH-001–500 remains legacy-authoritative under Phase 010 until CKR-I. **CKR-I is next/ready but is not active until explicitly selected by the human.** Completing CKR-H does not authorize CKR-I.
 
 ## Implementation gate
 
