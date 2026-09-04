@@ -1,14 +1,40 @@
 # DMTZ Implementation Program
 
-**Status:** READY — AGENTIC FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT / ELIGIBLE
+**Status:** BLOCKED — CKR-A COMPLETE; CKR-B NEXT / READY
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-## Purpose and authority
+**CKR status mirror: COMPLETE CKR-A; NEXT CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-This directory is the system of record for realization of the frozen DMTZ product, integration and technical architecture. It translates the accepted design stack through Phase 010 into executable software, infrastructure, validation and production-readiness work; it does not create a new truth model.
+## Authority and current gate
 
-Accepted incoming ranges remain authoritative:
+This directory owns implementation-program progression. Product implementation remains blocked while the **Canonical Knowledge & Documentation Authority Retrofit (CKR)** moves current documentation authority out of chronology-first phase ownership before code/test traceability begins.
+
+The accepted ADF exit remains valid and is not reopened by CKR.
+
+Current required work:
+
+- **CKR-A — COMPLETE / ACCEPTED**;
+- **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: NEXT / READY**;
+- **Implementation 001-A — NOT ACTIVE / BLOCKED until CKR-K exit acceptance**.
+
+Use:
+
+- `../canonical_knowledge_retrofit/README.md` — live CKR progression;
+- `../canonical_knowledge_retrofit/canonical_ownership_inventory.json` — current semantic ownership;
+- `../canonical/README.md` — target current-truth namespace;
+- `../design_history/README.md` — provenance/history role;
+- root `AGENTS.md` — shared behavior/authority instructions.
+
+## Documentation authority during CKR
+
+- `legacy_authoritative` / `candidate_ready` → inventoried legacy owner remains current truth;
+- `canonicalized` → inventoried `docs/canonical/` target is sole current owner;
+- `history_only` → provenance/rationale only.
+
+Do not reconstruct a canonicalized current rule from design chronology. Conversely, do not promote a candidate or structural canonical path before cutover.
+
+Accepted stable-ID ranges remain unchanged:
 
 - SYN-001–SYN-035;
 - REF-001–REF-030;
@@ -19,106 +45,34 @@ Accepted incoming ranges remain authoritative:
 - INTG-001–INTG-270;
 - ARCH-001–ARCH-500.
 
-Status authority:
+CKR migrates owner paths/routing without silently changing accepted semantics.
 
-- `docs/README.md` — design progression;
-- **this file** — implementation-program progression;
-- `../agentic_development_foundation/README.md` and `execution_exit_review.md` — completed ADF/addendum/exit authority;
-- active implementation package README/group plan — package-local progression.
+## ADF / Databricks residuals
 
-Code, tests, knowledge, DMTZ/vendor skills, adapters, security policy or CI may not silently supersede accepted design/architecture contracts.
+ADF-EX-17 remains **DEFERRED / WAIVED — BOUNDED VERIFICATION DEBT**; `ADF-G-XT01` remains open and Cursor/Claude Code/Codex remain runtime-`unverified`.
 
-## Agentic Development Foundation — EXIT ACCEPTED
-
-Completed and accepted:
-
-- ADF-A — shared authority and human-directed A1–A4 scope;
-- ADF-B — OKF v0.2 portable knowledge routing;
-- ADF-C — thin Cursor/Claude/Codex instruction adapters;
-- ADF-D — canonical portable workflows under `.agents/skills/`;
-- ADF-E — shortest-path context, exact stable references, maintenance and context budgets;
-- ADF-F — unified conformance, drift detection, negative controls and CI;
-- ADF-G — compatibility/onboarding baseline;
-- ADF-H — security, trust, lifecycle and governance;
-- Databricks Agent Skills Integration Addendum;
-- Agentic Development Foundation Execution Exit Review / Consolidation.
-
-Final exit disposition:
-
-- **ADF-EX-01–ADF-EX-16 — PASS**;
-- **ADF-EX-17 — DEFERRED / WAIVED — BOUNDED VERIFICATION DEBT**;
-- **ADF-EX-18–ADF-EX-20 — PASS**.
-
-`ADF-G-XT01` remains open: Cursor, Claude Code and Codex stay runtime-`unverified` until actual bounded provider-runtime evidence is recorded. That does not block ordinary IDE/CLI development or Implementation 001-A under the accepted bounded waiver.
-
-`DBX-SKILL-RUN-01` remains an **Implementation 001-A** obligation: exact local Databricks Agent Skills materialization/version verification after a compatible CLI environment is established.
-
-Canonical exit evidence: `../agentic_development_foundation/execution_exit_review.md`.
-
-## Databricks developer dependency profile
-
-- accepted addendum: `../agentic_development_foundation/databricks_agent_skills_addendum.md` / `databricks_agent_skills_addendum_execution_review.md`;
-- reviewed vendor profile: `../agentic_development_foundation/databricks_vendor_skills_profile.json`;
-- canonical DMTZ overlays: `../../.agents/skills/dmtz-databricks-*/SKILL.md`;
-- local vendor materialization helper: `scripts/agentic/materialize_databricks_skills.py`;
-- local vendor files: ignored `.databricks/agent-skills/`, never canonical DMTZ truth;
-- accepted vendor set: core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect;
-- automatic new vendor skills, initial model/AI skills, and managed Databricks MCP servers are not authorized by the accepted addendum.
+The accepted Databricks vendor set remains core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect. `DBX-SKILL-RUN-01` remains a future Implementation 001-A environment obligation after CKR unlocks implementation. Model/AI skills and managed Databricks MCP servers remain deferred.
 
 ## Implementation sequence
 
-| Implementation | Outcome | Core MVP? |
-|---|---|---:|
-| **001 — Executable Foundations & Walking Skeleton** | Buildable repo, executable contracts/invariants, minimal Delta history, first Databricks slice, first evidence-to-Statement-IR question | Yes |
-| **002 — Identity, Scope, Authority & Authorization Runtime** | Enterprise identity/governance/policy runtime and disclosure boundary | Yes |
-| **003 — Source Acquisition, Capability & Evidence Reliability** | Production-shaped Databricks/GitHub acquisition, reconciliation, coverage and integration health | Yes |
-| **004 — Runtime Provenance, Health, Quality, Change & Lineage** | Passive monitoring evidence spine and representative Impact evidence | Yes |
-| **005 — Investigation, Impact Reasoning & Historical Replay** | Deterministic Investigation/Causal Claim/replay/Statement reasoning | Yes |
-| **006 — Serving, Explanation, Basis Inspection & User Experience** | Governed API/UI product experience | Yes |
-| **007 — Operationalization, Security, Resilience, SLO & Cost** | Production-shaped deployment/operations | Yes |
-| **008 — MVP Pilot Validation & Release Candidate** | Full MVP scenario proof and pilot release candidate | Yes |
-| **009 — Enterprise Expansion, Scale & Optional Integrations** | Multi-tenant/scale hardening plus optional integrations/accelerators | Enterprise |
-| **010 — Active Control & Enterprise Control Plane** | Execution Gate / Propagation Safeguard realization | Conditional |
-| **011 — Production Graduation & Operational Acceptance** | Production deployment, burn-in, runbooks, support ownership and final conformance | GA |
+1. 001 — Executable Foundations & Walking Skeleton
+2. 002 — Identity, Scope, Authority & Authorization Runtime
+3. 003 — Source Acquisition, Capability & Evidence Reliability
+4. 004 — Runtime Provenance, Health, Quality, Change & Lineage
+5. 005 — Investigation, Impact Reasoning & Historical Replay
+6. 006 — Serving, Explanation, Basis Inspection & UX
+7. 007 — Operationalization, Security, Resilience, SLO & Cost
+8. 008 — MVP Pilot Validation & Release Candidate
+9. 009 — Enterprise Expansion, Scale & Optional Integrations
+10. 010 — Active Control & Enterprise Control Plane — conditional
+11. 011 — Production Graduation & Operational Acceptance
 
-Completion profiles:
+Completion profiles remain unchanged: MVP 001–008; enterprise passive monitoring 001–009 + 011; full active-control enterprise 001–011.
 
-- MVP: 001–008;
-- enterprise passive monitoring: 001–009 + 011, skipping 010 if active control is not committed;
-- full active-control enterprise: 001–011.
-
-## Current implementation state
-
-**Implementation 001 — Executable Foundations & Walking Skeleton: READY.**
-
-**001-A — Developer Environment, Repository Structure & Engineering Standards: NEXT / ELIGIBLE.**
-
-Beginning 001-A still requires explicit human selection. Completion of the foundation does not automatically begin implementation work.
-
-## Dependency and implementation rules
-
-The sequence is dependency-oriented. Downstream work may not invent independent semantics. Preserve execution success ≠ data health, freshness ≠ execution success, Observation ≠ Assessment, current ≠ historical/as-known, source availability ≠ authority, Lineage ≠ exposure ≠ Impact ≠ causality, missing evidence ≠ negative truth, and model/search output cannot manufacture truth/authority/confirmation/control decisions.
-
-Reviewed vendor guidance does not alter these distinctions.
-
-## Agent/developer routing
-
-- shared constitution: root `AGENTS.md`;
-- portable discovery: `../../knowledge/index.md` when needed;
-- compact family/path/platform bridge: [`agent_reference_index.md`](agent_reference_index.md);
-- canonical DMTZ workflows/overlays: `../../.agents/skills/`;
-- conformance: `../agentic_development_foundation/conformance_policy.md` and `scripts/agentic/run_conformance.py`;
-- Databricks addendum/profile: `../agentic_development_foundation/databricks_agent_skills_addendum.md` / `databricks_vendor_skills_profile.json`;
-- runtime compatibility evidence: `../agentic_development_foundation/runtime_compatibility_evidence.json`;
-- security/trust/lifecycle: `../agentic_development_foundation/security_trust_lifecycle_policy.md` / `agentic_change_governance.md`;
-- foundation exit: `../agentic_development_foundation/execution_exit_review.md`.
-
-Autonomous execution/orchestration remains outside the accepted foundation and is not an Implementation 001 entry capability.
-
-## Canonical conformance command
+## Conformance
 
 ```bash
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-Agentic configuration PASS/FAIL is distinct from DMTZ domain/runtime health, coding-agent runtime certification and target Databricks capability.
+PASS is repository agentic/documentation-authority conformance, not DMTZ domain health, provider-runtime proof, target Databricks capability or production readiness.

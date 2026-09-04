@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""High-confidence secret/sensitive-file checks for checked-in agentic surfaces.
+"""High-confidence secret/sensitive-file checks for checked-in agentic/authority surfaces.
 
 This is a narrow repository guard, not a replacement for organization-wide secret
 scanning. It intentionally favors high-confidence credential forms to avoid turning
@@ -20,6 +20,9 @@ ROOTS = (
     '.cursor',
     'knowledge',
     'docs/agentic_development_foundation',
+    'docs/canonical_knowledge_retrofit',
+    'docs/canonical',
+    'docs/design_history',
     'docs/implementation/AGENTS.md',
     'docs/implementation/agent_reference_index.md',
 )
@@ -82,7 +85,7 @@ def main() -> int:
     for path in candidate_files(repo):
         rel = path.relative_to(repo)
         if is_forbidden_name(path):
-            errors.append(f'{rel}: secret-bearing or local-personal filename is not allowed in checked-in agentic surfaces')
+            errors.append(f'{rel}: secret-bearing or local-personal filename is not allowed in checked-in agentic/authority surfaces')
             continue
         if path.suffix.lower() not in TEXT_SUFFIXES and path.name not in {'AGENTS.md', 'CLAUDE.md'}:
             continue
@@ -102,7 +105,7 @@ def main() -> int:
 
     for error in errors:
         print(f'ERROR {error}')
-    print(f'Agentic secret scan: {len(errors)} error(s), {scanned} text file(s) scanned')
+    print(f'Agentic/authority secret scan: {len(errors)} error(s), {scanned} text file(s) scanned')
     return 1 if errors else 0
 
 

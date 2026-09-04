@@ -1,66 +1,55 @@
 # DMTZ Implementation — Start Here
 
-Phase 010 — Technical Architecture, ADF-A through ADF-H, the Databricks Agent Skills Integration Addendum, and the **Agentic Development Foundation Execution Exit Review** are complete/accepted.
+Phase 010, the Agentic Development Foundation, its execution exit, and the Databricks Agent Skills Integration Addendum are complete/accepted.
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
+**CKR status mirror: COMPLETE CKR-A; NEXT CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+
+A later **Canonical Knowledge & Documentation Authority Retrofit (CKR)** now blocks product implementation until CKR-K. CKR-A established the authority/migration model; CKR-B is next/ready. The accepted ADF exit is not reopened.
+
 ## Start here
 
-1. [`docs/implementation/README.md`](docs/implementation/README.md) — live implementation-program authority.
-2. [`docs/implementation/001_executable_foundations_walking_skeleton/README.md`](docs/implementation/001_executable_foundations_walking_skeleton/README.md) — Implementation 001 package authority.
-3. [`docs/agentic_development_foundation/execution_exit_review.md`](docs/agentic_development_foundation/execution_exit_review.md) — accepted foundation exit and residual debt.
-4. [`docs/agentic_development_foundation/README.md`](docs/agentic_development_foundation/README.md) — completed ADF/addendum authority.
-5. [`docs/agentic_development_foundation/adf_g_progression_exception.md`](docs/agentic_development_foundation/adf_g_progression_exception.md) — ADF-EX-17 bounded waiver.
-6. [`docs/agentic_development_foundation/databricks_agent_skills_addendum_execution_review.md`](docs/agentic_development_foundation/databricks_agent_skills_addendum_execution_review.md) — Databricks skill integration evidence and `DBX-SKILL-RUN-01` handoff.
-7. [`AGENTS.md`](AGENTS.md) — shared repository agent/developer constitution.
-8. [`knowledge/index.md`](knowledge/index.md) — portable discovery when needed.
-9. [`.agents/skills/`](.agents/skills/) — canonical DMTZ workflows and Databricks overlays.
-10. [`docs/implementation/agent_reference_index.md`](docs/implementation/agent_reference_index.md) — compact stable-ID/path/platform bridge.
-11. [`docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md`](docs/concepts/phase_010/09_architecture_consolidation_validation_exit/implementation_handoff.md) — frozen architecture handoff.
+1. `docs/canonical_knowledge_retrofit/README.md` — live CKR progression.
+2. `docs/canonical_knowledge_retrofit/authority_model.md` — current knowledge vs design history.
+3. `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` — record-specific current ownership.
+4. `docs/canonical/README.md` — target current-truth namespace.
+5. `docs/design_history/README.md` — provenance/history layer.
+6. `docs/implementation/README.md` — blocked implementation authority.
+7. `AGENTS.md` — shared repository instructions.
+8. `knowledge/index.md` — optional routing only.
 
-## Foundation exit disposition
+## Current semantic ownership
 
-The accepted `execution_exit_review.md` records:
+- `legacy_authoritative` / `candidate_ready` → use the inventoried legacy owner;
+- `canonicalized` → use the inventoried `docs/canonical/` target;
+- `history_only` → provenance/rationale only.
 
-- ADF-EX-01–ADF-EX-16 — **PASS**;
-- ADF-EX-17 — **DEFERRED / WAIVED — BOUNDED VERIFICATION DEBT**;
-- ADF-EX-18–ADF-EX-20 — **PASS**;
-- Databricks Agent Skills Integration Addendum — **ACCEPTED**;
-- `ADF-G-XT01` — **OPEN / CARRIED FORWARD**;
-- `DBX-SKILL-RUN-01` — **OPEN / IMPLEMENTATION 001-A**;
-- autonomous development — **DEFERRED / NOT AUTHORIZED**.
+Do not use phase chronology, search order, OKF summaries or mere canonical-path presence to manufacture authority. CKR owner-path changes must preserve accepted SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH meaning unless a separate A4 change is explicitly accepted.
 
-Cursor, Claude Code and Codex remain runtime-`unverified`; the waiver is not provider runtime support. Ordinary IDE/CLI development remains supported.
+## Current work
 
-## Next eligible work
+**CKR-A — COMPLETE / ACCEPTED.**
 
-**Implementation 001-A — Developer Environment, Repository Structure & Engineering Standards: NEXT / ELIGIBLE.**
+**CKR-B — Foundation, Terminology & Cross-Cutting Invariants: NEXT / READY.**
 
-001-A owns the first actual Databricks CLI/vendor-skill environment verification (`DBX-SKILL-RUN-01`). Beginning 001-A still requires an explicit human-selected task; foundation exit does not auto-start it.
+**Implementation 001-A — BLOCKED until CKR-K exit acceptance.**
 
-## Common conformance command
+`ADF-G-XT01` remains open provider-runtime verification debt. `DBX-SKILL-RUN-01` remains a future 001-A environment obligation after CKR unlocks implementation.
+
+## Conformance
 
 ```bash
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-This reports agentic **configuration conformance only**. It is not DMTZ domain health, data quality, target Databricks capability, provider-runtime certification or production readiness.
+PASS describes repository agentic/documentation-authority conformance, not DMTZ domain health, provider-runtime proof, target Databricks capability or production readiness.
 
-## Databricks skill composition
+## Boundaries
 
-- vendor dependency authority: `docs/agentic_development_foundation/databricks_agent_skills_addendum.md` / `databricks_vendor_skills_profile.json`;
-- canonical DMTZ overlays: `.agents/skills/dmtz-databricks-*`;
-- local vendor materialization: ignored `.databricks/agent-skills/` through `scripts/agentic/materialize_databricks_skills.py`;
-- reviewed vendor skills: core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect;
-- model/AI implementation skills remain deferred;
-- automatic vendor-skill expansion is prohibited;
-- managed Databricks MCP servers require later explicit security/integration review;
-- vendor instructions cannot create workspace permission, semantic authority or A3/A4 authorization.
-
-## Coding-agent boundaries
-
-- skill selection does not create new project scope;
-- `ADF-G-XT01` remains future provider-runtime verification debt;
-- autonomous task selection, multi-agent implementation delegation, unattended merge/deploy and agent-created backlog work remain out of scope;
-- accepted SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH contracts remain authoritative over code, tooling and vendor guidance;
-- design-scenario PASS, agentic conformance PASS and vendor documentation are not substitutes for executable product/target evidence.
+- no autonomous task selection or group continuation;
+- no product implementation during CKR;
+- reviewed Databricks skills remain operational guidance, not DMTZ authority;
+- model/AI skills and managed Databricks MCP servers remain deferred;
+- design history is retained rather than rewritten to look like current truth;
+- genuine semantic conflicts discovered during canonicalization require explicit change control.

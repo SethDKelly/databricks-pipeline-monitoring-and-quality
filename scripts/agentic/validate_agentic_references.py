@@ -19,7 +19,16 @@ def local_target(source: Path, target: str, repo: Path) -> Path | None:
 
 def files_for_links(repo: Path) -> list[Path]:
     paths = [repo/'AGENTS.md', repo/'IMPLEMENTATION.md', repo/'docs/implementation/AGENTS.md', repo/'docs/implementation/agent_reference_index.md']
-    for root in (repo/'docs/agentic_development_foundation', repo/'.agents', repo/'.claude', repo/'.cursor', repo/'knowledge'):
+    for root in (
+        repo/'docs/agentic_development_foundation',
+        repo/'docs/canonical_knowledge_retrofit',
+        repo/'docs/canonical',
+        repo/'docs/design_history',
+        repo/'.agents',
+        repo/'.claude',
+        repo/'.cursor',
+        repo/'knowledge',
+    ):
         if root.exists():
             paths.extend(p for p in root.rglob('*') if p.is_file() and p.suffix.lower() in {'.md', '.mdc'})
     return sorted(set(paths))
@@ -60,7 +69,7 @@ def main() -> int:
     canonical_parts: list[str] = []
     for path in (repo/'docs').rglob('*.md'):
         rel = path.relative_to(repo).as_posix()
-        if rel.startswith('docs/agentic_development_foundation/') or rel.startswith('docs/implementation/'):
+        if rel.startswith('docs/agentic_development_foundation/') or rel.startswith('docs/implementation/') or rel.startswith('docs/canonical_knowledge_retrofit/'):
             continue
         canonical_parts.append(path.read_text(encoding='utf-8', errors='ignore'))
     canonical_text = '\n'.join(canonical_parts)
@@ -71,7 +80,7 @@ def main() -> int:
         if not limits or not (limits['min'] <= number <= limits['max']):
             errors.append(f'operational agent-facing artifact cites unaccepted stable ID {token}')
         elif not re.search(rf'(?<![A-Z0-9-]){re.escape(token)}(?![A-Z0-9-])', canonical_text):
-            errors.append(f'{token}: no occurrence found in canonical non-implementation docs')
+            errors.append(f'{token}: no occurrence found in accepted non-implementation semantic/history docs')
 
     for error in errors:
         print(f'ERROR {error}')

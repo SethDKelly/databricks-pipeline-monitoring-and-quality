@@ -16,6 +16,9 @@ EXPECTED = {
 ADDENDA = (
     ('DBX', 'adf_databricks_skills_addendum_scenarios.yaml', 'databricks_agent_skills_addendum_execution_review.md'),
 )
+CKR = (
+    ('CKR-A', 'docs/canonical_knowledge_retrofit/fixtures/ckr_a_authority_scenarios.yaml', 'docs/canonical_knowledge_retrofit/ckr_a_execution_review.md'),
+)
 ID_RE = re.compile(r'^\s*-\s+id:\s*["\']?([^"\'\s]+)', re.M)
 
 
@@ -57,6 +60,12 @@ def main() -> int:
         review = repo / 'docs/agentic_development_foundation' / review_name
         if not review.is_file():
             errors.append(f'ADF addendum {label}: missing execution review {review_name}')
+
+    for label, fixture_rel, review_rel in CKR:
+        count += collect(repo / fixture_rel, label, seen, errors)
+        review = repo / review_rel
+        if not review.is_file():
+            errors.append(f'{label}: missing execution review {review_rel}')
 
     for error in errors:
         print(f'ERROR {error}')
