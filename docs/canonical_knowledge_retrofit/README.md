@@ -1,8 +1,8 @@
 # Canonical Knowledge & Documentation Authority Retrofit
 
-**Status:** CKR-A COMPLETE / ACCEPTED — CKR-B IN EXECUTION / CUTOVER COMPLETE — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
+**Status:** CKR-A–CKR-B COMPLETE / ACCEPTED — CKR-C NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
 
-**CKR status mirror: COMPLETE CKR-A; IN EXECUTION CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-B; NEXT CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
 ## Purpose
 
@@ -22,8 +22,8 @@ See [`migration_contract.md`](migration_contract.md) for atomic cutover/no-dual-
 ## Program sequence / state
 
 - **CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory: COMPLETE / ACCEPTED.**
-- **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: IN EXECUTION.**
-- **CKR-C — Concept Catalog: PLANNED.**
+- **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: COMPLETE / ACCEPTED.**
+- **CKR-C — Concept Catalog: NEXT / READY.**
 - **CKR-D — Evidence, Time, Authority & Governance: PLANNED.**
 - **CKR-E — Health, Quality, Metrics & Timing: PLANNED.**
 - **CKR-F — Lineage, Change, Investigation, Impact & Control: PLANNED.**
@@ -33,64 +33,40 @@ See [`migration_contract.md`](migration_contract.md) for atomic cutover/no-dual-
 - **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: PLANNED.**
 - **CKR-K — Consolidation, Provenance Validation & Exit Review: PLANNED.**
 
-CKR-B has completed its nine-record authority cutover; closure validation is still pending, so the group remains `IN EXECUTION`.
+CKR-A evidence is in [`ckr_a_execution_review.md`](ckr_a_execution_review.md). CKR-B evidence is in [`ckr_b_execution_review.md`](ckr_b_execution_review.md).
 
-## CKR-B cutover
+## Canonicalized in CKR-B
 
-The following nine records are now `canonicalized` and their targets declare `CANONICAL CURRENT AUTHORITY`:
+CKR-B established the first substantive canonical current-truth layer for nine records:
 
-1. `foundation.product_definition` → `docs/canonical/reference/product-definition.md`;
-2. `foundation.actors_stakeholders` → `docs/canonical/reference/actors-and-stakeholders.md`;
-3. `foundation.terminology` → `docs/canonical/reference/terminology.md`;
-4. `foundation.concept_design_method` → `docs/canonical/reference/concept-design-method.md`;
-5. `foundation.architectural_principles` → `docs/canonical/invariants/architectural-principles.md`;
-6. `foundation.security_governance_policy` → `docs/canonical/policies/security-governance.md`;
-7. `foundation.ecosystem_lifecycles` → `docs/canonical/reference/ecosystem-lifecycles.md`;
-8. `foundation.mvp_boundary` → `docs/canonical/policies/mvp-boundary.md`;
-9. `reference.glossary` → `docs/canonical/reference/glossary.md`.
+1. product definition → `docs/canonical/reference/product-definition.md`;
+2. actors/stakeholders → `docs/canonical/reference/actors-and-stakeholders.md`;
+3. foundational terminology → `docs/canonical/reference/terminology.md`;
+4. Concept Design method → `docs/canonical/reference/concept-design-method.md`;
+5. AP-01–AP-32 → `docs/canonical/invariants/architectural-principles.md`;
+6. SP-01–SP-15/security-governance → `docs/canonical/policies/security-governance.md`;
+7. ecosystem lifecycles → `docs/canonical/reference/ecosystem-lifecycles.md`;
+8. MVP boundary → `docs/canonical/policies/mvp-boundary.md`;
+9. shared glossary → `docs/canonical/reference/glossary.md`.
 
-Their legacy foundation/glossary sources are now provenance/design history for these records. `docs/foundation/README.md` and `docs/reference/README.md` route current questions accordingly.
+Their former Phase-001/glossary owners are provenance/design history for these records. CKR-B intentionally leaves the 24 concept definitions and all stable-ID families with their later-group current owners.
 
-The cutover preserves:
+## Semantic-conservation disposition
 
-- product purpose/outcome/non-goals;
-- actor/authority separation;
-- foundational vocabulary/non-equivalences;
-- Concept Design independence/synchronization/change discipline;
-- **AP-01–AP-32**;
-- **SP-01–SP-15**;
-- 14 ecosystem lifecycles and non-rewriting/bitemporal history;
-- MVP required capabilities and **Scenarios A–K**;
-- current shared glossary vocabulary.
+CKR-B preserved product purpose/non-goals, actor authority separations, foundational non-equivalences, Concept Design discipline, **AP-01–AP-32**, **SP-01–SP-15**, fourteen lifecycle families/non-rewriting history, thirteen MVP capability areas, **Scenarios A–K**, and the shared current vocabulary.
 
-Candidate-stage semantic comparison is recorded in [`ckr_b_semantic_conservation_matrix.md`](ckr_b_semantic_conservation_matrix.md). Execution evidence is in [`ckr_b_execution_review.md`](ckr_b_execution_review.md).
+Phase-001 roadmap/open-question/handoff material remains historical. No A4 semantic contradiction was required to complete CKR-B.
 
-## Ownership deliberately not changed by CKR-B
+## Next eligible group
 
-These remain with later groups:
+### CKR-C — Concept Catalog
 
-- all 24 accepted concepts and SYN-001–035 → CKR-C;
-- `reference.authority_vocabulary`, REF-001–030 and AUTH-001–053 → CKR-D;
-- HLTH-001–066 → CKR-E;
-- OPS-001–123 → CKR-F;
-- EXPL-001–160 → CKR-G;
-- INTG-001–270 → CKR-H;
-- ARCH-001–500 / reference architecture → CKR-I.
+CKR-C owns canonicalization of the **24 accepted concepts** plus their SYN-001–SYN-035 synchronization ownership. Those records remain `legacy_authoritative` until CKR-C explicitly begins and follows the same candidate-review → atomic-cutover → closure-validation discipline.
 
-Phase-001 roadmap/open-question/handoff material remains historical rather than being promoted into current truth.
-
-## Semantic-conservation rule
-
-- omitted accepted meaning is a migration defect;
-- search order / phase recency cannot establish authority;
-- genuine contradiction requires explicit A4 change control;
-- stable identifiers and accepted concept boundaries survive path migration;
-- canonical resources cross-reference rather than creating competing semantic copies.
+Completion of CKR-B does **not** automatically start CKR-C.
 
 ## Implementation gate
 
 **Implementation 001-A remains BLOCKED until CKR-K accepts the retrofit.**
 
 The accepted ADF exit remains valid. `ADF-G-XT01` remains provider-runtime verification debt; `DBX-SKILL-RUN-01` remains a future Implementation 001-A obligation after CKR unlock.
-
-CKR-B does not become COMPLETE until cutover-state and final closure CI pass. Completion will not auto-start CKR-C.
