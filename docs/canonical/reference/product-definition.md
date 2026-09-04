@@ -4,7 +4,7 @@
 
 **Kind:** REFERENCE
 
-**Authority:** CANDIDATE / NOT CURRENT AUTHORITY
+**Authority:** CANONICAL CURRENT AUTHORITY
 
 **Migration record:** `foundation.product_definition`
 
