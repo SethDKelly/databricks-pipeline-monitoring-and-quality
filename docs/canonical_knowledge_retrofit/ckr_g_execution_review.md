@@ -1,6 +1,6 @@
 # CKR-G Execution Review — Questioning, Explanation & Experience Contracts
 
-**Status:** IN EXECUTION — ATOMIC CUTOVER COMPLETE / CUTOVER VALIDATION PENDING
+**Status:** ACCEPTED — CKR-G COMPLETE
 
 **Reviewed:** 2026-09-04
 
@@ -8,9 +8,9 @@
 
 Canonicalize EXPL-001–EXPL-160 without turning question/answer composition into an independent truth model, weakening source-domain epistemic states, conflating current disclosure with truth, rewriting prior communication, or importing INTG/ARCH ownership.
 
-## Accepted topology
+## Accepted result
 
-CKR-G maps the accepted Phase 008 range into eight bounded experience resources:
+CKR-G canonicalized exactly EXPL-001–EXPL-160 across eight bounded experience resources:
 
 - EXPL-001–012 — question identity, scope and temporal perspective;
 - EXPL-013–028 — answer structure and basis traceability;
@@ -21,13 +21,13 @@ CKR-G maps the accepted Phase 008 range into eight bounded experience resources:
 - EXPL-121–140 — progressive maturity, refresh and retention;
 - EXPL-141–160 — historical/comparative Explanation and exit.
 
-The atomic cutover promotes these eight resources to current authority, moves EXPL to `canonicalized`, and reclassifies Phase 008 as design history/provenance. No EXPL-161, new concept, new stable family or architecture decision is introduced.
+Phase 008 is now design history/provenance for these meanings. Prior CKR cutovers remain canonical. INTG/ARCH remain assigned to later CKR groups. No EXPL-161, new concept, new stable family or architecture decision was introduced.
 
 ## Semantic conservation
 
 The accepted [`ckr_g_semantic_conservation_matrix.md`](ckr_g_semantic_conservation_matrix.md) preserves question ≠ truth/authorization, answer statement ≠ independent truth, source-owner/epistemic preservation, explicit cross-concept join logic, sibling independence, exact negative-evidence burdens, safe abstraction that cannot strengthen truth, retained communication versus reconstruction, and historical source/as-known/retained/current-retrospective separation.
 
-No A4 semantic change was required.
+No A4 semantic change was required. No universal Explanation confidence, completeness, maturity, RCA, Impact, control-effectiveness, answer-quality or replay score was introduced.
 
 ## Deterministic protection
 
@@ -37,7 +37,7 @@ No A4 semantic change was required.
 
 ## Validation history
 
-### Initial candidate diagnostics
+### Candidate diagnostics
 
 Candidate head `56a705898297add798300f508ab6a95bf0a53653` passed Documentation consistency #258 but exposed a heading-guard false positive in Agentic conformance #140. The validator was corrected to distinguish textual `no EXPL-161` statements from an actual unaccepted heading.
 
@@ -52,12 +52,32 @@ Final candidate head `c7330738ec70f3b45afa90efbdafb695be418c1c` passed:
 - Agentic conformance **#142 — SUCCESS** (run ID `33874091270`);
 - Documentation consistency **#260 — SUCCESS** (run ID `33874091336`).
 
-This authorized atomic EXPL cutover.
+### Atomic-cutover gate
 
-## Scope isolation
+Cutover head `bff20fb23003e832102b3482a708df3e31ef9c20` passed:
 
-INTG-001–INTG-270 and ARCH-001–ARCH-500 remain legacy-authoritative until CKR-H/I. CKR-G references integration/architecture requirements but selects no source mapping, retrieval/persistence architecture, LLM implementation, UI, IAM product or technical placement.
+- Agentic conformance **#143 — SUCCESS** (run ID `33874833453`);
+- Documentation consistency **#261 — SUCCESS** (run ID `33874833466`).
 
-## Implementation gate
+The cutover moved EXPL atomically from `candidate_ready` to `canonicalized`, promoted all eight resources to `CANONICAL CURRENT AUTHORITY`, reclassified Phase 008 as provenance, and routed reasoning/Explanation to canonical experience without absorbing later INTG/ARCH ownership.
 
-Implementation 001-A remains blocked until CKR-K. CKR-G remains IN EXECUTION until cutover and closure heads pass the normal repository gates.
+## Acceptance criteria
+
+- exact CKR-G scope EXPL-001–EXPL-160 — **PASS**;
+- no EXPL-161/new concept/stable family — **PASS**;
+- eight-resource topology and Phase 008 provenance — **PASS**;
+- prior concepts/SYN/REF/AUTH/HLTH/OPS remain canonical — **PASS**;
+- INTG/ARCH remain later-owned — **PASS**;
+- question/answer composition remains projection rather than independent truth — **PASS**;
+- no cross-statement epistemic propagation or universal confidence score — **PASS**;
+- negative-evidence and causal-confirmation burdens preserved — **PASS**;
+- safe abstraction cannot strengthen truth — **PASS**;
+- retained communication/reconstruction/current-retrospective separation preserved — **PASS**;
+- no implementation/architecture selection — **PASS**;
+- candidate and cutover conformance/documentation gates — **PASS**.
+
+## Exit decision
+
+**CKR-G is accepted and complete. CKR-H — Integration, Source Authority & Evidence Availability is next/ready but remains unstarted until explicitly selected by the human.**
+
+Implementation 001-A remains blocked until CKR-K. The closure/status synchronization head must pass the normal repository gates before PR merge; a failure there reopens only the affected closure defect unless it demonstrates a semantic regression.
