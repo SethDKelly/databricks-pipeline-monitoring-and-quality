@@ -22,16 +22,18 @@ See [`migration_contract.md`](migration_contract.md) for atomic cutover/no-dual-
 ## Program sequence / state
 
 - **CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory: COMPLETE / ACCEPTED.**
-- **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: IN EXECUTION — NINE-RECORD CUTOVER COMPLETE; CLOSURE VALIDATION PENDING.**
-- CKR-C — Concept Catalog: PLANNED.
-- CKR-D — Evidence, Time, Authority & Governance: PLANNED.
-- CKR-E — Health, Quality, Metrics & Timing: PLANNED.
-- CKR-F — Lineage, Change, Investigation, Impact & Control: PLANNED.
-- CKR-G — Questioning, Explanation & Experience Contracts: PLANNED.
-- CKR-H — Integration, Source Authority & Evidence Availability: PLANNED.
-- CKR-I — Technical Architecture: PLANNED.
-- CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: PLANNED.
-- CKR-K — Consolidation, Provenance Validation & Exit Review: PLANNED.
+- **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: IN EXECUTION.**
+- **CKR-C — Concept Catalog: PLANNED.**
+- **CKR-D — Evidence, Time, Authority & Governance: PLANNED.**
+- **CKR-E — Health, Quality, Metrics & Timing: PLANNED.**
+- **CKR-F — Lineage, Change, Investigation, Impact & Control: PLANNED.**
+- **CKR-G — Questioning, Explanation & Experience Contracts: PLANNED.**
+- **CKR-H — Integration, Source Authority & Evidence Availability: PLANNED.**
+- **CKR-I — Technical Architecture: PLANNED.**
+- **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: PLANNED.**
+- **CKR-K — Consolidation, Provenance Validation & Exit Review: PLANNED.**
+
+CKR-B has completed its nine-record authority cutover; closure validation is still pending, so the group remains `IN EXECUTION`.
 
 ## CKR-B cutover
 
