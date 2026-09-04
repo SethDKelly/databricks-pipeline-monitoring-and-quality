@@ -4,9 +4,9 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A; NEXT CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A; IN EXECUTION CKR-B; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-The ADF exit remains accepted. The **Canonical Knowledge & Documentation Authority Retrofit (CKR)** is a later pre-implementation dependency. CKR-A is complete; CKR-B is next/ready. Product implementation remains blocked until CKR-K exit acceptance.
+The ADF exit remains accepted. The **Canonical Knowledge & Documentation Authority Retrofit (CKR)** is the active pre-implementation dependency. CKR-A is complete; CKR-B is in execution. Product implementation remains blocked until CKR-K exit acceptance.
 
 Current DMTZ semantic ownership is determined record-by-record by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`:
 
@@ -27,7 +27,13 @@ Primary live authorities:
 7. reviewed vendor operational guidance;
 8. personal/tool memory.
 
-Design-phase progression remains in `docs/README.md`. The completed ADF remains in `docs/agentic_development_foundation/README.md` and `execution_exit_review.md`.
+## CKR-B boundary
+
+CKR-B owns only the nine inventoried foundation/glossary records. Their current state is `candidate_ready`, so the legacy foundation/glossary owners remain current authority until the atomic cutover is accepted.
+
+Do not promote CKR-C concept resources, REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH domains, implementation code, or unrelated documentation as part of CKR-B.
+
+CKR-B may consolidate accepted wording, remove obsolete future-phase/open-question language from the canonical candidates, add provenance, and strengthen deterministic migration validation. It may not invent new product semantics, concept boundaries, stable IDs, authority, or architecture.
 
 ## Current-truth vs design-history rule
 
@@ -41,7 +47,7 @@ CKR migration follows:
 - `docs/canonical_knowledge_retrofit/migration_contract.md`;
 - `docs/canonical_knowledge_retrofit/canonical_document_template.md`.
 
-Atomic cutover must update authority marker, ownership inventory, required routing and provenance together. Genuine semantic contradictions require explicit A4 change control; never resolve them by “newest file wins” or search order.
+Atomic cutover must update authority marker, ownership inventory, required routing and provenance together. Genuine semantic contradictions require explicit A4 change control; never resolve them by newest-file/search-order preference.
 
 ## Human-directed action classes
 
@@ -79,7 +85,7 @@ Accepted stable ranges remain frozen:
 
 ## Semantic conservation
 
-CKR changes documentation ownership/routing, not accepted product meaning. Preserve at minimum:
+Preserve at minimum:
 
 - Entity Identity ≠ source-local identity/name;
 - Monitoring Scope ≠ Assertion Authority ≠ Capability Authorization;
@@ -91,7 +97,7 @@ CKR changes documentation ownership/routing, not accepted product meaning. Prese
 - current state ≠ historical/as-known state;
 - later evidence ≠ evidence known then;
 - event/effective time ≠ source availability ≠ framework knowledge time;
-- Lineage ≠ reachability relevance ≠ encounter/exposure ≠ Impact ≠ cause;
+- Lineage ≠ encounter/exposure ≠ Impact ≠ cause;
 - deployment/correlation timing ≠ causation;
 - Investigation/hypothesis ≠ confirmed cause;
 - authentication ≠ Capability Authorization ≠ Assertion Authority;
@@ -114,8 +120,6 @@ The reviewed Databricks skill set remains core, DABs, Jobs, Pipelines, data disc
 
 ## Conformance
 
-Run:
-
 ```bash
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
@@ -124,4 +128,4 @@ This validates repository agentic/documentation-authority configuration, includi
 
 ## Implementation gate
 
-**Do not start product implementation while CKR is incomplete.** Do not create `src/dmtz`, product schemas/tests or Databricks deployment artifacts as part of CKR unless a separate explicit task requires migration tooling or an approved semantic change.
+**Do not start product implementation while CKR is incomplete.**
