@@ -96,10 +96,14 @@ def main() -> int:
         mutate_and_expect_failure(repo, 'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json', fabricate_lineage_canonicalization, 'validate_canonical_knowledge.py', 'canonicalization without canonical target evidence', errors)
         mutate_and_expect_failure(repo, 'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json', move_lineage_target_outside_canonical, 'validate_canonical_knowledge.py', 'canonical target outside docs/canonical', errors)
         mutate_and_expect_failure(repo, 'IMPLEMENTATION.md', stale_ckr_status, 'validate_ckr_status.py', 'stale CKR implementation status mirror', errors)
+        mutate_and_expect_failure(repo, 'docs/canonical/invariants/architectural-principles.md', lambda t: t.replace('### AP-32 —', '### AP-XX —', 1), 'validate_ckr_b_foundation.py', 'omitted CKR-B AP-32 identity', errors)
+        mutate_and_expect_failure(repo, 'docs/canonical/policies/security-governance.md', lambda t: t.replace('### SP-15 —', '### SP-XX —', 1), 'validate_ckr_b_foundation.py', 'omitted CKR-B SP-15 identity', errors)
+        mutate_and_expect_failure(repo, 'docs/canonical/policies/mvp-boundary.md', lambda t: t.replace('### Scenario K —', '### Scenario Z —', 1), 'validate_ckr_b_foundation.py', 'omitted CKR-B MVP Scenario K', errors)
+        mutate_and_expect_failure(repo, 'docs/canonical/reference/product-definition.md', lambda t: t.replace('001_product_definition.md', 'missing-product-origin.md'), 'validate_ckr_b_foundation.py', 'broken CKR-B legacy provenance', errors)
 
     for error in errors:
         print(f'ERROR {error}')
-    print(f'Conformance guard tests: {len(errors)} error(s), 15 negative control(s)')
+    print(f'Conformance guard tests: {len(errors)} error(s), 19 negative control(s)')
     return 1 if errors else 0
 
 if __name__ == '__main__':
