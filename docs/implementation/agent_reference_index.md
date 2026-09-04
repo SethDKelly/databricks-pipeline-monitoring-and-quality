@@ -4,7 +4,7 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-B; NEXT CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-B; IN EXECUTION CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
 ## Universal start
 
@@ -13,7 +13,7 @@
 | CKR status | `docs/canonical_knowledge_retrofit/README.md` |
 | Current semantic owner | `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` |
 | Canonical namespace | `docs/canonical/README.md` |
-| CKR-B acceptance evidence | `docs/canonical_knowledge_retrofit/ckr_b_execution_review.md` |
+| CKR-C comparison | `docs/canonical_knowledge_retrofit/ckr_c_semantic_conservation_matrix.md` |
 | Design history | `docs/design_history/README.md` |
 | Implementation status | `docs/implementation/README.md` |
 | Shared instructions | root `AGENTS.md` |
@@ -23,30 +23,19 @@
 
 ## CKR state
 
-- CKR-A — COMPLETE / ACCEPTED.
-- CKR-B — COMPLETE / ACCEPTED; first nine substantive foundation/glossary records canonicalized.
-- CKR-C — Concept Catalog: NEXT / READY, not active until selected.
-- CKR-D–K — planned in the CKR README.
+- CKR-A–B — COMPLETE / ACCEPTED.
+- CKR-C — Concept Catalog: IN EXECUTION / candidate review.
+- CKR-D–K — planned in CKR authority.
 - Implementation 001-A — BLOCKED until CKR-K.
 
-## Current CKR-B canonical owners
+## Current authority during CKR-C candidate review
 
-Current foundation/reference authority includes:
+CKR-B foundation/reference resources remain canonical. The 24 concept targets under `docs/canonical/concepts/` and six SYN targets under `docs/canonical/contracts/synchronization/` are candidates only. While inventory state is `candidate_ready`, current concept/SYN meaning remains in Phase 002/003.
 
-- `docs/canonical/reference/product-definition.md`;
-- `actors-and-stakeholders.md`;
-- `terminology.md`;
-- `concept-design-method.md`;
-- `ecosystem-lifecycles.md`;
-- `glossary.md`;
-- `docs/canonical/invariants/architectural-principles.md`;
-- `docs/canonical/policies/security-governance.md`;
-- `docs/canonical/policies/mvp-boundary.md`.
-
-Phase-001 foundation files and old glossary are provenance for these records. `reference.authority_vocabulary`, all 24 concepts and every stable-ID family remain with their independent legacy owners until later CKR groups.
+CKR-C owns only these 24 concepts plus SYN-001–SYN-035. `reference.authority_vocabulary` and REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain with later groups.
 
 ## Stable IDs / residuals
 
-Accepted ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500. Exact canonical owner/anchor resolution remains CKR-J work after domain migration.
+Accepted ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500.
 
 ADF-EX-17 / `ADF-G-XT01` remains deferred runtime verification. `DBX-SKILL-RUN-01` remains future 001-A work. Autonomous development remains deferred/not authorized.
