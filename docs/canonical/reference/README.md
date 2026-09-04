@@ -1,10 +1,10 @@
 # Canonical Reference
 
-Compact current/candidate reference surfaces for product purpose, actors, terminology, lifecycle, glossary, stable-contract ownership and other direct lookup needs.
+Current reference surfaces for product purpose, actors, terminology, lifecycle, glossary, stable-contract ownership and direct semantic lookup.
 
-## CKR-B candidate review
+## Canonicalized in CKR-B
 
-These nine CKR-B records currently have candidate targets in the canonical namespace, while their inventoried legacy owners remain current authority until atomic cutover:
+These records are now current authority:
 
 - `foundation.product_definition` → [`product-definition.md`](product-definition.md)
 - `foundation.actors_stakeholders` → [`actors-and-stakeholders.md`](actors-and-stakeholders.md)
@@ -13,8 +13,8 @@ These nine CKR-B records currently have candidate targets in the canonical names
 - `foundation.ecosystem_lifecycles` → [`ecosystem-lifecycles.md`](ecosystem-lifecycles.md)
 - `reference.glossary` → [`glossary.md`](glossary.md)
 
-Related CKR-B policy/invariant candidates live under `../policies/` and `../invariants/`.
+Related canonical CKR-B policy/invariant resources live under `../policies/` and `../invariants/`.
 
 `docs/reference/authority_vocabulary.md` remains legacy-authoritative until CKR-D.
 
-A candidate path is review material only. Use `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` to determine current authority.
+The CKR ownership inventory remains the machine-readable authority source for migrated and unmigrated records.
