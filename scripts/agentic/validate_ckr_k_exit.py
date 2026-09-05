@@ -113,7 +113,7 @@ def main() -> int:
     counts = manifest.get("expected_counts", {})
     expected_counts = {
         "ownership_records": 34, "concept_records": 24, "stable_families": 8,
-        "stable_ids": 1237, "architecture_segments": 8, "okf_semantic_routes": 7,
+        "stable_ids": 1237, "architecture_segments": 9, "okf_semantic_routes": 7,
         "prior_ckr_groups": 10, "ckr_k_scenarios": 36, "ckr_k_negative_controls": 14,
     }
     if counts != expected_counts:
@@ -126,7 +126,7 @@ def main() -> int:
     if len(records) != 34: errors.append(f"ownership record count must remain 34; found {len(records)}")
     if len(concepts) != 24: errors.append(f"concept record count must remain 24; found {len(concepts)}")
     if len(families) != 8: errors.append(f"stable family count must remain 8; found {len(families)}")
-    if len(segments) != 8: errors.append(f"architecture segment count must remain 8; found {len(segments)}")
+    if len(segments) != 9: errors.append(f"architecture inventory record count must remain 9; found {len(segments)}")
 
     for record in records:
         rid = record.get("record_id", "<unknown>")
@@ -177,7 +177,7 @@ def main() -> int:
     for segment in segments:
         rid = segment.get("record_id", "<unknown-architecture>")
         if segment.get("migration_state") != "canonicalized":
-            errors.append(f"{rid}: CKR exit requires canonicalized architecture segment")
+            errors.append(f"{rid}: CKR exit requires canonicalized architecture inventory state")
         source = segment.get("current_owner")
         target = segment.get("target_owner")
         if not source or not (repo / source).is_file():
@@ -293,7 +293,7 @@ def main() -> int:
     for error in errors: print("ERROR", error)
     print(
         f"CKR-K exit validation: {len(errors)} error(s), records={len(records)}/34, concepts={len(concepts)}/24, "
-        f"families={len(families)}/8, stable_ids={total_ids}/1237, architecture_segments={len(segments)}/8, "
+        f"families={len(families)}/8, stable_ids={total_ids}/1237, architecture_records={len(segments)}/9, "
         f"routes={len(routes)}/7, representative_ids={len(manifest.get('representative_stable_ids', []))}, state={status}"
     )
     return 1 if errors else 0
