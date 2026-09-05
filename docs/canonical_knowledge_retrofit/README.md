@@ -1,8 +1,8 @@
 # Canonical Knowledge & Documentation Authority Retrofit
 
-**Status:** CKR-A–CKR-J COMPLETE / ACCEPTED — CKR-K NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
+**Status:** CKR-A–CKR-J COMPLETE / ACCEPTED — CKR-K IN EXECUTION — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
 
-**CKR status mirror: COMPLETE CKR-A–CKR-J; NEXT CKR-K; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-J; IN EXECUTION CKR-K; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
 ## Purpose
 
@@ -24,7 +24,7 @@ Ownership is declared in [`canonical_ownership_inventory.json`](canonical_owners
 - **CKR-H — Integration, Source Authority & Evidence Availability: COMPLETE / ACCEPTED.**
 - **CKR-I — Technical Architecture: COMPLETE / ACCEPTED.**
 - **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: COMPLETE / ACCEPTED.**
-- **CKR-K — Consolidation, Provenance Validation & Exit Review: NEXT / READY.**
+- **CKR-K — Consolidation, Provenance Validation & Exit Review: IN EXECUTION.**
 
 ## Current canonical semantic scope
 
@@ -42,12 +42,12 @@ Foundation/glossary, all 24 concepts, SYN-001–SYN-035, authority vocabulary, R
 
 The registry, resolver, OKF bundle and routing manifest are derived routing machinery and do not own or reinterpret DMTZ semantics.
 
-See [`ckr_j_routing_conservation_matrix.md`](ckr_j_routing_conservation_matrix.md) and [`ckr_j_execution_review.md`](ckr_j_execution_review.md).
+## CKR-K exit review
 
-## Remaining progression
+CKR-K validates whole-retrofit ownership closure, provenance/history preservation, deterministic stable references, canonical-first routing, representative current-truth locality, dual-authority exclusion and the final implementation-gate handoff. It adds no semantic owner and does not perform product implementation.
 
-**CKR-K is next/ready but is not active until explicitly selected by the human.** Completing CKR-J does not authorize CKR-K.
+See [`ckr_k_exit_manifest.json`](ckr_k_exit_manifest.json), [`ckr_k_consolidation_provenance_matrix.md`](ckr_k_consolidation_provenance_matrix.md) and [`ckr_k_execution_review.md`](ckr_k_execution_review.md).
 
 ## Implementation gate
 
-**Implementation 001-A remains BLOCKED until CKR-K accepts the retrofit.**
+**Implementation 001-A remains BLOCKED while CKR-K is in execution.** Only accepted CKR-K exit may move 001-A to NEXT / READY / NOT STARTED.
