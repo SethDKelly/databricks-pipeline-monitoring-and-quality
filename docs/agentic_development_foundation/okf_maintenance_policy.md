@@ -1,65 +1,50 @@
 # DMTZ OKF Knowledge Maintenance Policy
 
-**Status:** ACCEPTED — ADF-B / REFINED ADF-E
+**Status:** ACCEPTED — ADF-B / REFINED ADF-E + CKR-J
 
 ## Ownership
 
-Canonical DMTZ documents/code/tests remain the source of truth. `knowledge/` is a maintained routing projection.
+Canonical DMTZ documents/code/tests remain the source of truth. `knowledge/` is a maintained routing projection and cannot create semantic authority.
 
-A change to canonical material should update an OKF entry only when the change affects routing, title/description, lifecycle, resource location, or a critical boundary reminder. Routine canonical edits do not require rewriting every knowledge concept.
+After CKR-J, stable current-semantic domain routes are **canonical-first**. Design-history links are allowed only when explicitly serving provenance/rationale/history and may not be described as current semantic ownership.
 
 ## Maintenance rules
 
 1. Prefer concise human-reviewed routing text.
-2. Prefer deterministic generation only for mechanical indexes/metadata when generation is useful.
+2. Prefer deterministic generation only for mechanical indexes/metadata when useful.
 3. Never generate changes from `knowledge/` back into canonical `docs/` automatically.
-4. Broken `resource` or local Markdown links are knowledge-layer defects and should fail validation.
-5. `deprecated` and stale entries must be surfaced explicitly rather than silently treated as current.
-6. Unknown producer-defined OKF types must remain consumable.
-7. A knowledge entry conflict with canonical authority is resolved in favor of canonical authority.
-8. Tool memory/search summaries may use OKF routing but cannot promote an OKF description into higher authority.
-9. A changed canonical resource creates a routing **review candidate**, not an automatic requirement to rewrite or mark stale every referencing concept.
+4. Broken `resource` or local Markdown links are routing defects and fail validation.
+5. A stable current-semantic domain `resource` must remain on its CKR-J canonical target unless the routing manifest changes under normal authority/change control.
+6. A knowledge entry conflict with canonical authority is resolved in favor of canonical authority.
+7. Tool memory/search summaries may use OKF routing but cannot promote OKF text into higher authority.
+8. A changed canonical resource creates a routing **review candidate**, not automatic staleness or a required rewrite.
+9. Secondary canonical body links are also review-impact relationships when their target moves or materially changes routing relevance.
+10. Phase/history content may remain discoverable, but current domain routing must not silently regress to Phase 001–010 ownership after canonicalization.
 
 ## Provenance and verification
 
-Use OKF v0.2 provenance/verification fields selectively. A direct `resource` link to one canonical DMTZ source is normally sufficient for a simple hand-maintained routing concept.
-
-Use `sources` when an entry genuinely synthesizes multiple sources. Use `verified` when a review event is meaningful and maintainable. Do not add ceremonial verification metadata that will immediately drift.
+Use OKF v0.2 provenance/verification fields selectively. A direct `resource` link to one canonical source is sufficient for a simple routing concept. Use `sources` only when genuine synthesis is maintained. Do not add ceremonial verification metadata that will immediately drift.
 
 ## Staleness
 
-Use `stale_after` for compatibility or externally version-sensitive knowledge, not for timeless repository routing that is already protected by link/status checks.
+Use `stale_after` for externally version-sensitive knowledge, not timeless repository routing protected by link/status checks. Staleness does not invalidate the canonical resource.
 
-A stale entry should be reported as stale. Staleness does not automatically invalidate the canonical resource it points to.
+DMTZ does not universally hash-pin routing concepts. `scripts/agentic/knowledge_impact.py` reports both direct `RESOURCE` and secondary canonical `BODY-LINK` review candidates for changed paths.
 
-DMTZ does not universally hash-pin routing concepts to canonical resources because ordinary source edits often leave routing fully accurate. `scripts/agentic/knowledge_impact.py` instead reports direct resource-reference review candidates for changed paths.
+## Progressive disclosure
 
-## Lifecycle transitions
+Keep indexes small. The normal unknown-location path is:
 
-When replacing an OKF concept:
+`knowledge/index.md` → one category → one concept → canonical resource → exact stable IDs as needed.
 
-- prefer updating the current concept in place when identity/purpose is unchanged;
-- use `deprecated` when a historical route must remain discoverable during transition;
-- link the replacement in the body;
-- remove dead transitional entries only when no longer useful and normal Git history is sufficient.
-
-## Progressive-disclosure maintenance
-
-Keep root and nested indexes small. Add a new routing layer only when a directory becomes hard to scan or context measurements show value.
-
-The expected traversal remains:
-
-`knowledge/index.md` → one category index → one concept → canonical resource → exact stable IDs as needed.
-
-Do not traverse this full chain when the canonical path/ID is already known.
-
-## Maintenance workflow
-
-Follow `knowledge_maintenance_workflow.md` for changed-source impact review, minimal updates, logging, and broken-reference handling.
+When an exact stable ID is already known, use `scripts/agentic/resolve_stable_id.py <ID>` directly and bypass unnecessary OKF traversal. Historical occurrence discovery is explicit with `--history`.
 
 ## Validation
 
 - `scripts/agentic/validate_okf.py` validates OKF structure/resources/links/lifecycle warnings;
-- `scripts/agentic/knowledge_impact.py` reports routing review candidates for changed canonical resources;
+- `scripts/agentic/validate_ckr_j_routing.py` enforces canonical-first current routes and deterministic stable-reference coverage;
+- `scripts/agentic/knowledge_impact.py` reports routing review candidates;
 - `scripts/agentic/measure_context_budget.py` enforces routing/persistent-context size limits;
-- ADF-F owns CI integration and automated fixture execution.
+- integrated conformance owns CI execution.
+
+Follow `knowledge_maintenance_workflow.md` for changed-source review and minimal updates.

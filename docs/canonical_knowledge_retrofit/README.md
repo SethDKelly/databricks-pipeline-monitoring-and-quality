@@ -23,35 +23,32 @@ Ownership is declared in [`canonical_ownership_inventory.json`](canonical_owners
 - **CKR-G — Questioning, Explanation & Experience Contracts: COMPLETE / ACCEPTED.**
 - **CKR-H — Integration, Source Authority & Evidence Availability: COMPLETE / ACCEPTED.**
 - **CKR-I — Technical Architecture: COMPLETE / ACCEPTED.**
-- **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: IN EXECUTION.**
+- **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: IN EXECUTION / ROUTING CUTOVER VALIDATION.**
 - **CKR-K — Consolidation, Provenance Validation & Exit Review: PLANNED.**
 
-## Current canonical semantic scope through CKR-I
+## Current canonical semantic scope
 
-Foundation/glossary, all 24 concepts, SYN-001–SYN-035, authority vocabulary, REF-001–REF-030, AUTH-001–AUTH-053, HLTH-001–HLTH-066, OPS-001–OPS-123, EXPL-001–EXPL-160, INTG-001–INTG-270 and **ARCH-001–ARCH-500** resolve to canonical owners.
+Foundation/glossary, all 24 concepts, SYN-001–SYN-035, authority vocabulary, REF-001–REF-030, AUTH-001–AUTH-053, HLTH-001–HLTH-066, OPS-001–OPS-123, EXPL-001–EXPL-160, INTG-001–INTG-270 and ARCH-001–ARCH-500 resolve to canonical owners. Phase 001–010 remains design history/provenance for migrated meanings.
 
-The frozen reference architecture resolves to `docs/canonical/architecture/reference-architecture.md`; it composes ARCH-001–ARCH-500 and owns no additional stable-ID range.
+## CKR-J routing cutover
 
-Phase 001–010 sources are design history/provenance for migrated meanings. They remain available for origin, rationale, historical-state and change analysis but are not alternate current owners.
+The CKR-J routing manifest is active and the live routing layer is under exact-head cutover validation:
 
-## CKR-J execution boundary
+- all seven stable semantic OKF domain routes are canonical-first;
+- exact accepted stable IDs resolve deterministically through `scripts/agentic/resolve_stable_id.py <ID>`;
+- the stable locator is `owner_path::STABLE-ID`;
+- canonical stable-definition coverage is 1,237/1,237 using the accepted forms conserved from CKR-B–I: 737 definition headings, 416 ARCH stable-ID index members and 84 ARCH stable-contract list members;
+- `--history` performs separate provenance occurrence discovery and never competes with the current canonical owner;
+- shared agent workflows use direct exact-ID lookup when the ID is known and one bounded OKF route only when semantic location is unknown;
+- routing drift is guarded by CKR-J validation and state-aware negative controls.
 
-CKR-J is migrating the **routing layer**, not semantic authority. Its candidate work covers:
-
-- canonical-first OKF domain routing after CKR-I;
-- deterministic exact stable-ID resolution from the accepted range registry + ownership inventory + unique canonical definition heading;
-- renderer-neutral stable locators in the form `owner_path::STABLE-ID`;
-- explicit secondary historical-occurrence discovery rather than mixing history into default current resolution;
-- shared agent-routing updates for direct exact-ID lookup and bounded progressive disclosure;
-- deterministic drift enforcement for stable-reference coverage, OKF routes and agent-routing surfaces.
-
-The candidate manifest is [`ckr_j_routing_manifest.json`](ckr_j_routing_manifest.json). Its `candidate_ready` state does **not** switch live routing by itself. Current semantic meaning remains wholly owned by the already-canonical CKR-B–I resources.
+The registry, resolver, OKF bundle and routing manifest remain derived routing machinery and do not own or reinterpret DMTZ semantics.
 
 See [`ckr_j_routing_conservation_matrix.md`](ckr_j_routing_conservation_matrix.md) and [`ckr_j_execution_review.md`](ckr_j_execution_review.md).
 
 ## Remaining progression
 
-CKR-J must pass candidate validation, atomic routing cutover, closure synchronization and final exact-head validation. **CKR-K remains planned/unstarted until CKR-J is accepted.**
+CKR-J cannot close until the activated routing cutover, closure synchronization and final exact-head evidence gates pass. **CKR-K remains planned/unstarted.**
 
 ## Implementation gate
 

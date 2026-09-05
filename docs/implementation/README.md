@@ -6,14 +6,14 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-I; IN EXECUTION CKR-J; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-Product implementation remains blocked while CKR completes documentation-authority migration.
+Product implementation remains blocked while CKR completes documentation-authority/routing migration.
 
-Current routing uses the ownership inventory. Foundation/glossary, concepts/SYN, authority vocabulary, REF, AUTH, HLTH, OPS, EXPL, INTG and ARCH/reference architecture resolve to canonical owners. Phase 001–010 are provenance for migrated meaning.
+Current routing uses canonical semantic owners plus the activated CKR-J exact stable-ID resolver. Phase 001–010 remains provenance for migrated meaning.
 
 Current work:
 
 - CKR-A–I — COMPLETE / ACCEPTED;
-- CKR-J — IN EXECUTION / ROUTING CANDIDATE REVIEW;
+- CKR-J — IN EXECUTION / ROUTING CUTOVER VALIDATION;
 - CKR-K — PLANNED / NOT ACTIVE;
 - Implementation 001-A — NOT ACTIVE / BLOCKED until CKR-K.
 

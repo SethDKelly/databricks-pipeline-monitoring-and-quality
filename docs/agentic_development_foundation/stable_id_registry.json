@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "status": "accepted_frozen_ranges",
+  "status": "accepted_canonical_resolution",
   "search_root": "docs",
   "id_width": 3,
   "ownership_inventory": "docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json",
@@ -14,5 +14,13 @@
     "INTG": {"min": 1, "max": 270},
     "ARCH": {"min": 1, "max": 500}
   },
-  "resolution_rule": "Stable-ID meaning is frozen while owner paths migrate. During CKR-A through CKR-I, exact occurrences remain retrieval candidates and the CKR ownership inventory determines whether current authority is legacy or canonicalized. CKR-J will add deterministic canonical owner/anchor resolution without changing accepted ID meaning."
+  "resolution": {
+    "mode": "canonical_target_stable_definition",
+    "accepted_definition_forms": ["definition_heading", "stable_id_index_member", "stable_contract_list_member"],
+    "canonical_locator_format": "{owner_path}::{stable_id}",
+    "section_selector": "stable_id_token",
+    "default_scope": "canonical_owner_only",
+    "history_discovery": "explicit_separate_on_demand"
+  },
+  "resolution_rule": "Validate the exact family/width/range, require canonicalized family ownership, inspect only the ownership inventory target_documents for the accepted canonical stable definition, require exactly one owner-form match, and return owner_path::stable_id. Historical occurrences are available only through explicit separate history discovery and never compete with current ownership."
 }

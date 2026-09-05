@@ -5,13 +5,14 @@ okf_version: "0.2"
 
 Portable, tool-neutral routing into current DMTZ repository authority. This bundle is an index, not a source of product truth.
 
-During the Canonical Knowledge & Documentation Authority Retrofit, semantic ownership is record-specific. Use the [canonical knowledge / design history route](project/canonical-knowledge.md) when ownership is unclear; OKF does not decide whether a legacy or `docs/canonical/` resource is authoritative.
+All accepted semantic families are canonicalized through CKR-I. The CKR ownership inventory and substantive `docs/canonical/` owners determine current meaning; OKF only helps locate them.
 
-Start with the smallest relevant branch:
+Start with the shortest relevant path:
 
+- **Known stable ID:** use `python3 scripts/agentic/resolve_stable_id.py <ID>` directly; use `--history` only for explicit provenance/history work.
+- **Unknown semantic location:** use one bounded [domain route](domains/index.md), then its canonical resource.
 - [Project authority and current documentation ownership](project/index.md)
-- [Domain routing](domains/index.md)
 - [Implementation routing](implementation/index.md)
 - [Development workflow routing](workflows/index.md)
 
-For exact semantics, follow the resource/body links to the **current owner selected by repository authority**. Do not treat an OKF summary, lifecycle value, verification marker, design-history search result or model memory as a substitute for current semantic authority.
+For exact semantics, read the current canonical owner selected by repository authority. Do not treat an OKF summary, lifecycle value, verification marker, design-history occurrence, search rank or model memory as semantic authority.

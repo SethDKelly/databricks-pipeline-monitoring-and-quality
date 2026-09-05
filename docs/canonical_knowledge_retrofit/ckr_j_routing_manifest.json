@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "status": "candidate_ready",
+  "status": "active",
   "phase": "CKR-J",
   "purpose": "Routing and drift-control projection only; this manifest does not own DMTZ product semantics.",
   "authority_model": "docs/canonical_knowledge_retrofit/authority_model.md",
