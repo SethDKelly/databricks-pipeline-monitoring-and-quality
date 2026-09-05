@@ -1,0 +1,112 @@
+schema_version: "1.0"
+phase: CKR-K
+purpose: Whole-retrofit consolidation, provenance and exit-review scenarios only; not product-runtime tests.
+scenarios:
+  - id: CKRK-01
+    category: ownership_closure
+    expectation: all required record-level migration states are canonicalized
+  - id: CKRK-02
+    category: ownership_closure
+    expectation: exactly 24 concept records remain inventoried
+  - id: CKRK-03
+    category: ownership_closure
+    expectation: all eight stable families remain canonicalized
+  - id: CKRK-04
+    category: ownership_closure
+    expectation: all eight architecture segments remain canonicalized
+  - id: CKRK-05
+    category: ownership_closure
+    expectation: canonical targets remain under docs/canonical and claim current authority
+  - id: CKRK-06
+    category: ownership_closure
+    expectation: legacy owner paths remain retrievable but do not claim canonical current authority
+  - id: CKRK-07
+    category: provenance
+    expectation: every record-level canonical owner retains an explicit provenance section
+  - id: CKRK-08
+    category: provenance
+    expectation: record-level provenance retains the original owner identity
+  - id: CKRK-09
+    category: provenance
+    expectation: every stable-family canonical contract retains historical phase provenance
+  - id: CKRK-10
+    category: provenance
+    expectation: every architecture segment retains Phase 010 provenance
+  - id: CKRK-11
+    category: provenance
+    expectation: design-history index remains present and explicitly historical
+  - id: CKRK-12
+    category: provenance
+    expectation: historical phase roots remain accessible without becoming current owners
+  - id: CKRK-13
+    category: stable_reference
+    expectation: accepted stable ranges remain unchanged
+  - id: CKRK-14
+    category: stable_reference
+    expectation: accepted stable-ID total remains 1237
+  - id: CKRK-15
+    category: stable_reference
+    expectation: first and last IDs of every stable family resolve canonically
+  - id: CKRK-16
+    category: stable_reference
+    expectation: ARCH stable-ID index members resolve canonically
+  - id: CKRK-17
+    category: stable_reference
+    expectation: ARCH-191 through ARCH-274 stable-contract list members resolve canonically
+  - id: CKRK-18
+    category: stable_reference
+    expectation: default stable lookup does not mix historical occurrences into owner selection
+  - id: CKRK-19
+    category: stable_reference
+    expectation: canonical locator remains owner_path double-colon stable-ID
+  - id: CKRK-20
+    category: stable_reference
+    expectation: line numbers and renderer slugs remain derived navigation only
+  - id: CKRK-21
+    category: routing
+    expectation: CKR-J routing manifest remains active
+  - id: CKRK-22
+    category: routing
+    expectation: all seven semantic OKF domain primary resources remain canonical
+  - id: CKRK-23
+    category: routing
+    expectation: known stable IDs may bypass unnecessary OKF traversal
+  - id: CKRK-24
+    category: routing
+    expectation: unknown semantic locations use bounded OKF discovery then canonical authority
+  - id: CKRK-25
+    category: routing
+    expectation: no live route restores Phase 010 as current ARCH authority
+  - id: CKRK-26
+    category: routing
+    expectation: routing helpers remain non-semantic projections
+  - id: CKRK-27
+    category: dual_authority
+    expectation: canonicalized records cannot coexist with legacy owners claiming canonical authority
+  - id: CKRK-28
+    category: dual_authority
+    expectation: current and historical stable-ID lookup remain separated
+  - id: CKRK-29
+    category: dual_authority
+    expectation: current semantic questions terminate in canonical owners without chronological reconstruction
+  - id: CKRK-30
+    category: dual_authority
+    expectation: prior CKR execution reviews remain accepted evidence rather than alternate semantic owners
+  - id: CKRK-31
+    category: exit_gate
+    expectation: implementation remains blocked while CKR-K is in execution
+  - id: CKRK-32
+    category: exit_gate
+    expectation: inventory lifecycle cannot become ckr_complete before CKR-K acceptance
+  - id: CKRK-33
+    category: exit_gate
+    expectation: final CKR-K acceptance changes inventory lifecycle to ckr_complete
+  - id: CKRK-34
+    category: exit_gate
+    expectation: final status mirror declares CKR EXIT ACCEPTED and Implementation 001-A NEXT
+  - id: CKRK-35
+    category: exit_gate
+    expectation: Implementation 001-A becomes NEXT READY NOT STARTED rather than started
+  - id: CKRK-36
+    category: exit_gate
+    expectation: deferred ADF runtime and future Databricks-skill verification remain separate from CKR documentation exit
