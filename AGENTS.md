@@ -24,7 +24,7 @@ Use `human task → live CKR authority → ownership inventory when unclear → 
 
 Preserve documented capability ≠ deployment support; framework retention authority ≠ source Assertion Authority; copied evidence ≠ independent corroboration; Observation ≠ Assessment; Expectation ≠ Baseline; authentication ≠ Capability Authorization ≠ Assertion Authority; Monitoring Scope ≠ accessibility ≠ authorization ≠ successful observation; timestamp/name proximity ≠ exact cross-system join; integration failure ≠ monitored-product negative; execution success ≠ output existence ≠ currentness/freshness ≠ health; Lineage/reachability ≠ encounter/consumption ≠ exposure; exposure ≠ effect ≠ consequence ≠ causal attribution; Investigation/localization ≠ Causal Claim; `confirmed` requires REF-017 + AUTH-034; graph/search/vector/model output ≠ truth or authority; historical source state ≠ as-known-at-cut Explanation ≠ retained actual communication ≠ current retrospective Explanation; Gate evidence suitability ≠ readiness ≠ decision ≠ enforcement ≠ execution; Gate ≠ Safeguard; Safeguard enforcement ≠ prevention ≠ release ≠ recovery; cache/SLO/cost convenience cannot strengthen truth or weaken evidence/control obligations.
 
-Accepted ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500. No ARCH-501 is accepted.
+Accepted ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500.
 
 ## Residuals / conformance
 
