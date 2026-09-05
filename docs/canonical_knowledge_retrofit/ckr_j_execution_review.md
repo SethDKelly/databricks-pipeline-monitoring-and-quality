@@ -6,7 +6,7 @@
 
 ## Objective
 
-Finish the CKR routing layer after all semantic families are canonicalized: make current-truth OKF routes canonical-first, make every accepted stable ID deterministically resolve to its canonical owner/section, separate history discovery from default resolution, align shared agent workflows, and fail conformance when those routing guarantees drift.
+Finish the CKR routing layer after all semantic families are canonicalized: make current-truth OKF routes canonical-first, make every accepted stable ID deterministically resolve to its canonical owner, separate history discovery from default resolution, align shared agent workflows, and fail conformance when those routing guarantees drift.
 
 CKR-J does not change DMTZ concepts, stable-ID meaning, architecture, product behavior, evidence semantics or implementation state.
 
@@ -37,11 +37,16 @@ These are routing/drift defects, not semantic conflicts.
 
 CKR-J derives exact owner resolution from existing authority rather than adding a duplicated 1,237-row semantic registry:
 
-`stable_id_registry accepted range` + `ownership inventory family target_documents` + `exact canonical definition heading` → `owner_path::STABLE-ID`.
+`stable_id_registry accepted range` + `ownership inventory family target_documents` + `exact accepted canonical stable definition` → `owner_path::STABLE-ID`.
 
-The path is the inventoried canonical owner and the stable ID token is the renderer-neutral section selector. Line numbers and generated Markdown slugs are derived navigation details, not identity.
+The accepted canonical definition forms preserve prior CKR decisions:
 
-Default exact-ID resolution returns the canonical owner only. Historical occurrence discovery becomes an explicit secondary mode.
+- **737 IDs** across SYN/REF/AUTH/HLTH/OPS/EXPL/INTG resolve through their exact canonical definition headings;
+- **500 ARCH IDs** resolve through membership in the CKR-I canonical segment's explicit `Stable ID index` line.
+
+This distinction is intentional. CKR-I chose compact segment-level architecture owners to avoid cloning the 500-file Phase 010 tree. CKR-J must make that topology deterministically addressable, not reverse it by manufacturing 500 new canonical headings or per-ID prose.
+
+The path is the inventoried canonical owner and the stable ID token is the renderer-neutral section selector. Line numbers and generated Markdown slugs are derived navigation details, not identity. Default exact-ID resolution returns the canonical owner only. Historical occurrence discovery becomes an explicit secondary mode.
 
 ### OKF
 
@@ -60,23 +65,36 @@ History is loaded only for explicit provenance/rationale/change work or opt-in h
 `validate_ckr_j_routing.py` validates:
 
 - all stable families remain canonicalized;
-- exact canonical definition coverage remains 1,237/1,237;
-- unique owner-heading resolution inside inventoried family target documents;
+- exact canonical stable-definition coverage remains **1,237/1,237 = 737 headings + 500 ARCH index members**;
+- unique owner resolution inside inventoried family target documents;
 - the routing manifest remains non-semantic and range-preserving;
 - intended OKF canonical route targets exist;
 - after cutover, live OKF resources/body routes match the manifest and stale Phase-current language is absent;
 - after cutover, stable-ID registry/resolver and agent surfaces expose deterministic canonical routing and separate history mode;
 - CKR-J fixtures remain CKRJ-01–48.
 
-`test_ckr_j_routing_guards.py` supplies state-aware adversarial mutations so the controls remain meaningful before and after cutover.
+`test_ckr_j_routing_guards.py` supplies state-aware adversarial mutations, including a cross-form ARCH index/heading duplicate, so the controls remain meaningful before and after cutover.
+
+## Candidate validation history
+
+### Initial candidate diagnostic
+
+Initial candidate head `ca2be7f33cf8cb68f9b51b34d2c3368b68af1108` produced:
+
+- Documentation consistency **#282 — SUCCESS** (run ID `33936494780`);
+- Agentic conformance **#164 — FAILURE** (run ID `33936494715`).
+
+Every pre-J check passed, as did all **12 CKR-J negative controls**, status drift, fixture registration (**562 scenarios**) and context budgets. The only failing check was CKR-J stable-reference coverage: **737/1,237**. The validator had incorrectly assumed every canonical stable definition was a Markdown heading. All 500 missing IDs were ARCH-001–ARCH-500, which CKR-I intentionally represents as exact members of the compact segment `Stable ID index` rather than 500 headings.
+
+The candidate design was corrected to preserve the accepted CKR-I topology: canonical definition resolution now recognizes the bounded forms `definition_heading` and `stable_id_index_member`. No ARCH semantic content, canonical ownership, accepted ID, or architecture document was changed.
 
 ## Candidate state
 
-The candidate manifest is `candidate_ready`; it does not yet switch live OKF resources or the default stable-ID resolver. Current repository authority remains the CKR-I canonical semantic layer; only the routing implementation is under CKR-J review.
+The candidate manifest remains `candidate_ready`; it does not yet switch live OKF resources or the default stable-ID resolver. Current repository authority remains the CKR-I canonical semantic layer; only the routing implementation is under CKR-J review.
 
 ## Candidate gate
 
-Pending exact-head Agentic conformance and Documentation consistency. Atomic routing cutover is prohibited until both succeed.
+Pending corrected exact-head Agentic conformance and Documentation consistency. Atomic routing cutover is prohibited until both succeed.
 
 ## Exit boundary
 
