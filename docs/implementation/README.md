@@ -8,12 +8,12 @@
 
 Product implementation remains blocked while CKR completes documentation-authority migration.
 
-Current routing uses the ownership inventory. Foundation/glossary, concepts/SYN, authority vocabulary, REF, AUTH, HLTH, OPS, EXPL and INTG resolve to canonical owners. Phase 001–009 are provenance for migrated meaning. ARCH/reference architecture are candidate-ready, so Phase 010 remains current architecture authority until CKR-I atomic cutover.
+Current routing uses the ownership inventory. Foundation/glossary, concepts/SYN, authority vocabulary, REF, AUTH, HLTH, OPS, EXPL, INTG and ARCH/reference architecture resolve to canonical owners. Phase 001–010 are provenance for migrated meaning.
 
 Current work:
 
 - CKR-A–H — COMPLETE / ACCEPTED;
-- CKR-I — IN EXECUTION;
+- CKR-I — IN EXECUTION / CUTOVER VALIDATION;
 - CKR-J/K — PLANNED / NOT ACTIVE;
 - Implementation 001-A — NOT ACTIVE / BLOCKED until CKR-K.
 

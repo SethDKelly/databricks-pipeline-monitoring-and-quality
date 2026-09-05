@@ -26,28 +26,21 @@ Ownership is declared in [`canonical_ownership_inventory.json`](canonical_owners
 - **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: PLANNED.**
 - **CKR-K — Consolidation, Provenance Validation & Exit Review: PLANNED.**
 
-## Current canonical scope through CKR-H
+## Current canonical scope through CKR-I cutover
 
-Foundation/glossary, all 24 concepts, SYN-001–SYN-035, authority vocabulary, REF-001–REF-030, AUTH-001–AUTH-053, HLTH-001–HLTH-066, OPS-001–OPS-123, EXPL-001–EXPL-160 and INTG-001–INTG-270 resolve to canonical owners.
+Foundation/glossary, all 24 concepts, SYN-001–SYN-035, authority vocabulary, REF-001–REF-030, AUTH-001–AUTH-053, HLTH-001–HLTH-066, OPS-001–OPS-123, EXPL-001–EXPL-160, INTG-001–INTG-270 and **ARCH-001–ARCH-500** now resolve to canonical owners.
 
-Phase 001–009 sources are design history/provenance for migrated meanings.
+The accepted frozen reference architecture also resolves to `docs/canonical/architecture/reference-architecture.md`; it composes ARCH-001–ARCH-500 and owns no additional stable-ID range.
 
-## CKR-I candidate state
+Phase 001–010 sources are design history/provenance for migrated meanings. Phase 010 retains the 500 atomic ARCH files, group reviews, ADRs, matrices and implementation handoff as provenance/supporting rationale, not alternate current architecture authority.
 
-ARCH-001–ARCH-500 and the accepted Phase 010 reference architecture are now represented by nine bounded candidates under `docs/canonical/architecture/`:
+## CKR-I cutover-validation state
 
-- eight substantive ARCH segment owners covering ARCH-001–ARCH-500 exactly;
-- one separately inventoried frozen reference architecture that composes those segments and creates no ARCH-501.
+ARCH is canonical across eight bounded architecture resources plus the separately inventoried frozen reference architecture under `docs/canonical/architecture/`. The cutover preserves deployment-bound capability verification; Delta-first evidence history without source-authority transfer; organization-owned identity/scope/authority/authorization; reconciliation-first acquisition and explicit integration health; exact/partial runtime/version/Lineage/Impact evidence; deterministic-first reasoning and historical replay; Statement/Answer IR before rendering; independent Gate/Safeguard control chains; and authorization-aware serving/security/SLO/cost/resilience boundaries.
 
-The candidates deliberately consolidate the 500 tiny historical ARCH files into bounded current-owner resources while retaining all 500 source files exactly once as Phase 010 provenance. See [`ckr_i_semantic_conservation_matrix.md`](ckr_i_semantic_conservation_matrix.md) and [`ckr_i_execution_review.md`](ckr_i_execution_review.md).
+See [`ckr_i_semantic_conservation_matrix.md`](ckr_i_semantic_conservation_matrix.md) and [`ckr_i_execution_review.md`](ckr_i_execution_review.md).
 
-**Candidate-ready does not transfer current authority.** Phase 010 remains the current ARCH/reference-architecture owner until an atomic CKR-I cutover passes the normal exact-head repository gates.
-
-CKR-I preserves deployment-bound capability verification; Delta-first canonical evidence history without source-authority transfer; organization-owned identity/scope/authority/authorization; reconciliation-first acquisition with explicit coverage/integration health; exact/partial runtime/version/Lineage/Impact evidence; deterministic-first reasoning and historical replay; Statement/Answer IR before rendering; independent Gate/Safeguard control chains; and authorization-aware serving/security/SLO/cost/resilience boundaries.
-
-## Remaining progression
-
-CKR-J and CKR-K remain planned. **CKR-J is not active and is not authorized by CKR-I execution.**
+CKR-I remains **IN EXECUTION** until this exact cutover state passes the normal Agentic conformance and Documentation consistency gates. CKR-J remains planned and is not authorized by the cutover.
 
 ## Implementation gate
 

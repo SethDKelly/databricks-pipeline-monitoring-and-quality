@@ -13,8 +13,9 @@
 | Concepts | `docs/canonical/concepts/README.md` |
 | SYN/REF/HLTH/OPS/INTG contracts | `docs/canonical/contracts/README.md` |
 | Current integration/source capability | `docs/canonical/contracts/integration/README.md` |
-| Current architecture during CKR-I candidate review | `docs/concepts/phase_010/README.md` |
-| CKR-I candidate/conservation evidence | `docs/canonical_knowledge_retrofit/ckr_i_execution_review.md` |
+| Current technical architecture | `docs/canonical/architecture/README.md` |
+| Frozen reference architecture | `docs/canonical/architecture/reference-architecture.md` |
+| CKR-I conservation/evidence | `docs/canonical_knowledge_retrofit/ckr_i_execution_review.md` |
 | Current health/quality semantics | `docs/canonical/contracts/health-quality-timing/README.md` |
 | Current operational semantics | `docs/canonical/contracts/operations/README.md` |
 | Current questioning/Explanation semantics | `docs/canonical/experience/README.md` |
@@ -25,8 +26,8 @@
 ## Current state
 
 - CKR-A–H — COMPLETE / ACCEPTED.
-- CKR-I — IN EXECUTION.
+- CKR-I — IN EXECUTION / CUTOVER VALIDATION.
 - CKR-J/K — PLANNED / NOT ACTIVE.
 - Implementation 001-A — BLOCKED until CKR-K.
 
-INTG-001–INTG-270 resolve to canonical integration owners. Phase 009 is provenance. ARCH-001–ARCH-500 and the reference architecture are candidate-ready under CKR-I, so **Phase 010 remains current architecture authority until atomic cutover**.
+ARCH-001–ARCH-500 and the frozen reference architecture resolve to canonical architecture owners. Phase 010 is provenance/supporting rationale and implementation-handoff history.

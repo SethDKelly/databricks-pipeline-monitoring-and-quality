@@ -4,7 +4,7 @@
 
 **Kind:** REFERENCE TECHNICAL ARCHITECTURE
 
-**Authority:** CANDIDATE / NOT CURRENT AUTHORITY
+**Authority:** CANONICAL CURRENT AUTHORITY
 
 **Migration record:** `architecture.reference_architecture`
 

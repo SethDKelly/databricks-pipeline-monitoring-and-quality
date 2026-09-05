@@ -4,7 +4,7 @@
 
 **Kind:** TECHNICAL ARCHITECTURE CONTRACT
 
-**Authority:** CANDIDATE / NOT CURRENT AUTHORITY
+**Authority:** CANONICAL CURRENT AUTHORITY
 
 **Migration records:** `stable_family.ARCH`, `architecture.source_acquisition_adapter_integration_health`
 

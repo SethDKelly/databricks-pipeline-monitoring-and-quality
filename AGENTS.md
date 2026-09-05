@@ -6,11 +6,11 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-H; IN EXECUTION CKR-I; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-A–H are complete/accepted. CKR-I is in execution. Product implementation remains blocked until CKR-K.
+CKR-A–H are complete/accepted. CKR-I is in execution/cutover validation. Product implementation remains blocked until CKR-K.
 
 Current semantic ownership is selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`: `canonicalized` → inventoried `docs/canonical/` owner; `legacy_authoritative` / `candidate_ready` → inventoried legacy owner; `history_only` → provenance/rationale only.
 
-Foundation/glossary, all 24 concepts, SYN-001–035, authority vocabulary, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160 and INTG-001–270 are canonicalized. Phase 001–009 sources are provenance for migrated meanings. ARCH-001–500 and the reference architecture are `candidate_ready`, so Phase 010 remains current architecture authority until atomic CKR-I cutover.
+Foundation/glossary, all 24 concepts, SYN-001–035, authority vocabulary, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500 are canonicalized. Phase 001–010 sources are provenance for migrated meanings. The frozen reference architecture resolves to `docs/canonical/architecture/reference-architecture.md`.
 
 Authority order: current semantic owner → root `AGENTS.md` → live CKR/implementation status → accepted ADF scope/security mechanics → DMTZ workflows/overlays → reviewed vendor operational guidance → tool/personal memory.
 

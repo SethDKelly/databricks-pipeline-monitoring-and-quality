@@ -1,10 +1,10 @@
 # Canonical Architecture
 
-Structural routing index for DMTZ technical architecture.
+Structural routing index for current accepted DMTZ technical architecture.
 
-**CKR-I candidate state:** ARCH-001–ARCH-500 and the frozen reference architecture are represented here as nine bounded `CANDIDATE / NOT CURRENT AUTHORITY` resources. Because the ownership inventory marks ARCH `candidate_ready`, **Phase 010 remains the current architecture authority until atomic CKR-I cutover**.
+**CKR-I cutover state:** ARCH-001–ARCH-500 now resolve to eight inventoried `CANONICAL CURRENT AUTHORITY` resources in this directory. The separately inventoried frozen reference architecture composes those segments and owns no additional stable-ID range. Phase 010 is design history/provenance for these meanings.
 
-## Candidate topology
+## Current topology
 
 - `frame-environment-decision-criteria.md` — ARCH-001–032
 - `evidence-provenance-temporal-persistence.md` — ARCH-033–080
@@ -14,6 +14,6 @@ Structural routing index for DMTZ technical architecture.
 - `investigation-reasoning-replay-explanation.md` — ARCH-275–350
 - `active-control.md` — ARCH-351–420
 - `serving-security-deployment-operations.md` — ARCH-421–500
-- `reference-architecture.md` — frozen composition of ARCH-001–500; no additional stable-ID range
+- `reference-architecture.md` — frozen composition of ARCH-001–500
 
-The Phase 010 atomic ARCH files and consolidation artifacts remain the detailed provenance/review corpus. Candidate readiness does not create dual current authority.
+This README is a routing-only structural index, not a separate semantic owner. For detailed design rationale, scenario evidence, ADRs and the original 500 atomic contracts, consult Phase 010 as provenance.
