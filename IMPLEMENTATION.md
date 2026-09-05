@@ -2,9 +2,9 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-I; NEXT CKR-J; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-I; IN EXECUTION CKR-J; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-A–I are complete/accepted. CKR-J is next/ready but unstarted. Product implementation remains blocked until CKR-K.
+CKR-A–I are complete/accepted. CKR-J is in execution/candidate review. Product implementation remains blocked until CKR-K.
 
 ## Current semantic routing
 
@@ -16,5 +16,7 @@ CKR-A–I are complete/accepted. CKR-J is next/ready but unstarted. Product impl
 6. root `AGENTS.md` — shared instructions.
 
 Foundation/glossary, concepts/SYN, authority vocabulary, REF, AUTH, HLTH, OPS, EXPL, INTG and ARCH/reference architecture resolve to canonical owners. Phase 001–010 are provenance for migrated meaning.
+
+CKR-J is changing routing/discovery only. Its candidate manifest and validator do not authorize implementation or alter accepted contract meaning.
 
 **Implementation 001-A — BLOCKED until CKR-K.**
