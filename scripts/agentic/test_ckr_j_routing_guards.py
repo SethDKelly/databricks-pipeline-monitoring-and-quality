@@ -38,9 +38,9 @@ def main():
         mutate(repo,'docs/canonical_knowledge_retrofit/fixtures/ckr_j_routing_scenarios.yaml',lambda t:t.replace('  - id: CKRJ-48\n','  - id: CKRJ-99\n',1),'CKR-J fixture identity drift',errors)
         if active:
             mutate(repo,'knowledge/domains/active-control.md',lambda t:t.replace('../../docs/canonical/architecture/active-control.md','../../docs/concepts/phase_010/07_execution_gate_propagation_safeguard_active_control_architecture/README.md',1),'active-control current route regression to Phase 010',errors)
-            mutate(repo,'.agents/skills/resolve-contract/SKILL.md',lambda t:t.replace('--history','--old-history-mode',1),'history/canonical resolver mode collapse',errors)
-            mutate(repo,'scripts/agentic/resolve_stable_id.py',lambda t:t.replace('canonical_locator','legacy_locator',1),'canonical resolver behavior marker removed',errors)
-            mutate(repo,'scripts/agentic/knowledge_impact.py',lambda t:t.replace('BODY-LINK','SECONDARY',1),'secondary OKF body-link impact coverage removed',errors)
+            mutate(repo,'.agents/skills/resolve-contract/SKILL.md',lambda t:t.replace('--history','--old-history-mode'),'history/canonical resolver mode collapse',errors)
+            mutate(repo,'scripts/agentic/resolve_stable_id.py',lambda t:t.replace('canonical_locator','legacy_locator'),'canonical resolver behavior marker removed',errors)
+            mutate(repo,'scripts/agentic/knowledge_impact.py',lambda t:t.replace('BODY-LINK','SECONDARY'),'secondary OKF body-link impact coverage removed',errors)
         else:
             def premature_active(d): d['status']='active'
             mutate(repo,'docs/canonical_knowledge_retrofit/ckr_j_routing_manifest.json',json_transform(premature_active),'premature CKR-J routing activation without atomic cutover',errors)
