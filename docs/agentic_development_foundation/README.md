@@ -1,6 +1,8 @@
 # DMTZ Agentic Development Foundation
 
-**Status:** COMPLETE / EXECUTION EXIT ACCEPTED — POST-EXIT CKR DOCUMENTATION AUTHORITY RETROFIT ACTIVE
+**Status:** COMPLETE / EXECUTION EXIT ACCEPTED — CKR COMPLETE / IMPLEMENTATION 001-A NEXT
+
+**Current handoff:** CKR COMPLETE / EXIT ACCEPTED — IMPLEMENTATION 001-A NEXT / READY / NOT STARTED.
 
 ## Final execution state
 
@@ -23,19 +25,21 @@ The formal ADF exit decision remains [`execution_exit_review.md`](execution_exit
 - ADF-EX-17 — **DEFERRED / WAIVED — BOUNDED VERIFICATION DEBT**;
 - ADF-EX-18–ADF-EX-20 — PASS.
 
-The mirror above records the result of the ADF dependency itself. A later repository decision has inserted the **Canonical Knowledge & Documentation Authority Retrofit (CKR)** before product implementation. Therefore the current implementation gate is owned by `docs/canonical_knowledge_retrofit/README.md` / `docs/implementation/README.md`, not by reinterpreting the historical ADF exit.
+## Relationship to completed CKR
 
-## Post-exit CKR dependency
+ADF exit was accepted before the later Canonical Knowledge & Documentation Authority Retrofit was inserted ahead of product implementation. CKR has subsequently completed and exited successfully; this does not reopen or rewrite the historical ADF exit.
 
-CKR separates current semantic authority from preserved chronological design history before code/test traceability begins.
+Current implementation progression is owned by `docs/canonical_knowledge_retrofit/README.md` and `docs/implementation/README.md`:
 
-- ADF remains complete; CKR does not reopen ADF-A–H.
-- ADF authority/scope/security/conformance mechanics remain in force throughout CKR.
-- `knowledge/` remains routing rather than truth.
-- `docs/canonical/` becomes current authority only through CKR record-by-record cutover.
-- Implementation 001-A is currently blocked until CKR-K accepts the retrofit.
+- CKR-A–K — COMPLETE / ACCEPTED;
+- CKR EXIT — ACCEPTED;
+- **Implementation 001-A — NEXT / READY / NOT STARTED.**
 
-Primary CKR route: [`../canonical_knowledge_retrofit/README.md`](../canonical_knowledge_retrofit/README.md).
+CKR established current canonical semantic ownership under `docs/canonical/`, deterministic stable-ID resolution, canonical-first OKF routing, preserved design history/provenance and drift enforcement. `knowledge/` remains routing rather than truth. Phase 001–010 is provenance for migrated meanings.
+
+CKR exit removes the documentation-authority blocker only. It does not start implementation; a subsequent explicit human-selected implementation task remains required.
+
+Primary current routes: [`../canonical_knowledge_retrofit/README.md`](../canonical_knowledge_retrofit/README.md) and [`../implementation/README.md`](../implementation/README.md).
 
 ## ADF-EX-17 residual verification
 
@@ -58,19 +62,19 @@ The accepted vendor set remains:
 
 Vendor skills are reviewed operational guidance, never DMTZ semantic/authorization authority. DMTZ overlays remain canonical development workflows under `.agents/skills/`. Model/AI implementation skills and managed Databricks MCP servers remain deferred.
 
-`DBX-SKILL-RUN-01` remains a future Implementation 001-A environment obligation after CKR unlocks implementation.
+`DBX-SKILL-RUN-01` remains a future Implementation 001-A environment obligation.
 
 ## Durable foundation model
 
 ### Authority and human direction
 
-A1–A4 remains the action model. Accepted DMTZ semantics outrank agent tooling, vendor guidance and memory. CKR migration itself is A2 documentation work unless it discovers a genuine semantic/architecture contradiction, which requires A4 change control.
+A1–A4 remains the action model. Accepted DMTZ semantics outrank agent tooling, vendor guidance and memory. Documentation-only synchronization work remains A2 unless it discovers a genuine semantic/architecture contradiction, which requires A4 change control.
 
 ### Knowledge, workflows and context
 
 OKF remains routing. Canonical workflows live under `.agents/skills/`; Claude uses thin bridges. Progressive disclosure, stable references and context budgets remain mandatory.
 
-CKR refines what “canonical resource” means during migration: the current owner is selected by the CKR ownership inventory rather than by path age, search order or the mere existence of `docs/canonical/`.
+The completed CKR ownership inventory selects current canonical owners. Search order, path presence, model/tool memory, vendor guidance and historical occurrences cannot override that ownership.
 
 ### Conformance and CI
 
@@ -80,7 +84,7 @@ Canonical command:
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-The runner now also validates CKR canonical-knowledge authority and CKR status. Its PASS result remains repository configuration/documentation conformance, not DMTZ domain health or provider/Databricks runtime proof.
+The runner validates canonical-knowledge authority, CKR/ADF status, routing, references, context budgets, guards and other accepted repository-configuration constraints. Its PASS result is repository configuration/documentation conformance, not DMTZ domain health or provider/Databricks runtime proof.
 
 ### Security and lifecycle
 
@@ -103,14 +107,16 @@ Least privilege, secret/sensitive-data boundaries, prompt/content trust, noncano
 - [`execution_exit_review.md`](execution_exit_review.md) — accepted ADF exit as of its decision time;
 - [`authority_scope_policy.md`](authority_scope_policy.md) — human-directed authority;
 - [`okf_profile.md`](okf_profile.md) — OKF profile;
-- [`stable_reference_policy.md`](stable_reference_policy.md) / [`stable_id_registry.json`](stable_id_registry.json) — stable reference discipline;
+- [`stable_reference_policy.md`](stable_reference_policy.md) / [`stable_id_registry.json`](stable_id_registry.json) — stable reference discipline refined by CKR-J;
+- [`context_discovery_policy.md`](context_discovery_policy.md) — canonical-first bounded context discovery;
 - [`conformance_policy.md`](conformance_policy.md) — conformance model;
 - [`security_trust_lifecycle_policy.md`](security_trust_lifecycle_policy.md) / [`agentic_change_governance.md`](agentic_change_governance.md) — security/change governance;
 - [`databricks_agent_skills_addendum.md`](databricks_agent_skills_addendum.md) — reviewed Databricks skills boundary;
-- [`../canonical_knowledge_retrofit/README.md`](../canonical_knowledge_retrofit/README.md) — current post-ADF documentation-authority dependency.
+- [`../canonical_knowledge_retrofit/README.md`](../canonical_knowledge_retrofit/README.md) — completed CKR authority/exit state;
+- [`../implementation/README.md`](../implementation/README.md) — current implementation progression.
 
 ## Current next dependency
 
-**CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory is the current post-ADF work.**
+**Implementation 001-A — NEXT / READY / NOT STARTED.**
 
-Implementation 001-A becomes eligible only after CKR-K accepts the retrofit. ADF exit acceptance itself remains valid and is not rewritten retroactively.
+Implementation begins only after a subsequent explicit human-selected implementation task. ADF/CKR exit acceptance does not authorize autonomous continuation.
