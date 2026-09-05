@@ -3,14 +3,14 @@ phase: CKR-J
 purpose: Canonical-first OKF, stable-reference, agent-routing and drift-enforcement scenarios.
 scenarios:
   - id: CKRJ-01
-    purpose: exact accepted stable ID resolves to one canonical owner heading
+    purpose: exact accepted stable ID resolves to one canonical stable definition
     expected: return inventoried canonical owner locator only by default
   - id: CKRJ-02
     purpose: lowest accepted stable ID remains resolvable
     expected: SYN-001 resolves canonically without range inference
   - id: CKRJ-03
-    purpose: highest accepted stable ID remains resolvable
-    expected: ARCH-500 resolves canonically without creating a later ID
+    purpose: highest accepted stable ID remains resolvable through the CKR-I compact index form
+    expected: ARCH-500 resolves canonically without creating a later ID or per-ID prose
   - id: CKRJ-04
     purpose: range-invalid future ID remains rejected
     expected: ARCH-501 is invalid/unaccepted rather than searched as a convenient contract
@@ -18,10 +18,10 @@ scenarios:
     purpose: wrong-width stable token remains invalid
     expected: REF-1 does not normalize silently into an accepted identifier
   - id: CKRJ-06
-    purpose: duplicate canonical definition headings are detected
+    purpose: duplicate canonical stable definitions are detected across accepted definition forms
     expected: deterministic resolution fails rather than choosing first match
   - id: CKRJ-07
-    purpose: missing canonical definition heading is detected
+    purpose: missing canonical stable definition is detected
     expected: routing fails rather than falling back to history or memory
   - id: CKRJ-08
     purpose: canonical owner selection is constrained to inventoried target documents
@@ -31,7 +31,7 @@ scenarios:
     expected: owner_path::ID remains identity while derived line location may change
   - id: CKRJ-10
     purpose: renderer slug is not stable identity
-    expected: heading wording/rendering changes cannot replace the stable ID selector
+    expected: heading or compact-index rendering cannot replace the stable ID selector
   - id: CKRJ-11
     purpose: historical occurrence search is opt-in
     expected: default resolution excludes historical candidates
