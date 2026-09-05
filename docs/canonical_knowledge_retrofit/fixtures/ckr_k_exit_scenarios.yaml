@@ -13,7 +13,7 @@ scenarios:
     expectation: all eight stable families remain canonicalized
   - id: CKRK-04
     category: ownership_closure
-    expectation: all eight architecture segments remain canonicalized
+    expectation: all nine architecture inventory records remain canonicalized including eight ARCH range segments and the frozen reference architecture
   - id: CKRK-05
     category: ownership_closure
     expectation: canonical targets remain under docs/canonical and claim current authority
@@ -31,7 +31,7 @@ scenarios:
     expectation: every stable-family canonical contract retains historical phase provenance
   - id: CKRK-10
     category: provenance
-    expectation: every architecture segment retains Phase 010 provenance
+    expectation: every architecture inventory target retains Phase 010 provenance where applicable
   - id: CKRK-11
     category: provenance
     expectation: design-history index remains present and explicitly historical
