@@ -8,7 +8,7 @@
 
 **Migration record:** `architecture.reference_architecture`
 
-**Stable-ID coverage:** composes ARCH-001–ARCH-500; it does not create ARCH-501.
+**Stable-ID coverage:** composes ARCH-001–ARCH-500; no additional stable-ID range.
 
 **Owns current question after cutover:** What is the frozen end-to-end DMTZ target architecture and which planes own evidence, policy, reasoning, serving, controls and operations?
 
