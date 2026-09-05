@@ -47,7 +47,7 @@ def main():
     if 'does not own dmtz product semantics' not in manifest.get('purpose','').lower(): errors.append('CKR-J routing manifest must explicitly remain non-semantic routing projection')
     if states.get('J') not in {'IN EXECUTION','COMPLETE / ACCEPTED'}: errors.append(f'CKR-J validator may run only while CKR-J is in execution or complete; found {states.get("J")!r}')
     if status=='candidate_ready' and states.get('J')!='IN EXECUTION': errors.append('candidate_ready CKR-J routing manifest requires CKR-J IN EXECUTION')
-    if states.get('K') not in {'PLANNED','NEXT / READY'}: errors.append(f'CKR-J must not activate CKR-K; found CKR-K={states.get("K")!r}')
+    if states.get('J')=='IN EXECUTION' and states.get('K') not in {'PLANNED','NEXT / READY'}: errors.append(f'CKR-J cannot activate CKR-K before CKR-J acceptance; found CKR-K={states.get("K")!r}')
     expected_forms=['definition_heading','stable_id_index_member','stable_contract_list_member']
     if stable.get('resolution_mode')!='canonical_target_stable_definition': errors.append('CKR-J stable-reference resolution mode drifted')
     if stable.get('accepted_definition_forms')!=expected_forms: errors.append('CKR-J accepted stable-definition forms drifted')

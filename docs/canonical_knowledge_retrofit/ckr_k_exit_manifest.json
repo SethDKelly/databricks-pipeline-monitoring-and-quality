@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "status": "accepted",
+  "phase": "CKR-K",
+  "purpose": "Whole-retrofit consolidation, provenance validation and documentation-authority exit only; this manifest does not own DMTZ product semantics or implementation state.",
+  "authority_model": "docs/canonical_knowledge_retrofit/authority_model.md",
+  "migration_contract": "docs/canonical_knowledge_retrofit/migration_contract.md",
+  "ownership_inventory": "docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json",
+  "stable_id_registry": "docs/agentic_development_foundation/stable_id_registry.json",
+  "routing_manifest": "docs/canonical_knowledge_retrofit/ckr_j_routing_manifest.json",
+  "design_history_index": "docs/design_history/README.md",
+  "expected_counts": {
+    "ownership_records": 34,
+    "concept_records": 24,
+    "stable_families": 8,
+    "stable_ids": 1237,
+    "architecture_segments": 9,
+    "okf_semantic_routes": 7,
+    "prior_ckr_groups": 10,
+    "ckr_k_scenarios": 36,
+    "ckr_k_negative_controls": 14
+  },
+  "prior_execution_reviews": [
+    "docs/canonical_knowledge_retrofit/ckr_a_execution_review.md",
+    "docs/canonical_knowledge_retrofit/ckr_b_execution_review.md",
+    "docs/canonical_knowledge_retrofit/ckr_c_execution_review.md",
+    "docs/canonical_knowledge_retrofit/ckr_d_execution_review.md",
+    "docs/canonical_knowledge_retrofit/ckr_e_execution_review.md",
+    "docs/canonical_knowledge_retrofit/ckr_f_execution_review.md",
+    "docs/canonical_knowledge_retrofit/ckr_g_execution_review.md",
+    "docs/canonical_knowledge_retrofit/ckr_h_execution_review.md",
+    "docs/canonical_knowledge_retrofit/ckr_i_execution_review.md",
+    "docs/canonical_knowledge_retrofit/ckr_j_execution_review.md"
+  ],
+  "representative_stable_ids": [
+    "SYN-001", "SYN-035", "REF-001", "REF-030", "AUTH-001", "AUTH-053",
+    "HLTH-001", "HLTH-066", "OPS-001", "OPS-123", "EXPL-001", "EXPL-160",
+    "INTG-001", "INTG-270", "ARCH-001", "ARCH-190", "ARCH-191", "ARCH-274", "ARCH-500"
+  ],
+  "representative_current_resources": [
+    "docs/canonical/reference/product-definition.md",
+    "docs/canonical/concepts/observation.md",
+    "docs/canonical/contracts/synchronization/subject-scope-governance.md",
+    "docs/canonical/contracts/evidence-time-causality/evidence-sufficiency-coverage.md",
+    "docs/canonical/authority/standing-conflict.md",
+    "docs/canonical/contracts/health-quality-timing/measurement-applicability.md",
+    "docs/canonical/contracts/operations/lineage-topology.md",
+    "docs/canonical/experience/question-scope-temporal.md",
+    "docs/canonical/contracts/integration/integration-contract-vocabulary.md",
+    "docs/canonical/architecture/reference-architecture.md"
+  ],
+  "exit_requirements": [
+    "all_required_current_semantic_domains_have_canonical_owners",
+    "canonical_first_routing_is_enforced",
+    "stable_id_ownership_is_deterministic_for_traceability",
+    "representative_current_truth_questions_do_not_require_chronological_reconstruction",
+    "design_history_remains_accessible_for_provenance",
+    "no_unreviewed_dual_authority_condition_remains"
+  ],
+  "inventory_final_status": "ckr_complete",
+  "final_status_mirror": "CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.",
+  "implementation_release_state": "next_ready_not_started",
+  "forbidden_live_patterns": [
+    "still-unmigrated",
+    "remains with Phase 010",
+    "ARCH remains with its Phase 010 owner until CKR-I",
+    "ARCH runtime implementation remains with Phase 010 until CKR-I"
+  ],
+  "exit_rule": "CKR exit is accepted only when the candidate validator and guards pass, final inventory/status synchronization is applied, and the exact final evidence head passes Agentic conformance and Documentation consistency."
+}

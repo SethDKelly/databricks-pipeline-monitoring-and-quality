@@ -1,5 +1,5 @@
 ---
-description: Route DMTZ work to live CKR/implementation status and current semantic ownership. Use when project status, authority, workflow or reference location is unclear.
+description: Route DMTZ work to live implementation status and current semantic ownership. Use when project status, authority, workflow or reference location is unclear.
 globs:
 alwaysApply: false
 ---
@@ -8,12 +8,14 @@ alwaysApply: false
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-J; NEXT CKR-K; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-CKR-A–J are complete/accepted. CKR-K is next/ready but unstarted. Product implementation remains blocked until CKR-K.
+CKR-A–K are complete/accepted. Implementation 001-A is NEXT / READY / NOT STARTED and requires explicit human selection before implementation begins.
 
-Primary shared authority remains root `AGENTS.md`, `docs/agentic_development_foundation/authority_scope_policy.md`, the CKR README/ownership inventory, and accepted ADF scope/security mechanics. All accepted semantic families through ARCH are canonicalized; Phase 001–010 sources are provenance.
+Primary shared authority remains root `AGENTS.md`, `docs/agentic_development_foundation/authority_scope_policy.md`, the CKR ownership inventory, and accepted ADF scope/security mechanics. All accepted semantic families through ARCH are canonicalized; Phase 001–010 sources are provenance.
 
 For a known stable ID, use `python3 scripts/agentic/resolve_stable_id.py <ID>` to get the deterministic canonical locator. Use `--history` only for explicit provenance/history. For an unknown semantic location, use one bounded route from `knowledge/index.md`, then the canonical owner.
 
-Do not infer authority from OKF, resolver output alone, recency, search order, Git history, vendor skill, tool memory, source availability or path presence. CKR-J completion does not authorize CKR-K or implementation work.
+CKR exit is documentation-authority acceptance, not implementation execution. Do not begin Implementation 001-A without a subsequent human-selected implementation task.
+
+Do not infer authority from OKF, resolver output alone, recency, search order, Git history, vendor skill, tool memory, source availability or path presence.

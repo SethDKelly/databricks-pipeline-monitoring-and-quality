@@ -14,7 +14,8 @@ CKR=(
 ('CKR-G','docs/canonical_knowledge_retrofit/fixtures/ckr_g_experience_scenarios.yaml','docs/canonical_knowledge_retrofit/ckr_g_execution_review.md'),
 ('CKR-H','docs/canonical_knowledge_retrofit/fixtures/ckr_h_integration_scenarios.yaml','docs/canonical_knowledge_retrofit/ckr_h_execution_review.md'),
 ('CKR-I','docs/canonical_knowledge_retrofit/fixtures/ckr_i_architecture_scenarios.yaml','docs/canonical_knowledge_retrofit/ckr_i_execution_review.md'),
-('CKR-J','docs/canonical_knowledge_retrofit/fixtures/ckr_j_routing_scenarios.yaml','docs/canonical_knowledge_retrofit/ckr_j_execution_review.md'))
+('CKR-J','docs/canonical_knowledge_retrofit/fixtures/ckr_j_routing_scenarios.yaml','docs/canonical_knowledge_retrofit/ckr_j_execution_review.md'),
+('CKR-K','docs/canonical_knowledge_retrofit/fixtures/ckr_k_exit_scenarios.yaml','docs/canonical_knowledge_retrofit/ckr_k_execution_review.md'))
 ID_RE=re.compile(r'^\s*-\s+id:\s*["\']?([^"\'\s]+)',re.M)
 def collect(path,label,seen,errors):
     if not path.is_file(): errors.append(f'missing {label} fixture catalog: {path.name}'); return 0
