@@ -59,11 +59,12 @@ def main() -> int:
             d['architecture_segments'][0]['migration_state'] = 'legacy_authoritative'
 
         def move_reference_early(d):
-            next(x for x in d['architecture_segments'] if x['record_id'] == 'architecture.reference_architecture')['migration_state'] = 'canonicalized'
+            family_state = d['stable_families']['ARCH']['migration_state']
+            next(x for x in d['architecture_segments'] if x['record_id'] == 'architecture.reference_architecture')['migration_state'] = 'candidate_ready' if family_state == 'canonicalized' else 'canonicalized'
 
         mutate(repo, 'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json', json_transform(drop_target), 'partial CKR-I target topology', errors)
         mutate(repo, 'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json', json_transform(split_segment_state), 'partial CKR-I segment cutover', errors)
-        mutate(repo, 'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json', json_transform(move_reference_early), 'reference architecture moves before ARCH family', errors)
+        mutate(repo, 'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json', json_transform(move_reference_early), 'reference architecture state diverges from ARCH family', errors)
         mutate(repo, 'docs/canonical/architecture/frame-environment-decision-criteria.md', lambda t: t.replace('ARCH-032', 'ARCH-999'), 'omitted CKR-I ARCH-032 identity', errors)
         mutate(repo, 'docs/canonical_knowledge_retrofit/ckr_i_semantic_conservation_matrix.md', lambda t: t.replace('documented capability ≠ deployment presence ≠ entitlement ≠ enablement ≠ permission ≠ reachability ≠ observable coverage ≠ proposition-specific usability', 'documented capability = deployment support'), 'vendor capability/deployment collapse regression', errors)
         mutate(repo, 'docs/canonical_knowledge_retrofit/ckr_i_semantic_conservation_matrix.md', lambda t: t.replace('framework retention authority ≠ source Assertion Authority', 'framework retention authority = source Assertion Authority'), 'retention/source-authority collapse regression', errors)
