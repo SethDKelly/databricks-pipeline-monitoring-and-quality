@@ -22,20 +22,11 @@ Canonical stable-definition coverage is **1,237/1,237** while preserving all pri
 - **416** ARCH `Stable ID index` members across seven compact architecture segments;
 - **84** ARCH named stable-contract list members in the runtime/health/Lineage/Impact segment.
 
-No canonical semantic document was expanded merely to satisfy routing. In particular, CKR-J does not manufacture 500 ARCH headings or restore the Phase 010 one-file-per-ID structure.
+No canonical semantic document was expanded merely to satisfy routing. CKR-J does not manufacture 500 ARCH headings or restore the Phase 010 one-file-per-ID structure.
 
 ## Live routing cutover
 
-The atomic cutover activates:
-
-- `ckr_j_routing_manifest.json` as the machine-checkable routing projection;
-- `stable_id_registry.json` canonical resolution metadata while preserving all accepted ranges;
-- `resolve_stable_id.py` default canonical-only resolution with explicit `--history` provenance mode;
-- seven canonical-first semantic OKF domain routes;
-- a compact stable-reference OKF project route;
-- canonical BODY-LINK impact review in `knowledge_impact.py`;
-- shared resolve-context / resolve-contract / update-traceability routing;
-- canonical-owner validation for operational agent-facing stable-ID citations.
+The atomic cutover activates the routing manifest, canonical-resolution stable-ID registry/resolver, seven canonical-first semantic OKF domain routes, stable-reference project route, canonical BODY-LINK impact review, shared agent routing workflows, and canonical-owner validation for operational stable-ID citations.
 
 The registry, manifest, resolver and OKF bundle remain derived routing machinery and cannot own, strengthen, weaken or reinterpret DMTZ semantics.
 
@@ -48,7 +39,7 @@ Head `ca2be7f33cf8cb68f9b51b34d2c3368b68af1108`:
 - Documentation consistency **#282 — SUCCESS** (run `33936494780`);
 - Agentic conformance **#164 — FAILURE** (run `33936494715`).
 
-All non-J checks and all 12 CKR-J guards passed. CKR-J stable coverage was 737/1,237 because the first validator assumed every canonical definition was a Markdown heading. The 500 missing IDs were ARCH and no semantic document was changed.
+All non-J checks and all 12 CKR-J guards passed. CKR-J stable coverage was 737/1,237 because the first validator assumed every canonical definition was a Markdown heading. The 500 missing IDs were ARCH; no semantic document was changed.
 
 ### Second candidate diagnostic
 
@@ -57,7 +48,7 @@ Head `2ace9b9b4a580651d3febe0bf6fee9572ec67b7b`:
 - Documentation consistency **#288 — SUCCESS** (run `33936668827`);
 - Agentic conformance **#170 — FAILURE** (run `33936668820`).
 
-Coverage became 1,153/1,237 = 737 headings + 416 ARCH index members. The remaining 84 were exactly ARCH-191–ARCH-274, represented by the accepted runtime segment's named stable-contract lists. All other conformance and all 12 CKR-J guards passed.
+Coverage became 1,153/1,237 = 737 headings + 416 ARCH index members. The remaining 84 were ARCH-191–ARCH-274, represented by the accepted runtime segment's named stable-contract lists. All other conformance and all 12 CKR-J guards passed.
 
 ### Corrected candidate gate
 
@@ -67,6 +58,26 @@ Head `8ed987651307114f98af113675a898ec80a92493` recognized all three accepted ca
 - Documentation consistency **#292 — SUCCESS** (run `33936778058`).
 
 This authorized the atomic routing cutover.
+
+## Cutover validation history
+
+### Initial cutover diagnostic
+
+Atomic cutover head `7c60e58345e7d6b6255c13504c475c3e8ead35ae` activated the routing layer without changing canonical semantic owners. It produced:
+
+- Documentation consistency **#293 — SUCCESS** (run `33937274764`);
+- Agentic conformance **#175 — FAILURE** (run `33937274669`).
+
+The substantive CKR-J routing state passed:
+
+- stable-reference coverage **1,237/1,237 = 737 headings + 416 index members + 84 stable-contract list members**;
+- all seven OKF domain routes structurally valid;
+- all **12 CKR-J negative controls** passed;
+- operational agent references resolved against current canonical owners;
+- all CKR-B–I semantic/conformance checks passed;
+- fixture catalog remained **562 scenarios** and context budgets passed.
+
+The failure was confined to compatibility wording/adapter expectations: the Cursor routing rule omitted literal references required by the existing adapter validator, and the CKR-J phase bullet used `IN EXECUTION / ROUTING CUTOVER VALIDATION` instead of the status parser's exact `IN EXECUTION` state. The correction restores those expected literals/state syntax without changing routing behavior or semantic content.
 
 ## Deterministic protection
 
@@ -78,7 +89,7 @@ The shared conformance suite continues to protect prior CKR semantic families, c
 
 ## Cutover gate
 
-The activated routing tree must pass exact-head Agentic conformance and Documentation consistency before CKR-J can close. CKR-J remains `IN EXECUTION` during this validation.
+The corrected activated routing head must pass exact-head Agentic conformance and Documentation consistency before CKR-J can close. CKR-J remains `IN EXECUTION` during validation.
 
 ## Exit boundary
 

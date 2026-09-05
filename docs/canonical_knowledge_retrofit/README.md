@@ -1,6 +1,6 @@
 # Canonical Knowledge & Documentation Authority Retrofit
 
-**Status:** CKR-A–CKR-I COMPLETE / ACCEPTED — CKR-J IN EXECUTION — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
+**Status:** CKR-A–CKR-I COMPLETE / ACCEPTED — CKR-J IN EXECUTION / ROUTING CUTOVER VALIDATION — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
 
 **CKR status mirror: COMPLETE CKR-A–CKR-I; IN EXECUTION CKR-J; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
@@ -23,7 +23,7 @@ Ownership is declared in [`canonical_ownership_inventory.json`](canonical_owners
 - **CKR-G — Questioning, Explanation & Experience Contracts: COMPLETE / ACCEPTED.**
 - **CKR-H — Integration, Source Authority & Evidence Availability: COMPLETE / ACCEPTED.**
 - **CKR-I — Technical Architecture: COMPLETE / ACCEPTED.**
-- **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: IN EXECUTION / ROUTING CUTOVER VALIDATION.**
+- **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: IN EXECUTION.**
 - **CKR-K — Consolidation, Provenance Validation & Exit Review: PLANNED.**
 
 ## Current canonical semantic scope

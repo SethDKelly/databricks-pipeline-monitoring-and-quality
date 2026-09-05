@@ -12,8 +12,8 @@ alwaysApply: false
 
 CKR-A–I are complete/accepted. CKR-J is in execution/routing-cutover validation. Product implementation remains blocked until CKR-K.
 
-Primary shared authority remains root `AGENTS.md`, the CKR README/ownership inventory, and accepted ADF scope/security mechanics. All accepted semantic families through ARCH are canonicalized; Phase 001–010 sources are provenance.
+Primary shared authority remains root `AGENTS.md`, `docs/agentic_development_foundation/authority_scope_policy.md`, the CKR README/ownership inventory, and accepted ADF scope/security mechanics. All accepted semantic families through ARCH are canonicalized; Phase 001–010 sources are provenance.
 
-For a known stable ID, use `python3 scripts/agentic/resolve_stable_id.py <ID>` to get the deterministic canonical locator. Use `--history` only for explicit provenance/history. For an unknown semantic location, use one bounded OKF route then the canonical owner.
+For a known stable ID, use `python3 scripts/agentic/resolve_stable_id.py <ID>` to get the deterministic canonical locator. Use `--history` only for explicit provenance/history. For an unknown semantic location, use one bounded route from `knowledge/index.md`, then the canonical owner.
 
 Do not infer authority from OKF, resolver output alone, recency, search order, Git history, vendor skill, tool memory, source availability or path presence. CKR-J does not authorize CKR-K or implementation work.
