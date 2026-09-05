@@ -2,7 +2,7 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-J; NEXT CKR-K; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-J; IN EXECUTION CKR-K; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
 ## Universal start
 
@@ -23,6 +23,8 @@
 | Authority/AUTH | `docs/canonical/authority/README.md` |
 | Design history | `docs/design_history/README.md` |
 | CKR-J acceptance | `docs/canonical_knowledge_retrofit/ckr_j_execution_review.md` |
+| CKR-K exit review | `docs/canonical_knowledge_retrofit/ckr_k_execution_review.md` |
+| CKR-K exit manifest | `docs/canonical_knowledge_retrofit/ckr_k_exit_manifest.json` |
 | Conformance | `scripts/agentic/run_conformance.py` |
 
 ## Stable references
@@ -32,7 +34,7 @@ Default exact-ID lookup returns `owner_path::ID`. Add `--history` only for expli
 ## Current state
 
 - CKR-A–J — COMPLETE / ACCEPTED.
-- CKR-K — NEXT / READY / NOT STARTED.
-- Implementation 001-A — BLOCKED until CKR-K.
+- CKR-K — IN EXECUTION / CONSOLIDATION, PROVENANCE & EXIT REVIEW.
+- Implementation 001-A — BLOCKED until CKR-K acceptance.
 
-All accepted semantic families resolve to canonical owners. Phase 001–010 is provenance/supporting rationale. The CKR-J canonical-first OKF/stable-reference/agent-routing layer is accepted and active.
+All accepted semantic families resolve to canonical owners. Phase 001–010 is provenance/supporting rationale. CKR-K is validating whole-retrofit closure and does not authorize implementation while in execution.
