@@ -1,8 +1,8 @@
 # Canonical Knowledge & Documentation Authority Retrofit
 
-**Status:** CKR-A–CKR-H COMPLETE / ACCEPTED — CKR-I NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
+**Status:** CKR-A–CKR-I COMPLETE / ACCEPTED — CKR-J NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT
 
-**CKR status mirror: COMPLETE CKR-A–CKR-H; NEXT CKR-I; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-I; NEXT CKR-J; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
 ## Purpose
 
@@ -22,23 +22,25 @@ Ownership is declared in [`canonical_ownership_inventory.json`](canonical_owners
 - **CKR-F — Lineage, Change, Investigation, Impact & Control: COMPLETE / ACCEPTED.**
 - **CKR-G — Questioning, Explanation & Experience Contracts: COMPLETE / ACCEPTED.**
 - **CKR-H — Integration, Source Authority & Evidence Availability: COMPLETE / ACCEPTED.**
-- **CKR-I — Technical Architecture: NEXT / READY.**
-- **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: PLANNED.**
+- **CKR-I — Technical Architecture: COMPLETE / ACCEPTED.**
+- **CKR-J — OKF, Stable References, Agent Routing & Drift Enforcement: NEXT / READY.**
 - **CKR-K — Consolidation, Provenance Validation & Exit Review: PLANNED.**
 
-## Current canonical scope through CKR-H
+## Current canonical scope through CKR-I
 
-Foundation/glossary, all 24 concepts, SYN-001–SYN-035, authority vocabulary, REF-001–REF-030, AUTH-001–AUTH-053, HLTH-001–HLTH-066, OPS-001–OPS-123, EXPL-001–EXPL-160 and **INTG-001–INTG-270** resolve to canonical owners.
+Foundation/glossary, all 24 concepts, SYN-001–SYN-035, authority vocabulary, REF-001–REF-030, AUTH-001–AUTH-053, HLTH-001–HLTH-066, OPS-001–OPS-123, EXPL-001–EXPL-160, INTG-001–INTG-270 and **ARCH-001–ARCH-500** resolve to canonical owners.
 
-INTG is canonical across eight resources under `docs/canonical/contracts/integration/`: source-capability vocabulary, identity/governance/authority sources, change/deployment/runtime evidence, health/measurement sources, Lineage/exposure/Impact sources, Investigation/causality/control sources, Explanation/replay/disclosure sources, and consolidated feasibility/retention/cost. Phase 009 is design history/provenance for those meanings.
+The frozen reference architecture resolves to `docs/canonical/architecture/reference-architecture.md`; it composes ARCH-001–ARCH-500 and owns no additional stable-ID range.
 
-CKR-H preserves available ≠ relevant ≠ eligible ≠ authoritative ≠ sufficient ≠ authorized; source-local identity ≠ ecosystem Entity Identity; timestamp proximity ≠ exact cross-system association; positive support ≠ negative evidence capability; current availability ≠ historical replay; late evidence now ≠ evidence available earlier; common-derived endpoints ≠ independent corroboration; fallback availability ≠ inherited authority; integration failure ≠ product negative; GitHub Actions success ≠ Databricks activation; configured dependency ≠ actual sequence/waiting/version consumption; execution success ≠ output/currentness/health; Lineage ≠ encounter ≠ exposure ≠ effect ≠ consequence ≠ cause; localization ≠ Causal Claim; Safeguard enforcement ≠ prevented exposure; HOLD/ADMIT ≠ execution; source replay ≠ retained communication; and support/latency/quota/cost ≠ truth/authority.
+ARCH is canonical across eight bounded resources under `docs/canonical/architecture/`, plus the separately inventoried reference architecture. Phase 010 is design history/provenance for these meanings and retains all 500 original atomic ARCH files, group reviews, ADRs, matrices and implementation handoff.
 
-See [`ckr_h_semantic_conservation_matrix.md`](ckr_h_semantic_conservation_matrix.md) and [`ckr_h_execution_review.md`](ckr_h_execution_review.md).
+CKR-I preserves deployment-bound capability verification; Delta-first framework history without source-authority transfer; organization-owned identity/scope/authority/authorization; reconciliation-first acquisition with explicit coverage/integration health; exact/partial runtime/version/Lineage/Impact evidence; deterministic-first reasoning/historical replay; Statement/Answer IR before rendering; independent Gate/Safeguard control chains; and authorization-aware serving/security/SLO/cost/resilience boundaries.
 
-## Remaining ownership
+See [`ckr_i_semantic_conservation_matrix.md`](ckr_i_semantic_conservation_matrix.md) and [`ckr_i_execution_review.md`](ckr_i_execution_review.md).
 
-ARCH-001–500 remains legacy-authoritative under Phase 010 until CKR-I. **CKR-I is next/ready but is not active until explicitly selected by the human.** Completing CKR-H does not authorize CKR-I.
+## Remaining progression
+
+**CKR-J is next/ready but is not active until explicitly selected by the human.** Completing CKR-I does not authorize CKR-J. CKR-K remains planned.
 
 ## Implementation gate
 

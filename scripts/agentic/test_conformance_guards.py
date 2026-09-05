@@ -23,7 +23,8 @@ def remove_hlth_target(t): d=json.loads(t); d['stable_families']['HLTH']['target
 def remove_ops_target(t): d=json.loads(t); d['stable_families']['OPS']['target_documents']=d['stable_families']['OPS']['target_documents'][:-1]; return json.dumps(d,indent=2)+'\n'
 def remove_expl_target(t): d=json.loads(t); d['stable_families']['EXPL']['target_documents']=d['stable_families']['EXPL']['target_documents'][:-1]; return json.dumps(d,indent=2)+'\n'
 def remove_intg_target(t): d=json.loads(t); d['stable_families']['INTG']['target_documents']=d['stable_families']['INTG']['target_documents'][:-1]; return json.dumps(d,indent=2)+'\n'
-def future_arch(t): d=json.loads(t); d['stable_families']['ARCH']['migration_state']='canonicalized'; return json.dumps(d,indent=2)+'\n'
+def future_arch(t):
+    d=json.loads(t); current=d['stable_families']['ARCH']['migration_state']; d['stable_families']['ARCH']['migration_state']='candidate_ready' if current=='canonicalized' else 'canonicalized'; return json.dumps(d,indent=2)+'\n'
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--repo',default='.'); a=ap.parse_args(); src=Path(a.repo).resolve(); errors=[]
     with tempfile.TemporaryDirectory(prefix='dmtz-conformance-') as td:
@@ -77,7 +78,7 @@ def main():
         mutate(repo,'docs/canonical_knowledge_retrofit/ckr_h_semantic_conservation_matrix.md',lambda t:t.replace('no returned record ≠ absence','no returned record = absence',1),'validate_ckr_h_integration.py','negative-evidence dilution regression',errors)
         mutate(repo,'docs/canonical_knowledge_retrofit/ckr_h_semantic_conservation_matrix.md',lambda t:t.replace('captured lineage event ≠ encounter ≠ exposure','captured lineage event = encounter = exposure',1),'validate_ckr_h_integration.py','Lineage encounter exposure collapse regression',errors)
         mutate(repo,'docs/canonical_knowledge_retrofit/ckr_h_semantic_conservation_matrix.md',lambda t:t.replace('historical source state ≠ as-known-at-cut Explanation ≠ retained actual communication ≠ current retrospective Explanation','historical source state = as-known-at-cut Explanation = retained actual communication = current retrospective Explanation',1),'validate_ckr_h_integration.py','integration historical-view collapse regression',errors)
-        mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',future_arch,'validate_ckr_h_integration.py','future ARCH ownership theft during CKR-H',errors)
+        mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',future_arch,'validate_ckr_h_integration.py','ARCH family/segment progression mismatch after CKR-H',errors)
     for e in errors: print('ERROR',e)
     print(f'Conformance guard tests: {len(errors)} error(s), 50 negative control(s)'); return 1 if errors else 0
 if __name__=='__main__': raise SystemExit(main())

@@ -10,21 +10,21 @@ Semantic authority changes only through:
 - [`../canonical_knowledge_retrofit/migration_contract.md`](../canonical_knowledge_retrofit/migration_contract.md)
 - [`../canonical_knowledge_retrofit/canonical_ownership_inventory.json`](../canonical_knowledge_retrofit/canonical_ownership_inventory.json)
 
-## Current canonical scope through CKR-H
+## Current canonical scope through CKR-I cutover
 
-Canonical owners now cover foundation/glossary, all 24 accepted concepts, SYN-001–035, shared authority vocabulary, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160 and INTG-001–270.
+Canonical owners now cover foundation/glossary, all 24 accepted concepts, SYN-001–035, shared authority vocabulary, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and **ARCH-001–500 plus the frozen reference architecture**.
 
-Phase 001–009 material is design history/provenance for migrated meanings. ARCH-001–500 remains with its inventory-selected Phase 010 legacy owners until CKR-I.
+Phase 001–010 material is design history/provenance for migrated meanings. Phase 010 remains the detailed design/review/atomic-contract provenance corpus for architecture, not an alternate current owner.
 
 ## Knowledge families
 
 - [`concepts/`](concepts/) — independently understandable accepted concepts;
-- [`contracts/`](contracts/) — cross-cutting/domain/stable-ID contracts, including current INTG source-capability contracts;
+- [`contracts/`](contracts/) — cross-cutting/domain/stable-ID contracts;
 - [`policies/`](policies/) — normative policy rules;
 - [`invariants/`](invariants/) — durable semantic separations/non-collapse rules;
 - [`authority/`](authority/) — authority, authorization, governance and disclosure boundaries;
 - [`experience/`](experience/) — questioning, Explanation and user-facing contracts;
-- [`architecture/`](architecture/) — accepted technical architecture contracts after CKR-I;
+- [`architecture/`](architecture/) — current accepted technical architecture owners after CKR-I cutover;
 - [`reference/`](reference/) — terminology and compact reference surfaces.
 
 ## Lookup rule

@@ -1,0 +1,244 @@
+version: 1
+phase: CKR-I
+purpose: Semantic-conservation scenarios for ARCH-001–ARCH-500 and reference-architecture authority migration.
+scenarios:
+  - id: CKRI-01
+    purpose: public vendor documentation does not prove target deployment capability
+    expected: preserve deployment-bound capability evidence
+  - id: CKRI-02
+    purpose: deployment presence does not prove entitlement enablement permission reachability or usable coverage
+    expected: preserve capability dimensions independently
+  - id: CKRI-03
+    purpose: unknown target capability remains unknown
+    expected: do not infer support or absence
+  - id: CKRI-04
+    purpose: optional integration absence narrows only dependent propositions
+    expected: no fabricated replacement default
+  - id: CKRI-05
+    purpose: semantic hard constraint outranks lower cost or latency
+    expected: reject architecture shortcut
+  - id: CKRI-06
+    purpose: architecture comparison retains decision-specific quality attributes
+    expected: no universal architecture score
+  - id: CKRI-07
+    purpose: SC-01 and SC-04 may require different latency and retention behavior
+    expected: no universal freshness SLA
+  - id: CKRI-08
+    purpose: capability fact becomes stale after environment change
+    expected: retain fact revision and verification time
+  - id: CKRI-09
+    purpose: organization-owned capability remains required when vendor does not own promised proposition
+    expected: preserve explicit organization state
+  - id: CKRI-10
+    purpose: implementation ADR remains reversible without changing accepted semantics
+    expected: preserve architecture contract across technology change
+  - id: CKRI-11
+    purpose: framework stores copied evidence
+    expected: framework retention authority does not become source Assertion Authority
+  - id: CKRI-12
+    purpose: duplicated payload shared physically across evidence occurrences
+    expected: logical occurrences and common derivation remain distinct
+  - id: CKRI-13
+    purpose: late evidence describes earlier event
+    expected: later availability does not enter earlier knowledge cut
+  - id: CKRI-14
+    purpose: Delta time travel can recover an old table version
+    expected: infrastructure time travel does not substitute for DMTZ historical replay
+  - id: CKRI-15
+    purpose: correction arrives after original evidence
+    expected: non-rewriting supersession preserves historical state
+  - id: CKRI-16
+    purpose: payload expires while provenance stub survives
+    expected: stub does not recreate expired payload
+  - id: CKRI-17
+    purpose: exact causal basis is pinned beyond ordinary TTL
+    expected: dependency hold outranks ordinary age-only retention
+  - id: CKRI-18
+    purpose: old trend measurements are downsampled
+    expected: lossless promises and exact evidence remain protected
+  - id: CKRI-19
+    purpose: evidence crosses residency boundary
+    expected: only authorized semantically valid minimum reference crosses boundary
+  - id: CKRI-20
+    purpose: derived graph store is lost
+    expected: canonical evidence remains intact and projection is rebuildable
+  - id: CKRI-21
+    purpose: source object name matches canonical entity name
+    expected: name equality does not establish ecosystem identity
+  - id: CKRI-22
+    purpose: source object is renamed then recreated
+    expected: incarnation evidence governs identity continuity
+  - id: CKRI-23
+    purpose: current group membership differs from historical membership
+    expected: current membership is not projected backward
+  - id: CKRI-24
+    purpose: Monitoring Scope selector input is missing
+    expected: membership remains unknown rather than excluded
+  - id: CKRI-25
+    purpose: asset is technically accessible but outside Monitoring Scope
+    expected: scope and accessibility remain independent
+  - id: CKRI-26
+    purpose: vendor owner role exists
+    expected: vendor role does not automatically establish Assertion Authority
+  - id: CKRI-27
+    purpose: two co-authoritative assertions conflict
+    expected: conflict persists absent authorized resolution
+  - id: CKRI-28
+    purpose: authenticated principal requests protected action
+    expected: authentication does not establish Capability Authorization
+  - id: CKRI-29
+    purpose: conclusion is visible but one basis item is restricted
+    expected: conclusion visibility does not imply basis visibility
+  - id: CKRI-30
+    purpose: historical actor once had access
+    expected: historical access does not create current disclosure permission
+  - id: CKRI-31
+    purpose: webhook arrives successfully
+    expected: push arrival does not prove reconciliation completeness
+  - id: CKRI-32
+    purpose: acquisition crashes after source read before durable publication
+    expected: checkpoint does not advance past uncommitted evidence
+  - id: CKRI-33
+    purpose: retry overlaps already collected interval
+    expected: idempotent evidence identity avoids loss and false corroboration
+  - id: CKRI-34
+    purpose: source query returns no rows with incomplete pagination
+    expected: empty result does not prove absence
+  - id: CKRI-35
+    purpose: one partition fails while others succeed
+    expected: collection coverage is partial not complete
+  - id: CKRI-36
+    purpose: source API throttles during expected window
+    expected: quota degradation becomes integration limitation not domain negative
+  - id: CKRI-37
+    purpose: source publication is delayed
+    expected: event truth and evidence availability remain separate
+  - id: CKRI-38
+    purpose: parser breaks after source schema change
+    expected: integration health degrades without fabricating monitored-domain state
+  - id: CKRI-39
+    purpose: optional source is unlicensed
+    expected: explicit optional integration state and bounded capability loss
+  - id: CKRI-40
+    purpose: cost pressure requires adaptive collection cadence
+    expected: cadence may change without silently shrinking required scope or evidence burden
+  - id: CKRI-41
+    purpose: GitHub workflow succeeds before Databricks activation evidence exists
+    expected: workflow success does not prove activation
+  - id: CKRI-42
+    purpose: direct-Git run exposes used_commit
+    expected: exact revision claim remains bounded to qualifying source pattern
+  - id: CKRI-43
+    purpose: workspace-source deployment lacks immutable run revision evidence
+    expected: exact revision remains unknown unless separately attested
+  - id: CKRI-44
+    purpose: table history shows write near run time
+    expected: timestamp adjacency does not prove exact output binding
+  - id: CKRI-45
+    purpose: Lineage shows dependency but no exact input version
+    expected: dependency does not prove exact consumed version
+  - id: CKRI-46
+    purpose: run succeeds but no current output evidence exists
+    expected: success does not prove output existence currentness or health
+  - id: CKRI-47
+    purpose: anomaly detector reports unusual value
+    expected: Baseline typicality does not become normative health without rule
+  - id: CKRI-48
+    purpose: lineage edge exists without query encounter
+    expected: reachability does not establish consumption or exposure
+  - id: CKRI-49
+    purpose: consumer reads cached prior state
+    expected: cache/result state governs affected-version exposure
+  - id: CKRI-50
+    purpose: downstream technical error occurs after exposure
+    expected: effect does not establish causal attribution
+  - id: CKRI-51
+    purpose: business consequence source is absent
+    expected: consequence remains unresolved rather than inferred from technical effect
+  - id: CKRI-52
+    purpose: no exposure claim spans incomplete alternate paths
+    expected: strong non-exposure remains unresolved
+  - id: CKRI-53
+    purpose: Investigation lead is graph-near to deviation
+    expected: graph proximity does not establish cause
+  - id: CKRI-54
+    purpose: Investigation closes with analyst agreement
+    expected: closure does not create confirmed Causal Claim
+  - id: CKRI-55
+    purpose: claim has strong evidence but no eligible confirmation authority
+    expected: confirmed remains blocked by AUTH-034
+  - id: CKRI-56
+    purpose: model assigns high confidence to hypothesis
+    expected: model confidence is not DMTZ evidence strength
+  - id: CKRI-57
+    purpose: two model providers agree
+    expected: common analytical agreement is not independent corroboration
+  - id: CKRI-58
+    purpose: vector search misses relevant evidence
+    expected: derived retrieval failure narrows discovery not source truth
+  - id: CKRI-59
+    purpose: later correction changes current retrospective answer
+    expected: earlier as-known-at-K answer is not rewritten
+  - id: CKRI-60
+    purpose: historical source state is reconstructible but actual sent message was not retained
+    expected: reconstruction is not authentic retained communication
+  - id: CKRI-61
+    purpose: renderer rewrites supported into confirmed
+    expected: reject output that strengthens Statement IR
+  - id: CKRI-62
+    purpose: requester sees answer but cannot inspect restricted basis
+    expected: basis inspection remains separately authorized
+  - id: CKRI-63
+    purpose: Gate criteria have insufficient evidence
+    expected: evidence suitability remains separate from readiness and decision
+  - id: CKRI-64
+    purpose: Gate records HOLD but no enforcement receipt exists
+    expected: HOLD does not prove enforcement or non-execution
+  - id: CKRI-65
+    purpose: Gate records ADMIT and downstream run never appears
+    expected: ADMIT does not establish execution
+  - id: CKRI-66
+    purpose: override admits while normal readiness was HOLD
+    expected: override preserves underlying readiness
+  - id: CKRI-67
+    purpose: authorization service degrades with no explicit fallback policy
+    expected: no hidden fail-open or fail-closed behavior
+  - id: CKRI-68
+    purpose: Safeguard request is accepted but enforcement path is partial
+    expected: request does not become complete enforcement
+  - id: CKRI-69
+    purpose: affected state is not exposed but no encounter opportunity occurred
+    expected: no REF-028 prevention credit
+  - id: CKRI-70
+    purpose: one alternate path bypasses Safeguard
+    expected: prevention remains path-bounded or unresolved
+  - id: CKRI-71
+    purpose: Safeguard is released after successful rerun
+    expected: release and rerun do not by themselves establish recovery
+  - id: CKRI-72
+    purpose: Gate and Safeguard overlap on same incident
+    expected: retain independent control identities and evidence chains
+  - id: CKRI-73
+    purpose: cache contains complete-looking response from older watermark
+    expected: cache does not create current completeness or freshness
+  - id: CKRI-74
+    purpose: API authentication succeeds but disclosure policy withholds detail
+    expected: serving preserves authorization-aware projection
+  - id: CKRI-75
+    purpose: SC-01 SLO breaches during source lag
+    expected: SLO breach is operational state not monitored-domain health
+  - id: CKRI-76
+    purpose: optional model workload consumes excess capacity
+    expected: required passive/control work may be prioritized without changing truth
+  - id: CKRI-77
+    purpose: budget threshold is exceeded
+    expected: budget policy cannot silently weaken Monitoring Scope retention or control safety
+  - id: CKRI-78
+    purpose: backup restore succeeds after historical collection gap
+    expected: current recovery does not rewrite earlier missing evidence
+  - id: CKRI-79
+    purpose: reference architecture is rendered as seven logical planes
+    expected: planes describe ownership/failure boundaries rather than mandatory service count
+  - id: CKRI-80
+    purpose: migration attempts to introduce ARCH-501 or a new architecture truth layer
+    expected: reject; ARCH-001–ARCH-500 final and reference architecture only composes them

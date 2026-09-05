@@ -85,6 +85,9 @@ def main():
         if item.get('migration_state') not in {'legacy_authoritative','candidate_ready','canonicalized'}: errors.append(f'{fam}: invalid migration state')
         phase_state=states_by_group.get(letter,'')
         if phase_state in {'PLANNED','NEXT / READY'} and item.get('migration_state')!='legacy_authoritative': errors.append(f'{fam}: moved before CKR-{letter} entered execution')
+    arch_state=inv['stable_families']['ARCH'].get('migration_state')
+    arch_segment_states={s.get('migration_state') for s in inv.get('architecture_segments',[])}
+    if arch_segment_states!={arch_state}: errors.append(f'ARCH family and all architecture segments must progress atomically; family={arch_state!r}, segments={sorted(str(x) for x in arch_segment_states)}')
     phase9=next((x for x in inv.get('history_sources',[]) if x.get('path')=='docs/concepts/phase_009'),None)
     if state=='candidate_ready':
         if not phase9 or phase9.get('classification_during_migration')!='mixed_legacy_authority_and_design_history': errors.append('Phase 009 must remain mixed legacy authority/design history while INTG is candidate_ready')
