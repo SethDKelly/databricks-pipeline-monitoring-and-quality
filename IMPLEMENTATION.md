@@ -2,9 +2,9 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-I; IN EXECUTION CKR-J; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-J; NEXT CKR-K; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-A–I are complete/accepted. CKR-J is in execution/routing-cutover validation. Product implementation remains blocked until CKR-K.
+CKR-A–J are complete/accepted. CKR-K is next/ready but unstarted. Product implementation remains blocked until CKR-K.
 
 ## Current semantic routing
 
@@ -17,6 +17,6 @@ CKR-A–I are complete/accepted. CKR-J is in execution/routing-cutover validatio
 7. `docs/implementation/README.md` — implementation block.
 8. root `AGENTS.md` — shared instructions.
 
-Use `--history` only for explicit historical/provenance stable-ID inspection. Routing helpers do not own semantics or prove implementation.
+Use `--history` only for explicit provenance/historical stable-ID inspection. Routing helpers do not own semantics or prove implementation.
 
 **Implementation 001-A — BLOCKED until CKR-K.**

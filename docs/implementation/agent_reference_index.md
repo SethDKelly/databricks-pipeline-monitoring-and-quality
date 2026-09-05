@@ -2,7 +2,7 @@
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-I; IN EXECUTION CKR-J; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-J; NEXT CKR-K; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
 ## Universal start
 
@@ -22,18 +22,17 @@
 | Current questioning/Explanation semantics | `docs/canonical/experience/README.md` |
 | Authority/AUTH | `docs/canonical/authority/README.md` |
 | Design history | `docs/design_history/README.md` |
-| CKR-J routing review | `docs/canonical_knowledge_retrofit/ckr_j_execution_review.md` |
+| CKR-J acceptance | `docs/canonical_knowledge_retrofit/ckr_j_execution_review.md` |
 | Conformance | `scripts/agentic/run_conformance.py` |
 
 ## Stable references
 
-Default exact-ID lookup returns the current stable locator `owner_path::ID`. Add `--history` only for explicit historical/provenance inspection; history never changes current ownership. A successful stable lookup is routing evidence, not proof that implementation satisfies the contract.
+Default exact-ID lookup returns `owner_path::ID`. Add `--history` only for explicit historical/provenance inspection. A successful stable lookup is routing evidence, not proof that implementation satisfies the contract.
 
 ## Current state
 
-- CKR-A–I — COMPLETE / ACCEPTED.
-- CKR-J — IN EXECUTION / ROUTING CUTOVER VALIDATION.
-- CKR-K — PLANNED / NOT ACTIVE.
+- CKR-A–J — COMPLETE / ACCEPTED.
+- CKR-K — NEXT / READY / NOT STARTED.
 - Implementation 001-A — BLOCKED until CKR-K.
 
-All accepted semantic families already resolve to canonical owners. Phase 001–010 is provenance/supporting rationale. CKR-J is validating the activated canonical-first OKF/stable-reference/agent-routing layer.
+All accepted semantic families resolve to canonical owners. Phase 001–010 is provenance/supporting rationale. The CKR-J canonical-first OKF/stable-reference/agent-routing layer is accepted and active.
