@@ -1,6 +1,6 @@
 # Project routing
 
-Use these entries for repository-wide authority, current program orientation, documentation-authority migration, stable-reference routing, coding-tool compatibility and reviewed platform-specific developer dependencies.
+Use these entries for repository-wide authority, current program orientation, canonical knowledge authority, stable-reference routing, coding-tool compatibility and reviewed platform-specific developer dependencies.
 
 - [Repository authority](authority.md)
 - [Canonical knowledge and design history](canonical-knowledge.md)
