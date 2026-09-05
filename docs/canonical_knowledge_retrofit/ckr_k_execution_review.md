@@ -43,7 +43,32 @@ Corrected candidate head `dc2e16fe9b049fa702ec839598dbad23e75f11d1` passed:
 - **Agentic conformance #187 — SUCCESS** (run `33938533695`);
 - **Documentation consistency #305 — SUCCESS** (run `33938533712`).
 
-This authorized final CKR exit synchronization. The accepted exit transition changes only lifecycle/status/routing guidance: CKR-K complete, inventory lifecycle `ckr_complete`, CKR exit accepted, and Implementation 001-A next/ready/not-started.
+This authorized final CKR exit synchronization.
+
+## Exit synchronization validation
+
+Exit synchronization head `851bf0ffe0572b375640d7f7096984481393a5c1` atomically changed only retrofit lifecycle/status/routing guidance: CKR-K complete/accepted, ownership inventory lifecycle `ckr_complete`, CKR exit accepted, human ownership summary normalized to final state, and Implementation 001-A released to NEXT / READY / NOT STARTED.
+
+It passed:
+
+- **Agentic conformance #188 — SUCCESS** (run `33938775992`);
+- **Documentation consistency #306 — SUCCESS** (run `33938775982`).
+
+The accepted-state Agentic run reported:
+
+- CKR-K exit validation **0 errors**;
+- records **34/34**;
+- concepts **24/24**;
+- stable families **8/8**;
+- stable IDs **1,237/1,237**;
+- architecture inventory records **9/9**;
+- semantic OKF routes **7/7**;
+- all **14 CKR-K negative controls** passing;
+- CKR status drift passing with `CKR EXIT ACCEPTED` and `IMPLEMENTATION 001-A NEXT`;
+- fixture catalog **598 scenarios**;
+- context budgets passing;
+- prior CKR-B–J checks and guards passing;
+- shared **50 negative controls** passing.
 
 ## Acceptance criteria
 
@@ -72,4 +97,4 @@ This authorized final CKR exit synchronization. The accepted exit transition cha
 
 The documentation-authority gate on Implementation 001-A is released only to **NEXT / READY / NOT STARTED**. This exit does not authorize an agent to begin implementation without a subsequent human-selected implementation task.
 
-Final exit/status synchronization and the final evidence-only head must pass the normal exact-head Agentic conformance and Documentation consistency gates before PR merge.
+This evidence-only commit is the final PR head. It must pass the normal exact-head Agentic conformance and Documentation consistency gates before squash merge; no further repository mutation is permitted before merge if those gates are green.
