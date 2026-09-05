@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "status": "candidate_ready",
+  "status": "accepted",
   "phase": "CKR-K",
   "purpose": "Whole-retrofit consolidation, provenance validation and documentation-authority exit only; this manifest does not own DMTZ product semantics or implementation state.",
   "authority_model": "docs/canonical_knowledge_retrofit/authority_model.md",
@@ -66,5 +66,5 @@
     "ARCH remains with its Phase 010 owner until CKR-I",
     "ARCH runtime implementation remains with Phase 010 until CKR-I"
   ],
-  "exit_rule": "CKR exit may be accepted only after the candidate validator and guards pass, final inventory/status synchronization is applied, and the exact final evidence head passes Agentic conformance and Documentation consistency."
+  "exit_rule": "CKR exit is accepted only when the candidate validator and guards pass, final inventory/status synchronization is applied, and the exact final evidence head passes Agentic conformance and Documentation consistency."
 }

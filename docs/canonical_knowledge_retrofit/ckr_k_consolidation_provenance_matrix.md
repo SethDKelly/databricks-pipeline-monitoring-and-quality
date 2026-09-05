@@ -1,74 +1,57 @@
 # CKR-K Consolidation & Provenance Conservation Matrix
 
-**Status:** CANDIDATE — CKR-K IN EXECUTION
+**Status:** ACCEPTED — CKR-K COMPLETE
 
 ## Purpose
 
-CKR-K is the exit review for the Canonical Knowledge Repository retrofit. It does not add or refine DMTZ semantics. It proves that the semantic migrations already accepted in CKR-B–I and the routing layer accepted in CKR-J form one closed, auditable authority system that can safely hand control to Implementation 001-A.
+CKR-K is the exit review for the Canonical Knowledge Repository retrofit. It does not add or refine DMTZ semantics. It proves that CKR-A–J form one closed, auditable authority system and releases only the documentation gate for Implementation 001-A.
 
-## Exit conservation rules
+## Accepted exit result
 
-| Exit surface | Accepted pre-K state | CKR-K exit requirement | Must not become |
-|---|---|---|---|
-| Current semantic ownership | Inventory-selected canonical owners for foundation, concepts, stable families and architecture | every required record/family/architecture inventory record remains canonicalized and uniquely owned | dual authority, search-order authority, convenience fallback |
-| Stable references | 1,237 accepted IDs resolve deterministically through CKR-J | exact IDs remain range-valid, uniquely canonical and traceable through `owner_path::ID` | duplicated semantic registry, first-match lookup, history/current mixing |
-| OKF / agent routing | canonical-first discovery accepted in CKR-J | current-truth routes remain canonical-first and bounded | Phase 001–010 current-owner route, OKF semantic authority |
-| Provenance | canonical targets retain bounded historical references | original/current legacy source remains retrievable and canonical targets retain provenance | deletion of history, chronology required for current meaning |
-| Design history | Phase corpus logically classified as provenance/rationale/history | remains accessible without competing with canonical current truth | rewritten pseudo-current history or inaccessible rationale |
-| Prior CKR evidence | CKR-A–J accepted independently | every prior execution review remains present and accepted | exit acceptance by aggregate assertion alone |
-| Implementation gate | 001-A blocked until CKR-K | stays blocked during candidate/exit validation; becomes NEXT/READY only after CKR-K acceptance | implementation work started by CKR-K, silent early release |
+| Exit surface | Accepted result | Excluded regression |
+|---|---|---|
+| Current semantic ownership | all required record/family/architecture inventory entries remain canonicalized and uniquely owned | dual authority, search-order authority, convenience fallback |
+| Stable references | all 1,237 accepted IDs remain deterministic through `owner_path::ID` | duplicated registry, first-match lookup, history/current mixing |
+| OKF / agent routing | seven semantic domains remain canonical-first and bounded | Phase 001–010 current-owner route, OKF semantic authority |
+| Provenance | legacy sources/history remain retrievable and canonical targets retain bounded provenance | history deletion or chronological reconstruction for current meaning |
+| Prior CKR evidence | CKR-A–J execution reviews remain accepted | aggregate exit assertion replacing phase evidence |
+| Implementation gate | 001-A is NEXT / READY / NOT STARTED after accepted exit | CKR-K starting implementation |
 
 ## Whole-retrofit invariants
 
 1. A current semantic question resolves to one current owner.
-2. `canonicalized` is the only migration state permitted at CKR exit for required current semantic records, stable families and architecture inventory records.
-3. The architecture inventory remains the accepted CKR-I topology: **nine records total**, comprising eight ARCH range-owning segments that partition ARCH-001–ARCH-500 plus the frozen reference architecture that composes those contracts without adding another stable-ID range.
-4. Canonical resources answer current questions locally; design-history reconstruction is optional provenance work, not a prerequisite for current meaning.
-5. Canonical resources preserve bounded provenance to the accepted legacy source/history relevant to their promoted meaning.
-6. Phase 001–010 remains historically useful and must remain discoverable; preservation of history does not make it a current owner.
-7. Accepted stable-ID ranges remain exactly SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500.
-8. The accepted stable-ID total remains 1,237 and all three CKR-I/CKR-J canonical addressability forms remain valid.
-9. Known stable IDs may route directly to current canonical owners. Historical occurrence discovery remains explicit and secondary.
-10. OKF, stable-reference registry, resolver, indexes and conformance manifests are routing/evidence machinery; none becomes a semantic owner.
-11. No living agent/implementation route may describe a migrated phase owner as current authority.
-12. CKR acceptance is documentation-authority acceptance, not product-runtime, source-integration, deployment, production-readiness or implementation evidence.
-13. ADF-EX-17 / ADF-G-XT01 and DBX-SKILL-RUN-01 remain outside CKR exit because they are deferred runtime/implementation verification, not unresolved semantic ownership.
-14. CKR-K may normalize lifecycle/status metadata needed to close the retrofit, but may not alter accepted DMTZ meaning, stable-ID meaning, canonical architecture or product behavior.
-15. Implementation 001-A may become NEXT/READY only after CKR-K is complete/accepted and the final exact-head gates pass; NEXT/READY does not mean started.
+2. `canonicalized` is the only migration state at exit for required current semantic records, stable families and architecture inventory records.
+3. The architecture inventory remains **nine records**: eight ARCH range-owning segments partitioning ARCH-001–ARCH-500 plus the frozen reference architecture, which adds no stable-ID range.
+4. Current meaning is locally answerable from canonical resources; history is optional provenance, not required reconstruction.
+5. Phase 001–010 remains discoverable as history and does not compete with current canonical ownership.
+6. Accepted ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500; total remains **1,237**.
+7. All three accepted ARCH addressability forms remain valid.
+8. Known IDs may bypass OKF; historical occurrence discovery remains explicit and secondary.
+9. OKF, registries, resolvers, indexes and conformance manifests remain routing/evidence machinery, not semantic owners.
+10. No live agent/implementation route describes migrated phase material as current semantic authority.
+11. CKR acceptance is documentation-authority acceptance, not product-runtime, source-integration, deployment, production-readiness or implementation evidence.
+12. ADF-EX-17 / ADF-G-XT01 and DBX-SKILL-RUN-01 remain separate runtime/implementation verification residuals and are not CKR exit blockers.
+13. CKR-K changes lifecycle/status metadata only; accepted DMTZ meaning, stable-ID meaning, architecture and product behavior are unchanged.
+14. Implementation 001-A is **NEXT / READY / NOT STARTED**; a human must explicitly select implementation work before it begins.
 
-## Provenance audit dimensions
+## Provenance audit
 
-### Inventory preservation
+Every record-level legacy `current_owner` path remains retrievable while its canonical `target_owner` is current. Every stable-family historical phase root remains retrievable while canonical target documents remain explicit. All nine architecture inventory records retain historical sources and canonical targets. Substantive canonical owners retain explicit `## Provenance`; stable-family owners preserve historical phase lineage; architecture owners preserve Phase 010 provenance.
 
-For every inventoried record, the legacy `current_owner` path remains retrievable and the canonical `target_owner` remains current authority. For every stable family, the historical phase root remains retrievable and the canonical target document set remains explicit. All nine architecture inventory records retain their historical owner/reference while their canonical targets remain current.
-
-### Canonical provenance locality
-
-Substantive canonical owners must retain an explicit `## Provenance` section. Record-level targets retain the original source identity; stable-family targets retain their historical phase lineage; architecture targets retain Phase 010 provenance. The audit does not require canonical documents to reproduce chronological design history.
-
-### Historical preservation
-
-`docs/design_history/README.md` remains the logical provenance layer. Physical relocation of the phase corpus is not an exit requirement; avoiding link churn is an accepted design choice.
+`docs/design_history/README.md` remains the logical provenance layer. Physical relocation of the phase corpus was not required and remains intentionally avoided to prevent unnecessary link churn.
 
 ## Representative current-truth locality
 
-CKR-K samples every stable family and each ARCH definition form, plus representative foundation/concept/current-domain resources. A representative current-truth lookup must terminate in `docs/canonical/` without requiring a Phase 001–010 document to determine current meaning. Historical retrieval may be requested separately.
+CKR-K samples every stable family, each ARCH definition form, representative foundation/concept/domain resources, and the frozen reference architecture. Current lookups terminate in `docs/canonical/`; history is retrieved only when explicitly requested.
 
-## Dual-authority audit
+## Dual-authority result
 
-The exit review rejects:
+The exit audit rejects non-canonicalized required inventory state, missing canonical authority markers, legacy sources claiming canonical current authority, current OKF routes to historical phase owners, combined current/history owner selection, and premature implementation-gate release. The accepted repository passes these conditions.
 
-- a non-canonicalized required inventory record/family/architecture record;
-- a canonical target missing current-authority status;
-- a legacy owner claiming `CANONICAL CURRENT AUTHORITY`;
-- a live OKF/current agent route that points to a historical phase as the current semantic source;
-- current and historical stable-ID search being combined into one owner-selection path;
-- an implementation status that releases 001-A while CKR-K is still incomplete.
+## Exit metadata
 
-## Exit metadata normalization
-
-The top-level ownership-inventory lifecycle marker currently reflects the last semantic cutover (`ckr_i_cutover`). CKR-K may change that marker to `ckr_complete` only in the final accepted exit synchronization after all exit checks pass. This is lifecycle metadata, not a semantic ownership transition.
+The ownership-inventory lifecycle marker is `ckr_complete`. This records retrofit completion only; it does not alter semantic ownership or implementation behavior.
 
 ## Non-goals
 
-CKR-K does not create product code, schemas, migrations, tests for product behavior, deployment configuration, source adapters, new stable IDs, new concepts, new architecture decisions, or new semantic contracts. It does not clear ADF runtime residuals or perform Implementation 001-A.
+CKR-K did not create product code, schemas, migrations, product-behavior tests, deployment configuration, source adapters, new stable IDs, new concepts, new architecture decisions or new semantic contracts. It did not perform Implementation 001-A.

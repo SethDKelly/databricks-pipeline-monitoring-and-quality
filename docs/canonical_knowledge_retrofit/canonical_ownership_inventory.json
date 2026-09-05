@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "status": "ckr_i_cutover",
+  "status": "ckr_complete",
   "authority_model": "docs/canonical_knowledge_retrofit/authority_model.md",
   "migration_contract": "docs/canonical_knowledge_retrofit/migration_contract.md",
   "canonical_root": "docs/canonical",
