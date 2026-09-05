@@ -8,12 +8,14 @@ alwaysApply: false
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-I; NEXT CKR-J; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-I; IN EXECUTION CKR-J; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.**
 
-CKR-A–I are complete/accepted. CKR-J is next/ready but unstarted. Product implementation remains blocked until CKR-K.
+CKR-A–I are complete/accepted. CKR-J is in execution/candidate review. Product implementation remains blocked until CKR-K.
 
 Primary shared authority remains root `AGENTS.md`; `docs/agentic_development_foundation/authority_scope_policy.md`; `knowledge/index.md` as optional routing only; CKR README; and the ownership inventory.
 
 Lookup: `canonicalized` → canonical owner; `legacy_authoritative`/`candidate_ready` → legacy owner. Foundation/glossary, concepts/SYN, authority vocabulary, REF, AUTH, HLTH, OPS, EXPL, INTG and ARCH/reference architecture are canonicalized. Phase 001–010 sources are provenance for migrated meanings.
 
-Do not infer authority from recency, search order, Git history, OKF, vendor skill, tool memory, source availability or path presence. Completing CKR-I does not authorize CKR-J or implementation work.
+CKR-J is validating deterministic exact-ID canonical routing but has not yet switched the live helper. Until atomic cutover, use `scripts/agentic/resolve_stable_id.py` as an occurrence helper only and resolve current ownership through the canonical ownership inventory.
+
+Do not infer authority from recency, search order, Git history, OKF, vendor skill, tool memory, source availability or path presence. CKR-J does not authorize CKR-K or implementation work.
