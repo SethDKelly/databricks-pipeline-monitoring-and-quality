@@ -1,14 +1,14 @@
 # DMTZ Stable Reference Policy
 
-**Status:** ACCEPTED — ADF-E
+**Status:** ACCEPTED — ADF-E / REFINED CKR-J
 
 ## Purpose
 
-Use accepted stable IDs as precise semantic lookup keys without mistaking arbitrary text occurrences for canonical ownership.
+Use accepted stable IDs as deterministic current-semantic lookup keys while keeping routing identity separate from contract meaning and historical provenance.
 
 ## Frozen accepted families
 
-The current accepted contract ranges are recorded machine-readably in `stable_id_registry.json`:
+The machine-readable ranges remain in `stable_id_registry.json`:
 
 - SYN-001–SYN-035;
 - REF-001–REF-030;
@@ -19,48 +19,70 @@ The current accepted contract ranges are recorded machine-readably in `stable_id
 - INTG-001–INTG-270;
 - ARCH-001–ARCH-500.
 
-An ID outside these ranges is not silently treated as accepted merely because text resembling it exists.
+The accepted total is **1,237 IDs**. A range-invalid token is invalid/unaccepted even if similar text exists elsewhere.
 
-## Exact-ID resolution
+## Deterministic current resolution
 
 For an exact ID:
 
-1. validate family, width, and accepted range;
-2. search the exact token in canonical `docs/`;
-3. return every exact occurrence with file and line context;
-4. classify definition-like occurrences separately from ordinary references when mechanically possible;
-5. use live phase/program authority and the accepted owning document to determine canonical meaning;
-6. read the smallest surrounding section required to apply the contract.
+1. validate family, three-digit width and accepted range;
+2. read the CKR ownership inventory for that family;
+3. require the family to be `canonicalized`;
+4. inspect only the inventoried canonical `target_documents`;
+5. require exactly one accepted canonical stable definition;
+6. return the stable locator `owner_path::STABLE-ID`;
+7. read the smallest surrounding canonical owner context needed to apply the rule.
 
-`scripts/agentic/resolve_stable_id.py` implements steps 1–4 deterministically. It deliberately does **not** select the first match as canonical.
+`scripts/agentic/resolve_stable_id.py <ID>` performs this current-owner resolution. The returned line is navigation metadata; the stable locator is the owner path plus stable-ID token.
 
-## Definition candidate is not canonicality
+## Accepted canonical definition forms
 
-A heading or line beginning with an ID can be marked a `definition_candidate` by the helper. That label is only a retrieval aid.
+CKR-J preserves the canonical topology already accepted by CKR-B–I:
 
-Canonicality still depends on accepted repository authority. Indexes, validation matrices, implementation handoffs, examples, and historical documents may quote the same ID.
+- `definition_heading` — 737 SYN/REF/AUTH/HLTH/OPS/EXPL/INTG definitions;
+- `stable_id_index_member` — 416 ARCH IDs in compact CKR-I segment indexes;
+- `stable_contract_list_member` — 84 ARCH IDs in the runtime/health/Lineage/Impact segment's named stable-contract lists.
+
+These are routing/addressability forms, not different semantic strengths. CKR-J does not manufacture 500 ARCH headings or restore the Phase 010 one-file-per-ID topology.
+
+## Historical occurrence discovery
+
+Historical/provenance occurrences are intentionally separate:
+
+```bash
+python3 scripts/agentic/resolve_stable_id.py <ID> --history
+```
+
+The canonical owner is resolved first. Historical results are then returned as `history_provenance` only and cannot compete with, supersede or weaken the current owner.
+
+## What is not stable identity
+
+The following may help navigation but cannot establish semantic ownership:
+
+- repository search rank or first textual occurrence;
+- line number;
+- generated Markdown-renderer slug;
+- file recency or Git history position;
+- OKF lifecycle state;
+- model/tool memory;
+- a derived index or cache.
 
 ## Semantic questions without an ID
 
-When the user/task provides only a bounded semantic question:
-
-1. route through `knowledge/index.md` to the smallest relevant domain resource;
-2. identify the governing stable IDs in canonical docs;
-3. resolve those IDs exactly;
-4. do not invent a new stable ID or collapse multiple independently motivated contracts.
+When no exact ID is known, route through the smallest relevant OKF domain concept, follow its canonical resource/body links, identify the governing stable IDs, then resolve those IDs exactly. Do not traverse OKF when the canonical path/ID is already known.
 
 ## Stable ID versus implementation evidence
 
-Implementation/scenario/test identifiers may reference accepted contracts, but do not replace them. Traceability should retain both identities where they serve different purposes.
+A stable locator proves where the current accepted contract is routed; it does **not** prove that product behavior implements the contract. Traceability must retain contract identity/location and executable/static/runtime evidence separately.
 
-## Broken or ambiguous resolution
+## Failure behavior
 
-- no exact occurrence: report unresolved/missing; do not infer from memory;
-- multiple occurrences: present candidates and verify against live authority;
-- conflicting accepted sources: escalate through change control;
-- historical/deprecated occurrence only: do not treat it as current without live authority;
-- range-invalid token: report invalid/unaccepted rather than searching for a convenient substitute.
+- no canonical stable definition: fail/report; do not infer from history or memory;
+- multiple canonical stable definitions: fail/report ownership drift; do not choose first match;
+- non-canonicalized family: resolve through live CKR authority rather than pretending CKR-J applies;
+- range-invalid token: report invalid/unaccepted;
+- history-only match: provenance only, never current truth.
 
-## Generated indexes
+## Derived routing machinery
 
-A generated occurrence index may accelerate lookup, but it remains derived and rebuildable. It cannot become the only copy of contract semantics or an independent canonical registry.
+The registry, resolver, OKF bundle and any generated reverse index are rebuildable routing aids. None owns contract prose, creates Assertion Authority, or changes accepted meaning.

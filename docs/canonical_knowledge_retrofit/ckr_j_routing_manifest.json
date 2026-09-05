@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "status": "active",
+  "phase": "CKR-J",
+  "purpose": "Routing and drift-control projection only; this manifest does not own DMTZ product semantics.",
+  "authority_model": "docs/canonical_knowledge_retrofit/authority_model.md",
+  "ownership_inventory": "docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json",
+  "stable_id_registry": "docs/agentic_development_foundation/stable_id_registry.json",
+  "stable_reference": {
+    "accepted_total": 1237,
+    "resolution_mode": "canonical_target_stable_definition",
+    "accepted_definition_forms": ["definition_heading", "stable_id_index_member", "stable_contract_list_member"],
+    "canonical_locator_format": "{owner_path}::{stable_id}",
+    "section_selector": "stable_id_token",
+    "default_scope": "canonical_owner_only",
+    "history_discovery": "explicit_separate_on_demand",
+    "first_match_canonicality": false,
+    "line_number_is_identity": false,
+    "renderer_slug_is_identity": false
+  },
+  "okf_semantic_routes": [
+    {"path":"knowledge/domains/evidence-temporal.md","primary_resource":"docs/canonical/contracts/evidence-time-causality/README.md","required_canonical_routes":["docs/canonical/architecture/evidence-provenance-temporal-persistence.md"]},
+    {"path":"knowledge/domains/identity-governance.md","primary_resource":"docs/canonical/authority/README.md","required_canonical_routes":["docs/canonical/concepts/README.md","docs/canonical/architecture/identity-scope-authority-authorization-disclosure.md"]},
+    {"path":"knowledge/domains/acquisition.md","primary_resource":"docs/canonical/contracts/integration/README.md","required_canonical_routes":["docs/canonical/architecture/source-acquisition-adapter-integration-health.md"]},
+    {"path":"knowledge/domains/health-lineage-impact.md","primary_resource":"docs/canonical/contracts/README.md","required_canonical_routes":["docs/canonical/contracts/health-quality-timing/README.md","docs/canonical/contracts/operations/README.md","docs/canonical/contracts/integration/README.md","docs/canonical/architecture/runtime-provenance-health-lineage-impact.md"]},
+    {"path":"knowledge/domains/reasoning-explanation.md","primary_resource":"docs/canonical/experience/README.md","required_canonical_routes":["docs/canonical/concepts/README.md","docs/canonical/contracts/evidence-time-causality/README.md","docs/canonical/contracts/operations/README.md","docs/canonical/contracts/integration/README.md","docs/canonical/architecture/investigation-reasoning-replay-explanation.md"]},
+    {"path":"knowledge/domains/active-control.md","primary_resource":"docs/canonical/architecture/active-control.md","required_canonical_routes":["docs/canonical/contracts/operations/propagation-safeguard.md","docs/canonical/contracts/operations/execution-gate-control.md","docs/canonical/authority/high-consequence-authority.md","docs/canonical/contracts/evidence-time-causality/exposure-readiness-control-proof.md"]},
+    {"path":"knowledge/domains/serving-security.md","primary_resource":"docs/canonical/architecture/serving-security-deployment-operations.md","required_canonical_routes":["docs/canonical/authority/disclosure-governance.md","docs/canonical/experience/audience-authorization-safe-abstraction.md","docs/canonical/contracts/integration/explanation-replay-disclosure-sources.md"]}
+  ],
+  "project_routes": [
+    {"path":"knowledge/project/architecture.md","primary_resource":"docs/canonical/architecture/reference-architecture.md"},
+    {"path":"knowledge/project/canonical-knowledge.md","primary_resource":"docs/canonical_knowledge_retrofit/README.md"},
+    {"path":"knowledge/project/stable-references.md","primary_resource":"docs/agentic_development_foundation/stable_reference_policy.md"}
+  ],
+  "agent_routing_surfaces": ["AGENTS.md","docs/implementation/agent_reference_index.md",".agents/skills/resolve-context/SKILL.md",".agents/skills/resolve-contract/SKILL.md",".agents/skills/update-traceability/SKILL.md",".cursor/rules/00-implementation-routing.mdc"],
+  "forbidden_current_route_patterns_after_cutover": ["still-unmigrated","remains with Phase 010","ARCH remains with its Phase 010 owner until CKR-I","ARCH runtime implementation remains with Phase 010 until CKR-I"],
+  "cutover_rule": "status becomes active only when OKF semantic routes, stable-reference resolution, agent routing, drift validation, and status mirrors switch together and exact-head conformance passes."
+}

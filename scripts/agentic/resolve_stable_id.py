@@ -1,130 +1,79 @@
 #!/usr/bin/env python3
-"""Resolve exact DMTZ stable-ID occurrences without manufacturing canonicality."""
+"""Resolve an accepted DMTZ stable ID to its deterministic canonical owner.
 
+Default resolution is current/canonical only. Use --history explicitly to inspect
+historical/provenance occurrences; history never participates in canonical owner selection.
+"""
 from __future__ import annotations
-
-import argparse
-import json
-import re
-import sys
+import argparse,json,re,sys
 from pathlib import Path
+ID_RE=re.compile(r'^(SYN|REF|AUTH|HLTH|OPS|EXPL|INTG|ARCH)-(\d{3})$')
+TOKEN_RE=re.compile(r'\b(SYN|REF|AUTH|HLTH|OPS|EXPL|INTG|ARCH)-(\d{3})\b')
+HEADING_RE=re.compile(r'^#{2,6}\s+((?:SYN|REF|AUTH|HLTH|OPS|EXPL|INTG|ARCH)-\d{3})(?:\s|—|-|:|$)')
+INDEX_PREFIX='**Stable ID index:**'
+RESOLUTION_MODE='canonical_target_stable_definition'
 
-ID_RE = re.compile(r"^(SYN|REF|AUTH|HLTH|OPS|EXPL|INTG|ARCH)-(\d{3})$")
+def load_json(path:Path)->dict: return json.loads(path.read_text(encoding='utf-8'))
+def load_registry(repo:Path)->dict: return load_json(repo/'docs/agentic_development_foundation/stable_id_registry.json')
+def load_inventory(repo:Path,registry:dict)->dict: return load_json(repo/registry['ownership_inventory'])
 
+def canonical_hits(repo:Path,token:str,family:str,limits:dict,owner:dict)->list[dict]:
+    hits=[]; low,high=int(limits['min']),int(limits['max'])
+    for rel in owner.get('target_documents',[]):
+        path=repo/rel
+        if not path.is_file(): continue
+        for line_no,raw in enumerate(path.read_text(encoding='utf-8').splitlines(),1):
+            line=raw.strip(); heading=HEADING_RE.match(line)
+            if heading and heading.group(1)==token:
+                hits.append({'path':rel,'line':line_no,'definition_form':'definition_heading','text':line})
+            if family=='ARCH' and line.startswith(INDEX_PREFIX):
+                indexed={f'{fam}-{num}' for fam,num in TOKEN_RE.findall(line)}
+                if token in indexed: hits.append({'path':rel,'line':line_no,'definition_form':'stable_id_index_member','text':line})
+            if family=='ARCH' and line.startswith('`ARCH-'):
+                listed={f'{fam}-{num}' for fam,num in TOKEN_RE.findall(line)}
+                if token in listed: hits.append({'path':rel,'line':line_no,'definition_form':'stable_contract_list_member','text':line})
+    return hits
 
-def load_registry(repo: Path) -> dict:
-    path = repo / "docs" / "agentic_development_foundation" / "stable_id_registry.json"
-    return json.loads(path.read_text(encoding="utf-8"))
+def history_hits(repo:Path,token:str)->list[dict]:
+    pattern=re.compile(rf'(?<![A-Z0-9-]){re.escape(token)}(?![A-Z0-9-])')
+    excluded=('docs/canonical/','docs/implementation/','docs/agentic_development_foundation/','docs/canonical_knowledge_retrofit/')
+    results=[]
+    for path in sorted((repo/'docs').rglob('*.md')):
+        rel=path.relative_to(repo).as_posix()
+        if rel.startswith(excluded): continue
+        try: lines=path.read_text(encoding='utf-8').splitlines()
+        except UnicodeDecodeError: continue
+        for line_no,line in enumerate(lines,1):
+            if pattern.search(line): results.append({'path':rel,'line':line_no,'text':line.strip(),'role':'history_provenance'})
+    return results
 
-
-def load_ckr_family(repo: Path, registry: dict, family: str) -> dict | None:
-    rel = registry.get("ownership_inventory")
-    if not rel:
-        return None
-    path = repo / rel
-    if not path.is_file():
-        return None
-    try:
-        inventory = json.loads(path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError:
-        return None
-    return inventory.get("stable_families", {}).get(family)
-
-
-def classify(line: str, stable_id: str) -> str:
-    stripped = line.strip()
-    escaped = re.escape(stable_id)
-    patterns = (
-        rf"^#+\s+(?:\*\*)?{escaped}(?:\*\*)?(?:\b|\s|[:—-])",
-        rf"^(?:[-*]\s+)?(?:\*\*)?{escaped}(?:\*\*)?(?:\b|\s|[:—-])",
-    )
-    return "definition_candidate" if any(re.search(p, stripped) for p in patterns) else "reference"
-
-
-def main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("stable_id")
-    parser.add_argument("--repo", default=".")
-    parser.add_argument("--json", action="store_true")
-    args = parser.parse_args()
-
-    repo = Path(args.repo).resolve()
-    token = args.stable_id.strip().upper()
-    match = ID_RE.match(token)
+def main()->int:
+    ap=argparse.ArgumentParser(description='Resolve a DMTZ stable ID to its canonical owner locator.')
+    ap.add_argument('stable_id'); ap.add_argument('--repo',default='.'); ap.add_argument('--history',action='store_true',help='also return separate historical/provenance occurrences'); ap.add_argument('--json',action='store_true')
+    a=ap.parse_args(); repo=Path(a.repo).resolve(); token=a.stable_id.strip().upper(); match=ID_RE.match(token)
     if not match:
-        print(f"ERROR invalid stable ID format: {args.stable_id}")
-        return 2
-
-    registry = load_registry(repo)
-    family, number_text = match.groups()
-    number = int(number_text)
-    limits = registry["families"].get(family)
-    if not limits or number < limits["min"] or number > limits["max"]:
-        if limits:
-            accepted = f"{family}-{limits['min']:03d}..{family}-{limits['max']:03d}"
-        else:
-            accepted = "no accepted range"
-        print(f"ERROR {token} is outside {accepted}")
-        return 2
-
-    family_authority = load_ckr_family(repo, registry, family)
-
-    root = repo / registry.get("search_root", "docs")
-    occurrence_pattern = re.compile(rf"(?<![A-Z0-9-]){re.escape(token)}(?![A-Z0-9-])")
-    results: list[dict[str, object]] = []
-
-    for path in sorted(root.rglob("*.md")):
-        try:
-            lines = path.read_text(encoding="utf-8").splitlines()
-        except UnicodeDecodeError:
-            continue
-        for index, line in enumerate(lines, start=1):
-            if occurrence_pattern.search(line):
-                results.append(
-                    {
-                        "path": str(path.relative_to(repo)),
-                        "line": index,
-                        "role": classify(line, token),
-                        "text": line.strip(),
-                    }
-                )
-
-    authority_hint = None
-    if family_authority:
-        authority_hint = {
-            "migration_state": family_authority.get("migration_state"),
-            "current_owner_root": family_authority.get("current_owner_root"),
-            "target_owner_root": family_authority.get("target_owner_root"),
-            "note": "Family-level CKR hint only. CKR-J will add deterministic exact canonical owner/anchor resolution after migration.",
-        }
-
-    payload = {
-        "stable_id": token,
-        "accepted_range": f"{family}-{limits['min']:03d}..{family}-{limits['max']:03d}",
-        "ckr_authority": authority_hint,
-        "occurrences": results,
-        "canonicality_note": "Occurrences are retrieval candidates. definition_candidate is mechanical only. During CKR, use the ownership inventory to determine whether current authority is still legacy or has canonicalized; do not infer ownership from search order.",
-    }
-
-    if args.json:
-        print(json.dumps(payload, indent=2))
+        print(f'ERROR invalid stable ID format: {a.stable_id}',file=sys.stderr); return 2
+    registry=load_registry(repo); family,num_text=match.groups(); number=int(num_text); limits=registry.get('families',{}).get(family)
+    if not limits or number<int(limits['min']) or number>int(limits['max']):
+        accepted=f"{family}-{int(limits['min']):03d}..{family}-{int(limits['max']):03d}" if limits else 'no accepted range'
+        print(f'ERROR {token} is outside {accepted}',file=sys.stderr); return 2
+    inventory=load_inventory(repo,registry); owner=inventory.get('stable_families',{}).get(family,{})
+    if owner.get('migration_state')!='canonicalized':
+        print(f'ERROR {family} is not canonicalized; current owner cannot be resolved by CKR-J',file=sys.stderr); return 3
+    hits=canonical_hits(repo,token,family,limits,owner)
+    if len(hits)!=1:
+        print(f'ERROR {token} expected exactly one canonical stable definition; found {len(hits)}',file=sys.stderr); return 3
+    hit=hits[0]; canonical_locator=f"{hit['path']}::{token}"
+    payload={'stable_id':token,'family':family,'accepted_range':f"{family}-{int(limits['min']):03d}..{family}-{int(limits['max']):03d}",'resolution_mode':RESOLUTION_MODE,'canonical_owner':hit,'canonical_locator':canonical_locator,'canonicality_note':'Routing result derived from the accepted range registry + CKR ownership inventory + unique canonical stable definition. The resolver does not own or reinterpret semantic meaning.'}
+    if a.history: payload['history_occurrences']=history_hits(repo,token)
+    if a.json: print(json.dumps(payload,indent=2))
     else:
-        print(f"{token}: {len(results)} exact occurrence(s)")
-        if authority_hint:
-            print(
-                "CKR family state: "
-                f"{authority_hint['migration_state']} | current root={authority_hint['current_owner_root']} "
-                f"| target root={authority_hint['target_owner_root']}"
-            )
-        for item in results:
-            print(f"{item['role']:20} {item['path']}:{item['line']}  {item['text']}")
-        print(payload["canonicality_note"])
-
-    if not results:
-        print("ERROR no exact stable-ID occurrence found; do not infer semantics from memory", file=sys.stderr)
-        return 3
+        print(f'{token} -> {canonical_locator}')
+        print(f"definition_form={hit['definition_form']} line={hit['line']}")
+        print(hit['text'])
+        if a.history:
+            history=payload.get('history_occurrences',[]); print(f'history occurrences: {len(history)}')
+            for item in history: print(f"history_provenance {item['path']}:{item['line']}  {item['text']}")
+        print(payload['canonicality_note'])
     return 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+if __name__=='__main__': raise SystemExit(main())

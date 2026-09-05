@@ -1,0 +1,148 @@
+version: 1
+phase: CKR-J
+purpose: Canonical-first OKF, stable-reference, agent-routing and drift-enforcement scenarios.
+scenarios:
+  - id: CKRJ-01
+    purpose: exact accepted stable ID resolves to one canonical stable definition
+    expected: return inventoried canonical owner locator only by default
+  - id: CKRJ-02
+    purpose: lowest accepted stable ID remains resolvable
+    expected: SYN-001 resolves canonically without range inference
+  - id: CKRJ-03
+    purpose: highest accepted stable ID remains resolvable through the CKR-I compact index form
+    expected: ARCH-500 resolves canonically without creating a later ID or per-ID prose
+  - id: CKRJ-04
+    purpose: range-invalid future ID remains rejected
+    expected: ARCH-501 is invalid/unaccepted rather than searched as a convenient contract
+  - id: CKRJ-05
+    purpose: wrong-width stable token remains invalid
+    expected: REF-1 does not normalize silently into an accepted identifier
+  - id: CKRJ-06
+    purpose: duplicate canonical stable definitions are detected across accepted definition forms
+    expected: deterministic resolution fails rather than choosing first match
+  - id: CKRJ-07
+    purpose: missing canonical stable definition is detected
+    expected: routing fails rather than falling back to history or memory
+  - id: CKRJ-08
+    purpose: canonical owner selection is constrained to inventoried target documents
+    expected: definition-like text elsewhere cannot steal ownership
+  - id: CKRJ-09
+    purpose: stable locator survives line-number movement
+    expected: owner_path::ID remains identity while derived line location may change
+  - id: CKRJ-10
+    purpose: renderer slug is not stable identity
+    expected: heading or compact-index rendering cannot replace the stable ID selector
+  - id: CKRJ-11
+    purpose: historical occurrence search is opt-in
+    expected: default resolution excludes historical candidates
+  - id: CKRJ-12
+    purpose: historical definition-like occurrence remains provenance
+    expected: it cannot compete with canonical owner after migration
+  - id: CKRJ-13
+    purpose: current owner path comes from ownership inventory
+    expected: repository search order and recency cannot select owner
+  - id: CKRJ-14
+    purpose: all accepted stable families remain canonicalized
+    expected: CKR-J rejects regression of any family to candidate or legacy authority
+  - id: CKRJ-15
+    purpose: exact stable-ID mapping adds no contract prose
+    expected: routing artifacts remain derived locators only
+  - id: CKRJ-16
+    purpose: implementation traceability can retain stable locator and evidence separately
+    expected: locator is not implementation proof
+  - id: CKRJ-17
+    purpose: OKF remains v0.2 routing projection
+    expected: root declares 0.2 and knowledge metadata cannot establish semantic authority
+  - id: CKRJ-18
+    purpose: domain primary resource is canonical after CKR-I
+    expected: stable semantic route does not use Phase 010 as current owner
+  - id: CKRJ-19
+    purpose: evidence-temporal route includes canonical persistence architecture
+    expected: REF and ARCH current routes are both canonical
+  - id: CKRJ-20
+    purpose: identity-governance route includes canonical identity architecture
+    expected: authority/concepts/architecture remain separately routed
+  - id: CKRJ-21
+    purpose: acquisition route includes canonical adapter architecture
+    expected: integration source semantics and architecture remain distinct canonical routes
+  - id: CKRJ-22
+    purpose: health-lineage-impact route spans canonical HLTH OPS INTG and ARCH
+    expected: route does not collapse their semantic ownership
+  - id: CKRJ-23
+    purpose: reasoning route spans canonical concepts REF OPS EXPL INTG and ARCH
+    expected: OKF stays a compact routing aid
+  - id: CKRJ-24
+    purpose: active-control route uses canonical active-control architecture
+    expected: Phase 010 may appear only as explicit provenance/history
+  - id: CKRJ-25
+    purpose: serving-security route uses canonical serving architecture
+    expected: Phase 010 is not presented as current semantic owner
+  - id: CKRJ-26
+    purpose: OKF domain route does not create one entry per stable ID
+    expected: progressive disclosure remains bounded
+  - id: CKRJ-27
+    purpose: OKF lifecycle state remains routing lifecycle only
+    expected: stable does not imply DMTZ health or truth
+  - id: CKRJ-28
+    purpose: broken canonical OKF resource is explicit routing failure
+    expected: no semantic meaning is inferred away
+  - id: CKRJ-29
+    purpose: known stable ID bypasses unnecessary OKF traversal
+    expected: direct canonical resolver is preferred
+  - id: CKRJ-30
+    purpose: bounded semantic question may use one OKF domain route
+    expected: then route to canonical owner and exact IDs as needed
+  - id: CKRJ-31
+    purpose: agent routing keeps human-selected task as scope anchor
+    expected: deterministic retrieval does not authorize extra work
+  - id: CKRJ-32
+    purpose: agent routing rejects search-order authority
+    expected: ownership inventory/current canonical owner wins
+  - id: CKRJ-33
+    purpose: agent routing rejects model or tool memory as semantic authority
+    expected: missing repository text remains unresolved until retrieved
+  - id: CKRJ-34
+    purpose: resolve-contract uses canonical owner resolution by default
+    expected: historical occurrence mode is separately requested
+  - id: CKRJ-35
+    purpose: resolve-context loads history only for a concrete need
+    expected: no chronological reconstruction for routine current truth
+  - id: CKRJ-36
+    purpose: update-traceability retains contract identity and evidence level separately
+    expected: resolver success cannot mark behavior implemented
+  - id: CKRJ-37
+    purpose: tool adapters do not maintain independent semantic route tables
+    expected: shared authority and resolver remain controlling
+  - id: CKRJ-38
+    purpose: context budgets remain valid after routing hardening
+    expected: no full-corpus preload is introduced
+  - id: CKRJ-39
+    purpose: canonical path move without routing update is detected
+    expected: validation fails until inventory and routes align
+  - id: CKRJ-40
+    purpose: stale pre-CKR-I phrase is detected after cutover
+    expected: stable domain route cannot say ARCH is still unmigrated
+  - id: CKRJ-41
+    purpose: Phase 010 current-owner resource regression is detected
+    expected: stable semantic route must return to canonical resource
+  - id: CKRJ-42
+    purpose: stable family target-document omission is detected
+    expected: exact canonical coverage cannot silently shrink
+  - id: CKRJ-43
+    purpose: accepted-range expansion is detected
+    expected: routing cannot invent a new stable ID
+  - id: CKRJ-44
+    purpose: default history mixing is detected
+    expected: canonical resolution and provenance search remain separate modes
+  - id: CKRJ-45
+    purpose: routing manifest cannot become semantic authority
+    expected: manifest contains paths/rules but no contract reinterpretation
+  - id: CKRJ-46
+    purpose: knowledge-impact review covers secondary canonical body links
+    expected: changed linked resource surfaces a review candidate without automatic staleness
+  - id: CKRJ-47
+    purpose: conformance report treats CKR-J as agentic/documentation health only
+    expected: PASS does not imply DMTZ domain or production health
+  - id: CKRJ-48
+    purpose: CKR-J completion does not authorize CKR-K or implementation
+    expected: CKR-K remains next/ready and Implementation 001-A remains blocked
