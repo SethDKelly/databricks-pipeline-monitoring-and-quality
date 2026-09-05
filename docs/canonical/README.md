@@ -14,7 +14,9 @@ Semantic authority changes only through:
 
 Canonical owners now cover foundation/glossary, all 24 accepted concepts, SYN-001–035, shared authority vocabulary, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160 and INTG-001–270.
 
-Phase 001–009 material is design history/provenance for migrated meanings. ARCH-001–500 remains with its inventory-selected Phase 010 legacy owners until CKR-I.
+Phase 001–009 material is design history/provenance for migrated meanings.
+
+CKR-I has created bounded **candidate** resources for ARCH-001–500 and the frozen reference architecture under [`architecture/`](architecture/). Because ARCH remains `candidate_ready`, Phase 010 remains current architecture authority until atomic cutover.
 
 ## Knowledge families
 
@@ -24,9 +26,9 @@ Phase 001–009 material is design history/provenance for migrated meanings. ARC
 - [`invariants/`](invariants/) — durable semantic separations/non-collapse rules;
 - [`authority/`](authority/) — authority, authorization, governance and disclosure boundaries;
 - [`experience/`](experience/) — questioning, Explanation and user-facing contracts;
-- [`architecture/`](architecture/) — accepted technical architecture contracts after CKR-I;
+- [`architecture/`](architecture/) — CKR-I architecture candidates until cutover, then accepted technical architecture owners;
 - [`reference/`](reference/) — terminology and compact reference surfaces.
 
 ## Lookup rule
 
-For a `canonicalized` record/family, answer current semantic questions from its inventoried substantive canonical owner here. Directory indexes are routing surfaces rather than additional truth owners. Consult design history only for provenance/rationale or explicit historical/change work. For records not yet canonicalized, follow the ownership inventory to their current legacy owners.
+For a `canonicalized` record/family, answer current semantic questions from its inventoried substantive canonical owner here. For a `candidate_ready` record/family, continue using its inventoried legacy owner. Directory indexes are routing surfaces rather than additional truth owners. Consult design history only for provenance/rationale or explicit historical/change work.
