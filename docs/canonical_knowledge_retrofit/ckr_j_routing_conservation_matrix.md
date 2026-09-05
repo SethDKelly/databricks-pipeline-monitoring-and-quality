@@ -4,14 +4,15 @@
 
 ## Purpose
 
-CKR-J changes discovery, stable-reference resolution and drift enforcement only. It must make canonical ownership cheaper and more deterministic to reach without creating another semantic authority, rewriting accepted contract meaning, or making design history undiscoverable.
+CKR-J changes discovery, stable-reference resolution and drift enforcement only. It must make canonical ownership cheaper and more deterministic to reach without creating another semantic authority, rewriting accepted contract meaning, undoing CKR-I progressive disclosure, or making design history undiscoverable.
 
 ## Conservation rules
 
 | Surface | Before CKR-J | CKR-J accepted target | Must not become |
 |---|---|---|---|
 | OKF | portable routing projection; some domain text still reflects pre-CKR-I ownership | canonical-first current-truth routing with history explicitly labeled as provenance | semantic authority, contract copy, or source of current truth |
-| Stable ID | frozen family/range + exact occurrence search + manual authority resolution | exact accepted ID → exactly one inventoried canonical definition heading → renderer-neutral `owner_path::ID` locator | first-match search, line-number identity, or duplicated contract registry |
+| Stable ID | frozen family/range + exact occurrence search + manual authority resolution | exact accepted ID → exactly one inventoried canonical stable definition → renderer-neutral `owner_path::ID` locator | first-match search, line-number identity, duplicated contract registry, or forced document expansion |
+| ARCH stable definitions | CKR-I compact segment owner + `Stable ID index` members | retain the compact index form as canonical addressability | 500 duplicated headings or restoration of the Phase 010 one-file-per-ID tree |
 | Historical stable-ID search | mixed into default occurrence result set | explicit secondary/on-demand history discovery | current-owner selection or proof that a historical occurrence is current |
 | Agent routing | root authority + optional OKF + manual exact-hit resolution | root authority + canonical-first routing + deterministic exact owner resolver | full-corpus preload, tool-specific semantic forks, or memory/search-order authority |
 | Knowledge maintenance | broken links and direct resource impact checks | current-route drift checks plus body-link impact review where routing depends on secondary canonical links | automatic semantic edits generated from OKF |
@@ -22,14 +23,16 @@ CKR-J changes discovery, stable-reference resolution and drift enforcement only.
 
 1. Accepted ranges remain exactly SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500.
 2. The accepted total remains **1,237 stable IDs**.
-3. Every accepted ID must have exactly one definition heading inside the inventoried canonical `target_documents` for its family.
-4. A definition heading outside the inventoried target set cannot become canonical merely because it looks definition-like.
-5. Default exact-ID resolution returns the canonical owner only.
-6. Historical occurrence discovery is separate and opt-in; it never competes with current ownership.
-7. The stable locator is `owner_path::ID`. The owner path is selected by the ownership inventory; the ID token is the stable section selector.
-8. Line numbers, repository search rank, Markdown-renderer slug generation, file recency, Git history and first textual occurrence are not stable identity.
-9. The stable-reference registry/routing machinery contains no contract prose and cannot strengthen, weaken, supersede or reinterpret contract meaning.
-10. Missing/duplicate canonical definition headings are routing/conformance failures, not permission to infer meaning from history or memory.
+3. Every accepted ID must have exactly one canonical stable definition inside the inventoried `target_documents` for its family.
+4. Accepted canonical definition forms are intentionally bounded: **737 definition headings** for SYN/REF/AUTH/HLTH/OPS/EXPL/INTG and **500 `Stable ID index` members** for the compact CKR-I ARCH segments.
+5. A definition-like occurrence outside the inventoried target set cannot become canonical merely because it resembles a definition.
+6. Default exact-ID resolution returns the canonical owner only.
+7. Historical occurrence discovery is separate and opt-in; it never competes with current ownership.
+8. The stable locator is `owner_path::ID`. The owner path is selected by the ownership inventory; the ID token is the stable section selector even when the accepted canonical form is a compact stable-ID index member.
+9. Line numbers, repository search rank, Markdown-renderer slug generation, file recency, Git history and first textual occurrence are not stable identity.
+10. The stable-reference registry/routing machinery contains no contract prose and cannot strengthen, weaken, supersede or reinterpret contract meaning.
+11. Missing/duplicate canonical stable definitions are routing/conformance failures, not permission to infer meaning from history or memory.
+12. CKR-J may not manufacture per-ID canonical prose for ARCH where CKR-I intentionally conserved the accepted architecture at segment level.
 
 ## OKF invariants
 
@@ -56,7 +59,7 @@ CKR-J changes discovery, stable-reference resolution and drift enforcement only.
 ## Drift-enforcement invariants
 
 1. All eight stable-ID families must remain `canonicalized` before CKR-J can be accepted.
-2. Canonical definition coverage must remain 1,237/1,237 with no duplicates inside family target documents.
+2. Canonical stable-definition coverage must remain **1,237/1,237: 737 headings + 500 ARCH index members**, with no duplicate owner-form resolution inside family target documents.
 3. Stable OKF domain routes may not regress to Phase 003–010 current-owner language after CKR-J cutover.
 4. The routing manifest is a machine-checkable projection; it cannot change semantic authority or invent a new family/range.
 5. Agent routing surfaces must continue to name the ownership inventory and canonical exact-ID resolver.
@@ -66,4 +69,4 @@ CKR-J changes discovery, stable-reference resolution and drift enforcement only.
 
 ## Non-goals
 
-CKR-J does not add a knowledge server, remote catalog service, vector index, graph database, MCP server, Attested Computation runtime, new stable IDs, implementation traceability records, product code, or provider-specific agent memory. CKR-K remains responsible for whole-retrofit consolidation and exit acceptance.
+CKR-J does not add a knowledge server, remote catalog service, vector index, graph database, MCP server, Attested Computation runtime, new stable IDs, 500 new ARCH definition sections, implementation traceability records, product code, or provider-specific agent memory. CKR-K remains responsible for whole-retrofit consolidation and exit acceptance.
