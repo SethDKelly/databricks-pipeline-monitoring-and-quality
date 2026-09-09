@@ -13,9 +13,9 @@ def mutate(repo,rel,transform,script,label,errors):
     finally:p.write_text(original,encoding='utf-8')
 def stale_status(t): return re.sub(r'ADF status mirror: .*?$','ADF status mirror: COMPLETE ADF-A–ADF-E; NEXT ADF-F.',t,count=1,flags=re.M)
 def stale_ckr(t): return re.sub(r'CKR status mirror: .*?$','CKR status mirror: COMPLETE CKR-A; NEXT CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.',t,count=1,flags=re.M)
-def stale_docs_ckr(t): return t.replace('**CKR state:** CKR-A–CKR-K COMPLETE / ACCEPTED — CKR EXIT ACCEPTED — IMPLEMENTATION 001-A NEXT / READY / NOT STARTED.','**CKR state:** CKR-A–CKR-C COMPLETE / ACCEPTED — CKR-D NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.',1)
+def stale_docs_ckr(t): return t.replace('**CKR state:** CKR-A–CKR-K COMPLETE / ACCEPTED — CKR EXIT ACCEPTED.','**CKR state:** CKR-A–CKR-C COMPLETE / ACCEPTED — CKR-D NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.',1)
 def stale_canonical_banner(t): return t.replace('**Authority state:** CANONICALIZATION COMPLETE — CKR EXIT ACCEPTED','**Authority state:** PARTIALLY CANONICALIZED — CKR MIGRATION IN PROGRESS',1)
-def stale_adf_handoff(t): return t.replace('**Current handoff:** CKR COMPLETE / EXIT ACCEPTED — IMPLEMENTATION 001-A NEXT / READY / NOT STARTED.','**Current handoff:** CKR IN PROGRESS — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.',1)
+def stale_adf_handoff(t): return t.replace('**Current handoff:** CKR COMPLETE / EXIT ACCEPTED — DPTN-A IN EXECUTION — IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.','**Current handoff:** CKR IN PROGRESS — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.',1)
 def stale_agentic_foundation_route(t): return t.replace('is complete/accepted and no longer blocks implementation progression','blocks product implementation until CKR-K',1)
 def vendor_auto(t): d=json.loads(t); d['materialization']['automatic_new_skills']=True; return json.dumps(d,indent=2)+'\n'
 def model_skill(t): d=json.loads(t); d['selected_skills'].append({'name':'databricks-model-serving','version':'0.4.0'}); return json.dumps(d,indent=2)+'\n'
