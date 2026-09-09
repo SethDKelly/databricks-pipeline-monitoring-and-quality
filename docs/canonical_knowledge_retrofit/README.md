@@ -42,7 +42,7 @@ Foundation/glossary, all 24 concepts, SYN-001–SYN-035, authority vocabulary, R
 
 CKR-K validated **34/34** record-level entries, **24/24** concepts, all **8** stable families, all **1,237** stable IDs, **9/9** architecture inventory records, seven canonical-first domain routes, accepted CKR-A–J review evidence, bounded provenance/history preservation and representative current-truth locality. No unreviewed dual-authority condition remained at CKR exit.
 
-The ownership inventory lifecycle remains `ckr_complete`. This is retrofit lifecycle metadata only; later DPTN path normalization does not reopen CKR semantics.
+The ownership inventory lifecycle remains `ckr_complete`. This is retrofit lifecycle metadata only; DPTN path normalization does not reopen CKR semantics.
 
 See [`ckr_k_consolidation_provenance_matrix.md`](ckr_k_consolidation_provenance_matrix.md) and [`ckr_k_execution_review.md`](ckr_k_execution_review.md).
 
@@ -50,12 +50,12 @@ See [`ckr_k_consolidation_provenance_matrix.md`](ckr_k_consolidation_provenance_
 
 DPTN is active. The CKR ownership inventory remains the semantic-owner ledger while DPTN changes physical paths only.
 
-- **DPTN-A–B — COMPLETE / ACCEPTED**;
-- **DPTN-C — IN EXECUTION**;
+- **DPTN-A–C — COMPLETE / ACCEPTED**;
+- **DPTN-D — NEXT / READY / NOT STARTED**;
 - **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
 
-DPTN-B established `docs/history/` as provenance-only and relocated history. DPTN-C is explicitly human-selected to execute MOVE-007 through MOVE-014: the eight substantive semantic roots may move from `docs/canonical/<family>/` to first-class `docs/<family>/` paths only through an atomic physical-tree + ownership-inventory rebind. Accepted meaning and stable IDs do not change.
+DPTN-B established `docs/history/` as provenance-only and relocated history. DPTN-C then executed MOVE-007 through MOVE-014: the eight substantive semantic roots moved from `docs/canonical/<family>/` to first-class `docs/<family>/` paths through an atomic physical-tree + ownership-inventory rebind. Accepted meaning and stable IDs did not change.
 
-Before that atomic cutover, the existing `docs/canonical/<family>/` targets remain current. After it, the ownership inventory will select the normalized first-class paths; any legacy `docs/canonical/<family>` redirect is compatibility only and cannot become a second current owner. `docs/canonical/README.md` remains an orientation surface pending DPTN-E.
+The ownership inventory now selects those normalized first-class paths. Any legacy `docs/canonical/<family>` redirect is compatibility only and cannot become a second current owner. `docs/canonical/README.md` remains an orientation surface pending DPTN-E.
 
 Current DPTN authority: [`../documentation_topology_normalization/README.md`](../documentation_topology_normalization/README.md). Current history role: [`../history/README.md`](../history/README.md).
