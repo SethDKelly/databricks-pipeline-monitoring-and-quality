@@ -9,3 +9,5 @@ status: "stable"
 # Use
 
 The canonical [implementation program README](../../docs/implementation/README.md) owns live implementation progression. Do not infer current implementation status from this OKF entry.
+
+DPTN-A is currently the active pre-implementation topology-normalization task, so Implementation 001-A is blocked on DPTN exit. This route remains derived navigation only and does not authorize DPTN physical moves or product implementation.
