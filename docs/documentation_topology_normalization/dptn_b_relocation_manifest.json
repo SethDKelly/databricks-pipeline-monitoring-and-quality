@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "status": "accepted",
+  "phase": "DPTN-B",
+  "purpose": "Bounded physical history/provenance relocation evidence only; this manifest does not own DMTZ product semantics, current semantic authority, stable-ID meaning, implementation state or later DPTN authorization.",
+  "source_main_sha": "63162678f1f3e0bbc836d0a5fbd909108a864132",
+  "history_root": "docs/history",
+  "current_semantic_root_during_dptn_b": "docs/canonical",
+  "canonical_tree_baseline_sha": "b6e7c5cc9a2cbd13766418894ee67d4eb08585cd",
+  "authorized_move_ids": ["MOVE-001", "MOVE-002", "MOVE-003", "MOVE-004", "MOVE-005", "MOVE-006"],
+  "moves": [
+    {"id":"MOVE-001","collisions":["COL-001","COL-004"],"source":"docs/concepts","target":"docs/history/phases","source_tree_sha":"a801cf7b73747a2bbcc8929ab9c91d845af02b6f","preservation":"exact_git_tree_reuse","authority_change":false},
+    {"id":"MOVE-002","collisions":["COL-002","COL-004"],"source":"docs/reference","target":"docs/history/reference-legacy","source_tree_sha":"5812674331a2412442af1cc1e68c806712e71dd4","preservation":"exact_git_tree_reuse","authority_change":false},
+    {"id":"MOVE-003","collisions":["COL-004"],"source":"docs/foundation","target":"docs/history/foundation","source_tree_sha":"2822a7e43dff311c7582161bd59bbcc1aa5ff2ba","preservation":"exact_git_tree_reuse","authority_change":false},
+    {"id":"MOVE-004","collisions":["COL-004"],"source":"docs/planning","target":"docs/history/planning","source_tree_sha":"5382123780fc6e3f4d474b4f114a633baf6b9634","preservation":"exact_git_tree_reuse","authority_change":false},
+    {"id":"MOVE-005","collisions":["COL-003","COL-004"],"source":"docs/decisions","target":"docs/history/decisions","source_tree_sha":"66f5dc4e8945bab8d50262f0d4fedbe9e141e2fe","preservation":"exact_git_tree_reuse","authority_change":false},
+    {"id":"MOVE-006","collisions":["COL-004","COL-005"],"source":"docs/design_history","target":"docs/history/design-history","source_tree_sha":"834262b5fab98ecb04f1003394a74aa066041a8a","preservation":"exact_git_tree_reuse","authority_change":false}
+  ],
+  "expected_counts": {
+    "moves": 6,
+    "closed_dptn_b_collisions": 5,
+    "concepts": 24,
+    "stable_ids": 1237,
+    "stable_families": 8,
+    "architecture_ids": 500,
+    "scenarios": 24,
+    "negative_controls": 12
+  },
+  "conservation": {
+    "canonical_owner_targets_unchanged": true,
+    "stable_id_meaning_unchanged": true,
+    "historical_content_semantically_rewritten": false,
+    "mixed_adf_ckr_bulk_move_forbidden": true,
+    "implementation_work_forbidden": true,
+    "cleared_path_implies_authority": false
+  },
+  "later_phase_forbidden_during_dptn_b": ["MOVE-007","MOVE-008","MOVE-009","MOVE-010","MOVE-011","MOVE-012","MOVE-013","MOVE-014","MOVE-015","MOVE-016","MOVE-017","MOVE-018","MOVE-019","MOVE-020"]
+}

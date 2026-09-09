@@ -28,7 +28,7 @@ Ownership is declared in [`canonical_ownership_inventory.json`](canonical_owners
 
 ## Accepted canonical semantic scope
 
-Foundation/glossary, all 24 concepts, SYN-001–SYN-035, authority vocabulary, REF-001–REF-030, AUTH-001–AUTH-053, HLTH-001–HLTH-066, OPS-001–OPS-123, EXPL-001–EXPL-160, INTG-001–INTG-270 and ARCH-001–ARCH-500 resolve to canonical owners. Phase 001–010 remains design history/provenance for migrated meanings.
+Foundation/glossary, all 24 concepts, SYN-001–SYN-035, authority vocabulary, REF-001–REF-030, AUTH-001–AUTH-053, HLTH-001–HLTH-066, OPS-001–OPS-123, EXPL-001–EXPL-160, INTG-001–INTG-270 and ARCH-001–ARCH-500 resolve to canonical owners. The historical Phase 001–010 corpus remains design provenance even after DPTN-B physically relocated it under `docs/history/`.
 
 ## Accepted routing and reference layer
 
@@ -37,7 +37,6 @@ Foundation/glossary, all 24 concepts, SYN-001–SYN-035, authority vocabulary, R
 - stable locator is `owner_path::STABLE-ID`;
 - stable-definition coverage is **1,237/1,237**: 737 definition headings, 416 ARCH stable-ID index members and 84 ARCH stable-contract list members;
 - `--history` performs separate provenance occurrence discovery and never competes with current canonical ownership;
-- known IDs bypass unnecessary OKF traversal; unknown semantic locations use one bounded OKF route before canonical authority;
 - routing manifests, registries, resolvers and OKF remain derived routing machinery rather than semantic authority.
 
 ## CKR-K exit result
@@ -50,11 +49,12 @@ See [`ckr_k_consolidation_provenance_matrix.md`](ckr_k_consolidation_provenance_
 
 ## Post-CKR topology handoff
 
-The later Documentation Physical Topology Normalization program is now active. CKR remains the current semantic ownership authority throughout DPTN until a later accepted DPTN cutover atomically rebinds paths.
+DPTN is active. CKR remains the current semantic ownership authority until a later accepted DPTN cutover atomically rebinds current-owner paths.
 
-- **DPTN-A — IN EXECUTION**;
+- **DPTN-A–B — COMPLETE / ACCEPTED**;
+- **DPTN-C — NEXT / READY / NOT STARTED**;
 - **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
 
-DPTN-A's move map is future-location planning evidence only. It does not supersede the CKR ownership inventory, move any owner, change stable-ID meaning or start product implementation.
+DPTN-B established `docs/history/` as provenance-only and relocated history without changing the ownership inventory or current stable-ID locators. Cleared first-class paths remain vacant/unassigned. DPTN-C has not started and requires explicit human selection before canonical promotion.
 
-Current DPTN authority: [`../documentation_topology_normalization/README.md`](../documentation_topology_normalization/README.md).
+Current DPTN authority: [`../documentation_topology_normalization/README.md`](../documentation_topology_normalization/README.md). Current history role: [`../history/README.md`](../history/README.md).

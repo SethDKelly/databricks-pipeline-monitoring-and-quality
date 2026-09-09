@@ -12,6 +12,6 @@ The Canonical Knowledge Repository retrofit is complete/accepted. Use the [CKR a
 
 The canonical namespace owns foundation/glossary, all 24 concepts, SYN-001–035, REF-001–030, AUTH-001–053, the authority vocabulary, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500 plus the frozen reference architecture.
 
-Use [design history](../../docs/design_history/README.md) for provenance/rationale/history, not as an alternate current owner. This OKF entry is routing only and cannot change semantic authority or implementation state.
+Use [history](../../docs/history/README.md) for provenance/rationale/history, not as an alternate current owner. The pre-DPTN design-history index is preserved at `docs/history/design-history/README.md`. This OKF entry is routing only and cannot change semantic authority or implementation state.
 
-Implementation 001-A is NEXT / READY / NOT STARTED after CKR exit; this route does not authorize implementation work.
+DPTN-A–B are complete/accepted; DPTN-C is NEXT / READY / NOT STARTED. Implementation 001-A remains BLOCKED / NOT STARTED until DPTN-G exit acceptance. This route does not authorize later work.
