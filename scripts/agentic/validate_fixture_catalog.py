@@ -18,6 +18,7 @@ CKR=(
 ('CKR-K','docs/canonical_knowledge_retrofit/fixtures/ckr_k_exit_scenarios.yaml','docs/canonical_knowledge_retrofit/ckr_k_execution_review.md'))
 DPTN=(
 ('DPTN-A','docs/documentation_topology_normalization/fixtures/dptn_a_topology_scenarios.yaml','docs/documentation_topology_normalization/dptn_a_execution_review.md'),
+('DPTN-B','docs/documentation_topology_normalization/fixtures/dptn_b_history_scenarios.yaml','docs/documentation_topology_normalization/dptn_b_execution_review.md'),
 )
 ID_RE=re.compile(r'^\s*-\s+id:\s*["\']?([^"\'\s]+)',re.M)
 def collect(path,label,seen,errors):

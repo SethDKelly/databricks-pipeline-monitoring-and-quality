@@ -1,0 +1,51 @@
+schema_version: "1.0"
+status: candidate_ready
+scenarios:
+  - id: DPTNB-01
+    proposition: docs/history is explicitly provenance-only and cannot become current semantic authority.
+  - id: DPTNB-02
+    proposition: MOVE-001 preserves the complete pre-canonical docs/concepts tree under docs/history/phases.
+  - id: DPTNB-03
+    proposition: MOVE-002 preserves legacy reference material under docs/history/reference-legacy.
+  - id: DPTNB-04
+    proposition: MOVE-003 preserves foundation provenance under docs/history/foundation.
+  - id: DPTNB-05
+    proposition: MOVE-004 preserves planning provenance under docs/history/planning.
+  - id: DPTNB-06
+    proposition: MOVE-005 preserves phase-scoped decisions under docs/history/decisions.
+  - id: DPTNB-07
+    proposition: MOVE-006 preserves the prior logical design-history index under docs/history/design-history.
+  - id: DPTNB-08
+    proposition: Historical relocation uses exact Git-tree reuse rather than semantic rewriting.
+  - id: DPTNB-09
+    proposition: docs/concepts is cleared before DPTN-C may promote canonical concepts into that first-class path.
+  - id: DPTNB-10
+    proposition: docs/reference is cleared before DPTN-C may promote canonical reference material into that first-class path.
+  - id: DPTNB-11
+    proposition: docs/decisions is cleared for possible future current ADR use without assigning authority by vacancy.
+  - id: DPTNB-12
+    proposition: COL-001 through COL-005 close only for their DPTN-B history/collision responsibilities.
+  - id: DPTNB-13
+    proposition: docs/canonical remains the current semantic root throughout DPTN-B.
+  - id: DPTNB-14
+    proposition: CKR canonical target owners and stable-family target documents do not change in DPTN-B.
+  - id: DPTNB-15
+    proposition: Historical-source physical paths may move while original provenance identity remains distinguishable from current authority.
+  - id: DPTNB-16
+    proposition: Default stable-ID resolution remains current/canonical and never resolves to docs/history.
+  - id: DPTNB-17
+    proposition: Explicit --history lookup can discover relocated provenance separately from canonical resolution.
+  - id: DPTNB-18
+    proposition: The accepted total remains 1,237 stable IDs across eight families.
+  - id: DPTNB-19
+    proposition: The accepted 24-concept catalog remains unchanged.
+  - id: DPTNB-20
+    proposition: ARCH-001 through ARCH-500 remain unchanged and Phase 010 atomic provenance is preserved under history.
+  - id: DPTNB-21
+    proposition: Mixed ADF and CKR directories remain in place for DPTN-D rather than being bulk moved in DPTN-B.
+  - id: DPTNB-22
+    proposition: OKF/current agent routing does not treat history as semantic authority.
+  - id: DPTNB-23
+    proposition: DPTN-B does not authorize DPTN-C canonical promotion or later move IDs.
+  - id: DPTNB-24
+    proposition: Implementation 001-A remains blocked until DPTN-G exit acceptance.
