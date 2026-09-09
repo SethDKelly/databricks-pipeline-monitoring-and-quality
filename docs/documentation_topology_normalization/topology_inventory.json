@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "status": "candidate_ready",
+  "source_main_sha": "6ac773ad2eeb5678773d1ee7c39f0492dbaeb29f",
+  "scope": "documentation_physical_topology_and_routing_only",
+  "accepted_counts": {
+    "concepts": 24,
+    "stable_ids": 1237,
+    "stable_families": 8,
+    "architecture_ids": 500
+  },
+  "roles": [
+    "current_semantic_authority",
+    "current_operational_policy",
+    "implementation_planning",
+    "derived_routing",
+    "history_provenance",
+    "mixed_lifecycle",
+    "generated_status",
+    "migration_execution"
+  ],
+  "inventory": [
+    {"source":"docs/README.md","coverage":"file","role":"current_operational_policy","target":"docs/README.md","action":"retain","phase":"DPTN-G"},
+    {"source":"docs/phase_status.md","coverage":"file","role":"generated_status","target":"docs/phase_status.md","action":"retain_generated","phase":"DPTN-G"},
+
+    {"source":"docs/canonical/concepts/**","coverage":"subtree","role":"current_semantic_authority","target":"docs/concepts/**","action":"promote_after_collision_clear","phase":"DPTN-C"},
+    {"source":"docs/canonical/architecture/**","coverage":"subtree","role":"current_semantic_authority","target":"docs/architecture/**","action":"promote","phase":"DPTN-C"},
+    {"source":"docs/canonical/authority/**","coverage":"subtree","role":"current_semantic_authority","target":"docs/authority/**","action":"promote","phase":"DPTN-C"},
+    {"source":"docs/canonical/contracts/**","coverage":"subtree","role":"current_semantic_authority","target":"docs/contracts/**","action":"promote","phase":"DPTN-C"},
+    {"source":"docs/canonical/experience/**","coverage":"subtree","role":"current_semantic_authority","target":"docs/experience/**","action":"promote","phase":"DPTN-C"},
+    {"source":"docs/canonical/invariants/**","coverage":"subtree","role":"current_semantic_authority","target":"docs/invariants/**","action":"promote","phase":"DPTN-C"},
+    {"source":"docs/canonical/policies/**","coverage":"subtree","role":"current_semantic_authority","target":"docs/policies/**","action":"promote","phase":"DPTN-C"},
+    {"source":"docs/canonical/reference/**","coverage":"subtree","role":"current_semantic_authority","target":"docs/reference/**","action":"promote_after_collision_clear","phase":"DPTN-C"},
+    {"source":"docs/canonical/README.md","coverage":"file","role":"current_operational_policy","target":"docs/index.md","action":"merge_orientation_not_semantics","phase":"DPTN-E"},
+
+    {"source":"docs/concepts/**","coverage":"subtree","role":"history_provenance","target":"docs/history/phases/**","action":"relocate_by_phase","phase":"DPTN-B","notes":"Phase 002-010 design corpus; current concepts/contracts already canonicalized."},
+    {"source":"docs/foundation/**","coverage":"subtree","role":"history_provenance","target":"docs/history/foundation/**","action":"relocate","phase":"DPTN-B","notes":"Foundation semantics were canonicalized by CKR-B; roadmap/open-question/handoff files are historical."},
+    {"source":"docs/reference/**","coverage":"subtree","role":"history_provenance","target":"docs/history/reference-legacy/**","action":"relocate_before_reference_promotion","phase":"DPTN-B","notes":"Legacy glossary/authority vocabulary were superseded by canonical owners."},
+    {"source":"docs/planning/**","coverage":"subtree","role":"history_provenance","target":"docs/history/planning/**","action":"relocate","phase":"DPTN-B"},
+    {"source":"docs/decisions/**","coverage":"subtree","role":"history_provenance","target":"docs/history/decisions/**","action":"relocate","phase":"DPTN-B","notes":"Existing entries are phase-scoped design decisions; first-class docs/decisions is reserved for future current ADRs after relocation."},
+    {"source":"docs/design_history/**","coverage":"subtree","role":"history_provenance","target":"docs/history/design-history/**","action":"relocate_or_merge_index","phase":"DPTN-B"},
+
+    {"source":"docs/canonical_knowledge_retrofit/**","coverage":"subtree","role":"mixed_lifecycle","target":"TBD_BY_DPTN_D","action":"file_level_decomposition_required","phase":"DPTN-D","notes":"Durable ownership/routing rules must be separated from CKR execution reviews, conservation matrices, fixtures and cutover evidence."},
+    {"source":"docs/agentic_development_foundation/**","coverage":"subtree","role":"mixed_lifecycle","target":"TBD_BY_DPTN_D","action":"file_level_decomposition_required","phase":"DPTN-D","notes":"Durable authority/context/security/workflow policy remains current; execution reviews and completed-program evidence become history."},
+
+    {"source":"docs/implementation/**","coverage":"subtree","role":"implementation_planning","target":"docs/implementation/**","action":"retain","phase":"DPTN-G"},
+    {"source":"knowledge/**","coverage":"subtree","role":"derived_routing","target":"docs/index.md_or_generated_projection","action":"converge_or_generate","phase":"DPTN-E"},
+
+    {"source":"AGENTS.md","coverage":"file","role":"current_operational_policy","target":"AGENTS.md","action":"retain_and_rebind","phase":"DPTN-F"},
+    {"source":"IMPLEMENTATION.md","coverage":"file","role":"current_operational_policy","target":"IMPLEMENTATION.md","action":"retain_and_rebind","phase":"DPTN-F"},
+    {"source":".agents/**","coverage":"subtree","role":"current_operational_policy","target":".agents/**","action":"retain_and_rebind","phase":"DPTN-F"},
+    {"source":".cursor/**","coverage":"subtree","role":"current_operational_policy","target":".cursor/**","action":"retain_and_rebind","phase":"DPTN-F"},
+    {"source":".claude/**","coverage":"subtree","role":"current_operational_policy","target":".claude/**","action":"retain_and_rebind","phase":"DPTN-F"},
+    {"source":"scripts/agentic/**","coverage":"subtree","role":"current_operational_policy","target":"scripts/agentic/**","action":"retain_and_rebind","phase":"DPTN-F"},
+
+    {"source":"docs/documentation_topology_normalization/**","coverage":"subtree","role":"migration_execution","target":"docs/history/retrofits/dptn/**_or_generated_operational_subset","action":"retire_or_preserve_on_exit","phase":"DPTN-G"}
+  ],
+  "explicit_exclusions": [
+    "product source code",
+    "schemas and migrations",
+    "runtime/deployment configuration",
+    "source adapters",
+    "product tests",
+    "semantic contract content changes",
+    "stable-ID range or meaning changes"
+  ]
+}
