@@ -22,6 +22,7 @@ POST_EXIT_REQUIRED = {
         "**Authority state:** CANONICALIZATION COMPLETE — CKR EXIT ACCEPTED",
     ),
     "docs/agentic_development_foundation/README.md": (
+        "**Current handoff:** CKR COMPLETE / EXIT ACCEPTED",
         "CKR has subsequently completed and exited successfully",
     ),
     "knowledge/index.md": (
