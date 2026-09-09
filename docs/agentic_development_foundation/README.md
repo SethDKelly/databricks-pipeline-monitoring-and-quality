@@ -2,7 +2,7 @@
 
 **Status:** COMPLETE / EXECUTION EXIT ACCEPTED — CKR COMPLETE — DPTN ACTIVE
 
-**Current handoff:** ADF EXIT ACCEPTED / CKR EXIT ACCEPTED — DPTN-A–B COMPLETE / ACCEPTED — DPTN-C NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.
+**Current handoff:** ADF EXIT ACCEPTED / CKR EXIT ACCEPTED — DPTN-A–B COMPLETE / ACCEPTED — DPTN-C IN EXECUTION — IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.
 
 ## Final execution state
 
@@ -30,10 +30,10 @@ Current pre-implementation progression is owned by `docs/documentation_topology_
 - CKR-A–K — COMPLETE / ACCEPTED;
 - CKR EXIT — ACCEPTED;
 - **DPTN-A–B — COMPLETE / ACCEPTED**;
-- **DPTN-C — NEXT / READY / NOT STARTED**;
+- **DPTN-C — IN EXECUTION**;
 - **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
 
-CKR established current semantic ownership under `docs/canonical/`, deterministic stable-ID resolution, canonical-first OKF routing and drift enforcement. DPTN-B subsequently relocated historical/provenance material under `docs/history/` without moving current semantic owners. DPTN-C has not started.
+CKR established current semantic ownership, deterministic stable-ID resolution, canonical-first routing and drift enforcement. DPTN-B relocated historical/provenance material under `docs/history/`. DPTN-C is now explicitly selected to promote the eight substantive CKR owner roots to first-class `docs/<family>/` paths by path-only atomic cutover.
 
 Primary current routes: [`../documentation_topology_normalization/README.md`](../documentation_topology_normalization/README.md), [`../canonical_knowledge_retrofit/README.md`](../canonical_knowledge_retrofit/README.md), [`../history/README.md`](../history/README.md) and [`../implementation/README.md`](../implementation/README.md).
 
@@ -55,7 +55,7 @@ A1–A4 remains the action model. Accepted DMTZ semantics outrank agent tooling,
 
 OKF remains routing. Canonical workflows live under `.agents/skills/`; Claude uses thin bridges. Progressive disclosure, stable references and context budgets remain mandatory.
 
-The completed CKR ownership inventory selects current canonical owners. `docs/history/` is provenance-only. Cleared first-class paths and DPTN move-map destinations do not establish authority. Search order, path presence, model/tool memory, vendor guidance and historical occurrences cannot override current ownership.
+The completed CKR ownership inventory selects current semantic owners. During DPTN-C that ledger may change owner paths only in the same atomic commit as the physical promotion. `docs/history/` is provenance-only. Legacy redirects, cleared paths and move-map destinations do not establish authority. Search order, path presence, model/tool memory, vendor guidance and historical occurrences cannot override current ownership.
 
 ### Conformance and CI
 
@@ -65,7 +65,7 @@ Canonical command:
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-The runner validates canonical-knowledge authority, CKR/ADF/DPTN status, routing, references, context budgets, guards and accepted repository-configuration constraints. During DPTN, completed CKR provenance checks may use a temporary legacy-history path projection; DPTN's topology validators run on the real tree. PASS is repository configuration/documentation conformance, not DMTZ domain health or runtime proof.
+The runner validates canonical-knowledge authority, CKR/ADF/DPTN status, routing, references, context budgets, guards and accepted repository-configuration constraints. During DPTN, completed CKR checks may use a temporary accepted-era compatibility projection; DPTN topology validators run on the real tree. PASS is repository configuration/documentation conformance, not DMTZ domain health or runtime proof.
 
 ### Security and lifecycle
 
@@ -83,7 +83,7 @@ Least privilege, secret/sensitive-data boundaries, prompt/content trust, noncano
 - Databricks model/AI implementation skills until explicitly reviewed;
 - managed Databricks MCP servers until separately reviewed;
 - product implementation while DPTN is active;
-- DPTN-C canonical promotion until explicitly human-selected.
+- DPTN-D/E/F/G continuation without explicit human selection.
 
 ## Key references
 
@@ -100,8 +100,8 @@ Least privilege, secret/sensitive-data boundaries, prompt/content trust, noncano
 
 ## Current next dependency
 
-**DPTN-C — NEXT / READY / NOT STARTED.**
+**DPTN-C — IN EXECUTION.**
 
 **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
 
-DPTN/ADF/CKR status does not authorize autonomous continuation. DPTN-C or Implementation 001-A requires explicit human selection.
+DPTN/ADF/CKR status does not authorize autonomous continuation beyond the explicitly selected DPTN-C scope.
