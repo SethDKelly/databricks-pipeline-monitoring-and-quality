@@ -23,7 +23,7 @@ The formal ADF exit decision remains [`execution_exit_review.md`](execution_exit
 
 ## Relationship to completed CKR and DPTN
 
-ADF exit was accepted before CKR and DPTN were inserted ahead of product implementation. CKR has completed and exited successfully. DPTN-A has now completed/accepted its physical-topology inventory and move plan. Neither later program reopens or rewrites the historical ADF exit.
+ADF exit was accepted before CKR and DPTN were inserted ahead of product implementation. **CKR has subsequently completed and exited successfully**; DPTN-A has now completed/accepted its physical-topology inventory and move plan. Neither later program reopens or rewrites the historical ADF exit.
 
 Current progression is owned by `docs/documentation_topology_normalization/README.md` and `docs/implementation/README.md`:
 
