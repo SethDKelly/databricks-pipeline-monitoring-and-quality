@@ -6,13 +6,13 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
 
-**DPTN status mirror: COMPLETE DPTN-A–DPTN-C; NEXT DPTN-D; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
+**DPTN status mirror: COMPLETE DPTN-A–DPTN-D; NEXT DPTN-E; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
 
-The Agentic Development Foundation and Canonical Knowledge Repository retrofit are complete/accepted. DPTN-A–C are complete/accepted. DPTN-D is NEXT / READY / NOT STARTED. Product implementation has not started.
+The Agentic Development Foundation and Canonical Knowledge Repository retrofit are complete/accepted. DPTN-A–D are complete/accepted. DPTN-E is NEXT / READY / NOT STARTED. Product implementation has not started.
 
 **CKR exit baseline:** CKR-K released **Implementation 001-A — NEXT / READY / NOT STARTED** from the CKR documentation-authority blocker. DPTN was subsequently interposed as a separate topology-normalization gate; this historical CKR release statement is not the current implementation status.
 
-Current semantic routing is owned by the CKR ownership inventory and deterministic stable-ID resolver. DPTN-C promoted the accepted current owners to first-class `docs/<family>/` paths and rebound the ownership ledger atomically. `docs/history/` remains provenance-only.
+Current semantic routing is owned by the CKR ownership inventory and deterministic stable-ID resolver. DPTN-C promoted the accepted current owners to first-class `docs/<family>/` paths. DPTN-D decomposed completed CKR/ADF program evidence into `docs/history/` while retaining durable operational policy/mechanics in their current roots. `docs/history/` remains provenance-only.
 
 Current work:
 
@@ -22,10 +22,11 @@ Current work:
 - **DPTN-A — COMPLETE / ACCEPTED**;
 - **DPTN-B — COMPLETE / ACCEPTED**;
 - **DPTN-C — COMPLETE / ACCEPTED**;
-- **DPTN-D — NEXT / READY / NOT STARTED**;
+- **DPTN-D — COMPLETE / ACCEPTED**;
+- **DPTN-E — NEXT / READY / NOT STARTED**;
 - **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT**.
 
-DPTN-C was documentation-topology work only. It completed MOVE-007 through MOVE-014 and directly necessary ownership/resolver/validation compatibility. DPTN-D and later work require separate explicit human selection. No product source, schemas, tests, migrations, deployment configuration, source adapters or implementation traceability claims were created by DPTN-C.
+DPTN-D was documentation-topology/lifecycle work only. It completed MOVE-015 and MOVE-016 plus directly necessary validation/status compatibility. DPTN-E and later work require separate explicit human selection. No product source, schemas, tests, migrations, deployment configuration, source adapters or implementation traceability claims were created by DPTN-D.
 
 Implementation 001-A becomes NEXT / READY / NOT STARTED only after DPTN-G exit acceptance and still requires a subsequent explicit human-selected implementation task.
 

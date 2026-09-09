@@ -1,0 +1,39 @@
+phase: DPTN-D
+status: accepted
+scenarios:
+  - id: DPTND-01
+    expectation: CKR durable ownership inventory remains current at docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json.
+  - id: DPTND-02
+    expectation: CKR authority model and migration contract remain current operational authority mechanics.
+  - id: DPTND-03
+    expectation: CKR execution reviews are preserved under docs/history/retrofits/ckr and are provenance only.
+  - id: DPTND-04
+    expectation: CKR conservation matrices and exit/routing manifests are preserved under retrofit history.
+  - id: DPTND-05
+    expectation: CKR scenario fixtures are preserved under retrofit history.
+  - id: DPTND-06
+    expectation: ADF authority, context, workflow, conformance and security policies remain current.
+  - id: DPTND-07
+    expectation: ADF numbered phase-design documents are preserved under docs/history/foundations/adf.
+  - id: DPTND-08
+    expectation: ADF execution and exit reviews are preserved under foundation history.
+  - id: DPTND-09
+    expectation: ADF accepted scenario fixtures are preserved under foundation history.
+  - id: DPTND-10
+    expectation: ADF-G-XT01 progression exception, runtime probe and live runtime evidence remain current because the bounded verification debt is unresolved.
+  - id: DPTND-11
+    expectation: ADF-H reviewed security baseline and tool lifecycle state remain current operational inputs.
+  - id: DPTND-12
+    expectation: Historical relocation preserves source blob identity for moved evidence.
+  - id: DPTND-13
+    expectation: docs/history remains explicitly non-current and cannot satisfy semantic ownership.
+  - id: DPTND-14
+    expectation: CKR ownership remains on first-class docs/<family> semantic roots with 24 concepts and 1237 stable IDs.
+  - id: DPTND-15
+    expectation: No SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH meaning or range changes during decomposition.
+  - id: DPTND-16
+    expectation: Implementation 001-A remains blocked and not started.
+  - id: DPTND-17
+    expectation: Broad agent, OKF and legacy-link rebinding remains deferred to DPTN-F.
+  - id: DPTND-18
+    expectation: DPTN-E becomes NEXT / READY / NOT STARTED only after DPTN-D decomposition acceptance.

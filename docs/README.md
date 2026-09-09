@@ -6,15 +6,13 @@ This file is the **sole living authority for completed design-phase progression*
 
 **CKR state:** CKR-A–CKR-K COMPLETE / ACCEPTED — CKR EXIT ACCEPTED.
 
-**DPTN state:** DPTN-A–C COMPLETE / ACCEPTED — DPTN-D NEXT / READY / NOT STARTED — IMPLEMENTATION 001-A BLOCKED / NOT STARTED ON DPTN EXIT.
+**DPTN state:** DPTN-A–D COMPLETE / ACCEPTED — DPTN-E NEXT / READY / NOT STARTED — IMPLEMENTATION 001-A BLOCKED / NOT STARTED ON DPTN EXIT.
 
 ## Documentation authority architecture
 
-Current semantic ownership is resolved through [`canonical_knowledge_retrofit/canonical_ownership_inventory.json`](canonical_knowledge_retrofit/canonical_ownership_inventory.json). The ownership inventory lifecycle is `ckr_complete`. DPTN-C promoted the accepted current semantic trees to first-class `docs/<family>/` paths through a synchronized physical-tree + ownership-ledger cutover.
+Current semantic ownership is resolved through [`canonical_knowledge_retrofit/canonical_ownership_inventory.json`](canonical_knowledge_retrofit/canonical_ownership_inventory.json). DPTN-C promoted the accepted current semantic trees to first-class `docs/<family>/` paths. DPTN-D then separated durable CKR/ADF operational mechanics from completed program evidence; it did not change semantic ownership.
 
-DPTN-A accepted the topology plan. DPTN-B physically normalized preserved history under [`history/README.md`](history/README.md) using exact-tree relocation. DPTN-C then reclaimed the accepted current destinations assigned to MOVE-007 through MOVE-014. Path presence or redirect presence alone never establishes authority.
-
-Governing rules: [`canonical_knowledge_retrofit/authority_model.md`](canonical_knowledge_retrofit/authority_model.md), [`canonical_knowledge_retrofit/migration_contract.md`](canonical_knowledge_retrofit/migration_contract.md), [`documentation_topology_normalization/topology_authority.md`](documentation_topology_normalization/topology_authority.md), and [`history/README.md`](history/README.md).
+Completed CKR execution evidence now lives under [`history/retrofits/ckr/`](history/retrofits/ckr/) and completed ADF program evidence under [`history/foundations/adf/`](history/foundations/adf/). Both are provenance only. Governing rules remain [`canonical_knowledge_retrofit/authority_model.md`](canonical_knowledge_retrofit/authority_model.md), [`canonical_knowledge_retrofit/migration_contract.md`](canonical_knowledge_retrofit/migration_contract.md), [`documentation_topology_normalization/topology_authority.md`](documentation_topology_normalization/topology_authority.md), and [`history/README.md`](history/README.md).
 
 > **A current semantic question resolves to one current owner. History, redirects, path vacancy and planned destinations explain provenance/topology; none establishes current meaning independently of the ownership ledger.**
 
@@ -30,7 +28,7 @@ Governing rules: [`canonical_knowledge_retrofit/authority_model.md`](canonical_k
 - **Phase 009 — Integration Contracts, Source Authority, and Evidence Availability: COMPLETE.** Groups 01–08 accepted; INTG-001–INTG-270 final; IC01-01–IC01-40, GOV02-01–GOV02-48, RTE03-01–RTE03-54, HME04-01–HME04-56, LIE05-01–LIE05-60, ICE06-01–ICE06-72, EBR07-01–EBR07-64 and XRC08-01–XRC08-64 pass; Phase 009 exit review accepted; no INTG-271 required.
 - **Phase 010 — Technical Architecture: COMPLETE.** Groups 01–09 accepted; ARCH-001–ARCH-500 final; AFE01-01–AFE01-60, EPT02-01–EPT02-72, IAD03-01–IAD03-84, AHI04-01–AHI04-96, RHI05-01–RHI05-108, IRE06-01–IRE06-120, ACS07-01–ACS07-120, SSO08-01–SSO08-120 and ACV09-01–ACV09-120 pass; D-1263–D-1700 accepted; Phase 010 exit review accepted; no ARCH-501 required.
 
-The catalog contains **24 accepted concepts**. ADF and CKR exits are accepted. **DPTN-A–C are COMPLETE / ACCEPTED, DPTN-D is NEXT / READY / NOT STARTED, and Implementation 001-A remains BLOCKED / NOT STARTED until DPTN-G exit acceptance.**
+The catalog contains **24 accepted concepts**. ADF and CKR exits are accepted. **DPTN-A–D are COMPLETE / ACCEPTED, DPTN-E is NEXT / READY / NOT STARTED, and Implementation 001-A remains BLOCKED / NOT STARTED until DPTN-G exit acceptance.**
 
 ## CKR state
 
@@ -47,40 +45,40 @@ The catalog contains **24 accepted concepts**. ADF and CKR exits are accepted. *
 - **CKR-K — Consolidation, Provenance Validation & Exit Review: COMPLETE / ACCEPTED.**
 - **CKR EXIT: ACCEPTED.**
 
-Current CKR authority and exit evidence: [`canonical_knowledge_retrofit/README.md`](canonical_knowledge_retrofit/README.md) and [`canonical_knowledge_retrofit/ckr_k_execution_review.md`](canonical_knowledge_retrofit/ckr_k_execution_review.md).
+Current CKR operational authority: [`canonical_knowledge_retrofit/README.md`](canonical_knowledge_retrofit/README.md). Completed CKR execution evidence is preserved under [`history/retrofits/ckr/`](history/retrofits/ckr/).
 
 ## DPTN state
 
 - **DPTN-A — Topology Authority, Inventory & Move Map: COMPLETE / ACCEPTED.**
 - **DPTN-B — Historical Namespace Preparation & Collision Removal: COMPLETE / ACCEPTED.**
 - **DPTN-C — Canonical Knowledge Promotion: COMPLETE / ACCEPTED.**
-- **DPTN-D — Foundation, CKR & Operational-Policy Decomposition: NEXT / READY / NOT STARTED.**
-- **DPTN-E–DPTN-G: PLANNED.**
+- **DPTN-D — Foundation, CKR & Operational-Policy Decomposition: COMPLETE / ACCEPTED.**
+- **DPTN-E — OKF / Documentation Root Convergence: NEXT / READY.**
+- **DPTN-F — Stable References, Agent Routing & Drift Rebinding: PLANNED.**
+- **DPTN-G — Conservation Audit, Legacy-Path Retirement & Exit Review: PLANNED.**
 - **Implementation 001-A: BLOCKED / NOT STARTED ON DPTN EXIT.**
 
 Current DPTN authority: [`documentation_topology_normalization/README.md`](documentation_topology_normalization/README.md).
 
 ## Current semantic lookup
 
-1. Consult the ownership inventory for the current physical owner. DPTN-C has moved substantive owners to first-class `docs/<family>/` paths.
-2. For a known stable ID, use `python3 scripts/agentic/resolve_stable_id.py <ID>` for its deterministic **current** locator `owner_path::STABLE-ID`.
+1. Consult the ownership inventory for the current physical owner.
+2. For a known stable ID, use `python3 scripts/agentic/resolve_stable_id.py <ID>` for deterministic current `owner_path::STABLE-ID` resolution.
 3. Use `--history` only for explicit provenance/rationale/history work; history never competes with current ownership.
 4. Legacy `docs/canonical/<family>` redirects may exist temporarily for navigation, but redirects are not ownership-ledger targets or alternate semantic owners.
 5. Search order, recency, Git history, OKF summaries, vendor guidance and model/tool memory are not semantic authority.
 
 Current canonical scope remains foundation/glossary, all 24 concepts, SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500 plus the frozen reference architecture.
 
-The former Phase 001–010/design/foundation/reference corpus is physically preserved under `docs/history/` (primarily `docs/history/phases/`) while retaining historical identity. It remains provenance/supporting rationale, not an alternate current owner.
-
 ## Documentation authority discipline
 
 - Design-phase completion lines live only in `## Current state` above.
 - `docs/phase_status.md` is generated from those lines and must match.
-- CKR exit/current semantic authority lives in `canonical_knowledge_retrofit/README.md` and the completed ownership inventory.
+- CKR semantic ownership lives in the completed ownership inventory and first-class semantic owner trees.
+- Durable CKR operational mechanics remain in `docs/canonical_knowledge_retrofit/`; CKR execution evidence is historical after DPTN-D.
+- Durable ADF operational policy remains in `docs/agentic_development_foundation/`; completed ADF program evidence is historical after DPTN-D.
 - DPTN progression lives in `documentation_topology_normalization/README.md`.
-- Implementation progression lives in `implementation/README.md` and is blocked during DPTN.
+- Implementation progression lives in `implementation/README.md` and remains blocked during DPTN.
 - `docs/history/` is explicitly non-current.
-- `canonical_ownership_inventory.json` remains the current-owner ledger and now selects the DPTN-C first-class owner paths.
-- DPTN-A's move map is planning evidence; DPTN-B/C manifests are execution evidence. None is semantic authority.
 
-DPTN may change paths only; genuine semantic contradictions require explicit change control.
+DPTN may change paths/lifecycle routing only; genuine semantic contradictions require explicit change control.

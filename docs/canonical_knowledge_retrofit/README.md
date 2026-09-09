@@ -4,15 +4,17 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
 
-## Purpose
+## Current role after DPTN-D
 
-CKR separates current accepted DMTZ meaning from chronological design history. It changes documentation ownership/routing/provenance without silently changing accepted product semantics.
+CKR is a completed retrofit. This directory now contains only the durable current documentation-authority mechanics that remain operational after retrofit execution evidence was decomposed by DPTN-D.
 
 > **A current semantic question resolves to one current owner.**
 
-Ownership is declared in [`canonical_ownership_inventory.json`](canonical_ownership_inventory.json); atomic cutover/no-dual-authority rules are in [`migration_contract.md`](migration_contract.md).
+Current ownership is declared in [`canonical_ownership_inventory.json`](canonical_ownership_inventory.json); authority rules are in [`authority_model.md`](authority_model.md); atomic cutover/no-dual-authority rules are in [`migration_contract.md`](migration_contract.md). These artifacts remain current operational authority/routing mechanics, not product semantics by themselves.
 
-## Program sequence / state
+Completed CKR execution reviews, conservation matrices, routing/exit manifests, candidate evidence and CKR scenario fixtures are preserved under [`../history/retrofits/ckr/`](../history/retrofits/ckr/). That history is provenance only and cannot compete with current ownership.
+
+## Completed program sequence
 
 - **CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory: COMPLETE / ACCEPTED.**
 - **CKR-B — Foundation, Terminology & Cross-Cutting Invariants: COMPLETE / ACCEPTED.**
@@ -28,34 +30,22 @@ Ownership is declared in [`canonical_ownership_inventory.json`](canonical_owners
 
 ## Accepted canonical semantic scope
 
-Foundation/glossary, all 24 concepts, SYN-001–SYN-035, authority vocabulary, REF-001–REF-030, AUTH-001–AUTH-053, HLTH-001–HLTH-066, OPS-001–OPS-123, EXPL-001–EXPL-160, INTG-001–INTG-270 and ARCH-001–ARCH-500 resolve to canonical owners. The historical Phase 001–010 corpus remains design provenance under `docs/history/` after DPTN-B.
+Foundation/glossary, all 24 concepts, SYN-001–SYN-035, authority vocabulary, REF-001–REF-030, AUTH-001–AUTH-053, HLTH-001–HLTH-066, OPS-001–OPS-123, EXPL-001–EXPL-160, INTG-001–INTG-270 and ARCH-001–ARCH-500 resolve to the ownership-inventory-selected first-class owners. DPTN-D does not alter any accepted semantic owner, stable ID, range, concept count or architecture partition.
 
 ## Accepted routing and reference layer
 
 - exact accepted stable IDs resolve deterministically through `scripts/agentic/resolve_stable_id.py <ID>`;
-- stable locator is `owner_path::STABLE-ID`;
-- stable-definition coverage is **1,237/1,237**: 737 definition headings, 416 ARCH stable-ID index members and 84 ARCH stable-contract list members;
-- `--history` performs separate provenance occurrence discovery and never competes with current ownership;
+- stable locator remains `owner_path::STABLE-ID`;
+- stable-definition coverage remains **1,237/1,237** across eight families;
+- `--history` performs separate provenance discovery and never competes with current ownership;
 - routing manifests, registries, resolvers and OKF remain derived routing machinery rather than semantic authority.
 
-## CKR-K exit result
+## CKR exit and DPTN handoff
 
-CKR-K validated **34/34** record-level entries, **24/24** concepts, all **8** stable families, all **1,237** stable IDs, **9/9** architecture inventory records, seven canonical-first domain routes, accepted CKR-A–J review evidence, bounded provenance/history preservation and representative current-truth locality. No unreviewed dual-authority condition remained at CKR exit.
+CKR exit remains accepted and is not reopened by topology normalization. DPTN-B established `docs/history/`; DPTN-C promoted the eight substantive semantic owner roots to first-class `docs/<family>/` paths; DPTN-D separated durable CKR mechanics from completed retrofit evidence without semantic rewrite.
 
-The ownership inventory lifecycle remains `ckr_complete`. This is retrofit lifecycle metadata only; DPTN path normalization does not reopen CKR semantics.
+**DPTN-A–D are COMPLETE / ACCEPTED. DPTN-E is NEXT / READY / NOT STARTED. Implementation 001-A remains BLOCKED / NOT STARTED ON DPTN EXIT.**
 
-See [`ckr_k_consolidation_provenance_matrix.md`](ckr_k_consolidation_provenance_matrix.md) and [`ckr_k_execution_review.md`](ckr_k_execution_review.md).
+The ownership inventory remains the semantic-owner ledger. Legacy redirects, history, search order, path recency, OKF summaries, vendor guidance and tool/model memory do not establish current meaning.
 
-## Post-CKR topology handoff
-
-DPTN is active. The CKR ownership inventory remains the semantic-owner ledger while DPTN changes physical paths only.
-
-- **DPTN-A–C — COMPLETE / ACCEPTED**;
-- **DPTN-D — NEXT / READY / NOT STARTED**;
-- **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
-
-DPTN-B established `docs/history/` as provenance-only and relocated history. DPTN-C then executed MOVE-007 through MOVE-014: the eight substantive semantic roots moved from `docs/canonical/<family>/` to first-class `docs/<family>/` paths through an atomic physical-tree + ownership-inventory rebind. Accepted meaning and stable IDs did not change.
-
-The ownership inventory now selects those normalized first-class paths. Any legacy `docs/canonical/<family>` redirect is compatibility only and cannot become a second current owner. `docs/canonical/README.md` remains an orientation surface pending DPTN-E.
-
-Current DPTN authority: [`../documentation_topology_normalization/README.md`](../documentation_topology_normalization/README.md). Current history role: [`../history/README.md`](../history/README.md).
+Current DPTN authority: [`../documentation_topology_normalization/README.md`](../documentation_topology_normalization/README.md). Current history role: [`../history/README.md`](../history/README.md). CKR execution provenance: [`../history/retrofits/ckr/`](../history/retrofits/ckr/).

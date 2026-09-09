@@ -1,8 +1,14 @@
 # DMTZ Agentic Development Foundation
 
-**Status:** COMPLETE / EXECUTION EXIT ACCEPTED — CKR COMPLETE — DPTN ACTIVE
+**Status:** COMPLETE / EXECUTION EXIT ACCEPTED — CKR COMPLETE — DPTN-D COMPLETE
 
-**Current handoff:** ADF EXIT ACCEPTED / CKR EXIT ACCEPTED — DPTN-A–C COMPLETE / ACCEPTED — DPTN-D NEXT / READY / NOT STARTED — IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.
+**Current handoff:** ADF EXIT ACCEPTED / CKR EXIT ACCEPTED — DPTN-A–D COMPLETE / ACCEPTED — DPTN-E NEXT / READY / NOT STARTED — IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.
+
+## Current role after DPTN-D
+
+The Agentic Development Foundation is complete. This directory now contains the durable current human-directed authority, context, workflow, conformance, security, compatibility and lifecycle policies/configuration that remain operational after DPTN-D.
+
+Completed ADF phase-design documents, execution reviews, exit evidence and accepted scenario fixtures are preserved under [`../history/foundations/adf/`](../history/foundations/adf/). That history is provenance only. DPTN-D does not reopen or strengthen the accepted ADF exit.
 
 ## Final execution state
 
@@ -14,12 +20,10 @@
 - **ADF-F — Conformance, Validation, Drift Detection & CI: COMPLETE / ACCEPTED.**
 - **ADF-G — Developer Tool Compatibility, Onboarding & Operating Model: COMPLETE / ACCEPTED FOR PROGRESSION — ADF-EX-17 DEFERRED VERIFICATION.**
 - **ADF-H — Security, Trust, Lifecycle & Governance: COMPLETE / ACCEPTED.**
-- **Databricks Agent Skills Integration Addendum: COMPLETE / ACCEPTED.**
-- **Execution Exit Review / Consolidation: COMPLETE / ACCEPTED.**
 
 **ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED.**
 
-The formal ADF exit decision remains [`execution_exit_review.md`](execution_exit_review.md): ADF-EX-01–16 and 18–20 PASS; ADF-EX-17 is **DEFERRED / WAIVED — BOUNDED VERIFICATION DEBT**.
+The formal ADF exit decision is preserved at [`../history/foundations/adf/execution_exit_review.md`](../history/foundations/adf/execution_exit_review.md). ADF-EX-01–16 and 18–20 PASS; ADF-EX-17 remains **DEFERRED / WAIVED — BOUNDED VERIFICATION DEBT**. The accepted progression exception is preserved with that history and remains referenced by current governance validation only as accepted evidence.
 
 ## Relationship to completed CKR and active DPTN
 
@@ -29,21 +33,15 @@ Current pre-implementation progression is owned by `docs/documentation_topology_
 
 - CKR-A–K — COMPLETE / ACCEPTED;
 - CKR EXIT — ACCEPTED;
-- **DPTN-A–C — COMPLETE / ACCEPTED**;
-- **DPTN-D — NEXT / READY / NOT STARTED**;
+- **DPTN-A–D — COMPLETE / ACCEPTED**;
+- **DPTN-E — NEXT / READY / NOT STARTED**;
 - **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
 
-CKR established current semantic ownership, deterministic stable-ID resolution, canonical-first routing and drift enforcement. DPTN-B relocated historical/provenance material under `docs/history/`. DPTN-C promoted the eight substantive CKR owner roots to first-class `docs/<family>/` paths by path-only atomic cutover without changing accepted semantics.
-
-Primary current routes: [`../documentation_topology_normalization/README.md`](../documentation_topology_normalization/README.md), [`../canonical_knowledge_retrofit/README.md`](../canonical_knowledge_retrofit/README.md), [`../history/README.md`](../history/README.md) and [`../implementation/README.md`](../implementation/README.md).
+DPTN-D separated durable ADF operational policy from completed foundation-program evidence. It did not change A1–A4 authority, security, context, workflow, compatibility or conformance meaning.
 
 ## ADF-EX-17 residual verification
 
 Cursor, Claude Code and Codex remain runtime-`unverified` until the common `ADF-G-XT01` bounded exercise is actually run in each provider runtime and recorded in `runtime_compatibility_evidence.json`. The waiver does not convert missing runtime evidence to PASS or weaken DMTZ authority/security/change control.
-
-## Databricks Agent Skills addendum
-
-The accepted vendor set remains `databricks-core`, `databricks-dabs`, `databricks-jobs`, `databricks-pipelines`, `databricks-data-discovery`, `databricks-dbsql`, `databricks-unity-catalog` and `databricks-lakeflow-connect`. Vendor skills are operational guidance, never DMTZ semantic/authorization authority. `DBX-SKILL-RUN-01` remains a future Implementation 001-A environment obligation.
 
 ## Durable foundation model
 
@@ -55,7 +53,7 @@ A1–A4 remains the action model. Accepted DMTZ semantics outrank agent tooling,
 
 OKF remains routing. Canonical workflows live under `.agents/skills/`; Claude uses thin bridges. Progressive disclosure, stable references and context budgets remain mandatory.
 
-The completed CKR ownership inventory selects current semantic owners at the DPTN-C first-class owner paths. `docs/history/` is provenance-only. Legacy redirects, cleared paths and move-map destinations do not establish authority. Search order, path presence, model/tool memory, vendor guidance and historical occurrences cannot override current ownership.
+The completed CKR ownership inventory selects current semantic owners at first-class `docs/<family>/` paths. `docs/history/` is provenance-only. Search order, path presence, model/tool memory, vendor guidance and historical occurrences cannot override current ownership.
 
 ### Conformance and CI
 
@@ -65,7 +63,7 @@ Canonical command:
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-The runner validates canonical-knowledge authority, CKR/ADF/DPTN status, routing, references, context budgets, guards and accepted repository-configuration constraints. During DPTN, completed CKR checks may use a temporary accepted-era compatibility projection; DPTN topology validators run on the real tree. PASS is repository configuration/documentation conformance, not DMTZ domain health or runtime proof.
+The runner validates current knowledge authority, CKR/ADF/DPTN status, routing, references, context budgets, guards and accepted repository-configuration constraints. Completed CKR/ADF evidence checks may use bounded compatibility projections where accepted-era paths were intentionally retired. PASS is repository configuration/documentation conformance, not DMTZ domain health or runtime proof.
 
 ### Security and lifecycle
 
@@ -83,24 +81,23 @@ Least privilege, secret/sensitive-data boundaries, prompt/content trust, noncano
 - Databricks model/AI implementation skills until explicitly reviewed;
 - managed Databricks MCP servers until separately reviewed;
 - product implementation while DPTN is active;
-- DPTN-D/E/F/G continuation without explicit human selection.
+- DPTN-E/F/G continuation without explicit human selection.
 
-## Key references
+## Key current references
 
-- [`execution_exit_review.md`](execution_exit_review.md) — accepted ADF exit;
 - [`authority_scope_policy.md`](authority_scope_policy.md) — human-directed authority;
 - [`stable_reference_policy.md`](stable_reference_policy.md) / [`stable_id_registry.json`](stable_id_registry.json) — stable references;
 - [`context_discovery_policy.md`](context_discovery_policy.md) — bounded context discovery;
 - [`conformance_policy.md`](conformance_policy.md) — conformance model;
 - [`security_trust_lifecycle_policy.md`](security_trust_lifecycle_policy.md) / [`agentic_change_governance.md`](agentic_change_governance.md) — security/change governance;
-- [`../canonical_knowledge_retrofit/README.md`](../canonical_knowledge_retrofit/README.md) — completed CKR authority;
+- [`../canonical_knowledge_retrofit/README.md`](../canonical_knowledge_retrofit/README.md) — completed CKR durable mechanics;
+- [`../history/foundations/adf/`](../history/foundations/adf/) — accepted ADF execution provenance;
 - [`../documentation_topology_normalization/README.md`](../documentation_topology_normalization/README.md) — active DPTN;
-- [`../history/README.md`](../history/README.md) — preserved history/provenance;
 - [`../implementation/README.md`](../implementation/README.md) — implementation progression.
 
 ## Current next dependency
 
-**DPTN-D — NEXT / READY / NOT STARTED.**
+**DPTN-E — OKF / Documentation Root Convergence: NEXT / READY / NOT STARTED.**
 
 **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
 
