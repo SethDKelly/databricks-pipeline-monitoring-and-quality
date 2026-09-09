@@ -10,7 +10,7 @@
 
 ADF and CKR are complete/accepted. DPTN-A and DPTN-B are complete/accepted. DPTN-C is IN EXECUTION by explicit human selection. Implementation 001-A remains NOT STARTED and may not begin until DPTN-G accepts the normalization exit and a subsequent human-selected implementation task authorizes work.
 
-Current semantic ownership is selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`. During the DPTN-C cutover, only an atomic ownership-ledger + physical-tree promotion may change a current owner path. `docs/history/` remains provenance-only and cannot compete with current ownership.
+Current semantic ownership is selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`. During the DPTN-C cutover, only an atomic ownership-ledger + physical-tree promotion may change a current canonical owner path. `docs/history/` remains provenance-only and cannot compete with current ownership.
 
 Authority order: current semantic owner → root `AGENTS.md` → live DPTN/implementation status → accepted ADF scope/security mechanics → DMTZ workflows/overlays → reviewed vendor operational guidance → tool/personal memory.
 
