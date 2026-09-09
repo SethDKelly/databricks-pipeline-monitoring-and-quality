@@ -1,8 +1,8 @@
 # Canonical Knowledge & Documentation Authority Retrofit
 
-**Status:** CKR-A–CKR-K COMPLETE / ACCEPTED — CKR EXIT ACCEPTED — IMPLEMENTATION 001-A NEXT
+**Status:** CKR-A–CKR-K COMPLETE / ACCEPTED — CKR EXIT ACCEPTED
 
-**CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
 
 ## Purpose
 
@@ -48,8 +48,13 @@ The ownership inventory lifecycle is `ckr_complete`. This is retrofit lifecycle 
 
 See [`ckr_k_consolidation_provenance_matrix.md`](ckr_k_consolidation_provenance_matrix.md) and [`ckr_k_execution_review.md`](ckr_k_execution_review.md).
 
-## Implementation handoff
+## Post-CKR topology handoff
 
-**Implementation 001-A — NEXT / READY / NOT STARTED.**
+The later Documentation Physical Topology Normalization program is now active. CKR remains the current semantic ownership authority throughout DPTN until a later accepted DPTN cutover atomically rebinds paths.
 
-CKR exit removes the documentation-authority blocker only. It does not start product implementation, and a human-selected implementation task remains required before implementation work begins.
+- **DPTN-A — IN EXECUTION**;
+- **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
+
+DPTN-A's move map is future-location planning evidence only. It does not supersede the CKR ownership inventory, move any owner, change stable-ID meaning or start product implementation.
+
+Current DPTN authority: [`../documentation_topology_normalization/README.md`](../documentation_topology_normalization/README.md).

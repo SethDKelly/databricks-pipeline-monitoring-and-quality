@@ -16,23 +16,20 @@ MIRRORS = (
 
 POST_EXIT_REQUIRED = {
     "docs/README.md": (
-        "**CKR state:** CKR-A–CKR-K COMPLETE / ACCEPTED — CKR EXIT ACCEPTED — IMPLEMENTATION 001-A NEXT / READY / NOT STARTED.",
-        "Implementation 001-A is NEXT / READY / NOT STARTED",
+        "**CKR state:** CKR-A–CKR-K COMPLETE / ACCEPTED — CKR EXIT ACCEPTED.",
     ),
     "docs/canonical/README.md": (
         "**Authority state:** CANONICALIZATION COMPLETE — CKR EXIT ACCEPTED",
     ),
     "docs/agentic_development_foundation/README.md": (
-        "**Current handoff:** CKR COMPLETE / EXIT ACCEPTED — IMPLEMENTATION 001-A NEXT / READY / NOT STARTED.",
-        "CKR has subsequently completed and exited successfully",
+        "**Current handoff:** ADF EXIT ACCEPTED / CKR EXIT ACCEPTED",
+        "CKR subsequently completed and exited successfully",
     ),
     "knowledge/index.md": (
         "CKR-A–K is complete/accepted",
-        "Implementation 001-A is NEXT / READY / NOT STARTED",
     ),
     "knowledge/project/agentic-foundation.md": (
         "CKR is complete/accepted",
-        "Implementation 001-A is NEXT / READY / NOT STARTED",
     ),
     "docs/phase_status.md": (
         "Phase 010 — Technical Architecture: COMPLETE",
@@ -102,7 +99,7 @@ def main() -> int:
 
     mirror: str | None = None
     if len(complete) == len(LETTERS):
-        mirror = "CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT."
+        mirror = "CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED."
     elif in_progress:
         prefix = f"COMPLETE {complete_label(complete)}; " if complete else ""
         mirror = f"CKR status mirror: {prefix}IN EXECUTION CKR-{in_progress[0]}; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT."
@@ -127,8 +124,6 @@ def main() -> int:
     implementation = implementation_path.read_text(encoding="utf-8") if implementation_path.is_file() else ""
     if len(complete) < len(LETTERS) and "IMPLEMENTATION 001-A BLOCKED ON CKR EXIT" not in implementation:
         errors.append("implementation authority must block 001-A while CKR is incomplete")
-    if len(complete) == len(LETTERS) and "Implementation 001-A — NEXT / READY / NOT STARTED" not in implementation:
-        errors.append("accepted CKR exit requires Implementation 001-A NEXT / READY / NOT STARTED")
 
     if len(complete) == len(LETTERS):
         for rel, required_tokens in POST_EXIT_REQUIRED.items():

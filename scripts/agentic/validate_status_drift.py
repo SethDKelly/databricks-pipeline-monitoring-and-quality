@@ -57,7 +57,7 @@ def main() -> int:
         if deferred:
             mirror += 'ADF-EX-17 DEFERRED VERIFICATION; '
         if exit_accepted:
-            mirror += 'FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.'
+            mirror += 'FOUNDATION EXIT ACCEPTED.'
         else:
             mirror += 'EXECUTION EXIT REVIEW NEXT.'
     elif complete and in_progress:

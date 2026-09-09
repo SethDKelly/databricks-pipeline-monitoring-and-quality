@@ -16,6 +16,9 @@ CKR=(
 ('CKR-I','docs/canonical_knowledge_retrofit/fixtures/ckr_i_architecture_scenarios.yaml','docs/canonical_knowledge_retrofit/ckr_i_execution_review.md'),
 ('CKR-J','docs/canonical_knowledge_retrofit/fixtures/ckr_j_routing_scenarios.yaml','docs/canonical_knowledge_retrofit/ckr_j_execution_review.md'),
 ('CKR-K','docs/canonical_knowledge_retrofit/fixtures/ckr_k_exit_scenarios.yaml','docs/canonical_knowledge_retrofit/ckr_k_execution_review.md'))
+DPTN=(
+('DPTN-A','docs/documentation_topology_normalization/fixtures/dptn_a_topology_scenarios.yaml','docs/documentation_topology_normalization/dptn_a_execution_review.md'),
+)
 ID_RE=re.compile(r'^\s*-\s+id:\s*["\']?([^"\'\s]+)',re.M)
 def collect(path,label,seen,errors):
     if not path.is_file(): errors.append(f'missing {label} fixture catalog: {path.name}'); return 0
@@ -35,7 +38,7 @@ def main():
     for label,name,review in ADDENDA:
         count+=collect(root/name,f'ADF addendum {label}',seen,errors)
         if not (repo/'docs/agentic_development_foundation'/review).is_file(): errors.append(f'ADF addendum {label}: missing execution review {review}')
-    for label,fixture,review in CKR:
+    for label,fixture,review in CKR + DPTN:
         count+=collect(repo/fixture,label,seen,errors)
         if not (repo/review).is_file(): errors.append(f'{label}: missing execution review {review}')
     for e in errors: print('ERROR',e)

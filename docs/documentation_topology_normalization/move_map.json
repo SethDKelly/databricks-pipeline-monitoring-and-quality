@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "status": "accepted",
+  "physical_moves_authorized": false,
+  "dependency_order": ["DPTN-B","DPTN-C","DPTN-D","DPTN-E","DPTN-F","DPTN-G"],
+  "moves": [
+    {"id":"MOVE-001","source":"docs/concepts/**","target":"docs/history/phases/**","phase":"DPTN-B","action":"relocate_by_phase","source_role":"history_provenance","target_role":"history_provenance","blocks":["MOVE-007"],"authority_change":false},
+    {"id":"MOVE-002","source":"docs/reference/**","target":"docs/history/reference-legacy/**","phase":"DPTN-B","action":"relocate","source_role":"history_provenance","target_role":"history_provenance","blocks":["MOVE-014"],"authority_change":false},
+    {"id":"MOVE-003","source":"docs/foundation/**","target":"docs/history/foundation/**","phase":"DPTN-B","action":"relocate","source_role":"history_provenance","target_role":"history_provenance","authority_change":false},
+    {"id":"MOVE-004","source":"docs/planning/**","target":"docs/history/planning/**","phase":"DPTN-B","action":"relocate","source_role":"history_provenance","target_role":"history_provenance","authority_change":false},
+    {"id":"MOVE-005","source":"docs/decisions/**","target":"docs/history/decisions/**","phase":"DPTN-B","action":"relocate","source_role":"history_provenance","target_role":"history_provenance","authority_change":false},
+    {"id":"MOVE-006","source":"docs/design_history/**","target":"docs/history/design-history/**","phase":"DPTN-B","action":"relocate_or_merge_index","source_role":"history_provenance","target_role":"history_provenance","authority_change":false},
+    {"id":"MOVE-007","source":"docs/canonical/concepts/**","target":"docs/concepts/**","phase":"DPTN-C","action":"promote","source_role":"current_semantic_authority","target_role":"current_semantic_authority","requires":["MOVE-001"],"authority_change":"path_only_atomic"},
+    {"id":"MOVE-008","source":"docs/canonical/architecture/**","target":"docs/architecture/**","phase":"DPTN-C","action":"promote","source_role":"current_semantic_authority","target_role":"current_semantic_authority","authority_change":"path_only_atomic"},
+    {"id":"MOVE-009","source":"docs/canonical/authority/**","target":"docs/authority/**","phase":"DPTN-C","action":"promote","source_role":"current_semantic_authority","target_role":"current_semantic_authority","authority_change":"path_only_atomic"},
+    {"id":"MOVE-010","source":"docs/canonical/contracts/**","target":"docs/contracts/**","phase":"DPTN-C","action":"promote","source_role":"current_semantic_authority","target_role":"current_semantic_authority","authority_change":"path_only_atomic"},
+    {"id":"MOVE-011","source":"docs/canonical/experience/**","target":"docs/experience/**","phase":"DPTN-C","action":"promote","source_role":"current_semantic_authority","target_role":"current_semantic_authority","authority_change":"path_only_atomic"},
+    {"id":"MOVE-012","source":"docs/canonical/invariants/**","target":"docs/invariants/**","phase":"DPTN-C","action":"promote","source_role":"current_semantic_authority","target_role":"current_semantic_authority","authority_change":"path_only_atomic"},
+    {"id":"MOVE-013","source":"docs/canonical/policies/**","target":"docs/policies/**","phase":"DPTN-C","action":"promote","source_role":"current_semantic_authority","target_role":"current_semantic_authority","authority_change":"path_only_atomic"},
+    {"id":"MOVE-014","source":"docs/canonical/reference/**","target":"docs/reference/**","phase":"DPTN-C","action":"promote","source_role":"current_semantic_authority","target_role":"current_semantic_authority","requires":["MOVE-002"],"authority_change":"path_only_atomic"},
+    {"id":"MOVE-015","source":"docs/canonical_knowledge_retrofit/**","target":"split_current_policy_and_docs/history/retrofits/ckr/**","phase":"DPTN-D","action":"decompose_file_by_file","source_role":"mixed_lifecycle","target_role":"mixed_resolved","authority_change":"only_for_durable_operational_paths"},
+    {"id":"MOVE-016","source":"docs/agentic_development_foundation/**","target":"split_current_agentic_policy_and_docs/history/foundations/adf/**","phase":"DPTN-D","action":"decompose_file_by_file","source_role":"mixed_lifecycle","target_role":"mixed_resolved","authority_change":"operational_path_only"},
+    {"id":"MOVE-017","source":"knowledge/**","target":"docs/index.md and/or generated knowledge projection","phase":"DPTN-E","action":"converge_or_generate_after_compatibility_review","source_role":"derived_routing","target_role":"derived_routing","authority_change":false},
+    {"id":"MOVE-018","source":"docs/canonical/README.md","target":"docs/index.md","phase":"DPTN-E","action":"merge_orientation_only","source_role":"routing_index","target_role":"routing_index","requires":["MOVE-007","MOVE-008","MOVE-009","MOVE-010","MOVE-011","MOVE-012","MOVE-013","MOVE-014"],"authority_change":false},
+    {"id":"MOVE-019","source":"agent rules/resolver/validators/OKF links","target":"normalized paths","phase":"DPTN-F","action":"rebind_in_place","source_role":"current_operational_policy","target_role":"current_operational_policy","requires":["MOVE-007","MOVE-008","MOVE-009","MOVE-010","MOVE-011","MOVE-012","MOVE-013","MOVE-014","MOVE-015","MOVE-016","MOVE-017"],"authority_change":false},
+    {"id":"MOVE-020","source":"docs/documentation_topology_normalization/**","target":"docs/history/retrofits/dptn/** and/or minimal generated operational residue","phase":"DPTN-G","action":"retire_migration_scaffolding","source_role":"migration_execution","target_role":"history_provenance_or_generated_operational","requires":["MOVE-019"],"authority_change":false}
+  ],
+  "rules": {
+    "no_move_in_dptn_a": true,
+    "history_before_path_reclaim": true,
+    "current_owner_moves_require_atomic_routing_update": true,
+    "mixed_lifecycle_bulk_move_forbidden": true,
+    "stable_id_meaning_changes_forbidden": true,
+    "implementation_work_forbidden": true
+  }
+}

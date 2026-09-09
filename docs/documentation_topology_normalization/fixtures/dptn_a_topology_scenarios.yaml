@@ -1,0 +1,51 @@
+schema_version: "1.0"
+status: accepted
+scenarios:
+  - id: DPTNA-01
+    proposition: DPTN-A creates a complete move plan without physically moving documentation.
+  - id: DPTNA-02
+    proposition: A proposed target path does not become current semantic authority.
+  - id: DPTNA-03
+    proposition: Legacy docs/concepts is history before canonical concepts may occupy that path.
+  - id: DPTNA-04
+    proposition: Legacy docs/reference is history before canonical reference may occupy that path.
+  - id: DPTNA-05
+    proposition: Phase-scoped docs/decisions is historical and does not define a future current ADR namespace.
+  - id: DPTNA-06
+    proposition: docs/foundation can move to history because CKR-B already owns its accepted current meanings elsewhere.
+  - id: DPTNA-07
+    proposition: docs/planning is preserved as planning provenance rather than current semantic authority.
+  - id: DPTNA-08
+    proposition: docs/design_history remains preserved and explicitly non-current.
+  - id: DPTNA-09
+    proposition: docs/canonical concepts are promoted only after the destination collision is cleared.
+  - id: DPTNA-10
+    proposition: docs/canonical reference is promoted only after the destination collision is cleared.
+  - id: DPTNA-11
+    proposition: architecture authority moves path only; ARCH meaning and ranges remain unchanged.
+  - id: DPTNA-12
+    proposition: contracts authority moves path only; stable meanings remain unchanged.
+  - id: DPTNA-13
+    proposition: ADF mixed lifecycle content requires file-level decomposition.
+  - id: DPTNA-14
+    proposition: CKR mixed lifecycle content requires file-level decomposition.
+  - id: DPTNA-15
+    proposition: knowledge is routing and may converge or become a generated projection only after compatibility review.
+  - id: DPTNA-16
+    proposition: docs/index is a routing root and cannot become semantic authority merely by indexing resources.
+  - id: DPTNA-17
+    proposition: stable-ID resolver rebinding occurs after physical current-owner topology stabilizes.
+  - id: DPTNA-18
+    proposition: history paths can never satisfy default current stable-ID resolution.
+  - id: DPTNA-19
+    proposition: one current semantic question continues to resolve to one current owner throughout DPTN.
+  - id: DPTNA-20
+    proposition: DPTN may not renumber or change any of the 1237 accepted stable IDs.
+  - id: DPTNA-21
+    proposition: DPTN may not change the accepted 24-concept catalog.
+  - id: DPTNA-22
+    proposition: DPTN may not create product implementation evidence or behavior.
+  - id: DPTNA-23
+    proposition: Implementation 001-A remains blocked until DPTN-G exit acceptance.
+  - id: DPTNA-24
+    proposition: DPTN migration manifests retire to history or a minimal generated operational role after exit.
