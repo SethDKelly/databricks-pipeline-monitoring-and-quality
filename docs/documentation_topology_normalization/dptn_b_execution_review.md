@@ -34,13 +34,24 @@ Corrected candidate head `167bec8c22006e09aa04a37b377de0dc91d82832` passed:
 - Agentic conformance #220 — SUCCESS, run `34373141082`;
 - Documentation consistency #338 — SUCCESS, run `34373141076`.
 
+## Closure validation evidence
+
+The synchronized closure first reached head `5de64352fc18112a243daec8ffc6f1f221852081`. Documentation consistency #339 succeeded. Agentic #221 showed no semantic or topology regression: CKR-A–K, DPTN-A, exact-tree preservation, stable IDs, status drift and DPTN-B's 12 adversarial controls all passed. It failed only because the new collision-closure validator required an exact vacancy/authority sentence and two shared post-CKR adversarial mutations had become no-ops after downstream wording advanced.
+
+The collision register was made machine-explicit that **vacancy does not assign current authority**, and the two shared CKR adversarial mutations were made progression-independent. On head `5f4292da794991ac87d7c576316e36fb4ef57e24`, Documentation consistency #341 succeeded and every substantive DPTN-B/CKR/shared guard passed except one DPTN-B lifecycle mutation that hard-coded `accepted` and therefore became a no-op after legitimate acceptance; Agentic #223 failed only on that guard mechanic.
+
+That DPTN-B mutation was made state-relative, detecting manifest/status divergence in either candidate or accepted state without changing the 12-control catalog. Corrected closure head `0c53abf03cb5b2ddaede52735b801cce41347df6` passed:
+
+- Agentic conformance #224 — SUCCESS, run `34374787718`;
+- Documentation consistency #342 — SUCCESS, run `34374787706`.
+
+The closure diagnostics changed guard mechanics and machine-readable collision wording only; they did not alter relocated trees, canonical ownership, stable-ID meaning, accepted phase scope or implementation state.
+
 ## Acceptance result
 
 DPTN-B acceptance proves that the historical corpus was physically normalized without loss or semantic-owner movement, that the first-class collisions required before canonical promotion are cleared, and that history cannot satisfy current semantic routing.
 
-## Closure validation
-
-Pending exact-head closure validation.
+The accepted repository state is **DPTN-A–B COMPLETE / ACCEPTED; DPTN-C NEXT / READY / NOT STARTED; Implementation 001-A BLOCKED / NOT STARTED ON DPTN EXIT**.
 
 ## Handoff
 
