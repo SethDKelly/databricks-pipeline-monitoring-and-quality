@@ -1,21 +1,23 @@
 ---
-description: Route DMTZ work to live implementation status and current semantic ownership. Use when project status, authority, workflow or reference location is unclear.
+description: Route DMTZ work to live DPTN/implementation status and current semantic ownership. Use when project status, authority, workflow or reference location is unclear.
 globs:
 alwaysApply: false
 ---
 
 # Agentic / implementation routing
 
-**ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
+**ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
+**CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
 
-CKR-A–K are complete/accepted. Implementation 001-A is NEXT / READY / NOT STARTED and requires explicit human selection before implementation begins.
+**DPTN status mirror: IN EXECUTION DPTN-A; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
 
-Primary shared authority remains root `AGENTS.md`, `docs/agentic_development_foundation/authority_scope_policy.md`, the CKR ownership inventory, and accepted ADF scope/security mechanics. All accepted semantic families through ARCH are canonicalized; Phase 001–010 sources are provenance.
+ADF and CKR are complete/accepted. DPTN-A is the active pre-implementation topology task. Implementation 001-A is BLOCKED / NOT STARTED until DPTN-G exit acceptance and a later explicit human-selected implementation task.
 
-For a known stable ID, use `python3 scripts/agentic/resolve_stable_id.py <ID>` to get the deterministic canonical locator. Use `--history` only for explicit provenance/history. For an unknown semantic location, use one bounded route from `knowledge/index.md`, then the canonical owner.
+Primary shared authority remains root `AGENTS.md`, `docs/agentic_development_foundation/authority_scope_policy.md`, the CKR ownership inventory, accepted ADF scope/security mechanics, and the live DPTN authority for topology changes only.
 
-CKR exit is documentation-authority acceptance, not implementation execution. Do not begin Implementation 001-A without a subsequent human-selected implementation task.
+For a known stable ID, use `python3 scripts/agentic/resolve_stable_id.py <ID>` to get the **current** canonical locator. Use `--history` only for explicit provenance/history. For an unknown semantic location, use one bounded route from `knowledge/index.md`, then the current canonical owner.
 
-Do not infer authority from OKF, resolver output alone, recency, search order, Git history, vendor skill, tool memory, source availability or path presence.
+DPTN-A proposed destinations in `docs/documentation_topology_normalization/move_map.json` are planning only. Do not route current semantic work to those paths and do not physically move documentation during DPTN-A.
+
+Do not begin Implementation 001-A while DPTN is active. Do not infer authority from the DPTN move map, OKF, resolver output alone, recency, search order, Git history, vendor skill, tool memory, source availability or path presence.
