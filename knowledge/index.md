@@ -7,7 +7,7 @@ Portable, tool-neutral routing into current DMTZ repository authority. This bund
 
 CKR-A–K is complete/accepted and the CKR exit is accepted. The CKR ownership inventory determines current semantic owner paths; OKF only helps locate them.
 
-**DPTN-A–C are COMPLETE / ACCEPTED. DPTN-D is NEXT / READY / NOT STARTED. Implementation 001-A is BLOCKED / NOT STARTED on DPTN exit.** DPTN-C promoted the eight substantive semantic owner roots to first-class `docs/<family>/` paths through the accepted atomic ownership-ledger cutover.
+**DPTN-A–D are COMPLETE / ACCEPTED. DPTN-E is NEXT / READY / NOT STARTED. Implementation 001-A is BLOCKED / NOT STARTED on DPTN exit.** DPTN-C promoted the eight substantive semantic owner roots to first-class `docs/<family>/` paths; DPTN-D separated durable CKR/ADF operational mechanics from completed program evidence under `docs/history/`.
 
 Start with the shortest relevant path:
 
@@ -18,6 +18,6 @@ Start with the shortest relevant path:
 - [Implementation routing](implementation/index.md)
 - [Development workflow routing](workflows/index.md)
 
-For exact semantics, read the current owner selected by repository authority. Legacy `docs/canonical/<family>` paths may remain as compatibility redirects after promotion, but redirect presence never establishes authority. `docs/history/`, path vacancy, an OKF summary, DPTN move plan, verification marker, search rank or model memory cannot establish semantic authority.
+For exact semantics, read the current owner selected by repository authority. Legacy `docs/canonical/<family>` paths may remain as compatibility redirects, but redirect presence never establishes authority. `docs/history/`, path vacancy, an OKF summary, DPTN move plan, verification marker, search rank or model memory cannot establish semantic authority.
 
-DPTN-D/E/F/G and product implementation require separate explicit human selection.
+DPTN-E/F/G and product implementation require separate explicit human selection.
