@@ -4,9 +4,9 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
 
-**DPTN status mirror: IN EXECUTION DPTN-A; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
+**DPTN status mirror: COMPLETE DPTN-A; NEXT DPTN-B; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
 
-ADF and CKR exits are accepted. DPTN-A is now the active pre-implementation documentation-topology task. **Implementation 001-A is BLOCKED / NOT STARTED until DPTN-G exit acceptance.**
+ADF and CKR exits are accepted. DPTN-A is complete/accepted and DPTN-B is NEXT / READY / NOT STARTED. **Implementation 001-A is BLOCKED / NOT STARTED until DPTN-G exit acceptance.**
 
 ## Current semantic routing
 
@@ -20,6 +20,6 @@ ADF and CKR exits are accepted. DPTN-A is now the active pre-implementation docu
 8. `docs/implementation/README.md` — implementation program state.
 9. root `AGENTS.md` — shared instructions.
 
-DPTN-A move-map destinations are planning only. Do not route current semantic questions to proposed future locations until the relevant later DPTN cutover is accepted. Use `--history` only for explicit provenance/historical stable-ID inspection.
+DPTN-A's accepted move-map destinations remain planning only. Do not route current semantic questions to proposed future locations until the relevant later DPTN cutover is accepted. DPTN-B has not started and no historical relocation is authorized absent explicit human selection. Use `--history` only for explicit provenance/historical stable-ID inspection.
 
 **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.** DPTN exit will return 001-A to NEXT / READY / NOT STARTED; it will not start implementation.

@@ -1,12 +1,12 @@
 # DPTN-A Execution Review
 
-**Status:** CANDIDATE REVIEW — DPTN-A IN EXECUTION
+**Status:** ACCEPTED — DPTN-A COMPLETE
 
 ## Scope
 
 DPTN-A defines topology authority, inventory, move dependencies and collision handling only. It performs no documentation relocation and no product implementation.
 
-## Candidate findings
+## Accepted findings
 
 - CKR is complete and remains the current semantic ownership authority during DPTN.
 - The physical docs tree still mixes current canonical owners, historical phase/foundation/planning material, completed-program evidence, implementation planning and a separate derived `knowledge/` plane.
@@ -29,24 +29,33 @@ DPTN-A freezes the following accepted baseline:
 - Phase 001–010 and other historical material remain provenance only;
 - Implementation 001-A remains unstarted and is blocked on DPTN exit.
 
-## Candidate deliverable counts
+## Accepted deliverable counts
 
 - topology inventory rules: 28;
 - dependency-safe move entries: 20;
 - registered collisions: 13;
-- DPTN-A scenarios: 24.
+- DPTN-A scenarios: 24;
+- DPTN-A negative controls: 10.
 
-## Acceptance gates
+## Candidate validation evidence
 
-DPTN-A is not accepted until:
+Initial candidate head `6086599ece8743049ddb5ed8a70f04817144594d` passed Documentation consistency #331 and every substantive ADF/CKR/DPTN check. Agentic conformance #213 failed only because the shared `stale post-CKR ADF handoff` adversarial mutation had become a no-op after DPTN decoupled downstream progression from the completed CKR/ADF exit mirrors.
 
-1. `validate_dptn_a_topology.py` passes on the candidate tree;
-2. DPTN-A negative controls pass;
-3. normal Agentic conformance remains green with existing CKR semantics unchanged;
-4. Documentation consistency remains green;
-5. live status mirrors agree that DPTN-A is active and Implementation 001-A is blocked;
-6. no physical documentation move appears in the PR diff.
+The correction made CKR post-exit validation require the stable progression-independent handoff prefix `ADF EXIT ACCEPTED / CKR EXIT ACCEPTED`; it did not weaken CKR or DPTN semantics and did not add DPTN-A-specific state to CKR authority.
 
-## Handoff after acceptance
+Corrected candidate head `ece46d0141bd976577208f311c18d11670c831c8` passed:
 
-On acceptance, DPTN-A becomes COMPLETE / ACCEPTED and **DPTN-B — Historical Namespace Preparation & Collision Removal** becomes NEXT / READY. No DPTN-B move is authorized merely by this review; it requires a subsequent explicit human-selected task.
+- Agentic conformance #214 — SUCCESS;
+- Documentation consistency #332 — SUCCESS.
+
+## Acceptance result
+
+DPTN-A acceptance proves that the proposed normalization is fully inventoried, collision-aware, dependency-ordered and mechanically blocked from premature physical movement or implementation. It does not make proposed target paths current owners.
+
+No documentation subtree has moved, no `docs/history/` normalized namespace has been created, no stable-ID locator has been rebound, and no product implementation has started.
+
+## Handoff
+
+**DPTN-B — Historical Namespace Preparation & Collision Removal: NEXT / READY / NOT STARTED.**
+
+DPTN-B is not authorized merely by DPTN-A acceptance. It requires a subsequent explicit human-selected task. Implementation 001-A remains blocked through DPTN-G exit.

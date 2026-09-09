@@ -6,35 +6,35 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
 
-**DPTN status mirror: IN EXECUTION DPTN-A; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
+**DPTN status mirror: COMPLETE DPTN-A; NEXT DPTN-B; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
 
-ADF and CKR are complete/accepted. DPTN-A is the active human-selected pre-implementation documentation-topology task. Implementation 001-A remains NOT STARTED and may not begin until DPTN-G accepts the normalization exit and a subsequent human-selected implementation task authorizes work.
+ADF and CKR are complete/accepted. DPTN-A is complete/accepted. DPTN-B is NEXT / READY / NOT STARTED and requires explicit human selection before any history relocation begins. Implementation 001-A remains NOT STARTED and may not begin until DPTN-G accepts the normalization exit and a subsequent human-selected implementation task authorizes work.
 
-Current semantic ownership is still selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`. DPTN-A proposes future physical destinations only; no semantic owner has moved. All accepted semantic families through ARCH remain canonicalized, and Phase 001–010 sources remain provenance for migrated meanings.
+Current semantic ownership is still selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`. DPTN-A froze future physical destinations only; no semantic owner moved. All accepted semantic families through ARCH remain canonicalized, and Phase 001–010 sources remain provenance for migrated meanings.
 
 Authority order: current semantic owner → root `AGENTS.md` → live DPTN/implementation status → accepted ADF scope/security mechanics → DMTZ workflows/overlays → reviewed vendor operational guidance → tool/personal memory.
 
 ## Human-directed boundary
 
-Follow `docs/agentic_development_foundation/authority_scope_policy.md`. CKR exit removed the documentation-authority blocker, but DPTN now blocks product implementation until topology normalization exits. DPTN-A itself authorizes inventory/planning and directly necessary status/validation changes only; it does not authorize physical documentation moves or product implementation.
+Follow `docs/agentic_development_foundation/authority_scope_policy.md`. CKR exit removed the documentation-authority blocker, but DPTN now blocks product implementation until topology normalization exits. DPTN-A acceptance authorizes no continuation by itself; DPTN-B must be explicitly selected before its bounded historical relocation work begins.
 
-## Canonical routing during DPTN-A
+## Canonical routing before DPTN-B starts
 
 Use `human task → current canonical owner → exact IDs/tests as needed`.
 
 For a known stable ID, run `python3 scripts/agentic/resolve_stable_id.py <ID>` to obtain the deterministic canonical locator `owner_path::ID`. Use `--history` only for explicit provenance/rationale/history work; historical occurrences never compete with current ownership.
 
-When semantic location is unknown, `knowledge/index.md` may route through one bounded domain concept to the current canonical owner. The DPTN move map, proposed target paths, OKF, search order, recency, Git history, vendor guidance and model/tool memory never establish semantic authority.
+When semantic location is unknown, `knowledge/index.md` may route through one bounded domain concept to the current canonical owner. The accepted DPTN move map, proposed target paths, OKF, search order, recency, Git history, vendor guidance and model/tool memory never establish semantic authority.
 
 Do not preload the full stable-ID corpus, OKF bundle or DPTN move map when a bounded current owner is already known.
 
 ## DPTN boundary
 
-Read `docs/documentation_topology_normalization/README.md` for live topology-program status. During DPTN-A:
+Read `docs/documentation_topology_normalization/README.md` for live topology-program status. After DPTN-A acceptance and before DPTN-B is explicitly selected:
 
 - no documentation subtree may be physically moved;
 - `docs/canonical/` remains the current semantic root;
-- `docs/history/` is not yet an active physical namespace;
+- `docs/history/` is not yet the normalized physical namespace;
 - mixed ADF/CKR directories may not be bulk relocated;
 - Implementation 001-A remains blocked.
 
@@ -50,7 +50,7 @@ Accepted ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–
 
 ## Residuals / conformance
 
-ADF-EX-17 / `ADF-G-XT01` remains deferred runtime verification. `DBX-SKILL-RUN-01` remains future Implementation 001-A work. Neither is a DPTN-A topology-inventory acceptance blocker. Databricks vendor skills remain operational guidance only.
+ADF-EX-17 / `ADF-G-XT01` remains deferred runtime verification. `DBX-SKILL-RUN-01` remains future Implementation 001-A work. Neither is a DPTN topology-normalization blocker. Databricks vendor skills remain operational guidance only.
 
 ```bash
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md

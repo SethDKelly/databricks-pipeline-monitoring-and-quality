@@ -4,15 +4,15 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
 
-**DPTN status mirror: IN EXECUTION DPTN-A; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
+**DPTN status mirror: COMPLETE DPTN-A; NEXT DPTN-B; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
 
 ## Universal start
 
 | Need | Read first |
 |---|---|
 | Active topology program | `docs/documentation_topology_normalization/README.md` |
-| DPTN-A move authority | `docs/documentation_topology_normalization/topology_authority.md` |
-| DPTN-A planned locations | `docs/documentation_topology_normalization/move_map.json` — planning only |
+| DPTN topology authority | `docs/documentation_topology_normalization/topology_authority.md` |
+| Accepted future move plan | `docs/documentation_topology_normalization/move_map.json` — planning only until each later phase is selected/cut over |
 | CKR exit / current authority | `docs/canonical_knowledge_retrofit/README.md` |
 | Current semantic owner | `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` |
 | Stable ID | `python3 scripts/agentic/resolve_stable_id.py <ID>` |
@@ -26,16 +26,17 @@
 | Design history | `docs/design_history/README.md` |
 | Conformance | `scripts/agentic/run_conformance.py` |
 
-## Stable references during DPTN-A
+## Stable references after DPTN-A
 
-Default exact-ID lookup continues to return the **current CKR canonical** `owner_path::ID`. DPTN-A move-map targets are future physical destinations and must not be substituted into current locators. Add `--history` only for explicit historical/provenance inspection.
+Default exact-ID lookup continues to return the **current CKR canonical** `owner_path::ID`. DPTN-A accepted move-map targets are future physical destinations and must not be substituted into current locators. Add `--history` only for explicit historical/provenance inspection.
 
 ## Current state
 
 - ADF — COMPLETE / EXIT ACCEPTED.
 - CKR-A–K — COMPLETE / ACCEPTED.
 - CKR EXIT — ACCEPTED.
-- **DPTN-A — IN EXECUTION.**
+- **DPTN-A — COMPLETE / ACCEPTED.**
+- **DPTN-B — NEXT / READY / NOT STARTED.**
 - **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
 
-DPTN-A performs inventory and planning only. No physical documentation move or product implementation is authorized.
+DPTN-A performed inventory and planning only. No physical documentation move or product implementation occurred. DPTN-B requires explicit human selection before its bounded relocation work begins.

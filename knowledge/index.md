@@ -5,9 +5,9 @@ okf_version: "0.2"
 
 Portable, tool-neutral routing into current DMTZ repository authority. This bundle is an index, not a source of product truth.
 
-CKR-A–K is complete/accepted and the CKR exit is accepted. All accepted semantic families are canonicalized. The completed CKR ownership inventory and substantive `docs/canonical/` owners still determine current meaning during DPTN-A; OKF only helps locate them.
+CKR-A–K is complete/accepted and the CKR exit is accepted. All accepted semantic families are canonicalized. The completed CKR ownership inventory and substantive `docs/canonical/` owners still determine current meaning during DPTN; OKF only helps locate them.
 
-**DPTN-A is IN EXECUTION. Implementation 001-A is BLOCKED / NOT STARTED on DPTN exit.** DPTN-A move-map targets are future physical destinations only and do not change current semantic routing.
+**DPTN-A is COMPLETE / ACCEPTED. DPTN-B is NEXT / READY / NOT STARTED. Implementation 001-A is BLOCKED / NOT STARTED on DPTN exit.** DPTN-A move-map targets are future physical destinations only and do not change current semantic routing.
 
 Start with the shortest relevant path:
 
@@ -20,4 +20,4 @@ Start with the shortest relevant path:
 
 For exact semantics, read the current canonical owner selected by repository authority. Do not treat an OKF summary, DPTN planned destination, lifecycle value, verification marker, design-history occurrence, search rank or model memory as semantic authority.
 
-No physical documentation move or product implementation is authorized by DPTN-A.
+No physical documentation move or product implementation was authorized by DPTN-A. DPTN-B requires explicit human selection before historical relocation begins.

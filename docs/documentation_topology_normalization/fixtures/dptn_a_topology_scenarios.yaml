@@ -1,5 +1,5 @@
 schema_version: "1.0"
-status: candidate_ready
+status: accepted
 scenarios:
   - id: DPTNA-01
     proposition: DPTN-A creates a complete move plan without physically moving documentation.

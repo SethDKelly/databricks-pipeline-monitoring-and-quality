@@ -6,9 +6,9 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
 
-**DPTN status mirror: IN EXECUTION DPTN-A; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
+**DPTN status mirror: COMPLETE DPTN-A; NEXT DPTN-B; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
 
-The Agentic Development Foundation and Canonical Knowledge Repository retrofit are complete/accepted. Product implementation has not started. The Documentation Physical Topology Normalization program is now the active pre-implementation dependency.
+The Agentic Development Foundation and Canonical Knowledge Repository retrofit are complete/accepted. Product implementation has not started. DPTN-A is complete/accepted; DPTN-B is NEXT / READY / NOT STARTED and is the next available topology-normalization task.
 
 **CKR exit baseline:** CKR-K released **Implementation 001-A — NEXT / READY / NOT STARTED** from the CKR documentation-authority blocker. DPTN was subsequently interposed as a separate topology-normalization gate; this historical CKR release statement is not the current implementation status.
 
@@ -19,10 +19,11 @@ Current work:
 - ADF — EXIT ACCEPTED;
 - CKR-A–K — COMPLETE / ACCEPTED;
 - CKR EXIT — ACCEPTED;
-- **DPTN-A — IN EXECUTION**;
+- **DPTN-A — COMPLETE / ACCEPTED**;
+- **DPTN-B — NEXT / READY / NOT STARTED**;
 - **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT**.
 
-DPTN-A is inventory/planning only and may not create product source, schemas, tests, migrations, deployment configuration, source adapters or implementation traceability claims. No physical documentation move is authorized in DPTN-A.
+DPTN-A accepted the topology inventory and move plan only. No physical documentation move has occurred. DPTN-B requires a subsequent explicit human-selected task before historical namespace preparation or collision-clearing work may begin.
 
 Implementation 001-A becomes NEXT / READY / NOT STARTED only after DPTN-G exit acceptance and still requires a subsequent explicit human-selected implementation task.
 
