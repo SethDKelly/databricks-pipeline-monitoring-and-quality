@@ -6,15 +6,17 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-CKR-A–K are complete/accepted. The Canonical Knowledge Repository retrofit has exited successfully. Implementation 001-A is NEXT / READY / NOT STARTED and requires an explicit human-selected implementation task before work begins.
+DPTN status mirror: IN EXECUTION DPTN-A; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.
 
-Current semantic ownership is selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`. All accepted semantic families through ARCH are canonicalized; Phase 001–010 sources are provenance for migrated meanings.
+CKR-A–K are complete/accepted. The Canonical Knowledge Repository retrofit has exited successfully. DPTN-A is now the active pre-implementation documentation-topology task. Implementation 001-A is **BLOCKED ON DPTN EXIT**; DPTN itself is not product implementation.
 
-Authority order: current semantic owner → root `AGENTS.md` → live implementation status → accepted ADF scope/security mechanics → DMTZ workflows/overlays → reviewed vendor operational guidance → tool/personal memory.
+Current semantic ownership remains selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`. All accepted semantic families through ARCH remain canonicalized under the existing CKR paths during DPTN-A; Phase 001–010 sources remain provenance for migrated meanings.
+
+Authority order: current semantic owner → root `AGENTS.md` → live DPTN/implementation status → accepted ADF scope/security mechanics → DMTZ workflows/overlays → reviewed vendor operational guidance → tool/personal memory.
 
 ## Human-directed boundary
 
-Follow `docs/agentic_development_foundation/authority_scope_policy.md`. CKR exit removes the documentation-authority blocker only; it does not authorize implementation absent a human-selected implementation task.
+Follow `docs/agentic_development_foundation/authority_scope_policy.md`. CKR exit removed the documentation-authority blocker, but DPTN now intentionally interposes a bounded physical-topology normalization before product implementation. DPTN-A authorizes inventory/planning only: no existing documentation path move/rename/delete, semantic rewrite, stable-ID change, architecture change, or product implementation.
 
 ## Canonical routing
 
@@ -22,13 +24,15 @@ Use `human task → current canonical owner → exact IDs/tests as needed`.
 
 For a known stable ID, run `python3 scripts/agentic/resolve_stable_id.py <ID>` to obtain the deterministic canonical locator `owner_path::ID`. Use `--history` only for explicit provenance/rationale/history work; historical occurrences never compete with current ownership.
 
-When semantic location is unknown, `knowledge/index.md` may route through one bounded domain concept to the canonical owner. OKF, the resolver, search order, recency, Git history, vendor guidance and model/tool memory never establish semantic authority.
+When semantic location is unknown, `knowledge/index.md` may route through one bounded domain concept to the canonical owner. OKF, DPTN planning metadata, the resolver, search order, recency, Git history, vendor guidance and model/tool memory never establish semantic authority.
 
 Do not preload the full stable-ID corpus or OKF bundle.
 
-## CKR exit boundary
+## CKR / DPTN boundary
 
-The ownership-inventory lifecycle is `ckr_complete`. CKR acceptance proves documentation authority/routing/provenance closure only. It is not product implementation evidence, source-integration evidence, deployment readiness or production readiness.
+The CKR ownership-inventory lifecycle remains `ckr_complete`. CKR acceptance proves documentation authority/routing/provenance closure only. DPTN changes physical topology and routing paths only; it cannot change accepted meaning merely by moving a file.
+
+During DPTN-A the existing CKR/current paths remain authoritative and physically unchanged. Later DPTN groups may relocate them only through the accepted collision-safe move map and validated cutovers.
 
 ## Semantic conservation
 
@@ -38,7 +42,7 @@ Accepted ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–
 
 ## Residuals / conformance
 
-ADF-EX-17 / `ADF-G-XT01` remains deferred runtime verification. `DBX-SKILL-RUN-01` remains future Implementation 001-A work. Neither was a CKR documentation-authority exit blocker. Databricks vendor skills remain operational guidance only.
+ADF-EX-17 / `ADF-G-XT01` remains deferred runtime verification. `DBX-SKILL-RUN-01` remains future Implementation 001-A work. Neither is DPTN-A work. Databricks vendor skills remain operational guidance only.
 
 ```bash
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
