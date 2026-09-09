@@ -10,6 +10,8 @@
 
 The Agentic Development Foundation and Canonical Knowledge Repository retrofit are complete/accepted. Product implementation has not started. The Documentation Physical Topology Normalization program is now the active pre-implementation dependency.
 
+**CKR exit baseline:** CKR-K released **Implementation 001-A — NEXT / READY / NOT STARTED** from the CKR documentation-authority blocker. DPTN was subsequently interposed as a separate topology-normalization gate; this historical CKR release statement is not the current implementation status.
+
 Current routing continues to use the existing CKR canonical semantic owners and deterministic stable-ID resolver until later DPTN cutovers explicitly move/rebind them. Phase 001–010 remains provenance for migrated meaning.
 
 Current work:
