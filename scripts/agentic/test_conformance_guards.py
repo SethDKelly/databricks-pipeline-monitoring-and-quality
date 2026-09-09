@@ -13,10 +13,11 @@ def mutate(repo,rel,transform,script,label,errors):
     finally:p.write_text(original,encoding='utf-8')
 def stale_status(t): return re.sub(r'ADF status mirror: .*?$','ADF status mirror: COMPLETE ADF-A–ADF-E; NEXT ADF-F.',t,count=1,flags=re.M)
 def stale_ckr(t): return re.sub(r'CKR status mirror: .*?$','CKR status mirror: COMPLETE CKR-A; NEXT CKR-C; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.',t,count=1,flags=re.M)
-def stale_docs_ckr(t): return t.replace('**CKR state:** CKR-A–CKR-K COMPLETE / ACCEPTED — CKR EXIT ACCEPTED — IMPLEMENTATION 001-A NEXT / READY / NOT STARTED.','**CKR state:** CKR-A–CKR-C COMPLETE / ACCEPTED — CKR-D NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.',1)
+def stale_dptn(t): return re.sub(r'DPTN status mirror: .*?$','DPTN status mirror: COMPLETE DPTN-A; NEXT DPTN-C; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.',t,count=1,flags=re.M)
+def stale_docs_ckr(t): return t.replace('**CKR state:** CKR-A–CKR-K COMPLETE / ACCEPTED — CKR EXIT ACCEPTED.','**CKR state:** CKR-A–CKR-C COMPLETE / ACCEPTED — CKR-D NEXT / READY.',1)
 def stale_canonical_banner(t): return t.replace('**Authority state:** CANONICALIZATION COMPLETE — CKR EXIT ACCEPTED','**Authority state:** PARTIALLY CANONICALIZED — CKR MIGRATION IN PROGRESS',1)
-def stale_adf_handoff(t): return t.replace('**Current handoff:** CKR COMPLETE / EXIT ACCEPTED — IMPLEMENTATION 001-A NEXT / READY / NOT STARTED.','**Current handoff:** CKR IN PROGRESS — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.',1)
-def stale_agentic_foundation_route(t): return t.replace('is complete/accepted and no longer blocks implementation progression','blocks product implementation until CKR-K',1)
+def stale_adf_handoff(t): return t.replace('**Current handoff:** ADF EXIT ACCEPTED / CKR EXIT ACCEPTED — DPTN-A IN EXECUTION — IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.','**Current handoff:** CKR IN PROGRESS — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.',1)
+def stale_agentic_foundation_route(t): return t.replace('**CKR is complete/accepted.**','**CKR is still in progress.**',1)
 def vendor_auto(t): d=json.loads(t); d['materialization']['automatic_new_skills']=True; return json.dumps(d,indent=2)+'\n'
 def model_skill(t): d=json.loads(t); d['selected_skills'].append({'name':'databricks-model-serving','version':'0.4.0'}); return json.dumps(d,indent=2)+'\n'
 def misassign_hlth(t): d=json.loads(t); d['stable_families']['HLTH']['migration_group']='CKR-F'; return json.dumps(d,indent=2)+'\n'
@@ -47,7 +48,8 @@ def main():
         mutate(repo,'docs/agentic_development_foundation/databricks_vendor_skills_profile.json',model_skill,'validate_databricks_agent_skills.py','deferred model skill added to initial Databricks set',errors)
         mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',misassign_hlth,'validate_ckr_d_evidence_authority.py','later-family migration ownership drift after CKR-D',errors)
         mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',move_lineage,'validate_canonical_knowledge.py','canonical target outside docs/canonical',errors)
-        mutate(repo,'IMPLEMENTATION.md',stale_ckr,'validate_ckr_status.py','stale CKR implementation status mirror',errors)
+        mutate(repo,'IMPLEMENTATION.md',stale_ckr,'validate_ckr_status.py','stale CKR status mirror',errors)
+        mutate(repo,'IMPLEMENTATION.md',stale_dptn,'validate_dptn_status.py','stale DPTN status mirror',errors)
         mutate(repo,'docs/README.md',stale_docs_ckr,'validate_ckr_status.py','stale post-CKR docs index state',errors)
         mutate(repo,'docs/canonical/README.md',stale_canonical_banner,'validate_ckr_status.py','stale post-CKR canonical banner',errors)
         mutate(repo,'docs/agentic_development_foundation/README.md',stale_adf_handoff,'validate_ckr_status.py','stale post-CKR ADF handoff',errors)
@@ -88,5 +90,5 @@ def main():
         mutate(repo,'docs/canonical_knowledge_retrofit/ckr_h_semantic_conservation_matrix.md',lambda t:t.replace('historical source state ≠ as-known-at-cut Explanation ≠ retained actual communication ≠ current retrospective Explanation','historical source state = as-known-at-cut Explanation = retained actual communication = current retrospective Explanation',1),'validate_ckr_h_integration.py','integration historical-view collapse regression',errors)
         mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',future_arch,'validate_ckr_h_integration.py','ARCH family/segment progression mismatch after CKR-H',errors)
     for e in errors: print('ERROR',e)
-    print(f'Conformance guard tests: {len(errors)} error(s), 54 negative control(s)'); return 1 if errors else 0
+    print(f'Conformance guard tests: {len(errors)} error(s), 55 negative control(s)'); return 1 if errors else 0
 if __name__=='__main__': raise SystemExit(main())
