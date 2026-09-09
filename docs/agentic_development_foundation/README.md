@@ -2,7 +2,7 @@
 
 **Status:** COMPLETE / EXECUTION EXIT ACCEPTED — CKR COMPLETE — DPTN ACTIVE
 
-**Current handoff:** ADF EXIT ACCEPTED / CKR EXIT ACCEPTED — DPTN-A–B COMPLETE / ACCEPTED — DPTN-C IN EXECUTION — IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.
+**Current handoff:** ADF EXIT ACCEPTED / CKR EXIT ACCEPTED — DPTN-A–C COMPLETE / ACCEPTED — DPTN-D NEXT / READY / NOT STARTED — IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.
 
 ## Final execution state
 
@@ -29,11 +29,11 @@ Current pre-implementation progression is owned by `docs/documentation_topology_
 
 - CKR-A–K — COMPLETE / ACCEPTED;
 - CKR EXIT — ACCEPTED;
-- **DPTN-A–B — COMPLETE / ACCEPTED**;
-- **DPTN-C — IN EXECUTION**;
+- **DPTN-A–C — COMPLETE / ACCEPTED**;
+- **DPTN-D — NEXT / READY / NOT STARTED**;
 - **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
 
-CKR established current semantic ownership, deterministic stable-ID resolution, canonical-first routing and drift enforcement. DPTN-B relocated historical/provenance material under `docs/history/`. DPTN-C is now explicitly selected to promote the eight substantive CKR owner roots to first-class `docs/<family>/` paths by path-only atomic cutover.
+CKR established current semantic ownership, deterministic stable-ID resolution, canonical-first routing and drift enforcement. DPTN-B relocated historical/provenance material under `docs/history/`. DPTN-C promoted the eight substantive CKR owner roots to first-class `docs/<family>/` paths by path-only atomic cutover without changing accepted semantics.
 
 Primary current routes: [`../documentation_topology_normalization/README.md`](../documentation_topology_normalization/README.md), [`../canonical_knowledge_retrofit/README.md`](../canonical_knowledge_retrofit/README.md), [`../history/README.md`](../history/README.md) and [`../implementation/README.md`](../implementation/README.md).
 
@@ -55,7 +55,7 @@ A1–A4 remains the action model. Accepted DMTZ semantics outrank agent tooling,
 
 OKF remains routing. Canonical workflows live under `.agents/skills/`; Claude uses thin bridges. Progressive disclosure, stable references and context budgets remain mandatory.
 
-The completed CKR ownership inventory selects current semantic owners. During DPTN-C that ledger may change owner paths only in the same atomic commit as the physical promotion. `docs/history/` is provenance-only. Legacy redirects, cleared paths and move-map destinations do not establish authority. Search order, path presence, model/tool memory, vendor guidance and historical occurrences cannot override current ownership.
+The completed CKR ownership inventory selects current semantic owners at the DPTN-C first-class owner paths. `docs/history/` is provenance-only. Legacy redirects, cleared paths and move-map destinations do not establish authority. Search order, path presence, model/tool memory, vendor guidance and historical occurrences cannot override current ownership.
 
 ### Conformance and CI
 
@@ -100,8 +100,8 @@ Least privilege, secret/sensitive-data boundaries, prompt/content trust, noncano
 
 ## Current next dependency
 
-**DPTN-C — IN EXECUTION.**
+**DPTN-D — NEXT / READY / NOT STARTED.**
 
 **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
 
-DPTN/ADF/CKR status does not authorize autonomous continuation beyond the explicitly selected DPTN-C scope.
+DPTN/ADF/CKR status does not authorize autonomous continuation beyond the explicitly selected phase.
