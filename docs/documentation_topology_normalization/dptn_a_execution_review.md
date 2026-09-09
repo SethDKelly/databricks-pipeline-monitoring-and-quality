@@ -48,6 +48,15 @@ Corrected candidate head `ece46d0141bd976577208f311c18d11670c831c8` passed:
 - Agentic conformance #214 — SUCCESS;
 - Documentation consistency #332 — SUCCESS.
 
+## Closure validation evidence
+
+Synchronized acceptance head `5e902313514fdf353e069c1925da40bdb3f71613` passed:
+
+- Agentic conformance #215 — SUCCESS, run `34368597817`;
+- Documentation consistency #333 — SUCCESS, run `34368597523`.
+
+The closure gate validated the accepted artifact statuses, DPTN-A COMPLETE / DPTN-B NEXT progression, continued Implementation 001-A block, unchanged CKR semantic ownership and the continued absence of a normalized `docs/history/` namespace before DPTN-B starts.
+
 ## Acceptance result
 
 DPTN-A acceptance proves that the proposed normalization is fully inventoried, collision-aware, dependency-ordered and mechanically blocked from premature physical movement or implementation. It does not make proposed target paths current owners.
