@@ -10,14 +10,14 @@ alwaysApply: false
 
 **CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
 
-**DPTN status mirror: COMPLETE DPTN-A–DPTN-D; NEXT DPTN-E; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
+**DPTN status mirror: COMPLETE DPTN-A–DPTN-E; NEXT DPTN-F; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
 
-ADF and CKR are complete/accepted. DPTN-A–D are complete/accepted. DPTN-E is NEXT / READY / NOT STARTED. Implementation 001-A is BLOCKED / NOT STARTED until DPTN-G exit acceptance and a later explicit human-selected implementation task.
+ADF and CKR are complete/accepted. DPTN-A–E are complete/accepted. DPTN-F is NEXT / READY / NOT STARTED. Implementation 001-A is BLOCKED / NOT STARTED until DPTN-G exit acceptance and a later explicit human-selected implementation task.
 
 Primary shared authority remains root `AGENTS.md`, `docs/agentic_development_foundation/authority_scope_policy.md`, the CKR ownership inventory, accepted ADF scope/security mechanics and live DPTN topology authority.
 
-For a known stable ID, use `python3 scripts/agentic/resolve_stable_id.py <ID>` for the **current** locator selected by the ownership inventory. Use `--history` only for provenance/history. For unknown semantic location, use one bounded `knowledge/index.md` route until DPTN-E resolves discovery-root convergence.
+For unknown-location discovery start at `docs/index.md`. Top-level `knowledge/` is generated OKF compatibility only. For a known stable ID, use `python3 scripts/agentic/resolve_stable_id.py <ID>` for the **current** locator selected by the canonical ownership inventory; use `--history` only for provenance/history.
 
-DPTN-D separated completed CKR/ADF execution evidence into `docs/history/retrofits/ckr/` and `docs/history/foundations/adf/` while retaining durable current operational mechanics. History is never an owner. Do not infer authority from history, redirect presence, path vacancy, move maps, OKF, recency, search order, Git history, vendor skill, tool memory, source availability or path presence.
+DPTN-E converged the authored discovery root and preserved the former hand-maintained OKF plane in history. Do not infer authority from generated OKF, history, redirects, path vacancy, move maps, recency, search order, vendor skill, tool memory, source availability or path presence.
 
-Do not begin DPTN-E/F/G or product implementation without explicit human selection.
+Do not begin DPTN-F/G or product implementation without explicit human selection.

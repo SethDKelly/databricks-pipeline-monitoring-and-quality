@@ -1,11 +1,16 @@
 ---
-type: "Implementation Package"
-title: "DMTZ implementation program"
-description: "Route to the live implementation-program authority and 001–011 roadmap."
+type: "Project Authority"
+title: "Implementation program"
+description: "Route to the current implementation program state and package sequence."
 resource: "../../docs/implementation/README.md"
-tags: ["dmtz", "implementation", "roadmap"]
+tags: ["dmtz", "project", "generated"]
 status: "stable"
+generated: "scripts/agentic/generate_okf_projection.py"
 ---
 # Use
 
-The canonical [implementation program README](../../docs/implementation/README.md) owns live implementation progression. Do not infer current implementation status from this OKF entry.
+**GENERATED OKF PROJECTION — DO NOT HAND-EDIT.** Source: `docs/routing/okf_projection.json`.
+
+Primary route: [Implementation program](../../docs/implementation/README.md).
+
+This projection is routing only. It does not establish semantic, authorization, evidence, health, causal, implementation, or deployment authority.

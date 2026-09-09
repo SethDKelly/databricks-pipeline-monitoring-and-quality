@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "status": "accepted",
+  "phase": "DPTN-E",
+  "purpose": "Discovery and OKF routing topology only; this convergence does not own or change DMTZ product semantics.",
+  "authorized_move_ids": ["MOVE-017", "MOVE-018"],
+  "discovery_root": "docs/index.md",
+  "knowledge_mode": "generated_okf_v0.2_compatibility_projection",
+  "projection_spec": "docs/routing/okf_projection.json",
+  "generator": "scripts/agentic/generate_okf_projection.py",
+  "generated_tree_sha": "8a8ac74f7eb5afcd7245043501103b0b691101f6",
+  "archived_authored_knowledge_tree_sha": "7e4e6bf6c5f57316beb98f511b8ee078de8c55a8",
+  "archived_authored_knowledge_path": "docs/history/routing/okf-pre-dptn-e",
+  "canonical_orientation_compatibility": "docs/canonical/README.md",
+  "expected_counts": {
+    "domains": 7,
+    "project": 9,
+    "workflow_catalog_entries": 13,
+    "implementation_catalog_entries": 11,
+    "okf_concept_documents": 16,
+    "generated_markdown_files": 22,
+    "concepts": 24,
+    "stable_ids": 1237,
+    "scenarios": 24,
+    "negative_controls": 12
+  },
+  "authority_change": false,
+  "implementation_change": false
+}

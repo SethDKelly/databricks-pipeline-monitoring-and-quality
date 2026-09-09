@@ -1,19 +1,16 @@
 ---
-type: "Stable Reference Routing"
+type: "Project Authority"
 title: "Canonical stable-ID resolution"
-description: "Route exact stable IDs to deterministic canonical owners and optional historical occurrence discovery."
+description: "Route to stable-reference policy and deterministic current-owner resolution."
 resource: "../../docs/agentic_development_foundation/stable_reference_policy.md"
-tags: ["dmtz", "stable-id", "canonical", "routing"]
+tags: ["dmtz", "project", "generated"]
 status: "stable"
+generated: "scripts/agentic/generate_okf_projection.py"
 ---
 # Use
 
-For a known accepted ID, run:
+**GENERATED OKF PROJECTION — DO NOT HAND-EDIT.** Source: `docs/routing/okf_projection.json`.
 
-`python3 scripts/agentic/resolve_stable_id.py <ID>`
+Primary route: [Canonical stable-ID resolution](../../docs/agentic_development_foundation/stable_reference_policy.md).
 
-The default result is the deterministic current locator `owner_path::STABLE-ID`, derived from the accepted range registry, CKR ownership inventory and unique canonical stable definition.
-
-Use `--history` only when provenance/rationale/history is actually needed. Historical occurrences remain separate and never establish current ownership.
-
-The resolver, registry and this OKF entry are routing aids only; canonical owner content remains the semantic authority.
+This projection is routing only. It does not establish semantic, authorization, evidence, health, causal, implementation, or deployment authority.

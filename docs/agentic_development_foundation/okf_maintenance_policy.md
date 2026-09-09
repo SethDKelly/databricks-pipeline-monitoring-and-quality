@@ -1,50 +1,46 @@
 # DMTZ OKF Knowledge Maintenance Policy
 
-**Status:** ACCEPTED — ADF-B / REFINED ADF-E + CKR-J
+**Status:** ACCEPTED — ADF-B / REFINED ADF-E + CKR-J + DPTN-E
 
 ## Ownership
 
-Canonical DMTZ documents/code/tests remain the source of truth. `knowledge/` is a maintained routing projection and cannot create semantic authority.
+Canonical DMTZ documents/code/tests remain the source of truth. After DPTN-E, [`../index.md`](../index.md) is the single authored discovery root and top-level `knowledge/` is a **generated OKF v0.2 compatibility projection**. Neither surface creates semantic authority.
 
-After CKR-J, stable current-semantic domain routes are **canonical-first**. Design-history links are allowed only when explicitly serving provenance/rationale/history and may not be described as current semantic ownership.
+The bounded projection specification is `docs/routing/okf_projection.json`. It records route identity/targets only; it is not a semantic ownership ledger. Current semantic ownership remains selected by the CKR ownership inventory.
 
 ## Maintenance rules
 
-1. Prefer concise human-reviewed routing text.
-2. Prefer deterministic generation only for mechanical indexes/metadata when useful.
-3. Never generate changes from `knowledge/` back into canonical `docs/` automatically.
-4. Broken `resource` or local Markdown links are routing defects and fail validation.
-5. A stable current-semantic domain `resource` must remain on its CKR-J canonical target unless the routing manifest changes under normal authority/change control.
-6. A knowledge entry conflict with canonical authority is resolved in favor of canonical authority.
-7. Tool memory/search summaries may use OKF routing but cannot promote OKF text into higher authority.
-8. A changed canonical resource creates a routing **review candidate**, not automatic staleness or a required rewrite.
-9. Secondary canonical body links are also review-impact relationships when their target moves or materially changes routing relevance.
-10. Phase/history content may remain discoverable, but current domain routing must not silently regress to Phase 001–010 ownership after canonicalization.
+1. Change canonical/current owning material first.
+2. Do not hand-edit generated `knowledge/` files.
+3. Update `docs/routing/okf_projection.json` only when the bounded domain/project routing map actually changes.
+4. Workflow routing derives mechanically from `.agents/skills/*/SKILL.md`; implementation routing derives mechanically from `docs/implementation/NNN_*/README.md`.
+5. Run `python3 scripts/agentic/generate_okf_projection.py --write` after a projection-input change and `--check` in validation/CI.
+6. Never generate changes from `knowledge/` back into canonical `docs/`.
+7. Broken generated `resource` or local Markdown links are routing defects.
+8. A generated-route conflict with canonical authority is resolved in favor of canonical authority and the projection source must be corrected.
+9. History remains separately discoverable but never competes with current routing or semantic ownership.
+10. Do not add one generated concept per stable ID, workflow or implementation package merely for catalog symmetry; prefer bounded indexes where the authoritative catalog already exists.
 
-## Provenance and verification
+## Provenance and compatibility
 
-Use OKF v0.2 provenance/verification fields selectively. A direct `resource` link to one canonical source is sufficient for a simple routing concept. Use `sources` only when genuine synthesis is maintained. Do not add ceremonial verification metadata that will immediately drift.
-
-## Staleness
-
-Use `stale_after` for externally version-sensitive knowledge, not timeless repository routing protected by link/status checks. Staleness does not invalidate the canonical resource.
-
-DMTZ does not universally hash-pin routing concepts. `scripts/agentic/knowledge_impact.py` reports both direct `RESOURCE` and secondary canonical `BODY-LINK` review candidates for changed paths.
+The complete pre-DPTN-E authored `knowledge/` tree is preserved under `docs/history/routing/okf-pre-dptn-e/`. It is historical provenance only. Completed CKR-J checks may rehydrate it ephemerally to reproduce accepted-era routing validation; current DPTN checks inspect the generated tree.
 
 ## Progressive disclosure
 
-Keep indexes small. The normal unknown-location path is:
+Normal discovery is:
 
-`knowledge/index.md` → one category → one concept → canonical resource → exact stable IDs as needed.
+`docs/index.md` → one current domain/operational route → current owner → exact stable IDs as needed.
 
-When an exact stable ID is already known, use `scripts/agentic/resolve_stable_id.py <ID>` directly and bypass unnecessary OKF traversal. Historical occurrence discovery is explicit with `--history`.
+Generic OKF consumers may use:
+
+`knowledge/index.md` → generated domain/project/catalog route → current owner.
+
+When an exact stable ID is already known, use `scripts/agentic/resolve_stable_id.py <ID>` directly.
 
 ## Validation
 
-- `scripts/agentic/validate_okf.py` validates OKF structure/resources/links/lifecycle warnings;
-- `scripts/agentic/validate_ckr_j_routing.py` enforces canonical-first current routes and deterministic stable-reference coverage;
-- `scripts/agentic/knowledge_impact.py` reports routing review candidates;
-- `scripts/agentic/measure_context_budget.py` enforces routing/persistent-context size limits;
-- integrated conformance owns CI execution.
-
-Follow `knowledge_maintenance_workflow.md` for changed-source review and minimal updates.
+- `scripts/agentic/generate_okf_projection.py --check` enforces exact generated output;
+- `scripts/agentic/validate_okf.py` validates OKF structure/resources/links;
+- `scripts/agentic/validate_dptn_e_convergence.py` validates discovery/projection topology;
+- completed CKR-J validation remains protected through accepted-era compatibility projection;
+- context-budget and integrated conformance checks remain mandatory.

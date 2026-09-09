@@ -1,13 +1,21 @@
 ---
 type: "Domain Routing Reference"
-title: "Identity, governance, authority and authorization architecture"
-description: "Route current identity, authority, authorization and disclosure semantics to canonical owners."
-resource: "../../docs/canonical/authority/README.md"
-tags: ["dmtz", "identity", "governance", "authorization"]
+title: "Identity, scope, authority, and governance"
+description: "Route to current identity, authority, authorization, governance, and disclosure contracts."
+resource: "../../docs/authority/README.md"
+tags: ["dmtz", "domain", "generated"]
 status: "stable"
+generated: "scripts/agentic/generate_okf_projection.py"
 ---
-# Routing
+# Use
 
-For AUTH-001–AUTH-053 and the authority vocabulary, start with the canonical [authority index](../../docs/canonical/authority/README.md). Accepted identity/governance concepts resolve through the canonical [concept catalog](../../docs/canonical/concepts/README.md). For ARCH-081–ARCH-132 realization, use the canonical [identity/scope/authority/authorization/disclosure architecture](../../docs/canonical/architecture/identity-scope-authority-authorization-disclosure.md).
+**GENERATED OKF PROJECTION — DO NOT HAND-EDIT.** Source: `docs/routing/okf_projection.json`.
 
-Critical boundary: authentication, Capability Authorization, Assertion Authority and evidence sufficiency remain independent. OKF is routing only.
+Primary route: [Identity, scope, authority, and governance](../../docs/authority/README.md).
+
+Related current routes:
+
+- [README.md](../../docs/concepts/README.md)
+- [identity-scope-authority-authorization-disclosure.md](../../docs/architecture/identity-scope-authority-authorization-disclosure.md)
+
+This projection is routing only. It does not establish semantic, authorization, evidence, health, causal, implementation, or deployment authority.

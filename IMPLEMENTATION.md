@@ -4,21 +4,22 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
 
-**DPTN status mirror: COMPLETE DPTN-A–DPTN-D; NEXT DPTN-E; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
+**DPTN status mirror: COMPLETE DPTN-A–DPTN-E; NEXT DPTN-F; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
 
-ADF and CKR exits are accepted. DPTN-A–D are complete/accepted; DPTN-E is NEXT / READY / NOT STARTED. **Implementation 001-A is BLOCKED / NOT STARTED until DPTN-G exit acceptance.**
+ADF and CKR exits are accepted. DPTN-A–E are complete/accepted; DPTN-F is NEXT / READY / NOT STARTED. **Implementation 001-A is BLOCKED / NOT STARTED until DPTN-G exit acceptance.**
 
 ## Current semantic routing
 
-1. `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` — exact current semantic owner; lifecycle `ckr_complete`.
-2. Current semantic owners — first-class `docs/concepts`, `docs/architecture`, `docs/authority`, `docs/contracts`, `docs/experience`, `docs/invariants`, `docs/policies`, and `docs/reference`.
-3. Known stable ID — `scripts/agentic/resolve_stable_id.py <ID>` returns the current `owner_path::ID` selected by the ledger.
-4. `knowledge/` — optional bounded discovery while DPTN-E has not yet converged the discovery roots.
-5. `docs/history/` — provenance/history only; completed CKR evidence is under `history/retrofits/ckr/`, completed ADF program evidence under `history/foundations/adf/`.
-6. `docs/documentation_topology_normalization/README.md` — live topology-normalization status and move authority.
-7. `docs/implementation/README.md` — implementation program state.
-8. root `AGENTS.md` — shared instructions.
+1. `docs/index.md` — single authored discovery root for unknown-location work.
+2. `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` — exact current semantic owner.
+3. First-class `docs/<family>/` roots — current substantive semantic owners.
+4. `scripts/agentic/resolve_stable_id.py <ID>` — deterministic current `owner_path::ID` for known stable IDs.
+5. top-level `knowledge/` — generated OKF compatibility projection only.
+6. `docs/history/` — provenance/history only.
+7. `docs/documentation_topology_normalization/README.md` — live topology program.
+8. `docs/implementation/README.md` — implementation program state.
+9. root `AGENTS.md` — shared instructions.
 
-DPTN-D completed MOVE-015 and MOVE-016. It does not authorize DPTN-E/F/G or product implementation.
+DPTN-E completed MOVE-017 and MOVE-018 and does not authorize DPTN-F/G or product implementation. Broad agent/rule/link rebinding remains DPTN-F.
 
 **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.** DPTN exit will return 001-A to NEXT / READY / NOT STARTED; it will not start implementation.

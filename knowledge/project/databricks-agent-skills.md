@@ -1,16 +1,20 @@
 ---
-type: "Tool Compatibility Reference"
+type: "Project Authority"
 title: "Databricks Agent Skills integration"
-description: "Routes to the reviewed Databricks vendor-skill profile, DMTZ overlays, materialization helper and addendum lifecycle boundary."
+description: "Route to the reviewed Databricks Agent Skills profile and operating boundary."
 resource: "../../docs/agentic_development_foundation/databricks_agent_skills_addendum.md"
-tags: ["dmtz", "agentic-development", "databricks", "agent-skills"]
+tags: ["dmtz", "project", "generated"]
 status: "stable"
+generated: "scripts/agentic/generate_okf_projection.py"
 ---
+# Use
 
-Use for Databricks Agent Skills integration mechanics, not DMTZ product semantics.
+**GENERATED OKF PROJECTION — DO NOT HAND-EDIT.** Source: `docs/routing/okf_projection.json`.
 
-- Reviewed vendor profile: [`../../docs/agentic_development_foundation/databricks_vendor_skills_profile.json`](../../docs/agentic_development_foundation/databricks_vendor_skills_profile.json)
-- DMTZ overlays: [`../../.agents/skills/`](../../.agents/skills/)
-- Materialization helper: `scripts/agentic/materialize_databricks_skills.py`
+Primary route: [Databricks Agent Skills integration](../../docs/agentic_development_foundation/databricks_agent_skills_addendum.md).
 
-Vendor skills remain operational guidance below canonical DMTZ authority.
+Related current routes:
+
+- [databricks_vendor_skills_profile.json](../../docs/agentic_development_foundation/databricks_vendor_skills_profile.json)
+
+This projection is routing only. It does not establish semantic, authorization, evidence, health, causal, implementation, or deployment authority.

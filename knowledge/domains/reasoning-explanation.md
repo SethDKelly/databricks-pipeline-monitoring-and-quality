@@ -1,13 +1,24 @@
 ---
 type: "Domain Routing Reference"
-title: "Investigation, reasoning, replay and Explanation"
-description: "Route current reasoning, replay and Explanation semantics/architecture to canonical owners."
-resource: "../../docs/canonical/experience/README.md"
-tags: ["dmtz", "investigation", "reasoning", "explanation", "replay"]
+title: "Reasoning, questioning, and explanation"
+description: "Route to current questioning, reasoning, replay, explanation, and disclosure experience contracts."
+resource: "../../docs/experience/README.md"
+tags: ["dmtz", "domain", "generated"]
 status: "stable"
+generated: "scripts/agentic/generate_okf_projection.py"
 ---
-# Routing
+# Use
 
-Start with the canonical [experience index](../../docs/canonical/experience/README.md). Investigation, Causal Claim and Explanation concepts resolve through the canonical [concept catalog](../../docs/canonical/concepts/README.md); REF through [evidence/time/causality](../../docs/canonical/contracts/evidence-time-causality/README.md); OPS through [operations](../../docs/canonical/contracts/operations/README.md); INTG through [integration](../../docs/canonical/contracts/integration/README.md); and ARCH-275–ARCH-350 through the canonical [Investigation/reasoning/replay/Explanation architecture](../../docs/canonical/architecture/investigation-reasoning-replay-explanation.md).
+**GENERATED OKF PROJECTION — DO NOT HAND-EDIT.** Source: `docs/routing/okf_projection.json`.
 
-Critical boundaries: localization/correlation/hypothesis does not create causal confirmation; Explanation is a projection over accepted truth; safe abstraction cannot strengthen truth; source replay is distinct from retained communication and historical reconstruction. OKF is routing only.
+Primary route: [Reasoning, questioning, and explanation](../../docs/experience/README.md).
+
+Related current routes:
+
+- [README.md](../../docs/concepts/README.md)
+- [README.md](../../docs/contracts/evidence-time-causality/README.md)
+- [README.md](../../docs/contracts/operations/README.md)
+- [README.md](../../docs/contracts/integration/README.md)
+- [investigation-reasoning-replay-explanation.md](../../docs/architecture/investigation-reasoning-replay-explanation.md)
+
+This projection is routing only. It does not establish semantic, authorization, evidence, health, causal, implementation, or deployment authority.

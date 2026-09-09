@@ -1,0 +1,51 @@
+status: accepted
+phase: DPTN-E
+scenarios:
+  - id: DPTNE-01
+    verifies: docs/index.md is the single authored discovery root
+  - id: DPTNE-02
+    verifies: docs/README.md retains design-phase progression authority
+  - id: DPTNE-03
+    verifies: pre-DPTN-E authored knowledge tree is preserved in history
+  - id: DPTNE-04
+    verifies: history never becomes current semantic authority
+  - id: DPTNE-05
+    verifies: live knowledge root is generated OKF v0.2 projection
+  - id: DPTNE-06
+    verifies: projection specification is derived routing only
+  - id: DPTNE-07
+    verifies: generator/checker owns generated output reproducibility
+  - id: DPTNE-08
+    verifies: seven domain routes remain discoverable
+  - id: DPTNE-09
+    verifies: nine project routes remain discoverable
+  - id: DPTNE-10
+    verifies: thirteen workflow routes derive from repository skills
+  - id: DPTNE-11
+    verifies: eleven implementation routes derive from implementation packages
+  - id: DPTNE-12
+    verifies: generated knowledge has sixteen concept documents
+  - id: DPTNE-13
+    verifies: generated knowledge has twenty-two markdown files
+  - id: DPTNE-14
+    verifies: generated route resources resolve to current repository artifacts
+  - id: DPTNE-15
+    verifies: docs/canonical README remains compatibility only
+  - id: DPTNE-16
+    verifies: legacy canonical family redirects are left to DPTN-F/G
+  - id: DPTNE-17
+    verifies: completed CKR routing validation can use archived accepted-era projection
+  - id: DPTNE-18
+    verifies: current DPTN validation inspects real generated knowledge
+  - id: DPTNE-19
+    verifies: stable-ID total remains 1237
+  - id: DPTNE-20
+    verifies: concept count remains 24
+  - id: DPTNE-21
+    verifies: accepted stable-family ranges remain unchanged
+  - id: DPTNE-22
+    verifies: Implementation 001-A remains blocked
+  - id: DPTNE-23
+    verifies: COL-008 and COL-013 are resolved by convergence
+  - id: DPTNE-24
+    verifies: DPTN-F is next and broad rebinding remains deferred

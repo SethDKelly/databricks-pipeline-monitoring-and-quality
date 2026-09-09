@@ -1,13 +1,23 @@
 ---
 type: "Domain Routing Reference"
-title: "Execution Gate and Propagation Safeguard"
-description: "Route optional active-control semantics and architecture to canonical owners."
-resource: "../../docs/canonical/architecture/active-control.md"
-tags: ["dmtz", "active-control", "gate", "safeguard"]
+title: "Active control, safeguards, and gates"
+description: "Route to current active-control, safeguard, gate, proof, and high-consequence authority contracts."
+resource: "../../docs/architecture/active-control.md"
+tags: ["dmtz", "domain", "generated"]
 status: "stable"
+generated: "scripts/agentic/generate_okf_projection.py"
 ---
-# Routing
+# Use
 
-Start with the canonical [active-control architecture](../../docs/canonical/architecture/active-control.md). For Propagation Safeguard semantics use [OPS Safeguard contracts](../../docs/canonical/contracts/operations/propagation-safeguard.md); for Execution Gate use [OPS Gate/control contracts](../../docs/canonical/contracts/operations/execution-gate-control.md); for high-consequence authority use [AUTH high-consequence authority](../../docs/canonical/authority/high-consequence-authority.md); and for readiness/control proof use [REF exposure/readiness/control proof](../../docs/canonical/contracts/evidence-time-causality/exposure-readiness-control-proof.md).
+**GENERATED OKF PROJECTION — DO NOT HAND-EDIT.** Source: `docs/routing/okf_projection.json`.
 
-Critical boundary: evidence suitability, readiness, decision, delivery/acceptance, enforcement, execution, prevention, release and recovery remain distinct. OKF is routing only.
+Primary route: [Active control, safeguards, and gates](../../docs/architecture/active-control.md).
+
+Related current routes:
+
+- [propagation-safeguard.md](../../docs/contracts/operations/propagation-safeguard.md)
+- [execution-gate-control.md](../../docs/contracts/operations/execution-gate-control.md)
+- [high-consequence-authority.md](../../docs/authority/high-consequence-authority.md)
+- [exposure-readiness-control-proof.md](../../docs/contracts/evidence-time-causality/exposure-readiness-control-proof.md)
+
+This projection is routing only. It does not establish semantic, authorization, evidence, health, causal, implementation, or deployment authority.

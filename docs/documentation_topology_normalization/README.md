@@ -1,16 +1,14 @@
 # Documentation Physical Topology Normalization (DPTN)
 
-**Program status:** ACTIVE — DPTN-A–D COMPLETE / ACCEPTED — DPTN-E NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT
+**Program status:** ACTIVE — DPTN-A–E COMPLETE / ACCEPTED — DPTN-F NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT
 
-**DPTN status mirror: COMPLETE DPTN-A–DPTN-D; NEXT DPTN-E; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
+**DPTN status mirror: COMPLETE DPTN-A–DPTN-E; NEXT DPTN-F; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
 
-DPTN is a bounded pre-implementation documentation-topology normalization program. It changes where accepted knowledge, operational policy and preserved history live; it does **not** change accepted DMTZ meaning, stable IDs, architecture, authority semantics, implementation behavior, source integrations, schemas, product tests or deployment configuration.
+DPTN is a bounded pre-implementation documentation-topology normalization program. It changes where accepted knowledge, operational policy, routing projections and preserved history live; it does **not** change accepted DMTZ meaning, stable IDs, architecture, authority semantics, implementation behavior, source integrations, schemas, product tests or deployment configuration.
 
 ## Authority boundary
 
-DPTN operates under the completed CKR authority model. DPTN-C completed the path-only current-owner promotion authorized by MOVE-007 through MOVE-014. DPTN-D completed the mixed-lifecycle decomposition authorized by MOVE-015 and MOVE-016. Current semantic authority remains selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` at the first-class `docs/<family>/` paths.
-
-Search order, directory name, path vacancy, planned destination, history occurrence, redirect presence and move-map presence never establish current meaning.
+Current semantic authority remains selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` at first-class `docs/<family>/` paths. `docs/index.md`, OKF, history, redirects, move maps and generated routing output are never semantic owners.
 
 ## Program sequence
 
@@ -18,61 +16,48 @@ Search order, directory name, path vacancy, planned destination, history occurre
 - **DPTN-B — Historical Namespace Preparation & Collision Removal: COMPLETE / ACCEPTED.**
 - **DPTN-C — Canonical Knowledge Promotion: COMPLETE / ACCEPTED.**
 - **DPTN-D — Foundation, CKR & Operational-Policy Decomposition: COMPLETE / ACCEPTED.**
-- **DPTN-E — OKF / Documentation Root Convergence: NEXT / READY.**
-- **DPTN-F — Stable References, Agent Routing & Drift Rebinding: PLANNED.**
+- **DPTN-E — OKF / Documentation Root Convergence: COMPLETE / ACCEPTED.**
+- **DPTN-F — Stable References, Agent Routing & Drift Rebinding: NEXT / READY.**
 - **DPTN-G — Conservation Audit, Legacy-Path Retirement & Exit Review: PLANNED.**
 
 Implementation 001-A remains blocked until DPTN-G accepts the normalization exit. DPTN exit will return implementation to NEXT / READY / NOT STARTED; it will not itself start implementation.
 
-## Accepted DPTN-A baseline
+## Accepted DPTN-A–D baseline
 
-- [`topology_authority.md`](topology_authority.md) — allowed changes, invariants and cutover rules;
-- [`topology_inventory.json`](topology_inventory.json) — accepted lifecycle inventory;
-- [`move_map.json`](move_map.json) — accepted dependency-safe move plan;
-- [`collision_register.md`](collision_register.md) — collision state and phase ownership;
-- [`dptn_a_execution_review.md`](dptn_a_execution_review.md) — DPTN-A acceptance evidence.
+DPTN-A accepted [`topology_authority.md`](topology_authority.md), [`topology_inventory.json`](topology_inventory.json), [`move_map.json`](move_map.json) and the collision register. DPTN-B relocated history through MOVE-001–006. DPTN-C promoted the eight semantic owner families through MOVE-007–014. DPTN-D decomposed mixed CKR/ADF lifecycle roots through MOVE-015/016. Their accepted manifests, scenarios and execution reviews remain phase evidence.
 
-## Accepted DPTN-B result
+## Accepted DPTN-E result
 
-DPTN-B established [`../history/README.md`](../history/README.md) as the explicit **HISTORY / PROVENANCE ONLY** root and executed MOVE-001 through MOVE-006. The former Phase 001–010/foundation/reference/planning/decision/design-history material is preserved under `docs/history/`; vacancy never assigned authority.
+DPTN-E executed MOVE-017 and MOVE-018 without semantic-authority change:
 
-Accepted evidence: [`dptn_b_relocation_manifest.json`](dptn_b_relocation_manifest.json), [`fixtures/dptn_b_history_scenarios.yaml`](fixtures/dptn_b_history_scenarios.yaml) and [`dptn_b_execution_review.md`](dptn_b_execution_review.md).
+- [`../index.md`](../index.md) is now the **single authored human/tool-neutral discovery root**.
+- `docs/README.md` remains the separate sole living authority for completed Phase 002–010 design progression.
+- The complete pre-DPTN-E authored `knowledge/` tree is preserved unchanged at `docs/history/routing/okf-pre-dptn-e/`.
+- Live top-level `knowledge/` is now a **deterministically generated OKF v0.2 compatibility projection**.
+- [`../routing/okf_projection.json`](../routing/okf_projection.json) is the bounded derived-routing specification; it is not another ownership ledger.
+- `scripts/agentic/generate_okf_projection.py --check` enforces generated-tree reproducibility.
+- Seven domain and nine project OKF concepts remain available; workflow and implementation catalogs are generated directly from `.agents/skills/` and `docs/implementation/` rather than duplicated as authored concept files.
+- `docs/canonical/README.md` is compatibility/orientation only and points to `docs/index.md`; family redirects remain pending DPTN-F/G.
 
-## Accepted DPTN-C result
+COL-008 and COL-013 are resolved by DPTN-E. COL-011 and the remaining COL-009 routing cleanup are deliberately retained for DPTN-F. COL-012 remains active through DPTN-G.
 
-DPTN-C promoted the eight accepted current semantic roots to first-class paths through MOVE-007 through MOVE-014:
+Accepted evidence: [`dptn_e_convergence_manifest.json`](dptn_e_convergence_manifest.json), [`fixtures/dptn_e_convergence_scenarios.yaml`](fixtures/dptn_e_convergence_scenarios.yaml) and [`dptn_e_execution_review.md`](dptn_e_execution_review.md).
 
-- `docs/concepts/`;
-- `docs/architecture/`;
-- `docs/authority/`;
-- `docs/contracts/`;
-- `docs/experience/`;
-- `docs/invariants/`;
-- `docs/policies/`;
-- `docs/reference/`.
+## Conservation baseline
 
-The CKR ownership inventory selects those first-class owner paths. All 24 concepts, all 1,237 stable IDs across eight families, ARCH-001–ARCH-500 and the frozen reference architecture retain their accepted content and meaning. `docs/canonical/README.md` remains routing/compatibility only pending DPTN-E; any legacy redirects remain non-authoritative pending DPTN-F/G.
+DPTN-E preserves 24 concepts, all 1,237 stable IDs across eight families, SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270, ARCH-001–500, the frozen reference architecture, accepted ADF/CKR exits and the Implementation 001-A blocker.
 
-Accepted evidence: [`dptn_c_promotion_manifest.json`](dptn_c_promotion_manifest.json), [`fixtures/dptn_c_promotion_scenarios.yaml`](fixtures/dptn_c_promotion_scenarios.yaml) and [`dptn_c_execution_review.md`](dptn_c_execution_review.md).
+Generated OKF metadata is routing only. It cannot strengthen truth, authority, authorization, evidence, causal, health, implementation or deployment status.
 
-## Accepted DPTN-D result
+## DPTN-F handoff boundary
 
-DPTN-D resolved the remaining mixed-lifecycle documentation roots without creating a new authority hierarchy prematurely:
+**DPTN-F — Stable References, Agent Routing & Drift Rebinding: NEXT / READY / NOT STARTED.** DPTN-E acceptance does not authorize it automatically.
 
-- **MOVE-015 / CKR:** durable ownership/routing mechanics remain under `docs/canonical_knowledge_retrofit/`; completed CKR reviews, conservation matrices, manifests and fixtures are preserved under `docs/history/retrofits/ckr/`.
-- **MOVE-016 / ADF:** durable agentic authority/context/workflow/conformance/security/compatibility policy and live residual obligations remain under `docs/agentic_development_foundation/`; completed phase-design documents, execution/exit evidence and fixtures are preserved under `docs/history/foundations/adf/`.
-
-COL-006 and COL-007 are resolved. The CKR ownership ledger remains at its existing durable path because relocating it was unnecessary. ADF-G-XT01 remains deferred verification and its live procedure/evidence remains current. Broad route rebinding is still deferred to DPTN-F, after DPTN-E settles the discovery-root topology.
-
-Accepted evidence: [`dptn_d_decomposition_manifest.json`](dptn_d_decomposition_manifest.json), [`fixtures/dptn_d_decomposition_scenarios.yaml`](fixtures/dptn_d_decomposition_scenarios.yaml) and [`dptn_d_execution_review.md`](dptn_d_execution_review.md).
-
-## DPTN-E handoff boundary
-
-**DPTN-E is NEXT / READY / NOT STARTED.** DPTN-D acceptance does not authorize it automatically. Until DPTN-E is explicitly human-selected:
+Until DPTN-F is explicitly human-selected:
 
 - first-class `docs/<family>/` roots remain current semantic owners;
-- durable CKR and ADF operational roots remain current for their non-semantic authority/policy roles;
-- `knowledge/` remains the separate derived routing plane;
-- `docs/canonical/README.md` remains the compatibility/orientation surface;
-- broad legacy-link/agent rebinding remains deferred to DPTN-F;
+- `docs/index.md` is the authored discovery root;
+- `knowledge/` is generated compatibility only;
+- legacy canonical family redirects may remain;
+- broad agent/rule/link rebinding is not yet complete;
 - Implementation 001-A remains blocked.

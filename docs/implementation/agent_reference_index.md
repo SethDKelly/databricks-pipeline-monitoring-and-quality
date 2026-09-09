@@ -4,12 +4,13 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
 
-**DPTN status mirror: COMPLETE DPTN-A–DPTN-D; NEXT DPTN-E; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
+**DPTN status mirror: COMPLETE DPTN-A–DPTN-E; NEXT DPTN-F; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
 
 ## Universal start
 
 | Need | Read first |
 |---|---|
+| Unknown-location discovery | `docs/index.md` |
 | Active topology program | `docs/documentation_topology_normalization/README.md` |
 | DPTN topology authority | `docs/documentation_topology_normalization/topology_authority.md` |
 | History/provenance | `docs/history/README.md` |
@@ -24,8 +25,7 @@
 | Invariants | `docs/invariants/README.md` |
 | Policies | `docs/policies/README.md` |
 | Reference | `docs/reference/README.md` |
-| CKR execution provenance | `docs/history/retrofits/ckr/` |
-| ADF execution provenance | `docs/history/foundations/adf/` |
+| Generic OKF compatibility | generated `knowledge/index.md` |
 | Conformance | `scripts/agentic/run_conformance.py` |
 
 ## Current state
@@ -33,8 +33,8 @@
 - ADF — COMPLETE / EXIT ACCEPTED.
 - CKR-A–K — COMPLETE / ACCEPTED.
 - CKR EXIT — ACCEPTED.
-- **DPTN-A–D — COMPLETE / ACCEPTED.**
-- **DPTN-E — NEXT / READY / NOT STARTED.**
+- **DPTN-A–E — COMPLETE / ACCEPTED.**
+- **DPTN-F — NEXT / READY / NOT STARTED.**
 - **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
 
-DPTN-D completed MOVE-015 and MOVE-016 and directly necessary validation/status compatibility. `docs/history/` remains provenance-only; DPTN-E/F/G and product implementation remain unauthorized until explicitly selected.
+DPTN-E completed discovery-root convergence and generated-OKF compatibility. `docs/history/` remains provenance-only; DPTN-F/G and product implementation remain unauthorized until explicitly selected.
