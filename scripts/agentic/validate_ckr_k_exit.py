@@ -12,6 +12,7 @@ STATE_RE = re.compile(r"^- \*\*CKR-([A-K]) — .*?: (.+?)\.\*\*$", re.M)
 ID_RE = re.compile(r"^(SYN|REF|AUTH|HLTH|OPS|EXPL|INTG|ARCH)-(\d{3})$")
 FIXTURE_RE = re.compile(r"^\s*-\s+id:\s+(CKRK-\d{2})\s*$", re.M)
 PHASE_RE = re.compile(r"phase_(\d{3})")
+DPTN_BLOCK = "IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT"
 MIRRORS = (
     "AGENTS.md",
     "IMPLEMENTATION.md",
@@ -51,6 +52,11 @@ def run_resolver(repo: Path, stable_id: str) -> tuple[int, dict | None, str]:
         return 0, json.loads(proc.stdout), ""
     except json.JSONDecodeError as exc:
         return 1, None, f"invalid resolver JSON: {exc}"
+
+
+def dptn_active(repo: Path) -> bool:
+    path = repo / "docs/documentation_topology_normalization/README.md"
+    return path.is_file() and DPTN_BLOCK in path.read_text(encoding="utf-8", errors="ignore")
 
 
 def main() -> int:
@@ -278,8 +284,11 @@ def main() -> int:
         if "**Status:** ACCEPTED — CKR-K COMPLETE" not in review_text:
             errors.append("accepted CKR-K requires accepted execution review")
         implementation = (repo / "docs/implementation/README.md").read_text(encoding="utf-8", errors="ignore")
-        if "Implementation 001-A — NEXT / READY / NOT STARTED" not in implementation:
-            errors.append("accepted CKR-K must release Implementation 001-A to NEXT / READY / NOT STARTED")
+        if dptn_active(repo):
+            if "Implementation 001-A — BLOCKED ON DPTN EXIT" not in implementation:
+                errors.append("accepted CKR-K with active DPTN requires the later DPTN implementation gate")
+        elif "Implementation 001-A — NEXT / READY / NOT STARTED" not in implementation:
+            errors.append("accepted CKR-K without a later gate must release Implementation 001-A to NEXT / READY / NOT STARTED")
         for rel in MIRRORS:
             text = (repo / rel).read_text(encoding="utf-8", errors="ignore")
             if "IMPLEMENTATION 001-A BLOCKED ON CKR EXIT" in text:

@@ -16,23 +16,20 @@ MIRRORS = (
 
 POST_EXIT_REQUIRED = {
     "docs/README.md": (
-        "**CKR state:** CKR-A–CKR-K COMPLETE / ACCEPTED — CKR EXIT ACCEPTED — IMPLEMENTATION 001-A NEXT / READY / NOT STARTED.",
-        "Implementation 001-A is NEXT / READY / NOT STARTED",
+        "CKR-A–CKR-K COMPLETE / ACCEPTED — CKR EXIT ACCEPTED",
     ),
     "docs/canonical/README.md": (
         "**Authority state:** CANONICALIZATION COMPLETE — CKR EXIT ACCEPTED",
     ),
     "docs/agentic_development_foundation/README.md": (
-        "**Current handoff:** CKR COMPLETE / EXIT ACCEPTED — IMPLEMENTATION 001-A NEXT / READY / NOT STARTED.",
+        "**Current handoff:** CKR COMPLETE / EXIT ACCEPTED",
         "CKR has subsequently completed and exited successfully",
     ),
     "knowledge/index.md": (
         "CKR-A–K is complete/accepted",
-        "Implementation 001-A is NEXT / READY / NOT STARTED",
     ),
     "knowledge/project/agentic-foundation.md": (
         "CKR is complete/accepted",
-        "Implementation 001-A is NEXT / READY / NOT STARTED",
     ),
     "docs/phase_status.md": (
         "Phase 010 — Technical Architecture: COMPLETE",
@@ -52,6 +49,7 @@ POST_EXIT_FORBIDDEN = (
 
 STATE_RE = re.compile(r"^- \*\*CKR-([A-K]) — .*?: (.+?)\.\*\*$", re.M)
 LETTERS = "ABCDEFGHIJK"
+DPTN_BLOCK = "IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT"
 
 
 def complete_label(complete: list[str]) -> str:
@@ -60,6 +58,11 @@ def complete_label(complete: list[str]) -> str:
     if len(complete) == 1:
         return f"CKR-{complete[0]}"
     return f"CKR-{complete[0]}–CKR-{complete[-1]}"
+
+
+def dptn_active(repo: Path) -> bool:
+    path = repo / "docs/documentation_topology_normalization/README.md"
+    return path.is_file() and DPTN_BLOCK in path.read_text(encoding="utf-8")
 
 
 def main() -> int:
@@ -125,10 +128,15 @@ def main() -> int:
 
     implementation_path = repo / "docs/implementation/README.md"
     implementation = implementation_path.read_text(encoding="utf-8") if implementation_path.is_file() else ""
+    later_gate = dptn_active(repo)
     if len(complete) < len(LETTERS) and "IMPLEMENTATION 001-A BLOCKED ON CKR EXIT" not in implementation:
         errors.append("implementation authority must block 001-A while CKR is incomplete")
-    if len(complete) == len(LETTERS) and "Implementation 001-A — NEXT / READY / NOT STARTED" not in implementation:
-        errors.append("accepted CKR exit requires Implementation 001-A NEXT / READY / NOT STARTED")
+    if len(complete) == len(LETTERS):
+        if later_gate:
+            if "Implementation 001-A — BLOCKED ON DPTN EXIT" not in implementation:
+                errors.append("active DPTN must supersede the CKR implementation handoff with a DPTN exit block")
+        elif "Implementation 001-A — NEXT / READY / NOT STARTED" not in implementation:
+            errors.append("accepted CKR exit without a later gate requires Implementation 001-A NEXT / READY / NOT STARTED")
 
     if len(complete) == len(LETTERS):
         for rel, required_tokens in POST_EXIT_REQUIRED.items():

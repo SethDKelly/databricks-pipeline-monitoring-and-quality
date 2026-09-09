@@ -4,10 +4,12 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
 
-CKR-A–K are complete/accepted. Implementation 001-A is NEXT / READY / NOT STARTED and requires explicit human selection before implementation work begins.
+DPTN status mirror: COMPLETE DPTN-A; NEXT DPTN-B; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.
 
-Use the ownership inventory and canonical owners for semantic authority. For a known stable ID, `scripts/agentic/resolve_stable_id.py <ID>` returns the canonical locator; `--history` is provenance-only. `knowledge/` remains optional routing when location is unknown.
+CKR-A–K and DPTN-A are complete/accepted. DPTN-B is NEXT / READY / NOT STARTED. **Implementation 001-A — BLOCKED ON DPTN EXIT.**
 
-CKR routing, manifests, validators and conformance results are not product semantics or implementation evidence.
+Use the existing CKR ownership inventory and canonical owners for semantic authority until later DPTN cutovers. For a known stable ID, `scripts/agentic/resolve_stable_id.py <ID>` returns the current canonical locator; `--history` is provenance-only. `knowledge/` remains optional routing when location is unknown.
 
-Do not create product source/schemas/tests/deployment configuration unless a subsequent human-selected implementation task authorizes that work. CKR exit itself does not start implementation.
+DPTN topology authority, inventory and move-map artifacts govern physical relocation planning only. They are not product semantics or implementation evidence. DPTN-A acceptance authorizes no existing documentation move; DPTN-B requires explicit human selection.
+
+Do not create product source/schemas/tests/deployment configuration or begin Implementation 001-A while DPTN is incomplete. DPTN exit itself will only restore Implementation 001-A to NEXT / READY / NOT STARTED; a subsequent human-selected implementation task remains required.
