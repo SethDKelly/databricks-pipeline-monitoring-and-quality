@@ -37,6 +37,7 @@ def main() -> int:
 
     states = {k:v for k,v in STATE_RE.findall(readme.read_text(encoding="utf-8"))}
     b_state = states.get("B")
+    later_active = any(states.get(c) in {"IN EXECUTION","COMPLETE / ACCEPTED"} for c in "CDEFG")
     if states.get("A") != "COMPLETE / ACCEPTED" or b_state not in {"IN EXECUTION","COMPLETE / ACCEPTED"}:
         errors.append(f"DPTN-B validator requires A complete and B in execution/complete; A={states.get('A')!r}, B={b_state!r}")
     manifest = load_json(manifest_path)
@@ -71,7 +72,6 @@ def main() -> int:
             actual = git_object(repo, f"HEAD:{target}")
             if actual != expected: errors.append(f"{m.get('id')}: target tree differs from accepted source tree; expected {expected}, found {actual}")
 
-    later_active = any(states.get(c) in {"IN EXECUTION","COMPLETE / ACCEPTED"} for c in "CDEFG")
     if not later_active:
         for src in ("docs/concepts","docs/reference","docs/foundation","docs/planning","docs/decisions","docs/design_history"):
             if (repo/src).exists(): errors.append(f"DPTN-B source collision was not cleared: {src}")
@@ -86,7 +86,8 @@ def main() -> int:
     total = sum(int(x["max"])-int(x["min"])+1 for x in registry.get("families",{}).values())
     if total != 1237 or len(registry.get("families",{})) != 8: errors.append(f"stable-ID baseline changed: families={len(registry.get('families',{}))}, ids={total}")
     inventory = load_json(repo/"docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json")
-    if inventory.get("concept_count") != 24 or inventory.get("canonical_root") != "docs/canonical": errors.append("concept/canonical-root baseline changed")
+    if inventory.get("concept_count") != 24 or inventory.get("canonical_root") not in {"docs/canonical","docs"}: errors.append("concept/canonical-root baseline changed outside recognized DPTN progression")
+    if inventory.get("canonical_root")=="docs" and inventory.get("canonical_layout")!="first_class_dptn_c": errors.append("normalized canonical root requires DPTN-C first-class layout marker")
     arch = inventory.get("stable_families",{}).get("ARCH",{})
     if arch.get("accepted_range") != "ARCH-001..ARCH-500": errors.append("ARCH range changed")
 
