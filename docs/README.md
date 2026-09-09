@@ -6,13 +6,13 @@ This file is the **sole living authority for completed design-phase progression*
 
 **CKR state:** CKR-A–CKR-K COMPLETE / ACCEPTED — CKR EXIT ACCEPTED.
 
-**DPTN state:** DPTN-A IN EXECUTION — IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.
+**DPTN state:** DPTN-A COMPLETE / ACCEPTED — DPTN-B NEXT / READY / NOT STARTED — IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.
 
 ## Documentation authority architecture
 
-Current semantic ownership is resolved through [`canonical_knowledge_retrofit/canonical_ownership_inventory.json`](canonical_knowledge_retrofit/canonical_ownership_inventory.json). The ownership inventory lifecycle is `ckr_complete`; all required current semantic records/families are canonicalized and resolve to substantive owners under `docs/canonical/`.
+Current semantic ownership is resolved through [`canonical_knowledge_retrofit/canonical_ownership_inventory.json`](canonical_knowledge_retrofit/canonical_ownership_inventory.json). The ownership inventory lifecycle is `ckr_complete`; all required current semantic records/families remain canonicalized and resolve to substantive owners under `docs/canonical/` until later DPTN cutovers.
 
-DPTN-A is inventory/planning only. It defines future physical topology but does not move current owners or change accepted meaning. Governing DPTN planning authority: [`documentation_topology_normalization/README.md`](documentation_topology_normalization/README.md) and [`documentation_topology_normalization/topology_authority.md`](documentation_topology_normalization/topology_authority.md).
+DPTN-A is complete/accepted. It established future physical topology, collision ordering and the dependency-safe move map but performed no physical relocation. Governing DPTN planning authority: [`documentation_topology_normalization/README.md`](documentation_topology_normalization/README.md), [`documentation_topology_normalization/topology_authority.md`](documentation_topology_normalization/topology_authority.md), and [`documentation_topology_normalization/move_map.json`](documentation_topology_normalization/move_map.json).
 
 Governing CKR rules remain [`canonical_knowledge_retrofit/authority_model.md`](canonical_knowledge_retrofit/authority_model.md), [`canonical_knowledge_retrofit/migration_contract.md`](canonical_knowledge_retrofit/migration_contract.md), and [`design_history/README.md`](design_history/README.md).
 
@@ -25,12 +25,12 @@ Governing CKR rules remain [`canonical_knowledge_retrofit/authority_model.md`](c
 - **Phase 004 — Evidence, Time, and Causality Refinement: COMPLETE.** REF-001–REF-030 accepted.
 - **Phase 005 — Governance, Authority, Semantics, Policy, and Capability Refinement: COMPLETE.** AUTH-001–AUTH-053 final; G07-01–G07-26 pass.
 - **Phase 006 — Health, Freshness, Quality, Metrics, and Result-Timing Refinement: COMPLETE.** Groups 01–07 accepted; HLTH-001–HLTH-066 final; H07-01–H07-36 pass.
-- **Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: COMPLETE.** Groups 01–09 accepted; OPS-001–OPS-123 final; L01-01–L01-18, C02-01–C02-24, P03-01–P03-30, X04-01–X04-32, I05-01–I05-34, IM06-01–IM06-36, SG07-01–SG07-36, GT08-01–GT08-36 and HR09-01–HR09-36 pass; Phase 007 exit review accepted.
-- **Phase 008 — Business Questioning and Explanation: COMPLETE.** Groups 01–08 accepted; EXPL-001–EXPL-160 final; BQ01-01–BQ01-24, AS02-01–AS02-30, HCE03-01–HCE03-36, ICG04-01–ICG04-48, UNC05-01–UNC05-40, AUD06-01–AUD06-44, PMR07-01–PMR07-44 and HCX08-01–HCX08-48 pass; Phase 008 exit review accepted; no EXPL-161 required.
-- **Phase 009 — Integration Contracts, Source Authority, and Evidence Availability: COMPLETE.** Groups 01–08 accepted; INTG-001–INTG-270 final; IC01-01–IC01-40, GOV02-01–GOV02-48, RTE03-01–RTE03-54, HME04-01–HME04-56, LIE05-01–LIE05-60, ICE06-01–ICE06-72, EBR07-01–EBR07-64 and XRC08-01–XRC08-64 pass; Phase 009 exit review accepted; no INTG-271 required.
-- **Phase 010 — Technical Architecture: COMPLETE.** Groups 01–09 accepted; ARCH-001–ARCH-500 final; AFE01-01–AFE01-60, EPT02-01–EPT02-72, IAD03-01–IAD03-84, AHI04-01–AHI04-96, RHI05-01–RHI05-108, IRE06-01–IRE06-120, ACS07-01–ACS07-120, SSO08-01–SSO08-120 and ACV09-01–ACV09-120 pass; D-1263–D-1700 accepted; Phase 010 exit review accepted; no ARCH-501 required.
+- **Phase 007 — Lineage, Change, Investigation, Impact, Safeguard, and Execution-Control Refinement: COMPLETE.** Groups 01–09 accepted; OPS-001–OPS-123 final; Phase 007 exit review accepted.
+- **Phase 008 — Business Questioning and Explanation: COMPLETE.** Groups 01–08 accepted; EXPL-001–EXPL-160 final; Phase 008 exit review accepted; no EXPL-161 required.
+- **Phase 009 — Integration Contracts, Source Authority, and Evidence Availability: COMPLETE.** Groups 01–08 accepted; INTG-001–INTG-270 final; Phase 009 exit review accepted; no INTG-271 required.
+- **Phase 010 — Technical Architecture: COMPLETE.** Groups 01–09 accepted; ARCH-001–ARCH-500 final; Phase 010 exit review accepted; no ARCH-501 required.
 
-The catalog contains **24 accepted concepts**. ADF and CKR exits are accepted. **DPTN-A is IN EXECUTION and Implementation 001-A is BLOCKED ON DPTN EXIT.**
+The catalog contains **24 accepted concepts**. ADF and CKR exits are accepted. **DPTN-A is COMPLETE / ACCEPTED, DPTN-B is NEXT / READY / NOT STARTED, and Implementation 001-A is BLOCKED ON DPTN EXIT.**
 
 ## CKR state
 
@@ -51,11 +51,12 @@ Current CKR authority and exit evidence: [`canonical_knowledge_retrofit/README.m
 
 ## DPTN state
 
-- **DPTN-A — Topology Authority, Inventory & Move Map: IN EXECUTION.**
-- **DPTN-B–G: PLANNED.**
+- **DPTN-A — Topology Authority, Inventory & Move Map: COMPLETE / ACCEPTED.**
+- **DPTN-B — Historical Namespace Preparation & Collision Removal: NEXT / READY / NOT STARTED.**
+- **DPTN-C–G: PLANNED.**
 - **Implementation 001-A: BLOCKED ON DPTN EXIT.**
 
-DPTN-A may classify and plan future paths only. Current CKR owner paths remain authoritative and physically unchanged until a later explicitly selected DPTN group performs a validated cutover.
+DPTN-A changed no current semantic-owner path. Its accepted move map remains **NO OPERATIONS AUTHORIZED** until the relevant later DPTN group is explicitly selected.
 
 ## Current semantic lookup
 
@@ -64,16 +65,7 @@ DPTN-A may classify and plan future paths only. Current CKR owner paths remain a
 3. Use `--history` only for explicit provenance/rationale/history work; historical occurrences never compete with current ownership.
 4. Search order, recency, Git history, DPTN future-path plans, OKF summaries, vendor guidance and model/tool memory are not semantic authority.
 
-Current canonical scope:
-
-- foundation/glossary and all 24 concept definitions;
-- SYN-001–SYN-035;
-- authority vocabulary and REF-001–REF-030 / AUTH-001–AUTH-053;
-- HLTH-001–HLTH-066;
-- OPS-001–OPS-123;
-- EXPL-001–EXPL-160;
-- INTG-001–INTG-270;
-- ARCH-001–ARCH-500 plus the frozen reference architecture.
+Current canonical scope remains foundation/glossary, all 24 concepts, SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500 plus the frozen reference architecture.
 
 Phase 001–010 is design history/provenance/supporting rationale for migrated meanings, not an alternate current semantic owner.
 
@@ -84,7 +76,7 @@ Phase 001–010 is design history/provenance/supporting rationale for migrated m
 - CKR exit/current semantic authority lives in `canonical_knowledge_retrofit/README.md` and the completed ownership inventory.
 - DPTN physical-topology progression lives in `documentation_topology_normalization/README.md`; its move map is execution planning, not semantic authority.
 - Implementation progression lives in `implementation/README.md`.
-- `canonical_ownership_inventory.json` remains the machine-readable current-owner ledger during DPTN-A.
+- `canonical_ownership_inventory.json` remains the machine-readable current-owner ledger until later DPTN relocation/cutover.
 - Historical records remain preserved; living guidance must not create a second current owner.
 
-CKR semantic migration preserves, among other boundaries, Baseline ≠ Expectation, Observation ≠ Assessment, missing evidence ≠ negative truth, Change Intent ≠ Deployment ≠ Change, Lineage ≠ exposure ≠ Impact ≠ cause, Investigation closure ≠ causal confirmation, Assertion Authority ≠ Capability Authorization, Gate ≠ Safeguard, current ≠ historical/as-known state, and agent/model/vendor output ≠ canonical truth or authorization. DPTN cannot alter those distinctions through physical relocation. Genuine contradictions require explicit change control.
+DPTN cannot alter accepted semantic distinctions through physical relocation. Genuine contradictions require normal explicit DMTZ change control.
