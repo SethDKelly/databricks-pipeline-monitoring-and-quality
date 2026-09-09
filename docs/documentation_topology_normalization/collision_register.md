@@ -2,7 +2,7 @@
 
 **Status:** ACTIVE — DPTN-A inventory accepted; DPTN-B resolutions recorded; later-phase collisions remain open
 
-A collision is any target path whose current contents or role would make a later physical move ambiguous or unsafe. DPTN-A registered the collision set. DPTN-B resolved only the history/collision responsibilities assigned to it.
+A collision is any target path whose current contents or role would make a later physical move ambiguous or unsafe. DPTN-A registered the collision set. DPTN-B resolved only the history/collision responsibilities assigned to it. **Vacancy does not assign current authority.**
 
 | ID | Target path / concern | Accepted condition | Required / remaining resolution | Earliest phase |
 |---|---|---|---|---|
