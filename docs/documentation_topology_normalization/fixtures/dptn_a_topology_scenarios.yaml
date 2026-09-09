@@ -1,0 +1,52 @@
+schema_version: "1.0"
+suite: DPTN-A topology authority and inventory
+status: candidate
+scenarios:
+  - id: DPTNA-01
+    statement: Existing CKR semantic owners remain current throughout DPTN-A.
+  - id: DPTNA-02
+    statement: No DPTN-A artifact may change a stable-ID range or meaning.
+  - id: DPTNA-03
+    statement: docs/concepts phase history must relocate before canonical concepts are promoted.
+  - id: DPTNA-04
+    statement: legacy docs/reference must relocate before canonical reference is promoted.
+  - id: DPTNA-05
+    statement: docs/canonical_knowledge_retrofit requires an explicit current-versus-history split.
+  - id: DPTNA-06
+    statement: docs/agentic_development_foundation requires an explicit current-versus-history split.
+  - id: DPTNA-07
+    statement: docs/decisions remains a first-class durable decision surface.
+  - id: DPTNA-08
+    statement: docs/implementation remains the implementation authority surface.
+  - id: DPTNA-09
+    statement: docs/index.md is a future primary discovery surface, not current authority during DPTN-A.
+  - id: DPTNA-10
+    statement: knowledge may become generated-only or be retired, but cannot become semantic authority.
+  - id: DPTNA-11
+    statement: design history preserves accepted-at-the-time wording after relocation.
+  - id: DPTNA-12
+    statement: moving a file does not change the semantic authority or epistemic status of its content.
+  - id: DPTNA-13
+    statement: DPTN-F rebinds agents only after physical topology is stable.
+  - id: DPTNA-14
+    statement: DPTN planning metadata is not a permanent semantic registry.
+  - id: DPTNA-15
+    statement: Implementation 001-A remains blocked while DPTN is incomplete.
+  - id: DPTNA-16
+    statement: Completing DPTN does not itself start Implementation 001-A.
+  - id: DPTNA-17
+    statement: Current semantic paths may be promoted only with owner/routing metadata updated in the same cutover.
+  - id: DPTNA-18
+    statement: Historical roots cannot be promoted as current merely because they occupy a first-class path.
+  - id: DPTNA-19
+    statement: A verified external tool requirement is needed to retain a top-level knowledge projection.
+  - id: DPTNA-20
+    statement: Provider adapters remain thin and do not gain semantic rules during path rebinding.
+  - id: DPTNA-21
+    statement: The 24 accepted concepts remain unchanged.
+  - id: DPTNA-22
+    statement: SYN REF AUTH HLTH OPS EXPL INTG and ARCH accepted ranges remain unchanged.
+  - id: DPTNA-23
+    statement: DPTN-A inventory coverage uses file or recursive-root units so children cannot silently fall outside classification.
+  - id: DPTNA-24
+    statement: Every executable move has an operation ID, group, source, target, precondition and atomicity rule.
