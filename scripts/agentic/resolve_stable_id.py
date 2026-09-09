@@ -18,7 +18,7 @@ def load_registry(repo:Path)->dict: return load_json(repo/'docs/agentic_developm
 def load_inventory(repo:Path,registry:dict)->dict: return load_json(repo/registry['ownership_inventory'])
 
 def canonical_hits(repo:Path,token:str,family:str,limits:dict,owner:dict)->list[dict]:
-    hits=[]; low,high=int(limits['min']),int(limits['max'])
+    hits=[]
     for rel in owner.get('target_documents',[]):
         path=repo/rel
         if not path.is_file(): continue
@@ -36,7 +36,7 @@ def canonical_hits(repo:Path,token:str,family:str,limits:dict,owner:dict)->list[
 
 def history_hits(repo:Path,token:str)->list[dict]:
     pattern=re.compile(rf'(?<![A-Z0-9-]){re.escape(token)}(?![A-Z0-9-])')
-    excluded=('docs/canonical/','docs/implementation/','docs/agentic_development_foundation/','docs/canonical_knowledge_retrofit/')
+    excluded=('docs/concepts/','docs/architecture/','docs/authority/','docs/contracts/','docs/experience/','docs/invariants/','docs/policies/','docs/reference/','docs/canonical/','docs/implementation/','docs/agentic_development_foundation/','docs/canonical_knowledge_retrofit/')
     results=[]
     for path in sorted((repo/'docs').rglob('*.md')):
         rel=path.relative_to(repo).as_posix()

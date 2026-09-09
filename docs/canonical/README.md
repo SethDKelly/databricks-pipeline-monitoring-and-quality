@@ -1,36 +1,19 @@
-# DMTZ Canonical Knowledge
+# Canonical Compatibility Index
 
-**Authority state:** CANONICALIZATION COMPLETE — CKR EXIT ACCEPTED
+**Authority state:** ROUTING / COMPATIBILITY ONLY — SUBSTANTIVE OWNERS PROMOTED BY DPTN-C
 
-This directory contains DMTZ **current accepted meaning** for all ownership-inventory records/families that CKR promoted to `canonicalized`. The ownership inventory lifecycle is `ckr_complete`; substantive canonical resources declare `CANONICAL CURRENT AUTHORITY`.
+This `docs/canonical/` directory is **not a substantive semantic owner** after the DPTN-C atomic promotion. Current semantic authority is selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`, whose accepted first-class owners now live under `docs/concepts/`, `docs/architecture/`, `docs/authority/`, `docs/contracts/`, `docs/experience/`, `docs/invariants/`, `docs/policies/`, and `docs/reference/`.
 
-Semantic authority changes only through:
+The family entries beneath this directory are temporary compatibility redirects for still-unrebound links and completed CKR-era navigation. Redirect presence never establishes current semantic authority, never becomes a stable-ID locator, and never competes with the ownership inventory.
 
-- [`../canonical_knowledge_retrofit/authority_model.md`](../canonical_knowledge_retrofit/authority_model.md)
-- [`../canonical_knowledge_retrofit/migration_contract.md`](../canonical_knowledge_retrofit/migration_contract.md)
-- [`../canonical_knowledge_retrofit/canonical_ownership_inventory.json`](../canonical_knowledge_retrofit/canonical_ownership_inventory.json)
+For a known stable ID, use `python3 scripts/agentic/resolve_stable_id.py <ID>`; the returned `owner_path::STABLE-ID` must name the normalized first-class current owner. Use `--history` only for explicit provenance/history work under `docs/history/`.
 
-## Current canonical scope
+DPTN-C changes paths only. It does not change accepted DMTZ meaning, the 24-concept catalog, SYN-001–035, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270, ARCH-001–500, or the frozen reference architecture.
 
-Canonical owners cover foundation/glossary, all 24 accepted concepts, SYN-001–035, shared authority vocabulary, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and **ARCH-001–500 plus the frozen reference architecture**.
+## Remaining normalization
 
-Phase 001–010 material is design history/provenance for migrated meanings. Phase 010 remains the detailed design/review/atomic-contract provenance corpus for architecture, not an alternate current owner.
+- **DPTN-E** owns convergence of this orientation surface with the normalized documentation root.
+- **DPTN-F** owns broad stable-reference, agent/OKF/link rebinding after physical topology stabilizes.
+- **DPTN-G** owns final legacy-path retirement and exit conservation review.
 
-## Knowledge families
-
-- [`concepts/`](concepts/) — independently understandable accepted concepts;
-- [`contracts/`](contracts/) — cross-cutting/domain/stable-ID contracts;
-- [`policies/`](policies/) — normative policy rules;
-- [`invariants/`](invariants/) — durable semantic separations/non-collapse rules;
-- [`authority/`](authority/) — authority, authorization, governance and disclosure boundaries;
-- [`experience/`](experience/) — questioning, Explanation and user-facing contracts;
-- [`architecture/`](architecture/) — current accepted technical architecture owners;
-- [`reference/`](reference/) — terminology and compact reference surfaces.
-
-## Lookup rule
-
-Answer current semantic questions from the substantive canonical owner selected by the completed ownership inventory. Directory indexes are routing surfaces rather than additional truth owners.
-
-For a known stable ID, use `python3 scripts/agentic/resolve_stable_id.py <ID>` to obtain the deterministic canonical locator `owner_path::STABLE-ID`. Use `--history` only for explicit provenance/rationale/history work; historical occurrences never compete with current ownership.
-
-Consult design history when provenance, rationale, historical reconstruction or change analysis is actually requested. Search order, recency, OKF summaries, vendor guidance and model/tool memory do not establish semantic authority.
+Until those phases are explicitly selected and accepted, compatibility redirects may remain, but they are routing only. Implementation 001-A remains blocked until DPTN-G exit acceptance.
