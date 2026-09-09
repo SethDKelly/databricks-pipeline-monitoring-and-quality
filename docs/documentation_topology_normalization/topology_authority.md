@@ -1,6 +1,6 @@
 # DPTN Topology Authority
 
-**Status:** DPTN-A CANDIDATE — PLANNING AUTHORITY ONLY
+**Status:** ACCEPTED — DPTN-A COMPLETE / PLANNING AUTHORITY ONLY
 
 ## Purpose
 
@@ -93,10 +93,11 @@ DPTN may add temporary execution metadata needed to prove safe relocation, but i
 
 ## DPTN-A physical-change prohibition
 
-While DPTN-A is the active group:
+DPTN-A is complete/accepted, but DPTN-B remains NEXT / READY / NOT STARTED. Until a subsequent explicit DPTN-B task begins:
 - all pre-existing documentation paths remain physically unchanged;
 - no old path is retired;
 - no canonical owner is promoted to a new first-class path;
-- no agent resolver is rebound to a future path.
+- no agent resolver is rebound to a future path;
+- the accepted move map remains planning authority with **NO OPERATIONS AUTHORIZED**.
 
-DPTN-A completes only when inventory and move-map completeness are validated. Physical relocation begins only after a separately selected DPTN-B task.
+Physical relocation begins only after DPTN-B is explicitly selected.
