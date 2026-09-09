@@ -2,7 +2,7 @@
 
 **Status:** ACTIVE — DPTN-A inventory accepted; DPTN-B/C resolutions recorded; later-phase collisions remain open
 
-A collision is any target path whose current contents or role would make a later physical move ambiguous or unsafe. DPTN-A registered the collision set. DPTN-B resolved history/collision preparation; DPTN-C resolved the current-owner promotion and ownership-ledger responsibilities assigned to it. **Vacancy, redirect presence, and path recency do not assign current authority.**
+A collision is any target path whose current contents or role would make a later physical move ambiguous or unsafe. DPTN-A registered the collision set. DPTN-B resolved history/collision preparation; DPTN-C resolved the current-owner promotion and ownership-ledger responsibilities assigned to it. **Vacancy does not assign current authority.** Redirect presence and path recency likewise do not assign current authority.
 
 | ID | Target path / concern | Accepted condition | Required / remaining resolution | Earliest phase |
 |---|---|---|---|---|
@@ -22,8 +22,8 @@ A collision is any target path whose current contents or role would make a later
 
 ## DPTN-B resolution record
 
-- **COL-001 — DPTN-B SIDE RESOLVED.** MOVE-001 preserved the former `docs/concepts` history tree at `docs/history/phases` before path reclaim.
-- **COL-002 — DPTN-B SIDE RESOLVED.** MOVE-002 preserved the former `docs/reference` history tree at `docs/history/reference-legacy` before path reclaim.
+- **COL-001 — RESOLVED BY DPTN-B.** MOVE-001 preserved the exact former `docs/concepts` history tree at `docs/history/phases` before path reclaim. DPTN-C later reused `docs/concepts` only after that preservation boundary was accepted.
+- **COL-002 — RESOLVED BY DPTN-B.** MOVE-002 preserved the exact former `docs/reference` history tree at `docs/history/reference-legacy` before path reclaim. DPTN-C later reused `docs/reference` only after that preservation boundary was accepted.
 - **COL-003 — RESOLVED BY DPTN-B.** MOVE-005 preserves the exact former `docs/decisions` tree at `docs/history/decisions`; `docs/decisions` remains vacant/non-authoritative.
 - **COL-004 — RESOLVED BY DPTN-B.** `docs/history/` exists with an explicit HISTORY / PROVENANCE ONLY contract.
 - **COL-005 — RESOLVED BY DPTN-B.** MOVE-006 preserves the prior design-history tree at `docs/history/design-history`; `docs/design_history` is vacated.
