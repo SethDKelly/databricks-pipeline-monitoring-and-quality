@@ -55,7 +55,7 @@ def main() -> int:
         text_mutate(repo,manifest,json_mutate(lambda d:d["expected_counts"].__setitem__("stable_ids",1238)),"stable-ID count drift",errors)
         text_mutate(repo,manifest,json_mutate(lambda d:d.__setitem__("canonical_tree_baseline_sha","0"*40)),"canonical baseline drift",errors)
         text_mutate(repo,manifest,json_mutate(lambda d:d["moves"][0].__setitem__("source_tree_sha","0"*40)),"MOVE-001 preservation-tree drift",errors)
-        text_mutate(repo,manifest,json_mutate(lambda d:d.__setitem__("status","accepted")),"premature DPTN-B acceptance",errors)
+        text_mutate(repo,manifest,json_mutate(lambda d:d.__setitem__("status","candidate_ready" if d.get("status")=="accepted" else "accepted")),"DPTN-B artifact/status divergence",errors)
         text_mutate(repo,"docs/history/README.md",lambda t:t.replace("**Authority:** HISTORY / PROVENANCE ONLY — NOT CURRENT SEMANTIC AUTHORITY","**Authority:** HISTORY"),"history role marker removal",errors)
         text_mutate(repo,"docs/history/README.md",lambda t:t.replace("# DMTZ Documentation History","# DMTZ Documentation History\n\n**Authority:** CANONICAL CURRENT AUTHORITY",1),"history claims current authority",errors)
         text_mutate(repo,"docs/documentation_topology_normalization/fixtures/dptn_b_history_scenarios.yaml",lambda t:t.replace("DPTNB-24","DPTNB-99",1),"DPTN-B scenario identity drift",errors)
