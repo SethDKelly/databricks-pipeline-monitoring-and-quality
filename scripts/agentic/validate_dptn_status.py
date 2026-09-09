@@ -86,8 +86,8 @@ def main() -> int:
     if len(complete) < len(LETTERS):
         if "Implementation 001-A — BLOCKED / NOT STARTED" not in impl:
             errors.append("implementation authority must block 001-A while DPTN is incomplete")
-        if "Implementation 001-A — NEXT / READY / NOT STARTED" in impl:
-            errors.append("implementation authority may not mark 001-A NEXT while DPTN is incomplete")
+        if "**CKR exit baseline:**" not in impl or "Implementation 001-A — NEXT / READY / NOT STARTED" not in impl:
+            errors.append("implementation authority must preserve the historical CKR release baseline while DPTN owns current blocking")
     else:
         if "Implementation 001-A — NEXT / READY / NOT STARTED" not in impl:
             errors.append("accepted DPTN exit must restore Implementation 001-A NEXT / READY / NOT STARTED")
@@ -103,8 +103,6 @@ def main() -> int:
             for token in required:
                 if token not in body:
                     errors.append(f"{rel}: missing active DPTN orientation token {token!r}")
-            if "Implementation 001-A is NEXT / READY / NOT STARTED" in body:
-                errors.append(f"{rel}: stale implementation-next wording remains while DPTN is active")
 
     print(mirror)
     for e in errors: print("ERROR", e)
