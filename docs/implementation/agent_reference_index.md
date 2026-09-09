@@ -4,7 +4,7 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
 
-**DPTN status mirror: COMPLETE DPTN-A–DPTN-B; IN EXECUTION DPTN-C; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
+**DPTN status mirror: COMPLETE DPTN-A–DPTN-C; NEXT DPTN-D; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
 
 ## Universal start
 
@@ -17,24 +17,27 @@
 | CKR exit / current authority | `docs/canonical_knowledge_retrofit/README.md` |
 | Current semantic owner | `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` |
 | Stable ID | `python3 scripts/agentic/resolve_stable_id.py <ID>` |
-| Concepts | follow the ownership ledger; DPTN-C promotes `docs/canonical/concepts/` to `docs/concepts/` |
-| Contracts | follow the ownership ledger; DPTN-C promotes `docs/canonical/contracts/` to `docs/contracts/` |
-| Technical architecture | follow the ownership ledger; DPTN-C promotes `docs/canonical/architecture/` to `docs/architecture/` |
-| Questioning/Explanation | follow the ownership ledger; DPTN-C promotes `docs/canonical/experience/` to `docs/experience/` |
-| Authority/AUTH | follow the ownership ledger; DPTN-C promotes `docs/canonical/authority/` to `docs/authority/` |
+| Concepts | `docs/concepts/README.md` |
+| Contracts | `docs/contracts/README.md` |
+| Technical architecture | `docs/architecture/README.md` |
+| Questioning/Explanation | `docs/experience/README.md` |
+| Authority/AUTH | `docs/authority/README.md` |
+| Invariants | `docs/invariants/README.md` |
+| Policies | `docs/policies/README.md` |
+| Reference | `docs/reference/README.md` |
 | Conformance | `scripts/agentic/run_conformance.py` |
 
-## Stable references during DPTN-C
+## Stable references after DPTN-C
 
-Default exact-ID lookup must return the current `owner_path::ID` selected by the ownership inventory. Before the atomic C cutover that is the CKR path; after it, the normalized first-class path. Add `--history` only for explicit historical/provenance inspection. Legacy compatibility redirects may keep unrebound links navigable temporarily but are not current owners and must not appear as resolver locators.
+Default exact-ID lookup returns the current first-class `owner_path::ID` selected by the ownership inventory. Add `--history` only for explicit historical/provenance inspection. Legacy `docs/canonical/<family>` compatibility redirects may keep unrebound links navigable temporarily but are not current owners and must not appear as resolver locators.
 
 ## Current state
 
 - ADF — COMPLETE / EXIT ACCEPTED.
 - CKR-A–K — COMPLETE / ACCEPTED.
 - CKR EXIT — ACCEPTED.
-- **DPTN-A–B — COMPLETE / ACCEPTED.**
-- **DPTN-C — IN EXECUTION.**
+- **DPTN-A–C — COMPLETE / ACCEPTED.**
+- **DPTN-D — NEXT / READY / NOT STARTED.**
 - **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
 
-DPTN-C may execute only MOVE-007 through MOVE-014 and directly necessary ownership/resolver/validation compatibility. `docs/history/` remains provenance-only; DPTN-D/E/F/G and product implementation remain unauthorized.
+DPTN-C completed MOVE-007 through MOVE-014 and directly necessary ownership/resolver/validation compatibility. `docs/history/` remains provenance-only; DPTN-D/E/F/G and product implementation remain unauthorized until explicitly selected.
