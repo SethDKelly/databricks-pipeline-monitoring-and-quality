@@ -1,24 +1,24 @@
 # Documentation Physical Topology Normalization (DPTN)
 
-**Program status:** ACTIVE — DPTN-A–B COMPLETE / ACCEPTED — DPTN-C NEXT / READY — IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT
+**Program status:** ACTIVE — DPTN-A–B COMPLETE / ACCEPTED — DPTN-C IN EXECUTION — IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT
 
-**DPTN status mirror: COMPLETE DPTN-A–DPTN-B; NEXT DPTN-C; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
+**DPTN status mirror: COMPLETE DPTN-A–DPTN-B; IN EXECUTION DPTN-C; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
 
 DPTN is a bounded pre-implementation documentation-topology normalization program. It changes where accepted knowledge and preserved history live; it does **not** change accepted DMTZ meaning, stable IDs, architecture, authority semantics, implementation behavior, source integrations, schemas, product tests or deployment configuration.
 
 ## Authority boundary
 
-DPTN operates under the completed CKR authority model. Until a later DPTN cutover explicitly moves an accepted owner, the current semantic owner remains the path selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`.
+DPTN operates under the completed CKR authority model. During DPTN-C, current semantic authority remains the ownership selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`; the eight MOVE-007–MOVE-014 owners may change path only through one atomic cutover that synchronizes physical trees and the ownership ledger.
 
-Search order, directory name, path vacancy, planned destination, history occurrence and move-map presence never establish current meaning.
+Search order, directory name, path vacancy, planned destination, history occurrence, redirect presence and move-map presence never establish current meaning.
 
-DPTN-A accepted the topology inventory and dependency-safe move plan. DPTN-B accepted the historical namespace and executed MOVE-001 through MOVE-006 only. **No current semantic owner moved in DPTN-B.** `docs/canonical/` remains the current semantic root.
+DPTN-A accepted the topology inventory and dependency-safe move plan. DPTN-B accepted the historical namespace and executed MOVE-001 through MOVE-006 only. DPTN-C is now explicitly human-selected to execute MOVE-007 through MOVE-014 only.
 
 ## Program sequence
 
 - **DPTN-A — Topology Authority, Inventory & Move Map: COMPLETE / ACCEPTED.**
 - **DPTN-B — Historical Namespace Preparation & Collision Removal: COMPLETE / ACCEPTED.**
-- **DPTN-C — Canonical Knowledge Promotion: NEXT / READY.**
+- **DPTN-C — Canonical Knowledge Promotion: IN EXECUTION.**
 - **DPTN-D — Foundation, CKR & Operational-Policy Decomposition: PLANNED.**
 - **DPTN-E — OKF / Documentation Root Convergence: PLANNED.**
 - **DPTN-F — Stable References, Agent Routing & Drift Rebinding: PLANNED.**
@@ -45,19 +45,33 @@ DPTN-B established [`../history/README.md`](../history/README.md) as the explici
 5. `docs/decisions/** → docs/history/decisions/**` — MOVE-005;
 6. `docs/design_history/** → docs/history/design-history/**` — MOVE-006.
 
-The original source roots are vacated. COL-001 through COL-005 are resolved for their DPTN-B responsibilities. Vacancy is **not** authority: the cleared first-class paths remain unassigned until an explicitly selected later DPTN phase reuses them.
+The original source roots were vacated. COL-001 through COL-005 are resolved for their DPTN-B responsibilities. Vacancy is **not** authority.
 
 Accepted evidence: [`dptn_b_relocation_manifest.json`](dptn_b_relocation_manifest.json), [`fixtures/dptn_b_history_scenarios.yaml`](fixtures/dptn_b_history_scenarios.yaml) and [`dptn_b_execution_review.md`](dptn_b_execution_review.md).
 
-Completed CKR semantic/provenance checks may use an ephemeral legacy-source compatibility projection during validation so their accepted original-path evidence remains executable. That projection is validation-only, leaves no repository path behind and cannot satisfy current semantic routing. Permanent historical-reference rebinding remains later DPTN routing work after physical topology stabilizes.
+## DPTN-C execution boundary
 
-## DPTN-C handoff boundary
+The user explicitly selected DPTN-C. This authorizes only the canonical-owner path promotions MOVE-007 through MOVE-014 and directly necessary ownership/resolver/validation compatibility work:
 
-**DPTN-C is NEXT / READY / NOT STARTED.** DPTN-B acceptance does not authorize it automatically. Until DPTN-C is explicitly human-selected:
+1. `docs/canonical/concepts/** → docs/concepts/**` — MOVE-007;
+2. `docs/canonical/architecture/** → docs/architecture/**` — MOVE-008;
+3. `docs/canonical/authority/** → docs/authority/**` — MOVE-009;
+4. `docs/canonical/contracts/** → docs/contracts/**` — MOVE-010;
+5. `docs/canonical/experience/** → docs/experience/**` — MOVE-011;
+6. `docs/canonical/invariants/** → docs/invariants/**` — MOVE-012;
+7. `docs/canonical/policies/** → docs/policies/**` — MOVE-013;
+8. `docs/canonical/reference/** → docs/reference/**` — MOVE-014.
 
-- `docs/canonical/` remains the current semantic root;
-- `docs/concepts/`, `docs/reference/` and `docs/decisions/` remain vacant/unassigned;
-- no canonical ownership target or current stable-ID locator moves;
-- mixed `docs/agentic_development_foundation/` and `docs/canonical_knowledge_retrofit/` directories remain in place for DPTN-D;
-- `knowledge/` remains the current derived routing plane;
-- Implementation 001-A remains blocked.
+DPTN-C must preserve the exact semantic trees while atomically rebinding the CKR ownership ledger to the promoted paths. `docs/canonical/README.md` remains an orientation/compatibility surface for DPTN-E; it is not a substantive semantic owner after the cutover. Any temporary legacy-path redirects under `docs/canonical/` are routing compatibility only, must not appear in the ownership ledger, and are subject to later DPTN-F/G rebinding and retirement.
+
+DPTN-C does **not** authorize:
+
+- DPTN-D mixed-lifecycle ADF/CKR decomposition;
+- DPTN-E OKF/root convergence;
+- complete DPTN-F agent/OKF/link rebinding or legacy-path retirement;
+- semantic changes, stable-ID changes or concept changes;
+- product implementation.
+
+Until the atomic C cutover is validated, the pre-cutover CKR paths remain the current owners. After an accepted cutover, only the normalized first-class paths selected by the ownership ledger are current semantic owners; redirect paths are non-authoritative compatibility routes.
+
+Implementation 001-A remains blocked throughout DPTN-C.
