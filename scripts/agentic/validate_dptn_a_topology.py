@@ -65,8 +65,10 @@ def main() -> int:
     ckr = load_json(repo / "docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json")
     stable = load_json(repo / "docs/agentic_development_foundation/stable_id_registry.json")
 
-    if ckr.get("status") != "ckr_complete" or ckr.get("canonical_root") != "docs/canonical":
-        errors.append("DPTN-A requires accepted CKR completion with canonical_root docs/canonical")
+    if ckr.get("status") != "ckr_complete" or ckr.get("canonical_root") not in {"docs/canonical","docs"}:
+        errors.append("DPTN-A requires accepted CKR completion with a recognized pre/post-normalization canonical root")
+    if ckr.get("canonical_root")=="docs" and ckr.get("canonical_layout")!="first_class_dptn_c":
+        errors.append("normalized CKR root requires the DPTN-C first-class layout marker")
 
     total = sum(int(v["max"]) - int(v["min"]) + 1 for v in stable.get("families", {}).values())
     counts = inventory.get("accepted_counts", {})
@@ -103,7 +105,7 @@ def main() -> int:
         errors.append("inventory must explicitly exclude semantic contract changes")
 
     if moves.get("physical_moves_authorized") is not False:
-        errors.append("DPTN-A move map must not authorize physical moves")
+        errors.append("DPTN-A move map must remain a planning ledger rather than general physical-move authorization")
     if moves.get("dependency_order") != PHASES:
         errors.append(f"DPTN dependency order must be {PHASES}")
 
@@ -131,7 +133,6 @@ def main() -> int:
     if fixture_ids != [f"DPTNA-{i:02d}" for i in range(1, 25)]:
         errors.append("DPTN-A fixture catalog must contain DPTNA-01..DPTNA-24 in order")
 
-    # Before later physical phases start, planning-only means current canonical topology remains physically intact.
     a_complete = "DPTN-A — Topology Authority, Inventory & Move Map: COMPLETE / ACCEPTED" in readme
     later_active = bool(re.search(r"DPTN-[B-G].*?(IN EXECUTION|COMPLETE / ACCEPTED)", readme))
     if not later_active:

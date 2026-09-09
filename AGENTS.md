@@ -6,38 +6,48 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
 
-**DPTN status mirror: COMPLETE DPTN-A–DPTN-B; NEXT DPTN-C; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
+**DPTN status mirror: COMPLETE DPTN-A–DPTN-C; NEXT DPTN-D; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
 
-ADF and CKR are complete/accepted. DPTN-A and DPTN-B are complete/accepted. DPTN-C is NEXT / READY / NOT STARTED and requires explicit human selection before any canonical promotion occurs. Implementation 001-A remains NOT STARTED and may not begin until DPTN-G accepts the normalization exit and a subsequent human-selected implementation task authorizes work.
+ADF and CKR are complete/accepted. DPTN-A through DPTN-C are complete/accepted. DPTN-D is NEXT / READY / NOT STARTED and requires explicit human selection. Implementation 001-A remains NOT STARTED and may not begin until DPTN-G accepts the normalization exit and a subsequent human-selected implementation task authorizes work.
 
-Current semantic ownership remains selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`; `docs/canonical/` remains the current semantic root. DPTN-B relocated history only. `docs/history/` is provenance-only and cannot compete with current ownership.
+Current semantic ownership is selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`. DPTN-C promoted the eight accepted semantic families to first-class `docs/<family>/` owner paths by exact-tree, path-only atomic cutover. The ownership ledger selects the current **canonical owner** for every semantic question and stable ID; `docs/history/` and legacy redirects never become canonical owners.
 
 Authority order: current semantic owner → root `AGENTS.md` → live DPTN/implementation status → accepted ADF scope/security mechanics → DMTZ workflows/overlays → reviewed vendor operational guidance → tool/personal memory.
 
 ## Human-directed boundary
 
-Follow `docs/agentic_development_foundation/authority_scope_policy.md`. DPTN-B acceptance authorizes no autonomous continuation. DPTN-C canonical promotion, DPTN-D decomposition, later routing convergence/rebinding and product implementation all require their own explicit human-selected task.
+Follow `docs/agentic_development_foundation/authority_scope_policy.md`. DPTN-C acceptance authorizes no autonomous continuation. DPTN-D decomposition, DPTN-E routing convergence, DPTN-F rebinding/retirement, DPTN-G exit work, and product implementation each require their own explicit human-selected task.
 
-## Canonical routing before DPTN-C starts
+## Canonical routing after DPTN-C
 
-Use `human task → current canonical owner → exact IDs/tests as needed`. For a known stable ID, run `python3 scripts/agentic/resolve_stable_id.py <ID>` for the current canonical `owner_path::ID`; use `--history` only for explicit provenance/rationale/history work.
+Use `human task → current ownership ledger → exact IDs/tests as needed`.
 
-When semantic location is unknown, `knowledge/index.md` may route through one bounded domain concept to the current canonical owner. `docs/history/`, cleared first-class paths, the DPTN move map, OKF, search order, recency, Git history, vendor guidance and model/tool memory never establish semantic authority.
+For a known stable ID, run `python3 scripts/agentic/resolve_stable_id.py <ID>` for the deterministic current `owner_path::ID`; use `--history` only for explicit provenance/rationale/history work. Historical occurrences and legacy compatibility redirects never compete with current ownership.
+
+When semantic location is unknown, `knowledge/index.md` may still route through one bounded domain concept. Until DPTN-F completes broad route rebinding, legacy `docs/canonical/<family>` paths may exist only as explicitly non-authoritative compatibility redirects. The ownership ledger—not redirect presence, path name, search rank, OKF, recency, Git history, vendor guidance or model/tool memory—selects current authority.
+
+## DPTN-C accepted boundary
+
+DPTN-C completed these path-only current-owner promotions without semantic rewrite:
+
+- `docs/canonical/concepts` → `docs/concepts`;
+- `docs/canonical/architecture` → `docs/architecture`;
+- `docs/canonical/authority` → `docs/authority`;
+- `docs/canonical/contracts` → `docs/contracts`;
+- `docs/canonical/experience` → `docs/experience`;
+- `docs/canonical/invariants` → `docs/invariants`;
+- `docs/canonical/policies` → `docs/policies`;
+- `docs/canonical/reference` → `docs/reference`.
+
+The CKR ownership inventory now selects those first-class paths. `docs/canonical/README.md` remains only as an orientation/compatibility surface pending DPTN-E. Redirects beneath `docs/canonical/`, if present, are non-owner compatibility routes pending DPTN-F/G.
+
+No semantic content, stable-ID meaning, concept count, accepted range, architecture contract or implementation state changed.
 
 ## DPTN-B accepted boundary
 
-- MOVE-001 through MOVE-006 are complete and preserved by exact-tree relocation under `docs/history/`;
-- `docs/concepts/`, `docs/reference/` and `docs/decisions/` are vacant/unassigned, not current owners;
-- `docs/canonical/` remains current;
-- mixed ADF/CKR directories remain in place for DPTN-D;
-- permanent historical-reference/agent rebinding remains later DPTN work;
-- Implementation 001-A remains blocked.
+MOVE-001 through MOVE-006 remain preserved as exact-tree historical relocations under `docs/history/`. The former historical paths remain provenance-only after DPTN-C reuse of `docs/concepts` and `docs/reference` for current authority.
 
-Completed CKR provenance checks may use the validation-only ephemeral history compatibility projection. That projection leaves no repository path behind and cannot satisfy current lookup.
-
-## CKR exit boundary
-
-The ownership-inventory lifecycle remains `ckr_complete`. CKR acceptance proves documentation authority/routing/provenance closure only; it is not product implementation, source-integration, deployment or production evidence.
+Completed CKR provenance checks may use validation-only compatibility projection. It leaves no persistent authority behind and cannot satisfy current lookup.
 
 ## Semantic conservation
 

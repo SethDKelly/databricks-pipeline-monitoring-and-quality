@@ -43,7 +43,7 @@ def main() -> int:
     src=Path(ap.parse_args().repo).resolve(); errors=[]
     with tempfile.TemporaryDirectory(prefix="dmtz-dptnb-") as td:
         repo=Path(td)/"repo"
-        shutil.copytree(src,repo,ignore=shutil.ignore_patterns(".git","__pycache__",".pytest_cache"))
+        shutil.copytree(src,repo,ignore=shutil.ignore_patterns(".git","__pycache__",".pytest_cache"),symlinks=True)
         subprocess.run(["git","init","-q"],cwd=repo,check=True)
         subprocess.run(["git","config","user.email","dptn@example.invalid"],cwd=repo,check=True)
         subprocess.run(["git","config","user.name","DPTN Guard"],cwd=repo,check=True)
@@ -53,7 +53,7 @@ def main() -> int:
         manifest="docs/documentation_topology_normalization/dptn_b_relocation_manifest.json"
         text_mutate(repo,manifest,json_mutate(lambda d:d["authorized_move_ids"].append("MOVE-007")),"later-phase move authorization",errors)
         text_mutate(repo,manifest,json_mutate(lambda d:d["expected_counts"].__setitem__("stable_ids",1238)),"stable-ID count drift",errors)
-        text_mutate(repo,manifest,json_mutate(lambda d:d.__setitem__("canonical_tree_baseline_sha","0"*40)),"canonical baseline drift",errors)
+        text_mutate(repo,manifest,json_mutate(lambda d:d["moves"][1].__setitem__("source_tree_sha","0"*40)),"MOVE-002 preservation-tree drift",errors)
         text_mutate(repo,manifest,json_mutate(lambda d:d["moves"][0].__setitem__("source_tree_sha","0"*40)),"MOVE-001 preservation-tree drift",errors)
         text_mutate(repo,manifest,json_mutate(lambda d:d.__setitem__("status","candidate_ready" if d.get("status")=="accepted" else "accepted")),"DPTN-B artifact/status divergence",errors)
         text_mutate(repo,"docs/history/README.md",lambda t:t.replace("**Authority:** HISTORY / PROVENANCE ONLY — NOT CURRENT SEMANTIC AUTHORITY","**Authority:** HISTORY"),"history role marker removal",errors)
@@ -61,13 +61,7 @@ def main() -> int:
         text_mutate(repo,"docs/documentation_topology_normalization/fixtures/dptn_b_history_scenarios.yaml",lambda t:t.replace("DPTNB-24","DPTNB-99",1),"DPTN-B scenario identity drift",errors)
         text_mutate(repo,"docs/implementation/README.md",lambda t:t.replace("Implementation 001-A — BLOCKED / NOT STARTED","Implementation 001-A — NEXT / READY / NOT STARTED",1),"implementation gate bypass",errors)
         path_move(repo,"docs/history/reference-legacy","missing relocated reference tree",errors)
-        old=repo/"docs/concepts"
-        try:
-            old.mkdir(parents=True); (old/"README.md").write_text("stale collision\n",encoding="utf-8")
-            if run(repo)==0: errors.append("recreated docs/concepts collision: DPTN-B validator unexpectedly passed")
-            else: print("PASS negative control: recreated docs/concepts collision")
-        finally:
-            if old.exists(): shutil.rmtree(old)
+        text_mutate(repo,"docs/documentation_topology_normalization/collision_register.md",lambda t:t.replace("COL-001 — RESOLVED BY DPTN-B","COL-001 — RESOLUTION LOST",1),"DPTN-B collision-resolution regression",errors)
         path_move(repo,"docs/agentic_development_foundation","premature ADF bulk move",errors)
 
     for e in errors: print("ERROR",e)

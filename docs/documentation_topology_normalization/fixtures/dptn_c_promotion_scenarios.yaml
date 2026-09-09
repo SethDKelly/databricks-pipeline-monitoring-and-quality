@@ -1,0 +1,67 @@
+schema_version: "1.0"
+status: accepted
+scenarios:
+  - id: DPTNC-01
+    proposition: MOVE-007 promotes the exact accepted canonical concepts tree to docs/concepts without semantic rewrite.
+  - id: DPTNC-02
+    proposition: MOVE-008 promotes the exact accepted architecture tree to docs/architecture.
+  - id: DPTNC-03
+    proposition: MOVE-009 promotes the exact accepted authority tree to docs/authority.
+  - id: DPTNC-04
+    proposition: MOVE-010 promotes the exact accepted contracts tree to docs/contracts.
+  - id: DPTNC-05
+    proposition: MOVE-011 promotes the exact accepted experience tree to docs/experience.
+  - id: DPTNC-06
+    proposition: MOVE-012 promotes the exact accepted invariants tree to docs/invariants.
+  - id: DPTNC-07
+    proposition: MOVE-013 promotes the exact accepted policies tree to docs/policies.
+  - id: DPTNC-08
+    proposition: MOVE-014 promotes the exact accepted reference tree to docs/reference after the legacy reference collision was cleared by DPTN-B.
+  - id: DPTNC-09
+    proposition: MOVE-007 occurs only after the former phase corpus was preserved under docs/history/phases.
+  - id: DPTNC-10
+    proposition: Current owner promotion and ownership-ledger rebinding occur atomically; no reachable intermediate state selects missing owner paths.
+  - id: DPTNC-11
+    proposition: Every canonicalized record target_owner is rebound from docs/canonical/... to the corresponding first-class docs/... path.
+  - id: DPTNC-12
+    proposition: Every stable-family target_owner_root and target_documents entry is rebound to first-class current paths.
+  - id: DPTNC-13
+    proposition: All nine architecture inventory target_owner entries are rebound to docs/architecture while preserving their accepted ranges.
+  - id: DPTNC-14
+    proposition: The inventory canonical layout identifies first-class owner roots rather than treating docs/canonical as the substantive semantic root.
+  - id: DPTNC-15
+    proposition: Historical source pointers in the ownership ledger resolve to docs/history physical locations and cannot alias newly reclaimed current paths.
+  - id: DPTNC-16
+    proposition: docs/canonical/README.md remains routing/orientation only pending DPTN-E and does not retain substantive semantic ownership.
+  - id: DPTNC-17
+    proposition: Legacy docs/canonical family paths, if retained temporarily, are redirects only and never ownership-ledger targets.
+  - id: DPTNC-18
+    proposition: A legacy redirect cannot create a second canonical stable-ID definition or owner locator.
+  - id: DPTNC-19
+    proposition: Default resolution of SYN-001 returns a normalized current owner under docs/contracts.
+  - id: DPTNC-20
+    proposition: Default resolution of REF-030 returns a normalized current owner under docs/contracts.
+  - id: DPTNC-21
+    proposition: Default resolution of AUTH-053 returns a normalized current owner under docs/authority.
+  - id: DPTNC-22
+    proposition: Default resolution of HLTH-066 returns a normalized current owner under docs/contracts.
+  - id: DPTNC-23
+    proposition: Default resolution of OPS-123 returns a normalized current owner under docs/contracts.
+  - id: DPTNC-24
+    proposition: Default resolution of EXPL-160 returns a normalized current owner under docs/experience.
+  - id: DPTNC-25
+    proposition: Default resolution of INTG-270 returns a normalized current owner under docs/contracts.
+  - id: DPTNC-26
+    proposition: Default resolution of ARCH-500 returns a normalized current owner under docs/architecture.
+  - id: DPTNC-27
+    proposition: Explicit --history lookup excludes every promoted first-class current owner root and remains separate from current resolution.
+  - id: DPTNC-28
+    proposition: The accepted total remains 1,237 stable IDs across eight families and 24 concepts.
+  - id: DPTNC-29
+    proposition: ARCH-001 through ARCH-500 and the frozen reference architecture retain exact accepted content and partition semantics.
+  - id: DPTNC-30
+    proposition: docs/history remains provenance-only after docs/concepts and docs/reference are reclaimed for current semantic authority.
+  - id: DPTNC-31
+    proposition: Mixed ADF/CKR directories and knowledge routing remain in place for DPTN-D/E/F rather than being normalized prematurely in DPTN-C.
+  - id: DPTNC-32
+    proposition: Implementation 001-A remains blocked and DPTN-C does not authorize MOVE-015 through MOVE-020.
