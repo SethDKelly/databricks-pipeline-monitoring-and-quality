@@ -59,7 +59,18 @@ The accepted manifest contains MOVE-007 through MOVE-014 only, 32 promotion scen
 
 ## Closure validation
 
-Pending exact-head closure validation after status synchronization. A final evidence-only update may record the successful closure run without changing accepted topology or semantics.
+The first synchronized closure head `fcf0035237cf9adff840557f689341bb722c4fac` passed Documentation consistency #376 and the substantive DPTN-C validator/14 guards, but Agentic conformance #258 exposed only completed-era compatibility-marker regressions: CKR-J expected the retained literal `canonical owner` routing marker, and DPTN-B expected its accepted COL-001/COL-002 resolution phrases plus the vacancy/authority marker. No DPTN-C tree, ownership, stable-ID, history, semantic, or implementation gate failed.
+
+Those historical acceptance markers were restored without changing the DPTN-C topology. Corrected closure head `a20a3482e643b5db25907634efceaae1b72b8049` passed:
+
+- Agentic conformance #260 — SUCCESS, run `34394546313`;
+- Documentation consistency #378 — SUCCESS, run `34394546431`.
+
+This correction preserved all completed CKR and DPTN-B guards while DPTN-C remained COMPLETE / ACCEPTED and DPTN-D remained NEXT / READY / NOT STARTED.
+
+## Final exact-head gate
+
+Pending after this evidence-only update. No accepted topology, ownership, resolver, scenario, guard, or semantic state changes in this update.
 
 ## Handoff
 
