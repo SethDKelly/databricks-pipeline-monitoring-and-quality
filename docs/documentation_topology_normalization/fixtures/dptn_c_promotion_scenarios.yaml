@@ -1,5 +1,5 @@
 schema_version: "1.0"
-status: candidate_ready
+status: accepted
 scenarios:
   - id: DPTNC-01
     proposition: MOVE-007 promotes the exact accepted canonical concepts tree to docs/concepts without semantic rewrite.
