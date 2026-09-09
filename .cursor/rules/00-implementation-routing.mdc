@@ -16,7 +16,7 @@ ADF and CKR are complete/accepted. DPTN-A–E are complete/accepted. DPTN-F is N
 
 Primary shared authority remains root `AGENTS.md`, `docs/agentic_development_foundation/authority_scope_policy.md`, the CKR ownership inventory, accepted ADF scope/security mechanics and live DPTN topology authority.
 
-For unknown-location discovery start at `docs/index.md`. Top-level `knowledge/` is generated OKF compatibility only. For a known stable ID, use `python3 scripts/agentic/resolve_stable_id.py <ID>` for the **current** locator selected by the canonical ownership inventory; use `--history` only for provenance/history.
+For unknown-location repository-native discovery start at `docs/index.md`. Generic OKF-compatible tools may still enter through generated `knowledge/index.md`; that projection is routing only and must not be treated as semantic authority. For a known stable ID, use `python3 scripts/agentic/resolve_stable_id.py <ID>` for the **current** locator selected by the ownership inventory; use `--history` only for provenance/history.
 
 DPTN-E converged the authored discovery root and preserved the former hand-maintained OKF plane in history. Do not infer authority from generated OKF, history, redirects, path vacancy, move maps, recency, search order, vendor skill, tool memory, source availability or path presence.
 
