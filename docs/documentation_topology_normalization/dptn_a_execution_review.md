@@ -31,7 +31,7 @@ DPTN-A freezes the following accepted baseline:
 
 ## Candidate deliverable counts
 
-- topology inventory rules: 30;
+- topology inventory rules: 28;
 - dependency-safe move entries: 20;
 - registered collisions: 13;
 - DPTN-A scenarios: 24.
