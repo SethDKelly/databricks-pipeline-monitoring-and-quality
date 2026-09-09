@@ -16,8 +16,8 @@ def stale_ckr(t): return re.sub(r'CKR status mirror: .*?$','CKR status mirror: C
 def stale_dptn(t): return re.sub(r'DPTN status mirror: .*?$','DPTN status mirror: COMPLETE DPTN-A; NEXT DPTN-C; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.',t,count=1,flags=re.M)
 def stale_docs_ckr(t): return t.replace('**CKR state:** CKR-A–CKR-K COMPLETE / ACCEPTED — CKR EXIT ACCEPTED.','**CKR state:** CKR-A–CKR-C COMPLETE / ACCEPTED — CKR-D NEXT / READY.',1)
 def stale_canonical_banner(t): return t.replace('**Authority state:** CANONICALIZATION COMPLETE — CKR EXIT ACCEPTED','**Authority state:** PARTIALLY CANONICALIZED — CKR MIGRATION IN PROGRESS',1)
-def stale_adf_handoff(t): return t.replace('**Current handoff:** ADF EXIT ACCEPTED / CKR EXIT ACCEPTED — DPTN-A IN EXECUTION — IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.','**Current handoff:** CKR IN PROGRESS — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.',1)
-def stale_agentic_foundation_route(t): return t.replace('**CKR is complete/accepted.**','**CKR is still in progress.**',1)
+def stale_adf_handoff(t): return re.sub(r'^\*\*Current handoff:\*\* ADF EXIT ACCEPTED / CKR EXIT ACCEPTED.*$','**Current handoff:** CKR IN PROGRESS — IMPLEMENTATION 001-A BLOCKED ON CKR EXIT.',t,count=1,flags=re.M)
+def stale_agentic_foundation_route(t): return re.sub(r'CKR is complete/accepted','CKR is still in progress',t,count=1)
 def vendor_auto(t): d=json.loads(t); d['materialization']['automatic_new_skills']=True; return json.dumps(d,indent=2)+'\n'
 def model_skill(t): d=json.loads(t); d['selected_skills'].append({'name':'databricks-model-serving','version':'0.4.0'}); return json.dumps(d,indent=2)+'\n'
 def misassign_hlth(t): d=json.loads(t); d['stable_families']['HLTH']['migration_group']='CKR-F'; return json.dumps(d,indent=2)+'\n'
