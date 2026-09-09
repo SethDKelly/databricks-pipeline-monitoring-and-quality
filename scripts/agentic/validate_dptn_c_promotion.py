@@ -32,6 +32,11 @@ def git_object(repo: Path, spec: str) -> str | None:
     return p.stdout.strip() if p.returncode == 0 else None
 
 
+def git_hash_file(repo: Path, path: Path) -> str | None:
+    p=subprocess.run(["git","hash-object",str(path)],cwd=repo,text=True,capture_output=True)
+    return p.stdout.strip() if p.returncode==0 else None
+
+
 def resolve(repo: Path, token: str, history: bool = False) -> tuple[int, dict | None, str]:
     cmd=[sys.executable,str(repo/"scripts/agentic/resolve_stable_id.py"),token,"--repo",str(repo),"--json"]
     if history: cmd.append("--history")
@@ -76,7 +81,8 @@ def main() -> int:
     moves=manifest.get("moves",[])
     if [m.get("id") for m in moves]!=expected_ids: errors.append("DPTN-C move evidence must contain MOVE-007..MOVE-014 exactly once/in order")
 
-    inventory=load_json(repo/"docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json")
+    inventory_path=repo/"docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json"
+    inventory=load_json(inventory_path)
     registry=load_json(repo/"docs/agentic_development_foundation/stable_id_registry.json")
     total=sum(int(x["max"])-int(x["min"])+1 for x in registry.get("families",{}).values())
     if total!=1237 or len(registry.get("families",{}))!=8: errors.append(f"stable-ID baseline changed: families={len(registry.get('families',{}))}, ids={total}")
@@ -88,8 +94,8 @@ def main() -> int:
     pre = not post
     if pre:
         if inventory.get("canonical_root")!="docs/canonical": errors.append("pre-cutover DPTN-C must retain CKR canonical_root docs/canonical")
-        blob=git_object(repo,"HEAD:docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json") if (repo/".git").exists() else None
-        if blob and blob!=manifest.get("ownership_inventory_baseline_blob"): errors.append("ownership inventory changed before atomic DPTN-C cutover")
+        blob=git_hash_file(repo,inventory_path) if (repo/".git").exists() else None
+        if blob and blob!=manifest.get("ownership_inventory_baseline_blob"): errors.append("ownership inventory content changed before atomic DPTN-C cutover")
         for m in moves:
             src,target,sha=m.get("source"),m.get("target"),m.get("source_tree_sha")
             if not (repo/src).is_dir() or (repo/src).is_symlink(): errors.append(f"{m.get('id')}: pre-cutover source tree missing/non-tree: {src}")
@@ -114,7 +120,6 @@ def main() -> int:
                 expected="../"+Path(target).name
                 if os.readlink(sp)!=expected: errors.append(f"{m.get('id')}: redirect target must be {expected!r}; found {os.readlink(sp)!r}")
 
-        # No substantive current owner in the ledger may remain under docs/canonical or docs/history.
         for rec in inventory.get("records",[]):
             target=rec.get("target_owner","")
             if target.startswith("docs/canonical/") or target.startswith("docs/history/") or not target.startswith("docs/"):
@@ -163,7 +168,6 @@ def main() -> int:
             for x in h:
                 if any(x.get("path","").startswith(root+"/") for root in CURRENT_ROOTS): errors.append(f"--history misclassified current owner as history: {x.get('path')}")
 
-    # Historical namespace and later-phase boundaries remain intact in either cutover state.
     htext=(repo/"docs/history/README.md").read_text(encoding="utf-8")
     if "HISTORY / PROVENANCE ONLY" not in htext or "NOT CURRENT SEMANTIC AUTHORITY" not in htext: errors.append("history authority boundary weakened")
     for rel in ("docs/agentic_development_foundation","docs/canonical_knowledge_retrofit","knowledge"):
