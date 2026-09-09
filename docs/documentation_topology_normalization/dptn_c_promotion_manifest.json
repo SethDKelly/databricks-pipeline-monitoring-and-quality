@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "status": "candidate_ready",
+  "status": "accepted",
   "phase": "DPTN-C",
   "purpose": "Bounded path-only promotion evidence for accepted current semantic owners; this manifest does not own or change DMTZ product semantics, stable-ID meaning, CKR acceptance, implementation state or later DPTN authorization.",
   "source_main_sha": "7b14e714cc09261c1728cb1fda9ae89d9ed7e34d",
