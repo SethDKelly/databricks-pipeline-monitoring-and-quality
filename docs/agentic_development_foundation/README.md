@@ -1,8 +1,8 @@
 # DMTZ Agentic Development Foundation
 
-**Status:** COMPLETE / EXECUTION EXIT ACCEPTED — CKR COMPLETE / IMPLEMENTATION 001-A NEXT
+**Status:** COMPLETE / EXECUTION EXIT ACCEPTED — CKR COMPLETE — DPTN ACTIVE
 
-**Current handoff:** CKR COMPLETE / EXIT ACCEPTED — IMPLEMENTATION 001-A NEXT / READY / NOT STARTED.
+**Current handoff:** ADF EXIT ACCEPTED / CKR EXIT ACCEPTED — DPTN-A IN EXECUTION — IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.
 
 ## Final execution state
 
@@ -17,7 +17,7 @@
 - **Databricks Agent Skills Integration Addendum: COMPLETE / ACCEPTED.**
 - **Execution Exit Review / Consolidation: COMPLETE / ACCEPTED.**
 
-**ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED; IMPLEMENTATION 001-A NEXT.**
+**ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED.**
 
 The formal ADF exit decision remains [`execution_exit_review.md`](execution_exit_review.md):
 
@@ -25,21 +25,22 @@ The formal ADF exit decision remains [`execution_exit_review.md`](execution_exit
 - ADF-EX-17 — **DEFERRED / WAIVED — BOUNDED VERIFICATION DEBT**;
 - ADF-EX-18–ADF-EX-20 — PASS.
 
-## Relationship to completed CKR
+## Relationship to completed CKR and active DPTN
 
-ADF exit was accepted before the later Canonical Knowledge & Documentation Authority Retrofit was inserted ahead of product implementation. CKR has subsequently completed and exited successfully; this does not reopen or rewrite the historical ADF exit.
+ADF exit was accepted before the Canonical Knowledge & Documentation Authority Retrofit. CKR subsequently completed and exited successfully; neither later program reopens or rewrites the historical ADF exit.
 
-Current implementation progression is owned by `docs/canonical_knowledge_retrofit/README.md` and `docs/implementation/README.md`:
+Current pre-implementation progression is owned by `docs/documentation_topology_normalization/README.md` and `docs/implementation/README.md`:
 
 - CKR-A–K — COMPLETE / ACCEPTED;
 - CKR EXIT — ACCEPTED;
-- **Implementation 001-A — NEXT / READY / NOT STARTED.**
+- **DPTN-A — IN EXECUTION**;
+- **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
 
-CKR established current canonical semantic ownership under `docs/canonical/`, deterministic stable-ID resolution, canonical-first OKF routing, preserved design history/provenance and drift enforcement. `knowledge/` remains routing rather than truth. Phase 001–010 is provenance for migrated meanings.
+CKR established current canonical semantic ownership under `docs/canonical/`, deterministic stable-ID resolution, canonical-first OKF routing, preserved design history/provenance and drift enforcement. DPTN is now normalizing the physical documentation topology while preserving those accepted semantics and authority boundaries.
 
-CKR exit removes the documentation-authority blocker only. It does not start implementation; a subsequent explicit human-selected implementation task remains required.
+DPTN-A is inventory/planning only. It does not move documentation, change current semantic owners or start implementation. A later DPTN phase requires separate human selection before physical topology changes occur.
 
-Primary current routes: [`../canonical_knowledge_retrofit/README.md`](../canonical_knowledge_retrofit/README.md) and [`../implementation/README.md`](../implementation/README.md).
+Primary current routes: [`../documentation_topology_normalization/README.md`](../documentation_topology_normalization/README.md), [`../canonical_knowledge_retrofit/README.md`](../canonical_knowledge_retrofit/README.md) and [`../implementation/README.md`](../implementation/README.md).
 
 ## ADF-EX-17 residual verification
 
@@ -74,7 +75,7 @@ A1–A4 remains the action model. Accepted DMTZ semantics outrank agent tooling,
 
 OKF remains routing. Canonical workflows live under `.agents/skills/`; Claude uses thin bridges. Progressive disclosure, stable references and context budgets remain mandatory.
 
-The completed CKR ownership inventory selects current canonical owners. Search order, path presence, model/tool memory, vendor guidance and historical occurrences cannot override that ownership.
+The completed CKR ownership inventory selects current canonical owners. DPTN-A's move map is future-location planning only. Search order, path presence, model/tool memory, vendor guidance, historical occurrences and planned destinations cannot override current ownership.
 
 ### Conformance and CI
 
@@ -84,7 +85,7 @@ Canonical command:
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-The runner validates canonical-knowledge authority, CKR/ADF status, routing, references, context budgets, guards and other accepted repository-configuration constraints. Its PASS result is repository configuration/documentation conformance, not DMTZ domain health or provider/Databricks runtime proof.
+The runner validates canonical-knowledge authority, CKR/ADF/DPTN status, routing, references, context budgets, guards and other accepted repository-configuration constraints. Its PASS result is repository configuration/documentation conformance, not DMTZ domain health or provider/Databricks runtime proof.
 
 ### Security and lifecycle
 
@@ -100,7 +101,9 @@ Least privilege, secret/sensitive-data boundaries, prompt/content trust, noncano
 - tool memory/personal state as canonical truth;
 - automatic adoption of newly published Databricks skills;
 - Databricks model/AI implementation skills until explicitly reviewed;
-- managed Databricks MCP servers until separately reviewed.
+- managed Databricks MCP servers until separately reviewed;
+- product implementation while DPTN is active;
+- physical documentation moves during DPTN-A.
 
 ## Key references
 
@@ -113,10 +116,13 @@ Least privilege, secret/sensitive-data boundaries, prompt/content trust, noncano
 - [`security_trust_lifecycle_policy.md`](security_trust_lifecycle_policy.md) / [`agentic_change_governance.md`](agentic_change_governance.md) — security/change governance;
 - [`databricks_agent_skills_addendum.md`](databricks_agent_skills_addendum.md) — reviewed Databricks skills boundary;
 - [`../canonical_knowledge_retrofit/README.md`](../canonical_knowledge_retrofit/README.md) — completed CKR authority/exit state;
+- [`../documentation_topology_normalization/README.md`](../documentation_topology_normalization/README.md) — active topology-normalization program;
 - [`../implementation/README.md`](../implementation/README.md) — current implementation progression.
 
 ## Current next dependency
 
-**Implementation 001-A — NEXT / READY / NOT STARTED.**
+**DPTN-A — IN EXECUTION.**
 
-Implementation begins only after a subsequent explicit human-selected implementation task. ADF/CKR exit acceptance does not authorize autonomous continuation.
+**Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
+
+DPTN/ADF/CKR status does not authorize autonomous continuation. A later DPTN phase or Implementation 001-A requires explicit human selection.
