@@ -1,6 +1,6 @@
 schema_version: "1.0"
 suite: DPTN-A topology authority and inventory
-status: candidate
+status: accepted
 scenarios:
   - id: DPTNA-01
     statement: Existing CKR semantic owners remain current throughout DPTN-A.
