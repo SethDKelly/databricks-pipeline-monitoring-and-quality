@@ -6,42 +6,38 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
 
-**DPTN status mirror: COMPLETE DPTN-A; IN EXECUTION DPTN-B; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
+**DPTN status mirror: COMPLETE DPTN-A–DPTN-B; NEXT DPTN-C; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
 
-ADF and CKR are complete/accepted. DPTN-A is complete/accepted and DPTN-B is IN EXECUTION by explicit human selection. Implementation 001-A remains NOT STARTED and may not begin until DPTN-G accepts the normalization exit and a subsequent human-selected implementation task authorizes work.
+ADF and CKR are complete/accepted. DPTN-A and DPTN-B are complete/accepted. DPTN-C is NEXT / READY / NOT STARTED and requires explicit human selection before any canonical promotion occurs. Implementation 001-A remains NOT STARTED and may not begin until DPTN-G accepts the normalization exit and a subsequent human-selected implementation task authorizes work.
 
-Current semantic ownership is still selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`. DPTN-B changes history/provenance paths only; it does not move a current semantic owner. All accepted semantic families through ARCH remain canonicalized.
+Current semantic ownership remains selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`; `docs/canonical/` remains the current semantic root. DPTN-B relocated history only. `docs/history/` is provenance-only and cannot compete with current ownership.
 
 Authority order: current semantic owner → root `AGENTS.md` → live DPTN/implementation status → accepted ADF scope/security mechanics → DMTZ workflows/overlays → reviewed vendor operational guidance → tool/personal memory.
 
 ## Human-directed boundary
 
-Follow `docs/agentic_development_foundation/authority_scope_policy.md`. The user explicitly selected DPTN-B. That authorizes MOVE-001 through MOVE-006 and directly necessary history-role/routing/validation changes only. It does not authorize DPTN-C canonical promotion, DPTN-D mixed-lifecycle decomposition, later routing convergence/rebinding, or product implementation.
+Follow `docs/agentic_development_foundation/authority_scope_policy.md`. DPTN-B acceptance authorizes no autonomous continuation. DPTN-C canonical promotion, DPTN-D decomposition, later routing convergence/rebinding and product implementation all require their own explicit human-selected task.
 
-## Canonical routing during DPTN-B
+## Canonical routing before DPTN-C starts
 
-Use `human task → current canonical owner → exact IDs/tests as needed`.
+Use `human task → current canonical owner → exact IDs/tests as needed`. For a known stable ID, run `python3 scripts/agentic/resolve_stable_id.py <ID>` for the current canonical `owner_path::ID`; use `--history` only for explicit provenance/rationale/history work.
 
-For a known stable ID, run `python3 scripts/agentic/resolve_stable_id.py <ID>` to obtain the deterministic current canonical locator `owner_path::ID`. Use `--history` only for explicit provenance/rationale/history work; historical occurrences never compete with current ownership.
+When semantic location is unknown, `knowledge/index.md` may route through one bounded domain concept to the current canonical owner. `docs/history/`, cleared first-class paths, the DPTN move map, OKF, search order, recency, Git history, vendor guidance and model/tool memory never establish semantic authority.
 
-When semantic location is unknown, `knowledge/index.md` may route through one bounded domain concept to the current canonical owner. The accepted DPTN move map, history namespace, proposed target paths, OKF, search order, recency, Git history, vendor guidance and model/tool memory never establish semantic authority.
+## DPTN-B accepted boundary
 
-Do not preload the full stable-ID corpus, OKF bundle or DPTN move map when a bounded current owner is already known.
-
-## DPTN-B boundary
-
-Read `docs/documentation_topology_normalization/README.md` for live topology-program status. During DPTN-B:
-
-- only the six accepted historical relocations MOVE-001 through MOVE-006 may execute;
-- `docs/history/` is explicitly provenance-only and non-current;
-- `docs/canonical/` remains the current semantic root;
-- no canonical ownership target or current stable-ID locator may move;
+- MOVE-001 through MOVE-006 are complete and preserved by exact-tree relocation under `docs/history/`;
+- `docs/concepts/`, `docs/reference/` and `docs/decisions/` are vacant/unassigned, not current owners;
+- `docs/canonical/` remains current;
 - mixed ADF/CKR directories remain in place for DPTN-D;
+- permanent historical-reference/agent rebinding remains later DPTN work;
 - Implementation 001-A remains blocked.
+
+Completed CKR provenance checks may use the validation-only ephemeral history compatibility projection. That projection leaves no repository path behind and cannot satisfy current lookup.
 
 ## CKR exit boundary
 
-The ownership-inventory lifecycle remains `ckr_complete`. CKR acceptance proves documentation authority/routing/provenance closure only. It is not product implementation evidence, source-integration evidence, deployment readiness or production readiness.
+The ownership-inventory lifecycle remains `ckr_complete`. CKR acceptance proves documentation authority/routing/provenance closure only; it is not product implementation, source-integration, deployment or production evidence.
 
 ## Semantic conservation
 

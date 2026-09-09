@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "status": "candidate_ready",
+  "status": "accepted",
   "phase": "DPTN-B",
   "purpose": "Bounded physical history/provenance relocation evidence only; this manifest does not own DMTZ product semantics, current semantic authority, stable-ID meaning, implementation state or later DPTN authorization.",
   "source_main_sha": "63162678f1f3e0bbc836d0a5fbd909108a864132",

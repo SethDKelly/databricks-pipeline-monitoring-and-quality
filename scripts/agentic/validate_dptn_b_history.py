@@ -27,8 +27,9 @@ def main() -> int:
     manifest_path = repo / ROOT / "dptn_b_relocation_manifest.json"
     fixture_path = repo / ROOT / "fixtures/dptn_b_history_scenarios.yaml"
     review_path = repo / ROOT / "dptn_b_execution_review.md"
+    collision_path = repo / ROOT / "collision_register.md"
     history = repo / "docs/history/README.md"
-    for p, label in ((readme,"DPTN authority"),(manifest_path,"DPTN-B relocation manifest"),(fixture_path,"DPTN-B fixtures"),(review_path,"DPTN-B execution review"),(history,"history authority index")):
+    for p, label in ((readme,"DPTN authority"),(manifest_path,"DPTN-B relocation manifest"),(fixture_path,"DPTN-B fixtures"),(review_path,"DPTN-B execution review"),(collision_path,"DPTN collision register"),(history,"history authority index")):
         if not p.is_file(): errors.append(f"missing {label}: {p.relative_to(repo)}")
     if errors:
         for e in errors: print("ERROR", e)
@@ -48,6 +49,13 @@ def main() -> int:
     counts = manifest.get("expected_counts", {})
     if counts != {"moves":6,"closed_dptn_b_collisions":5,"concepts":24,"stable_ids":1237,"stable_families":8,"architecture_ids":500,"scenarios":24,"negative_controls":12}: errors.append(f"DPTN-B accepted counts drifted: {counts}")
 
+    if b_state == "COMPLETE / ACCEPTED":
+        collision_text = collision_path.read_text(encoding="utf-8")
+        for i in range(1,6):
+            token = f"COL-{i:03d} — RESOLVED BY DPTN-B"
+            if token not in collision_text: errors.append(f"accepted DPTN-B missing collision resolution marker {token!r}")
+        if "vacancy does not assign current authority" not in collision_text.lower(): errors.append("DPTN-B collision closure must preserve vacancy != authority")
+
     ht = history.read_text(encoding="utf-8")
     for token in (HISTORY_MARKER,"Current-truth rule","Preservation rule","vacant/unassigned","Implementation 001-A remains blocked"):
         if token not in ht: errors.append(f"history index missing role/boundary token {token!r}")
@@ -56,7 +64,7 @@ def main() -> int:
     moves = manifest.get("moves", [])
     if [m.get("id") for m in moves] != [f"MOVE-{i:03d}" for i in range(1,7)]: errors.append("DPTN-B move evidence must contain MOVE-001..MOVE-006 exactly once and in order")
     for m in moves:
-        src, target, expected = m.get("source"), m.get("target"), m.get("source_tree_sha")
+        target, expected = m.get("target"), m.get("source_tree_sha")
         if m.get("authority_change") is not False or m.get("preservation") != "exact_git_tree_reuse": errors.append(f"{m.get('id')}: history relocation must remain exact-tree/non-authority")
         if not target or not target.startswith("docs/history/") or not (repo/target).is_dir(): errors.append(f"{m.get('id')}: missing history target {target!r}")
         if expected and (repo/".git").exists():
@@ -93,7 +101,6 @@ def main() -> int:
     impl = (repo/"docs/implementation/README.md").read_text(encoding="utf-8")
     if "Implementation 001-A — BLOCKED / NOT STARTED" not in impl: errors.append("Implementation 001-A gate was released during DPTN-B")
 
-    # Current lookup must remain canonical while DPTN-B owns only history paths.
     if not later_active:
         for token in ("SYN-001","AUTH-034","OPS-123","ARCH-500"):
             p = subprocess.run([sys.executable,str(repo/"scripts/agentic/resolve_stable_id.py"),token,"--repo",str(repo),"--json"],cwd=repo,text=True,capture_output=True)
