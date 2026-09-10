@@ -9,12 +9,13 @@ alwaysApply: false
 
 # Design and change control
 
-Primary references:
+Primary current references:
 
 - `docs/implementation/traceability_and_change_control.md`
-- `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/target_reference_architecture.md`
-- `docs/concepts/phase_010/09_architecture_consolidation_validation_exit/adr_summary.md`
-- `docs/foundation/004_concept_design_method.md` only when functional concepts are intentionally being reconsidered.
+- `docs/architecture/reference-architecture.md`
+- `docs/reference/concept-design-method.md` only when functional concepts are intentionally being reconsidered.
+
+Use `docs/history/` only for explicit provenance/rationale questions; historical Phase 010/decision material is not current architecture authority.
 
 Escalation order:
 
