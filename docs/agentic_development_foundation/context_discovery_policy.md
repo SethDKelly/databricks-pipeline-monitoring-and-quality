@@ -1,6 +1,6 @@
 # DMTZ Context Discovery Policy
 
-**Status:** ACCEPTED — ADF-E / REFINED CKR-J + DPTN-E
+**Status:** ACCEPTED — ADF-E / REFINED CKR-J + DPTN EXIT
 
 ## Purpose
 
@@ -12,7 +12,7 @@ Use the shortest path that reaches exact authority:
 
 ```text
 human-selected task
-  → root AGENTS.md / live status authority
+  → root AGENTS.md / current implementation status
   → exact stable-ID resolver directly when an ID is known
   → otherwise docs/index.md when location is not already known
   → one current category/resource
@@ -37,7 +37,7 @@ The default result is the deterministic current canonical locator `owner_path::I
 Prefer:
 
 1. explicit path/group/ID named by the human task;
-2. root/live DPTN/implementation authority;
+2. root/shared authority and current implementation status;
 3. deterministic exact stable-ID resolution when an ID is known;
 4. `docs/index.md` when semantic/operational location is unknown;
 5. one generated OKF route only when a consumer specifically uses OKF compatibility;
@@ -48,9 +48,11 @@ Search order itself never establishes semantic authority.
 
 ## Context-set rule
 
-A resolved context set should normally contain only the human task/action class, relevant live status, one active plan/package if applicable, one discovery route at most, one or two current owning resources, exact stable contracts/tests needed, and unresolved external capability facts.
+A resolved context set should normally contain only the human task/action class, relevant current status, one active plan/package if applicable, one discovery route at most, one or two current owning resources, exact stable contracts/tests needed, and unresolved external capability facts.
 
 Loading another file requires a concrete question it answers.
+
+Completed DPTN material under `docs/history/retrofits/dptn/` is loaded only for explicit topology provenance, rationale or audit questions; it is not routine current context.
 
 ## Progressive-disclosure rule
 
