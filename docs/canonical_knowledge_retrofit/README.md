@@ -8,7 +8,7 @@ CKR is a completed retrofit. This directory contains durable current documentati
 
 > **A current semantic question resolves to one current owner.**
 
-Current ownership is declared in [`canonical_ownership_inventory.json`](canonical_ownership_inventory.json); authority rules are in [`authority_model.md`](authority_model.md); migration/no-dual-authority rules are in [`migration_contract.md`](migration_contract.md). DPTN-F has rebound those durable mechanics to the normalized first-class topology without changing CKR meaning.
+Current ownership is declared in [`canonical_ownership_inventory.json`](canonical_ownership_inventory.json); authority rules are in [`authority_model.md`](authority_model.md); migration/no-dual-authority rules are in [`migration_contract.md`](migration_contract.md). The completed DPTN program rebound these durable mechanics to the normalized first-class topology without changing CKR meaning.
 
 ## Completed program sequence
 
@@ -28,16 +28,18 @@ Current ownership is declared in [`canonical_ownership_inventory.json`](canonica
 
 Foundation/glossary, all 24 concepts, SYN-001–035, authority vocabulary, REF-001–030, AUTH-001–053, HLTH-001–066, OPS-001–123, EXPL-001–160, INTG-001–270 and ARCH-001–500 resolve to ownership-inventory-selected first-class owners. Stable-definition coverage remains **1,237/1,237** across eight families.
 
-Current semantic owner roots are `docs/concepts/`, `docs/architecture/`, `docs/authority/`, `docs/contracts/`, `docs/experience/`, `docs/invariants/`, `docs/policies/`, and `docs/reference/`. Phase-era sources live under `docs/history/` as provenance.
+Current semantic-owner roots are `docs/concepts/`, `docs/architecture/`, `docs/authority/`, `docs/contracts/`, `docs/experience/`, `docs/invariants/`, `docs/policies/`, and `docs/reference/`. Phase-era sources live under `docs/history/` as provenance.
 
-## Post-CKR / DPTN state
+## Post-CKR topology state
 
-DPTN-B established history; DPTN-C promoted first-class semantic owner roots; DPTN-D separated durable CKR mechanics from completed evidence; DPTN-E converged discovery and made top-level `knowledge/` generated OKF compatibility; DPTN-F rebound current stable-reference, agent/rule/link and drift-analysis consumers to normalized paths.
+DPTN-A–G completed the physical normalization of current owners, historical evidence, authored discovery, generated OKF compatibility and agent/reference routing. **DPTN EXIT is ACCEPTED.**
 
-**DPTN-A–F are COMPLETE / ACCEPTED. DPTN-G is NEXT / READY / NOT STARTED. Implementation 001-A remains BLOCKED / NOT STARTED ON DPTN EXIT.**
+Current repository-native discovery begins at [`../index.md`](../index.md). The ownership inventory—not discovery order, generated OKF, history, vendor guidance or model/tool memory—remains the semantic-owner ledger. For a known stable ID use `scripts/agentic/resolve_stable_id.py <ID>`; `--history` remains explicit provenance discovery.
 
-Current repository-native discovery begins at [`../index.md`](../index.md). The ownership inventory—not discovery order, generated OKF, redirects, history, vendor guidance or model/tool memory—remains the semantic-owner ledger. For a known stable ID use `scripts/agentic/resolve_stable_id.py <ID>`; `--history` remains explicit provenance discovery.
+The completed DPTN record is preserved under [`../history/retrofits/dptn/`](../history/retrofits/dptn/) as historical provenance. Current operational routing does not depend on migration or compatibility paths.
 
-Current operational routing must not depend on `docs/canonical/<family>` compatibility redirects or historical paths. Completed CKR checks may rehydrate accepted-era semantic/evidence/OKF paths only inside the bounded compatibility runner; that ephemeral projection never participates in current ownership.
+Completed CKR checks may rehydrate their accepted-era semantic/evidence/OKF paths only inside the bounded compatibility runner; that ephemeral projection never participates in current ownership.
 
-Current DPTN authority: [`../documentation_topology_normalization/README.md`](../documentation_topology_normalization/README.md). Current history role: [`../history/README.md`](../history/README.md).
+**Implementation 001-A is NEXT / READY / NOT STARTED.** DPTN exit removed the topology blocker but did not authorize implementation automatically.
+
+Current history role: [`../history/README.md`](../history/README.md).
