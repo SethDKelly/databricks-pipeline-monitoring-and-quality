@@ -1,10 +1,10 @@
 # DMTZ Documentation & Knowledge Index
 
-**Authority:** ROUTING / DISCOVERY ROOT — NOT A SEMANTIC OWNER
+**AUTHORITY: CURRENT ROUTING / DISCOVERY ROOT ONLY — NOT A SEMANTIC OWNER**
 
 This is the single authored human/tool-neutral discovery root for the DMTZ repository. It tells readers and tools where current authority lives; it does not replace the current semantic ownership ledger or make routing text authoritative.
 
-**DPTN state:** DPTN-A–E COMPLETE / ACCEPTED — DPTN-F NEXT / READY / NOT STARTED — IMPLEMENTATION 001-A BLOCKED / NOT STARTED ON DPTN EXIT.
+**DPTN state:** DPTN-A–F COMPLETE / ACCEPTED — DPTN-G NEXT / READY / NOT STARTED — IMPLEMENTATION 001-A BLOCKED / NOT STARTED ON DPTN EXIT.
 
 ## Fastest route
 
@@ -42,21 +42,24 @@ Accepted stable ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH
 
 ## Generated OKF v0.2 projection
 
-Top-level `knowledge/` remains for generic OKF v0.2 consumers, but after DPTN-E it is a **deterministically generated compatibility projection**, not a separately maintained routing plane.
+Top-level `knowledge/` remains for generic OKF v0.2 consumers as a **deterministically generated compatibility projection**, not a separately maintained routing plane.
 
 - Projection specification: [`routing/okf_projection.json`](routing/okf_projection.json)
 - Generator/checker: `scripts/agentic/generate_okf_projection.py`
+- Generated compatibility entry: `knowledge/index.md`
 - Generated output: `../knowledge/`
 - Preserved pre-convergence authored tree: [`history/routing/okf-pre-dptn-e/`](history/routing/okf-pre-dptn-e/)
 
-Do not hand-edit generated `knowledge/` files. Change the current owning documentation, workflow/implementation catalog, or the bounded projection specification as appropriate, then regenerate and validate the projection. Generated OKF `stable`, `verified`, routing text or provenance never carries DMTZ proposition authority.
+Do not hand-edit generated `knowledge/` files. Change the current owning documentation, workflow/implementation catalog, or bounded projection specification as appropriate, then regenerate and validate the projection. Generated OKF `stable`, `verified`, routing text or provenance never carries DMTZ proposition authority.
 
-## Compatibility surfaces
+## DPTN-F routing result
 
-`canonical/README.md` is retained only as a legacy orientation/compatibility entry pending DPTN-F/G. Legacy `docs/canonical/<family>` redirects may remain navigable during that period, but they are not semantic owners or stable-ID locators.
+MOVE-019 has rebound current stable-reference, agent/rule/link and drift-analysis consumers to normalized first-class paths. Repository-native discovery now consistently starts here; current link validation does not substitute history; scoped rules no longer route through Phase 010/pre-DPTN paths. Completed CKR checks may still reconstruct their accepted-era routing only inside the dedicated ephemeral compatibility wrapper.
+
+`canonical/README.md` and legacy `docs/canonical/<family>` redirects remain compatibility-only pending DPTN-G retirement. They are not semantic owners or stable-ID locators.
 
 ## Current next dependency
 
-**DPTN-F — Stable References, Agent Routing & Drift Rebinding: NEXT / READY / NOT STARTED.**
+**DPTN-G — Conservation Audit, Legacy-Path Retirement & Exit Review: NEXT / READY / NOT STARTED.**
 
-DPTN-E acceptance does not authorize DPTN-F or product implementation automatically. Implementation 001-A remains blocked until DPTN-G exit acceptance and a later explicit human-selected implementation task.
+DPTN-F acceptance does not authorize DPTN-G or product implementation automatically. Implementation 001-A remains blocked until DPTN-G exit acceptance and a later explicit human-selected implementation task.
