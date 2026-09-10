@@ -24,8 +24,8 @@ def main()->int:
     ap=argparse.ArgumentParser(); ap.add_argument('--repo',default='.'); src=Path(ap.parse_args().repo).resolve(); errors=[]
     with tempfile.TemporaryDirectory(prefix='dmtz-conformance-') as td:
         repo=Path(td)/'repo'; shutil.copytree(src,repo,ignore=shutil.ignore_patterns('.git','__pycache__','.pytest_cache'),symlinks=True)
-        mutate(repo,'IMPLEMENTATION.md',lambda t:re.sub(r'ADF status mirror: .*?$','ADF status mirror: COMPLETE ADF-A–ADF-E; NEXT ADF-F.',t,count=1,flags=re.M),'validate_status_drift.py','stale ADF status mirror',errors)
-        mutate(repo,'IMPLEMENTATION.md',lambda t:re.sub(r'CKR status mirror: .*?$','CKR status mirror: COMPLETE CKR-A; NEXT CKR-C.',t,count=1,flags=re.M),'validate_ckr_status.py','stale CKR status mirror',errors)
+        mutate(repo,'docs/agentic_development_foundation/README.md',lambda t:re.sub(r'(- \*\*ADF-A — .*?: )COMPLETE / ACCEPTED(\.\*\*)',r'\1NEXT / READY\2',t,count=1,flags=re.M),'validate_status_drift.py','ADF exit-state regression',errors)
+        mutate(repo,'docs/canonical_knowledge_retrofit/README.md',lambda t:re.sub(r'(- \*\*CKR-A — .*?: )COMPLETE / ACCEPTED(\.\*\*)',r'\1NEXT / READY\2',t,count=1,flags=re.M),'validate_ckr_status.py','CKR exit-state regression',errors)
         mutate(repo,'docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json',lambda t:t.replace('"concept_count":24','"concept_count":25',1) if '"concept_count":24' in t else t.replace('"concept_count": 24','"concept_count": 25',1),'validate_documentation_topology.py','concept conservation drift',errors)
         mutate(repo,'docs/agentic_development_foundation/stable_id_registry.json',lambda t:t.replace('"max": 500','"max": 501',1),'validate_documentation_topology.py','stable-ID registry drift',errors)
         mutate(repo,'docs/history/README.md',lambda t:t.replace('HISTORY / PROVENANCE ONLY','HISTORY ONLY',1),'validate_documentation_topology.py','history authority weakening',errors)
@@ -38,4 +38,4 @@ def main()->int:
         mutate(repo,'docs/routing/okf_projection.json',lambda t:t.replace('"resource":"docs/index.md","related":["docs/README.md"]','"resource":"docs/history/retrofits/dptn/README.md","related":["docs/README.md"]',1),'validate_documentation_topology.py','topology route redirected to history',errors)
     for e in errors: print('ERROR',e)
     print(f'Cross-cutting conformance guards: {len(errors)} error(s), 12 negative control(s)'); return 1 if errors else 0
-if __name__=='__main__': raise SystemExit(main())
+if __name__=='__main__: raise SystemExit(main())
