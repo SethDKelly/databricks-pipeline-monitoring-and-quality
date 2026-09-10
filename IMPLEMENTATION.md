@@ -1,22 +1,21 @@
 # DMTZ Implementation — Start Here
 
-**ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED.**
+**Current status: Implementation 001-A — NEXT / READY / NOT STARTED.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
+Implementation work begins only when a human explicitly selects the implementation package or task. Readiness does not authorize automatic continuation.
 
-**DPTN exit: ACCEPTED — Implementation 001-A NEXT / READY / NOT STARTED.**
+## Before implementing
 
-ADF, CKR and DPTN exits are accepted. **Implementation 001-A is NEXT / READY / NOT STARTED.** DPTN exit removed the topology blocker; it did not start product implementation. A separate explicit human-selected implementation task is still required.
+1. Read [`docs/implementation/README.md`](docs/implementation/README.md) for the current implementation program and package boundary.
+2. Read [`AGENTS.md`](AGENTS.md) for repository-wide authority, workflow, semantic, and evidence rules.
+3. Use [`docs/index.md`](docs/index.md) to locate current concepts, contracts, architecture, policies, invariants, authority, and reference material.
+4. Resolve accepted stable IDs with `python3 scripts/agentic/resolve_stable_id.py <ID>`; use `--history` only for explicit provenance work.
+5. Treat generated `knowledge/` as OKF compatibility routing, not semantic authority.
 
-## Current routing
+Current semantic ownership is declared by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`. Historical design and completed program evidence are preserved under `docs/history/` and do not compete with current owners.
 
-1. `docs/index.md` — repository-native unknown-location discovery.
-2. `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` — exact current semantic ownership.
-3. First-class `docs/concepts`, `docs/architecture`, `docs/authority`, `docs/contracts`, `docs/experience`, `docs/invariants`, `docs/policies`, and `docs/reference` — current semantic owner roots.
-4. `scripts/agentic/resolve_stable_id.py <ID>` — deterministic current `owner_path::ID`; `--history` is provenance-only.
-5. generated `knowledge/index.md` — OKF v0.2 compatibility only.
-6. `docs/history/` — provenance/history only, including the completed DPTN record.
-7. `docs/implementation/README.md` — implementation program state.
-8. root `AGENTS.md` — shared instructions.
+## Implementation discipline
 
-**Implementation 001-A — NEXT / READY / NOT STARTED.** Do not begin it without explicit human selection.
+Implement only the human-selected package/task and its directly necessary supporting changes. Preserve accepted semantic and architecture contracts, add the lowest-cost executable evidence appropriate to the change, update directly impacted traceability/documentation, and stop at the selected boundary.
+
+Do not claim Databricks runtime support, deployment capability, integration behavior, performance, or production readiness without corresponding executable or target-environment evidence.
