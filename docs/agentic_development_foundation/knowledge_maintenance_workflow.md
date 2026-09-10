@@ -1,6 +1,6 @@
 # DMTZ Knowledge Routing Maintenance Workflow
 
-**Status:** ACCEPTED — ADF-E / REFINED CKR-J + DPTN-E
+**Status:** ACCEPTED — ADF-E / REFINED CKR-J + DPTN EXIT
 
 ## Purpose
 
@@ -21,7 +21,7 @@ Routine canonical prose changes that leave routing accurate require no OKF rewri
 5. Regenerate with `python3 scripts/agentic/generate_okf_projection.py --write`.
 6. Run `python3 scripts/agentic/generate_okf_projection.py --check` and `scripts/agentic/validate_okf.py`.
 7. Run stable-reference/current-owner validation when canonical route targets changed.
-8. Run DPTN/current conformance checks as applicable.
+8. Run final documentation-topology/current conformance checks as applicable.
 9. If a route cannot be established from current authority, fail/report it; never invent a semantic owner to satisfy routing.
 
 ## Generated versus authored content
@@ -42,7 +42,10 @@ Generated compatibility output:
 Historical authored routing:
 - `docs/history/routing/okf-pre-dptn-e/`.
 
-Generated output may be rebuilt freely from its current sources. Historical routing must not be rewritten to match current state.
+Completed topology-normalization provenance:
+- `docs/history/retrofits/dptn/`.
+
+Generated output may be rebuilt freely from its current sources. Historical routing and completed normalization evidence must not be rewritten to match current state.
 
 ## Exact stable-reference changes
 
