@@ -7,7 +7,7 @@
 - [DMTZ repository authority](authority.md)
 - [Canonical knowledge and ownership](canonical-knowledge.md)
 - [Databricks Agent Skills integration](databricks-agent-skills.md)
-- [Documentation Physical Topology Normalization](documentation-topology.md)
+- [Documentation topology](documentation-topology.md)
 - [Implementation program](implementation-program.md)
 - [Canonical stable-ID resolution](stable-references.md)
 - [Coding-agent tool compatibility](tool-compatibility.md)
