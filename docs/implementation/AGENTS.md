@@ -1,15 +1,21 @@
 # Implementation Agent / Developer Instructions
 
-**ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED.**
+**Current status: Implementation 001-A — NEXT / READY / NOT STARTED.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
+Implementation begins only after the human explicitly selects a package or task. This directory governs implementation planning and execution boundaries; it does not own DMTZ semantics.
 
-**DPTN exit: ACCEPTED — Implementation 001-A NEXT / READY / NOT STARTED.**
+## Resolve authority before changing code
 
-ADF, CKR and DPTN are complete/accepted. **Implementation 001-A is NEXT / READY / NOT STARTED** and still requires a separate explicit human-selected implementation task before work begins.
+- Use `docs/index.md` when the current semantic location is unknown.
+- Use `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` for exact current semantic ownership.
+- Resolve known stable IDs with `python3 scripts/agentic/resolve_stable_id.py <ID>`; use `--history` only for explicit provenance/rationale work.
+- Read the selected implementation package and the smallest current concept/contract/architecture/policy context needed for the task.
+- Treat generated `knowledge/` as OKF compatibility routing only.
 
-Use `docs/index.md` for repository-native discovery and `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` for exact current semantic ownership. For a known stable ID, `scripts/agentic/resolve_stable_id.py <ID>` returns the current locator selected by the ledger; `--history` is provenance-only.
+## Execution boundary
 
-Top-level `knowledge/` is generated OKF compatibility output. Current operational routing uses first-class semantic-owner paths and must not depend on retired migration/compatibility namespaces. The completed DPTN record is historical provenance under `docs/history/retrofits/dptn/`.
+Implement the selected package/task and directly necessary supporting changes only. Do not automatically continue to the next package, perform broad speculative refactoring, weaken accepted semantics to simplify implementation, or infer deployment/runtime support from documentation.
 
-Do not infer implementation start from readiness. 001-A begins only when the human explicitly selects that implementation task.
+Add the lowest-cost tests or executable evidence that prove the changed behavior where required. Update directly impacted traceability, ADRs, status, or documentation so the repository remains accurate.
+
+Follow root `AGENTS.md` and `docs/agentic_development_foundation/authority_scope_policy.md` for shared human-directed, security, external-action, and change-control rules.
