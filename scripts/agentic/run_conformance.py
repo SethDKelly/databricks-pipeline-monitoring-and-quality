@@ -35,6 +35,7 @@ CHECKS=(
 ('ADF-H security/lifecycle governance','scripts/agentic/validate_adf_h_governance.py',['--repo','{repo}']))
 def needs_history_compat(rel:str)->bool:
     name=Path(rel).name
+    if name=='validate_ckr_status.py':return False
     return rel=='scripts/agentic/validate_canonical_knowledge.py' or name.startswith('validate_ckr_') or name.startswith('test_ckr_')
 def knowledge_lifecycle(repo):
     deprecated=stale=0;today=dt.date.today()
