@@ -5,7 +5,7 @@ from pathlib import Path
 
 def run(repo:Path,script:str)->int:
     target=repo/'scripts/agentic'/script; compat=repo/'scripts/agentic/run_ckr_with_history_compat.py'
-    if script.startswith(('validate_ckr_','test_ckr_')) or script=='validate_canonical_knowledge.py':
+    if script!='validate_ckr_status.py' and (script.startswith(('validate_ckr_','test_ckr_')) or script=='validate_canonical_knowledge.py'):
         cmd=[sys.executable,str(compat),f'scripts/agentic/{script}','--repo',str(repo)]
     else: cmd=[sys.executable,str(target),'--repo',str(repo)]
     return subprocess.run(cmd,cwd=repo,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL).returncode
