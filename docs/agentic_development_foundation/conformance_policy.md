@@ -1,10 +1,10 @@
 # Agentic / Documentation Authority Conformance Policy
 
-**Status:** ACCEPTED ADF CONFORMANCE — EXTENDED FOR CKR
+**Status:** ACCEPTED ADF CONFORMANCE — CKR COMPLETE — FINAL DOCUMENTATION TOPOLOGY
 
 ## Purpose
 
-Provide one deterministic repository-owned conformance path for the accepted Agentic Development Foundation and the Canonical Knowledge & Documentation Authority Retrofit without turning repository configuration health into DMTZ domain health or provider/runtime certification.
+Provide one deterministic repository-owned conformance path for the accepted Agentic Development Foundation, completed CKR and normalized documentation topology without turning repository configuration health into DMTZ domain health or provider/runtime certification.
 
 ## Canonical command
 
@@ -14,78 +14,61 @@ python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.m
 
 The command is safe and non-destructive. Fixing failures requires the surrounding human task to authorize A2 changes.
 
-## Validation order
+## Current validation order
 
 1. documentation phase consistency;
-2. OKF v0.2 / DMTZ knowledge-profile validation;
-3. Cursor / Claude Code / Codex adapter structure;
+2. generated OKF v0.2 compatibility validation;
+3. Cursor / Claude Code / Codex adapter structure and normalized discovery routing;
 4. canonical portable skill structure, including DMTZ Databricks overlays;
-5. agent-facing links and stable-ID references;
-6. live ADF status-mirror drift;
-7. **canonical knowledge authority / CKR ownership-inventory validation**;
-8. **live CKR status / implementation-blocking drift**;
-9. ADF/addendum/CKR fixture catalog integrity;
-10. deterministic context budgets;
-11. ADF-G runtime-compatibility evidence integrity;
-12. reviewed Databricks Agent Skills dependency/profile/materialization-boundary validation;
-13. high-confidence checked-in agentic secret/sensitive-file scan;
-14. ADF-H security/trust/lifecycle governance and review-horizon validation;
-15. negative controls proving seeded defects are rejected.
+5. current agent-facing links and deterministic stable-ID references;
+6. live ADF / CKR status drift;
+7. CKR ownership-inventory/current semantic-owner validation;
+8. CKR-B–K accepted semantic/routing/provenance baselines through bounded accepted-era compatibility where necessary;
+9. **durable final documentation-topology validation and negative controls**;
+10. ADF/addendum/CKR/DPTN historical fixture-catalog integrity;
+11. deterministic context budgets;
+12. ADF-G runtime-compatibility evidence integrity;
+13. reviewed Databricks Agent Skills dependency/profile/materialization-boundary validation;
+14. high-confidence checked-in agentic secret/sensitive-file scan;
+15. ADF-H security/trust/lifecycle governance and review-horizon validation;
+16. cross-cutting negative controls proving seeded defects are rejected.
 
 This remains separate from future product/runtime tests.
 
-## CKR authority checks
+## Current authority and topology checks
 
-`validate_canonical_knowledge.py` enforces the CKR migration contract, including:
+The CKR ownership inventory selects the sole current semantic owner for each record and stable-ID family. Current semantic roots are first-class `docs/<family>/` paths. Deterministic exact-ID lookup uses `scripts/agentic/resolve_stable_id.py <ID>` and returns one current `owner_path::ID`; `--history` is separate provenance discovery.
 
-- the canonical structural namespace exists;
-- all 24 accepted concepts have unique ownership records and unique canonical targets;
-- every accepted stable-ID family is represented with the frozen range, current legacy root, target canonical domain and migration group;
-- ARCH-001–ARCH-500 is partitioned across the eight accepted Phase 010 architecture groups;
-- inventoried legacy/current sources exist;
-- targets are under `docs/canonical/`;
-- `candidate_ready` targets are explicitly non-authoritative;
-- `canonicalized` targets exist and explicitly declare canonical current authority;
-- a `legacy_authoritative` target cannot simultaneously claim canonical authority;
-- substantive canonical documents cannot appear outside the ownership inventory.
+`validate_documentation_topology.py` enforces the durable post-DPTN structure:
 
-`validate_ckr_status.py` enforces contiguous CKR-A–K progression and keeps Implementation 001-A blocked until CKR-K exit.
+- `docs/index.md` is repository-native discovery;
+- generated `knowledge/` is OKF compatibility only and matches its generator;
+- current semantic-owner roots remain first-class directories selected by the CKR ledger;
+- retired compatibility/migration namespaces do not reappear as current paths;
+- current agent/rule/implementation routing does not depend on retired paths;
+- the completed DPTN program and phase tooling remain preserved under history as provenance only;
+- the accepted 24-concept / 1,237-stable-ID / ARCH-001–500 baseline remains intact;
+- Implementation 001-A is **NEXT / READY / NOT STARTED**, not implicitly started by DPTN exit.
 
-These checks protect documentation authority. They do not prove semantic equivalence of a future candidate by themselves; each migration group still performs domain-specific semantic-conservation review before cutover.
+Phase-specific DPTN validators/guards are historical execution evidence and are no longer part of the active conformance path. This avoids keeping migration scaffolding as a permanent second operating framework.
+
+Completed CKR validators may reconstruct accepted-era paths only inside the dedicated ephemeral compatibility wrapper. That compatibility projection is test reproducibility, not current routing or authority.
 
 ## Failure semantics
 
 A failed conformance check means a repository configuration, routing, workflow, status, reference, context-budget, compatibility-evidence, reviewed vendor dependency, security/lifecycle or documentation-authority invariant is not conformant.
 
-It does **not** mean a monitored pipeline/data source/DMTZ runtime/provider runtime/Databricks workspace is unhealthy or failed.
-
-Conversely, PASS does not prove application behavior, provider compatibility, Databricks target capability, causal truth or production readiness.
+It does **not** mean a monitored pipeline/data source/DMTZ runtime/provider runtime/Databricks workspace is unhealthy or failed. Conversely, PASS does not prove application behavior, provider compatibility, Databricks target capability, causal truth or production readiness.
 
 ## Negative controls
 
-`scripts/agentic/test_conformance_guards.py` copies the repository into a temporary directory and injects bounded defects. Current controls cover:
+`test_documentation_topology_guards.py` protects the final topology against reintroduced compatibility/migration roots, lost DPTN exit provenance, semantic/stable-ID count drift, weakened history boundaries, generated-OKF misrouting, restored phase tooling, stale canonical-path routing and accidental implementation start.
 
-- malformed OKF metadata;
-- provider-specific portable-skill metadata;
-- accidental `alwaysApply: true` Cursor routing;
-- persistent-context overflow;
-- stale ADF status;
-- broken OKF resource routing;
-- unaccepted `ARCH-501` citation;
-- fabricated provider runtime support;
-- checked-in high-confidence credential;
-- expired provider security-review horizon;
-- automatic Databricks vendor-skill expansion;
-- deferred model skill entering the initial vendor profile;
-- **fabricated CKR canonicalization without canonical target evidence**;
-- **canonical target moved outside `docs/canonical/`**;
-- **stale CKR implementation-blocking status**.
-
-The temporary checkout is discarded.
+`test_conformance_guards.py` remains the cross-cutting negative-control suite for shared authority, CKR/semantic, adapter, runtime-evidence, vendor-skill and stable-reference failures.
 
 ## Databricks boundary
 
-Databricks vendor skills remain reviewed operational dependencies under the accepted addendum. Local ignored materialization remains a future Implementation 001-A environment check after CKR unlocks implementation. Managed Databricks MCP servers remain outside the accepted boundary.
+Databricks vendor skills remain reviewed operational dependencies under the accepted addendum. Local ignored materialization remains future implementation-environment work. Managed Databricks MCP servers remain outside the accepted boundary.
 
 ## Secret-scanning boundary
 
@@ -93,18 +76,8 @@ The checked-in agentic secret scanner remains a high-confidence repository guard
 
 ## Drift report
 
-`run_conformance.py` reports:
-
-- PASS/FAIL for deterministic checks;
-- current provider compatibility state;
-- OKF stale/deprecated counts;
-- explicit CKR documentation-authority notes;
-- the ADF-G deferred-runtime condition;
-- Databricks vendor-skill/materialization boundaries;
-- the non-domain-health disclaimer.
+`run_conformance.py` reports deterministic PASS/FAIL checks, current provider compatibility state, generated-knowledge lifecycle state, CKR documentation-authority notes, final-topology state, the ADF-G deferred-runtime condition, vendor-skill/materialization boundaries, and the non-domain-health disclaimer.
 
 ## CI contract
 
-`.github/workflows/agentic-conformance.yml` runs the canonical command on relevant ADF, CKR, canonical-knowledge, design-history routing, implementation-routing and agentic changes.
-
-The job requires only repository checkout and Python. It intentionally does not require coding-agent runtimes, Databricks credentials/workspace connectivity, production data or external mutation.
+`.github/workflows/agentic-conformance.yml` runs the canonical command on relevant agentic, current semantic-owner, routing, implementation and history/compatibility changes. The job requires only repository checkout and Python; it intentionally does not require coding-agent runtimes, Databricks credentials/workspace connectivity, production data or external mutation.

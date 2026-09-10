@@ -10,7 +10,7 @@ alwaysApply: false
 
 # Investigation, reasoning, Explanation
 
-Use `docs/implementation/agent_reference_index.md` to locate REF/EXPL/OPS contracts, Phase 010 Group 06, and Implementation 005/006.
+Use `docs/implementation/agent_reference_index.md`; current owners are `docs/experience/`, `docs/contracts/evidence-time-causality/`, `docs/contracts/operations/`, and `docs/architecture/investigation-reasoning-replay-explanation.md`, with Implementations 005/006 under `docs/implementation/`.
 
 Preserve directly:
 

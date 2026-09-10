@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "phase": "DPTN-D",
+  "status": "accepted",
+  "scope": "foundation_ckr_operational_policy_decomposition",
+  "authorized_move_ids": ["MOVE-015", "MOVE-016"],
+  "semantic_change": false,
+  "implementation_change": false,
+  "principles": [
+    "mixed_lifecycle_bulk_move_forbidden",
+    "file_level_classification_required",
+    "durable_operational_policy_remains_current",
+    "completed_program_evidence_moves_to_history",
+    "history_never_establishes_current_authority",
+    "broad_agent_and_okf_rebinding_deferred_to_DPTN-F"
+  ],
+  "ckr": {
+    "source_root": "docs/canonical_knowledge_retrofit",
+    "history_root": "docs/history/retrofits/ckr",
+    "retain_current": [
+      "README.md",
+      "authority_model.md",
+      "canonical_document_template.md",
+      "canonical_ownership_inventory.json",
+      "canonical_ownership_inventory.md",
+      "migration_contract.md"
+    ],
+    "move_history_patterns": [
+      "ckr_*",
+      "fixtures/**"
+    ],
+    "role_after": "current_operational_authority_and_routing_mechanics"
+  },
+  "adf": {
+    "source_root": "docs/agentic_development_foundation",
+    "history_root": "docs/history/foundations/adf",
+    "move_history": [
+      "01_adf_a_authority_scope_boundary.md",
+      "02_adf_b_okf_knowledge_plane.md",
+      "03_adf_c_instruction_tool_adapters.md",
+      "04_adf_d_portable_skills_workflows.md",
+      "05_adf_e_context_reference_maintenance.md",
+      "06_adf_f_conformance_validation_ci.md",
+      "07_adf_g_tool_compatibility_operating_model.md",
+      "08_adf_h_security_trust_lifecycle_governance.md",
+      "adf_a_execution_review.md",
+      "adf_b_execution_review.md",
+      "adf_c_execution_review.md",
+      "adf_d_execution_review.md",
+      "adf_e_execution_review.md",
+      "adf_f_execution_review.md",
+      "adf_g_execution_review.md",
+      "adf_h_execution_review.md",
+      "databricks_agent_skills_addendum_execution_review.md",
+      "design_exit_review.md",
+      "execution_exit_criteria.md",
+      "execution_exit_review.md",
+      "fixtures/**"
+    ],
+    "retain_current_reason": {
+      "adf_g_progression_exception.md": "current bounded verification debt contract",
+      "adf_g_runtime_probe.md": "still-actionable ADF-G-XT01 procedure",
+      "adf_h_security_baseline.md": "current reviewed provider security baseline",
+      "runtime_compatibility_evidence.json": "live deferred-verification evidence",
+      "tool_lifecycle_review.json": "live lifecycle review state"
+    },
+    "role_after": "current_agentic_operational_policy_configuration_and_live_residuals"
+  },
+  "conservation": {
+    "concepts": 24,
+    "stable_ids": 1237,
+    "stable_families": 8,
+    "architecture_ids": 500,
+    "implementation_001_a": "blocked_not_started"
+  },
+  "next": "DPTN-E"
+}

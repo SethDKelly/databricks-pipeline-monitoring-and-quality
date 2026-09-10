@@ -1,13 +1,20 @@
 ---
 type: "Domain Routing Reference"
-title: "Source acquisition, capability and integration reliability"
-description: "Route current source capability and acquisition/adapter architecture to canonical owners."
-resource: "../../docs/canonical/contracts/integration/README.md"
-tags: ["dmtz", "acquisition", "integration", "coverage"]
+title: "Source acquisition and integration"
+description: "Route to current source acquisition, integration, evidence availability, and adapter contracts."
+resource: "../../docs/contracts/integration/README.md"
+tags: ["dmtz", "domain", "generated"]
 status: "stable"
+generated: "scripts/agentic/generate_okf_projection.py"
 ---
-# Routing
+# Use
 
-For INTG-001–INTG-270 source capability, authority, coverage, replay, disclosure, quota/cost and integration-health semantics, start with the canonical [integration index](../../docs/canonical/contracts/integration/README.md). For ARCH-133–ARCH-190 acquisition/adapter realization, use the canonical [source acquisition/adapter/integration-health architecture](../../docs/canonical/architecture/source-acquisition-adapter-integration-health.md).
+**GENERATED OKF PROJECTION — DO NOT HAND-EDIT.** Source: `docs/routing/okf_projection.json`.
 
-Critical boundary: missing, partial, failed or unauthorized acquisition is not a negative domain fact; source availability and operational feasibility do not create authority or truth. OKF is routing only.
+Primary route: [Source acquisition and integration](../../docs/contracts/integration/README.md).
+
+Related current routes:
+
+- [source-acquisition-adapter-integration-health.md](../../docs/architecture/source-acquisition-adapter-integration-health.md)
+
+This projection is routing only. It does not establish semantic, authorization, evidence, health, causal, implementation, or deployment authority.

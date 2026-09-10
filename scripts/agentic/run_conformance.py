@@ -3,39 +3,65 @@ from __future__ import annotations
 import argparse,datetime as dt,json,subprocess,sys
 from pathlib import Path
 CHECKS=(
-('documentation consistency','scripts/check_docs_consistency.py',[]),('OKF structure/resources','scripts/agentic/validate_okf.py',[]),('tool adapters','scripts/agentic/validate_agent_adapters.py',[]),('portable skills','scripts/agentic/validate_agent_skills.py',[]),('agentic references','scripts/agentic/validate_agentic_references.py',['--repo','{repo}']),('ADF status drift','scripts/agentic/validate_status_drift.py',['--repo','{repo}']),('canonical knowledge authority','scripts/agentic/validate_canonical_knowledge.py',['--repo','{repo}']),('CKR-B foundation semantic coverage','scripts/agentic/validate_ckr_b_foundation.py',['--repo','{repo}']),('CKR-C concept/SYN semantic coverage','scripts/agentic/validate_ckr_c_concepts.py',['--repo','{repo}']),('CKR-D evidence/authority semantic coverage','scripts/agentic/validate_ckr_d_evidence_authority.py',['--repo','{repo}']),('CKR-E health/quality semantic coverage','scripts/agentic/validate_ckr_e_health_quality.py',['--repo','{repo}']),('CKR-F operations semantic coverage','scripts/agentic/validate_ckr_f_operations.py',['--repo','{repo}']),('CKR-G experience semantic coverage','scripts/agentic/validate_ckr_g_experience.py',['--repo','{repo}']),('CKR-H integration semantic coverage','scripts/agentic/validate_ckr_h_integration.py',['--repo','{repo}']),('CKR-I architecture semantic coverage','scripts/agentic/validate_ckr_i_architecture.py',['--repo','{repo}']),('CKR-I architecture negative controls','scripts/agentic/test_ckr_i_architecture_guards.py',['--repo','{repo}']),('CKR-J routing/stable-reference coverage','scripts/agentic/validate_ckr_j_routing.py',['--repo','{repo}']),('CKR-J routing negative controls','scripts/agentic/test_ckr_j_routing_guards.py',['--repo','{repo}']),('CKR-K consolidation/provenance exit','scripts/agentic/validate_ckr_k_exit.py',['--repo','{repo}']),('CKR-K exit negative controls','scripts/agentic/test_ckr_k_exit_guards.py',['--repo','{repo}']),('CKR status drift','scripts/agentic/validate_ckr_status.py',['--repo','{repo}']),('DPTN-A topology authority/inventory','scripts/agentic/validate_dptn_a_topology.py',['--repo','{repo}']),('DPTN-A topology negative controls','scripts/agentic/test_dptn_a_topology_guards.py',['--repo','{repo}']),('DPTN-B history relocation/collision','scripts/agentic/validate_dptn_b_history.py',['--repo','{repo}']),('DPTN-B history negative controls','scripts/agentic/test_dptn_b_history_guards.py',['--repo','{repo}']),('DPTN-C canonical promotion','scripts/agentic/validate_dptn_c_promotion.py',['--repo','{repo}']),('DPTN-C promotion negative controls','scripts/agentic/test_dptn_c_promotion_guards.py',['--repo','{repo}']),('DPTN status drift','scripts/agentic/validate_dptn_status.py',['--repo','{repo}']),('fixture catalog','scripts/agentic/validate_fixture_catalog.py',['--repo','{repo}']),('context budgets','scripts/agentic/measure_context_budget.py',['{repo}']),('ADF-G compatibility evidence','scripts/agentic/validate_adf_g_compatibility.py',['--repo','{repo}']),('Databricks Agent Skills addendum','scripts/agentic/validate_databricks_agent_skills.py',['--repo','{repo}']),('agentic secret scan','scripts/agentic/scan_agentic_secrets.py',['--repo','{repo}']),('ADF-H security/lifecycle governance','scripts/agentic/validate_adf_h_governance.py',['--repo','{repo}']))
-
+('documentation consistency','scripts/check_docs_consistency.py',[]),
+('OKF generated projection','scripts/agentic/generate_okf_projection.py',['--repo','{repo}','--check']),
+('OKF structure/resources','scripts/agentic/validate_okf.py',[]),
+('tool adapters','scripts/agentic/validate_agent_adapters.py',[]),
+('portable skills','scripts/agentic/validate_agent_skills.py',[]),
+('agentic references','scripts/agentic/validate_agentic_references.py',['--repo','{repo}']),
+('ADF status drift','scripts/agentic/validate_status_drift.py',['--repo','{repo}']),
+('canonical knowledge authority','scripts/agentic/validate_canonical_knowledge.py',['--repo','{repo}']),
+('CKR-B foundation semantic coverage','scripts/agentic/validate_ckr_b_foundation.py',['--repo','{repo}']),
+('CKR-C concept/SYN semantic coverage','scripts/agentic/validate_ckr_c_concepts.py',['--repo','{repo}']),
+('CKR-D evidence/authority semantic coverage','scripts/agentic/validate_ckr_d_evidence_authority.py',['--repo','{repo}']),
+('CKR-E health/quality semantic coverage','scripts/agentic/validate_ckr_e_health_quality.py',['--repo','{repo}']),
+('CKR-F operations semantic coverage','scripts/agentic/validate_ckr_f_operations.py',['--repo','{repo}']),
+('CKR-G experience semantic coverage','scripts/agentic/validate_ckr_g_experience.py',['--repo','{repo}']),
+('CKR-H integration semantic coverage','scripts/agentic/validate_ckr_h_integration.py',['--repo','{repo}']),
+('CKR-I architecture semantic coverage','scripts/agentic/validate_ckr_i_architecture.py',['--repo','{repo}']),
+('CKR-I architecture negative controls','scripts/agentic/test_ckr_i_architecture_guards.py',['--repo','{repo}']),
+('CKR-J routing/stable-reference coverage','scripts/agentic/validate_ckr_j_routing.py',['--repo','{repo}']),
+('CKR-J routing negative controls','scripts/agentic/test_ckr_j_routing_guards.py',['--repo','{repo}']),
+('CKR-K consolidation/provenance exit','scripts/agentic/validate_ckr_k_exit.py',['--repo','{repo}']),
+('CKR-K exit negative controls','scripts/agentic/test_ckr_k_exit_guards.py',['--repo','{repo}']),
+('CKR status drift','scripts/agentic/validate_ckr_status.py',['--repo','{repo}']),
+('final documentation topology','scripts/agentic/validate_documentation_topology.py',['--repo','{repo}']),
+('final documentation topology negative controls','scripts/agentic/test_documentation_topology_guards.py',['--repo','{repo}']),
+('fixture catalog','scripts/agentic/validate_fixture_catalog.py',['--repo','{repo}']),
+('context budgets','scripts/agentic/measure_context_budget.py',['{repo}']),
+('ADF-G compatibility evidence','scripts/agentic/validate_adf_g_compatibility.py',['--repo','{repo}']),
+('Databricks Agent Skills addendum','scripts/agentic/validate_databricks_agent_skills.py',['--repo','{repo}']),
+('agentic secret scan','scripts/agentic/scan_agentic_secrets.py',['--repo','{repo}']),
+('ADF-H security/lifecycle governance','scripts/agentic/validate_adf_h_governance.py',['--repo','{repo}']))
 def needs_history_compat(rel:str)->bool:
     name=Path(rel).name
-    return rel in {'scripts/agentic/validate_canonical_knowledge.py','scripts/agentic/validate_agentic_references.py'} or name.startswith('validate_ckr_') or name.startswith('test_ckr_')
-
+    if name=='validate_ckr_status.py':return False
+    return rel=='scripts/agentic/validate_canonical_knowledge.py' or name.startswith('validate_ckr_') or name.startswith('test_ckr_')
 def knowledge_lifecycle(repo):
-    deprecated=stale=0; today=dt.date.today()
+    deprecated=stale=0;today=dt.date.today()
     for path in (repo/'knowledge').rglob('*.md'):
-        text=path.read_text(encoding='utf-8'); deprecated+=int('status: "deprecated"' in text or 'status: deprecated' in text)
+        text=path.read_text(encoding='utf-8');deprecated+=int('status: "deprecated"' in text or 'status: deprecated' in text)
         for line in text.splitlines():
             if line.startswith('stale_after:'):
                 raw=line.split(':',1)[1].strip().strip("\"'")[:10]
-                try: stale+=int(dt.date.fromisoformat(raw)<=today)
-                except ValueError: pass
+                try:stale+=int(dt.date.fromisoformat(raw)<=today)
+                except ValueError:pass
     return deprecated,stale
-
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument('--repo',default='.'); ap.add_argument('--report'); ap.add_argument('--skip-negative-controls',action='store_true'); args=ap.parse_args(); repo=Path(args.repo).resolve(); results=[]
-    compat=repo/'scripts/agentic/run_ckr_with_history_compat.py'
+    ap=argparse.ArgumentParser();ap.add_argument('--repo',default='.');ap.add_argument('--report');ap.add_argument('--skip-negative-controls',action='store_true');args=ap.parse_args();repo=Path(args.repo).resolve();results=[];compat=repo/'scripts/agentic/run_ckr_with_history_compat.py'
     for name,rel,extra in CHECKS:
+        if args.skip_negative_controls and 'negative controls' in name:continue
         expanded=[x.format(repo=str(repo)) for x in extra]
-        if needs_history_compat(rel) and (repo/'docs/history/README.md').is_file(): cmd=[sys.executable,str(compat),rel,*expanded]
-        else: cmd=[sys.executable,str(repo/rel),*expanded]
-        p=subprocess.run(cmd,cwd=repo,text=True,capture_output=True); out=(p.stdout+p.stderr).strip(); results.append((name,p.returncode,out)); print(('PASS' if p.returncode==0 else 'FAIL'),name); print(out) if out else None
+        cmd=[sys.executable,str(compat),rel,*expanded] if needs_history_compat(rel) and (repo/'docs/history/README.md').is_file() else [sys.executable,str(repo/rel),*expanded]
+        p=subprocess.run(cmd,cwd=repo,text=True,capture_output=True);out=(p.stdout+p.stderr).strip();results.append((name,p.returncode,out));print(('PASS' if p.returncode==0 else 'FAIL'),name);print(out) if out else None
     if not args.skip_negative_controls:
-        p=subprocess.run([sys.executable,str(repo/'scripts/agentic/test_conformance_guards.py'),'--repo',str(repo)],cwd=repo,text=True,capture_output=True); out=(p.stdout+p.stderr).strip(); results.append(('negative controls',p.returncode,out)); print(('PASS' if p.returncode==0 else 'FAIL'),'negative controls'); print(out) if out else None
-    compatdata=json.loads((repo/'docs/agentic_development_foundation/tool_compatibility.json').read_text())['tools']; deprecated,stale=knowledge_lifecycle(repo); overall='PASS' if all(c==0 for _,c,_ in results) else 'FAIL'
+        p=subprocess.run([sys.executable,str(repo/'scripts/agentic/test_conformance_guards.py'),'--repo',str(repo)],cwd=repo,text=True,capture_output=True);out=(p.stdout+p.stderr).strip();results.append(('cross-cutting negative controls',p.returncode,out));print(('PASS' if p.returncode==0 else 'FAIL'),'cross-cutting negative controls');print(out) if out else None
+    compatdata=json.loads((repo/'docs/agentic_development_foundation/tool_compatibility.json').read_text())['tools'];deprecated,stale=knowledge_lifecycle(repo);overall='PASS' if all(c==0 for _,c,_ in results) else 'FAIL'
     lines=['# Agentic Conformance Report','',f'**Agentic configuration conformance:** {overall}','','> This report describes repository agentic/documentation-authority configuration health only. It is not DMTZ domain health, data quality, source health, or production readiness.','','## Checks','','| Check | Result |','|---|---|']+[f'| {n} | {"PASS" if c==0 else "FAIL"} |' for n,c,_ in results]+['','## Tool compatibility state','']
-    for tool,data in compatdata.items(): lines.append(f'- **{tool}:** `{data.get("support_status","unknown")}` / runtime `{data.get("runtime_status","unknown")}`')
-    lines+=['','## Knowledge lifecycle','',f'- Deprecated knowledge entries: **{deprecated}**',f'- Stale knowledge entries: **{stale}**','','## Notes','','- Provider tool-in-the-loop runtime verification remains independent per tool; ADF-EX-17 is deferred under the bounded progression exception.','- ADF and CKR exits are accepted independently of downstream progression; DPTN owns the active pre-implementation documentation-topology gate.','- DPTN-A accepted the topology/move plan; DPTN-B accepted exact-tree history relocation under `docs/history/`.','- DPTN-C may execute MOVE-007 through MOVE-014 only and must conserve exact semantic trees while atomically rebinding the ownership ledger.','- Completed CKR checks use compatibility projection for their accepted-era provenance/path assumptions; DPTN-C validation itself inspects the real current topology.','- `docs/history/` is provenance-only and cannot establish current semantic authority.','- Implementation 001-A remains blocked until DPTN-G exit acceptance.','- CKR-B protects the canonical foundation/glossary cutover.','- CKR-C protects the 24-concept catalog and SYN-001–SYN-035.','- CKR-D protects REF-001–REF-030, AUTH-001–AUTH-053 and the authority vocabulary.','- CKR-E protects HLTH-001–HLTH-066 from omission, health-axis collapse, blind propagation and readiness/control conflation.','- CKR-F protects OPS-001–OPS-123 from omission, topology/status propagation, plan/runtime collapse, localization/causal shortcuts, exposure/Impact collapse and Gate/Safeguard conflation.','- CKR-G protects EXPL-001–EXPL-160 from truth/projection collapse, confidence scoring, negative-evidence dilution, disclosure overstatement, sibling-state propagation and historical-view rewriting.','- CKR-H protects INTG-001–INTG-270 from source-availability/authority collapse, timestamp-based joins, negative-evidence dilution, runtime/version overclaiming, Lineage/exposure/Impact collapse, control overstatement and historical-replay rewriting.','- CKR-I protects ARCH-001–ARCH-500 and the frozen reference architecture.','- CKR-J protects deterministic current stable-ID resolution and separate history discovery.','- CKR-K protects whole-retrofit ownership closure, provenance/history preservation and dual-authority exclusion.','- Databricks vendor skills remain reviewed operational dependencies, not semantic authority.','- Agentic secret scanning is a high-confidence repository guard, not organization-wide secret scanning.','']
+    for tool,data in compatdata.items():lines.append(f'- **{tool}:** `{data.get("support_status","unknown")}` / runtime `{data.get("runtime_status","unknown")}`')
+    lines+=['','## Knowledge lifecycle','',f'- Deprecated generated knowledge entries: **{deprecated}**',f'- Stale generated knowledge entries: **{stale}**','','## Notes','','- ADF-EX-17 provider runtime verification remains deferred.','- DPTN-A–G and DPTN exit are accepted; the completed normalization record is provenance under `docs/history/retrofits/dptn/`.','- `docs/index.md` is repository-native discovery; top-level `knowledge/` is deterministic generated OKF compatibility output.','- Current agent/rule/reference validation is bound to first-class owner paths and does not fall back to history.','- Completed CKR checks alone may use ephemeral accepted-era semantic/evidence/routing projections.','- `docs/history/` is provenance-only and cannot establish current semantic or operational-policy authority.','- Implementation 001-A is NEXT / READY / NOT STARTED and still requires explicit human selection before implementation begins.','- Databricks vendor skills remain reviewed operational dependencies, not semantic authority.','']
     report='\n'.join(lines)
     if args.report:
-        out=Path(args.report); out=out if out.is_absolute() else repo/out; out.write_text(report,encoding='utf-8')
-    print(report); return 0 if overall=='PASS' else 1
-if __name__=='__main__': raise SystemExit(main())
+        out=Path(args.report);out=out if out.is_absolute() else repo/out;out.write_text(report,encoding='utf-8')
+    print(report);return 0 if overall=='PASS' else 1
+if __name__=='__main__':raise SystemExit(main())

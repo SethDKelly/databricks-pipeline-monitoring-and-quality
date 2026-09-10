@@ -1,10 +1,11 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.3",
   "reviewed_on": "2026-09-02",
   "authority": {
     "shared_instructions": "AGENTS.md",
     "scope_policy": "docs/agentic_development_foundation/authority_scope_policy.md",
-    "knowledge_entry": "knowledge/index.md",
+    "knowledge_entry": "docs/index.md",
+    "okf_compatibility_entry": "knowledge/index.md",
     "workflow_source": ".agents/skills",
     "implementation_status": "docs/implementation/README.md"
   },
@@ -22,10 +23,12 @@
       "runtime_verified_on": null,
       "instruction_surfaces": ["AGENTS.md", ".cursor/rules/*.mdc"],
       "scoped_rules": ".cursor/rules/*.mdc",
-      "knowledge_entry": "knowledge/index.md",
+      "knowledge_entry": "docs/index.md",
+      "okf_compatibility_entry": "knowledge/index.md",
       "workflow_mechanism": "native repository Agent Skills at .agents/skills/<name>/SKILL.md; documented explicit invocation /<skill-name>; implicit matching may occur inside the current human task",
       "verification_owner": "ADF-G",
       "notes": [
+        "Repository-native discovery uses docs/index.md; generated knowledge/index.md remains an OKF v0.2 compatibility entry only.",
         "Project rules remain relevance/file scoped and no ADF rule is intentionally alwaysApply=true.",
         "Cursor natively discovers .agents/skills and also Claude/Codex skill directories; DMTZ therefore avoids duplicate semantic skill copies.",
         "A root CLAUDE.md is intentionally not used because Cursor CLI also reads it as project instructions; Claude uses .claude/CLAUDE.md instead.",
@@ -39,11 +42,13 @@
       "runtime_verified_on": null,
       "instruction_surfaces": [".claude/CLAUDE.md", "AGENTS.md via @../AGENTS.md import"],
       "scoped_rules": ".claude/rules/*.md supported; none currently required",
-      "knowledge_entry": "knowledge/index.md",
+      "knowledge_entry": "docs/index.md",
+      "okf_compatibility_entry": "knowledge/index.md",
       "workflow_mechanism": "thin .claude/commands/<name>.md bridges invoke the canonical .agents/skills/<name>/SKILL.md workflow with /<name>; no duplicate semantic .claude/skills copy",
       "diagnostics": ["/context", "/memory", "/skills", "/doctor"],
       "verification_owner": "ADF-G",
       "notes": [
+        "Repository-native discovery uses docs/index.md; generated knowledge/index.md remains available for explicit OKF compatibility.",
         "Claude Code reads CLAUDE.md rather than AGENTS.md directly; the checked-in project bridge imports shared AGENTS.md.",
         "Project-native skills normally live under .claude/skills; existing .claude/commands remain supported and DMTZ uses them as thin compatibility bridges.",
         "Auto-memory is noncanonical.",
@@ -58,10 +63,12 @@
       "runtime_verified_on": null,
       "instruction_surfaces": ["AGENTS.md"],
       "scoped_rules": "nested AGENTS.md supported when future directory-specific need is demonstrated",
-      "knowledge_entry": "knowledge/index.md",
+      "knowledge_entry": "docs/index.md",
+      "okf_compatibility_entry": "knowledge/index.md",
       "workflow_mechanism": "repository Agent Skills at .agents/skills/<name>/SKILL.md; native selection/discovery is convenience while canonical Markdown remains usable directly",
       "verification_owner": "ADF-G",
       "notes": [
+        "Repository-native discovery uses docs/index.md; generated knowledge/index.md remains available for explicit OKF compatibility.",
         "Codex discovers repository AGENTS.md instructions from project root toward the working directory.",
         "No Codex-specific semantic rulebook is required.",
         "Model identity/version is intentionally not pinned by repository semantic authority.",
@@ -70,8 +77,8 @@
     }
   },
   "deferred": [
-    "provider runtime smoke execution for Cursor, Claude Code and Codex (ADF-G acceptance remains open until actual runtimes are exercised)",
-    "long-term tool/standard review horizon (ADF-H)",
+    "provider runtime smoke execution for Cursor, Claude Code and Codex under ADF-G-XT01",
+    "long-term tool/standard review horizon",
     "autonomous delegation/orchestration"
   ]
 }

@@ -1,15 +1,16 @@
 ---
-type: "Tool Compatibility Reference"
+type: "Project Authority"
 title: "Agentic Development Foundation"
-description: "Route to the completed human-directed Agentic Development Foundation, accepted CKR exit, active DPTN gate and residual verification debt."
+description: "Route to durable human-directed agentic operating policy and residual obligations."
 resource: "../../docs/agentic_development_foundation/README.md"
-tags: ["dmtz", "agentic", "tooling"]
+tags: ["dmtz", "project", "generated"]
 status: "stable"
+generated: "scripts/agentic/generate_okf_projection.py"
 ---
 # Use
 
-Follow the [Agentic Development Foundation README](../../docs/agentic_development_foundation/README.md) and [Execution Exit Review](../../docs/agentic_development_foundation/execution_exit_review.md) for the accepted ADF result.
+**GENERATED OKF PROJECTION — DO NOT HAND-EDIT.** Source: `docs/routing/okf_projection.json`.
 
-ADF exit remains accepted; ADF-EX-17 remains bounded deferred verification (`ADF-G-XT01`). CKR is complete/accepted. DPTN-A–C are complete/accepted, **DPTN-D is NEXT / READY / NOT STARTED**, and Implementation 001-A remains BLOCKED / NOT STARTED on DPTN exit.
+Primary route: [Agentic Development Foundation](../../docs/agentic_development_foundation/README.md).
 
-DPTN-C completed the path-only MOVE-007–MOVE-014 current-owner promotion. The CKR ownership inventory selects the first-class current owners; `docs/history/` and any legacy compatibility redirect are non-authoritative. Autonomous development and DPTN-D/E/F/G remain outside the accepted current scope until explicitly selected. This routing entry does not authorize product implementation.
+This projection is routing only. It does not establish semantic, authorization, evidence, health, causal, implementation, or deployment authority.

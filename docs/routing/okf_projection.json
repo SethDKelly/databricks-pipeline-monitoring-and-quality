@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "status": "active",
+  "authority": "DERIVED ROUTING ONLY — NOT SEMANTIC AUTHORITY",
+  "discovery_root": "docs/index.md",
+  "generated_root": "knowledge",
+  "generator": "scripts/agentic/generate_okf_projection.py",
+  "okf_version": "0.2",
+  "domains": [
+    {"name":"evidence-temporal","title":"Evidence, temporal knowledge, and causality","description":"Route to current evidence, temporal-knowledge, correction, and causal contracts.","resource":"docs/contracts/evidence-time-causality/README.md","related":["docs/architecture/evidence-provenance-temporal-persistence.md"]},
+    {"name":"identity-governance","title":"Identity, scope, authority, and governance","description":"Route to current identity, authority, authorization, governance, and disclosure contracts.","resource":"docs/authority/README.md","related":["docs/concepts/README.md","docs/architecture/identity-scope-authority-authorization-disclosure.md"]},
+    {"name":"acquisition","title":"Source acquisition and integration","description":"Route to current source acquisition, integration, evidence availability, and adapter contracts.","resource":"docs/contracts/integration/README.md","related":["docs/architecture/source-acquisition-adapter-integration-health.md"]},
+    {"name":"health-lineage-impact","title":"Health, lineage, change, investigation, and impact","description":"Route to current health, lineage, change, investigation, exposure, and impact contracts.","resource":"docs/contracts/README.md","related":["docs/contracts/health-quality-timing/README.md","docs/contracts/operations/README.md","docs/contracts/integration/README.md","docs/architecture/runtime-provenance-health-lineage-impact.md"]},
+    {"name":"reasoning-explanation","title":"Reasoning, questioning, and explanation","description":"Route to current questioning, reasoning, replay, explanation, and disclosure experience contracts.","resource":"docs/experience/README.md","related":["docs/concepts/README.md","docs/contracts/evidence-time-causality/README.md","docs/contracts/operations/README.md","docs/contracts/integration/README.md","docs/architecture/investigation-reasoning-replay-explanation.md"]},
+    {"name":"active-control","title":"Active control, safeguards, and gates","description":"Route to current active-control, safeguard, gate, proof, and high-consequence authority contracts.","resource":"docs/architecture/active-control.md","related":["docs/contracts/operations/propagation-safeguard.md","docs/contracts/operations/execution-gate-control.md","docs/authority/high-consequence-authority.md","docs/contracts/evidence-time-causality/exposure-readiness-control-proof.md"]},
+    {"name":"serving-security","title":"Serving, security, deployment, and operations","description":"Route to current serving, security, disclosure, deployment, and operational architecture.","resource":"docs/architecture/serving-security-deployment-operations.md","related":["docs/authority/disclosure-governance.md","docs/experience/audience-authorization-safe-abstraction.md","docs/contracts/integration/explanation-replay-disclosure-sources.md"]}
+  ],
+  "project": [
+    {"name":"authority","title":"DMTZ repository authority","description":"Route to the shared repository constitution and human-directed authority model.","resource":"AGENTS.md","related":["docs/agentic_development_foundation/authority_scope_policy.md"]},
+    {"name":"canonical-knowledge","title":"Canonical knowledge and ownership","description":"Route to durable CKR authority mechanics and the current semantic ownership ledger.","resource":"docs/canonical_knowledge_retrofit/README.md","related":["docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json","docs/history/README.md"]},
+    {"name":"documentation-topology","title":"Documentation topology","description":"Route to the normalized current documentation topology and discovery contract.","resource":"docs/index.md","related":["docs/README.md"]},
+    {"name":"stable-references","title":"Canonical stable-ID resolution","description":"Route to stable-reference policy and deterministic current-owner resolution.","resource":"docs/agentic_development_foundation/stable_reference_policy.md","related":[]},
+    {"name":"architecture","title":"Frozen technical architecture","description":"Route to the accepted reference architecture and architecture contracts.","resource":"docs/architecture/reference-architecture.md","related":["docs/architecture/README.md"]},
+    {"name":"implementation-program","title":"Implementation program","description":"Route to the current implementation program state and package sequence.","resource":"docs/implementation/README.md","related":[]},
+    {"name":"agentic-foundation","title":"Agentic Development Foundation","description":"Route to durable human-directed agentic operating policy and residual obligations.","resource":"docs/agentic_development_foundation/README.md","related":[]},
+    {"name":"tool-compatibility","title":"Coding-agent tool compatibility","description":"Route to reviewed coding-agent compatibility and runtime evidence.","resource":"docs/agentic_development_foundation/tool_compatibility_matrix.md","related":["docs/agentic_development_foundation/runtime_compatibility_evidence.json"]},
+    {"name":"databricks-agent-skills","title":"Databricks Agent Skills integration","description":"Route to the reviewed Databricks Agent Skills profile and operating boundary.","resource":"docs/agentic_development_foundation/databricks_agent_skills_addendum.md","related":["docs/agentic_development_foundation/databricks_vendor_skills_profile.json"]}
+  ],
+  "workflow_source": ".agents/skills/*/SKILL.md",
+  "implementation_source": "docs/implementation/[0-9][0-9][0-9]_*/README.md",
+  "expected_counts": {"domains":7,"project":9,"workflow_catalog_entries":13,"implementation_catalog_entries":11,"concept_documents":16,"total_markdown_files":22}
+}

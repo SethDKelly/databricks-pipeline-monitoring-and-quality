@@ -4,7 +4,8 @@
 
 This file exists only to bridge Claude Code to DMTZ's shared repository authority.
 
-- Use `knowledge/index.md` for portable discovery when the relevant canonical resource is not already known.
+- Use `docs/index.md` for repository-native discovery when the relevant current owner is not already known; generated `knowledge/index.md` is OKF v0.2 compatibility only.
+- For a known stable ID, use `python3 scripts/agentic/resolve_stable_id.py <ID>` directly; use `--history` only for explicit provenance/history work.
 - Canonical human-directed workflows live in `.agents/skills/<name>/SKILL.md`.
 - Invoke the DMTZ workflow names through the thin `.claude/commands/<name>.md` bridges; those commands add no workflow semantics of their own.
 - Keep Claude auto-memory, chat context, and tool-native state advisory only; correctness-critical facts belong in repository artifacts.

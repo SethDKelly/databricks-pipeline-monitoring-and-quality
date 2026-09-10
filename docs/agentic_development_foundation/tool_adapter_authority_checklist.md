@@ -1,10 +1,10 @@
 # Tool Adapter Authority Checklist
 
-**Status:** ACCEPTED — ADF-C repository-adapter audit complete; runtime compatibility continues in ADF-G
+**Status:** ACCEPTED — ADF-C repository-adapter audit complete / ROUTING REBOUND DPTN-F
 
 Use this checklist whenever a repository-level adapter is added or materially changed for Cursor, Claude Code, Codex or another supported coding agent.
 
-The checklist verifies that a tool adapter preserves the shared authority/scope model. It does **not** certify a vendor binary/version at runtime; ADF-G owns tool-in-the-loop smoke verification and ADF-F owns CI enforcement.
+The checklist verifies that a tool adapter preserves the shared authority/scope model. It does **not** certify a vendor binary/version at runtime; ADF-G owns tool-in-the-loop verification and repository conformance owns deterministic adapter checks.
 
 ## Shared-authority checks
 
@@ -30,44 +30,43 @@ The checklist verifies that a tool adapter preserves the shared authority/scope 
 - [x] Native memory/auto-memory/chat history remains noncanonical.
 - [x] No adapter prefers remembered state over repository status/docs.
 - [x] Important persistent discoveries must be promoted to repository artifacts.
-- [x] Portable discovery begins at `knowledge/index.md` when the canonical location is not already known.
+- [x] Repository-native discovery begins at `docs/index.md` when the current location is not already known.
+- [x] Generated `knowledge/index.md` is identified only as an OKF v0.2 compatibility entry.
+- [x] Exact stable IDs bypass discovery through `scripts/agentic/resolve_stable_id.py`; historical lookup is explicit `--history` only.
 
 ## Acceptance/test checks
 
 - [x] Tool output is evaluated using repository files/tests/traceability/review, not agent/model identity.
 - [x] Loss of a native convenience feature degrades ergonomics, not semantic correctness.
-- [x] Contradictory adapter instructions are detectable through `scripts/agentic/validate_agent_adapters.py` and later ADF-F automation.
+- [x] Contradictory adapter instructions are detectable through `scripts/agentic/validate_agent_adapters.py` and repository conformance.
 - [x] Persistent adapter surfaces remain intentionally small.
 
-## ADF-C surface audit
+## Current surface audit
 
-| Surface | Role | ADF-C result | Follow-up owner |
-|---|---|---|---|
-| root `AGENTS.md` | shared repository constitution | PASS | ADF-H lifecycle review |
-| `knowledge/index.md` | portable discovery entry | PASS | ADF-E/F maintenance/conformance |
-| `.cursor/rules/00-implementation-routing.mdc` | scoped current-work router | PASS | ADF-E/F |
-| remaining `.cursor/rules/*.mdc` | scoped domain mechanics/guardrails | PASS; no intentional `alwaysApply: true` rules | ADF-F/G runtime confirmation |
-| `.cursor/BUGBOT.md` | separate PR-review policy | PASS; does not redefine implementation authority | ADF-F |
-| `.claude/CLAUDE.md` | Claude Code compatibility bridge | PASS; imports `../AGENTS.md`, adds only Claude mechanics | ADF-G runtime smoke |
-| `.claude/rules/` | optional Claude path-scoped mechanics | NOT REQUIRED by ADF-C; avoid until demonstrated need | future scoped need |
-| Codex repository adapter | native root `AGENTS.md` | PASS; no additional semantic adapter introduced | ADF-G runtime smoke |
-| `tool_compatibility.json` | operational compatibility manifest | PASS | ADF-H review horizon |
+| Surface | Role | Result / owner |
+|---|---|---|
+| root `AGENTS.md` | shared repository constitution | current |
+| `docs/index.md` | repository-native discovery root | current; DPTN-F rebound |
+| generated `knowledge/index.md` | OKF compatibility entry | current compatibility only |
+| `.cursor/rules/00-implementation-routing.mdc` | scoped current-work router | current |
+| remaining `.cursor/rules/*.mdc` | scoped domain mechanics/guardrails | current; first-class paths after DPTN-F |
+| `.cursor/BUGBOT.md` | separate PR-review policy | does not redefine implementation authority |
+| `.claude/CLAUDE.md` | Claude Code compatibility bridge | imports `../AGENTS.md`; routes discovery to `docs/index.md` |
+| `.claude/rules/` | optional Claude path-scoped mechanics | avoid until demonstrated need |
+| Codex repository adapter | native root `AGENTS.md` | no additional semantic adapter |
+| `tool_compatibility.json` | operational compatibility manifest | current discovery/compatibility split |
 
 ## Deliberate Claude placement decision
 
-ADF-C uses `.claude/CLAUDE.md`, not root `CLAUDE.md`.
-
-Current Claude Code documentation supports either location and resolves relative `@` imports from the containing file. Current Cursor documentation states that a root `CLAUDE.md` is also loaded as persistent project instructions. Using `.claude/CLAUDE.md` therefore avoids adding a second universal instruction surface to Cursor while allowing Claude Code to import `../AGENTS.md` directly.
-
-This is a tool-mechanics decision, not a change to DMTZ authority.
+DMTZ uses `.claude/CLAUDE.md`, not root `CLAUDE.md`. This avoids adding a second universal instruction surface while allowing Claude Code to import shared `AGENTS.md` directly. This is a tool-mechanics decision, not a change to DMTZ authority.
 
 ## Failure classification
 
-A failure involving only convenience/loading mechanics may be treated as an ADF-G compatibility gap when canonical authority remains available.
+A failure involving only convenience/loading mechanics may be treated as a provider compatibility gap when canonical authority remains available.
 
 The following are **blocking authority failures** and must not be accepted silently:
 
-- a tool adapter claims semantic authority above canonical DMTZ docs/contracts;
+- a tool adapter claims semantic authority above current DMTZ owners;
 - a tool adapter changes the current status source;
 - a review request is configured to edit by default;
 - a tool adapter grants unattended merge/deploy or autonomous scope expansion;

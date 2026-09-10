@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Check and optionally render canonical documentation phase status.
 
-`docs/README.md` is the sole living authority for repository phase progression.
-Historical phase documents are intentionally outside this check unless explicitly
-listed as living documentation below.
+`docs/README.md` remains the living authority for the completed design-phase
+progression rendered into `docs/phase_status.md`. Current repository entry points
+and implementation guidance should reference authoritative documentation rather
+than independently re-declaring a current design phase.
 """
 
 from __future__ import annotations
@@ -24,13 +25,16 @@ LIVING_DOCS = (
     ROOT / "README.md",
     ROOT / "AGENTS.md",
     ROOT / "CONTRIBUTING.md",
+    ROOT / "IMPLEMENTATION.md",
+    ROOT / "docs" / "index.md",
     ROOT / "docs" / "concepts" / "README.md",
-    ROOT / "docs" / "foundation" / "009_initial_roadmap.md",
+    ROOT / "docs" / "implementation" / "README.md",
+    ROOT / "docs" / "implementation" / "AGENTS.md",
 )
 
-# Living documents should reference canonical phase progression rather than
-# independently declaring a current/next phase. Phase-specific/historical docs
-# are intentionally outside LIVING_DOCS and may state status in their own scope.
+# Current entry points should route to the appropriate authority rather than
+# independently maintaining a design-phase status. Historical documents are
+# intentionally outside LIVING_DOCS and may retain status-at-the-time wording.
 FORBIDDEN_CURRENT_STATUS = (
     re.compile(r"repository is currently in \*\*Phase \d{3}", re.IGNORECASE),
     re.compile(r"Phase \d{3}[^\n]*\bis next and has not started\b", re.IGNORECASE),
@@ -84,7 +88,7 @@ def check() -> list[str]:
                 rel = path.relative_to(ROOT)
                 errors.append(
                     f"{rel}: independently maintained current-phase wording: {match.group(0)!r}; "
-                    "reference docs/README.md#current-state instead"
+                    "route through docs/index.md/docs/README.md instead"
                 )
 
     return errors

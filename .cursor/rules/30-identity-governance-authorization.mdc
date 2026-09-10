@@ -10,7 +10,7 @@ alwaysApply: false
 
 # Identity, governance, authorization
 
-Use `docs/implementation/agent_reference_index.md` to locate AUTH contracts, Phase 010 Group 03, and Implementation 002.
+Use `docs/implementation/agent_reference_index.md`; current owners are `docs/authority/` and `docs/architecture/identity-scope-authority-authorization-disclosure.md`, with Implementation 002 at `docs/implementation/002_identity_scope_authority_authorization_runtime/README.md`.
 
 Preserve directly:
 

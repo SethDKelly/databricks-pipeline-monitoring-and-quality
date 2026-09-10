@@ -1,13 +1,22 @@
 ---
 type: "Domain Routing Reference"
-title: "Serving, security, deployment, observability and cost"
-description: "Route serving, disclosure, security, deployment, SLO, resilience and cost work to canonical owners."
-resource: "../../docs/canonical/architecture/serving-security-deployment-operations.md"
-tags: ["dmtz", "serving", "security", "operations", "cost"]
+title: "Serving, security, deployment, and operations"
+description: "Route to current serving, security, disclosure, deployment, and operational architecture."
+resource: "../../docs/architecture/serving-security-deployment-operations.md"
+tags: ["dmtz", "domain", "generated"]
 status: "stable"
+generated: "scripts/agentic/generate_okf_projection.py"
 ---
-# Routing
+# Use
 
-Start with the canonical [serving/security/deployment/operations architecture](../../docs/canonical/architecture/serving-security-deployment-operations.md). For disclosure governance use [AUTH disclosure governance](../../docs/canonical/authority/disclosure-governance.md); for authorization-aware projection use [EXPL audience/authorization/safe abstraction](../../docs/canonical/experience/audience-authorization-safe-abstraction.md); and for source/replay/disclosure feasibility use [INTG Explanation/replay/disclosure sources](../../docs/canonical/contracts/integration/explanation-replay-disclosure-sources.md).
+**GENERATED OKF PROJECTION — DO NOT HAND-EDIT.** Source: `docs/routing/okf_projection.json`.
 
-Critical boundary: operational/platform health is not DMTZ domain health; serving applies current authorization/disclosure without rewriting historical truth. OKF is routing only.
+Primary route: [Serving, security, deployment, and operations](../../docs/architecture/serving-security-deployment-operations.md).
+
+Related current routes:
+
+- [disclosure-governance.md](../../docs/authority/disclosure-governance.md)
+- [audience-authorization-safe-abstraction.md](../../docs/experience/audience-authorization-safe-abstraction.md)
+- [explanation-replay-disclosure-sources.md](../../docs/contracts/integration/explanation-replay-disclosure-sources.md)
+
+This projection is routing only. It does not establish semantic, authorization, evidence, health, causal, implementation, or deployment authority.

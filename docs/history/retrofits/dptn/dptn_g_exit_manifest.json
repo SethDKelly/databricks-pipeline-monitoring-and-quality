@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "phase": "DPTN-G",
+  "status": "accepted",
+  "authorized_move_ids": ["MOVE-020"],
+  "semantic_change": false,
+  "implementation_change": false,
+  "purpose": "Complete documentation-topology normalization by preserving DPTN provenance, retiring temporary compatibility/migration paths, conserving current semantic ownership, and accepting the DPTN exit.",
+  "exit_decision": "accepted",
+  "retirement": {
+    "dptn_program_source": "docs/documentation_topology_normalization",
+    "dptn_history_target": "docs/history/retrofits/dptn",
+    "canonical_compatibility_source": "docs/canonical",
+    "canonical_readme_history_target": "docs/history/routing/canonical-compatibility-pre-dptn-g/README.md",
+    "phase_tooling_history_target": "docs/history/retrofits/dptn/tooling",
+    "live_phase_tooling_retired": true
+  },
+  "durable_operational_residue": {
+    "discovery_root": "docs/index.md",
+    "semantic_owner_ledger": "docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json",
+    "stable_id_resolver": "scripts/agentic/resolve_stable_id.py",
+    "okf_projection_spec": "docs/routing/okf_projection.json",
+    "final_topology_validator": "scripts/agentic/validate_documentation_topology.py",
+    "final_topology_negative_controls": "scripts/agentic/test_documentation_topology_guards.py"
+  },
+  "semantic_owner_tree_shas": {
+    "docs/architecture": "0f1564882f1c8d142c0eb4e5d77eb9ab56e43415",
+    "docs/authority": "c3f7a1436294dff05729d81edbabcbac180833f5",
+    "docs/concepts": "67d418f9d71ca9c64169c813853da514a37166ad",
+    "docs/contracts": "b01663426ff83a79e09a0a05a218638587f86905",
+    "docs/experience": "6e7b89390426ba651c2735baf6d441fc39dafd9c",
+    "docs/invariants": "3e2f3ac5f6b201200fd6bce9cb9cbba92243c8ed",
+    "docs/policies": "4acc2b064198d0a3725d4ff4bdda30e2cb139dff",
+    "docs/reference": "6a3a361d1275f23c601710ba62089f790ae9f3f8"
+  },
+  "generated_okf_tree_sha_after_exit_routing": "01e2a153191fb258b3823377332ef6bdd0f1f4d9",
+  "conservation": {
+    "concepts": 24,
+    "stable_ids": 1237,
+    "stable_families": 8,
+    "architecture_ids": 500,
+    "architecture_range": "ARCH-001..ARCH-500",
+    "adf_exit": "accepted",
+    "ckr_exit": "accepted",
+    "adf_ex_17": "deferred_verification_preserved"
+  },
+  "implementation_001_a": {
+    "status": "next_ready_not_started",
+    "started_by_dptn_exit": false,
+    "requires_explicit_human_selection": true
+  },
+  "history_role": "provenance_only",
+  "next": "Implementation 001-A",
+  "verification_note": "DPTN-G records topology/conservation acceptance only. Provider-runtime verification, product implementation, Databricks deployment capability and production readiness remain separate evidence domains."
+}

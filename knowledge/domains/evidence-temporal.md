@@ -1,13 +1,20 @@
 ---
 type: "Domain Routing Reference"
-title: "Evidence, provenance, temporal and persistence architecture"
-description: "Route current evidence/time and persistence architecture to canonical owners."
-resource: "../../docs/canonical/contracts/evidence-time-causality/README.md"
-tags: ["dmtz", "evidence", "temporal", "persistence"]
+title: "Evidence, temporal knowledge, and causality"
+description: "Route to current evidence, temporal-knowledge, correction, and causal contracts."
+resource: "../../docs/contracts/evidence-time-causality/README.md"
+tags: ["dmtz", "domain", "generated"]
 status: "stable"
+generated: "scripts/agentic/generate_okf_projection.py"
 ---
-# Routing
+# Use
 
-For REF-001–REF-030, start with the canonical [evidence/time/causality index](../../docs/canonical/contracts/evidence-time-causality/README.md). For ARCH-033–ARCH-080 persistence realization, use the canonical [evidence/provenance/temporal/persistence architecture](../../docs/canonical/architecture/evidence-provenance-temporal-persistence.md).
+**GENERATED OKF PROJECTION — DO NOT HAND-EDIT.** Source: `docs/routing/okf_projection.json`.
 
-Critical boundary: current state and later evidence must not rewrite what was known at an earlier knowledge cut. OKF is routing only; canonical owners determine meaning.
+Primary route: [Evidence, temporal knowledge, and causality](../../docs/contracts/evidence-time-causality/README.md).
+
+Related current routes:
+
+- [evidence-provenance-temporal-persistence.md](../../docs/architecture/evidence-provenance-temporal-persistence.md)
+
+This projection is routing only. It does not establish semantic, authorization, evidence, health, causal, implementation, or deployment authority.

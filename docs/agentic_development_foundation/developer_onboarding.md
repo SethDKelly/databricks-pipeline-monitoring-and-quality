@@ -1,6 +1,6 @@
 # DMTZ Developer Onboarding — Agentic Foundation
 
-**Status:** ACCEPTED — ADF-G onboarding baseline
+**Status:** ACCEPTED — ADF-G onboarding baseline / REBOUND DPTN-F
 
 ## Goal
 
@@ -13,10 +13,11 @@ No tool-specific setup creates DMTZ truth. Personal preferences may improve ergo
 Read only what the task requires.
 
 1. Root `AGENTS.md` — shared engineering/agent constitution.
-2. `docs/agentic_development_foundation/README.md` — current ADF state while the foundation is active.
-3. `docs/implementation/README.md` — implementation-program state once implementation work is active.
-4. `knowledge/index.md` — portable progressive-disclosure routing when the exact location is not already known.
+2. `docs/index.md` — repository-native routing/discovery when the exact current owner is not already known.
+3. `docs/documentation_topology_normalization/README.md` — live DPTN state while topology normalization is active.
+4. `docs/implementation/README.md` — implementation-program state once implementation work is active.
 5. One relevant `.agents/skills/<name>/SKILL.md` workflow when a reusable procedure is useful.
+6. Generated `knowledge/index.md` only when an OKF v0.2 compatibility surface is explicitly useful.
 
 Do not preload the full design corpus.
 
@@ -39,7 +40,9 @@ Example:
 python3 scripts/agentic/resolve_stable_id.py AUTH-034
 ```
 
-Use the output as occurrence candidates. Validate the accepted range, inspect all exact occurrences, and identify the owning accepted source through repository authority. Never treat the first search hit as canonical solely because it appeared first.
+Default resolution validates the accepted range, follows the CKR ownership inventory, requires exactly one current stable definition, and returns the deterministic locator `owner_path::AUTH-034`. Read only the minimum surrounding current-owner context required by the task.
+
+Use `--history` only for explicit provenance/rationale/history work. Historical occurrences, redirects, search order and first matches never compete with the current locator.
 
 ## 4. Run repository conformance
 
@@ -58,16 +61,18 @@ A PASS describes agentic repository configuration only. It is not DMTZ domain he
 Expected shared surfaces:
 
 - root `AGENTS.md`;
+- `docs/index.md` for repository-native discovery;
 - scoped `.cursor/rules/*.mdc`;
 - `.agents/skills/`.
 
-Use native rule/skill discovery when it works. If a native convenience is unavailable, read the shared Markdown artifact directly rather than copying DMTZ semantics into another rulebook.
+Use native rule/skill discovery when it works. If a native convenience is unavailable, read the shared repository artifact directly rather than copying DMTZ semantics into another rulebook.
 
 ### Claude Code
 
 Expected shared surfaces:
 
 - `.claude/CLAUDE.md`, which imports `../AGENTS.md`;
+- `docs/index.md` for repository-native discovery;
 - `.claude/commands/<workflow>.md` thin bridges;
 - canonical workflows under `.agents/skills/`.
 
@@ -78,6 +83,7 @@ Use `/context` when available to confirm project memory loading. Claude auto-mem
 Expected shared surfaces:
 
 - root `AGENTS.md` and any future legitimate nested `AGENTS.md` for scoped directories;
+- `docs/index.md` for repository-native discovery;
 - `.agents/skills/`;
 - normal repository read/search/edit/test capabilities.
 
@@ -93,8 +99,9 @@ Before relying on a coding-agent runtime for DMTZ work, perform the ADF-G bounde
 
 The exercise is intentionally read-only and asks the tool to:
 
-- determine current ADF state from repository authority;
-- resolve `AUTH-034` correctly;
+- determine current ADF/DPTN state from repository authority;
+- use `docs/index.md` when discovery is needed;
+- resolve `AUTH-034` to its deterministic current owner;
 - locate the `run-conformance` workflow;
 - report the canonical conformance command;
 - stop without edits or automatic continuation.
@@ -135,7 +142,8 @@ There is no special "AI branch" acceptance model. Agent-authored changes are ord
 A new coding agent can be added without redesigning DMTZ if it can consume or bridge to:
 
 - root/shared repository authority;
-- `knowledge/index.md` progressive disclosure;
+- `docs/index.md` repository-native progressive disclosure;
+- generated `knowledge/index.md` when OKF compatibility is needed;
 - canonical `.agents/skills/` workflows or a thin non-semantic bridge;
 - repository validation and normal Git workflow;
 - A1–A4 human-directed boundaries.

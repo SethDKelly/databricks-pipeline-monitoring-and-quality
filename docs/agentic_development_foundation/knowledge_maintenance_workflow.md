@@ -1,43 +1,56 @@
 # DMTZ Knowledge Routing Maintenance Workflow
 
-**Status:** ACCEPTED — ADF-E / REFINED CKR-J
+**Status:** ACCEPTED — ADF-E / REFINED CKR-J + DPTN EXIT
 
 ## Purpose
 
-Keep the OKF routing projection current when canonical repository material changes without turning every canonical edit into a knowledge rewrite or semantic backflow.
+Keep the authored discovery root and generated OKF compatibility projection aligned with current repository authority without creating semantic backflow or a second hand-maintained routing plane.
 
 ## Trigger
 
-Use this workflow when a change moves/renames a canonical resource referenced by `knowledge/`, changes routing identity/lifecycle or a critical boundary reminder, changes project/domain/workflow routing, deprecates/replaces a route, or changes an external/tool fact represented in knowledge metadata.
+Use this workflow when a change moves/renames a routed current resource, changes domain/project routing identity, adds/removes a repository-owned workflow or implementation package, or changes a critical discovery boundary.
 
-Routine canonical prose/code changes that leave routing accurate do not require ceremonial OKF edits.
+Routine canonical prose changes that leave routing accurate require no OKF rewrite.
 
 ## Procedure
 
-1. Make or review the canonical change first. `knowledge/` never drives semantic changes back into `docs/`.
-2. Run `scripts/agentic/knowledge_impact.py --changed <path>` for changed canonical paths when a local checkout is available.
-3. Review both `RESOURCE` and `BODY-LINK` candidates. A body-link candidate means a concept routes secondarily to that canonical resource; it does not automatically mean the concept is stale.
-4. Ask only whether resource/body route, description, lifecycle, provenance/compatibility metadata, or critical boundary reminder became inaccurate.
-5. If still accurate, make no OKF change.
-6. If inaccurate, update the smallest routing metadata/body necessary. Do not copy contract prose into the knowledge layer.
-7. Stable current-semantic domain resources must remain canonical-first under the CKR-J routing manifest; a regression to Phase 001–010 current ownership is a validation failure.
-8. If a historical route remains useful, keep it explicitly historical/provenance; do not let it compete with the current canonical route.
-9. Record material routing changes in `knowledge/log.md` when the log is being maintained for that change.
-10. Run `scripts/agentic/validate_okf.py`, `scripts/agentic/validate_ckr_j_routing.py`, stable-reference checks and applicable context checks.
-11. If a canonical route is missing and the replacement cannot be established, fail/report routing; do not invent a path or alter canonical semantics to satisfy the projection.
-
-## Changed-source semantics
-
-A canonical file change means **review may be required**, not that every referencing knowledge concept is automatically wrong. Hash equality is not a universal freshness rule.
-
-## Exact stable-reference changes
-
-When canonical target-document structure changes, deterministic stable-ID resolution must still produce exactly one `owner_path::ID`. Missing or duplicate canonical stable definitions fail conformance. Historical occurrences are not fallback current owners.
+1. Make/review the canonical or current operational change first.
+2. If the human/tool-neutral discovery structure changed, update `docs/index.md` minimally.
+3. If a bounded domain/project compatibility route changed, update `docs/routing/okf_projection.json` minimally.
+4. Do **not** hand-edit `knowledge/`.
+5. Regenerate with `python3 scripts/agentic/generate_okf_projection.py --write`.
+6. Run `python3 scripts/agentic/generate_okf_projection.py --check` and `scripts/agentic/validate_okf.py`.
+7. Run stable-reference/current-owner validation when canonical route targets changed.
+8. Run final documentation-topology/current conformance checks as applicable.
+9. If a route cannot be established from current authority, fail/report it; never invent a semantic owner to satisfy routing.
 
 ## Generated versus authored content
 
-Mechanical reverse-reference/impact reports may be generated and rebuilt. Interpretive routing descriptions remain short, reviewable repository content.
+Authored current discovery:
+- `docs/index.md`.
+
+Authored bounded projection input:
+- `docs/routing/okf_projection.json`.
+
+Repository-owned catalogs used mechanically:
+- `.agents/skills/*/SKILL.md`;
+- `docs/implementation/NNN_*/README.md`.
+
+Generated compatibility output:
+- top-level `knowledge/`.
+
+Historical authored routing:
+- `docs/history/routing/okf-pre-dptn-e/`.
+
+Completed topology-normalization provenance:
+- `docs/history/retrofits/dptn/`.
+
+Generated output may be rebuilt freely from its current sources. Historical routing and completed normalization evidence must not be rewritten to match current state.
+
+## Exact stable-reference changes
+
+When canonical target-document structure changes, deterministic stable-ID resolution must still produce exactly one `owner_path::ID`. Missing/duplicate current definitions fail conformance. Historical occurrences and generated OKF entries are never fallback current owners.
 
 ## Failure behavior
 
-Broken links, canonical-route regressions, unresolved moved resources and ambiguous exact-ID owner resolution are explicit routing failures. They never mean the underlying DMTZ constraint disappeared.
+Generated drift, broken routes, missing source catalogs, unresolved moved resources, or ambiguous stable-ID ownership are explicit failures. They never mean the underlying DMTZ constraint disappeared.

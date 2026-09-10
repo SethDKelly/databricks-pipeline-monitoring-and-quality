@@ -2,146 +2,84 @@
 from __future__ import annotations
 
 import argparse
+import json
 import re
 from pathlib import Path
 
-MIRRORS = (
+LIVE_SURFACES = (
     "AGENTS.md",
     "IMPLEMENTATION.md",
     "docs/implementation/README.md",
     "docs/implementation/AGENTS.md",
     "docs/implementation/agent_reference_index.md",
     ".cursor/rules/00-implementation-routing.mdc",
+    "docs/index.md",
 )
-
-POST_EXIT_REQUIRED = {
-    "docs/README.md": (
-        "**CKR state:** CKR-A–CKR-K COMPLETE / ACCEPTED — CKR EXIT ACCEPTED.",
-    ),
-    "docs/canonical/README.md": (
-        "**Authority state:** CANONICALIZATION COMPLETE — CKR EXIT ACCEPTED",
-    ),
-    "docs/agentic_development_foundation/README.md": (
-        "**Current handoff:** ADF EXIT ACCEPTED / CKR EXIT ACCEPTED",
-        "CKR subsequently completed and exited successfully",
-    ),
-    "knowledge/index.md": (
-        "CKR-A–K is complete/accepted",
-    ),
-    "knowledge/project/agentic-foundation.md": (
-        "CKR is complete/accepted",
-    ),
-    "docs/phase_status.md": (
-        "Phase 010 — Technical Architecture: COMPLETE",
-    ),
-}
-
-POST_EXIT_FORBIDDEN = (
+STATE_RE = re.compile(r"^- \*\*CKR-([A-K]) — .*?: (.+?)\.\*\*$", re.M)
+CURRENT_HANDOFF = "Implementation 001-A — NEXT / READY / NOT STARTED"
+FORBIDDEN = (
     "CKR MIGRATION IN PROGRESS",
     "CKR is the active pre-implementation documentation-authority retrofit",
     "Implementation 001-A is blocked until CKR-K",
     "Implementation 001-A remains blocked until CKR-K",
-    "blocks product implementation until CKR-K",
-    "All accepted semantic families are canonicalized through CKR-I.",
-    "CKR-A — Authority Model, Migration Contract & Canonical Ownership Inventory is the current post-ADF work.",
-    "reference.authority_vocabulary` and REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH remain with their inventory-selected legacy owners",
+    "IMPLEMENTATION 001-A BLOCKED ON CKR EXIT",
 )
-
-STATE_RE = re.compile(r"^- \*\*CKR-([A-K]) — .*?: (.+?)\.\*\*$", re.M)
-LETTERS = "ABCDEFGHIJK"
-
-
-def complete_label(complete: list[str]) -> str:
-    if not complete:
-        return ""
-    if len(complete) == 1:
-        return f"CKR-{complete[0]}"
-    return f"CKR-{complete[0]}–CKR-{complete[-1]}"
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", default=".")
-    args = ap.parse_args()
-    repo = Path(args.repo).resolve()
-    authority = repo / "docs/canonical_knowledge_retrofit/README.md"
+    repo = Path(ap.parse_args().repo).resolve()
     errors: list[str] = []
 
+    authority = repo / "docs/canonical_knowledge_retrofit/README.md"
     if not authority.is_file():
         print("ERROR missing CKR authority README")
         return 1
 
     states = {letter: state for letter, state in STATE_RE.findall(authority.read_text(encoding="utf-8"))}
-    if set(states) != set(LETTERS):
-        errors.append(f"CKR authority must declare CKR-A..CKR-K exactly once; found {sorted(states)}")
+    expected_letters = set("ABCDEFGHIJK")
+    if set(states) != expected_letters:
+        errors.append(f"CKR authority must retain CKR-A..CKR-K exit states; found {sorted(states)}")
 
-    complete = [c for c in LETTERS if str(states.get(c, "")).startswith("COMPLETE / ACCEPTED")]
-    nexts = [c for c in LETTERS if states.get(c) == "NEXT / READY"]
-    in_progress = [c for c in LETTERS if states.get(c) == "IN EXECUTION"]
+    incomplete = [letter for letter in "ABCDEFGHIJK" if not str(states.get(letter, "")).startswith("COMPLETE / ACCEPTED")]
+    if incomplete:
+        errors.append(f"CKR exit regression: groups no longer complete/accepted: {incomplete}")
 
-    if complete:
-        expected = list(LETTERS[: len(complete)])
-        if complete != expected:
-            errors.append(f"CKR completed groups are not contiguous from A: {complete}")
+    inventory_path = repo / "docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json"
+    if not inventory_path.is_file():
+        errors.append("missing CKR ownership inventory")
+    else:
+        try:
+            inventory = json.loads(inventory_path.read_text(encoding="utf-8"))
+            if inventory.get("status") != "ckr_complete":
+                errors.append(f"CKR ownership inventory status drifted: {inventory.get('status')!r}")
+            if inventory.get("canonical_root") != "docs" or inventory.get("canonical_layout") != "first_class_dptn_c":
+                errors.append("CKR ownership inventory no longer selects the normalized first-class docs topology")
+            if inventory.get("concept_count") != 24:
+                errors.append(f"CKR concept count drifted: {inventory.get('concept_count')!r}")
+        except json.JSONDecodeError as exc:
+            errors.append(f"invalid CKR ownership inventory JSON: {exc}")
 
-    active = nexts + in_progress
-    if len(complete) < len(LETTERS):
-        expected_active = LETTERS[len(complete)]
-        if len(active) != 1:
-            errors.append(f"CKR must declare exactly one NEXT / READY or IN EXECUTION group; found next={nexts}, in_progress={in_progress}")
-        elif active[0] != expected_active:
-            errors.append(f"CKR active group {active[0]} does not follow completed groups {complete}")
-    elif active:
-        errors.append(f"all CKR groups are complete; no CKR group may remain active: {active}")
+    for rel in LIVE_SURFACES:
+        path = repo / rel
+        if not path.is_file():
+            errors.append(f"missing current implementation/routing surface: {rel}")
+            continue
+        text = path.read_text(encoding="utf-8")
+        if "CKR status mirror:" in text:
+            errors.append(f"{rel}: completed CKR phase mirror should not be duplicated in current implementation guidance")
+        for token in FORBIDDEN:
+            if token in text:
+                errors.append(f"{rel}: stale CKR transition wording remains: {token!r}")
 
-    if nexts and in_progress:
-        errors.append("CKR cannot declare NEXT / READY and IN EXECUTION simultaneously")
-
-    mirror: str | None = None
-    if len(complete) == len(LETTERS):
-        mirror = "CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED."
-    elif in_progress:
-        prefix = f"COMPLETE {complete_label(complete)}; " if complete else ""
-        mirror = f"CKR status mirror: {prefix}IN EXECUTION CKR-{in_progress[0]}; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT."
-    elif nexts:
-        prefix = f"COMPLETE {complete_label(complete)}; " if complete else ""
-        mirror = f"CKR status mirror: {prefix}NEXT CKR-{nexts[0]}; IMPLEMENTATION 001-A BLOCKED ON CKR EXIT."
-
-    if mirror:
-        for rel in MIRRORS:
-            path = repo / rel
-            if not path.is_file():
-                errors.append(f"missing live CKR status mirror surface: {rel}")
-                continue
-            text = path.read_text(encoding="utf-8")
-            if mirror not in text:
-                errors.append(f"{rel}: missing current CKR status mirror {mirror!r}")
-            if len(complete) == len(LETTERS) and "IMPLEMENTATION 001-A BLOCKED ON CKR EXIT" in text:
-                errors.append(f"{rel}: stale CKR implementation-blocked marker remains after accepted exit")
-        print(mirror)
-
-    implementation_path = repo / "docs/implementation/README.md"
-    implementation = implementation_path.read_text(encoding="utf-8") if implementation_path.is_file() else ""
-    if len(complete) < len(LETTERS) and "IMPLEMENTATION 001-A BLOCKED ON CKR EXIT" not in implementation:
-        errors.append("implementation authority must block 001-A while CKR is incomplete")
-
-    if len(complete) == len(LETTERS):
-        for rel, required_tokens in POST_EXIT_REQUIRED.items():
-            path = repo / rel
-            if not path.is_file():
-                errors.append(f"missing post-CKR living orientation surface: {rel}")
-                continue
-            text = path.read_text(encoding="utf-8")
-            for token in required_tokens:
-                if token not in text:
-                    errors.append(f"{rel}: missing accepted post-CKR orientation marker {token!r}")
-            for token in POST_EXIT_FORBIDDEN:
-                if token in text:
-                    errors.append(f"{rel}: stale transitional CKR wording remains after accepted exit: {token!r}")
+    implementation = repo / "docs/implementation/README.md"
+    if not implementation.is_file() or CURRENT_HANDOFF not in implementation.read_text(encoding="utf-8"):
+        errors.append("current implementation handoff must remain Implementation 001-A — NEXT / READY / NOT STARTED")
 
     for error in errors:
-        print(f"ERROR {error}")
-    print(f"CKR status drift validation: {len(errors)} error(s)")
+        print("ERROR", error)
+    print(f"CKR exit/status validation: {len(errors)} error(s); CKR exit accepted")
     return 1 if errors else 0
 
 

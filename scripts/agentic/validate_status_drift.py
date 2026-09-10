@@ -1,84 +1,75 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import argparse, re
+
+import argparse
+import re
 from pathlib import Path
 
-MIRRORS = (
-    'AGENTS.md',
-    'IMPLEMENTATION.md',
-    'docs/implementation/README.md',
-    'docs/implementation/AGENTS.md',
-    'docs/implementation/agent_reference_index.md',
-    '.cursor/rules/00-implementation-routing.mdc',
+LIVE_SURFACES = (
+    "AGENTS.md",
+    "IMPLEMENTATION.md",
+    "docs/implementation/README.md",
+    "docs/implementation/AGENTS.md",
+    "docs/implementation/agent_reference_index.md",
+    ".cursor/rules/00-implementation-routing.mdc",
 )
-STATE_RE = re.compile(r'^- \*\*ADF-([A-H]) — .*?: (.+?)\.\*\*$', re.M)
-EXIT_ACCEPTED = '**Status:** ACCEPTED — AGENTIC DEVELOPMENT FOUNDATION EXECUTION EXIT COMPLETE'
+STATE_RE = re.compile(r"^- \*\*ADF-([A-H]) — .*?: (.+?)\.\*\*$", re.M)
+EXIT_ACCEPTED = "**Status:** ACCEPTED — AGENTIC DEVELOPMENT FOUNDATION EXECUTION EXIT COMPLETE"
+CURRENT_HANDOFF = "Implementation 001-A — NEXT / READY / NOT STARTED"
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument('--repo', default='.')
-    args = ap.parse_args()
-    repo = Path(args.repo).resolve()
-    authority = repo / 'docs/agentic_development_foundation/README.md'
-    states = {letter: state for letter, state in STATE_RE.findall(authority.read_text(encoding='utf-8'))}
-    complete = [c for c in 'ABCDEFGH' if str(states.get(c, '')).startswith('COMPLETE / ACCEPTED')]
-    nexts = [c for c in 'ABCDEFGH' if states.get(c) == 'NEXT / READY']
-    in_progress = [c for c in 'ABCDEFGH' if str(states.get(c, '')).startswith('IN EXECUTION')]
-    deferred = [c for c in complete if 'DEFERRED VERIFICATION' in str(states.get(c, ''))]
-    exit_review = repo / 'docs/agentic_development_foundation/execution_exit_review.md'
-    exit_accepted = exit_review.is_file() and EXIT_ACCEPTED in exit_review.read_text(encoding='utf-8')
+    ap.add_argument("--repo", default=".")
+    repo = Path(ap.parse_args().repo).resolve()
     errors: list[str] = []
 
-    if complete:
-        expected_complete = list('ABCDEFGH'[:len(complete)])
-        if complete != expected_complete:
-            errors.append(f'ADF completed groups are not contiguous from A: {complete}')
+    authority = repo / "docs/agentic_development_foundation/README.md"
+    if not authority.is_file():
+        print("ERROR missing ADF authority README")
+        return 1
 
-    active = nexts + in_progress
-    if len(complete) < 8:
-        if exit_accepted:
-            errors.append('ADF execution exit cannot be accepted before all ADF-A–ADF-H groups are complete')
-        if len(active) != 1:
-            errors.append(f'ADF authority must declare exactly one NEXT / READY or IN EXECUTION group; found next={nexts}, in_progress={in_progress}')
-        elif active[0] != 'ABCDEFGH'[len(complete)]:
-            errors.append(f'ADF active group {active[0]} does not follow completed groups {complete}')
-    elif active:
-        errors.append(f'all ADF groups are complete; no ADF group may remain active: {active}')
-    if nexts and in_progress:
-        errors.append('ADF authority cannot declare NEXT / READY and IN EXECUTION groups simultaneously')
-    if deferred and deferred != ['G']:
-        errors.append(f'only the explicit ADF-G runtime verification exception is currently authorized; found deferred={deferred}')
+    states = {letter: state for letter, state in STATE_RE.findall(authority.read_text(encoding="utf-8"))}
+    expected_letters = set("ABCDEFGH")
+    if set(states) != expected_letters:
+        errors.append(f"ADF authority must retain ADF-A..ADF-H exit states; found {sorted(states)}")
 
-    mirror = None
-    deferred_suffix = ' (ADF-EX-17 deferred)' if deferred else ''
-    if len(complete) == 8:
-        mirror = 'ADF status mirror: COMPLETE ADF-A–ADF-H; '
-        if deferred:
-            mirror += 'ADF-EX-17 DEFERRED VERIFICATION; '
-        if exit_accepted:
-            mirror += 'FOUNDATION EXIT ACCEPTED.'
-        else:
-            mirror += 'EXECUTION EXIT REVIEW NEXT.'
-    elif complete and in_progress:
-        mirror = f"ADF status mirror: COMPLETE ADF-A–ADF-{complete[-1]}{deferred_suffix}; IN EXECUTION ADF-{in_progress[0]}."
-    elif complete and nexts:
-        mirror = f"ADF status mirror: COMPLETE ADF-A–ADF-{complete[-1]}{deferred_suffix}; NEXT ADF-{nexts[0]}."
+    incomplete = [letter for letter in "ABCDEFGH" if not str(states.get(letter, "")).startswith("COMPLETE / ACCEPTED")]
+    if incomplete:
+        errors.append(f"ADF exit regression: groups no longer complete/accepted: {incomplete}")
 
-    if mirror:
-        for rel in MIRRORS:
-            path = repo / rel
-            if not path.is_file():
-                errors.append(f'missing live ADF status mirror surface: {rel}')
-                continue
-            if mirror not in path.read_text(encoding='utf-8'):
-                errors.append(f'{rel}: missing current status mirror {mirror!r}')
-        print(mirror)
+    deferred = [letter for letter in "ABCDEFGH" if "DEFERRED VERIFICATION" in str(states.get(letter, ""))]
+    if deferred != ["G"]:
+        errors.append(f"only the bounded ADF-G runtime verification exception may remain deferred; found {deferred}")
+
+    candidates = (
+        repo / "docs/agentic_development_foundation/execution_exit_review.md",
+        repo / "docs/history/foundations/adf/execution_exit_review.md",
+    )
+    exit_review = next((p for p in candidates if p.is_file()), None)
+    if not exit_review or EXIT_ACCEPTED not in exit_review.read_text(encoding="utf-8"):
+        errors.append("ADF execution-exit evidence is missing or no longer accepted")
+
+    for rel in LIVE_SURFACES:
+        path = repo / rel
+        if not path.is_file():
+            errors.append(f"missing current implementation/agent surface: {rel}")
+            continue
+        text = path.read_text(encoding="utf-8")
+        if "ADF status mirror:" in text:
+            errors.append(f"{rel}: completed ADF phase mirror should not be duplicated in current implementation guidance")
+        if "NEXT ADF-" in text or "IN EXECUTION ADF-" in text:
+            errors.append(f"{rel}: stale active-ADF progression wording remains")
+
+    implementation = repo / "docs/implementation/README.md"
+    if not implementation.is_file() or CURRENT_HANDOFF not in implementation.read_text(encoding="utf-8"):
+        errors.append("current implementation handoff must remain Implementation 001-A — NEXT / READY / NOT STARTED")
 
     for error in errors:
-        print(f'ERROR {error}')
-    print(f'ADF status drift validation: {len(errors)} error(s)')
+        print("ERROR", error)
+    print(f"ADF exit/status validation: {len(errors)} error(s); ADF exit accepted, ADF-EX-17 deferred")
     return 1 if errors else 0
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     raise SystemExit(main())

@@ -1,92 +1,50 @@
 # CKR Documentation Authority Model
 
-**Status:** ACCEPTED FOR CKR-A EXECUTION
+**Status:** ACCEPTED — CKR-A AUTHORITY / NORMALIZED TO FINAL DPTN TOPOLOGY
 
-## 1. Problem statement
+## 1. Purpose
 
-DMTZ has a strong design record but its accepted current meaning is still partially distributed across chronological phase artifacts. A semantic question can require following an original concept specification, later refinements, stable-ID contracts, architecture consolidation and decision history before present meaning is clear.
+DMTZ separates two legitimate documentation purposes:
 
-That topology is valuable for provenance but expensive and error-prone for routine current-truth lookup.
-
-CKR separates two legitimate documentation purposes:
-
-1. **canonical knowledge** — what DMTZ means now;
+1. **current semantic knowledge** — what DMTZ means now;
 2. **design history** — how and why DMTZ arrived there.
 
-Neither layer replaces the other.
+Neither layer replaces the other. DPTN changed their physical topology without changing this authority model and has now exited successfully.
 
 ## 2. Authority layers
 
-### Layer 1 — Canonical knowledge
+### Layer 1 — Current semantic knowledge
 
-After a record is `canonicalized`, current semantic authority for that record lives under `docs/canonical/`.
+For every `canonicalized` record, the sole current semantic owner is the first-class path selected by `canonical_ownership_inventory.json`. Current semantic owner roots are `docs/concepts/`, `docs/architecture/`, `docs/authority/`, `docs/contracts/`, `docs/experience/`, `docs/invariants/`, `docs/policies/`, and `docs/reference/`.
 
-Canonical knowledge may own:
+Current semantic knowledge may own accepted concept definitions, policy and authority boundaries, invariants, stable-ID/domain contracts, user/experience contracts, technical architecture contracts, and canonical terminology/reference mappings.
 
-- accepted concept definitions;
-- current policy and authority boundaries;
-- invariants and semantic separations;
-- domain/stable-ID contracts;
-- user/experience contracts;
-- technical architecture contracts;
-- canonical terminology and reference mappings.
-
-Canonical resources must be independently usable for the current question they own. They may cite history for provenance but may not require chronological reconstruction to obtain current meaning.
+Current resources must be independently usable for the question they own. They may cite history for provenance but may not require chronological reconstruction to obtain current meaning.
 
 ### Layer 2 — Design history and provenance
 
-Design history includes:
+`docs/history/` preserves phase working records, original specifications, refinements, decisions, scenario/exit reviews, handoffs, gap registers, completed retrofit/foundation/normalization evidence and superseded formulations.
 
-- phase working records and group READMEs;
-- original concept specifications after canonical cutover;
-- refinement documents;
-- decision records;
-- scenario reviews;
-- exit reviews;
-- handoffs and gap registers;
-- superseded terminology or earlier formulations preserved in context.
-
-Design history explains origin, rationale, evolution, alternatives and historical state. It is never deleted merely because current meaning moved to canonical knowledge.
+Design history explains origin, rationale, evolution, alternatives and historical state. It is not deleted merely because current meaning has a first-class owner, and it never competes with the current owner selected by the inventory.
 
 ### Layer 3 — Routing and operational guidance
 
-`knowledge/`, `AGENTS.md`, `.agents/skills/`, Cursor/Claude/Codex adapters and implementation routing help users and tools find the correct authority. They do not become semantic owners.
+`docs/index.md`, generated `knowledge/`, `AGENTS.md`, `.agents/skills/`, Cursor/Claude/Codex adapters and implementation routing help users and tools find the correct authority. They do not become semantic owners.
 
-OKF is therefore a discovery/catalog plane over the authority model—not the authority model itself.
+`knowledge/` is therefore an OKF v0.2 compatibility projection over the authority model—not the authority model itself.
 
 ## 3. Precedence
 
-For one semantic record, precedence is state-dependent.
+The accepted CKR migration states remain `legacy_authoritative`, `candidate_ready`, `canonicalized`, and `history_only`. CKR is complete, so current DMTZ semantic records are now resolved through their `canonicalized` inventory state.
 
-### `legacy_authoritative`
+For a `canonicalized` record:
 
-1. inventoried legacy current owner;
-2. accepted supporting stable-ID/refinement/decision material as required by that owner;
-3. routing/knowledge summaries.
-
-No target canonical candidate is current truth.
-
-### `candidate_ready`
-
-1. inventoried legacy current owner;
-2. accepted supporting stable-ID/refinement/decision material;
-3. canonical candidate for review only;
-4. routing/knowledge summaries.
-
-A candidate cannot silently override the legacy owner.
-
-### `canonicalized`
-
-1. canonical owner under `docs/canonical/`;
+1. inventory-selected first-class current owner under `docs/<family>/`;
 2. accepted executable contracts/code/tests when implementation later exists and is explicitly subordinate to documentation semantics;
-3. design history/provenance;
-4. routing/knowledge summaries.
+3. `docs/history/` provenance;
+4. routing/generated-knowledge summaries.
 
-Historical sources cease to be current semantic owners for that record at cutover.
-
-### `history_only`
-
-The resource is never a current semantic owner. It may support provenance/rationale only.
+Historical sources cease to be current semantic owners at cutover. Retired compatibility paths are preserved only as historical provenance and are not an authority layer.
 
 ## 4. No dual-current-authority invariant
 
@@ -94,82 +52,57 @@ For every semantic record:
 
 > **Exactly one authority state determines current ownership.**
 
-The repository may contain many descriptions, citations and historical definitions, but only one accepted current owner is permitted after canonicalization.
+The repository may contain many descriptions and historical definitions, but only one accepted current owner is permitted after canonicalization. The presence of the same stable ID or concept name in multiple files does not imply multiple authority.
 
-The presence of the same stable ID or concept name in multiple files does not imply multiple authority.
+## 5. Current question routing
 
-## 5. Canonical question-routing rule
+For normal current questions:
 
-Once a record is canonicalized:
+- `What is Lineage?` → the inventory-selected current Lineage concept under `docs/concepts/`;
+- `What does OPS-005 require?` → `python3 scripts/agentic/resolve_stable_id.py OPS-005` → exactly one current `owner_path::OPS-005` locator;
+- `What is the current evidence-sufficiency rule?` → current first-class contract owner;
+- `What architecture owns historical evidence?` → current first-class architecture owner.
 
-- `What is Lineage?` → canonical Lineage concept;
-- `What does OPS-005 require?` → canonical OPS owner/anchor;
-- `What is the current evidence-sufficiency rule?` → canonical policy/contract;
-- `What architecture owns historical evidence?` → canonical architecture resource.
+When the exact path/ID is unknown, use `docs/index.md`. Generated `knowledge/index.md` is available only for explicit OKF compatibility.
 
-Design history should be opened only when the task asks questions such as:
-
-- Why was this boundary chosen?
-- What did Phase 004 originally decide?
-- Which alternative was rejected?
-- How did OPS-005 evolve?
-- What did an earlier exit review know at the time?
-- Is a proposed semantic change consistent with prior rationale?
+Open history only for provenance questions such as why a boundary was chosen, what a phase originally decided, which alternative was rejected, how an ID evolved, what an earlier exit review knew at the time, or whether a proposed change is consistent with prior rationale.
 
 ## 6. History cannot redefine current truth
 
 After cutover, editing or discovering a historical file does not alter current meaning.
 
-If history reveals a contradiction with canonical knowledge:
+If history reveals a contradiction with current knowledge:
 
 1. record the conflict;
-2. identify the accepted source and applicable stable IDs;
-3. determine whether the canonical resource is incomplete/incorrect or the historical wording is superseded;
-4. use existing A4 semantic/architecture change control when meaning must change;
-5. update canonical knowledge only through accepted change, never by inference from chronology.
+2. identify the current owner and applicable stable IDs;
+3. determine whether current documentation is incomplete/incorrect or the historical wording is superseded;
+4. use A4 semantic/architecture change control when meaning must change;
+5. update current knowledge only through accepted change, never by inference from chronology.
 
-## 7. Canonical knowledge cannot erase history
+## 7. Current knowledge cannot erase history
 
-Canonicalization must retain provenance sufficient to explain where accepted meaning originated.
-
-A canonical resource should link to the smallest useful set of design-history sources, including original concept owner, material refinements, accepted decisions and relevant exit/architecture consolidation where appropriate.
-
-Provenance is not an excuse to duplicate every historical paragraph in the canonical resource.
+Canonicalization retains provenance sufficient to explain where accepted meaning originated. A current resource should link to the smallest useful set of history sources when rationale is material, without duplicating every historical paragraph.
 
 ## 8. Stable IDs
 
-SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH identifiers retain their accepted meanings throughout CKR.
+SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH identifiers retain their accepted meanings throughout CKR and DPTN.
 
-During CKR-A–I:
-
-- exact occurrence remains a retrieval aid;
-- the ownership inventory records the migration state and target canonical domain;
-- stable-ID meaning may not change simply because the owner path changes.
-
-CKR-J will make canonicalized stable-ID ownership directly resolvable to canonical owner paths/anchors while preserving historical occurrence discovery separately.
+Current exact-ID resolution is deterministic through `scripts/agentic/resolve_stable_id.py <ID>` and returns `owner_path::STABLE-ID` against the inventory-selected current owner. `--history` performs separate provenance discovery. Search rank, first occurrence and history never determine the current owner.
 
 ## 9. Concept ownership
 
-All 24 accepted concepts must eventually have one current canonical concept resource.
-
-A concept resource owns the concept's independent purpose, state/actions/invariants/non-goals and synchronization boundaries. Stable-ID contract documents may refine constraints without becoming a second concept definition.
+All 24 accepted concepts have one current first-class concept resource. A concept resource owns the concept's independent purpose, state/actions/invariants/non-goals and synchronization boundaries. Stable-ID contract documents may refine constraints without becoming a second concept definition.
 
 This preserves Daniel Jackson-style concept independence while allowing cross-cutting contracts to constrain synchronization and evidence semantics.
 
 ## 10. Architecture ownership
 
-Phase 010 remains accepted design history and current legacy architecture authority until CKR-I cutover.
-
-CKR-I will promote current architecture into `docs/canonical/architecture/` without rewriting Phase 010 as though the final architecture had been known at the beginning of the design process.
+Current architecture authority is under `docs/architecture/`, selected by the ownership inventory. Phase 010 is preserved under `docs/history/phases/phase_010/` as accepted design provenance. It does not compete with current architecture ownership.
 
 ## 11. Decision records
 
-`docs/decisions/` is primarily rationale/provenance. A decision may constrain current meaning while the corresponding semantic record remains legacy-authoritative, but after canonicalization the decision record is not the normal current-truth lookup surface.
-
-Canonical resources cite the durable decision rather than requiring agents to infer current meaning from the decision chronology.
+Historical phase decisions are preserved under `docs/history/decisions/` as rationale/provenance. A decision may explain current meaning, but the normal current-truth lookup surface is the inventory-selected first-class semantic owner.
 
 ## 12. Implementation relationship
 
-Implementation 001-A remains blocked during CKR because code/test/schema references should be created against the long-lived canonical authority topology rather than phase-era paths we already intend to demote to provenance.
-
-CKR does not invalidate the accepted implementation roadmap or ADF exit. It changes the documentation dependency surface that implementation will consume.
+CKR exit and DPTN exit are accepted. **Implementation 001-A is NEXT / READY / NOT STARTED.** Documentation normalization removed the topology blocker but did not start implementation; implementation begins only after a separate explicit human-selected task.

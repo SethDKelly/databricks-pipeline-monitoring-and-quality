@@ -1,0 +1,51 @@
+phase: DPTN-G
+status: accepted
+scenarios:
+  - id: DPTNG-01
+    expectation: MOVE-020 is the only DPTN-G move authorization.
+  - id: DPTNG-02
+    expectation: The completed DPTN program record is preserved under docs/history/retrofits/dptn.
+  - id: DPTNG-03
+    expectation: The DPTN archive is HISTORY / PROVENANCE ONLY and never becomes current semantic or operational authority.
+  - id: DPTNG-04
+    expectation: The live docs/documentation_topology_normalization root is retired at exit.
+  - id: DPTNG-05
+    expectation: The docs/canonical compatibility namespace is retired at exit.
+  - id: DPTNG-06
+    expectation: The final docs/canonical compatibility README is preserved under routing history before retirement.
+  - id: DPTNG-07
+    expectation: The eight current semantic owner roots remain first-class docs/<family> directories rather than redirects.
+  - id: DPTNG-08
+    expectation: The CKR ownership inventory remains the current semantic-owner ledger with canonical_root docs and first_class_dptn_c layout.
+  - id: DPTNG-09
+    expectation: The accepted concept catalog remains exactly 24 concepts.
+  - id: DPTNG-10
+    expectation: The accepted stable-ID catalog remains exactly 1,237 IDs across eight families.
+  - id: DPTNG-11
+    expectation: ARCH remains bounded at ARCH-001 through ARCH-500 with no ARCH-501 introduced.
+  - id: DPTNG-12
+    expectation: Exact stable-ID resolution continues to select one first-class current owner and history remains explicit --history only.
+  - id: DPTNG-13
+    expectation: docs/index.md remains the sole authored repository-native discovery root.
+  - id: DPTNG-14
+    expectation: Top-level knowledge remains a deterministic generated OKF v0.2 compatibility projection.
+  - id: DPTNG-15
+    expectation: The generated documentation-topology route points to docs/index.md rather than a retired DPTN path.
+  - id: DPTNG-16
+    expectation: Phase-specific DPTN validators and guards are removed from active conformance and preserved under the DPTN history archive.
+  - id: DPTNG-17
+    expectation: Active conformance retains one durable final-documentation-topology validator plus its negative controls.
+  - id: DPTNG-18
+    expectation: Completed CKR validation can still reconstruct accepted-era docs/canonical paths ephemerally without restoring them as current paths.
+  - id: DPTNG-19
+    expectation: Current agent, Cursor, implementation and discovery routing contains no dependency on retired docs/canonical or live DPTN paths.
+  - id: DPTNG-20
+    expectation: docs/history remains explicit provenance-only storage after DPTN exit.
+  - id: DPTNG-21
+    expectation: ADF-EX-17 and ADF-G-XT01 remain bounded deferred provider-runtime verification and are not silently closed by DPTN.
+  - id: DPTNG-22
+    expectation: DPTN-G makes no product source, schema, adapter, deployment, runtime or semantic change.
+  - id: DPTNG-23
+    expectation: Implementation 001-A is released only to NEXT / READY / NOT STARTED and still requires an explicit human-selected implementation task.
+  - id: DPTNG-24
+    expectation: DPTN exit is accepted only after final legacy retirement, archive preservation and whole-program conservation are recorded together.

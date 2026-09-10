@@ -1,25 +1,21 @@
 # DMTZ Implementation — Start Here
 
-**ADF status mirror: COMPLETE ADF-A–ADF-H; ADF-EX-17 DEFERRED VERIFICATION; FOUNDATION EXIT ACCEPTED.**
+**Current status: Implementation 001-A — NEXT / READY / NOT STARTED.**
 
-**CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
+Implementation work begins only when a human explicitly selects the implementation package or task. Readiness does not authorize automatic continuation.
 
-**DPTN status mirror: COMPLETE DPTN-A–DPTN-C; NEXT DPTN-D; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
+## Before implementing
 
-ADF and CKR exits are accepted. DPTN-A–C are complete/accepted; DPTN-D is NEXT / READY / NOT STARTED. **Implementation 001-A is BLOCKED / NOT STARTED until DPTN-G exit acceptance.**
+1. Read [`docs/implementation/README.md`](docs/implementation/README.md) for the current implementation program and package boundary.
+2. Read [`AGENTS.md`](AGENTS.md) for repository-wide authority, workflow, semantic, and evidence rules.
+3. Use [`docs/index.md`](docs/index.md) to locate current concepts, contracts, architecture, policies, invariants, authority, and reference material.
+4. Resolve accepted stable IDs with `python3 scripts/agentic/resolve_stable_id.py <ID>`; use `--history` only for explicit provenance work.
+5. Treat generated `knowledge/` as OKF compatibility routing, not semantic authority.
 
-## Current semantic routing
+Current semantic ownership is declared by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`. Historical design and completed program evidence are preserved under `docs/history/` and do not compete with current owners.
 
-1. `docs/canonical_knowledge_retrofit/README.md` — accepted CKR exit/current ownership model.
-2. ownership inventory — exact current semantic owner; lifecycle `ckr_complete`.
-3. DPTN-C promoted current owner paths to first-class `docs/concepts`, `docs/architecture`, `docs/authority`, `docs/contracts`, `docs/experience`, `docs/invariants`, `docs/policies`, and `docs/reference`.
-4. known stable ID — `scripts/agentic/resolve_stable_id.py <ID>` returns the current `owner_path::ID` selected by the ledger.
-5. `knowledge/` — optional bounded discovery while broader route convergence/rebinding remains deferred to DPTN-E/F.
-6. `docs/history/` — physical provenance/history root; never current semantic authority.
-7. `docs/documentation_topology_normalization/README.md` — live topology-normalization status and move authority.
-8. `docs/implementation/README.md` — implementation program state.
-9. root `AGENTS.md` — shared instructions.
+## Implementation discipline
 
-DPTN-C completed MOVE-007 through MOVE-014 plus directly necessary ownership/resolver/validation compatibility. It does not authorize DPTN-D/E/F/G or product implementation.
+Implement only the human-selected package/task and its directly necessary supporting changes. Preserve accepted semantic and architecture contracts, add the lowest-cost executable evidence appropriate to the change, update directly impacted traceability/documentation, and stop at the selected boundary.
 
-**Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.** DPTN exit will return 001-A to NEXT / READY / NOT STARTED; it will not start implementation.
+Do not claim Databricks runtime support, deployment capability, integration behavior, performance, or production readiness without corresponding executable or target-environment evidence.

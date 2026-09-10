@@ -1,24 +1,17 @@
-# Development workflow routing
+# Workflow routing
 
-ADF-D implements human-directed portable workflows under `.agents/skills/`. The Databricks Agent Skills pre-exit addendum extends the same canonical source with DMTZ-owned platform overlays. Use this index to discover a workflow, then follow the routed canonical `SKILL.md`.
+**GENERATED OKF PROJECTION — DO NOT HAND-EDIT.** Entries derive directly from repository-owned catalogs.
 
-Core workflows:
-
-- [Resolve context](resolve-context.md)
-- [Implement group](implement-group.md)
-- [Resolve contract](resolve-contract.md)
-- [Run conformance](run-conformance.md)
-- [Review change](review-change.md)
-- [Update traceability](update-traceability.md)
-- [Exit review](exit-review.md)
-
-Databricks platform overlays:
-
-- [DMTZ Databricks environment discovery](dmtz-databricks-environment-discovery.md)
-- [DMTZ Databricks acquisition](dmtz-databricks-acquisition.md)
-- [DMTZ Databricks persistence](dmtz-databricks-persistence.md)
-- [DMTZ Databricks lineage](dmtz-databricks-lineage.md)
-- [DMTZ Databricks runtime provenance](dmtz-databricks-runtime-provenance.md)
-- [DMTZ Databricks governance](dmtz-databricks-governance.md)
-
-Workflow selection never creates new project scope. ADF-A authority and the human-selected task remain controlling. Reviewed Databricks vendor skills are supporting operational guidance, not canonical workflow or semantic authority.
+- [DMTZ Databricks Acquisition](../../.agents/skills/dmtz-databricks-acquisition/SKILL.md)
+- [DMTZ Databricks Environment Discovery](../../.agents/skills/dmtz-databricks-environment-discovery/SKILL.md)
+- [DMTZ Databricks Governance](../../.agents/skills/dmtz-databricks-governance/SKILL.md)
+- [DMTZ Databricks Lineage](../../.agents/skills/dmtz-databricks-lineage/SKILL.md)
+- [DMTZ Databricks Persistence](../../.agents/skills/dmtz-databricks-persistence/SKILL.md)
+- [DMTZ Databricks Runtime Provenance](../../.agents/skills/dmtz-databricks-runtime-provenance/SKILL.md)
+- [Exit Review](../../.agents/skills/exit-review/SKILL.md)
+- [Implement Group](../../.agents/skills/implement-group/SKILL.md)
+- [Resolve Context](../../.agents/skills/resolve-context/SKILL.md)
+- [Resolve Contract](../../.agents/skills/resolve-contract/SKILL.md)
+- [Review Change](../../.agents/skills/review-change/SKILL.md)
+- [Run Conformance](../../.agents/skills/run-conformance/SKILL.md)
+- [Update Traceability](../../.agents/skills/update-traceability/SKILL.md)

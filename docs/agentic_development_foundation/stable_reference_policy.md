@@ -1,6 +1,6 @@
 # DMTZ Stable Reference Policy
 
-**Status:** ACCEPTED — ADF-E / REFINED CKR-J
+**Status:** ACCEPTED — ADF-E / REFINED CKR-J + DPTN-F
 
 ## Purpose
 
@@ -28,7 +28,7 @@ For an exact ID:
 1. validate family, three-digit width and accepted range;
 2. read the CKR ownership inventory for that family;
 3. require the family to be `canonicalized`;
-4. inspect only the inventoried canonical `target_documents`;
+4. inspect only the inventoried current `target_documents` under the first-class `docs/<family>/` topology;
 5. require exactly one accepted canonical stable definition;
 6. return the stable locator `owner_path::STABLE-ID`;
 7. read the smallest surrounding canonical owner context needed to apply the rule.
@@ -43,7 +43,7 @@ CKR-J preserves the canonical topology already accepted by CKR-B–I:
 - `stable_id_index_member` — 416 ARCH IDs in compact CKR-I segment indexes;
 - `stable_contract_list_member` — 84 ARCH IDs in the runtime/health/Lineage/Impact segment's named stable-contract lists.
 
-These are routing/addressability forms, not different semantic strengths. CKR-J does not manufacture 500 ARCH headings or restore the Phase 010 one-file-per-ID topology.
+These are routing/addressability forms, not different semantic strengths. DPTN-F changes no stable definition or meaning.
 
 ## Historical occurrence discovery
 
@@ -53,7 +53,7 @@ Historical/provenance occurrences are intentionally separate:
 python3 scripts/agentic/resolve_stable_id.py <ID> --history
 ```
 
-The canonical owner is resolved first. Historical results are then returned as `history_provenance` only and cannot compete with, supersede or weaken the current owner.
+The current owner is resolved first. Historical results are then returned as `history_provenance` only and cannot compete with, supersede or weaken the current owner.
 
 ## What is not stable identity
 
@@ -65,11 +65,13 @@ The following may help navigation but cannot establish semantic ownership:
 - file recency or Git history position;
 - OKF lifecycle state;
 - model/tool memory;
-- a derived index or cache.
+- a derived index, redirect or cache.
 
 ## Semantic questions without an ID
 
-When no exact ID is known, route through the smallest relevant OKF domain concept, follow its canonical resource/body links, identify the governing stable IDs, then resolve those IDs exactly. Do not traverse OKF when the canonical path/ID is already known.
+When no exact ID or current owner path is known, begin with the repository-native discovery root `docs/index.md`, follow the smallest relevant first-class current owner, identify the governing stable IDs, then resolve those IDs exactly. `knowledge/index.md` remains a generated OKF v0.2 compatibility entry for consumers that explicitly need OKF; it is not the default repository-native discovery path and never establishes semantic authority.
+
+Do not traverse either discovery layer when the current path or exact ID is already known.
 
 ## Stable ID versus implementation evidence
 
@@ -79,10 +81,11 @@ A stable locator proves where the current accepted contract is routed; it does *
 
 - no canonical stable definition: fail/report; do not infer from history or memory;
 - multiple canonical stable definitions: fail/report ownership drift; do not choose first match;
-- non-canonicalized family: resolve through live CKR authority rather than pretending CKR-J applies;
+- non-canonicalized family: resolve through live CKR authority rather than pretending deterministic current resolution applies;
 - range-invalid token: report invalid/unaccepted;
-- history-only match: provenance only, never current truth.
+- history-only match: provenance only, never current truth;
+- broken current link: fail/report the current routing defect; do not silently substitute a history path.
 
 ## Derived routing machinery
 
-The registry, resolver, OKF bundle and any generated reverse index are rebuildable routing aids. None owns contract prose, creates Assertion Authority, or changes accepted meaning.
+The registry, resolver, generated OKF bundle and any generated reverse index are rebuildable routing aids. None owns contract prose, creates Assertion Authority, or changes accepted meaning.

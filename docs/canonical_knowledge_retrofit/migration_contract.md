@@ -1,10 +1,12 @@
 # CKR Migration Contract
 
-**Status:** ACCEPTED FOR CKR-A EXECUTION
+**Status:** ACCEPTED — CKR-A MIGRATION CONTRACT / NORMALIZED TO FINAL DPTN TOPOLOGY
 
 ## Purpose
 
-This contract defines how a DMTZ semantic record moves from legacy chronological ownership to canonical knowledge without losing provenance, manufacturing new semantics or creating two simultaneous current owners.
+This contract defines how a DMTZ semantic record moves from legacy chronological ownership to current semantic knowledge without losing provenance, manufacturing new semantics or creating two simultaneous current owners.
+
+CKR migration is complete. DPTN later changed physical paths and routing only, then exited successfully. References below to a canonical target mean the **current target selected by `canonical_ownership_inventory.json`** under the first-class `docs/<family>/` topology.
 
 ## Migration states
 
@@ -15,13 +17,13 @@ The existing inventoried owner remains the current semantic authority.
 Requirements:
 
 - `current_owner` or `current_owner_root` exists;
-- a `target_owner` or `target_owner_root` under `docs/canonical/` is declared;
-- target structural indexes may exist, but no semantic candidate is treated as current truth;
-- OKF and agent routing may still point to the legacy owner until that record is migrated.
+- a target owner/root is declared in the ownership inventory;
+- target structural indexes may exist, but no candidate is treated as current truth;
+- routing may still point to the legacy owner until the record is migrated.
 
 ### `candidate_ready`
 
-A candidate canonical resource exists for review, but cutover has not occurred.
+A candidate current resource exists for review, but cutover has not occurred.
 
 Requirements:
 
@@ -33,23 +35,23 @@ Requirements:
 
 ### `canonicalized`
 
-The canonical target is the sole current semantic owner.
+The inventory-selected target is the sole current semantic owner.
 
 Requirements:
 
-- target exists under `docs/canonical/`;
-- target explicitly declares canonical authority;
+- target exists at its current first-class path under `docs/<family>/`;
+- target explicitly declares current canonical authority;
 - provenance identifies the relevant legacy sources;
 - all required accepted meaning/stable-ID coverage is preserved;
-- normal OKF/agent/stable-ID routing points to canonical authority;
+- normal agent/stable-ID routing points to the current owner;
 - legacy source is treated as design history/provenance for that record;
-- no living index or implementation guidance continues to present the legacy source as the current owner.
+- no living index or implementation guidance presents a legacy or retired compatibility path as the current owner.
 
 ### `history_only`
 
 The resource is provenance/rationale and does not own current semantics.
 
-Typical examples include scenario reviews, superseded wording, chronological exit records and decision rationale after their current semantic outcome has been promoted into canonical knowledge.
+Typical examples include scenario reviews, superseded wording, chronological exit records and decision rationale after their current semantic outcome has been promoted into current knowledge.
 
 ## Allowed state transitions
 
@@ -71,101 +73,74 @@ A record may move from `candidate_ready` back to `legacy_authoritative` when rev
 
 Cutover is one accepted repository change in which all of the following become true together:
 
-1. canonical target is marked current authority;
+1. target is marked current authority;
 2. ownership inventory changes the record to `canonicalized`;
-3. required OKF/current-truth routes switch to the canonical target;
-4. stable-ID ownership routing is updated where CKR-J has made it applicable;
+3. required current-truth routes switch to the target;
+4. stable-ID ownership routing is updated where applicable;
 5. living indexes/agent guidance stop naming the legacy source as current owner;
 6. provenance links are present;
 7. semantic-conservation and documentation conformance pass.
 
 A partial cutover is a migration defect.
 
+DPTN-C later performed a separate atomic **path-only** promotion from the CKR-era compatibility namespace to first-class `docs/<family>/` owners and rebound the ownership inventory at the same time. DPTN-G retired that compatibility namespace after routing no longer depended on it. Neither operation reopened semantic cutover.
+
 ## No dual-authority rule
 
 The following states are prohibited:
 
-- legacy owner and canonical target both claim current authority;
-- inventory says `canonicalized` but target is missing;
+- legacy owner and current target both claim current authority;
+- inventory says `canonicalized` but the current target is missing;
 - inventory says `legacy_authoritative` while a target semantic document claims current authority;
-- OKF routes current questions to history after canonicalization;
-- a canonical target delegates essential current meaning back to multiple historical phase files.
+- current routing sends current questions to history after canonicalization;
+- a retired compatibility path is treated as an alternate semantic owner;
+- a current target delegates essential meaning back to multiple historical phase files.
 
-Canonical resources may cite history for rationale; they must not require design-history reconstruction to answer the current semantic question they own.
+Current resources may cite history for rationale; they must not require design-history reconstruction to answer the current semantic question they own.
 
 ## Semantic-conservation gate
 
-Before cutover, the migration group must verify that the candidate preserves applicable accepted meaning from:
-
-- original concept/current owner;
-- later accepted refinements;
-- stable-ID contracts;
-- cross-cutting authority/evidence/time rules;
-- accepted decision records where they materially constrain meaning;
-- architecture constraints when the target is architectural;
-- relevant scenario/exit conclusions that reveal mandatory edge cases.
+Before cutover, the migration group verifies that the candidate preserves applicable accepted meaning from original owners, later accepted refinements, stable-ID contracts, cross-cutting authority/evidence/time rules, material accepted decisions, architecture constraints, and relevant scenario/exit conclusions.
 
 The goal is not textual equivalence. The goal is semantic equivalence and improved current-truth locality.
 
 ## Contradiction handling
 
-When legacy sources appear inconsistent:
+When sources appear inconsistent:
 
 1. do not silently choose the newest file;
 2. do not choose the first search result;
 3. identify the source's accepted scope, later supersession and applicable stable IDs;
 4. record whether the issue is wording drift, explicit supersession or genuine unresolved semantic conflict;
 5. use A4 change control for genuine meaning changes;
-6. keep the record `legacy_authoritative` or `candidate_ready` until the conflict is resolved.
+6. do not change current ownership until the conflict is resolved through accepted authority.
 
 ## Provenance requirements
 
-A canonical semantic resource must retain bounded provenance. At minimum, record:
+A current semantic resource retains bounded provenance sufficient for audit: original owner/source, material later refinement sources, relevant stable-ID families/ranges, and material decision/exit references when needed to explain accepted meaning.
 
-- original owner/source;
-- material later refinement source(s);
-- stable-ID families/ranges or exact IDs owned/relevant;
-- material decision/exit references where needed to explain accepted meaning.
-
-Provenance should be sufficient for audit without turning the canonical resource into a full chronology.
+Provenance should not turn a current resource into a full chronology.
 
 ## Historical preservation
 
-CKR does not require rewriting old phase documents to make them read as current documentation.
+Historical records live under `docs/history/`. They preserve accepted-at-the-time evolution and are not rewritten to look current. Historical text, links and status statements must be interpreted in historical context.
 
-After cutover, historical records may receive a small non-semantic banner or index classification saying current meaning is elsewhere, but their original accepted-at-the-time narrative should otherwise remain intact.
-
-Historical files are valuable precisely because they preserve design evolution.
+Completed DPTN evidence and the final retired compatibility orientation are preserved there as topology provenance only.
 
 ## Canonical document metadata contract
 
-Substantive canonical documents created in CKR-B onward should include a compact authority header using the template in `canonical_document_template.md`.
+Substantive current semantic documents retain compact authority metadata sufficient to state canonical key/kind, authority status, current scope/question, accepted stable IDs/ranges where applicable, provenance, and related current resources.
 
-Required fields/sections are intentionally small:
-
-- canonical key;
-- kind;
-- authority status (`CANDIDATE` or `CANONICAL`);
-- current scope/question owned;
-- accepted stable IDs/ranges where applicable;
-- provenance links;
-- related canonical resources.
-
-Do not duplicate OKF lifecycle/trust metadata into semantic authority headers unless a future CKR group explicitly needs it.
+Do not duplicate OKF lifecycle/trust metadata into semantic authority headers.
 
 ## Domain migration independence
 
-CKR migrates by semantic domain, not phase number. One domain may be canonicalized while another remains legacy-authoritative.
+CKR migrated by semantic domain, not phase number. The accepted ownership inventory remains the durable current-owner ledger after CKR and DPTN.
 
-Normal lookup follows the inventory record for the requested semantic domain. The mere existence of `docs/canonical/` does not imply the whole repository has completed migration.
+Normal lookup follows the inventory record for the requested semantic domain. Directory presence, generated OKF, history, retired compatibility provenance and search order do not imply ownership.
 
 ## Implementation gate
 
-No product implementation begins until CKR-K confirms:
+CKR-K accepted the CKR exit after all required current semantic domains had owners, canonical-first routing was established, stable-ID ownership was deterministic, current-truth questions no longer required chronological reconstruction, history remained accessible, and no unreviewed dual-authority condition remained.
 
-- all required current semantic domains have canonical owners;
-- canonical-first routing is enforced;
-- stable-ID ownership is deterministic for implementation traceability;
-- representative current-truth questions no longer require chronological reconstruction;
-- design history remains accessible for provenance;
-- no unreviewed dual-authority conditions remain.
+DPTN was subsequently interposed as a separate topology gate and has now exited successfully. **Implementation 001-A is NEXT / READY / NOT STARTED.** This status removes the documentation-topology blocker only; implementation begins only after a separate explicit human-selected task.
