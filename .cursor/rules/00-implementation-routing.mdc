@@ -16,7 +16,7 @@ ADF, CKR and DPTN are complete/accepted. Implementation 001-A is NEXT / READY / 
 
 Primary shared authority remains root `AGENTS.md`, `docs/agentic_development_foundation/authority_scope_policy.md`, the CKR ownership inventory and accepted ADF scope/security mechanics.
 
-For unknown-location repository-native discovery start at `docs/index.md`. Generic OKF-compatible tools may enter through generated `knowledge/index.md`; that projection is routing only and must not be treated as semantic authority. For a known stable ID, use `python3 scripts/agentic/resolve_stable_id.py <ID>` for the current locator selected by the ownership inventory; use `--history` only for provenance/history.
+For unknown-location repository-native discovery start at `docs/index.md`. Generic OKF-compatible tools may enter through generated `knowledge/index.md`; that projection is routing only and must not be treated as semantic authority. For a known stable ID, use `python3 scripts/agentic/resolve_stable_id.py <ID>` for the current canonical locator selected by the ownership inventory; use `--history` only for provenance/history.
 
 Current routing must use first-class semantic-owner paths and current implementation packages. Completed DPTN evidence is provenance under `docs/history/retrofits/dptn/` and is not a live routing layer.
 
