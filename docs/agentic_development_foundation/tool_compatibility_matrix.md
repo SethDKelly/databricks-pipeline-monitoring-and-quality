@@ -1,10 +1,10 @@
 # DMTZ Coding-Agent Compatibility Matrix
 
-**Status:** ADF-G — REPOSITORY COMPATIBILITY ESTABLISHED / PROVIDER RUNTIME SMOKES PENDING / ROUTING REBOUND DPTN-F
+**Status:** REPOSITORY COMPATIBILITY ESTABLISHED / PROVIDER RUNTIME SMOKES PENDING
 
-**Documentation reviewed:** 2026-09-02
+**Documentation reviewed:** 2026-09-10
 
-This matrix separates documented capability, checked-in repository compatibility, and actual runtime evidence. A documented vendor feature is not a runtime PASS.
+This matrix separates documented capability, checked-in repository compatibility, and actual runtime evidence. A documented vendor feature is not a runtime PASS. The ordinary IDE/CLI path remains the repository-owned fallback when provider-specific agent runtime verification is unavailable.
 
 | Dimension | Cursor | Claude Code | Codex | Ordinary IDE/CLI |
 |---|---|---|---|---|
