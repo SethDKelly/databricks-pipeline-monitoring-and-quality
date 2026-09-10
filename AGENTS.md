@@ -8,7 +8,7 @@ Use [`docs/index.md`](docs/index.md) as the repository-native discovery root. Cu
 
 ## Authority and routing
 
-Current semantic ownership is selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`. A semantic question resolves to the inventory-selected current owner; search order, history, generated routing, vendor documentation, and model/tool memory do not override it.
+Current semantic ownership is selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`. A semantic question resolves to the inventory-selected current canonical owner; search order, history, generated routing, vendor documentation, and model/tool memory do not override it.
 
 For a known stable ID, run:
 
