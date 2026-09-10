@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Run completed CKR checks against their accepted-era path/routing view during DPTN.
+"""Run completed CKR checks against their accepted-era path/routing view.
 
-DPTN-B moved historical design sources, DPTN-C promoted current semantic owners,
-DPTN-D moved completed CKR execution evidence to history, and DPTN-E replaced the
-hand-authored OKF plane with generated compatibility output. Completed CKR checks
-retain the exact topology/evidence/routing view accepted at CKR exit.
+DPTN moved historical design sources, promoted first-class current semantic owners,
+archived completed CKR evidence, replaced the hand-authored OKF plane with generated
+compatibility output, and finally retired the live docs/canonical compatibility
+namespace. Completed CKR checks retain the exact topology/evidence/routing view
+accepted at CKR exit through an ephemeral projection only.
 
-All compatibility projection is ephemeral, never committed, never participates in
+All compatibility projection is temporary, never committed, never participates in
 current owner selection, and cannot authorize semantic or implementation changes.
 """
 from __future__ import annotations
@@ -67,34 +68,60 @@ def pre_c_history_projection(repo:Path)->list[Path]:
         p.parent.mkdir(parents=True,exist_ok=True);os.symlink(target,p,target_is_directory=True);created.append(p)
     return created
 
+def ensure_legacy_root(repo:Path):
+    """Create docs/canonical only for the lifetime of a completed-CKR projection.
+
+    Returns whether the root was created here and, when the root existed, the set of
+    preexisting family symlinks so cleanup can faithfully restore only prior state.
+    """
+    root=repo/"docs/canonical";created_root=False;preexisting={}
+    if root.is_symlink():raise RuntimeError("docs/canonical may not be a symlink during CKR compatibility projection")
+    if not root.exists():root.mkdir(parents=True);created_root=True
+    elif not root.is_dir():raise RuntimeError("docs/canonical compatibility path is not a directory")
+    for fam in FAMILIES:
+        p=root/fam
+        if p.is_symlink():preexisting[fam]=os.readlink(p)
+        elif p.exists():raise RuntimeError(f"legacy canonical family path is not a redirect: {p}")
+    return root,created_root,preexisting
+
+def cleanup_legacy_root(root:Path,created_root:bool,preexisting:dict[str,str])->None:
+    for fam in FAMILIES:
+        p=root/fam
+        if p.is_dir() and not p.is_symlink():shutil.rmtree(p)
+        elif p.is_symlink() or p.exists():p.unlink()
+        if fam in preexisting:os.symlink(preexisting[fam],p,target_is_directory=True)
+    if created_root:
+        # A completed-CKR check may have temporarily rewritten/created README.md.
+        for child in list(root.iterdir()):
+            if child.is_dir() and not child.is_symlink():shutil.rmtree(child)
+            else:child.unlink()
+        root.rmdir()
+
 def accepted_routing_projection(repo:Path,inventory_path:Path):
-    original_inventory=inventory_path.read_text(encoding="utf-8");data=json.loads(original_inventory);readme=repo/"docs/canonical/README.md";original_readme=readme.read_text(encoding="utf-8");saved={}
+    original_inventory=inventory_path.read_text(encoding="utf-8");data=json.loads(original_inventory);root,created_root,saved=ensure_legacy_root(repo);readme=root/"README.md";readme_existed=readme.is_file();original_readme=readme.read_text(encoding="utf-8") if readme_existed else ""
     try:
         for fam in FAMILIES:
-            current=repo/f"docs/{fam}";legacy=repo/f"docs/canonical/{fam}"
-            if not current.is_dir() or current.is_symlink():raise RuntimeError(f"missing normalized current root {current}")
-            if legacy.is_symlink():saved[fam]=os.readlink(legacy);legacy.unlink()
-            elif legacy.exists():raise RuntimeError(f"legacy canonical route is not a redirect: {legacy}")
-            shutil.copytree(current,legacy,symlinks=True)
-        inventory_path.write_text(json.dumps(legacy_inventory_view(data),indent=2)+"\n",encoding="utf-8");readme.write_text("**Authority state:** CANONICALIZATION COMPLETE — CKR EXIT ACCEPTED\n\n"+original_readme,encoding="utf-8");yield
+            legacy=root/fam
+            if legacy.is_symlink():legacy.unlink()
+            shutil.copytree(repo/f"docs/{fam}",legacy,symlinks=True)
+        inventory_path.write_text(json.dumps(legacy_inventory_view(data),indent=2)+"\n",encoding="utf-8")
+        readme.write_text("**Authority state:** CANONICALIZATION COMPLETE — CKR EXIT ACCEPTED\n\n"+original_readme,encoding="utf-8")
+        yield
     finally:
-        inventory_path.write_text(original_inventory,encoding="utf-8");readme.write_text(original_readme,encoding="utf-8")
-        for fam in reversed(FAMILIES):
-            legacy=repo/f"docs/canonical/{fam}"
-            if legacy.is_dir() and not legacy.is_symlink():shutil.rmtree(legacy)
-            elif legacy.is_symlink():legacy.unlink()
-            os.symlink(saved.get(fam,f"../{fam}"),legacy,target_is_directory=True)
+        inventory_path.write_text(original_inventory,encoding="utf-8")
+        if readme_existed:readme.write_text(original_readme,encoding="utf-8")
+        elif readme.exists():readme.unlink()
+        cleanup_legacy_root(root,created_root,saved)
 
 def post_c_projection(repo:Path,inventory_path:Path):
-    original_inventory=inventory_path.read_text(encoding="utf-8");data=json.loads(original_inventory);hidden=repo/"docs/.dptn_ckr_current";created=[];saved={}
+    original_inventory=inventory_path.read_text(encoding="utf-8");data=json.loads(original_inventory);hidden=repo/"docs/.dptn_ckr_current";created=[];root,created_root,saved=ensure_legacy_root(repo)
     if hidden.exists() or hidden.is_symlink():raise RuntimeError("reserved CKR compatibility path already exists")
     hidden.mkdir()
     try:
         for fam in FAMILIES:
-            current=repo/f"docs/{fam}";legacy=repo/f"docs/canonical/{fam}";parked=hidden/fam
+            current=repo/f"docs/{fam}";legacy=root/fam;parked=hidden/fam
             if not current.is_dir() or current.is_symlink():raise RuntimeError(f"missing normalized current root {current}")
-            if legacy.is_symlink():saved[fam]=os.readlink(legacy);legacy.unlink()
-            elif legacy.exists():raise RuntimeError(f"legacy canonical route is not a redirect: {legacy}")
+            if legacy.is_symlink():legacy.unlink()
             current.rename(parked);os.symlink(f"../.dptn_ckr_current/{fam}",legacy,target_is_directory=True)
         for fam,target in (("concepts","history/phases"),("reference","history/reference-legacy")):
             p=repo/f"docs/{fam}";os.symlink(target,p,target_is_directory=True);created.append(p)
@@ -108,12 +135,12 @@ def post_c_projection(repo:Path,inventory_path:Path):
             try:p.unlink()
             except FileNotFoundError:pass
         for fam in reversed(FAMILIES):
-            legacy=repo/f"docs/canonical/{fam}";current=repo/f"docs/{fam}";parked=hidden/fam
+            legacy=root/fam;current=repo/f"docs/{fam}";parked=hidden/fam
             if legacy.is_symlink():legacy.unlink()
             if parked.exists():parked.rename(current)
-            os.symlink(saved.get(fam,f"../{fam}"),legacy,target_is_directory=True)
         try:hidden.rmdir()
         except OSError:pass
+        cleanup_legacy_root(root,created_root,saved)
 
 def main()->int:
     ap=argparse.ArgumentParser();ap.add_argument("script");ap.add_argument("args",nargs=argparse.REMAINDER);ns=ap.parse_args();repo=Path(__file__).resolve().parents[2];inventory=repo/"docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json"
