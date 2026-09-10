@@ -12,7 +12,7 @@ alwaysApply: false
 
 Do not treat active control as required for the passive MVP unless the committed product profile says so.
 
-Use `docs/implementation/agent_reference_index.md` to locate OPS control contracts, Phase 010 Group 07 (ARCH-351–420), and Implementation 010.
+Use `docs/implementation/agent_reference_index.md`; current owners are `docs/architecture/active-control.md`, `docs/contracts/operations/propagation-safeguard.md`, `docs/contracts/operations/execution-gate-control.md`, `docs/authority/high-consequence-authority.md`, and `docs/contracts/evidence-time-causality/exposure-readiness-control-proof.md`, with Implementation 010 at `docs/implementation/010_active_control_enterprise_control_plane/README.md`.
 
 Preserve directly:
 
