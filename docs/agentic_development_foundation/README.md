@@ -1,8 +1,8 @@
 # DMTZ Agentic Development Foundation
 
-**Status:** COMPLETE / EXECUTION EXIT ACCEPTED — CKR COMPLETE — DPTN-E COMPLETE
+**Status:** COMPLETE / EXECUTION EXIT ACCEPTED — CKR COMPLETE — DPTN-F COMPLETE
 
-**Current handoff:** ADF EXIT ACCEPTED / CKR EXIT ACCEPTED — DPTN-A–E COMPLETE / ACCEPTED — DPTN-F NEXT / READY / NOT STARTED — IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.
+**Current handoff:** ADF EXIT ACCEPTED / CKR EXIT ACCEPTED — DPTN-A–F COMPLETE / ACCEPTED — DPTN-G NEXT / READY / NOT STARTED — IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.
 
 The Agentic Development Foundation is complete. This directory contains durable current human-directed authority, context, workflow, conformance, security, compatibility, stable-reference and lifecycle policy/configuration. Completed ADF phase-design/execution evidence is preserved under [`../history/foundations/adf/`](../history/foundations/adf/) and remains provenance only.
 
@@ -27,11 +27,13 @@ ADF exit was accepted before CKR. **CKR subsequently completed and exited succes
 
 - CKR-A–K — COMPLETE / ACCEPTED;
 - CKR EXIT — ACCEPTED;
-- **DPTN-A–E — COMPLETE / ACCEPTED**;
-- **DPTN-F — NEXT / READY / NOT STARTED**;
+- **DPTN-A–F — COMPLETE / ACCEPTED**;
+- **DPTN-G — NEXT / READY / NOT STARTED**;
 - **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
 
-DPTN-E converged discovery without changing ADF meaning. [`../index.md`](../index.md) is now the single authored discovery root. Top-level `knowledge/` remains OKF v0.2 compatibility, but is generated deterministically from `docs/routing/okf_projection.json` and repository-owned workflow/implementation catalogs. The pre-DPTN-E authored routing tree is preserved under `docs/history/routing/okf-pre-dptn-e/`.
+DPTN-E converged discovery: [`../index.md`](../index.md) is the single authored discovery root and top-level `knowledge/` is deterministic generated OKF v0.2 compatibility. DPTN-F then rebound current workflows, tool adapters, stable-reference guidance, scoped rules and current link/drift validation to the normalized first-class topology.
+
+Current operational routing must not depend on historical Phase paths, DPTN-D history fallback, or `docs/canonical/<family>` compatibility redirects. Completed CKR checks may still reconstruct accepted-era routing only inside the dedicated ephemeral compatibility wrapper.
 
 ## ADF-EX-17 residual verification
 
@@ -41,7 +43,7 @@ Cursor, Claude Code and Codex remain runtime-`unverified` until `ADF-G-XT01` is 
 
 A1–A4 remains the action model. Accepted DMTZ semantics outrank agent tooling, generated routing, vendor guidance and memory. Canonical workflows live under `.agents/skills/`. Progressive disclosure, stable references, context budgets, least privilege, prompt/content trust and G1–G5 change governance remain mandatory.
 
-For unknown-location discovery use `docs/index.md`; generic OKF consumers may use generated `knowledge/index.md`. For a known stable ID use `scripts/agentic/resolve_stable_id.py <ID>` directly. History and generated routing never compete with the ownership inventory.
+For unknown-location repository-native discovery use `docs/index.md`; generic OKF consumers may use generated `knowledge/index.md`. For a known stable ID use `scripts/agentic/resolve_stable_id.py <ID>` directly; `--history` is explicit provenance only. History, redirects and generated routing never compete with the ownership inventory.
 
 Canonical conformance command:
 
@@ -49,7 +51,7 @@ Canonical conformance command:
 python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
 ```
 
-Completed-era CKR/ADF checks may use bounded ephemeral compatibility projections where accepted paths were retired. Current DPTN validators inspect the real topology.
+Current agentic reference validation inspects the real normalized topology. Completed CKR checks alone may use bounded ephemeral accepted-era compatibility projections.
 
 ## Explicitly deferred / not authorized
 
@@ -59,7 +61,7 @@ Completed-era CKR/ADF checks may use bounded ephemeral compatibility projections
 - unattended merge/deploy/external writes;
 - autonomous architecture reopening;
 - product implementation while DPTN is active;
-- DPTN-F/G continuation without explicit human selection.
+- DPTN-G continuation without explicit human selection.
 
 ## Key current references
 
@@ -75,6 +77,6 @@ Completed-era CKR/ADF checks may use bounded ephemeral compatibility projections
 
 ## Current next dependency
 
-**DPTN-F — Stable References, Agent Routing & Drift Rebinding: NEXT / READY / NOT STARTED.**
+**DPTN-G — Conservation Audit, Legacy-Path Retirement & Exit Review: NEXT / READY / NOT STARTED.**
 
 **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
