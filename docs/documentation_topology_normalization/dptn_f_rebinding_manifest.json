@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "phase": "DPTN-F",
+  "status": "accepted",
+  "authorized_move_ids": ["MOVE-019"],
+  "semantic_change": false,
+  "implementation_change": false,
+  "purpose": "Rebind current stable-reference, agent, validator and routing consumers to the normalized first-class documentation topology after DPTN-E convergence.",
+  "discovery": {
+    "repository_native_entry": "docs/index.md",
+    "okf_compatibility_entry": "knowledge/index.md",
+    "knowledge_role": "generated_compatibility_only",
+    "semantic_owner_ledger": "docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json"
+  },
+  "stable_reference": {
+    "resolver": "scripts/agentic/resolve_stable_id.py",
+    "locator_format": "{owner_path}::{stable_id}",
+    "default_scope": "canonical_owner_only",
+    "history_mode": "explicit_--history",
+    "first_match_canonicality": false,
+    "current_link_history_fallback": false
+  },
+  "rebinding": {
+    "repository_native_agents": "docs/index.md",
+    "generated_okf_consumers": "knowledge/index.md",
+    "scoped_rules": "first_class_docs_owner_paths",
+    "impact_analysis": "ownership_inventory_current_owner_roots",
+    "current_link_validation": "physical_current_targets_only",
+    "completed_ckr_checks": "ephemeral_accepted_era_projection_only"
+  },
+  "semantic_owner_tree_shas": {
+    "docs/architecture": "0f1564882f1c8d142c0eb4e5d77eb9ab56e43415",
+    "docs/authority": "c3f7a1436294dff05729d81edbabcbac180833f5",
+    "docs/concepts": "67d418f9d71ca9c64169c813853da514a37166ad",
+    "docs/contracts": "b01663426ff83a79e09a0a05a218638587f86905",
+    "docs/experience": "6e7b89390426ba651c2735baf6d441fc39dafd9c",
+    "docs/invariants": "3e2f3ac5f6b201200fd6bce9cb9cbba92243c8ed",
+    "docs/policies": "4acc2b064198d0a3725d4ff4bdda30e2cb139dff",
+    "docs/reference": "6a3a361d1275f23c601710ba62089f790ae9f3f8"
+  },
+  "generated_okf_tree_sha": "8a8ac74f7eb5afcd7245043501103b0b691101f6",
+  "resolved_collisions": ["COL-009", "COL-011"],
+  "deferred_to_dptn_g": [
+    "MOVE-020 migration-scaffolding retirement",
+    "physical retirement of docs/canonical/<family> compatibility redirects",
+    "final legacy-path retirement and conservation exit review"
+  ],
+  "conservation": {
+    "concepts": 24,
+    "stable_ids": 1237,
+    "stable_families": 8,
+    "architecture_ids": 500,
+    "implementation_001_a": "blocked_not_started"
+  },
+  "next": "DPTN-G",
+  "verification_note": "DPTN-F installs deterministic validation and negative controls. Acceptance does not itself claim provider runtime or deployment proof."
+}
