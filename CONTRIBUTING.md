@@ -1,35 +1,55 @@
 # Contributing
 
-## Current phase and contribution scope
+DMTZ separates current semantic authority, implementation state, and historical provenance. Contributions should preserve those boundaries rather than reintroducing phase-order or search-order authority.
 
-The canonical repository phase status is declared in [`docs/README.md#current-state`](docs/README.md#current-state).
+## Start here
 
-This file intentionally does **not** duplicate the current or next phase number. Before contributing, read the canonical current-state section and the corresponding phase README under `docs/concepts/`.
+Before changing the repository:
 
-Contributions must stay within the boundary of the currently active/planned phase. Do not advance architecture or implementation earlier than the canonical phase documents permit.
+1. read [`docs/index.md`](docs/index.md) to locate the current owning documentation;
+2. read [`AGENTS.md`](AGENTS.md) for repository-wide authority, workflow, and change-control rules;
+3. for implementation work, read [`docs/implementation/README.md`](docs/implementation/README.md) and the explicitly selected implementation package;
+4. when an accepted stable ID is involved, resolve it with `python3 scripts/agentic/resolve_stable_id.py <ID>` rather than relying on search order or historical occurrences.
 
-## Durable contribution rules
+Generated `knowledge/` content is an OKF compatibility projection and should not be edited directly.
 
-- preserve accepted Concept Design ownership and boundaries unless a concrete scenario requires an explicit reopening;
-- refine documentation, scenarios, terminology, governance, evidence, health, Lineage, change, Investigation, Impact, safeguard, gate, or other semantics only within the current phase's declared scope;
-- preserve historical rationale and use explicit supersession rather than silently rewriting accepted decisions;
-- keep implementation choices out of functional-design phases unless the current phase explicitly authorizes technical selection;
-- do not treat synchronization order, repository ownership, source availability, platform identity, or implementation convenience as authority or causation;
-- record unresolved questions, rejected alternatives, and accepted decisions in the appropriate documentation/decision artifacts;
-- run `python3 scripts/check_docs_consistency.py` when changing phase-status, roadmap, contributor, agent, or living index documentation.
+## Contribution boundaries
 
-## Design method
+- Change the smallest current owner that actually governs the behavior or meaning in question.
+- Preserve accepted concept independence, stable-ID meaning, authority boundaries, temporal semantics, and evidence requirements unless the contribution explicitly proposes a governed semantic change.
+- Treat `docs/history/` as provenance and rationale, not as current authority. Preserve historical records rather than rewriting them to match current terminology or state.
+- Keep implementation decisions subordinate to current semantic and architecture contracts. Implementation difficulty is not permission to weaken an accepted requirement.
+- Do not infer authority, causation, identity, exposure, health, readiness, or enforcement from convenience signals such as repository ownership, source count, recency, naming similarity, or execution success.
+- Record material implementation choices and intentional semantic/architecture changes through the repository's applicable ADR, traceability, and change-control mechanisms.
 
-All functional design follows Daniel Jackson's Concept Design approach described in `docs/foundation/004_concept_design_method.md`.
+## Design and documentation
 
-Before proposing a concept, make sure it has a clear purpose and operational principle and is not merely a vendor feature or implementation component.
+Functional concepts follow Daniel Jackson's Concept Design method documented at [`docs/reference/concept-design-method.md`](docs/reference/concept-design-method.md). A concept should have an independent purpose and operational principle rather than merely representing a vendor feature or implementation component.
 
-## Documentation authority
+Current documentation is organized by responsibility under `docs/concepts/`, `docs/architecture/`, `docs/authority/`, `docs/contracts/`, `docs/experience/`, `docs/invariants/`, `docs/policies/`, and `docs/reference/`. Use [`docs/index.md`](docs/index.md) when ownership is unclear.
 
-`docs/README.md#current-state` is the sole living declaration of repository phase progression. Phase-specific README files may describe their own internal group status. Historical documents may retain status-at-time-of-writing language when clearly labeled as historical.
+Historical design progression, prior decisions, reviews, and superseded material are retained under [`docs/history/`](docs/history/README.md) for audit and rationale.
 
-Living indexes, contributor instructions, and current-state guidance should reference canonical phase status rather than maintain independent phase declarations.
+## Implementation and validation
+
+Implementation begins only from an explicitly human-selected package or task. Follow the package's documented acceptance boundary and stop rather than automatically continuing into the next package.
+
+Use the lowest-cost executable evidence appropriate to the change: unit/property checks, contract/schema tests, persistence tests, adapter/integration tests, product scenarios, or end-to-end validation as justified. Prior design acceptance is not executable proof.
+
+For repository agentic/documentation conformance, use:
+
+```bash
+python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md
+```
+
+When changing documentation progression/status rendering, also run:
+
+```bash
+python3 scripts/check_docs_consistency.py
+```
+
+Do not claim Databricks runtime support, deployment capability, provider compatibility, or production readiness without corresponding executable or environment-specific evidence.
 
 ## Security and examples
 
-Never commit secrets, credentials, production data, or real PII/PHI. Use synthetic examples. Policy classifications should be described precisely and must not be presented as compliance certifications.
+Never commit secrets, credentials, production data, or real PII/PHI. Use synthetic examples and least-privilege test identities. Security, policy, and governance documentation should state what DMTZ requires without presenting design intent as a compliance certification.
