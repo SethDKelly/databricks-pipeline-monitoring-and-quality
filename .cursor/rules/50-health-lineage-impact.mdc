@@ -11,7 +11,7 @@ alwaysApply: false
 
 # Health, runtime, Lineage, Impact
 
-Use `docs/implementation/agent_reference_index.md` to locate HLTH/OPS contracts, Phase 010 Group 05, and Implementation 004.
+Use `docs/implementation/agent_reference_index.md`; current owners are `docs/contracts/health-quality-timing/`, `docs/contracts/operations/`, and `docs/architecture/runtime-provenance-health-lineage-impact.md`, with Implementation 004 at `docs/implementation/004_runtime_provenance_health_quality_change_lineage/README.md`.
 
 Preserve directly:
 
