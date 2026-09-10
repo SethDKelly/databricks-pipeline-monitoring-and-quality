@@ -2,11 +2,11 @@
 
 **AUTHORITY: CURRENT ROUTING / DISCOVERY ROOT ONLY — NOT A SEMANTIC OWNER**
 
-**DPTN-E invariant:** ROUTING / DISCOVERY ROOT — NOT A SEMANTIC OWNER.
-
 This is the single authored human/tool-neutral discovery root for the DMTZ repository. It tells readers and tools where current authority lives; it does not replace the current semantic ownership ledger or make routing text authoritative.
 
-**DPTN state:** DPTN-A–F COMPLETE / ACCEPTED — DPTN-G NEXT / READY / NOT STARTED — IMPLEMENTATION 001-A BLOCKED / NOT STARTED ON DPTN EXIT.
+**Documentation topology:** NORMALIZED — DPTN EXIT ACCEPTED.
+
+**Implementation 001-A:** NEXT / READY / NOT STARTED.
 
 ## Fastest route
 
@@ -14,11 +14,11 @@ This is the single authored human/tool-neutral discovery root for the DMTZ repos
 - **Unknown semantic location:** start with the current semantic families below, then narrow to the smallest owning document.
 - **Repository/developer authority:** start with [`../AGENTS.md`](../AGENTS.md).
 - **Implementation state:** use [`implementation/README.md`](implementation/README.md).
-- **Design-phase progression:** use [`README.md`](README.md); it remains the sole living authority for completed Phase 002–010 progression.
+- **Design-phase progression:** use [`README.md`](README.md); it remains the living authority for completed Phase 002–010 progression.
 
 ## Current semantic authority
 
-Current semantic ownership is selected by [`canonical_knowledge_retrofit/canonical_ownership_inventory.json`](canonical_knowledge_retrofit/canonical_ownership_inventory.json). A current semantic question resolves to one current owner. Search order, redirects, history, path recency, OKF metadata, vendor guidance and model/tool memory do not override that ledger.
+Current semantic ownership is selected by [`canonical_knowledge_retrofit/canonical_ownership_inventory.json`](canonical_knowledge_retrofit/canonical_ownership_inventory.json). A current semantic question resolves to one current owner. Search order, history, path recency, OKF metadata, vendor guidance and model/tool memory do not override that ledger.
 
 - [Concepts](concepts/README.md)
 - [Architecture](architecture/README.md)
@@ -35,12 +35,13 @@ Accepted stable ranges remain SYN-001–035, REF-001–030, AUTH-001–053, HLTH
 
 - [Agentic Development Foundation](agentic_development_foundation/README.md) — durable human-directed authority, context, workflow, conformance, compatibility, security and lifecycle policy.
 - [Canonical Knowledge / ownership mechanics](canonical_knowledge_retrofit/README.md) — durable ownership/routing mechanics; completed CKR execution evidence is historical.
-- [Documentation Physical Topology Normalization](documentation_topology_normalization/README.md) — active pre-implementation topology program.
-- [Implementation program](implementation/README.md) — implementation planning/progression; currently blocked on DPTN exit.
+- [Implementation program](implementation/README.md) — current implementation planning/progression; 001-A is ready but not started.
 
 ## History and provenance
 
-[`history/README.md`](history/README.md) is explicitly **HISTORY / PROVENANCE ONLY**. It contains preserved Phase 001–010 material, prior reference/foundation/planning/design-history trees, completed CKR/ADF program evidence, and the pre-DPTN-E authored OKF routing tree. Historical occurrences never become current owners because they exist or appear first in search.
+[`history/README.md`](history/README.md) is explicitly **HISTORY / PROVENANCE ONLY**. It contains preserved Phase 001–010 material, prior reference/foundation/planning/design-history trees, completed CKR/ADF evidence, prior authored OKF routing, and the completed DPTN normalization program. Historical occurrences never become current owners because they exist or appear first in search.
+
+- [Completed DPTN record](history/retrofits/dptn/README.md) — normalization authority, move map, manifests, reviews, fixtures and retired phase tooling as historical provenance.
 
 ## Generated OKF v0.2 projection
 
@@ -54,14 +55,10 @@ Top-level `knowledge/` remains for generic OKF v0.2 consumers as a **determinist
 
 Do not hand-edit generated `knowledge/` files. Change the current owning documentation, workflow/implementation catalog, or bounded projection specification as appropriate, then regenerate and validate the projection. Generated OKF `stable`, `verified`, routing text or provenance never carries DMTZ proposition authority.
 
-## DPTN-F routing result
-
-MOVE-019 has rebound current stable-reference, agent/rule/link and drift-analysis consumers to normalized first-class paths. Repository-native discovery now consistently starts here; current link validation does not substitute history; scoped rules no longer route through Phase 010/pre-DPTN paths. Completed CKR checks may still reconstruct their accepted-era routing only inside the dedicated ephemeral compatibility wrapper.
-
-`canonical/README.md` and legacy `docs/canonical/<family>` redirects remain compatibility-only pending DPTN-G retirement. They are not semantic owners or stable-ID locators.
+The generated `documentation-topology` project route points here, to the permanent current topology/discovery contract. Completed DPTN material is reachable through history only.
 
 ## Current next dependency
 
-**DPTN-G — Conservation Audit, Legacy-Path Retirement & Exit Review: NEXT / READY / NOT STARTED.**
+**Implementation 001-A — NEXT / READY / NOT STARTED.**
 
-DPTN-F acceptance does not authorize DPTN-G or product implementation automatically. Implementation 001-A remains blocked until DPTN-G exit acceptance and a later explicit human-selected implementation task.
+DPTN exit removed the topology blocker but did not authorize implementation automatically. Begin 001-A only after a separate explicit human-selected implementation task.
