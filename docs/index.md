@@ -2,6 +2,8 @@
 
 **AUTHORITY: CURRENT ROUTING / DISCOVERY ROOT ONLY — NOT A SEMANTIC OWNER**
 
+**DPTN-E invariant:** ROUTING / DISCOVERY ROOT — NOT A SEMANTIC OWNER.
+
 This is the single authored human/tool-neutral discovery root for the DMTZ repository. It tells readers and tools where current authority lives; it does not replace the current semantic ownership ledger or make routing text authoritative.
 
 **DPTN state:** DPTN-A–F COMPLETE / ACCEPTED — DPTN-G NEXT / READY / NOT STARTED — IMPLEMENTATION 001-A BLOCKED / NOT STARTED ON DPTN EXIT.
