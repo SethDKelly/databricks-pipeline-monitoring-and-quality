@@ -1,20 +1,14 @@
-# Canonical Reference
+# Reference
 
-Current reference surfaces for product purpose, actors, terminology, lifecycle, glossary, stable-contract ownership and direct semantic lookup.
+Current reference material provides compact, direct lookup for DMTZ purpose, actors, terminology, lifecycle, method, and glossary information.
 
-## Canonicalized in CKR-B
+- [`product-definition.md`](product-definition.md) — product purpose and boundary
+- [`actors-and-stakeholders.md`](actors-and-stakeholders.md) — actors and stakeholder roles
+- [`terminology.md`](terminology.md) — shared product terminology
+- [`concept-design-method.md`](concept-design-method.md) — Daniel Jackson Concept Design method used by DMTZ
+- [`ecosystem-lifecycles.md`](ecosystem-lifecycles.md) — relevant ecosystem lifecycle reference
+- [`glossary.md`](glossary.md) — concise terminology lookup
 
-These records are now current authority:
+Authority-specific vocabulary is maintained under [`../authority/vocabulary.md`](../authority/vocabulary.md). Policy and invariant references live under [`../policies/`](../policies/README.md) and [`../invariants/`](../invariants/README.md).
 
-- `foundation.product_definition` → [`product-definition.md`](product-definition.md)
-- `foundation.actors_stakeholders` → [`actors-and-stakeholders.md`](actors-and-stakeholders.md)
-- `foundation.terminology` → [`terminology.md`](terminology.md)
-- `foundation.concept_design_method` → [`concept-design-method.md`](concept-design-method.md)
-- `foundation.ecosystem_lifecycles` → [`ecosystem-lifecycles.md`](ecosystem-lifecycles.md)
-- `reference.glossary` → [`glossary.md`](glossary.md)
-
-Related canonical CKR-B policy/invariant resources live under `../policies/` and `../invariants/`.
-
-`docs/reference/authority_vocabulary.md` remains legacy-authoritative until CKR-D.
-
-The CKR ownership inventory remains the machine-readable authority source for migrated and unmigrated records.
+The machine-readable current ownership ledger is [`../canonical_knowledge_retrofit/canonical_ownership_inventory.json`](../canonical_knowledge_retrofit/canonical_ownership_inventory.json). Historical reference material and prior formulations are preserved under [`../history/`](../history/README.md).
