@@ -1,12 +1,12 @@
 # CKR Migration Contract
 
-**Status:** ACCEPTED — CKR-A MIGRATION CONTRACT / PHYSICAL ROUTING REBOUND DPTN-F
+**Status:** ACCEPTED — CKR-A MIGRATION CONTRACT / NORMALIZED TO FINAL DPTN TOPOLOGY
 
 ## Purpose
 
 This contract defines how a DMTZ semantic record moves from legacy chronological ownership to current semantic knowledge without losing provenance, manufacturing new semantics or creating two simultaneous current owners.
 
-CKR migration is complete. DPTN later changed physical paths only. References below to a canonical target therefore mean the **current target selected by `canonical_ownership_inventory.json`**, now under the first-class `docs/<family>/` topology.
+CKR migration is complete. DPTN later changed physical paths and routing only, then exited successfully. References below to a canonical target mean the **current target selected by `canonical_ownership_inventory.json`** under the first-class `docs/<family>/` topology.
 
 ## Migration states
 
@@ -45,7 +45,7 @@ Requirements:
 - all required accepted meaning/stable-ID coverage is preserved;
 - normal agent/stable-ID routing points to the current owner;
 - legacy source is treated as design history/provenance for that record;
-- no living index or implementation guidance presents the legacy source or a compatibility redirect as the current owner.
+- no living index or implementation guidance presents a legacy or retired compatibility path as the current owner.
 
 ### `history_only`
 
@@ -83,7 +83,7 @@ Cutover is one accepted repository change in which all of the following become t
 
 A partial cutover is a migration defect.
 
-DPTN-C later performed a separate atomic **path-only** promotion from the CKR-era `docs/canonical/<family>/` namespace to first-class `docs/<family>/` owners and rebound the ownership inventory at the same time. That path promotion did not reopen semantic cutover.
+DPTN-C later performed a separate atomic **path-only** promotion from the CKR-era compatibility namespace to first-class `docs/<family>/` owners and rebound the ownership inventory at the same time. DPTN-G retired that compatibility namespace after routing no longer depended on it. Neither operation reopened semantic cutover.
 
 ## No dual-authority rule
 
@@ -93,7 +93,7 @@ The following states are prohibited:
 - inventory says `canonicalized` but the current target is missing;
 - inventory says `legacy_authoritative` while a target semantic document claims current authority;
 - current routing sends current questions to history after canonicalization;
-- a compatibility redirect is treated as an alternate semantic owner;
+- a retired compatibility path is treated as an alternate semantic owner;
 - a current target delegates essential meaning back to multiple historical phase files.
 
 Current resources may cite history for rationale; they must not require design-history reconstruction to answer the current semantic question they own.
@@ -123,7 +123,9 @@ Provenance should not turn a current resource into a full chronology.
 
 ## Historical preservation
 
-Historical records live under `docs/history/` after DPTN. They preserve accepted-at-the-time evolution and are not rewritten to look current. Historical text, links and status statements must be interpreted in historical context.
+Historical records live under `docs/history/`. They preserve accepted-at-the-time evolution and are not rewritten to look current. Historical text, links and status statements must be interpreted in historical context.
+
+Completed DPTN evidence and the final retired compatibility orientation are preserved there as topology provenance only.
 
 ## Canonical document metadata contract
 
@@ -135,10 +137,10 @@ Do not duplicate OKF lifecycle/trust metadata into semantic authority headers.
 
 CKR migrated by semantic domain, not phase number. The accepted ownership inventory remains the durable current-owner ledger after CKR and DPTN.
 
-Normal lookup follows the inventory record for the requested semantic domain. Directory presence, `docs/canonical/` redirects, generated OKF, history and search order do not imply ownership.
+Normal lookup follows the inventory record for the requested semantic domain. Directory presence, generated OKF, history, retired compatibility provenance and search order do not imply ownership.
 
 ## Implementation gate
 
 CKR-K accepted the CKR exit after all required current semantic domains had owners, canonical-first routing was established, stable-ID ownership was deterministic, current-truth questions no longer required chronological reconstruction, history remained accessible, and no unreviewed dual-authority condition remained.
 
-DPTN was subsequently interposed as a separate topology gate. **Implementation 001-A remains BLOCKED / NOT STARTED until DPTN-G exit acceptance.** DPTN exit will return implementation to NEXT / READY / NOT STARTED; it will not itself begin implementation.
+DPTN was subsequently interposed as a separate topology gate and has now exited successfully. **Implementation 001-A is NEXT / READY / NOT STARTED.** This status removes the documentation-topology blocker only; implementation begins only after a separate explicit human-selected task.
