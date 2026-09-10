@@ -10,9 +10,9 @@
 
 ADF, CKR and Documentation Physical Topology Normalization (DPTN) have exited successfully. **Implementation 001-A has not started.** It is now the next eligible implementation package and still requires an explicit human-selected implementation task before any implementation work begins.
 
-Current semantic ownership is selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`. The ownership ledger selects the current owner for every semantic question and stable ID; `docs/history/` and generated OKF never become semantic owners.
+Current semantic ownership is selected by `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json`. The ownership ledger selects the current canonical owner for every semantic question and stable ID; `docs/history/` and generated OKF never become semantic owners.
 
-Authority order: current semantic owner → root `AGENTS.md` → current implementation status → accepted ADF scope/security mechanics → DMTZ workflows/overlays → reviewed vendor operational guidance → tool/personal memory.
+Authority order: current canonical owner → root `AGENTS.md` → current implementation status → accepted ADF scope/security mechanics → DMTZ workflows/overlays → reviewed vendor operational guidance → tool/personal memory.
 
 ## Human-directed boundary
 
@@ -20,9 +20,9 @@ Follow `docs/agentic_development_foundation/authority_scope_policy.md`. Completi
 
 ## Current routing
 
-Use `human task → docs/index.md when location is unknown → current ownership ledger/current owner → exact IDs/tests as needed`.
+Use `human task → docs/index.md when location is unknown → current ownership ledger/current canonical owner → exact IDs/tests as needed`.
 
-For a known stable ID, run `python3 scripts/agentic/resolve_stable_id.py <ID>` for the deterministic current `owner_path::ID`; use `--history` only for explicit provenance/rationale/history work. Historical occurrences and generated OKF never compete with current ownership.
+For a known stable ID, run `python3 scripts/agentic/resolve_stable_id.py <ID>` for the deterministic current canonical `owner_path::ID`; use `--history` only for explicit provenance/rationale/history work. Historical occurrences and generated OKF never compete with current ownership.
 
 `knowledge/index.md` is generated OKF v0.2 compatibility only. Repository-native agents/tools should use `docs/index.md` for unknown-location discovery unless a generic OKF interface is specifically required.
 
