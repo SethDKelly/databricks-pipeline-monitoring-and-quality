@@ -1,10 +1,6 @@
-# Canonical Architecture
+# Architecture
 
-Structural routing index for current accepted DMTZ technical architecture.
-
-**CKR-I cutover state:** ARCH-001–ARCH-500 now resolve to eight inventoried `CANONICAL CURRENT AUTHORITY` resources in this directory. The separately inventoried frozen reference architecture composes those segments and owns no additional stable-ID range. Phase 010 is design history/provenance for these meanings.
-
-## Current topology
+Current DMTZ technical architecture is organized into eight stable-ID-owning segments plus a composed reference architecture:
 
 - `frame-environment-decision-criteria.md` — ARCH-001–032
 - `evidence-provenance-temporal-persistence.md` — ARCH-033–080
@@ -14,6 +10,8 @@ Structural routing index for current accepted DMTZ technical architecture.
 - `investigation-reasoning-replay-explanation.md` — ARCH-275–350
 - `active-control.md` — ARCH-351–420
 - `serving-security-deployment-operations.md` — ARCH-421–500
-- `reference-architecture.md` — frozen composition of ARCH-001–500
+- `reference-architecture.md` — composed reference architecture across ARCH-001–500; it owns no additional stable-ID range.
 
-This README is a routing-only structural index, not a separate semantic owner. For detailed design rationale, scenario evidence, ADRs and the original 500 atomic contracts, consult Phase 010 as provenance.
+These resources describe the accepted intended system architecture. They do not by themselves prove that a Databricks workspace, integration, deployment target, or runtime capability has been implemented or verified.
+
+Use [`../canonical_knowledge_retrofit/canonical_ownership_inventory.json`](../canonical_knowledge_retrofit/canonical_ownership_inventory.json) for exact ownership and [`../history/`](../history/README.md) for design provenance and prior architectural progression.
