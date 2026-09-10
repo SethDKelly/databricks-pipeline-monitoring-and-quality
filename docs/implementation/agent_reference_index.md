@@ -4,15 +4,13 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
 
-**DPTN status mirror: COMPLETE DPTN-A–DPTN-F; NEXT DPTN-G; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
+**DPTN exit: ACCEPTED — Implementation 001-A NEXT / READY / NOT STARTED.**
 
 ## Universal start
 
 | Need | Read first |
 |---|---|
 | Unknown-location discovery | `docs/index.md` |
-| Active topology program | `docs/documentation_topology_normalization/README.md` |
-| DPTN topology authority | `docs/documentation_topology_normalization/topology_authority.md` |
 | History/provenance | `docs/history/README.md` |
 | CKR durable authority/routing | `docs/canonical_knowledge_retrofit/README.md` |
 | Current semantic owner | `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` |
@@ -25,16 +23,20 @@
 | Invariants | `docs/invariants/README.md` |
 | Policies | `docs/policies/README.md` |
 | Reference | `docs/reference/README.md` |
+| Implementation state | `docs/implementation/README.md` |
 | Generic OKF compatibility | generated `knowledge/index.md` |
 | Conformance | `scripts/agentic/run_conformance.py` |
+| Completed DPTN provenance | `docs/history/retrofits/dptn/README.md` |
 
 ## Current state
 
 - ADF — COMPLETE / EXIT ACCEPTED.
 - CKR-A–K — COMPLETE / ACCEPTED.
 - CKR EXIT — ACCEPTED.
-- **DPTN-A–F — COMPLETE / ACCEPTED.**
-- **DPTN-G — NEXT / READY / NOT STARTED.**
-- **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
+- DPTN-A–G — COMPLETE / ACCEPTED.
+- DPTN EXIT — ACCEPTED.
+- **Implementation 001-A — NEXT / READY / NOT STARTED.**
 
-DPTN-F completed MOVE-019 broad current-route rebinding. Repository-native agents use `docs/index.md`; generated OKF is compatibility only; exact IDs resolve to first-class current owners; current link validation does not fall back to history. DPTN-G owns final legacy-path retirement, conservation audit and exit review.
+Repository-native agents use `docs/index.md`; generated OKF is compatibility only; exact IDs resolve to first-class current owners; history remains explicit provenance. DPTN is no longer a live routing layer.
+
+Implementation readiness is not implementation authorization. Begin 001-A only when the human explicitly selects it.
