@@ -1,10 +1,10 @@
 # DMTZ OKF Knowledge Maintenance Policy
 
-**Status:** ACCEPTED — ADF-B / REFINED ADF-E + CKR-J + DPTN-E
+**Status:** ACCEPTED — ADF-B / REFINED ADF-E + CKR-J + DPTN EXIT
 
 ## Ownership
 
-Canonical DMTZ documents/code/tests remain the source of truth. After DPTN-E, [`../index.md`](../index.md) is the single authored discovery root and top-level `knowledge/` is a **generated OKF v0.2 compatibility projection**. Neither surface creates semantic authority.
+Canonical DMTZ documents/code/tests remain the source of truth. [`../index.md`](../index.md) is the single authored discovery root and top-level `knowledge/` is a **generated OKF v0.2 compatibility projection**. Neither surface creates semantic authority.
 
 The bounded projection specification is `docs/routing/okf_projection.json`. It records route identity/targets only; it is not a semantic ownership ledger. Current semantic ownership remains selected by the CKR ownership inventory.
 
@@ -23,7 +23,9 @@ The bounded projection specification is `docs/routing/okf_projection.json`. It r
 
 ## Provenance and compatibility
 
-The complete pre-DPTN-E authored `knowledge/` tree is preserved under `docs/history/routing/okf-pre-dptn-e/`. It is historical provenance only. Completed CKR-J checks may rehydrate it ephemerally to reproduce accepted-era routing validation; current DPTN checks inspect the generated tree.
+The complete pre-convergence authored `knowledge/` tree is preserved under `docs/history/routing/okf-pre-dptn-e/`. It is historical provenance only. Completed CKR-J checks may rehydrate it ephemerally to reproduce accepted-era routing validation; current topology checks inspect the generated tree directly.
+
+The completed DPTN program is preserved under `docs/history/retrofits/dptn/` and is likewise provenance only.
 
 ## Progressive disclosure
 
@@ -41,6 +43,6 @@ When an exact stable ID is already known, use `scripts/agentic/resolve_stable_id
 
 - `scripts/agentic/generate_okf_projection.py --check` enforces exact generated output;
 - `scripts/agentic/validate_okf.py` validates OKF structure/resources/links;
-- `scripts/agentic/validate_dptn_e_convergence.py` validates discovery/projection topology;
+- `scripts/agentic/validate_documentation_topology.py` validates the durable normalized discovery/topology contract;
 - completed CKR-J validation remains protected through accepted-era compatibility projection;
 - context-budget and integrated conformance checks remain mandatory.
