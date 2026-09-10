@@ -12,7 +12,7 @@ alwaysApply: false
 
 # Serving and security
 
-Use `docs/implementation/agent_reference_index.md` to locate Phase 010 Groups 03/08 and Implementations 006/007.
+Use `docs/implementation/agent_reference_index.md`; current owners are `docs/architecture/serving-security-deployment-operations.md`, `docs/authority/disclosure-governance.md`, and `docs/experience/audience-authorization-safe-abstraction.md`, with Implementations 006/007 under `docs/implementation/`.
 
 Preserve directly:
 
