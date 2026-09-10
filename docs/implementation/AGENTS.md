@@ -4,10 +4,12 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
 
-**DPTN status mirror: COMPLETE DPTN-A–DPTN-F; NEXT DPTN-G; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
+**DPTN exit: ACCEPTED — Implementation 001-A NEXT / READY / NOT STARTED.**
 
-ADF and CKR are complete/accepted. DPTN-A–F are complete/accepted and DPTN-G is NEXT / READY / NOT STARTED. **Implementation 001-A is BLOCKED / NOT STARTED** until DPTN-G exit acceptance and a later explicit human-selected implementation task.
+ADF, CKR and DPTN are complete/accepted. **Implementation 001-A is NEXT / READY / NOT STARTED** and still requires a separate explicit human-selected implementation task before work begins.
 
 Use `docs/index.md` for repository-native discovery and `docs/canonical_knowledge_retrofit/canonical_ownership_inventory.json` for exact current semantic ownership. For a known stable ID, `scripts/agentic/resolve_stable_id.py <ID>` returns the current locator selected by the ledger; `--history` is provenance-only.
 
-Top-level `knowledge/` is generated OKF compatibility output. DPTN-F completed broad stable-reference/agent/link rebinding; current operational routing must not depend on history or `docs/canonical/<family>` compatibility redirects. DPTN-G owns final redirect/scaffolding retirement and exit review.
+Top-level `knowledge/` is generated OKF compatibility output. Current operational routing uses first-class semantic-owner paths and must not depend on retired migration/compatibility namespaces. The completed DPTN record is historical provenance under `docs/history/retrofits/dptn/`.
+
+Do not infer implementation start from readiness. 001-A begins only when the human explicitly selects that implementation task.
