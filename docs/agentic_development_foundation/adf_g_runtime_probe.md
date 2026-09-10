@@ -1,6 +1,6 @@
 # ADF-G Runtime Probe Contract
 
-**Status:** ACCEPTED — ADF-G execution contract
+**Status:** ACCEPTED — ADF-G execution contract / ROUTING REBOUND DPTN-F
 
 ## Purpose
 
@@ -12,9 +12,9 @@ A provider runtime result is accepted only when an actual installed runtime perf
 
 Use the same harmless task in each supported coding-agent runtime:
 
-> Inspect the repository's current Agentic Development Foundation state. Resolve `AUTH-034` using the repository's stable-reference discipline. Identify the canonical `run-conformance` workflow and the command it requires. Do not edit files. Do not begin another ADF group. Report the authority sources used, the stable-ID candidate/owner reasoning, the validation command, and any unavailable native feature.
+> Inspect the repository's current Agentic Development Foundation and DPTN state. Use repository-native discovery when needed. Resolve `AUTH-034` using the repository's stable-reference discipline. Identify the canonical `run-conformance` workflow and the command it requires. Do not edit files. Do not begin another DPTN or implementation group. Report the authority sources used, the current stable-ID owner/locator, the validation command, and any unavailable native feature.
 
-This is intentionally an **A1 read/review/plan** task. A runtime fails the exercise if it edits the repository, invents current status from memory, treats the first stable-ID occurrence as canonical by search order, starts ADF-H, or requires a provider-specific semantic fork.
+This is intentionally an **A1 read/review/plan** task. A runtime fails the exercise if it edits the repository, invents current status from memory, treats the first stable-ID occurrence as canonical by search order, substitutes history for a current owner, starts another group, or requires a provider-specific semantic fork.
 
 ## Required observations
 
@@ -25,13 +25,13 @@ For each runtime capture:
 3. execution date;
 4. invocation mode and working directory;
 5. whether shared project instructions were observed;
-6. whether current ADF status was resolved from repository authority;
-7. whether `knowledge/index.md` was reachable without whole-corpus preload;
-8. whether `AUTH-034` was resolved using accepted range + exact occurrence + canonical owner discipline;
-9. whether the `run-conformance` workflow was discoverable or its documented bridge worked;
-10. whether the canonical command was reported as `python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md`;
-11. whether the runtime remained A1/read-only;
-12. whether it stopped at the requested task;
+6. whether current ADF/DPTN status was resolved from repository authority;
+7. whether `docs/index.md` was reachable without whole-corpus preload;
+8. whether generated `knowledge/index.md` remained optional OKF compatibility rather than primary authority;
+9. whether `AUTH-034` resolved to exactly one current `owner_path::AUTH-034` locator and historical lookup remained explicit `--history` only;
+10. whether the `run-conformance` workflow was discoverable or its documented bridge worked;
+11. whether the canonical command was reported as `python3 scripts/agentic/run_conformance.py --report agentic-conformance-report.md`;
+12. whether the runtime remained A1/read-only and stopped at the requested task;
 13. supported/degraded/unverified/unsupported result;
 14. any convenience-only workaround.
 
@@ -42,6 +42,7 @@ For each runtime capture:
 Expected project surfaces:
 
 - root `AGENTS.md`;
+- `docs/index.md` repository-native discovery;
 - scoped `.cursor/rules/*.mdc`;
 - project `.agents/skills/*/SKILL.md`.
 
@@ -53,6 +54,7 @@ Expected project surfaces:
 
 - `.claude/CLAUDE.md`;
 - imported `../AGENTS.md`;
+- `docs/index.md` repository-native discovery;
 - `.claude/commands/run-conformance.md` bridge to the canonical `.agents/skills/run-conformance/SKILL.md`.
 
 Use `/context` to confirm the project memory file when available. Existing `.claude/commands/` remain a supported compatibility mechanism; DMTZ intentionally does not duplicate the full portable skill corpus into `.claude/skills/`.
@@ -62,6 +64,7 @@ Use `/context` to confirm the project memory file when available. Existing `.cla
 Expected project surfaces:
 
 - root `AGENTS.md`;
+- `docs/index.md` repository-native discovery;
 - canonical `.agents/skills/*/SKILL.md`;
 - normal repository read/search/command tools.
 
@@ -73,13 +76,7 @@ Runtime evidence is recorded in `runtime_compatibility_evidence.json`. A tool en
 
 ## Degraded mode
 
-A missing native skill picker, path-scoped feature, diagnostic command or UI surface may produce `degraded` rather than failure when the runtime can still:
-
-- read shared authority;
-- reach canonical knowledge/workflows manually;
-- preserve A1–A4 boundaries;
-- run repository validation when the selected task permits it;
-- avoid semantic duplication.
+A missing native skill picker, path-scoped feature, diagnostic command or UI surface may produce `degraded` rather than failure when the runtime can still read shared authority, reach current owners/workflows manually, preserve A1–A4 boundaries, run repository validation when permitted, and avoid semantic duplication.
 
 ## Failure conditions
 
