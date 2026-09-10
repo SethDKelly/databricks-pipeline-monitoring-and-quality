@@ -38,4 +38,4 @@ def main()->int:
         mutate(repo,'docs/routing/okf_projection.json',lambda t:t.replace('"resource":"docs/index.md","related":["docs/README.md"]','"resource":"docs/history/retrofits/dptn/README.md","related":["docs/README.md"]',1),'validate_documentation_topology.py','topology route redirected to history',errors)
     for e in errors: print('ERROR',e)
     print(f'Cross-cutting conformance guards: {len(errors)} error(s), 12 negative control(s)'); return 1 if errors else 0
-if __name__=='__main__: raise SystemExit(main())
+if __name__=='__main__': raise SystemExit(main())
