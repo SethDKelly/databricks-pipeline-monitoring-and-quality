@@ -1,6 +1,8 @@
 # Canonical Knowledge Document Template
 
-Use this template for substantive resources created under `docs/canonical/` in CKR-B onward. Structural README/index files are exempt.
+**Routing note:** CKR originally created candidates under `docs/canonical/`; DPTN-C promoted accepted current owners to first-class `docs/<family>/` paths. This template now describes the normalized current topology without changing the accepted document-authority contract.
+
+Use this template for substantive current semantic resources governed by the CKR ownership model. Structural README/index files are exempt.
 
 ```markdown
 # <Title>
@@ -11,7 +13,7 @@ Use this template for substantive resources created under `docs/canonical/` in C
 
 **Authority:** CANDIDATE / NOT CURRENT AUTHORITY
 
-**Migration record:** `<record id from canonical_ownership_inventory.json>`
+**Migration/change record:** `<governed record or change identifier>`
 
 **Owns current question:** <bounded statement of what this resource answers>
 
@@ -25,7 +27,7 @@ Use this template for substantive resources created under `docs/canonical/` in C
 
 <durable non-collapse rules>
 
-## Synchronizations / related canonical resources
+## Synchronizations / related current resources
 
 <references, not duplicate definitions>
 
@@ -36,13 +38,14 @@ Use this template for substantive resources created under `docs/canonical/` in C
 - <material decision/exit source(s)>
 ```
 
-At atomic cutover, `**Authority:** CANDIDATE / NOT CURRENT AUTHORITY` changes to `**Authority:** CANONICAL CURRENT AUTHORITY` in the same accepted change that updates the ownership inventory and required routing.
+At accepted cutover, `**Authority:** CANDIDATE / NOT CURRENT AUTHORITY` changes to `**Authority:** CANONICAL CURRENT AUTHORITY` in the same governed change that updates required ownership/routing.
 
 ## Template rules
 
-- A canonical resource must answer the bounded current question without requiring phase chronology reconstruction.
+- A current semantic resource must answer the bounded current question without requiring phase chronology reconstruction.
 - Provenance links explain origin; they are not delegated semantic ownership.
 - Stable IDs retain accepted meaning; owner-path migration does not renumber them.
-- Avoid full restatement of other canonical resources. Link across concept/policy/contract boundaries.
-- Do not place OKF trust/lifecycle metadata here merely because the resource is discoverable through OKF.
-- A candidate is review material only until the inventory cutover is accepted.
+- Current semantic owners live in first-class `docs/<family>/` roots selected by `canonical_ownership_inventory.json`.
+- Avoid full restatement of other current resources. Link across concept/policy/contract boundaries.
+- Do not place OKF trust/lifecycle metadata here merely because the resource is discoverable through generated OKF.
+- A candidate is review material only until its governed cutover is accepted.
