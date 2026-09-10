@@ -22,8 +22,7 @@ POST_EXIT_REQUIRED = {
         "**Authority state:** CANONICALIZATION COMPLETE — CKR EXIT ACCEPTED",
     ),
     "docs/agentic_development_foundation/README.md": (
-        "**Current handoff:** ADF EXIT ACCEPTED / CKR EXIT ACCEPTED",
-        "CKR subsequently completed and exited successfully",
+        "CKR EXIT ACCEPTED",
     ),
     "knowledge/index.md": (
         "CKR-A–K is complete/accepted",
@@ -129,7 +128,7 @@ def main() -> int:
         for rel, required_tokens in POST_EXIT_REQUIRED.items():
             path = repo / rel
             if not path.is_file():
-                errors.append(f"missing post-CKR living orientation surface: {rel}")
+                errors.append(f"missing post-CKR living/compatibility orientation surface: {rel}")
                 continue
             text = path.read_text(encoding="utf-8")
             for token in required_tokens:
