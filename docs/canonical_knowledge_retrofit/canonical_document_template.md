@@ -1,6 +1,6 @@
 # Canonical Knowledge Document Template
 
-**Routing note:** CKR originally created candidates under `docs/canonical/`; DPTN-C promoted accepted current owners to first-class `docs/<family>/` paths. This template now describes the normalized current topology without changing the accepted document-authority contract.
+**Routing note:** CKR originally created candidates in a temporary compatibility namespace; DPTN promoted accepted current owners to first-class `docs/<family>/` paths and later retired that compatibility namespace. The historical routing state is preserved under `docs/history/`.
 
 Use this template for substantive current semantic resources governed by the CKR ownership model. Structural README/index files are exempt.
 
