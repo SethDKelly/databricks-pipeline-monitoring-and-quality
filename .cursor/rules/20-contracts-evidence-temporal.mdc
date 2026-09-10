@@ -11,7 +11,7 @@ alwaysApply: false
 
 # Contracts, evidence, time, persistence
 
-Start with `docs/implementation/agent_reference_index.md`, then follow the Phase 010 Group 02 / active implementation references it names.
+Start with `docs/implementation/agent_reference_index.md`; current owners are `docs/contracts/evidence-time-causality/` and `docs/architecture/evidence-provenance-temporal-persistence.md`, with the active implementation package selected through `docs/implementation/README.md`.
 
 Preserve directly:
 
