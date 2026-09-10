@@ -1,6 +1,6 @@
 # CKR Documentation Authority Model
 
-**Status:** ACCEPTED — CKR-A AUTHORITY / PHYSICAL ROUTING REBOUND DPTN-F
+**Status:** ACCEPTED — CKR-A AUTHORITY / NORMALIZED TO FINAL DPTN TOPOLOGY
 
 ## 1. Purpose
 
@@ -9,7 +9,7 @@ DMTZ separates two legitimate documentation purposes:
 1. **current semantic knowledge** — what DMTZ means now;
 2. **design history** — how and why DMTZ arrived there.
 
-Neither layer replaces the other. DPTN changes their physical topology without changing this authority model.
+Neither layer replaces the other. DPTN changed their physical topology without changing this authority model and has now exited successfully.
 
 ## 2. Authority layers
 
@@ -23,7 +23,7 @@ Current resources must be independently usable for the question they own. They m
 
 ### Layer 2 — Design history and provenance
 
-`docs/history/` preserves phase working records, original specifications, refinements, decisions, scenario/exit reviews, handoffs, gap registers, completed retrofit/foundation evidence and superseded formulations.
+`docs/history/` preserves phase working records, original specifications, refinements, decisions, scenario/exit reviews, handoffs, gap registers, completed retrofit/foundation/normalization evidence and superseded formulations.
 
 Design history explains origin, rationale, evolution, alternatives and historical state. It is not deleted merely because current meaning has a first-class owner, and it never competes with the current owner selected by the inventory.
 
@@ -44,7 +44,7 @@ For a `canonicalized` record:
 3. `docs/history/` provenance;
 4. routing/generated-knowledge summaries.
 
-Historical sources cease to be current semantic owners at cutover. Compatibility redirects under `docs/canonical/<family>/`, while they remain, are not an authority layer.
+Historical sources cease to be current semantic owners at cutover. Retired compatibility paths are preserved only as historical provenance and are not an authority layer.
 
 ## 4. No dual-current-authority invariant
 
@@ -52,7 +52,7 @@ For every semantic record:
 
 > **Exactly one authority state determines current ownership.**
 
-The repository may contain many descriptions, citations, redirects and historical definitions, but only one accepted current owner is permitted after canonicalization. The presence of the same stable ID or concept name in multiple files does not imply multiple authority.
+The repository may contain many descriptions and historical definitions, but only one accepted current owner is permitted after canonicalization. The presence of the same stable ID or concept name in multiple files does not imply multiple authority.
 
 ## 5. Current question routing
 
@@ -87,7 +87,7 @@ Canonicalization retains provenance sufficient to explain where accepted meaning
 
 SYN/REF/AUTH/HLTH/OPS/EXPL/INTG/ARCH identifiers retain their accepted meanings throughout CKR and DPTN.
 
-Current exact-ID resolution is deterministic through `scripts/agentic/resolve_stable_id.py <ID>` and returns `owner_path::STABLE-ID` against the inventory-selected current owner. `--history` performs separate provenance discovery. Search rank, first occurrence, redirect presence and history never determine the current owner.
+Current exact-ID resolution is deterministic through `scripts/agentic/resolve_stable_id.py <ID>` and returns `owner_path::STABLE-ID` against the inventory-selected current owner. `--history` performs separate provenance discovery. Search rank, first occurrence and history never determine the current owner.
 
 ## 9. Concept ownership
 
@@ -105,4 +105,4 @@ Historical phase decisions are preserved under `docs/history/decisions/` as rati
 
 ## 12. Implementation relationship
 
-CKR exit is accepted. DPTN is a later, separate documentation-topology normalization gate; while DPTN remains active, Implementation 001-A is blocked until DPTN-G exit acceptance. Neither CKR nor DPTN changes the accepted implementation roadmap by routing alone.
+CKR exit and DPTN exit are accepted. **Implementation 001-A is NEXT / READY / NOT STARTED.** Documentation normalization removed the topology blocker but did not start implementation; implementation begins only after a separate explicit human-selected task.
