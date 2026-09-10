@@ -1,6 +1,6 @@
 # DMTZ Portable Workflow / Agent Skills Profile
 
-**Status:** ACCEPTED — ADF-D / EXTENDED BY DATABRICKS AGENT SKILLS ADDENDUM
+**Status:** ACCEPTED — ADF-D / EXTENDED BY DATABRICKS AGENT SKILLS ADDENDUM / ROUTING REBOUND DPTN-F
 
 ## Purpose
 
@@ -35,20 +35,13 @@ The canonical source does not use provider-specific frontmatter for model/effort
 
 Human-directed means the human selected the task/scope. It does **not** require that every host select the matching skill manually.
 
-A supported tool may surface or implicitly select a skill when the current human request matches its description, but skill selection:
-
-- cannot create a new task;
-- cannot expand the current task envelope;
-- cannot authorize A3/A4 actions;
-- cannot continue to a new group after the requested task completes.
-
-Explicit invocation is always acceptable when the host supports it.
+A supported tool may surface or implicitly select a skill when the current human request matches its description, but skill selection cannot create a new task, expand the task envelope, authorize A3/A4 actions, or continue automatically to a new group after the requested task completes.
 
 ## Core canonical workflows
 
 1. `resolve-context` — A1 minimum current authority/context.
 2. `implement-group` — A2 one human-selected group/task, validate, update direct support artifacts, then stop.
-3. `resolve-contract` — A1 exact canonical contract/scenario resolution.
+3. `resolve-contract` — A1 exact current contract/scenario resolution.
 4. `run-conformance` — A1 safe checks/reporting by default.
 5. `review-change` — A1 substantive contract/security/test review.
 6. `update-traceability` — evidence-backed A2 supporting workflow.
@@ -56,7 +49,7 @@ Explicit invocation is always acceptable when the host supports it.
 
 ## Databricks platform overlays
 
-The pre-exit Databricks Agent Skills addendum adds six **DMTZ-owned overlays**, not copies of Databricks documentation:
+The Databricks Agent Skills addendum adds six **DMTZ-owned overlays**, not copies of Databricks documentation:
 
 - `dmtz-databricks-environment-discovery`;
 - `dmtz-databricks-acquisition`;
@@ -65,7 +58,7 @@ The pre-exit Databricks Agent Skills addendum adds six **DMTZ-owned overlays**, 
 - `dmtz-databricks-runtime-provenance`;
 - `dmtz-databricks-governance`.
 
-These overlays compose reviewed vendor operational guidance from `databricks_vendor_skills_profile.json` with DMTZ authority, evidence, temporal, identity, health, Lineage/Impact and authorization boundaries.
+These overlays compose reviewed vendor operational guidance with DMTZ authority, evidence, temporal, identity, health, Lineage/Impact and authorization boundaries.
 
 **Databricks skills know how Databricks works. DMTZ overlays constrain how that capability may realize DMTZ.**
 
@@ -73,15 +66,9 @@ Vendor skills are materialized locally beneath `.databricks/agent-skills/` and n
 
 ## Common workflow structure
 
-Each registered DMTZ skill contains:
+Each registered DMTZ skill contains a clear human-directed/action-class boundary, ordered workflow steps, output expectations, escalation/failure behavior where needed, and explicit stop conditions.
 
-- a clear human-directed/action-class boundary;
-- ordered workflow steps;
-- output expectations;
-- escalation/failure behavior where needed;
-- explicit stop conditions.
-
-Skills route to `AGENTS.md`, `knowledge/index.md`, canonical docs, tests, stable IDs and reviewed vendor dependencies rather than copying domain specifications.
+Skills route to `AGENTS.md`, repository-native `docs/index.md`, current semantic owners, tests, stable IDs and reviewed vendor dependencies rather than copying domain specifications. Generated `knowledge/index.md` remains available only as an OKF compatibility route.
 
 ## Tool invocation mapping
 
@@ -101,19 +88,9 @@ Provider runtime certification remains separate ADF-G evidence.
 
 ## Degraded behavior
 
-If a tool does not discover the native DMTZ skill/bridge:
+If a tool does not discover the native DMTZ skill/bridge, directly read `.agents/skills/<name>/SKILL.md`, keep repository authority/tests unchanged, record native-discovery failure as provider degradation, and do not create provider-specific semantic copies.
 
-1. directly read `.agents/skills/<name>/SKILL.md`;
-2. keep repository authority/tests unchanged;
-3. record native-discovery failure as provider degradation;
-4. do not create provider-specific semantic copies.
-
-If a reviewed Databricks vendor skill is not materialized:
-
-1. use official Databricks documentation/manual workflow for the product mechanic;
-2. retain the DMTZ overlay and all A1–A4/security boundaries;
-3. record vendor-skill convenience as degraded;
-4. do not install new/unreviewed upstream skills automatically.
+If a reviewed Databricks vendor skill is not materialized, use official Databricks documentation/manual workflow for the product mechanic, retain the DMTZ overlay and all A1–A4/security boundaries, record vendor-skill convenience as degraded, and do not install new/unreviewed upstream skills automatically.
 
 ## Security and autonomy boundary
 
@@ -123,6 +100,6 @@ Managed Databricks MCP servers are separate live integrations and are not config
 
 ## Change rule
 
-Material DMTZ workflow changes update the canonical `.agents/skills/` source, affected OKF route, relevant fixtures/validation and bridges only when mechanics change.
+Material DMTZ workflow changes update the canonical `.agents/skills/` source, relevant fixtures/validation and bridges only when mechanics change. Generated OKF workflow indexes derive from canonical workflows and are not hand-edited.
 
 Databricks vendor skill changes follow `databricks_agent_skills_addendum.md`: review upstream first, update the reviewed profile, inspect affected overlays, rematerialize, and rerun conformance. Do not edit provider bridges or vendor copies to change DMTZ meaning.
