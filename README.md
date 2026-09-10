@@ -54,6 +54,7 @@ Related current documentation:
 | Policies | [`docs/policies/`](docs/policies/README.md) |
 | Reference material | [`docs/reference/`](docs/reference/README.md) |
 | Implementation program | [`docs/implementation/`](docs/implementation/README.md) |
+| Contribution guide | [`CONTRIBUTING.md`](CONTRIBUTING.md) |
 | Historical design and provenance | [`docs/history/`](docs/history/README.md) |
 
 ## Current project state
@@ -72,8 +73,6 @@ The top-level `knowledge/` directory is a generated OKF v0.2 compatibility proje
 
 ## Contributing
 
-Contributions should preserve the distinction between current semantic authority, implementation state, and historical provenance. Start with [`AGENTS.md`](AGENTS.md) and [`docs/index.md`](docs/index.md), then work from the smallest current owner for the concept, contract, architecture segment, policy, or implementation package being changed.
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the contribution workflow, documentation authority rules, implementation/validation expectations, and security guidance.
 
-When changing accepted semantics, preserve explicit ownership and provenance rather than silently rewriting historical rationale. When changing implementation, do not claim runtime, Databricks-provider, deployment, or production support without corresponding evidence.
-
-Historical design progression, prior decisions, completed reviews, and superseded material remain available under [`docs/history/`](docs/history/README.md) for audit and rationale; they do not need to be restated in this README.
+Contributions should preserve the distinction between current semantic authority, implementation state, and historical provenance. Historical design progression, prior decisions, completed reviews, and superseded material remain available under [`docs/history/`](docs/history/README.md) for audit and rationale rather than being restated here.
