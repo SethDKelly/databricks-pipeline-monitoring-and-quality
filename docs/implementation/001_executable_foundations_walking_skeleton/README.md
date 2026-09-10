@@ -1,52 +1,53 @@
 # Implementation 001 — Executable Foundations & Walking Skeleton
 
-**Status:** PLANNED / BLOCKED ON CANONICAL KNOWLEDGE RETROFIT EXIT
+**Status:** READY — **001-A NEXT / READY / NOT STARTED**
 
 ## Objective
 
-Create the smallest executable DMTZ spine that proves the frozen architecture can be built without semantic shortcuts.
+Create the smallest executable DMTZ spine that proves the accepted architecture can be realized without semantic shortcuts.
 
-001 should end with one real, deterministic, evidence-grounded question flowing from a bounded Databricks evidence source through canonical Delta history and accepted health semantics into Statement IR with historical/as-known behavior.
+Implementation 001 should end with one real, deterministic, evidence-grounded question flowing from a bounded Databricks evidence source through canonical historical persistence and accepted health semantics into Statement IR with historical/as-known behavior.
 
 The target question is:
 
 > **Is this monitored asset stale at the requested time, and what evidence supports that statement?**
 
-001 is not a mini-version of the whole product. It deliberately builds the reusable foundation underneath later implementations.
+001 is not a miniature version of the full product. It establishes reusable foundations for later packages while keeping unsupported enterprise capability outside its boundary.
 
-## Entry dependencies
+## Entry gate
 
-- Phase 010 COMPLETE / ARCH-001–ARCH-500 frozen;
-- Phase 010 implementation handoff accepted;
-- Agentic Development Foundation execution exit ACCEPTED;
-- ADF-EX-17 accepted only as DEFERRED / WAIVED — BOUNDED VERIFICATION DEBT, with `ADF-G-XT01` carried forward;
-- Databricks Agent Skills addendum accepted with the reviewed initial vendor profile;
-- **Canonical Knowledge & Documentation Authority Retrofit CKR-A through CKR-K COMPLETE / EXIT ACCEPTED**;
-- current implementation references resolve through the post-CKR canonical knowledge layer rather than phase chronology;
-- representative non-production Databricks target available or scheduled for 001-E/001-G;
-- repository access and a developer able to implement Python/Databricks testable code.
+Implementation 001 may begin when a human explicitly selects 001-A. Before code changes, the implementing agent/developer must:
 
-**CKR is currently in progress, therefore 001-A is not active.**
+- read root `AGENTS.md`, `docs/implementation/AGENTS.md`, and this package boundary;
+- resolve current semantic and architecture owners through `docs/index.md` and the ownership inventory;
+- resolve applicable stable IDs with `scripts/agentic/resolve_stable_id.py` rather than using historical/search order;
+- identify local tool/runtime limitations separately from product requirements;
+- preserve ADF-EX-17 / `ADF-G-XT01` as deferred provider-runtime verification until actually executed and recorded;
+- keep target-environment capability claims evidence-based.
 
-## 001-A Databricks developer-environment check
+A representative non-production Databricks target is required for the package's environment-dependent acquisition/deployment evidence, but lack of that target at an earlier local-only group must be reported as an environment dependency rather than converted into a semantic shortcut.
 
-Once CKR-K unlocks implementation, 001-A owns the first actual local Databricks vendor-skill materialization proof (`DBX-SKILL-RUN-01`). After establishing a compatible Databricks CLI development environment, run:
+## 001-A — Developer environment, repository structure & engineering standards
+
+001-A is the first implementation group. It establishes the local/toolchain baseline, executable repository skeleton, engineering conventions, and the first actual Databricks vendor-skill materialization proof (`DBX-SKILL-RUN-01`) without yet claiming workspace functionality.
+
+After establishing a compatible Databricks CLI development environment, use:
 
 ```bash
 python3 scripts/agentic/materialize_databricks_skills.py --execute
 ```
 
-The helper materializes only the reviewed vendor set under ignored `.databricks/agent-skills/` and verifies exact selected names/versions. If local materialization is already present, the non-executing helper form validates it:
+The helper materializes only the reviewed vendor set under ignored `.databricks/agent-skills/` and verifies the selected names/versions. If local materialization already exists, the non-executing form validates it:
 
 ```bash
 python3 scripts/agentic/materialize_databricks_skills.py
 ```
 
-A materialization failure is an agent/developer convenience degradation, not permission to change DMTZ semantics. No workspace call, deployment, governance change or credential-bearing action is authorized merely by this environment check.
+Materialization failure is a developer-tooling degradation. It is not permission to change DMTZ semantics and does not by itself prove or disprove Databricks workspace capability.
 
 ## Group sequence
 
-1. **001-A — Developer Environment, Repository Structure & Engineering Standards** — **BLOCKED ON CKR-K**; when unlocked includes Databricks CLI compatibility and reviewed Agent Skills materialization/version verification.
+1. **001-A — Developer Environment, Repository Structure & Engineering Standards** — **NEXT / READY / NOT STARTED**
 2. **001-B — Canonical Type System, Contract Schemas & Versioning**
 3. **001-C — Executable Invariants, Golden Fixtures & Architecture Conformance Tests**
 4. **001-D — Minimal Canonical Delta Persistence & Historical Semantics**
@@ -55,26 +56,28 @@ A materialization failure is an agent/developer convenience degradation, not per
 7. **001-G — Deployment, CI/CD & Development-Environment Validation**
 8. **001-H — Implementation 001 Consolidation / Exit Review**
 
-The groups remain dependency-oriented; CKR does not alter their implementation semantics.
+The sequence is dependency-oriented. Completion of one group does not authorize automatic continuation into the next.
 
-## Documentation authority after CKR
+## Documentation and contract authority
 
-Implementation code, tests, schemas, ADRs and traceability should reference the canonical current owner for the relevant semantic record. Design-history phase files remain available for rationale/provenance but should not be the routine implementation contract surface once their records have canonicalized.
+Implementation code, tests, schemas, ADRs, and traceability reference the current semantic owner for the proposition being implemented. Start at `docs/index.md` when the owner is unknown; use the stable-ID resolver for exact IDs.
 
-Stable IDs remain the durable semantic identifiers across the documentation path migration.
+Historical material under `docs/history/` is available for rationale and provenance but is not the routine implementation contract surface. Generated `knowledge/` content is OKF compatibility routing only.
+
+Implementation ADRs choose how accepted contracts are realized. They do not silently redefine what those contracts mean.
 
 ## Databricks workflow composition
 
-Use DMTZ-owned overlays as the project boundary and reviewed Databricks vendor skills only for relevant platform mechanics:
+Use DMTZ-owned workflows as the project boundary and reviewed Databricks vendor skills only for relevant platform mechanics:
 
-- environment/capability: `dmtz-databricks-environment-discovery`;
-- acquisition: `dmtz-databricks-acquisition`;
-- persistence: `dmtz-databricks-persistence`;
-- Lineage: `dmtz-databricks-lineage`;
-- runtime provenance: `dmtz-databricks-runtime-provenance`;
-- governance: `dmtz-databricks-governance`.
+- environment/capability — `dmtz-databricks-environment-discovery`;
+- acquisition — `dmtz-databricks-acquisition`;
+- persistence — `dmtz-databricks-persistence`;
+- Lineage — `dmtz-databricks-lineage`;
+- runtime provenance — `dmtz-databricks-runtime-provenance`;
+- governance — `dmtz-databricks-governance`.
 
-Initial vendor skills remain Databricks core, DABs, Jobs, Pipelines, data discovery, DBSQL, Unity Catalog and Lakeflow Connect. Model/AI implementation skills and managed Databricks MCP servers remain deferred.
+Vendor guidance remains subordinate to DMTZ semantics, authorization, and target-environment verification. Model/AI implementation skills and managed Databricks MCP adoption remain outside this package unless separately authorized.
 
 ## Expected repository shape after 001
 
@@ -102,9 +105,11 @@ pyproject.toml
 databricks.yml
 ```
 
-## Mandatory 001 semantic coverage
+This is a target shape, not permission to create unused scaffolding. Create only what the selected group requires.
 
-001 must prove:
+## Mandatory semantic coverage
+
+By the end of Implementation 001, executable evidence must preserve at least these boundaries:
 
 - opaque canonical IDs are distinct from source-local IDs;
 - event/effective time and framework knowledge/recorded time are distinct;
@@ -112,27 +117,27 @@ databricks.yml
 - correction/supersession preserves prior recorded state;
 - missing acquisition evidence cannot become a negative fact;
 - Expectation is normative, Observation evidential, Assessment interpretive;
-- successful execution is not used as a freshness proxy;
-- Statement IR identifies proposition, subject, time perspective, status, basis and limitations;
+- successful execution is not a freshness proxy;
+- Statement IR identifies proposition, subject, time perspective, status, basis, and limitations;
 - deterministic rendering does not require an LLM;
-- raw Databricks response objects do not become canonical domain models;
-- reviewed vendor guidance cannot override DMTZ semantics or A1–A4 authorization.
+- raw Databricks response objects do not become canonical DMTZ domain models;
+- reviewed vendor guidance cannot override DMTZ semantics or human-directed authorization.
 
 ## Explicitly outside 001
 
-Complete enterprise identity/governance runtime, production auth, full health/Lineage/Impact/Investigation, public API/UI, model/vector/search, graph database, optional enterprise integrations, managed Databricks MCP adoption, active control and production deployment remain outside 001 unless separately planned.
+Complete enterprise identity/governance runtime, production authentication, full health/Lineage/Impact/Investigation capability, public API/UI, model/vector/search, graph-database infrastructure, optional enterprise integrations, managed Databricks MCP adoption, active control, and production graduation remain outside 001 unless a governed change explicitly alters the package boundary.
 
 ## Exit demonstration
 
-The exit demo must show at least:
+The 001 exit demonstration must show at least:
 
 1. asset fresh / expectation satisfied;
 2. asset stale / expectation violated;
-3. evidence unavailable/incomplete → unknown/unavailable rather than invented stale/fresh;
-4. late evidence changes retrospective answer while an earlier `known by K` answer remains unchanged.
+3. evidence unavailable or incomplete → unknown/unavailable rather than invented stale/fresh;
+4. late evidence changes a retrospective answer while an earlier `known by K` answer remains unchanged.
 
-At least one case must execute against the actual development Databricks target.
+At least one applicable case must execute against the actual development Databricks target before Implementation 001 can claim environment-backed exit evidence.
 
-## 001 exit gate
+## Exit gate
 
-001 is accepted only when clean-clone bootstrap, reviewed Databricks skill environment evidence/degraded fallback, executable suites, development deployment path, historical knowledge-cut semantics, acquisition failure discipline, Statement IR evidence/limitations and canonical design-to-test traceability all pass without hiding remaining semantic work as TODOs.
+Implementation 001 is accepted only when its clean-clone bootstrap, developer/tooling evidence or explicit degraded fallback, executable suites, development deployment path, historical knowledge-cut semantics, acquisition failure discipline, Statement IR evidence/limitations, and design-to-test traceability satisfy the package's accepted contracts without hiding mandatory semantic work as TODOs.
