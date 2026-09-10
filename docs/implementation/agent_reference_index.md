@@ -4,7 +4,7 @@
 
 **CKR status mirror: COMPLETE CKR-A–CKR-K; CKR EXIT ACCEPTED.**
 
-**DPTN status mirror: COMPLETE DPTN-A–DPTN-E; NEXT DPTN-F; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
+**DPTN status mirror: COMPLETE DPTN-A–DPTN-F; NEXT DPTN-G; IMPLEMENTATION 001-A BLOCKED ON DPTN EXIT.**
 
 ## Universal start
 
@@ -33,8 +33,8 @@
 - ADF — COMPLETE / EXIT ACCEPTED.
 - CKR-A–K — COMPLETE / ACCEPTED.
 - CKR EXIT — ACCEPTED.
-- **DPTN-A–E — COMPLETE / ACCEPTED.**
-- **DPTN-F — NEXT / READY / NOT STARTED.**
+- **DPTN-A–F — COMPLETE / ACCEPTED.**
+- **DPTN-G — NEXT / READY / NOT STARTED.**
 - **Implementation 001-A — BLOCKED / NOT STARTED ON DPTN EXIT.**
 
-DPTN-E completed discovery-root convergence and generated-OKF compatibility. `docs/history/` remains provenance-only; DPTN-F/G and product implementation remain unauthorized until explicitly selected.
+DPTN-F completed MOVE-019 broad current-route rebinding. Repository-native agents use `docs/index.md`; generated OKF is compatibility only; exact IDs resolve to first-class current owners; current link validation does not fall back to history. DPTN-G owns final legacy-path retirement, conservation audit and exit review.
