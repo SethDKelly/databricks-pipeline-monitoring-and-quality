@@ -69,11 +69,7 @@ def pre_c_history_projection(repo:Path)->list[Path]:
     return created
 
 def ensure_legacy_root(repo:Path):
-    """Create docs/canonical only for the lifetime of a completed-CKR projection.
-
-    Returns whether the root was created here and, when the root existed, the set of
-    preexisting family symlinks so cleanup can faithfully restore only prior state.
-    """
+    """Create docs/canonical only for the lifetime of a completed-CKR projection."""
     root=repo/"docs/canonical";created_root=False;preexisting={}
     if root.is_symlink():raise RuntimeError("docs/canonical may not be a symlink during CKR compatibility projection")
     if not root.exists():root.mkdir(parents=True);created_root=True
@@ -84,6 +80,14 @@ def ensure_legacy_root(repo:Path):
         elif p.exists():raise RuntimeError(f"legacy canonical family path is not a redirect: {p}")
     return root,created_root,preexisting
 
+def ensure_legacy_readme(repo:Path,root:Path):
+    readme=root/"README.md"
+    if readme.is_file():return False,readme.read_text(encoding="utf-8")
+    archived=repo/"docs/history/routing/canonical-compatibility-pre-dptn-g/README.md"
+    if archived.is_file():shutil.copy2(archived,readme)
+    else:readme.write_text("**Authority state:** CANONICALIZATION COMPLETE — CKR EXIT ACCEPTED\n",encoding="utf-8")
+    return True,""
+
 def cleanup_legacy_root(root:Path,created_root:bool,preexisting:dict[str,str])->None:
     for fam in FAMILIES:
         p=root/fam
@@ -91,14 +95,13 @@ def cleanup_legacy_root(root:Path,created_root:bool,preexisting:dict[str,str])->
         elif p.is_symlink() or p.exists():p.unlink()
         if fam in preexisting:os.symlink(preexisting[fam],p,target_is_directory=True)
     if created_root:
-        # A completed-CKR check may have temporarily rewritten/created README.md.
         for child in list(root.iterdir()):
             if child.is_dir() and not child.is_symlink():shutil.rmtree(child)
             else:child.unlink()
         root.rmdir()
 
 def accepted_routing_projection(repo:Path,inventory_path:Path):
-    original_inventory=inventory_path.read_text(encoding="utf-8");data=json.loads(original_inventory);root,created_root,saved=ensure_legacy_root(repo);readme=root/"README.md";readme_existed=readme.is_file();original_readme=readme.read_text(encoding="utf-8") if readme_existed else ""
+    original_inventory=inventory_path.read_text(encoding="utf-8");data=json.loads(original_inventory);root,created_root,saved=ensure_legacy_root(repo);readme=root/"README.md";readme_created,original_readme=ensure_legacy_readme(repo,root)
     try:
         for fam in FAMILIES:
             legacy=root/fam
@@ -109,12 +112,13 @@ def accepted_routing_projection(repo:Path,inventory_path:Path):
         yield
     finally:
         inventory_path.write_text(original_inventory,encoding="utf-8")
-        if readme_existed:readme.write_text(original_readme,encoding="utf-8")
-        elif readme.exists():readme.unlink()
+        if readme_created:
+            if readme.exists():readme.unlink()
+        else:readme.write_text(original_readme,encoding="utf-8")
         cleanup_legacy_root(root,created_root,saved)
 
 def post_c_projection(repo:Path,inventory_path:Path):
-    original_inventory=inventory_path.read_text(encoding="utf-8");data=json.loads(original_inventory);hidden=repo/"docs/.dptn_ckr_current";created=[];root,created_root,saved=ensure_legacy_root(repo)
+    original_inventory=inventory_path.read_text(encoding="utf-8");data=json.loads(original_inventory);hidden=repo/"docs/.dptn_ckr_current";created=[];root,created_root,saved=ensure_legacy_root(repo);readme_created,original_readme=ensure_legacy_readme(repo,root)
     if hidden.exists() or hidden.is_symlink():raise RuntimeError("reserved CKR compatibility path already exists")
     hidden.mkdir()
     try:
@@ -140,6 +144,10 @@ def post_c_projection(repo:Path,inventory_path:Path):
             if parked.exists():parked.rename(current)
         try:hidden.rmdir()
         except OSError:pass
+        readme=root/"README.md"
+        if readme_created:
+            if readme.exists():readme.unlink()
+        else:readme.write_text(original_readme,encoding="utf-8")
         cleanup_legacy_root(root,created_root,saved)
 
 def main()->int:
